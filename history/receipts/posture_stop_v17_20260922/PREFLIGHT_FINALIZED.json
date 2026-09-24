@@ -1,0 +1,26 @@
+{
+  "state": "complete",
+  "optimizer_updates": 0,
+  "steps": 3000,
+  "num_envs": 4096,
+  "source_completed": 31831,
+  "checkpoint_sha256": "04fcb792c8f18d3abe913d57eecea1d38b54a4e8a36a9899324bd39540b9876d",
+  "full_zero_flat_env_steps": 241294,
+  "rotation_flat_env_steps": 57131,
+  "within_episode_stop_transitions": 846,
+  "within_episode_restart_transitions": 634,
+  "settings": {
+    "profile": "posture_stop_v17",
+    "height_weight": -1.225,
+    "soft_limit_weight": -2.0,
+    "height_course_source_completed": 31831,
+    "height_course_updates": 5000,
+    "full_zero_flat_envs": 103,
+    "rotation_only_flat_envs": 3,
+    "relevant_phase_weight_min": 0.0,
+    "relevant_phase_weight_max": 1.0,
+    "height_target_m": 0.46,
+    "extra_joint_posture_weights_unchanged": true
+  },
+  "qualification": "Runtime/sampling validation, not learned posture improvement"
+}

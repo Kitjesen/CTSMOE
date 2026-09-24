@@ -1,0 +1,33 @@
+{
+  "original_source_completed": 31831,
+  "saved_completed_updates": 32831,
+  "saved_new_updates": 1000,
+  "failed_segment_logged_iterations": [
+    32831,
+    32832,
+    32833,
+    32834,
+    32835,
+    32836,
+    32837,
+    32838
+  ],
+  "discarded_optimizer_updates": 8,
+  "evidence": "runner alg.update line136 precedes logger.log line143; original_log prints iteration before failing snapshot; no checkpoint in failed segment",
+  "spent_new_updates": 1008,
+  "remaining_new_updates": 8992,
+  "remaining_stages": [
+    1992,
+    3000,
+    4000
+  ],
+  "persisted_targets": [
+    34823,
+    37823,
+    41823
+  ],
+  "authorized_total_new_updates": 10000,
+  "original_requested_target": 41831,
+  "final_target_after_discarded_updates": 41823,
+  "policy": "Do not replay discarded optimizer updates outside the authorized budget; preserve all prior outputs."
+}

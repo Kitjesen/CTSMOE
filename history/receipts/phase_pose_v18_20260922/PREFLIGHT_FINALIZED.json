@@ -1,0 +1,173 @@
+{
+  "state": "complete",
+  "optimizer_updates": 0,
+  "steps": 3000,
+  "num_envs": 4096,
+  "source_completed": 31831,
+  "checkpoint_sha256": "04fcb792c8f18d3abe913d57eecea1d38b54a4e8a36a9899324bd39540b9876d",
+  "full_zero_flat_env_steps": 241294,
+  "rotation_flat_env_steps": 57131,
+  "within_episode_stop_transitions": 846,
+  "within_episode_restart_transitions": 634,
+  "settings": {
+    "profile": "posture_stop_v17",
+    "height_weight": -1.225,
+    "soft_limit_weight": -2.0,
+    "height_course_source_completed": 31831,
+    "height_course_updates": 5000,
+    "full_zero_flat_envs": 103,
+    "rotation_only_flat_envs": 3,
+    "relevant_phase_weight_min": 0.0,
+    "relevant_phase_weight_max": 1.0,
+    "height_target_m": 0.46,
+    "extra_joint_posture_weights_unchanged": true,
+    "phase_pose": {
+      "profile": "phase_pose_v18",
+      "extra_l1_weight": -0.2,
+      "recovery_s": 1.5,
+      "release_reference_gap_m": [
+        0.85,
+        0.35
+      ],
+      "fixed_front_extent_m": 0.4337119460105896,
+      "joint_names": [
+        "fl_hip_joint",
+        "fr_hip_joint",
+        "rl_hip_joint",
+        "rr_hip_joint",
+        "fl_thigh_joint",
+        "fr_thigh_joint",
+        "rl_thigh_joint",
+        "rr_thigh_joint",
+        "fl_calf_joint",
+        "fr_calf_joint",
+        "rl_calf_joint",
+        "rr_calf_joint"
+      ],
+      "by_terrain": {
+        "flat": {
+          "count": 1024,
+          "gate_mean": 1.0,
+          "gate_min": 1.0,
+          "gate_max": 1.0,
+          "actual_abs_mean_per_joint": [
+            0.12280122935771942,
+            0.12078684568405151,
+            0.12952709197998047,
+            0.1199914962053299,
+            0.18759822845458984,
+            0.15917590260505676,
+            0.11464951187372208,
+            0.16381672024726868,
+            0.23023757338523865,
+            0.2020813375711441,
+            0.1361333429813385,
+            0.15463408827781677
+          ],
+          "actual_abs_max_per_joint": [
+            0.4357014298439026,
+            0.45662522315979004,
+            0.49369359016418457,
+            0.5057247877120972,
+            0.8708402514457703,
+            0.7209412455558777,
+            0.8848612904548645,
+            0.7873063683509827,
+            1.207395076751709,
+            0.8534549474716187,
+            1.1775507926940918,
+            0.8201190233230591
+          ]
+        },
+        "pit": {
+          "count": 1024,
+          "gate_mean": 0.8312368392944336,
+          "gate_min": 0.0,
+          "gate_max": 1.0,
+          "actual_abs_mean_per_joint": [
+            0.14765825867652893,
+            0.16109555959701538,
+            0.13401579856872559,
+            0.13477608561515808,
+            0.24463754892349243,
+            0.08763813227415085,
+            0.05130845680832863,
+            0.08163494616746902,
+            0.466622531414032,
+            0.4120570123195648,
+            0.15910637378692627,
+            0.17791855335235596
+          ],
+          "actual_abs_max_per_joint": [
+            0.21004976332187653,
+            0.20813395082950592,
+            0.21005485951900482,
+            0.206869438290596,
+            0.6101178526878357,
+            0.36506038904190063,
+            0.6973348259925842,
+            0.5543751120567322,
+            0.6352059841156006,
+            0.5554990768432617,
+            0.8065898418426514,
+            0.9795200228691101
+          ]
+        },
+        "stairs": {
+          "count": 1025,
+          "gate_mean": 0.09956422448158264,
+          "gate_min": 0.0,
+          "gate_max": 1.0,
+          "actual_abs_mean_per_joint": [
+            0.15265432000160217,
+            0.12228703498840332,
+            0.12838411331176758,
+            0.12698258459568024,
+            0.3856389820575714,
+            0.3088800013065338,
+            0.4898119568824768,
+            0.26643913984298706,
+            0.34315383434295654,
+            0.21658632159233093,
+            0.29579076170921326,
+            0.23205217719078064
+          ],
+          "actual_abs_max_per_joint": [
+            0.5438942909240723,
+            0.5169000029563904,
+            0.2102016657590866,
+            0.38707971572875977,
+            0.9255923628807068,
+            1.2084729671478271,
+            1.487696647644043,
+            1.1445727348327637,
+            1.2300572395324707,
+            1.1232422590255737,
+            0.9494918584823608,
+            1.0458301305770874
+          ]
+        }
+      },
+      "normal_effective_hip_weight": -0.25,
+      "normal_effective_thigh_calf_weight": -0.21,
+      "climb_baseline_hip_weight": -0.05,
+      "climb_baseline_thigh_calf_weight": -0.01,
+      "diagnostic_scope": "current control step across training environments, not held-out performance"
+    }
+  },
+  "phase_coverage": {
+    "flat": [
+      1.0,
+      1.0
+    ],
+    "stairs": [
+      0.0,
+      1.0
+    ],
+    "pit": [
+      0.0,
+      1.0
+    ]
+  },
+  "qualification": "Runtime/sampling validation, not learned posture improvement"
+}

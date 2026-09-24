@@ -1,0 +1,416 @@
+{
+  "forward": [
+    {
+      "label": "early30000",
+      "first_rms": 0.2717694036498693,
+      "first_peak_rms": 0.32109518281946337,
+      "first_peak_joint_rad": 0.5951941013336182,
+      "first_peak_time_s": 0.3,
+      "max_rms": 0.32109518281946337,
+      "height_min": 0.3871871531009674,
+      "height_max": 0.45762133598327637,
+      "last_height": 0.3952769935131073,
+      "last_rms": 0.24147624261830247,
+      "last_xy_error": 0.06308238953351974,
+      "last_yaw_error": 0.0013887055683881044,
+      "pass": false
+    },
+    {
+      "label": "early30000_teacher",
+      "first_rms": 0.256498980244922,
+      "first_peak_rms": 0.29360986400775246,
+      "first_peak_joint_rad": 0.5692185163497925,
+      "first_peak_time_s": 0.4,
+      "max_rms": 0.29360986400775246,
+      "height_min": 0.3880937695503235,
+      "height_max": 0.45788371562957764,
+      "last_height": 0.3967958092689514,
+      "last_rms": 0.24436033560909562,
+      "last_xy_error": 0.046106766909360886,
+      "last_yaw_error": 0.001443207380361855,
+      "pass": false
+    },
+    {
+      "label": "early31831",
+      "first_rms": 0.11606697771570808,
+      "first_peak_rms": 0.1497244214044387,
+      "first_peak_joint_rad": 0.35640770196914673,
+      "first_peak_time_s": 0.32,
+      "max_rms": 0.21242711289592042,
+      "height_min": 0.44832712411880493,
+      "height_max": 0.4772116541862488,
+      "last_height": 0.4755564033985138,
+      "last_rms": 0.18616136944290448,
+      "last_xy_error": 0.028583703562617302,
+      "last_yaw_error": 0.019854122772812843,
+      "pass": true
+    },
+    {
+      "label": "early31831_teacher",
+      "first_rms": 0.11439161872888214,
+      "first_peak_rms": 0.13768331447505894,
+      "first_peak_joint_rad": 0.33018797636032104,
+      "first_peak_time_s": 0.34,
+      "max_rms": 0.18782272535141442,
+      "height_min": 0.4522630572319031,
+      "height_max": 0.4744962155818939,
+      "last_height": 0.4741402864456177,
+      "last_rms": 0.18469630678690624,
+      "last_xy_error": 0.01396214496344328,
+      "last_yaw_error": 0.009841984137892723,
+      "pass": true
+    }
+  ],
+  "terrains": [
+    {
+      "label": "early30000",
+      "terrain": "flat",
+      "passed": 6,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "early30000_teacher",
+      "terrain": "flat",
+      "passed": 9,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "early31831",
+      "terrain": "flat",
+      "passed": 15,
+      "count": 20,
+      "physical": 0,
+      "straight": 1
+    },
+    {
+      "label": "early31831_teacher",
+      "terrain": "flat",
+      "passed": 15,
+      "count": 20,
+      "physical": 0,
+      "straight": 2
+    }
+  ],
+  "pit": [],
+  "flat_failures": [
+    {
+      "label": "early30000",
+      "direction": "forward",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.06308238953351974,
+      "last_yaw_error": 0.0013887055683881044
+    },
+    {
+      "label": "early30000",
+      "direction": "left",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.09170688688755035,
+      "last_yaw_error": 0.09506955742835999
+    },
+    {
+      "label": "early30000",
+      "direction": "right",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.15984152257442474,
+      "last_yaw_error": 0.06995674967765808
+    },
+    {
+      "label": "early30000",
+      "direction": "yaw_right",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.03428564965724945,
+      "last_yaw_error": 0.11257045716047287
+    },
+    {
+      "label": "early30000",
+      "direction": "diagonal",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.09807775169610977,
+      "last_yaw_error": 0.07766976207494736
+    },
+    {
+      "label": "early30000",
+      "direction": "forward_turn",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": false,
+      "last_xy_error": 0.10244117677211761,
+      "last_yaw_error": 0.38753947615623474
+    },
+    {
+      "label": "early30000",
+      "direction": "side_turn",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.12626633048057556,
+      "last_yaw_error": 0.1042555645108223
+    },
+    {
+      "label": "early30000",
+      "direction": "forward",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.04565459117293358,
+      "last_yaw_error": 0.0015121351461857557
+    },
+    {
+      "label": "early30000",
+      "direction": "left",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.06949806958436966,
+      "last_yaw_error": 0.12984232604503632
+    },
+    {
+      "label": "early30000",
+      "direction": "right",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.23589149117469788,
+      "last_yaw_error": 0.06388946622610092
+    },
+    {
+      "label": "early30000",
+      "direction": "yaw_right",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.03317280113697052,
+      "last_yaw_error": 0.12198785692453384
+    },
+    {
+      "label": "early30000",
+      "direction": "diagonal",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.10611408948898315,
+      "last_yaw_error": 0.06896588951349258
+    },
+    {
+      "label": "early30000",
+      "direction": "forward_turn",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.06421244889497757,
+      "last_yaw_error": 0.38296619057655334
+    },
+    {
+      "label": "early30000",
+      "direction": "side_turn",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.078902967274189,
+      "last_yaw_error": 0.10372045636177063
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "forward",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.046106766909360886,
+      "last_yaw_error": 0.001443207380361855
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "left",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.05588134750723839,
+      "last_yaw_error": 0.08235809952020645
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "diagonal",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.12910224497318268,
+      "last_yaw_error": 0.06211321800947189
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "forward_turn",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.06753314286470413,
+      "last_yaw_error": 0.39373838901519775
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "side_turn",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.06118473410606384,
+      "last_yaw_error": 0.07548433542251587
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "forward",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.04630248248577118,
+      "last_yaw_error": 0.0023255764972418547
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "left",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.07340759038925171,
+      "last_yaw_error": 0.11100037395954132
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "yaw_right",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.030454246327280998,
+      "last_yaw_error": 0.07958641648292542
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "diagonal",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.11085517704486847,
+      "last_yaw_error": 0.07350433617830276
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "forward_turn",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.0749414935708046,
+      "last_yaw_error": 0.38818225264549255
+    },
+    {
+      "label": "early30000_teacher",
+      "direction": "side_turn",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.0773216038942337,
+      "last_yaw_error": 0.11222361773252487
+    },
+    {
+      "label": "early31831",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.15027391910552979,
+      "last_yaw_error": 0.061835188418626785
+    },
+    {
+      "label": "early31831",
+      "direction": "reverse",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.08375874161720276,
+      "last_yaw_error": 0.0054101780988276005
+    },
+    {
+      "label": "early31831",
+      "direction": "right",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.20053087174892426,
+      "last_yaw_error": 0.07068263739347458
+    },
+    {
+      "label": "early31831",
+      "direction": "diagonal",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.22014528512954712,
+      "last_yaw_error": 0.13622140884399414
+    },
+    {
+      "label": "early31831",
+      "direction": "diagonal_back",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.2423613965511322,
+      "last_yaw_error": 0.05351050943136215
+    },
+    {
+      "label": "early31831_teacher",
+      "direction": "right",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.18700508773326874,
+      "last_yaw_error": 0.07922414690256119
+    },
+    {
+      "label": "early31831_teacher",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.18758270144462585,
+      "last_yaw_error": 0.05119262635707855
+    },
+    {
+      "label": "early31831_teacher",
+      "direction": "reverse",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.029450444504618645,
+      "last_yaw_error": 0.004231765866279602
+    },
+    {
+      "label": "early31831_teacher",
+      "direction": "right",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.20797356963157654,
+      "last_yaw_error": 0.0609389990568161
+    },
+    {
+      "label": "early31831_teacher",
+      "direction": "diagonal_back",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.29552027583122253,
+      "last_yaw_error": 0.010369772091507912
+    }
+  ]
+}

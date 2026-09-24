@@ -1,0 +1,812 @@
+{
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+  "completed_updates": 44759,
+  "history": [
+    {
+      "path": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "label": "V9_44711",
+      "teacher": false,
+      "fields": {
+        "iter": 44710,
+        "completed_updates": 44711,
+        "pit_posture_profile": "phase_stance_v1",
+        "surface_posture_profile": "level_surface_v1",
+        "stance_strength_profile": "strong_stand_v1",
+        "startup_repair_profile": "omni_start_v9",
+        "uphill_speed_limit": 1.2,
+        "common_step_counter": 1073064,
+        "learning_rate": 0.00011390625000000006,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "climb_first_v2",
+        "pit_course_profile": "individual_speed_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      }
+    },
+    {
+      "path": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "label": "V9_44711_teacher",
+      "teacher": true,
+      "fields": {
+        "iter": 44710,
+        "completed_updates": 44711,
+        "pit_posture_profile": "phase_stance_v1",
+        "surface_posture_profile": "level_surface_v1",
+        "stance_strength_profile": "strong_stand_v1",
+        "startup_repair_profile": "omni_start_v9",
+        "uphill_speed_limit": 1.2,
+        "common_step_counter": 1073064,
+        "learning_rate": 0.00011390625000000006,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "climb_first_v2",
+        "pit_course_profile": "individual_speed_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      }
+    },
+    {
+      "path": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "label": "V11_44759",
+      "teacher": false,
+      "fields": {
+        "iter": 44758,
+        "completed_updates": 44759,
+        "pit_posture_profile": "phase_stance_v1",
+        "surface_posture_profile": "level_surface_v1",
+        "stance_strength_profile": "strong_stand_v1",
+        "startup_repair_profile": "omni_start_v9",
+        "uphill_speed_limit": 1.2,
+        "common_step_counter": 1074216,
+        "learning_rate": 0.00017085937500000009,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "climb_first_v2",
+        "pit_course_profile": "individual_speed_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      }
+    },
+    {
+      "path": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "label": "V11_44759_teacher",
+      "teacher": true,
+      "fields": {
+        "iter": 44758,
+        "completed_updates": 44759,
+        "pit_posture_profile": "phase_stance_v1",
+        "surface_posture_profile": "level_surface_v1",
+        "stance_strength_profile": "strong_stand_v1",
+        "startup_repair_profile": "omni_start_v9",
+        "uphill_speed_limit": 1.2,
+        "common_step_counter": 1074216,
+        "learning_rate": 0.00017085937500000009,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "climb_first_v2",
+        "pit_course_profile": "individual_speed_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 0,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 3.8389892578125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6727180480957031,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 7,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.031890869140625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.0717639923095703,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 23,
+      "end_step": 696,
+      "seconds": 13.94,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.002371788024902,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.20626068115234375,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 58,
+      "end_step": 204,
+      "seconds": 4.1,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.014350891113281,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.44600677490234375,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 83,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 3.717437744140625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6208724975585938,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": true,
+      "id": 90,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.0413436889648438,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.0372753143310547,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 106,
+      "end_step": 715,
+      "seconds": 14.32,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.004572868347168,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.19249725341796875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 141,
+      "end_step": 183,
+      "seconds": 3.68,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.001373291015625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/flat_v9_1000_20260921/model_44710.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.25446319580078125,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 166,
+      "end_step": 263,
+      "seconds": 5.28,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.0111083984375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5985050201416016,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 173,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.3593978881835938,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3350505828857422,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 189,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.1083364486694336,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.14600372314453125,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 224,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 3.1601295471191406,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1469879150390625,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 249,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 3.8833847045898438,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.23107528686523438,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": true,
+      "id": 256,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.3847808837890625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3808174133300781,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 272,
+      "end_step": 758,
+      "seconds": 15.18,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.0019025802612305,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.14415740966796875,
+      "straight_4m": true
+    },
+    {
+      "policy": 3,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 307,
+      "end_step": 221,
+      "seconds": 4.44,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 3.59686279296875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3772163391113281,
+      "straight_4m": false
+    }
+  ],
+  "joint_names": [
+    "fl_hip_joint",
+    "fr_hip_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fl_thigh_joint",
+    "fr_thigh_joint",
+    "rl_thigh_joint",
+    "rr_thigh_joint",
+    "fl_calf_joint",
+    "fr_calf_joint",
+    "rl_calf_joint",
+    "rr_calf_joint",
+    "fl_foot_joint",
+    "fr_foot_joint",
+    "rl_foot_joint",
+    "rr_foot_joint"
+  ],
+  "body_names": [
+    "base_link",
+    "fl_hip_Link",
+    "fr_hip_link",
+    "rl_hip_Link",
+    "rr_hip_Link",
+    "fl_thigh_Link",
+    "fr_thigh_Link",
+    "rl_thigh_Link",
+    "rr_thigh_Link",
+    "fl_calf_Link",
+    "fr_calf_Link",
+    "rl_calf_Link",
+    "rr_calf_Link",
+    "fl_foot_Link",
+    "fr_foot_Link",
+    "rl_foot_Link",
+    "rr_foot_Link"
+  ],
+  "dt": 0.02,
+  "default_q": [
+    0.20000000298023224,
+    -0.20000000298023224,
+    -0.20000000298023224,
+    0.20000000298023224,
+    0.9300000071525574,
+    -0.9300000071525574,
+    -0.9300000071525574,
+    0.9300000071525574,
+    -1.9600000381469727,
+    1.9600000381469727,
+    1.9600000381469727,
+    -1.9600000381469727,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "request_joint_ids": [
+    1,
+    5,
+    9,
+    0,
+    4,
+    8,
+    3,
+    7,
+    11,
+    2,
+    6,
+    10
+  ],
+  "actuator_limits": {
+    "leg_torque_nm": 120.0,
+    "wheel_torque_nm": 17.0,
+    "leg_speed_rad_s": 15.0,
+    "wheel_speed_rad_s": 30.0,
+    "leg_target_rate_rad_s": 12.0,
+    "speed_penalty_fraction": 0.9,
+    "speed_termination_fraction": 1.02,
+    "hard_position_termination_rad": 0.01,
+    "leg_load_reference_nm": 35.0,
+    "wheel_load_reference_nm": 6.0,
+    "speed_sustained_duration_s": 0.06,
+    "speed_extreme_termination_fraction": 1.5,
+    "load_penalty_weight": -0.1,
+    "speed_penalty_weight": -1.0,
+    "saturation_penalty_weight": -0.02,
+    "violation_penalty_weight": -25.0
+  },
+  "initial_state_matched": true,
+  "smoke_only": false,
+  "phase_telemetry": "geometry/support measurements only; stage acceptance not inferred from joint pose",
+  "slope_geometry": [
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "rough_slope_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 8.530773959820424,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 21.801431566722385,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "rough_slope_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 38.659844695664,
+      "centerline_angle_deg_min": 2.862391599851007,
+      "centerline_angle_deg_max": 54.46234528299803,
+      "slope_threshold": 10.0
+    }
+  ],
+  "urdf_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+  "protocol": "V10 flat outlier repair comparison, V8 landing geometry (shorter stair flight, outer plateau); phase telemetry enabled. Nine terrains, matched default joint/root states verified across policies. No noise or pushes; fixed10ms delay. 83 cases per policy: 20 all-direction flat starts (6s budget), seven other terrain types at L6/L9 and vx0.3/0.6/1.2, pit0.15/0.25/0.35/0.45/0.6/0.9/1.2m at vx0.3/0.6/0.9 (25s budget). No heading feedback. Pit external stop retained. 50Hz trajectories plus per-step 200Hz torque/speed/hard-limit peaks. Fixed cases, not success probabilities over random trials.",
+  "source_evaluation": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/anchor_v11_pilot48_20260921",
+  "axis_case_ids": [
+    0,
+    7,
+    23,
+    58,
+    83,
+    90,
+    106,
+    141,
+    166,
+    173,
+    189,
+    224,
+    249,
+    256,
+    272,
+    307
+  ]
+}

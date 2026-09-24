@@ -1,0 +1,2129 @@
+{
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v10_smoke_20260921/model_44726.pt",
+  "completed_updates": 44727,
+  "history": [
+    {
+      "path": "runs/flat_v10_smoke_20260921/model_44726.pt",
+      "label": "V10_smoke",
+      "teacher": false,
+      "fields": {
+        "iter": 44726,
+        "completed_updates": 44727,
+        "pit_posture_profile": "phase_stance_v1",
+        "surface_posture_profile": "level_surface_v1",
+        "stance_strength_profile": "strong_stand_v1",
+        "startup_repair_profile": "omni_start_v10",
+        "uphill_speed_limit": 1.2,
+        "common_step_counter": 1073448,
+        "learning_rate": 0.00017085937500000009,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "climb_first_v2",
+        "pit_course_profile": "individual_speed_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 0,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0037078857421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 1,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00051116943359375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 2,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0019779205322265625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 3,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00197601318359375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "id": 4,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0001239776611328125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "id": 5,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00029754638671875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 6,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00279998779296875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 7,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.001739501953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "id": 8,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.002368927001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "id": 9,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0010051727294921875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 10,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 11,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 12,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 13,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "id": 14,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "id": 15,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 16,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 17,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "id": 18,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "id": 19,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00025177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 20,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0017852783203125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 21,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00399017333984375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 22,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00276947021484375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 23,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0017852783203125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 24,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00399017333984375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 25,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.002685546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 26,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0017547607421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 27,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00397491455078125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 28,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00276947021484375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 29,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 30,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00394439697265625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 31,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0028228759765625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 32,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.001708984375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 33,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0039215087890625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 34,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.002655029296875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 35,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0017547607421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 36,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0039215087890625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 37,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0027618408203125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 38,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0017852783203125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 39,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0040283203125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 40,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0028533935546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 41,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00177001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 42,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00396728515625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 43,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0028076171875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 44,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00152587890625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 45,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0037078857421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 46,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0025634765625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 47,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00152587890625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 48,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0037078857421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 49,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0025634765625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 50,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0016021728515625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 51,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0038299560546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 52,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0027008056640625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 53,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0016021728515625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 54,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0038299560546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 55,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0027008056640625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 56,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.001796722412109375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 57,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.004032135009765625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 58,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.002826690673828125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 59,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.00179290771484375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 60,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.004001617431640625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 61,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.002838134765625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 62,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0015630722045898438,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 63,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.003890514373779297,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 64,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.003673076629638672,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 2,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 65,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0015630722045898438,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 2,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 66,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.003890514373779297,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 2,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 67,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.003673076629638672,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 4,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 68,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0015625953674316406,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 4,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 69,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0038895606994628906,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 4,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 70,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.003673076629638672,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 71,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0015625953674316406,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 72,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0038895606994628906,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 73,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.003673076629638672,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 74,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0015625953674316406,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 75,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0038919448852539062,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 76,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.003673553466796875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 77,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0015625953674316406,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 78,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0038895606994628906,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 79,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0036725997924804688,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 80,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.0015630722045898438,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 81,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.003890514373779297,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 82,
+      "end_step": 2,
+      "seconds": 0.06,
+      "physical": false,
+      "terms": [
+        "budget"
+      ],
+      "passed_4m": false,
+      "max_side_m": 0.003673076629638672,
+      "straight_4m": false
+    }
+  ],
+  "joint_names": [
+    "fl_hip_joint",
+    "fr_hip_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fl_thigh_joint",
+    "fr_thigh_joint",
+    "rl_thigh_joint",
+    "rr_thigh_joint",
+    "fl_calf_joint",
+    "fr_calf_joint",
+    "rl_calf_joint",
+    "rr_calf_joint",
+    "fl_foot_joint",
+    "fr_foot_joint",
+    "rl_foot_joint",
+    "rr_foot_joint"
+  ],
+  "body_names": [
+    "base_link",
+    "fl_hip_Link",
+    "fr_hip_link",
+    "rl_hip_Link",
+    "rr_hip_Link",
+    "fl_thigh_Link",
+    "fr_thigh_Link",
+    "rl_thigh_Link",
+    "rr_thigh_Link",
+    "fl_calf_Link",
+    "fr_calf_Link",
+    "rl_calf_Link",
+    "rr_calf_Link",
+    "fl_foot_Link",
+    "fr_foot_Link",
+    "rl_foot_Link",
+    "rr_foot_Link"
+  ],
+  "dt": 0.02,
+  "default_q": [
+    0.20000000298023224,
+    -0.20000000298023224,
+    -0.20000000298023224,
+    0.20000000298023224,
+    0.9300000071525574,
+    -0.9300000071525574,
+    -0.9300000071525574,
+    0.9300000071525574,
+    -1.9600000381469727,
+    1.9600000381469727,
+    1.9600000381469727,
+    -1.9600000381469727,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "request_joint_ids": [
+    1,
+    5,
+    9,
+    0,
+    4,
+    8,
+    3,
+    7,
+    11,
+    2,
+    6,
+    10
+  ],
+  "actuator_limits": {
+    "leg_torque_nm": 120.0,
+    "wheel_torque_nm": 17.0,
+    "leg_speed_rad_s": 15.0,
+    "wheel_speed_rad_s": 30.0,
+    "leg_target_rate_rad_s": 12.0,
+    "speed_penalty_fraction": 0.9,
+    "speed_termination_fraction": 1.02,
+    "hard_position_termination_rad": 0.01,
+    "leg_load_reference_nm": 35.0,
+    "wheel_load_reference_nm": 6.0,
+    "speed_sustained_duration_s": 0.06,
+    "speed_extreme_termination_fraction": 1.5,
+    "load_penalty_weight": -0.1,
+    "speed_penalty_weight": -1.0,
+    "saturation_penalty_weight": -0.02,
+    "violation_penalty_weight": -25.0
+  },
+  "initial_state_matched": true,
+  "smoke_only": true,
+  "phase_telemetry": "geometry/support measurements only; stage acceptance not inferred from joint pose",
+  "slope_geometry": [
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "rough_slope_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 8.530773959820424,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 21.801431566722385,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "rough_slope_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 38.659844695664,
+      "centerline_angle_deg_min": 2.862391599851007,
+      "centerline_angle_deg_max": 54.46234528299803,
+      "slope_threshold": 10.0
+    }
+  ],
+  "urdf_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+  "protocol": "V10 flat outlier repair comparison, V8 landing geometry (shorter stair flight, outer plateau); phase telemetry enabled. Nine terrains, matched default joint/root states verified across policies. No noise or pushes; fixed10ms delay. 83 cases per policy: 20 all-direction flat starts (6s budget), seven other terrain types at L6/L9 and vx0.3/0.6/1.2, pit0.15/0.25/0.35/0.45/0.6/0.9/1.2m at vx0.3/0.6/0.9 (25s budget). No heading feedback. Pit external stop retained. 50Hz trajectories plus per-step 200Hz torque/speed/hard-limit peaks. Fixed cases, not success probabilities over random trials."
+}

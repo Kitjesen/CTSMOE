@@ -1,0 +1,250 @@
+{
+  "checkpoint_updates": 13501,
+  "clips": [
+    {
+      "level": 7,
+      "riser_cm": 19.499999999999986,
+      "mean_vx_before_tilt60": 0.1217205306446767,
+      "fraction_forward_speed_below_0p05_before_tilt60": 0.2747826086956522,
+      "first_tilt_over60_s": null,
+      "first_tilt_over90_s": null,
+      "first_base_contact_over5N_s": null,
+      "max_abs_yaw_drift_before_tilt60_deg": 46.17867036207734,
+      "leg_clipping_before_tilt60_joint_samples_percent": 0.0,
+      "wheel_clipping_before_tilt60_joint_samples_percent": 0.043478260869565216,
+      "leg_peak_torque_before_tilt60_Nm": 69.1569595336914,
+      "wheel_peak_torque_before_tilt60_Nm": 17.0,
+      "delta_xy_m": [
+        2.2075424194335938,
+        1.6156158447265625
+      ],
+      "intervals": [
+        {
+          "from_s": 2,
+          "to_s": 5.98,
+          "mean_vx": 0.28225985736628273,
+          "mean_vy": 0.01935805507669136,
+          "max_tilt_deg": 15.750243980166962,
+          "calf_contact_over5N_frames_percent": 0.0,
+          "wheel_torque_clipping_joint_samples_percent": 0.12562814070351758,
+          "leg_torque_clipping_joint_samples_percent": 0.0
+        },
+        {
+          "from_s": 6,
+          "to_s": 11.98,
+          "mean_vx": 0.1077948806885009,
+          "mean_vy": 0.040987226076346514,
+          "max_tilt_deg": 43.769179200110855,
+          "calf_contact_over5N_frames_percent": 0.0,
+          "wheel_torque_clipping_joint_samples_percent": 0.08333333333333334,
+          "leg_torque_clipping_joint_samples_percent": 0.0
+        },
+        {
+          "from_s": 12,
+          "to_s": 17.98,
+          "mean_vx": 0.057677212045528,
+          "mean_vy": 0.060261678485743084,
+          "max_tilt_deg": 39.69219110847621,
+          "calf_contact_over5N_frames_percent": 15.666666666666668,
+          "wheel_torque_clipping_joint_samples_percent": 0.0,
+          "leg_torque_clipping_joint_samples_percent": 0.0
+        },
+        {
+          "from_s": 18,
+          "to_s": 25.0,
+          "mean_vx": 0.09734265186689248,
+          "mean_vy": 0.050975966945713776,
+          "max_tilt_deg": 37.46997873789971,
+          "calf_contact_over5N_frames_percent": 32.763532763532766,
+          "wheel_torque_clipping_joint_samples_percent": 0.0,
+          "leg_torque_clipping_joint_samples_percent": 0.0
+        }
+      ],
+      "nonwheel_contacts": {
+        "base_link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fl_hip_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fl_thigh_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fl_calf_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fr_hip_link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fr_thigh_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fr_calf_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rl_hip_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rl_thigh_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rl_calf_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rr_hip_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rr_thigh_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rr_calf_Link": {
+          "first_over5N_s": 15.120000000000001,
+          "frames_over5N_percent": 14.08695652173913,
+          "peak_N": 167.17373581125636
+        }
+      }
+    },
+    {
+      "level": 9,
+      "riser_cm": 25.0,
+      "mean_vx_before_tilt60": 0.1027065051417329,
+      "fraction_forward_speed_below_0p05_before_tilt60": 0.4291390728476821,
+      "first_tilt_over60_s": 17.12,
+      "first_tilt_over90_s": 17.28,
+      "first_base_contact_over5N_s": 17.400000000000002,
+      "max_abs_yaw_drift_before_tilt60_deg": 33.90501942808923,
+      "leg_clipping_before_tilt60_joint_samples_percent": 0.0,
+      "wheel_clipping_before_tilt60_joint_samples_percent": 0.0,
+      "leg_peak_torque_before_tilt60_Nm": 93.61397552490234,
+      "wheel_peak_torque_before_tilt60_Nm": 15.306784629821777,
+      "delta_xy_m": [
+        1.256500244140625,
+        1.2166504859924316
+      ],
+      "intervals": [
+        {
+          "from_s": 2,
+          "to_s": 5.98,
+          "mean_vx": 0.2645711689092331,
+          "mean_vy": 0.025356921743740938,
+          "max_tilt_deg": 16.705226963106927,
+          "calf_contact_over5N_frames_percent": 0.0,
+          "wheel_torque_clipping_joint_samples_percent": 0.0,
+          "leg_torque_clipping_joint_samples_percent": 0.0
+        },
+        {
+          "from_s": 6,
+          "to_s": 11.98,
+          "mean_vx": 0.0543901972581322,
+          "mean_vy": 0.06090824266546406,
+          "max_tilt_deg": 52.975658907991516,
+          "calf_contact_over5N_frames_percent": 0.6666666666666667,
+          "wheel_torque_clipping_joint_samples_percent": 0.0,
+          "leg_torque_clipping_joint_samples_percent": 0.0
+        },
+        {
+          "from_s": 12,
+          "to_s": 17.400000000000002,
+          "mean_vx": 0.03768122781109326,
+          "mean_vy": 0.10669196103965843,
+          "max_tilt_deg": 118.13949561259635,
+          "calf_contact_over5N_frames_percent": 0.0,
+          "wheel_torque_clipping_joint_samples_percent": 0.0,
+          "leg_torque_clipping_joint_samples_percent": 0.03075030750307503
+        }
+      ],
+      "nonwheel_contacts": {
+        "base_link": {
+          "first_over5N_s": 17.400000000000002,
+          "frames_over5N_percent": 0.12987012987012986,
+          "peak_N": 3052.5566258133563
+        },
+        "fl_hip_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fl_thigh_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fl_calf_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fr_hip_link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fr_thigh_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "fr_calf_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rl_hip_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rl_thigh_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rl_calf_Link": {
+          "first_over5N_s": 8.72,
+          "frames_over5N_percent": 0.2597402597402597,
+          "peak_N": 147.51041066840259
+        },
+        "rr_hip_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rr_thigh_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        },
+        "rr_calf_Link": {
+          "first_over5N_s": null,
+          "frames_over5N_percent": 0.0,
+          "peak_N": 0.0
+        }
+      }
+    }
+  ],
+  "limits": "One nominal rollout per level. Torque and contact sample only the last physics substep at 50 Hz. These are symptoms, not intervention-based proof of a mechanical cause."
+}

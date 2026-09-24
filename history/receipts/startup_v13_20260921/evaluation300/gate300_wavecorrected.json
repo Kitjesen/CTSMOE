@@ -1,0 +1,69 @@
+{
+  "normal": {
+    "accepted": false,
+    "reasons": [
+      "pit: a previously successful height/speed case regressed",
+      "slope_up: fewer accepted cases",
+      "stairs_down: fewer accepted cases",
+      "flat/forward_turn/settle: yaw tracking regressed"
+    ],
+    "baseline": "V9_44711",
+    "candidate": "V13_45011",
+    "forward_rms_before": 0.4274132552645709,
+    "forward_rms_after": 0.24569307178297597,
+    "threshold": 0.3419306042116568,
+    "final": false,
+    "fixed_cases_not_random_success_rate": true
+  },
+  "flat25": {
+    "accepted": false,
+    "reasons": [
+      "left/direct: lost a full 25 second completion",
+      "left/direct: new physical failure",
+      "diagonal/direct: XY tracking regressed",
+      "left/settle: XY tracking regressed",
+      "diagonal/settle: XY tracking regressed"
+    ],
+    "baseline": "V9_44711",
+    "candidate": "V13_45011",
+    "final": false,
+    "protocol": "flat25_80m",
+    "fixed_cases_not_random_success_rate": true,
+    "baseline_completions": 20,
+    "candidate_completions": 19
+  },
+  "normal_teacher": {
+    "accepted": false,
+    "reasons": [
+      "obstacles: more physical failures",
+      "slope_up: more physical failures",
+      "stairs_up: fewer accepted cases",
+      "stairs_up: fewer straight traversals",
+      "forward startup RMS did not meet improvement criterion",
+      "flat/forward_turn/settle: yaw tracking regressed"
+    ],
+    "baseline": "V9_44711_teacher",
+    "candidate": "V13_45011_teacher",
+    "forward_rms_before": 0.43077797369953297,
+    "forward_rms_after": 0.41307208732285744,
+    "threshold": 0.3446223789596264,
+    "final": false,
+    "fixed_cases_not_random_success_rate": true
+  },
+  "flat25_teacher": {
+    "accepted": false,
+    "reasons": [
+      "forward/direct: startup improvement insufficient",
+      "forward/direct: delayed posture excursion or incomplete 25 seconds"
+    ],
+    "baseline": "V9_44711_teacher",
+    "candidate": "V13_45011_teacher",
+    "final": false,
+    "protocol": "flat25_80m",
+    "fixed_cases_not_random_success_rate": true,
+    "baseline_completions": 20,
+    "candidate_completions": 20
+  },
+  "accepted": false,
+  "evidence": "normal wave reset parity r3 + unchanged flat25; unchanged gate thresholds"
+}

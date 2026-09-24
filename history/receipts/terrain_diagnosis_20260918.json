@@ -1,0 +1,1002 @@
+{
+  "time": "2026-09-18T00:47:53.639607+08:00",
+  "status": {
+    "state": "training",
+    "completed_updates": 11833,
+    "seconds": 6.1005823612213135,
+    "terrain": 4.881103515625,
+    "value": 0.021127640083432198,
+    "surrogate": 0.05484007280319929,
+    "entropy": 3.597652626037598,
+    "mean_latent_loss": 0.0025309055927209556,
+    "mean_load_balance_loss": 5.625716412396287e-05
+  },
+  "checkpoint": "model_11500.pt",
+  "agent_algorithm": {
+    "class_name": "MoECTS",
+    "num_learning_epochs": "5",
+    "num_mini_batches": "4",
+    "learning_rate": "0.001",
+    "schedule": "adaptive",
+    "gamma": "0.99",
+    "lam": "0.95",
+    "entropy_coef": "0.01",
+    "desired_kl": "0.01",
+    "max_grad_norm": "1.0",
+    "value_loss_coef": "1.0",
+    "use_clipped_value_loss": "true",
+    "clip_param": "0.2",
+    "normalize_advantage_per_mini_batch": "false",
+    "rnd_cfg": "null",
+    "symmetry_cfg": "null",
+    "load_balance_coef": "0.01",
+    "student_encoder_learning_rate": "0.001",
+    "betas": [
+      "0.9",
+      "0.999"
+    ],
+    "weight_decay": "0.0",
+    "teacher_env_ratio": "0.75"
+  },
+  "terrain_config": {
+    "class_type": "robot_lab.tasks.go2.mdp.terrains:PerSubTerrainSlopeThresholdGenerator",
+    "seed": "null",
+    "curriculum": "true",
+    "size": [
+      "9.0",
+      "9.0"
+    ],
+    "border_width": "25.0",
+    "border_height": "1.0",
+    "num_rows": "10",
+    "num_cols": "20",
+    "color_scheme": "none",
+    "horizontal_scale": "0.1",
+    "vertical_scale": "0.005",
+    "slope_threshold": "0.75",
+    "sub_terrains": {
+      "wave": {
+        "function": "robot_lab.tasks.go2.mdp.terrains:wave_terrain",
+        "proportion": "0.05",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null",
+        "border_width": "0.0",
+        "horizontal_scale": "0.1",
+        "vertical_scale": "0.005",
+        "slope_threshold": "null",
+        "amplitude_range": [
+          "0.1",
+          "0.28"
+        ],
+        "num_waves": "5",
+        "noise_range": [
+          "-0.05",
+          "0.05"
+        ],
+        "noise_step": "0.005",
+        "downsampled_scale": "0.2",
+        "slope_threshold_override": "10.0"
+      },
+      "slope_up": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": "0.1",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null",
+        "border_width": "0.0",
+        "horizontal_scale": "0.1",
+        "vertical_scale": "0.005",
+        "slope_threshold": "null",
+        "slope_range": [
+          "0.1",
+          "0.568"
+        ],
+        "platform_width": "3.0",
+        "inverted": "true",
+        "slope_threshold_override": "10.0"
+      },
+      "slope_down": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": "0.1",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null",
+        "border_width": "0.0",
+        "horizontal_scale": "0.1",
+        "vertical_scale": "0.005",
+        "slope_threshold": "null",
+        "slope_range": [
+          "0.1",
+          "0.568"
+        ],
+        "platform_width": "3.0",
+        "inverted": "false",
+        "slope_threshold_override": "10.0"
+      },
+      "rough_slope": {
+        "function": "robot_lab.tasks.go2.mdp.terrains:rough_slope_terrain",
+        "proportion": "0.05",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null",
+        "border_width": "0.0",
+        "horizontal_scale": "0.1",
+        "vertical_scale": "0.005",
+        "slope_threshold": "null",
+        "slope_range": [
+          "0.1",
+          "0.568"
+        ],
+        "platform_width": "3.0",
+        "inverted": "false",
+        "noise_range": [
+          "-0.05",
+          "0.05"
+        ],
+        "noise_step": "0.005",
+        "downsampled_scale": "0.2",
+        "slope_threshold_override": "10.0"
+      },
+      "stairs_up": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_stairs_terrain",
+        "proportion": "0.25",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null",
+        "border_width": "0.0",
+        "horizontal_scale": "0.1",
+        "vertical_scale": "0.005",
+        "slope_threshold": "null",
+        "step_height_range": [
+          "0.05",
+          "0.257"
+        ],
+        "step_width": "0.31",
+        "platform_width": "3.0",
+        "inverted": "true",
+        "slope_threshold_override": "0.25"
+      },
+      "stairs_down": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_stairs_terrain",
+        "proportion": "0.1",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null",
+        "border_width": "0.0",
+        "horizontal_scale": "0.1",
+        "vertical_scale": "0.005",
+        "slope_threshold": "null",
+        "step_height_range": [
+          "0.05",
+          "0.257"
+        ],
+        "step_width": "0.31",
+        "platform_width": "3.0",
+        "inverted": "false",
+        "slope_threshold_override": "0.25"
+      },
+      "obstacles": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:discrete_obstacles_terrain",
+        "proportion": "0.2",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null",
+        "border_width": "0.0",
+        "horizontal_scale": "0.1",
+        "vertical_scale": "0.005",
+        "slope_threshold": "null",
+        "obstacle_height_mode": "choice",
+        "obstacle_width_range": [
+          "1.0",
+          "2.0"
+        ],
+        "obstacle_height_range": [
+          "0.05",
+          "0.275"
+        ],
+        "num_obstacles": "20",
+        "platform_width": "3.0",
+        "slope_threshold_override": "0.25"
+      },
+      "stepping_stones": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:stepping_stones_terrain",
+        "proportion": "0.0",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null",
+        "border_width": "0.0",
+        "horizontal_scale": "0.1",
+        "vertical_scale": "0.005",
+        "slope_threshold": "null",
+        "stone_height_max": "0.0",
+        "stone_width_range": [
+          "0.075",
+          "1.575"
+        ],
+        "stone_distance_range": [
+          "0.05",
+          "0.1"
+        ],
+        "holes_depth": "-10.0",
+        "platform_width": "4.0",
+        "slope_threshold_override": "0.25"
+      },
+      "gap": {
+        "function": "isaaclab.terrains.trimesh.mesh_terrains:gap_terrain",
+        "proportion": "0.0",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null",
+        "gap_width_range": [
+          "0.0",
+          "0.9"
+        ],
+        "platform_width": "3.0"
+      },
+      "flat": {
+        "function": "isaaclab.terrains.trimesh.mesh_terrains:flat_terrain",
+        "proportion": "0.15",
+        "size": [
+          "10.0",
+          "10.0"
+        ],
+        "flat_patch_sampling": "null"
+      }
+    },
+    "difficulty_range": [
+      "0.0",
+      "1.0"
+    ],
+    "use_cache": "false",
+    "cache_dir": "/tmp/isaaclab/terrains",
+    "sub_terrain_border_width": "0.5",
+    "use_gym_difficulty": "false"
+  },
+  "by_column": {
+    "0": {
+      "n": 205,
+      "mean": 5.746341228485107,
+      "counts": [
+        7,
+        7,
+        7,
+        22,
+        20,
+        17,
+        33,
+        33,
+        34,
+        25
+      ]
+    },
+    "1": {
+      "n": 205,
+      "mean": 6.326829433441162,
+      "counts": [
+        3,
+        3,
+        4,
+        4,
+        13,
+        29,
+        41,
+        45,
+        51,
+        12
+      ]
+    },
+    "2": {
+      "n": 205,
+      "mean": 6.092682838439941,
+      "counts": [
+        3,
+        2,
+        5,
+        11,
+        19,
+        34,
+        39,
+        37,
+        30,
+        25
+      ]
+    },
+    "3": {
+      "n": 205,
+      "mean": 5.297561168670654,
+      "counts": [
+        5,
+        15,
+        16,
+        18,
+        25,
+        22,
+        28,
+        25,
+        27,
+        24
+      ]
+    },
+    "4": {
+      "n": 205,
+      "mean": 5.546341419219971,
+      "counts": [
+        8,
+        14,
+        8,
+        21,
+        17,
+        24,
+        22,
+        33,
+        29,
+        29
+      ]
+    },
+    "5": {
+      "n": 204,
+      "mean": 5.426470756530762,
+      "counts": [
+        8,
+        15,
+        12,
+        17,
+        21,
+        25,
+        26,
+        23,
+        22,
+        35
+      ]
+    },
+    "6": {
+      "n": 205,
+      "mean": 2.360975503921509,
+      "counts": [
+        23,
+        36,
+        47,
+        52,
+        37,
+        10,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "7": {
+      "n": 205,
+      "mean": 2.473170757293701,
+      "counts": [
+        21,
+        40,
+        40,
+        52,
+        31,
+        19,
+        2,
+        0,
+        0,
+        0
+      ]
+    },
+    "8": {
+      "n": 205,
+      "mean": 2.7853658199310303,
+      "counts": [
+        12,
+        37,
+        37,
+        56,
+        28,
+        30,
+        5,
+        0,
+        0,
+        0
+      ]
+    },
+    "9": {
+      "n": 205,
+      "mean": 2.487804889678955,
+      "counts": [
+        16,
+        40,
+        46,
+        54,
+        33,
+        12,
+        4,
+        0,
+        0,
+        0
+      ]
+    },
+    "10": {
+      "n": 204,
+      "mean": 2.3578431606292725,
+      "counts": [
+        23,
+        29,
+        63,
+        50,
+        23,
+        12,
+        4,
+        0,
+        0,
+        0
+      ]
+    },
+    "11": {
+      "n": 205,
+      "mean": 5.034146308898926,
+      "counts": [
+        11,
+        21,
+        12,
+        16,
+        27,
+        22,
+        27,
+        17,
+        28,
+        24
+      ]
+    },
+    "12": {
+      "n": 205,
+      "mean": 5.297561168670654,
+      "counts": [
+        3,
+        16,
+        12,
+        18,
+        30,
+        26,
+        31,
+        22,
+        21,
+        26
+      ]
+    },
+    "13": {
+      "n": 205,
+      "mean": 5.800000190734863,
+      "counts": [
+        6,
+        10,
+        13,
+        7,
+        20,
+        22,
+        36,
+        30,
+        33,
+        28
+      ]
+    },
+    "14": {
+      "n": 205,
+      "mean": 6.141463279724121,
+      "counts": [
+        2,
+        8,
+        12,
+        9,
+        12,
+        21,
+        34,
+        39,
+        42,
+        26
+      ]
+    },
+    "15": {
+      "n": 204,
+      "mean": 5.75,
+      "counts": [
+        5,
+        9,
+        11,
+        15,
+        21,
+        24,
+        26,
+        32,
+        36,
+        25
+      ]
+    },
+    "16": {
+      "n": 205,
+      "mean": 5.985365867614746,
+      "counts": [
+        3,
+        5,
+        11,
+        10,
+        21,
+        26,
+        35,
+        35,
+        30,
+        29
+      ]
+    },
+    "17": {
+      "n": 205,
+      "mean": 5.624390125274658,
+      "counts": [
+        8,
+        8,
+        10,
+        16,
+        27,
+        21,
+        27,
+        32,
+        26,
+        30
+      ]
+    },
+    "18": {
+      "n": 205,
+      "mean": 5.814634323120117,
+      "counts": [
+        4,
+        6,
+        13,
+        20,
+        25,
+        15,
+        23,
+        36,
+        32,
+        31
+      ]
+    },
+    "19": {
+      "n": 204,
+      "mean": 5.421568393707275,
+      "counts": [
+        9,
+        14,
+        8,
+        17,
+        22,
+        21,
+        21,
+        48,
+        26,
+        18
+      ]
+    }
+  },
+  "by_policy": {
+    "teacher": {
+      "mean": 4.891601560482134,
+      "n": 3072,
+      "assignment": "env index % 4 == 0 is student; all other indices are teacher"
+    },
+    "student": {
+      "mean": 4.879882825072855,
+      "n": 1024,
+      "assignment": "env index % 4 == 0 is student; all other indices are teacher"
+    }
+  },
+  "metrics": {
+    "Episode_Reward/track_lin_vel_xy_exp": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 1.79174818444252
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 1.7892862062454225
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 1.8017395806169796
+      }
+    },
+    "Episode_Reward/track_ang_vel_z_exp": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 0.8813780401945114
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 0.883458235502243
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 0.8885151752811706
+      }
+    },
+    "Episode_Reward/lin_vel_z_l2": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 0.0
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 0.0
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 0.0
+      }
+    },
+    "Episode_Reward/ang_vel_xy_l2": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.02857485519349575
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.027617297425866126
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.027109912340111005
+      }
+    },
+    "Episode_Reward/joint_acc_l2": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.11589533407986165
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.11535500393807888
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.11172060043868905
+      }
+    },
+    "Episode_Reward/joint_power": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.003664258118253201
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.00371781527902931
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.003572215694895092
+      }
+    },
+    "Episode_Reward/joint_torques_l2": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.26688306385278704
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.26921702128648756
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.26664007736180356
+      }
+    },
+    "Episode_Reward/base_height_l2": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.013664273984730243
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.013808704882860184
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.014333203047357811
+      }
+    },
+    "Episode_Reward/action_rate_l2": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.03325620569288731
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.032795801639556886
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.03138931899214398
+      }
+    },
+    "Episode_Reward/action_smoothness_l2": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.07467985662817955
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.07332484686374664
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.0702509895457836
+      }
+    },
+    "Episode_Reward/undesired_contacts": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.02374836054816842
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.024071659687906505
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.02145965830673893
+      }
+    },
+    "Episode_Reward/joint_pos_limits": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.011028768375515937
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.010884341780096292
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.01171112404076639
+      }
+    },
+    "Episode_Reward/feet_regulation": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.031141240898519756
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.030632639314979313
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.029520142789997025
+      }
+    },
+    "Episode_Reward/hip_pos_penalty_l1": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.018410720821470022
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.018963608145713805
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.018531700941973817
+      }
+    },
+    "Episode_Reward/joint_pos_penalty_l1": {
+      "9501-10000": {
+        "n": 500,
+        "mean": -0.020096012085676192
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": -0.020429044220596552
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": -0.019923209642132598
+      }
+    },
+    "Episode_Termination/time_out": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 0.9842150856256485
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 0.9827471077442169
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 0.9866620378936836
+      }
+    },
+    "Episode_Termination/illegal_contact": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 0.015784932855516673
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 0.01727834113687277
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 0.01333797889242986
+      }
+    },
+    "Loss/value": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 0.01360369210317731
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 0.013777175663039088
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 0.033172562235999785
+      }
+    },
+    "Loss/surrogate": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 0.031136754705454222
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 0.030811445552652004
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 0.037739896653275824
+      }
+    },
+    "Loss/entropy": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 3.896189245223999
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 3.737998647212982
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 3.3762587758595357
+      }
+    },
+    "Loss/mean_latent_loss": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 0.00286922232247889
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 0.0027237206785939634
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 0.0026298145635310047
+      }
+    },
+    "Loss/mean_load_balance_loss": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 7.020022767028422e-05
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 6.780838084159768e-05
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 6.476610527745229e-05
+      }
+    },
+    "Loss/learning_rate": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 0.00022153482760768384
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 0.00020878630662627984
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 4.455709671140697e-05
+      }
+    },
+    "Train/mean_teacher_reward": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 51.475710975646976
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 51.4768391494751
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 52.378026928016524
+      }
+    },
+    "Train/mean_teacher_episode_length": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 1241.3634174804688
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 1240.0431201171875
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 1243.681885496585
+      }
+    },
+    "Train/mean_student_reward": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 48.67731181335449
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 48.88905032348633
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 49.45629359719282
+      }
+    },
+    "Train/mean_student_episode_length": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 1235.6877795410155
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 1236.9704995117188
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 1238.7782329627853
+      }
+    },
+    "Metrics/base_velocity/max_command_x": {
+      "9501-10000": {
+        "n": 500,
+        "mean": 0.5
+      },
+      "10501-11000": {
+        "n": 500,
+        "mean": 0.5
+      },
+      "11501-12000": {
+        "n": 334,
+        "mean": 0.5
+      }
+    }
+  }
+}

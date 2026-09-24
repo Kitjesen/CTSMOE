@@ -1,0 +1,35 @@
+{
+  "state": "behavior_rejected_review_complete",
+  "updated_local": "2026-09-21 20:53:13",
+  "remote_root": "/root/cts-early-restart-v14-20260921",
+  "original_root": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917",
+  "source_completed_updates": 31831,
+  "source_checkpoint": "runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+  "baseline_complete": true,
+  "baseline_cases": {
+    "terrain83": 332,
+    "flat25": 80
+  },
+  "preflight": {
+    "driver_pid": 293562,
+    "simulation_pid": 293565,
+    "steps": 3000,
+    "optimizer_updates": 0,
+    "finalized": true
+  },
+  "training_started": true,
+  "budget": {
+    "smoke": 16,
+    "pilot": 284,
+    "conditional_continuation": 700,
+    "maximum": 1000
+  },
+  "automation_active": false,
+  "last_notified": "v14_300_review_flat_improved_terrain_regressions_stopped",
+  "notes": "Stopped at32131 after300 new updates. Four behavior gates rejected. Full traces and joint/wheel metrics retrieved.51 candidate target-step flags are terminal reset synchronization artifacts; independent physical/tracking regressions remain. No700 continuation. Next single-factor ablation prepared only. cts automation deleted after bounded review.",
+  "completed_updates": 32131,
+  "pipeline_pid": 294685,
+  "training_pid": 295231,
+  "recent_iteration_seconds": 7.030106115341186,
+  "review_file": "REVIEW_300.md"
+}

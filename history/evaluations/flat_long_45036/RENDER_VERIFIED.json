@@ -1,0 +1,42 @@
+{
+  "method": "Actual Isaac rollout; PyBullet TinyRenderer pose replay only",
+  "physics_steps_in_renderer": 0,
+  "source_trace_sha256": "ca3bfb45ce40b9463ec0e1955dd50942af8118d9498f374e40efbb8aebc0baea",
+  "source_finalized_sha256": "73d04b7e0aece61701906d81008e0101d102ab91464d52b6b1c53c079cbc29f3",
+  "terrain_obj": "terrain_0.obj",
+  "terrain_obj_sha256": "f3a31fd47630ffb961525f31c19d722bbfeee7b00cf19eb16009baffc0cf2b46",
+  "terrain_bounds_m": [
+    [
+      -22.5,
+      -13.5,
+      0.0
+    ],
+    [
+      175.5,
+      13.5,
+      0.0
+    ]
+  ],
+  "urdf": "D:\\inovxio\\brain\\train\\rough\\cts_moe_pit_heading_20260924\\thunder\\source\\doso_train\\doso_train\\data\\Robots\\DOSO\\thunder\\urdf\\thunder_v4.urdf",
+  "urdf_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+  "urdf_mesh_root": "D:\\inovxio\\brain\\train\\rough\\cts_moe_pit_heading_20260924\\thunder\\source\\doso_train\\doso_train\\data\\Robots\\DOSO\\thunder",
+  "video": "flat_straight_30s.mp4",
+  "video_sha256": "9ac6357b9ba7da5fbf500393f8f3c134618b36cdb99fe300eed286f4d567f359",
+  "fps": 25,
+  "source_dt_s": 0.02,
+  "source_steps": 1500,
+  "maximum_planned_source_steps": 1500,
+  "rendered_frames": 750,
+  "rendered_duration_s": 30.0,
+  "first_termination": null,
+  "last_source_step": 1499,
+  "stopped_at_first_termination": false,
+  "terminal_freeze_frames": 0,
+  "interpolated_frames": 0,
+  "max_fk_error_m": 1.9073492148890202e-05,
+  "fk_limit_m": 0.003,
+  "output_resolution": [
+    960,
+    600
+  ]
+}

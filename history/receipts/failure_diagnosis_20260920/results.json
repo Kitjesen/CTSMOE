@@ -1,0 +1,4423 @@
+{
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_individualpit_20260919/model_35500.pt",
+  "completed_updates": 35501,
+  "protocol": "first episode, fixed +0.6m/s, yaw command zero; training randomization and observation noise retained; action noise split; distinct randomized cases, not paired causal ablation",
+  "cases": [
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": false,
+      "repeat": 0,
+      "seconds": 5.9,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.009735107421875,
+        1.242828369140625,
+        0.23166009783744812
+      ],
+      "vx_mae": 0.22597861289978027,
+      "lateral_max": 1.242828369140625,
+      "peak_speed": 32.786033630371094,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.04576271027326584,
+      "material_mean": [
+        0.9696383476257324,
+        0.7634926438331604,
+        0.2957737445831299
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": false,
+      "repeat": 1,
+      "seconds": 6.6000000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.013187408447266,
+        0.134063720703125,
+        0.1931743025779724
+      ],
+      "vx_mae": 0.09582748264074326,
+      "lateral_max": 0.3316192626953125,
+      "peak_speed": 26.401832580566406,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.0030303029343485832,
+      "material_mean": [
+        0.9484047293663025,
+        0.6126682162284851,
+        0.30060088634490967
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": false,
+      "repeat": 2,
+      "seconds": 7.3,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.008609771728516,
+        -0.4994049072265625,
+        0.20968103408813477
+      ],
+      "vx_mae": 0.08328286558389664,
+      "lateral_max": 0.5165252685546875,
+      "peak_speed": 28.984485626220703,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.005479452200233936,
+      "material_mean": [
+        1.0279252529144287,
+        0.8144729137420654,
+        0.27287527918815613
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": false,
+      "repeat": 3,
+      "seconds": 9.06,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.004264831542969,
+        4.7738800048828125,
+        0.2537269592285156
+      ],
+      "vx_mae": 0.15920116007328033,
+      "lateral_max": 4.7738800048828125,
+      "peak_speed": 30.000043869018555,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.008830022066831589,
+      "material_mean": [
+        1.0274769067764282,
+        0.7562667727470398,
+        0.26079174876213074
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": false,
+      "repeat": 4,
+      "seconds": 0.1,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        0.3140716552734375,
+        -0.0196990966796875,
+        0.29354000091552734
+      ],
+      "vx_mae": 0.8249152898788452,
+      "lateral_max": 0.0196990966796875,
+      "peak_speed": 56.440269470214844,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.20000000298023224,
+      "material_mean": [
+        0.9631079435348511,
+        0.729300320148468,
+        0.2640613615512848
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": false,
+      "repeat": 5,
+      "seconds": 6.92,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006252288818359,
+        0.72161865234375,
+        0.2303975224494934
+      ],
+      "vx_mae": 0.12371455878019333,
+      "lateral_max": 0.72161865234375,
+      "peak_speed": 30.000032424926758,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.013005780056118965,
+      "material_mean": [
+        0.7926996946334839,
+        0.6721467971801758,
+        0.3115638792514801
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": false,
+      "repeat": 6,
+      "seconds": 8.48,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.002231597900391,
+        0.2660980224609375,
+        0.16670003533363342
+      ],
+      "vx_mae": 0.1563226878643036,
+      "lateral_max": 0.2660980224609375,
+      "peak_speed": 30.594953536987305,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.007075471803545952,
+      "material_mean": [
+        0.8482744097709656,
+        0.6801993250846863,
+        0.2516939342021942
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": false,
+      "repeat": 7,
+      "seconds": 7.08,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.008857727050781,
+        -0.19744873046875,
+        0.18398654460906982
+      ],
+      "vx_mae": 0.18060310184955597,
+      "lateral_max": 0.3985748291015625,
+      "peak_speed": 30.000158309936523,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.0021186440717428923,
+      "material_mean": [
+        1.1479849815368652,
+        0.8937505483627319,
+        0.2897047996520996
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": true,
+      "repeat": 0,
+      "seconds": 6.1000000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.007564544677734,
+        -0.244720458984375,
+        0.19298303127288818
+      ],
+      "vx_mae": 0.2056034803390503,
+      "lateral_max": 0.244720458984375,
+      "peak_speed": 30.0001277923584,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.009016393683850765,
+      "material_mean": [
+        1.101943016052246,
+        0.7385687828063965,
+        0.279556006193161
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": true,
+      "repeat": 1,
+      "seconds": 6.46,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.015087127685547,
+        -0.1806488037109375,
+        0.1465182900428772
+      ],
+      "vx_mae": 0.17533767223358154,
+      "lateral_max": 0.248992919921875,
+      "peak_speed": 36.14695739746094,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.011609907262027264,
+      "material_mean": [
+        0.9202185273170471,
+        0.6618695259094238,
+        0.281997948884964
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": true,
+      "repeat": 2,
+      "seconds": 8.02,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006446838378906,
+        1.5494232177734375,
+        0.21791502833366394
+      ],
+      "vx_mae": 0.1310224086046219,
+      "lateral_max": 1.5494232177734375,
+      "peak_speed": 30.00060272216797,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.016209475696086884,
+      "material_mean": [
+        0.9110015034675598,
+        0.6501968502998352,
+        0.3068847060203552
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": true,
+      "repeat": 3,
+      "seconds": 8.14,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0019683837890625,
+        -0.931976318359375,
+        0.21497637033462524
+      ],
+      "vx_mae": 0.12903757393360138,
+      "lateral_max": 0.931976318359375,
+      "peak_speed": 30.00006103515625,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.019041769206523895,
+      "material_mean": [
+        0.9081864356994629,
+        0.6366487741470337,
+        0.30857041478157043
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": true,
+      "repeat": 4,
+      "seconds": 6.66,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.001110076904297,
+        0.1332855224609375,
+        0.19815179705619812
+      ],
+      "vx_mae": 0.1507250815629959,
+      "lateral_max": 0.33905029296875,
+      "peak_speed": 30.000518798828125,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.007507507689297199,
+      "material_mean": [
+        0.960279643535614,
+        0.5971683263778687,
+        0.24939356744289398
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": true,
+      "repeat": 5,
+      "seconds": 6.5600000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0028839111328125,
+        0.100830078125,
+        0.16809946298599243
+      ],
+      "vx_mae": 0.16030457615852356,
+      "lateral_max": 0.2735443115234375,
+      "peak_speed": 25.784971237182617,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.005335365887731314,
+      "material_mean": [
+        1.030802845954895,
+        0.7130540013313293,
+        0.3171735107898712
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": true,
+      "repeat": 6,
+      "seconds": 6.82,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.000785827636719,
+        0.156402587890625,
+        0.18212273716926575
+      ],
+      "vx_mae": 0.11169464886188507,
+      "lateral_max": 0.3128204345703125,
+      "peak_speed": 30.000064849853516,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.013929618522524834,
+      "material_mean": [
+        0.9399110674858093,
+        0.6133617758750916,
+        0.3302813172340393
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 3,
+      "noise": true,
+      "repeat": 7,
+      "seconds": 7.68,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006134033203125,
+        -1.157012939453125,
+        0.2220768928527832
+      ],
+      "vx_mae": 0.1127064898610115,
+      "lateral_max": 1.157012939453125,
+      "peak_speed": 30.0000057220459,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.008463541977107525,
+      "material_mean": [
+        0.9084094166755676,
+        0.7223425507545471,
+        0.3300674259662628
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": false,
+      "repeat": 0,
+      "seconds": 6.4,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006107330322266,
+        -0.757659912109375,
+        0.16878943145275116
+      ],
+      "vx_mae": 0.13407400250434875,
+      "lateral_max": 0.7726593017578125,
+      "peak_speed": 30.000154495239258,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.02109375037252903,
+      "material_mean": [
+        0.940147876739502,
+        0.6045696139335632,
+        0.2702139914035797
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": false,
+      "repeat": 1,
+      "seconds": 7.9,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.000133514404297,
+        -1.1810302734375,
+        0.17186667025089264
+      ],
+      "vx_mae": 0.08811748027801514,
+      "lateral_max": 1.1810302734375,
+      "peak_speed": 30.000024795532227,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.005063291173428297,
+      "material_mean": [
+        0.8769475221633911,
+        0.5555755496025085,
+        0.29688388109207153
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": false,
+      "repeat": 2,
+      "seconds": 6.72,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.004703521728516,
+        -0.0507354736328125,
+        0.11976353824138641
+      ],
+      "vx_mae": 0.17683415114879608,
+      "lateral_max": 0.19500732421875,
+      "peak_speed": 28.57620620727539,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.0066964286379516125,
+      "material_mean": [
+        1.0530250072479248,
+        0.7542492151260376,
+        0.2748848497867584
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": false,
+      "repeat": 3,
+      "seconds": 6.76,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.007183074951172,
+        1.4122161865234375,
+        0.1511920839548111
+      ],
+      "vx_mae": 0.15790113806724548,
+      "lateral_max": 1.4122161865234375,
+      "peak_speed": 39.372066497802734,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.02662721835076809,
+      "material_mean": [
+        0.9399362802505493,
+        0.7966969609260559,
+        0.28033602237701416
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": false,
+      "repeat": 4,
+      "seconds": 6.5600000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.003330230712891,
+        1.259002685546875,
+        0.17885281145572662
+      ],
+      "vx_mae": 0.1268261820077896,
+      "lateral_max": 1.259002685546875,
+      "peak_speed": 29.859935760498047,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.010670731775462627,
+      "material_mean": [
+        0.8909210562705994,
+        0.6351523399353027,
+        0.2914944291114807
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": false,
+      "repeat": 5,
+      "seconds": 6.18,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.015350341796875,
+        0.2115631103515625,
+        0.09717805683612823
+      ],
+      "vx_mae": 0.1678762137889862,
+      "lateral_max": 0.3578643798828125,
+      "peak_speed": 28.51987075805664,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.014563106931746006,
+      "material_mean": [
+        0.9591074585914612,
+        0.6407333016395569,
+        0.28988802433013916
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": false,
+      "repeat": 6,
+      "seconds": 6.4,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.000873565673828,
+        1.6573333740234375,
+        0.11356057226657867
+      ],
+      "vx_mae": 0.1722097098827362,
+      "lateral_max": 1.6573333740234375,
+      "peak_speed": 29.469688415527344,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.0062500000931322575,
+      "material_mean": [
+        1.109758973121643,
+        0.8992773294448853,
+        0.26775333285331726
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": false,
+      "repeat": 7,
+      "seconds": 6.5200000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0088653564453125,
+        -0.4919891357421875,
+        0.17291851341724396
+      ],
+      "vx_mae": 0.11823993176221848,
+      "lateral_max": 0.74798583984375,
+      "peak_speed": 30.000152587890625,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.05751533806324005,
+      "material_mean": [
+        0.9762341380119324,
+        0.7048888802528381,
+        0.285861074924469
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": true,
+      "repeat": 0,
+      "seconds": 5.5,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.016513824462891,
+        0.320709228515625,
+        0.13141219317913055
+      ],
+      "vx_mae": 0.21682816743850708,
+      "lateral_max": 0.320709228515625,
+      "peak_speed": 30.101951599121094,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.023636363446712494,
+      "material_mean": [
+        1.043747901916504,
+        0.8390421867370605,
+        0.29312771558761597
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": true,
+      "repeat": 1,
+      "seconds": 7.0600000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006114959716797,
+        0.254791259765625,
+        0.12344102561473846
+      ],
+      "vx_mae": 0.18038854002952576,
+      "lateral_max": 0.333984375,
+      "peak_speed": 30.0001163482666,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.04036827012896538,
+      "material_mean": [
+        1.0228283405303955,
+        0.6632987856864929,
+        0.2592645585536957
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": true,
+      "repeat": 2,
+      "seconds": 6.2,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.000030517578125,
+        0.294647216796875,
+        0.12517918646335602
+      ],
+      "vx_mae": 0.14027976989746094,
+      "lateral_max": 0.34906005859375,
+      "peak_speed": 33.569557189941406,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.020967742428183556,
+      "material_mean": [
+        0.7942302823066711,
+        0.6152371764183044,
+        0.285819411277771
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": true,
+      "repeat": 3,
+      "seconds": 6.42,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        3.6265640258789062,
+        -0.2720489501953125,
+        -0.024746492505073547
+      ],
+      "vx_mae": 0.24503105878829956,
+      "lateral_max": 0.3679046630859375,
+      "peak_speed": 30.00311851501465,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.03894080966711044,
+      "material_mean": [
+        1.1209694147109985,
+        0.7631030678749084,
+        0.2928597033023834
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": true,
+      "repeat": 4,
+      "seconds": 4.5,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.1349105834960938,
+        -0.2180633544921875,
+        -0.06494668126106262
+      ],
+      "vx_mae": 0.23436374962329865,
+      "lateral_max": 0.31732177734375,
+      "peak_speed": 30.002899169921875,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.03222222253680229,
+      "material_mean": [
+        0.9095888733863831,
+        0.690591037273407,
+        0.29443371295928955
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": true,
+      "repeat": 5,
+      "seconds": 7.46,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.011188507080078,
+        -1.1192474365234375,
+        0.15546102821826935
+      ],
+      "vx_mae": 0.19677263498306274,
+      "lateral_max": 1.15533447265625,
+      "peak_speed": 33.35878372192383,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.019436996430158615,
+      "material_mean": [
+        0.9723283648490906,
+        0.7299033403396606,
+        0.27573177218437195
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": true,
+      "repeat": 6,
+      "seconds": 6.8,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.005176544189453,
+        0.0726776123046875,
+        0.11062304675579071
+      ],
+      "vx_mae": 0.17695319652557373,
+      "lateral_max": 0.374176025390625,
+      "peak_speed": 29.746002197265625,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.0029411765281111,
+      "material_mean": [
+        0.9860327839851379,
+        0.7836151123046875,
+        0.29431915283203125
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 6,
+      "noise": true,
+      "repeat": 7,
+      "seconds": 6.8,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0004730224609375,
+        -0.7906036376953125,
+        0.17140798270702362
+      ],
+      "vx_mae": 0.11420287191867828,
+      "lateral_max": 0.7906036376953125,
+      "peak_speed": 30.0008487701416,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.0058823530562222,
+      "material_mean": [
+        0.9573498964309692,
+        0.7738118767738342,
+        0.247292622923851
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": false,
+      "repeat": 0,
+      "seconds": 7.48,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.011518478393555,
+        1.1335296630859375,
+        0.10049945116043091
+      ],
+      "vx_mae": 0.17335353791713715,
+      "lateral_max": 1.1335296630859375,
+      "peak_speed": 30.06784439086914,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.00935828872025013,
+      "material_mean": [
+        1.1351251602172852,
+        0.8507288694381714,
+        0.26942259073257446
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": false,
+      "repeat": 1,
+      "seconds": 6.26,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.010590553283691,
+        0.5745086669921875,
+        0.0656532347202301
+      ],
+      "vx_mae": 0.14095811545848846,
+      "lateral_max": 0.5745086669921875,
+      "peak_speed": 28.75215721130371,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.008785942569375038,
+      "material_mean": [
+        0.8945261240005493,
+        0.640730619430542,
+        0.3035343587398529
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": false,
+      "repeat": 2,
+      "seconds": 0.9,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        0.3602733612060547,
+        -0.301727294921875,
+        -0.10145135223865509
+      ],
+      "vx_mae": 0.6245071887969971,
+      "lateral_max": 0.3626251220703125,
+      "peak_speed": 29.97573471069336,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.04444444552063942,
+      "material_mean": [
+        0.9722082018852234,
+        0.6762968301773071,
+        0.2770764231681824
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": false,
+      "repeat": 3,
+      "seconds": 6.72,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.00471305847168,
+        -1.7274932861328125,
+        0.04398593306541443
+      ],
+      "vx_mae": 0.16694723069667816,
+      "lateral_max": 1.7274932861328125,
+      "peak_speed": 30.000503540039062,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.015625,
+      "material_mean": [
+        1.0417697429656982,
+        0.7741091847419739,
+        0.2540360391139984
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": false,
+      "repeat": 4,
+      "seconds": 5.72,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.010248184204102,
+        0.3609466552734375,
+        0.07637321949005127
+      ],
+      "vx_mae": 0.1996719092130661,
+      "lateral_max": 0.5263824462890625,
+      "peak_speed": 30.290802001953125,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.021853147074580193,
+      "material_mean": [
+        1.0060638189315796,
+        0.682711660861969,
+        0.3317326605319977
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": false,
+      "repeat": 5,
+      "seconds": 6.0200000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.000131607055664,
+        0.2718963623046875,
+        0.05808156728744507
+      ],
+      "vx_mae": 0.14459189772605896,
+      "lateral_max": 0.2718963623046875,
+      "peak_speed": 32.26319122314453,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.049003321677446365,
+      "material_mean": [
+        0.9164547324180603,
+        0.6403591632843018,
+        0.2340622991323471
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": false,
+      "repeat": 6,
+      "seconds": 6.34,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.012079238891602,
+        -0.2043609619140625,
+        0.04163619875907898
+      ],
+      "vx_mae": 0.18623384833335876,
+      "lateral_max": 0.2043609619140625,
+      "peak_speed": 30.000289916992188,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.030757097527384758,
+      "material_mean": [
+        0.8513339161872864,
+        0.5697134137153625,
+        0.277688592672348
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": false,
+      "repeat": 7,
+      "seconds": 1.62,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        0.8150663375854492,
+        -0.33984375,
+        -0.038598448038101196
+      ],
+      "vx_mae": 0.46162083745002747,
+      "lateral_max": 0.33984375,
+      "peak_speed": 30.65401840209961,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.1111111119389534,
+      "material_mean": [
+        1.0274182558059692,
+        0.7011783123016357,
+        0.29984644055366516
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": true,
+      "repeat": 0,
+      "seconds": 6.04,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.9696617126464844,
+        -1.95489501953125,
+        0.08028215169906616
+      ],
+      "vx_mae": 0.1678975522518158,
+      "lateral_max": 1.95489501953125,
+      "peak_speed": 32.86656951904297,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.024834437295794487,
+      "material_mean": [
+        0.9910848736763,
+        0.7825923562049866,
+        0.304718554019928
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": true,
+      "repeat": 1,
+      "seconds": 7.22,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.018462181091309,
+        0.0292205810546875,
+        0.06634408235549927
+      ],
+      "vx_mae": 0.1769319325685501,
+      "lateral_max": 0.1209716796875,
+      "peak_speed": 30.000259399414062,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.01800554059445858,
+      "material_mean": [
+        0.9340059161186218,
+        0.6903749704360962,
+        0.3142342269420624
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": true,
+      "repeat": 2,
+      "seconds": 6.5200000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.020837783813477,
+        0.077178955078125,
+        0.05025318264961243
+      ],
+      "vx_mae": 0.1775633543729782,
+      "lateral_max": 0.1603546142578125,
+      "peak_speed": 30.000080108642578,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.02990797534584999,
+      "material_mean": [
+        0.9804257750511169,
+        0.7901386618614197,
+        0.26609718799591064
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": true,
+      "repeat": 3,
+      "seconds": 6.8,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.002772331237793,
+        -0.1836700439453125,
+        0.053763002157211304
+      ],
+      "vx_mae": 0.12685973942279816,
+      "lateral_max": 0.22137451171875,
+      "peak_speed": 30.00064468383789,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.03750000149011612,
+      "material_mean": [
+        1.0708893537521362,
+        0.7494471669197083,
+        0.26644009351730347
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": true,
+      "repeat": 4,
+      "seconds": 6.92,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.005496025085449,
+        0.1121978759765625,
+        0.005215585231781006
+      ],
+      "vx_mae": 0.17062416672706604,
+      "lateral_max": 0.2092437744140625,
+      "peak_speed": 31.342952728271484,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.0202312134206295,
+      "material_mean": [
+        0.9635510444641113,
+        0.7228682041168213,
+        0.297480970621109
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": true,
+      "repeat": 5,
+      "seconds": 6.08,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.012663841247559,
+        0.1969757080078125,
+        0.03563079237937927
+      ],
+      "vx_mae": 0.15259690582752228,
+      "lateral_max": 0.2169952392578125,
+      "peak_speed": 30.000080108642578,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.02878289483487606,
+      "material_mean": [
+        1.0334596633911133,
+        0.7618812918663025,
+        0.2877069115638733
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": true,
+      "repeat": 6,
+      "seconds": 1.18,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        0.5002565383911133,
+        -0.51873779296875,
+        -0.03630894422531128
+      ],
+      "vx_mae": 0.45973074436187744,
+      "lateral_max": 0.5240936279296875,
+      "peak_speed": 28.449440002441406,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.08050847798585892,
+      "material_mean": [
+        0.9453761577606201,
+        0.7713658213615417,
+        0.27551591396331787
+      ]
+    },
+    {
+      "terrain": "wave",
+      "level": 9,
+      "noise": true,
+      "repeat": 7,
+      "seconds": 6.3,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.007449150085449,
+        -0.0205841064453125,
+        0.031701862812042236
+      ],
+      "vx_mae": 0.18067654967308044,
+      "lateral_max": 0.1577606201171875,
+      "peak_speed": 30.00020408630371,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.02301587350666523,
+      "material_mean": [
+        1.0784425735473633,
+        0.7591972947120667,
+        0.2806316912174225
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": false,
+      "repeat": 0,
+      "seconds": 7.44,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.012020111083984,
+        0.4994659423828125,
+        1.223008632659912
+      ],
+      "vx_mae": 0.09622323513031006,
+      "lateral_max": 0.7087249755859375,
+      "peak_speed": 30.003337860107422,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.07930107414722443,
+      "material_mean": [
+        0.9359362721443176,
+        0.7134044766426086,
+        0.28799664974212646
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": false,
+      "repeat": 1,
+      "seconds": 7.92,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.01324462890625,
+        0.73388671875,
+        1.2223117351531982
+      ],
+      "vx_mae": 0.15979869663715363,
+      "lateral_max": 0.828369140625,
+      "peak_speed": 30.37564468383789,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.06755050271749496,
+      "material_mean": [
+        0.8867476582527161,
+        0.6417713761329651,
+        0.3109772801399231
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": false,
+      "repeat": 2,
+      "seconds": 11.14,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.001182556152344,
+        -0.7844390869140625,
+        1.168314814567566
+      ],
+      "vx_mae": 0.25698214769363403,
+      "lateral_max": 0.7933349609375,
+      "peak_speed": 31.121295928955078,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.14497306942939758,
+      "material_mean": [
+        1.0134029388427734,
+        0.7776097655296326,
+        0.29642677307128906
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": false,
+      "repeat": 3,
+      "seconds": 24.46,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.004169464111328,
+        -0.7901153564453125,
+        1.2522406578063965
+      ],
+      "vx_mae": 0.42762234807014465,
+      "lateral_max": 0.7901153564453125,
+      "peak_speed": 30.000701904296875,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.16762059926986694,
+      "material_mean": [
+        0.9532902240753174,
+        0.6715088486671448,
+        0.27532246708869934
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": false,
+      "repeat": 4,
+      "seconds": 12.02,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0062713623046875,
+        -0.9637908935546875,
+        1.2029905319213867
+      ],
+      "vx_mae": 0.2904718816280365,
+      "lateral_max": 0.9637908935546875,
+      "peak_speed": 30.986845016479492,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.11522462218999863,
+      "material_mean": [
+        0.9728885293006897,
+        0.7111601829528809,
+        0.32508593797683716
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": false,
+      "repeat": 5,
+      "seconds": 0.14,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -0.2990074157714844,
+        0.3429412841796875,
+        0.48947980999946594
+      ],
+      "vx_mae": 0.7733853459358215,
+      "lateral_max": 0.3429412841796875,
+      "peak_speed": 56.70378875732422,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.0357142873108387,
+      "material_mean": [
+        1.073959231376648,
+        0.8133537769317627,
+        0.2946697771549225
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": false,
+      "repeat": 6,
+      "seconds": 8.44,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.004428863525391,
+        -1.3837432861328125,
+        1.2541881799697876
+      ],
+      "vx_mae": 0.11417339742183685,
+      "lateral_max": 1.3837432861328125,
+      "peak_speed": 30.000133514404297,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.06575829535722733,
+      "material_mean": [
+        1.0012686252593994,
+        0.8121762275695801,
+        0.270531564950943
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": false,
+      "repeat": 7,
+      "seconds": 8.68,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.004413604736328,
+        -0.7830352783203125,
+        1.2005622386932373
+      ],
+      "vx_mae": 0.16890929639339447,
+      "lateral_max": 0.7839813232421875,
+      "peak_speed": 23.79508399963379,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.06105990707874298,
+      "material_mean": [
+        0.8762115836143494,
+        0.655600905418396,
+        0.29500287771224976
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": true,
+      "repeat": 0,
+      "seconds": 10.72,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.002628326416016,
+        -1.17071533203125,
+        1.2810856103897095
+      ],
+      "vx_mae": 0.1615733951330185,
+      "lateral_max": 1.17071533203125,
+      "peak_speed": 30.00029754638672,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.11380597203969955,
+      "material_mean": [
+        0.8819913268089294,
+        0.6901391744613647,
+        0.3060992658138275
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": true,
+      "repeat": 1,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.5625534057617188,
+        -1.27783203125,
+        0.7796303033828735
+      ],
+      "vx_mae": 0.48221176862716675,
+      "lateral_max": 1.3368377685546875,
+      "peak_speed": 32.42563247680664,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.13439999520778656,
+      "material_mean": [
+        0.8122470378875732,
+        0.6539297699928284,
+        0.3213895559310913
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": true,
+      "repeat": 2,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.9109420776367188,
+        -1.43560791015625,
+        0.875786542892456
+      ],
+      "vx_mae": 0.4617052376270294,
+      "lateral_max": 1.43560791015625,
+      "peak_speed": 30.000635147094727,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.10840000212192535,
+      "material_mean": [
+        0.8648951649665833,
+        0.7163085341453552,
+        0.2754869759082794
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": true,
+      "repeat": 3,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        3.9565277099609375,
+        -2.3232879638671875,
+        1.1839556694030762
+      ],
+      "vx_mae": 0.3975283205509186,
+      "lateral_max": 2.3251953125,
+      "peak_speed": 32.9776725769043,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.1428000032901764,
+      "material_mean": [
+        1.1212340593338013,
+        0.8890330791473389,
+        0.2677341103553772
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": true,
+      "repeat": 4,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.802631378173828,
+        0.2270355224609375,
+        0.6834006905555725
+      ],
+      "vx_mae": 0.476024329662323,
+      "lateral_max": 0.6854705810546875,
+      "peak_speed": 31.60469627380371,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.12919999659061432,
+      "material_mean": [
+        0.7456355094909668,
+        0.6140596270561218,
+        0.31232473254203796
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": true,
+      "repeat": 5,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.8855552673339844,
+        -0.1920013427734375,
+        0.7251628041267395
+      ],
+      "vx_mae": 0.47808584570884705,
+      "lateral_max": 0.4875946044921875,
+      "peak_speed": 33.93506622314453,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.18520000576972961,
+      "material_mean": [
+        0.8301624655723572,
+        0.6835035085678101,
+        0.29377174377441406
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": true,
+      "repeat": 6,
+      "seconds": 3.22,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        1.442108154296875,
+        -0.218902587890625,
+        0.446733295917511
+      ],
+      "vx_mae": 0.08997597545385361,
+      "lateral_max": 0.427154541015625,
+      "peak_speed": 50.35558319091797,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.006211180239915848,
+      "material_mean": [
+        0.9589667320251465,
+        0.7769677639007568,
+        0.32258710265159607
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 5,
+      "noise": true,
+      "repeat": 7,
+      "seconds": 10.6,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.002723693847656,
+        -1.5824432373046875,
+        1.2265905141830444
+      ],
+      "vx_mae": 0.23606526851654053,
+      "lateral_max": 1.5824432373046875,
+      "peak_speed": 41.90205764770508,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.13726414740085602,
+      "material_mean": [
+        1.0585051774978638,
+        0.8212407231330872,
+        0.2905450165271759
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": false,
+      "repeat": 0,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.0916290283203125,
+        1.3641815185546875,
+        0.6420210599899292
+      ],
+      "vx_mae": 0.48917368054389954,
+      "lateral_max": 1.6267547607421875,
+      "peak_speed": 40.79289245605469,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.10779999941587448,
+      "material_mean": [
+        0.9824849367141724,
+        0.788129985332489,
+        0.2995929718017578
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": false,
+      "repeat": 1,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.690887451171875,
+        0.4687652587890625,
+        0.8232284784317017
+      ],
+      "vx_mae": 0.48548248410224915,
+      "lateral_max": 0.4718780517578125,
+      "peak_speed": 39.82159423828125,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.10760000348091125,
+      "material_mean": [
+        0.9536761045455933,
+        0.6999189257621765,
+        0.2879011631011963
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": false,
+      "repeat": 2,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.3376922607421875,
+        1.1994781494140625,
+        0.7184305191040039
+      ],
+      "vx_mae": 0.44935595989227295,
+      "lateral_max": 1.4134063720703125,
+      "peak_speed": 31.36829948425293,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.08560000360012054,
+      "material_mean": [
+        0.7351434826850891,
+        0.5295736789703369,
+        0.2453332245349884
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": false,
+      "repeat": 3,
+      "seconds": 11.22,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.442127227783203,
+        -0.266387939453125,
+        0.5624398589134216
+      ],
+      "vx_mae": 0.3521411716938019,
+      "lateral_max": 0.3419189453125,
+      "peak_speed": 46.70460510253906,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.04901960864663124,
+      "material_mean": [
+        0.9207525849342346,
+        0.7217550873756409,
+        0.3213787376880646
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": false,
+      "repeat": 4,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.3822689056396484,
+        -1.058563232421875,
+        0.7309077978134155
+      ],
+      "vx_mae": 0.4847445785999298,
+      "lateral_max": 1.093353271484375,
+      "peak_speed": 31.32039451599121,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.17000000178813934,
+      "material_mean": [
+        0.8554410338401794,
+        0.6117732524871826,
+        0.28042545914649963
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": false,
+      "repeat": 5,
+      "seconds": 21.78,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -0.37215423583984375,
+        1.1339569091796875,
+        0.2239522933959961
+      ],
+      "vx_mae": 0.4269251823425293,
+      "lateral_max": 1.91064453125,
+      "peak_speed": 30.002084732055664,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.12947657704353333,
+      "material_mean": [
+        0.8711040616035461,
+        0.6949613690376282,
+        0.30225881934165955
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": false,
+      "repeat": 6,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.393054962158203,
+        1.1487884521484375,
+        0.7924878597259521
+      ],
+      "vx_mae": 0.4683333933353424,
+      "lateral_max": 1.1487884521484375,
+      "peak_speed": 30.530475616455078,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.17560000717639923,
+      "material_mean": [
+        0.9079076051712036,
+        0.6938666105270386,
+        0.3125861883163452
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": false,
+      "repeat": 7,
+      "seconds": 4.54,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.5690841674804688,
+        0.249176025390625,
+        0.5989494323730469
+      ],
+      "vx_mae": 0.19191879034042358,
+      "lateral_max": 0.3685302734375,
+      "peak_speed": 63.29810333251953,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.023127753287553787,
+      "material_mean": [
+        0.9302431344985962,
+        0.6766501069068909,
+        0.30845507979393005
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": true,
+      "repeat": 0,
+      "seconds": 14.52,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        1.0012016296386719,
+        0.6676483154296875,
+        0.24554860591888428
+      ],
+      "vx_mae": 0.49159765243530273,
+      "lateral_max": 0.8613433837890625,
+      "peak_speed": 31.80999183654785,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.09090909361839294,
+      "material_mean": [
+        0.9803557991981506,
+        0.6725104451179504,
+        0.27597901225090027
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": true,
+      "repeat": 1,
+      "seconds": 10.94,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.6436710357666016,
+        -0.3531341552734375,
+        0.7629978656768799
+      ],
+      "vx_mae": 0.3423049747943878,
+      "lateral_max": 0.3987884521484375,
+      "peak_speed": 111.5912094116211,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.077239491045475,
+      "material_mean": [
+        0.8442723155021667,
+        0.6133021712303162,
+        0.29146525263786316
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": true,
+      "repeat": 2,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -1.1843376159667969,
+        -1.8156890869140625,
+        0.5204506516456604
+      ],
+      "vx_mae": 0.3761250972747803,
+      "lateral_max": 2.41162109375,
+      "peak_speed": 33.608402252197266,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.036400001496076584,
+      "material_mean": [
+        0.9068970680236816,
+        0.7084968090057373,
+        0.27943623065948486
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": true,
+      "repeat": 3,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -1.9407615661621094,
+        -0.8344879150390625,
+        0.47171711921691895
+      ],
+      "vx_mae": 0.26206234097480774,
+      "lateral_max": 2.3387298583984375,
+      "peak_speed": 32.60929489135742,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.019600000232458115,
+      "material_mean": [
+        0.8630720376968384,
+        0.6847535967826843,
+        0.2850663661956787
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": true,
+      "repeat": 4,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        1.2017765045166016,
+        2.1408233642578125,
+        0.6651910543441772
+      ],
+      "vx_mae": 0.43509745597839355,
+      "lateral_max": 2.1425018310546875,
+      "peak_speed": 44.98418045043945,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.04439999908208847,
+      "material_mean": [
+        1.0957280397415161,
+        0.8092870116233826,
+        0.266095370054245
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": true,
+      "repeat": 5,
+      "seconds": 4.1,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.2548389434814453,
+        0.7084197998046875,
+        0.4975653290748596
+      ],
+      "vx_mae": 0.14981496334075928,
+      "lateral_max": 0.8924560546875,
+      "peak_speed": 58.380088806152344,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.01097560953348875,
+      "material_mean": [
+        0.9813571572303772,
+        0.8202914595603943,
+        0.2987416386604309
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": true,
+      "repeat": 6,
+      "seconds": 9.0,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.353250503540039,
+        0.410675048828125,
+        0.5030825734138489
+      ],
+      "vx_mae": 0.3266434967517853,
+      "lateral_max": 0.410675048828125,
+      "peak_speed": 108.47901916503906,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.05722222104668617,
+      "material_mean": [
+        1.0165705680847168,
+        0.7947729229927063,
+        0.31459105014801025
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 7,
+      "noise": true,
+      "repeat": 7,
+      "seconds": 7.0200000000000005,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.6533336639404297,
+        0.368072509765625,
+        0.6418749094009399
+      ],
+      "vx_mae": 0.2897304892539978,
+      "lateral_max": 0.7106781005859375,
+      "peak_speed": 52.4146728515625,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.08760683983564377,
+      "material_mean": [
+        0.9027849435806274,
+        0.6749868988990784,
+        0.284408301115036
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": false,
+      "repeat": 0,
+      "seconds": 8.08,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.6845703125,
+        0.0854339599609375,
+        0.7116919755935669
+      ],
+      "vx_mae": 0.2556992471218109,
+      "lateral_max": 0.584228515625,
+      "peak_speed": 81.00052642822266,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.030940594151616096,
+      "material_mean": [
+        1.0978660583496094,
+        0.7814021110534668,
+        0.28918135166168213
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": false,
+      "repeat": 1,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -2.3067569732666016,
+        -0.630096435546875,
+        0.6452429294586182
+      ],
+      "vx_mae": 0.32941678166389465,
+      "lateral_max": 2.427947998046875,
+      "peak_speed": 38.02149963378906,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.012600000016391277,
+      "material_mean": [
+        0.8154365420341492,
+        0.6155612468719482,
+        0.27144843339920044
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": false,
+      "repeat": 2,
+      "seconds": 17.78,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        1.3965826034545898,
+        -0.5411529541015625,
+        0.22748124599456787
+      ],
+      "vx_mae": 0.41547104716300964,
+      "lateral_max": 0.7505035400390625,
+      "peak_speed": 32.158504486083984,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.06524184346199036,
+      "material_mean": [
+        0.9615293741226196,
+        0.8178410530090332,
+        0.30767160654067993
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": false,
+      "repeat": 3,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -0.8516273498535156,
+        -1.9380645751953125,
+        0.49941056966781616
+      ],
+      "vx_mae": 0.3599760830402374,
+      "lateral_max": 2.37884521484375,
+      "peak_speed": 32.72556686401367,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.026000000536441803,
+      "material_mean": [
+        0.9963458180427551,
+        0.7696758508682251,
+        0.2727617025375366
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": false,
+      "repeat": 4,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -2.056321144104004,
+        0.6902008056640625,
+        0.5117090940475464
+      ],
+      "vx_mae": 0.4005650579929352,
+      "lateral_max": 2.5164794921875,
+      "peak_speed": 39.81021499633789,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.05180000141263008,
+      "material_mean": [
+        1.072188377380371,
+        0.7519271969795227,
+        0.29159560799598694
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": false,
+      "repeat": 5,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        1.8690004348754883,
+        1.2365875244140625,
+        0.6232132315635681
+      ],
+      "vx_mae": 0.50284343957901,
+      "lateral_max": 1.2365875244140625,
+      "peak_speed": 36.73060989379883,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.07980000227689743,
+      "material_mean": [
+        0.9526882171630859,
+        0.6851544380187988,
+        0.34861519932746887
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": false,
+      "repeat": 6,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -2.4024972915649414,
+        -0.2332611083984375,
+        0.6580942273139954
+      ],
+      "vx_mae": 0.2859431505203247,
+      "lateral_max": 2.376068115234375,
+      "peak_speed": 30.000228881835938,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.009200000204145908,
+      "material_mean": [
+        0.9043033719062805,
+        0.5917394757270813,
+        0.2988554835319519
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": false,
+      "repeat": 7,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        0.032553672790527344,
+        2.3896026611328125,
+        0.6381366848945618
+      ],
+      "vx_mae": 0.4341229498386383,
+      "lateral_max": 2.486053466796875,
+      "peak_speed": 31.42942237854004,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.10000000149011612,
+      "material_mean": [
+        1.0400910377502441,
+        0.8859458565711975,
+        0.3019419312477112
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": true,
+      "repeat": 0,
+      "seconds": 14.38,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.599254608154297,
+        -0.4019775390625,
+        0.5468857884407043
+      ],
+      "vx_mae": 0.4514206051826477,
+      "lateral_max": 0.4024200439453125,
+      "peak_speed": 37.259029388427734,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.06328233331441879,
+      "material_mean": [
+        1.0391464233398438,
+        0.8270000219345093,
+        0.26911017298698425
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": true,
+      "repeat": 1,
+      "seconds": 11.74,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.1362123489379883,
+        0.10614013671875,
+        0.49495255947113037
+      ],
+      "vx_mae": 0.44168511033058167,
+      "lateral_max": 0.5231781005859375,
+      "peak_speed": 78.48739624023438,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.056643951684236526,
+      "material_mean": [
+        0.9980002045631409,
+        0.7088761329650879,
+        0.27684831619262695
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": true,
+      "repeat": 2,
+      "seconds": 10.44,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.2629261016845703,
+        0.3070526123046875,
+        0.4448432922363281
+      ],
+      "vx_mae": 0.40173545479774475,
+      "lateral_max": 0.5587921142578125,
+      "peak_speed": 33.61805725097656,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.03400383144617081,
+      "material_mean": [
+        0.8561909198760986,
+        0.7365044951438904,
+        0.32038670778274536
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": true,
+      "repeat": 3,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        0.3732929229736328,
+        2.1237335205078125,
+        0.48486411571502686
+      ],
+      "vx_mae": 0.4459526836872101,
+      "lateral_max": 2.1237335205078125,
+      "peak_speed": 31.74736976623535,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.039799999445676804,
+      "material_mean": [
+        1.049851417541504,
+        0.8586863279342651,
+        0.2503367066383362
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": true,
+      "repeat": 4,
+      "seconds": 21.64,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        1.526082992553711,
+        -0.5572052001953125,
+        0.24895262718200684
+      ],
+      "vx_mae": 0.4536280632019043,
+      "lateral_max": 1.0815582275390625,
+      "peak_speed": 31.640859603881836,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.1317005604505539,
+      "material_mean": [
+        0.9846571087837219,
+        0.7831979990005493,
+        0.2842281460762024
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": true,
+      "repeat": 5,
+      "seconds": 18.44,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        2.086658477783203,
+        -1.2412872314453125,
+        0.7499406337738037
+      ],
+      "vx_mae": 0.43654537200927734,
+      "lateral_max": 1.3022613525390625,
+      "peak_speed": 52.44596481323242,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.08947939425706863,
+      "material_mean": [
+        1.0007944107055664,
+        0.8021668195724487,
+        0.3069723844528198
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": true,
+      "repeat": 6,
+      "seconds": 12.040000000000001,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        1.5794706344604492,
+        1.5565643310546875,
+        0.40109384059906006
+      ],
+      "vx_mae": 0.4270254671573639,
+      "lateral_max": 1.5565643310546875,
+      "peak_speed": 33.9658203125,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.03654485195875168,
+      "material_mean": [
+        1.0457435846328735,
+        0.8208591341972351,
+        0.24693158268928528
+      ]
+    },
+    {
+      "terrain": "slope_up",
+      "level": 9,
+      "noise": true,
+      "repeat": 7,
+      "seconds": 25.0,
+      "passed": false,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -0.3902864456176758,
+        -2.1061248779296875,
+        0.4455132484436035
+      ],
+      "vx_mae": 0.25007379055023193,
+      "lateral_max": 2.2500457763671875,
+      "peak_speed": 33.99757766723633,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.020600000396370888,
+      "material_mean": [
+        0.9006502032279968,
+        0.5967557430267334,
+        0.3038085103034973
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": false,
+      "repeat": 0,
+      "seconds": 2.56,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.02423095703125,
+        0.3330078125,
+        -0.4551820158958435
+      ],
+      "vx_mae": 1.081543207168579,
+      "lateral_max": 0.3480224609375,
+      "peak_speed": 37.889339447021484,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.044921875,
+      "material_mean": [
+        0.8118213415145874,
+        0.5851170420646667,
+        0.29365625977516174
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": false,
+      "repeat": 1,
+      "seconds": 6.68,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0107574462890625,
+        0.348724365234375,
+        -0.36366891860961914
+      ],
+      "vx_mae": 0.06647815555334091,
+      "lateral_max": 0.4117584228515625,
+      "peak_speed": 30.000253677368164,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.002994012087583542,
+      "material_mean": [
+        1.01298189163208,
+        0.6854336261749268,
+        0.2798497676849365
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": false,
+      "repeat": 2,
+      "seconds": 5.88,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0049591064453125,
+        -0.665679931640625,
+        -0.37624379992485046
+      ],
+      "vx_mae": 0.1028069332242012,
+      "lateral_max": 0.679656982421875,
+      "peak_speed": 26.205768585205078,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.004251700825989246,
+      "material_mean": [
+        0.7563948631286621,
+        0.5103132128715515,
+        0.3290381133556366
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": false,
+      "repeat": 3,
+      "seconds": 7.0600000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.004268646240234,
+        1.381072998046875,
+        -0.3973342776298523
+      ],
+      "vx_mae": 0.10999784618616104,
+      "lateral_max": 1.381072998046875,
+      "peak_speed": 33.555179595947266,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.0035410765558481216,
+      "material_mean": [
+        1.077590823173523,
+        0.8495414853096008,
+        0.2385370284318924
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": false,
+      "repeat": 4,
+      "seconds": 0.2,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        -0.3525733947753906,
+        -0.435272216796875,
+        0.4522972106933594
+      ],
+      "vx_mae": 0.40169447660446167,
+      "lateral_max": 0.435272216796875,
+      "peak_speed": 77.52454376220703,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.125,
+      "material_mean": [
+        1.202764868736267,
+        0.8515285849571228,
+        0.22637522220611572
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": false,
+      "repeat": 5,
+      "seconds": 2.74,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.034152984619141,
+        -0.145721435546875,
+        -0.43475019931793213
+      ],
+      "vx_mae": 0.9164770245552063,
+      "lateral_max": 0.2704010009765625,
+      "peak_speed": 38.262413024902344,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.054744526743888855,
+      "material_mean": [
+        0.8966264128684998,
+        0.6662135720252991,
+        0.26807841658592224
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": false,
+      "repeat": 6,
+      "seconds": 7.0,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.009300231933594,
+        -0.4693756103515625,
+        -0.3660702705383301
+      ],
+      "vx_mae": 0.12510524690151215,
+      "lateral_max": 0.4753875732421875,
+      "peak_speed": 30.00023651123047,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.0007142857066355646,
+      "material_mean": [
+        1.0298335552215576,
+        0.7327335476875305,
+        0.2872685492038727
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": false,
+      "repeat": 7,
+      "seconds": 5.82,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0039825439453125,
+        0.712127685546875,
+        -0.37334007024765015
+      ],
+      "vx_mae": 0.10621994733810425,
+      "lateral_max": 0.712127685546875,
+      "peak_speed": 22.270036697387695,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.013745704665780067,
+      "material_mean": [
+        1.0169490575790405,
+        0.6919755339622498,
+        0.2875916659832001
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": true,
+      "repeat": 0,
+      "seconds": 5.68,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.008777618408203,
+        -0.4027099609375,
+        -0.37114188075065613
+      ],
+      "vx_mae": 0.14228256046772003,
+      "lateral_max": 0.4165802001953125,
+      "peak_speed": 30.00020980834961,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.009683098644018173,
+      "material_mean": [
+        0.9702246785163879,
+        0.7670663595199585,
+        0.25398415327072144
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": true,
+      "repeat": 1,
+      "seconds": 6.98,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.007259368896484,
+        0.534576416015625,
+        -0.3681420683860779
+      ],
+      "vx_mae": 0.15538005530834198,
+      "lateral_max": 0.5396270751953125,
+      "peak_speed": 31.463125228881836,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.008595988154411316,
+      "material_mean": [
+        1.0445914268493652,
+        0.7210071682929993,
+        0.27817437052726746
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": true,
+      "repeat": 2,
+      "seconds": 4.76,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.000919342041016,
+        1.0279998779296875,
+        -0.3719938397407532
+      ],
+      "vx_mae": 0.2232990711927414,
+      "lateral_max": 1.0279998779296875,
+      "peak_speed": 30.882768630981445,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.018907563760876656,
+      "material_mean": [
+        0.9857950806617737,
+        0.7135111689567566,
+        0.27704083919525146
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": true,
+      "repeat": 3,
+      "seconds": 7.66,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.009540557861328,
+        -0.2360992431640625,
+        -0.3519636392593384
+      ],
+      "vx_mae": 0.09491400420665741,
+      "lateral_max": 0.3504638671875,
+      "peak_speed": 30.563125610351562,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.007180156651884317,
+      "material_mean": [
+        1.1065783500671387,
+        0.7268834114074707,
+        0.292987585067749
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": true,
+      "repeat": 4,
+      "seconds": 6.72,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0046539306640625,
+        -0.6934051513671875,
+        -0.38140419125556946
+      ],
+      "vx_mae": 0.19550448656082153,
+      "lateral_max": 0.6934051513671875,
+      "peak_speed": 30.000019073486328,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.0059523810632526875,
+      "material_mean": [
+        0.7949579954147339,
+        0.6472901701927185,
+        0.2846670150756836
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": true,
+      "repeat": 5,
+      "seconds": 5.9,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.002525329589844,
+        0.287353515625,
+        -0.3754088580608368
+      ],
+      "vx_mae": 0.19293004274368286,
+      "lateral_max": 0.3009796142578125,
+      "peak_speed": 32.051841735839844,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.012711863964796066,
+      "material_mean": [
+        0.9868159294128418,
+        0.7177109718322754,
+        0.27460795640945435
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": true,
+      "repeat": 6,
+      "seconds": 7.16,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.008831024169922,
+        0.66131591796875,
+        -0.36954450607299805
+      ],
+      "vx_mae": 0.12404736876487732,
+      "lateral_max": 0.66131591796875,
+      "peak_speed": 29.963319778442383,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.018854748457670212,
+      "material_mean": [
+        0.9487611651420593,
+        0.6135185360908508,
+        0.2757081091403961
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 5,
+      "noise": true,
+      "repeat": 7,
+      "seconds": 6.1000000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.001316070556641,
+        0.4341583251953125,
+        -0.38950663805007935
+      ],
+      "vx_mae": 0.10650883615016937,
+      "lateral_max": 0.4341583251953125,
+      "peak_speed": 27.18529510498047,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.015573770739138126,
+      "material_mean": [
+        0.8823243379592896,
+        0.6411291360855103,
+        0.279837965965271
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": false,
+      "repeat": 0,
+      "seconds": 6.44,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.011678695678711,
+        0.4202423095703125,
+        -0.7271854877471924
+      ],
+      "vx_mae": 0.14248423278331757,
+      "lateral_max": 0.4202423095703125,
+      "peak_speed": 42.238975524902344,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.03183229640126228,
+      "material_mean": [
+        0.9143879413604736,
+        0.7378295063972473,
+        0.27713847160339355
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": false,
+      "repeat": 1,
+      "seconds": 7.68,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.007640838623047,
+        0.431427001953125,
+        -0.7370461821556091
+      ],
+      "vx_mae": 0.0794086754322052,
+      "lateral_max": 0.431427001953125,
+      "peak_speed": 21.115083694458008,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.021484375,
+      "material_mean": [
+        0.9562436938285828,
+        0.5862334966659546,
+        0.2727108597755432
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": false,
+      "repeat": 2,
+      "seconds": 6.92,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0073394775390625,
+        0.9860687255859375,
+        -0.7542870044708252
+      ],
+      "vx_mae": 0.10379579663276672,
+      "lateral_max": 0.9860687255859375,
+      "peak_speed": 23.868858337402344,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.004335260018706322,
+      "material_mean": [
+        1.000838279724121,
+        0.7335326671600342,
+        0.27509865164756775
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": false,
+      "repeat": 3,
+      "seconds": 7.0600000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006458282470703,
+        0.87371826171875,
+        -0.7613176703453064
+      ],
+      "vx_mae": 0.07252198457717896,
+      "lateral_max": 0.87371826171875,
+      "peak_speed": 30.00006866455078,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.01133144460618496,
+      "material_mean": [
+        0.9866895079612732,
+        0.7065980434417725,
+        0.28265801072120667
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": false,
+      "repeat": 4,
+      "seconds": 6.92,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.002237319946289,
+        1.0325164794921875,
+        -0.7586967945098877
+      ],
+      "vx_mae": 0.10996226221323013,
+      "lateral_max": 1.0325164794921875,
+      "peak_speed": 24.481592178344727,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.0028901733458042145,
+      "material_mean": [
+        0.9979926943778992,
+        0.6960681080818176,
+        0.29251614212989807
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": false,
+      "repeat": 5,
+      "seconds": 7.58,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006750106811523,
+        -0.5208740234375,
+        -0.7516055107116699
+      ],
+      "vx_mae": 0.15620160102844238,
+      "lateral_max": 0.5208740234375,
+      "peak_speed": 27.93906021118164,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.010554090142250061,
+      "material_mean": [
+        0.8272832632064819,
+        0.6358223557472229,
+        0.2776056230068207
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": false,
+      "repeat": 6,
+      "seconds": 6.86,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0140838623046875,
+        0.4006500244140625,
+        -0.7566584348678589
+      ],
+      "vx_mae": 0.13680677115917206,
+      "lateral_max": 0.4006500244140625,
+      "peak_speed": 38.09603500366211,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.008017492480576038,
+      "material_mean": [
+        0.7925815582275391,
+        0.613693118095398,
+        0.2500840425491333
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": false,
+      "repeat": 7,
+      "seconds": 6.8,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.013742446899414,
+        -0.0899505615234375,
+        -0.7475942373275757
+      ],
+      "vx_mae": 0.1496453732252121,
+      "lateral_max": 0.3975067138671875,
+      "peak_speed": 32.23830795288086,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.030882352963089943,
+      "material_mean": [
+        0.769071102142334,
+        0.5672475099563599,
+        0.29121434688568115
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": true,
+      "repeat": 0,
+      "seconds": 5.5600000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006898880004883,
+        0.939483642578125,
+        -0.798318088054657
+      ],
+      "vx_mae": 0.2157488465309143,
+      "lateral_max": 0.95281982421875,
+      "peak_speed": 30.458948135375977,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.026978416368365288,
+      "material_mean": [
+        0.9400715827941895,
+        0.7846671938896179,
+        0.2915217876434326
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": true,
+      "repeat": 1,
+      "seconds": 6.1000000000000005,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006710052490234,
+        -0.232635498046875,
+        -0.7346866130828857
+      ],
+      "vx_mae": 0.1792328953742981,
+      "lateral_max": 0.5248260498046875,
+      "peak_speed": 30.63551902770996,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.016393441706895828,
+      "material_mean": [
+        0.8979303240776062,
+        0.7959792613983154,
+        0.281711608171463
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": true,
+      "repeat": 2,
+      "seconds": 2.44,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.020257949829102,
+        0.0880126953125,
+        -0.8867278695106506
+      ],
+      "vx_mae": 1.2761714458465576,
+      "lateral_max": 0.226715087890625,
+      "peak_speed": 37.16992950439453,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.069672130048275,
+      "material_mean": [
+        0.8770515322685242,
+        0.6245759129524231,
+        0.28124770522117615
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": true,
+      "repeat": 3,
+      "seconds": 6.96,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.013267517089844,
+        1.8303375244140625,
+        -0.7675847411155701
+      ],
+      "vx_mae": 0.19690784811973572,
+      "lateral_max": 1.8303375244140625,
+      "peak_speed": 31.55171775817871,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.029454022645950317,
+      "material_mean": [
+        0.818187952041626,
+        0.579326331615448,
+        0.34014979004859924
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": true,
+      "repeat": 4,
+      "seconds": 6.08,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.000873565673828,
+        -0.2175140380859375,
+        -0.711831271648407
+      ],
+      "vx_mae": 0.21225640177726746,
+      "lateral_max": 0.4185791015625,
+      "peak_speed": 30.00026512145996,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.07648026198148727,
+      "material_mean": [
+        0.8815219402313232,
+        0.6835341453552246,
+        0.287304162979126
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": true,
+      "repeat": 5,
+      "seconds": 6.46,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.005151748657227,
+        0.7108917236328125,
+        -0.7578554153442383
+      ],
+      "vx_mae": 0.1831849217414856,
+      "lateral_max": 0.7108917236328125,
+      "peak_speed": 32.10367202758789,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.04566563293337822,
+      "material_mean": [
+        0.9686311483383179,
+        0.6643005609512329,
+        0.2634333372116089
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": true,
+      "repeat": 6,
+      "seconds": 6.36,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.00255012512207,
+        0.008819580078125,
+        -0.7637647390365601
+      ],
+      "vx_mae": 0.21948222815990448,
+      "lateral_max": 0.1449127197265625,
+      "peak_speed": 34.85670471191406,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.01886792480945587,
+      "material_mean": [
+        0.9355022311210632,
+        0.6853813529014587,
+        0.24578288197517395
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 7,
+      "noise": true,
+      "repeat": 7,
+      "seconds": 5.86,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0100860595703125,
+        -0.183135986328125,
+        -0.7354609966278076
+      ],
+      "vx_mae": 0.22574110329151154,
+      "lateral_max": 0.33245849609375,
+      "peak_speed": 30.00125503540039,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.0426621176302433,
+      "material_mean": [
+        0.8547120094299316,
+        0.6251620650291443,
+        0.30167630314826965
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": false,
+      "repeat": 0,
+      "seconds": 6.84,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.001036643981934,
+        0.91400146484375,
+        -0.993120014667511
+      ],
+      "vx_mae": 0.09983013570308685,
+      "lateral_max": 0.91400146484375,
+      "peak_speed": 28.369234085083008,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.004385964944958687,
+      "material_mean": [
+        1.0378652811050415,
+        0.7714435458183289,
+        0.267733633518219
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": false,
+      "repeat": 1,
+      "seconds": 6.98,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.003599166870117,
+        0.867401123046875,
+        -0.9593721032142639
+      ],
+      "vx_mae": 0.21076585352420807,
+      "lateral_max": 0.867401123046875,
+      "peak_speed": 33.42467498779297,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.018624641001224518,
+      "material_mean": [
+        1.008772611618042,
+        0.6619679927825928,
+        0.24265986680984497
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": false,
+      "repeat": 2,
+      "seconds": 2.6,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.012136459350586,
+        0.8044281005859375,
+        -1.0564576387405396
+      ],
+      "vx_mae": 0.9221673607826233,
+      "lateral_max": 0.833221435546875,
+      "peak_speed": 39.20832824707031,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.05000000074505806,
+      "material_mean": [
+        0.9103819131851196,
+        0.7050403356552124,
+        0.3245726525783539
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": false,
+      "repeat": 3,
+      "seconds": 6.08,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.005515098571777,
+        0.8341522216796875,
+        -0.9754664897918701
+      ],
+      "vx_mae": 0.23102642595767975,
+      "lateral_max": 0.84698486328125,
+      "peak_speed": 38.326698303222656,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.019736841320991516,
+      "material_mean": [
+        1.0138486623764038,
+        0.7763866782188416,
+        0.2614131271839142
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": false,
+      "repeat": 4,
+      "seconds": 3.62,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.001361846923828,
+        0.566314697265625,
+        -0.9622547030448914
+      ],
+      "vx_mae": 0.8031575083732605,
+      "lateral_max": 0.566314697265625,
+      "peak_speed": 30.23603630065918,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.06491712480783463,
+      "material_mean": [
+        0.7754659056663513,
+        0.47232598066329956,
+        0.3030146360397339
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": false,
+      "repeat": 5,
+      "seconds": 6.140000000000001,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.007464408874512,
+        0.5639190673828125,
+        -0.9837286472320557
+      ],
+      "vx_mae": 0.13723430037498474,
+      "lateral_max": 0.5639190673828125,
+      "peak_speed": 29.950359344482422,
+      "peak_joint": "fl_foot_joint",
+      "max_torque_clipped_fraction": 0.012214983813464642,
+      "material_mean": [
+        0.9744782447814941,
+        0.7648497223854065,
+        0.26571884751319885
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": false,
+      "repeat": 6,
+      "seconds": 6.22,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.002410888671875,
+        0.0266876220703125,
+        -0.9737663269042969
+      ],
+      "vx_mae": 0.18424125015735626,
+      "lateral_max": 0.0521240234375,
+      "peak_speed": 38.981990814208984,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.024115756154060364,
+      "material_mean": [
+        0.9728242754936218,
+        0.7192232012748718,
+        0.25290000438690186
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": false,
+      "repeat": 7,
+      "seconds": 7.2,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.011435508728027,
+        -0.8967132568359375,
+        -0.9616312384605408
+      ],
+      "vx_mae": 0.13486702740192413,
+      "lateral_max": 0.900787353515625,
+      "peak_speed": 24.30324935913086,
+      "peak_joint": "rl_foot_joint",
+      "max_torque_clipped_fraction": 0.01597222313284874,
+      "material_mean": [
+        1.0301599502563477,
+        0.8268300890922546,
+        0.24293643236160278
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": true,
+      "repeat": 0,
+      "seconds": 5.7,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.000432968139648,
+        0.728240966796875,
+        -0.9624893069267273
+      ],
+      "vx_mae": 0.22242721915245056,
+      "lateral_max": 0.728240966796875,
+      "peak_speed": 30.000083923339844,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.07631579041481018,
+      "material_mean": [
+        0.9929830431938171,
+        0.7231324911117554,
+        0.2481461614370346
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": true,
+      "repeat": 1,
+      "seconds": 4.26,
+      "passed": false,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        3.5139074325561523,
+        -0.467498779296875,
+        -0.6920989751815796
+      ],
+      "vx_mae": 0.2924170196056366,
+      "lateral_max": 0.47601318359375,
+      "peak_speed": 104.48724365234375,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.06455399096012115,
+      "material_mean": [
+        0.8537901043891907,
+        0.6044453978538513,
+        0.320141077041626
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": true,
+      "repeat": 2,
+      "seconds": 5.58,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.014322280883789,
+        -0.8004608154296875,
+        -0.9577069878578186
+      ],
+      "vx_mae": 0.2561924159526825,
+      "lateral_max": 0.8004608154296875,
+      "peak_speed": 30.00003433227539,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.09677419066429138,
+      "material_mean": [
+        0.9227158427238464,
+        0.6160497665405273,
+        0.3119460642337799
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": true,
+      "repeat": 3,
+      "seconds": 6.640000000000001,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.006074905395508,
+        1.2207489013671875,
+        -0.9834622144699097
+      ],
+      "vx_mae": 0.2270916849374771,
+      "lateral_max": 1.2207489013671875,
+      "peak_speed": 30.000080108642578,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.034638553857803345,
+      "material_mean": [
+        1.032623529434204,
+        0.7111160755157471,
+        0.26198768615722656
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": true,
+      "repeat": 4,
+      "seconds": 6.12,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.004447937011719,
+        0.837982177734375,
+        -0.9652565121650696
+      ],
+      "vx_mae": 0.24314342439174652,
+      "lateral_max": 0.837982177734375,
+      "peak_speed": 31.816247940063477,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.023692810907959938,
+      "material_mean": [
+        0.8764673471450806,
+        0.7020253539085388,
+        0.2656858265399933
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": true,
+      "repeat": 5,
+      "seconds": 5.38,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.010851860046387,
+        0.069122314453125,
+        -1.0309045314788818
+      ],
+      "vx_mae": 0.33771729469299316,
+      "lateral_max": 0.1496124267578125,
+      "peak_speed": 31.245941162109375,
+      "peak_joint": "fr_foot_joint",
+      "max_torque_clipped_fraction": 0.03996282443404198,
+      "material_mean": [
+        0.858228862285614,
+        0.6675911545753479,
+        0.31809163093566895
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": true,
+      "repeat": 6,
+      "seconds": 5.96,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.0004730224609375,
+        -0.029510498046875,
+        -0.9474502205848694
+      ],
+      "vx_mae": 0.2703140676021576,
+      "lateral_max": 0.3889312744140625,
+      "peak_speed": 34.99171447753906,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.04781879112124443,
+      "material_mean": [
+        0.9398581981658936,
+        0.6795313954353333,
+        0.2893615961074829
+      ]
+    },
+    {
+      "terrain": "slope_down",
+      "level": 9,
+      "noise": true,
+      "repeat": 7,
+      "seconds": 6.26,
+      "passed": true,
+      "physical": false,
+      "terms": [],
+      "causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "displacement": [
+        4.004611968994141,
+        1.439483642578125,
+        -0.9815199375152588
+      ],
+      "vx_mae": 0.2484888881444931,
+      "lateral_max": 1.439483642578125,
+      "peak_speed": 30.001249313354492,
+      "peak_joint": "rr_foot_joint",
+      "max_torque_clipped_fraction": 0.030351437628269196,
+      "material_mean": [
+        0.992933452129364,
+        0.7032068967819214,
+        0.24609997868537903
+      ]
+    }
+  ]
+}

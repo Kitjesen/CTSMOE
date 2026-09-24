@@ -1,0 +1,81 @@
+{
+  "checked_utc": "2026-09-22T06:53:19.308470+00:00",
+  "completed_observed": 33794,
+  "new_speed_updates_observed": 620,
+  "last100_updates": [
+    33695,
+    33794
+  ],
+  "last100_iteration_seconds_mean": 7.094553530216217,
+  "last100_key_loss_nonfinite": 0,
+  "allocation_fixed": true,
+  "allocation_bounds_profile": "omni_repair_v19",
+  "flat_fraction": 0.4,
+  "all_count": 4096,
+  "latest_fixed_behavior_evaluation": 32831,
+  "next_fixed_behavior_evaluation": 34823,
+  "runtime_modified": false,
+  "recommendation": "Keep current frozen40% until34823 matched wide-speed/braking/posture and all-terrain assessment. Consider35% as a single allocation experiment only after evidence supports it; do not automatically change rewards and allocation together. This is a proposal, not implemented or an asserted optimum.",
+  "training_snapshots": [
+    {
+      "completed": 33196,
+      "terrain_means": {
+        "wave": 6.046,
+        "slope_up": 5.268,
+        "slope_down": 5.327,
+        "rough_slope": 5.616,
+        "stairs_up": 6.078,
+        "stairs_down": 6.079,
+        "obstacles": 5.957,
+        "flat": 5.991,
+        "pit": 1.817
+      },
+      "note": "training snapshot only; not controlled evaluation"
+    },
+    {
+      "completed": 33486,
+      "terrain_means": {
+        "wave": 5.963,
+        "slope_up": 5.224,
+        "slope_down": 5.616,
+        "rough_slope": 5.652,
+        "stairs_up": 6.196,
+        "stairs_down": 6.162,
+        "obstacles": 6.073,
+        "flat": 5.929,
+        "pit": 1.809
+      },
+      "note": "training snapshot only; not controlled evaluation"
+    },
+    {
+      "completed": 33754,
+      "terrain_means": {
+        "wave": 5.582,
+        "slope_up": 5.455,
+        "slope_down": 5.727,
+        "rough_slope": 5.613,
+        "stairs_up": 6.083,
+        "stairs_down": 6.131,
+        "obstacles": 6.25,
+        "flat": 5.944,
+        "pit": 1.809
+      },
+      "note": "training snapshot only; not controlled evaluation"
+    },
+    {
+      "completed": 33783,
+      "terrain_means": {
+        "wave": 5.631,
+        "slope_up": 5.419,
+        "slope_down": 5.767,
+        "rough_slope": 5.543,
+        "stairs_up": 6.064,
+        "stairs_down": 6.146,
+        "obstacles": 6.201,
+        "flat": 5.966,
+        "pit": 1.8
+      },
+      "note": "training snapshot only; not controlled evaluation"
+    }
+  ]
+}

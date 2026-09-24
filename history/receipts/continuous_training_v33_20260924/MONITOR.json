@@ -1,0 +1,26 @@
+{
+  "stage": "continuous_training_v33_20260924/attempt04",
+  "remote_root": "/root/autodl-tmp/cts-omni-repair-v19-20260922/continuous_training_v33_20260924/attempt04",
+  "state": "training_after_flat_recording",
+  "qualification_pid_last_observed": 196351,
+  "source_completed_updates": 44319,
+  "target_completed_updates": 46194,
+  "remaining_updates": 1130,
+  "environments": 8192,
+  "failed_attempts": [
+    "root attempt: copied dynamic family lost",
+    "attempt02: Isaac named term signature mismatch",
+    "attempt03 intentionally stopped at zero updates: episode reset latch leak fixed"
+  ],
+  "failed_attempt_optimizer_updates": 0,
+  "next": "Continue exact1158 remaining from45036 to46194; final assessment unchanged; no duplicate GPU",
+  "do_not_duplicate": true,
+  "hardware_release": false,
+  "training_pid_last_observed": 202797,
+  "completed_updates_last_observed": 45064,
+  "recording_supervisor": 202004,
+  "recording_entry": "recording_request/resume_after_recording_v2.py",
+  "recording_completed": true,
+  "recording_updates": 0,
+  "recording_steps": 1500
+}

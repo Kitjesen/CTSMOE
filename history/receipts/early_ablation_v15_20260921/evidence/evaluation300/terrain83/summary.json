@@ -1,0 +1,1537 @@
+{
+  "forward": [
+    {
+      "label": "early_31831",
+      "first_rms": 0.11273216726950024,
+      "first_peak_rms": 0.15024467744015763,
+      "first_peak_joint_rad": 0.35213905572891235,
+      "first_peak_time_s": 0.32,
+      "max_rms": 0.32447638774368526,
+      "height_min": 0.4508950412273407,
+      "height_max": 0.5207646489143372,
+      "last_height": 0.4812856614589691,
+      "last_rms": 0.21817677434516136,
+      "last_xy_error": 0.056364234536886215,
+      "last_yaw_error": 0.053611647337675095,
+      "pass": true
+    },
+    {
+      "label": "early_31831_teacher",
+      "first_rms": 0.10761824776826051,
+      "first_peak_rms": 0.12844923076710013,
+      "first_peak_joint_rad": 0.29823940992355347,
+      "first_peak_time_s": 0.32,
+      "max_rms": 0.28415829328342457,
+      "height_min": 0.44422054290771484,
+      "height_max": 0.5135300755500793,
+      "last_height": 0.4816853702068329,
+      "last_rms": 0.22758676741124875,
+      "last_xy_error": 0.04940037801861763,
+      "last_yaw_error": 0.05718877911567688,
+      "pass": true
+    },
+    {
+      "label": "V14_32131",
+      "first_rms": 0.15215454437129095,
+      "first_peak_rms": 0.1787955845968154,
+      "first_peak_joint_rad": 0.3846399188041687,
+      "first_peak_time_s": 0.44,
+      "max_rms": 0.41465779225656096,
+      "height_min": 0.4393657445907593,
+      "height_max": 0.5083730816841125,
+      "last_height": 0.47179505228996277,
+      "last_rms": 0.2911031868474989,
+      "last_xy_error": 0.0970941036939621,
+      "last_yaw_error": 0.08875195682048798,
+      "pass": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "first_rms": 0.12452236393033264,
+      "first_peak_rms": 0.14645839008118758,
+      "first_peak_joint_rad": 0.3097460865974426,
+      "first_peak_time_s": 0.48,
+      "max_rms": 0.3716946943709671,
+      "height_min": 0.44055816531181335,
+      "height_max": 0.5069125890731812,
+      "last_height": 0.47258132696151733,
+      "last_rms": 0.2755828394736832,
+      "last_xy_error": 0.05362866073846817,
+      "last_yaw_error": 0.06514020264148712,
+      "pass": false
+    }
+  ],
+  "terrains": [
+    {
+      "label": "early_31831",
+      "terrain": "flat",
+      "passed": 11,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "early_31831",
+      "terrain": "stairs_up",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "early_31831",
+      "terrain": "stairs_down",
+      "passed": 5,
+      "count": 6,
+      "physical": 1,
+      "straight": 4
+    },
+    {
+      "label": "early_31831",
+      "terrain": "slope_up",
+      "passed": 2,
+      "count": 6,
+      "physical": 3,
+      "straight": 0
+    },
+    {
+      "label": "early_31831",
+      "terrain": "slope_down",
+      "passed": 2,
+      "count": 6,
+      "physical": 3,
+      "straight": 0
+    },
+    {
+      "label": "early_31831",
+      "terrain": "wave",
+      "passed": 4,
+      "count": 6,
+      "physical": 2,
+      "straight": 3
+    },
+    {
+      "label": "early_31831",
+      "terrain": "rough_slope",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "early_31831",
+      "terrain": "obstacles",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "early_31831",
+      "terrain": "pit",
+      "passed": 0,
+      "count": 21,
+      "physical": 0,
+      "straight": 3
+    },
+    {
+      "label": "early_31831_teacher",
+      "terrain": "flat",
+      "passed": 17,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "early_31831_teacher",
+      "terrain": "stairs_up",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "early_31831_teacher",
+      "terrain": "stairs_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 5
+    },
+    {
+      "label": "early_31831_teacher",
+      "terrain": "slope_up",
+      "passed": 3,
+      "count": 6,
+      "physical": 0,
+      "straight": 1
+    },
+    {
+      "label": "early_31831_teacher",
+      "terrain": "slope_down",
+      "passed": 2,
+      "count": 6,
+      "physical": 1,
+      "straight": 0
+    },
+    {
+      "label": "early_31831_teacher",
+      "terrain": "wave",
+      "passed": 5,
+      "count": 6,
+      "physical": 1,
+      "straight": 5
+    },
+    {
+      "label": "early_31831_teacher",
+      "terrain": "rough_slope",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "early_31831_teacher",
+      "terrain": "obstacles",
+      "passed": 5,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "early_31831_teacher",
+      "terrain": "pit",
+      "passed": 0,
+      "count": 21,
+      "physical": 0,
+      "straight": 3
+    },
+    {
+      "label": "V14_32131",
+      "terrain": "flat",
+      "passed": 16,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V14_32131",
+      "terrain": "stairs_up",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "V14_32131",
+      "terrain": "stairs_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 5
+    },
+    {
+      "label": "V14_32131",
+      "terrain": "slope_up",
+      "passed": 2,
+      "count": 6,
+      "physical": 1,
+      "straight": 0
+    },
+    {
+      "label": "V14_32131",
+      "terrain": "slope_down",
+      "passed": 2,
+      "count": 6,
+      "physical": 0,
+      "straight": 1
+    },
+    {
+      "label": "V14_32131",
+      "terrain": "wave",
+      "passed": 5,
+      "count": 6,
+      "physical": 1,
+      "straight": 5
+    },
+    {
+      "label": "V14_32131",
+      "terrain": "rough_slope",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "V14_32131",
+      "terrain": "obstacles",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V14_32131",
+      "terrain": "pit",
+      "passed": 0,
+      "count": 21,
+      "physical": 0,
+      "straight": 2
+    },
+    {
+      "label": "V14_32131_teacher",
+      "terrain": "flat",
+      "passed": 17,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V14_32131_teacher",
+      "terrain": "stairs_up",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "V14_32131_teacher",
+      "terrain": "stairs_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "V14_32131_teacher",
+      "terrain": "slope_up",
+      "passed": 2,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V14_32131_teacher",
+      "terrain": "slope_down",
+      "passed": 2,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V14_32131_teacher",
+      "terrain": "wave",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 5
+    },
+    {
+      "label": "V14_32131_teacher",
+      "terrain": "rough_slope",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "V14_32131_teacher",
+      "terrain": "obstacles",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V14_32131_teacher",
+      "terrain": "pit",
+      "passed": 0,
+      "count": 21,
+      "physical": 0,
+      "straight": 3
+    }
+  ],
+  "pit": [
+    {
+      "label": "early_31831",
+      "level": 0,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 0,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 0,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 2,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 2,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 2,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 4,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 4,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 4,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 6,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 9,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 15,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 15,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 15,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 21,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 21,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831",
+      "level": 21,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 0,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 0,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 0,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 2,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 2,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 2,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 4,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 4,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 4,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 6,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 9,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 15,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 15,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 15,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 21,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 21,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "early_31831_teacher",
+      "level": 21,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 0,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 0,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 0,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 2,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 2,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 2,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 4,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 4,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 4,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 6,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 9,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 15,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 15,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 15,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 21,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 21,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131",
+      "level": 21,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 0,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 0,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 0,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 2,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 2,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 2,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 4,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 4,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 4,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 6,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 9,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 15,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 15,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 15,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 21,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 21,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    },
+    {
+      "label": "V14_32131_teacher",
+      "level": 21,
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "climb": false,
+      "stable": false,
+      "physical": false
+    }
+  ],
+  "flat_failures": [
+    {
+      "label": "early_31831",
+      "direction": "reverse",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.15371403098106384,
+      "last_yaw_error": 0.10583413392305374
+    },
+    {
+      "label": "early_31831",
+      "direction": "right",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.23173822462558746,
+      "last_yaw_error": 0.05763835832476616
+    },
+    {
+      "label": "early_31831",
+      "direction": "diagonal",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": false,
+      "last_xy_error": 0.15917572379112244,
+      "last_yaw_error": 0.14909854531288147
+    },
+    {
+      "label": "early_31831",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.17273615300655365,
+      "last_yaw_error": 0.08700437843799591
+    },
+    {
+      "label": "early_31831",
+      "direction": "forward_turn",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": false,
+      "last_xy_error": 0.07168316096067429,
+      "last_yaw_error": 0.25908124446868896
+    },
+    {
+      "label": "early_31831",
+      "direction": "reverse",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": false,
+      "last_xy_error": 0.18045909702777863,
+      "last_yaw_error": 0.13051766157150269
+    },
+    {
+      "label": "early_31831",
+      "direction": "right",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.1681479513645172,
+      "last_yaw_error": 0.05943899229168892
+    },
+    {
+      "label": "early_31831",
+      "direction": "diagonal_back",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.28436434268951416,
+      "last_yaw_error": 0.030782289803028107
+    },
+    {
+      "label": "early_31831",
+      "direction": "forward_turn",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.06173498183488846,
+      "last_yaw_error": 0.31909874081611633
+    },
+    {
+      "label": "early_31831_teacher",
+      "direction": "reverse",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": false,
+      "last_xy_error": 0.16449351608753204,
+      "last_yaw_error": 0.05799957737326622
+    },
+    {
+      "label": "early_31831_teacher",
+      "direction": "right",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.17553935945034027,
+      "last_yaw_error": 0.057653918862342834
+    },
+    {
+      "label": "early_31831_teacher",
+      "direction": "right",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.171319842338562,
+      "last_yaw_error": 0.06641557067632675
+    },
+    {
+      "label": "V14_32131",
+      "direction": "forward",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.0970941036939621,
+      "last_yaw_error": 0.08875195682048798
+    },
+    {
+      "label": "V14_32131",
+      "direction": "reverse",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.2967137396335602,
+      "last_yaw_error": 0.10637078434228897
+    },
+    {
+      "label": "V14_32131",
+      "direction": "left",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": false,
+      "last_xy_error": 0.21892887353897095,
+      "last_yaw_error": 0.1465327888727188
+    },
+    {
+      "label": "V14_32131",
+      "direction": "right",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.25737208127975464,
+      "last_yaw_error": 0.08040383458137512
+    },
+    {
+      "label": "V14_32131_teacher",
+      "direction": "forward",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.05362866073846817,
+      "last_yaw_error": 0.06514020264148712
+    },
+    {
+      "label": "V14_32131_teacher",
+      "direction": "reverse",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": false,
+      "last_xy_error": 0.18840646743774414,
+      "last_yaw_error": 0.10466986894607544
+    },
+    {
+      "label": "V14_32131_teacher",
+      "direction": "right",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.16312238574028015,
+      "last_yaw_error": 0.07579143345355988
+    }
+  ]
+}

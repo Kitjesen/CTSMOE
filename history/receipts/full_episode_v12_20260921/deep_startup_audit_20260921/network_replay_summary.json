@@ -1,0 +1,272 @@
+[
+  {
+    "probe": "initial_vx",
+    "vx": -0.6,
+    "request_rms_rad": 0.1871608750267758,
+    "request_max_abs_rad": 0.31206655502319336,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "initial_vx",
+    "vx": 0.0,
+    "request_rms_rad": 0.11477133158538813,
+    "request_max_abs_rad": 0.21870359778404236,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "initial_vx",
+    "vx": 0.1,
+    "request_rms_rad": 0.14062122448478753,
+    "request_max_abs_rad": 0.26009881496429443,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "initial_vx",
+    "vx": 0.2,
+    "request_rms_rad": 0.19747857896284135,
+    "request_max_abs_rad": 0.30231571197509766,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "initial_vx",
+    "vx": 0.3,
+    "request_rms_rad": 0.24142358028608882,
+    "request_max_abs_rad": 0.4320645332336426,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "initial_vx",
+    "vx": 0.4,
+    "request_rms_rad": 0.27248288972593665,
+    "request_max_abs_rad": 0.5162792205810547,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "initial_vx",
+    "vx": 0.5,
+    "request_rms_rad": 0.2925798510864089,
+    "request_max_abs_rad": 0.5675768852233887,
+    "gate_min": 0.12155988812446594,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "initial_vx",
+    "vx": 0.6,
+    "request_rms_rad": 0.30466146216735707,
+    "request_max_abs_rad": 0.592686116695404,
+    "gate_min": 0.12155991047620773,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "initial_vx",
+    "vx": 0.8,
+    "request_rms_rad": 0.3128988620785186,
+    "request_max_abs_rad": 0.5918042063713074,
+    "gate_min": 0.12156586349010468,
+    "gate_max": 0.1311398148536682
+  },
+  {
+    "probe": "initial_vx",
+    "vx": 1.2,
+    "request_rms_rad": 0.284090646590109,
+    "request_max_abs_rad": 0.4636175334453583,
+    "gate_min": 0.12156587094068527,
+    "gate_max": 0.1311398148536682
+  },
+  {
+    "probe": "direct_latent_zero_single",
+    "request_rms_rad": 0.2506565104010003,
+    "request_max_abs_rad": 0.4532809853553772
+  },
+  {
+    "probe": "zero_latent_direct_single",
+    "request_rms_rad": 0.1307758130714012,
+    "request_max_abs_rad": 0.23419508337974548
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.02,
+    "channel": "unchanged",
+    "request_rms_rad": 0.32182514187065286,
+    "request_max_abs_rad": 0.5690872073173523,
+    "gate_min": 0.12156587094068527,
+    "gate_max": 0.1311398148536682
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.02,
+    "channel": "past_action",
+    "request_rms_rad": 0.25889887833167524,
+    "request_max_abs_rad": 0.5261035561561584,
+    "gate_min": 0.12156573683023453,
+    "gate_max": 0.131139874458313
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.02,
+    "channel": "command_history",
+    "request_rms_rad": 0.2953047476906998,
+    "request_max_abs_rad": 0.5498020052909851,
+    "gate_min": 0.12156587094068527,
+    "gate_max": 0.1311398148536682
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.02,
+    "channel": "joint_velocity",
+    "request_rms_rad": 0.28702621587478283,
+    "request_max_abs_rad": 0.5362232327461243,
+    "gate_min": 0.12156587094068527,
+    "gate_max": 0.1311398148536682
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.1,
+    "channel": "unchanged",
+    "request_rms_rad": 0.4771447155463355,
+    "request_max_abs_rad": 0.769233226776123,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.1,
+    "channel": "past_action",
+    "request_rms_rad": 0.22095970522573485,
+    "request_max_abs_rad": 0.37899354100227356,
+    "gate_min": 0.12156029790639877,
+    "gate_max": 0.13114230334758759
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.1,
+    "channel": "command_history",
+    "request_rms_rad": 0.4423505620773513,
+    "request_max_abs_rad": 0.7011528015136719,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.1,
+    "channel": "joint_velocity",
+    "request_rms_rad": 0.4025779513000353,
+    "request_max_abs_rad": 0.6861369013786316,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.2,
+    "channel": "unchanged",
+    "request_rms_rad": 0.5716411883514682,
+    "request_max_abs_rad": 1.126784324645996,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.2,
+    "channel": "past_action",
+    "request_rms_rad": 0.34650546289145695,
+    "request_max_abs_rad": 0.6597951054573059,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.2,
+    "channel": "command_history",
+    "request_rms_rad": 0.5777911702869473,
+    "request_max_abs_rad": 1.116524577140808,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.2,
+    "channel": "joint_velocity",
+    "request_rms_rad": 0.5473827264236576,
+    "request_max_abs_rad": 1.1603840589523315,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.5,
+    "channel": "unchanged",
+    "request_rms_rad": 0.47571709289889985,
+    "request_max_abs_rad": 1.005855679512024,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.5,
+    "channel": "past_action",
+    "request_rms_rad": 0.20934062973234732,
+    "request_max_abs_rad": 0.3793143630027771,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.5,
+    "channel": "command_history",
+    "request_rms_rad": 0.48615953652070343,
+    "request_max_abs_rad": 1.0527682304382324,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 0.5,
+    "channel": "joint_velocity",
+    "request_rms_rad": 0.44684275703703624,
+    "request_max_abs_rad": 1.0375703573226929,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 1.0,
+    "channel": "unchanged",
+    "request_rms_rad": 0.34496966626634834,
+    "request_max_abs_rad": 0.47214317321777344,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 1.0,
+    "channel": "past_action",
+    "request_rms_rad": 0.2713533067227208,
+    "request_max_abs_rad": 0.48917582631111145,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 1.0,
+    "channel": "command_history",
+    "request_rms_rad": 0.33288925510568407,
+    "request_max_abs_rad": 0.48033949732780457,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  },
+  {
+    "probe": "recorded_input_ablation",
+    "time": 1.0,
+    "channel": "joint_velocity",
+    "request_rms_rad": 0.2808349887902522,
+    "request_max_abs_rad": 0.5707014203071594,
+    "gate_min": 0.12155989557504654,
+    "gate_max": 0.13114243745803833
+  }
+]

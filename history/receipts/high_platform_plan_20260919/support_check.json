@@ -1,0 +1,32 @@
+{
+  "mode": "manually placed component test; not policy performance",
+  "filter": "/World/ground/terrain/mesh",
+  "max_filtered_z_n": [
+    615.1141357421875,
+    603.3262939453125,
+    1327.9180908203125,
+    1688.2657470703125
+  ],
+  "cases": {
+    "floor": {
+      "count": 16,
+      "success": 0,
+      "ever_four_supported": 0
+    },
+    "platform_valid_start": {
+      "count": 16,
+      "success": 16,
+      "ever_four_supported": 16
+    },
+    "platform_invalid_start": {
+      "count": 16,
+      "success": 0,
+      "ever_four_supported": 16
+    },
+    "straddling_lip": {
+      "count": 16,
+      "success": 0,
+      "ever_four_supported": 0
+    }
+  }
+}

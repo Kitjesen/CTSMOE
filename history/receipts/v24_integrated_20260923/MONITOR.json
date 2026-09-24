@@ -1,0 +1,26 @@
+{
+  "snapshot_utc": "2026-09-22T21:39:00Z",
+  "status": "running_hip_only_v24",
+  "server": "connect.weste.seetacloud.com:35324",
+  "remote_root": "/root/autodl-tmp/cts-omni-repair-v19-20260922/v24_hip_mixed_20260923",
+  "authoritative_pipeline_status": "orchestration/pipeline_status.json",
+  "authoritative_training_metrics": "orchestration/training_34839_to_35823/metrics.jsonl",
+  "source_completed_updates": 34823,
+  "source_checkpoint_sha256": "521a31d1acfc7e0906f4ac3260ee30f161af5b1c18278367d0c0045b7afe3fa5",
+  "first_segment_completed": 34839,
+  "latest_observed_completed_updates": 35087,
+  "target_completed_updates": 35823,
+  "initial_global_budget_remaining": 6000,
+  "v24_finite_update_cap": 1000,
+  "preflight": "3000 control steps, zero optimizer updates, independent model and dual-optimizer hash proof passed",
+  "automatic_mixed_training": false,
+  "automatic_composite_training": false,
+  "hardware_deployment": false,
+  "next_actions": [
+    "Check real process, GPU, metrics and checkpoint before any action; do not start a duplicate job",
+    "When V24 ends, collect all four paired suites and BEHAVIOR_COMPARISON.json before selecting a mixed-stair source",
+    "Run leg_clearance_probe on V24 stairend_15cm traces and compare against V23 source",
+    "Only after V24 behavior review and GPU idle, fill mixed_orchestration/SOURCE_REVIEW.json and run its zero-update preflight",
+    "Keep V25 composite route independent until live Isaac contact/geometry diagnostics and explicit V24/V25 curriculum migration"
+  ]
+}

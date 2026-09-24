@@ -1,0 +1,132 @@
+{
+  "scope": "read-only analysis of two fixed V12 student forward cases",
+  "trace_contract": {
+    "dt_s": 0.02,
+    "policy_history_frames": 10,
+    "single_observation_width": 53,
+    "actuator_delay_physics_steps": 2,
+    "physics_dt_s": 0.005,
+    "actuator_delay_s": 0.01,
+    "target_semantics": "robot.data.joint_pos_target: post-guard, pre-actuator-delay user command"
+  },
+  "focus_joints": [
+    "fl_calf_joint",
+    "fr_thigh_joint",
+    "fl_hip_joint",
+    "rl_thigh_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fr_calf_joint"
+  ],
+  "cases": {
+    "direct": {
+      "mode": "direct",
+      "case_id": 60,
+      "command_onset_trace_index": 0,
+      "command_onset_post_step_time_s": 0.02,
+      "pre_onset_control_steps_available": 0,
+      "first_gate_crossings_from_episode_start": {
+        "request_abs_gt_0.60rad": {
+          "time_s": 0.1,
+          "value": 0.6073992848396301,
+          "joint": "fr_thigh_joint"
+        },
+        "guarded_target_pre_actuator_delay_abs_gt_0.60rad": {
+          "time_s": 0.1,
+          "value": 0.6073992848396301,
+          "joint": "fr_thigh_joint"
+        },
+        "actual_abs_gt_0.60rad": {
+          "time_s": 0.18,
+          "value": -0.6124835014343262,
+          "joint": "fl_calf_joint"
+        },
+        "actual_qrms_gt_0.25rad": {
+          "time_s": 0.14,
+          "value": 0.2538001095528686
+        }
+      },
+      "first_crossings_after_command_onset": {
+        "request_abs_gt_0.60rad": {
+          "value": 0.6073992848396301,
+          "joint": "fr_thigh_joint",
+          "relative_time_s": 0.08,
+          "absolute_post_step_time_s": 0.1
+        },
+        "guarded_target_pre_actuator_delay_abs_gt_0.60rad": {
+          "value": 0.6073992848396301,
+          "joint": "fr_thigh_joint",
+          "relative_time_s": 0.08,
+          "absolute_post_step_time_s": 0.1
+        },
+        "actual_abs_gt_0.60rad": {
+          "value": -0.6124835014343262,
+          "joint": "fl_calf_joint",
+          "relative_time_s": 0.16,
+          "absolute_post_step_time_s": 0.18
+        }
+      },
+      "first_second_max_actual_from_default": {
+        "time_s": 0.58,
+        "value": -1.0284318923950195,
+        "joint": "fl_calf_joint"
+      },
+      "max_joint_snapshot": {
+        "joint": "fl_calf_joint",
+        "time_s": 0.58,
+        "request_from_default_rad": -1.0161356925964355,
+        "guarded_target_pre_actuator_delay_from_default_rad": -1.0161356925964355,
+        "actual_from_default_rad": -1.0284318923950195,
+        "actual_minus_guarded_target_rad": -0.012296199798583984,
+        "joint_velocity_rad_s": -0.17304086685180664,
+        "control_step_speed_peak_rad_s": 0.2704450786113739,
+        "control_step_torque_peak_nm": 3.943260908126831
+      },
+      "first_second_qrms_peak": 0.4642669824931929
+    },
+    "settle": {
+      "mode": "settle",
+      "case_id": 70,
+      "command_onset_trace_index": 100,
+      "command_onset_post_step_time_s": 2.02,
+      "pre_onset_control_steps_available": 100,
+      "first_gate_crossings_from_episode_start": {
+        "request_abs_gt_0.60rad": {
+          "time_s": 0.76,
+          "value": -0.6552687734365463,
+          "joint": "rl_hip_joint"
+        },
+        "guarded_target_pre_actuator_delay_abs_gt_0.60rad": null,
+        "actual_abs_gt_0.60rad": null,
+        "actual_qrms_gt_0.25rad": null
+      },
+      "first_crossings_after_command_onset": {
+        "request_abs_gt_0.60rad": {
+          "value": -1.2670834511518478,
+          "joint": "fr_hip_joint",
+          "relative_time_s": 0.0,
+          "absolute_post_step_time_s": 2.02
+        },
+        "guarded_target_pre_actuator_delay_abs_gt_0.60rad": null,
+        "actual_abs_gt_0.60rad": null
+      },
+      "first_second_max_actual_from_default": {
+        "time_s": 2.44,
+        "value": -0.3071972131729126,
+        "joint": "fr_calf_joint"
+      },
+      "max_joint_snapshot": {
+        "joint": "fr_calf_joint",
+        "time_s": 2.44,
+        "request_from_default_rad": -0.16241443157196045,
+        "guarded_target_pre_actuator_delay_from_default_rad": -0.16241443157196045,
+        "actual_from_default_rad": -0.3071972131729126,
+        "actual_minus_guarded_target_rad": -0.14478278160095215,
+        "joint_velocity_rad_s": 0.01807408779859543,
+        "control_step_speed_peak_rad_s": 0.4115258455276489,
+        "control_step_torque_peak_nm": 16.785524368286133
+      },
+      "first_second_qrms_peak": 0.12885644789517797
+    }
+  }
+}

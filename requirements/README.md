@@ -1,0 +1,1 @@
+Use provenance/ENVIRONMENT.json as the observed runtime, not an automatically installable lock. Isaac Lab / Isaac Sim installation is external. Preserve upstream dependency declarations under vendor.

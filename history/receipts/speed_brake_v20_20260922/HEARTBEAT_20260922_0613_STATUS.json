@@ -1,0 +1,4248 @@
+{
+  "state": "training",
+  "completed_updates": 33486,
+  "startup_anchor": null,
+  "seconds": 7.557846307754517,
+  "collect_seconds": 6.72871208190918,
+  "learn_seconds": 0.8291342258453369,
+  "fast_delay": false,
+  "actuator_profile": "rs0402_transient_v4",
+  "actuator_guard": {
+    "profile": "rs0402_transient_v4",
+    "limits": {
+      "leg_torque_nm": 120.0,
+      "wheel_torque_nm": 17.0,
+      "leg_speed_rad_s": 15.0,
+      "wheel_speed_rad_s": 30.0,
+      "leg_target_rate_rad_s": 12.0,
+      "speed_penalty_fraction": 0.9,
+      "speed_termination_fraction": 1.02,
+      "hard_position_termination_rad": 0.01,
+      "leg_load_reference_nm": 35.0,
+      "wheel_load_reference_nm": 6.0,
+      "speed_sustained_duration_s": 0.06,
+      "speed_extreme_termination_fraction": 1.5,
+      "load_penalty_weight": -0.1,
+      "speed_penalty_weight": -1.0,
+      "saturation_penalty_weight": -0.02,
+      "violation_penalty_weight": -25.0
+    },
+    "samples_per_joint": 393216,
+    "joints": {
+      "fl_hip_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 8.964316368103027,
+        "max_hard_position_excess": 0.002316772937774658,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 1.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.004999999888241291,
+        "tolerated_overspeed_samples": 0.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 13.620999836869156,
+        "clipped_sample_fraction": 2.5431315104166665e-06
+      },
+      "fr_hip_joint": {
+        "peak_torque": 103.30611419677734,
+        "peak_speed": 9.341506004333496,
+        "max_hard_position_excess": 0.0034511685371398926,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "tolerated_overspeed_samples": 0.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 13.460361638872069,
+        "clipped_sample_fraction": 0.0
+      },
+      "rl_hip_joint": {
+        "peak_torque": 114.37315368652344,
+        "peak_speed": 14.330735206604004,
+        "max_hard_position_excess": 0.0035037994384765625,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "tolerated_overspeed_samples": 0.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 13.71717643547604,
+        "clipped_sample_fraction": 0.0
+      },
+      "rr_hip_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 9.927865982055664,
+        "max_hard_position_excess": 0.0024466216564178467,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 1.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.004999999888241291,
+        "tolerated_overspeed_samples": 0.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 13.59243812515613,
+        "clipped_sample_fraction": 2.5431315104166665e-06
+      },
+      "fl_thigh_joint": {
+        "peak_torque": 113.71197509765625,
+        "peak_speed": 7.2846455574035645,
+        "max_hard_position_excess": 0.0008692774572409689,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 11.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.019999999552965164,
+        "tolerated_overspeed_samples": 0.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 15.124007263391704,
+        "clipped_sample_fraction": 2.7974446614583332e-05
+      },
+      "fr_thigh_joint": {
+        "peak_torque": 111.82554626464844,
+        "peak_speed": 10.406386375427246,
+        "max_hard_position_excess": 5.807552838632546e-08,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 1.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.004999999888241291,
+        "tolerated_overspeed_samples": 0.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 15.210430568508805,
+        "clipped_sample_fraction": 2.5431315104166665e-06
+      },
+      "rl_thigh_joint": {
+        "peak_torque": 102.78773498535156,
+        "peak_speed": 9.334820747375488,
+        "max_hard_position_excess": 8.346506547241006e-06,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 5.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.019999999552965164,
+        "tolerated_overspeed_samples": 0.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 15.021077584843766,
+        "clipped_sample_fraction": 1.2715657552083334e-05
+      },
+      "rr_thigh_joint": {
+        "peak_torque": 108.87738037109375,
+        "peak_speed": 8.77529239654541,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 27.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.11500001698732376,
+        "tolerated_overspeed_samples": 0.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 15.8541324463056,
+        "clipped_sample_fraction": 6.866455078125e-05
+      },
+      "fl_calf_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 15.840283393859863,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 63.0,
+        "overspeed_samples": 4.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.019999999552965164,
+        "tolerated_overspeed_samples": 2.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 17.397220152741895,
+        "clipped_sample_fraction": 0.00016021728515625
+      },
+      "fr_calf_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 15.98328685760498,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 76.0,
+        "overspeed_samples": 4.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.009999999776482582,
+        "tolerated_overspeed_samples": 1.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 16.534483970062386,
+        "clipped_sample_fraction": 0.00019327799479166666
+      },
+      "rl_calf_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 15.924877166748047,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 77.0,
+        "overspeed_samples": 8.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.019999999552965164,
+        "tolerated_overspeed_samples": 4.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 17.046928109640763,
+        "clipped_sample_fraction": 0.00019582112630208334
+      },
+      "rr_calf_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 15.226984024047852,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 103.0,
+        "overspeed_samples": 4.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.10000000894069672,
+        "tolerated_overspeed_samples": 0.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 16.288005186508542,
+        "clipped_sample_fraction": 0.0002619425455729167
+      },
+      "fl_foot_joint": {
+        "peak_torque": 17.0,
+        "peak_speed": 70.24881744384766,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 1289.0,
+        "overspeed_samples": 16.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.16999997198581696,
+        "tolerated_overspeed_samples": 10.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 3.355303901291138,
+        "clipped_sample_fraction": 0.0032780965169270835
+      },
+      "fr_foot_joint": {
+        "peak_torque": 17.0,
+        "peak_speed": 44.05630111694336,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 1463.0,
+        "overspeed_samples": 15.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.17499996721744537,
+        "tolerated_overspeed_samples": 11.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 3.5724587253600344,
+        "clipped_sample_fraction": 0.0037206013997395835
+      },
+      "rl_foot_joint": {
+        "peak_torque": 17.0,
+        "peak_speed": 38.672367095947266,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 1336.0,
+        "overspeed_samples": 14.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.33999982476234436,
+        "tolerated_overspeed_samples": 10.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 3.602060985477475,
+        "clipped_sample_fraction": 0.0033976236979166665
+      },
+      "rr_foot_joint": {
+        "peak_torque": 17.0,
+        "peak_speed": 73.1103515625,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 1388.0,
+        "overspeed_samples": 10.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.28499987721443176,
+        "tolerated_overspeed_samples": 4.0,
+        "sustained_overspeed_samples": 0.0,
+        "torque_rms_nm": 3.524085955780657,
+        "clipped_sample_fraction": 0.0035298665364583335
+      }
+    },
+    "scope": "all training environments since last log; 200 Hz, including resets"
+  },
+  "command_curriculum_start": "intermediate",
+  "terrain_training_profile": "stairs80_v1",
+  "stair_command_profile": "straight_speed_v1",
+  "wave_reset_profile": "wave_surface_v1",
+  "wave_reset": {
+    "profile": "wave_surface_v1",
+    "count": 2268,
+    "clearance_m": 0.03,
+    "surface_spacing_m": 0.02,
+    "geometry_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+    "surface_points": 8440,
+    "last": {
+      "count": 1,
+      "delta_min": -0.2122165858745575,
+      "delta_max": -0.2122165858745575,
+      "collision_gap_min": 0.030000001192092896,
+      "nearest_wheel_gap_max": 0.030000001192092896
+    }
+  },
+  "stair_speed": {
+    "profile": "straight_speed_v1",
+    "speed_edges": [
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "stairs_command_count": 737,
+    "active_speed_bin_counts": [
+      300,
+      185,
+      134,
+      118
+    ],
+    "vx_min_max": [
+      0.2008845955133438,
+      0.9992828369140625
+    ],
+    "vy_wz_abs_max": [
+      0.0,
+      0.0
+    ],
+    "episode_statistics": {
+      "teacher": {
+        "stairs_up": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 309318,
+            "grade_eligible": 282668,
+            "radius_passes": 249171,
+            "physical_failures": 34310,
+            "vx_mae_mps": 0.07489674425218065
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 311277,
+            "grade_eligible": 311277,
+            "radius_passes": 281675,
+            "physical_failures": 29434,
+            "vx_mae_mps": 0.09539602813178902
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 312411,
+            "grade_eligible": 312411,
+            "radius_passes": 282409,
+            "physical_failures": 29901,
+            "vx_mae_mps": 0.13467522617523994
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 311779,
+            "grade_eligible": 311779,
+            "radius_passes": 277716,
+            "physical_failures": 33964,
+            "vx_mae_mps": 0.19557190403851302
+          }
+        ],
+        "stairs_down": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 110748,
+            "grade_eligible": 101241,
+            "radius_passes": 89830,
+            "physical_failures": 12275,
+            "vx_mae_mps": 0.07631743812129997
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 111064,
+            "grade_eligible": 111064,
+            "radius_passes": 100811,
+            "physical_failures": 10252,
+            "vx_mae_mps": 0.09313471873036523
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 112021,
+            "grade_eligible": 112021,
+            "radius_passes": 101226,
+            "physical_failures": 10794,
+            "vx_mae_mps": 0.12131795683398916
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 112136,
+            "grade_eligible": 112136,
+            "radius_passes": 98654,
+            "physical_failures": 13482,
+            "vx_mae_mps": 0.16224234292793666
+          }
+        ]
+      },
+      "student": {
+        "stairs_up": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 102903,
+            "grade_eligible": 94010,
+            "radius_passes": 78729,
+            "physical_failures": 14684,
+            "vx_mae_mps": 0.09207984292914545
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 103699,
+            "grade_eligible": 103699,
+            "radius_passes": 90551,
+            "physical_failures": 13072,
+            "vx_mae_mps": 0.11634221010331208
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 104141,
+            "grade_eligible": 104141,
+            "radius_passes": 90173,
+            "physical_failures": 13917,
+            "vx_mae_mps": 0.16200186853290607
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 103987,
+            "grade_eligible": 103987,
+            "radius_passes": 87027,
+            "physical_failures": 16912,
+            "vx_mae_mps": 0.2385681021053983
+          }
+        ],
+        "stairs_down": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 37927,
+            "grade_eligible": 34614,
+            "radius_passes": 30026,
+            "physical_failures": 4974,
+            "vx_mae_mps": 0.09050789184377812
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 38509,
+            "grade_eligible": 38509,
+            "radius_passes": 34217,
+            "physical_failures": 4292,
+            "vx_mae_mps": 0.10830019210428274
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 38428,
+            "grade_eligible": 38428,
+            "radius_passes": 33917,
+            "physical_failures": 4511,
+            "vx_mae_mps": 0.1378031784827162
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 38706,
+            "grade_eligible": 38706,
+            "radius_passes": 32980,
+            "physical_failures": 5726,
+            "vx_mae_mps": 0.17893547154131453
+          }
+        ]
+      }
+    },
+    "criterion": "eligible forward exit > 4m without physical termination; not independent stair completion",
+    "statistics_mode": "cumulative stochastic training episodes; no automatic speed-weight adjustment"
+  },
+  "base_height_penalty_weight": -3.979,
+  "mixed_profile": "mixed9_v1",
+  "slope_profile": "slope45_v1",
+  "pit_training_profile": "strict_v1",
+  "pit_posture_profile": "off",
+  "pit_posture": null,
+  "surface_posture_profile": "off",
+  "surface_posture": null,
+  "stance_strength_profile": "off",
+  "stance_strength": null,
+  "startup_repair_profile": "off",
+  "startup_repair": null,
+  "early_restart_profile": "early_phase_v14_no_reward",
+  "early_restart": {
+    "posture_stop": {
+      "profile": "posture_stop_v17",
+      "height_weight": -3.979,
+      "soft_limit_weight": -2.0,
+      "height_course_source_completed": 31831,
+      "height_course_updates": 5000,
+      "height_course_applied_step": 803664,
+      "height_course_current_step": 803664,
+      "height_course_lag_steps": 0,
+      "height_course_lag_updates": 0.0,
+      "height_course_max_lag_steps": 1250,
+      "full_zero_flat_envs": 168,
+      "rotation_only_flat_envs": 307,
+      "relevant_phase_weight_min": 0.0,
+      "relevant_phase_weight_max": 1.0,
+      "height_target_m": 0.46,
+      "extra_joint_posture_weights_unchanged": true
+    },
+    "phase_pose": {
+      "profile": "phase_pose_v18",
+      "extra_l1_weight": -0.2,
+      "recovery_s": 1.5,
+      "release_reference_gap_m": [
+        0.85,
+        0.35
+      ],
+      "fixed_front_extent_m": 0.4337119460105896,
+      "joint_names": [
+        "fl_hip_joint",
+        "fr_hip_joint",
+        "rl_hip_joint",
+        "rr_hip_joint",
+        "fl_thigh_joint",
+        "fr_thigh_joint",
+        "rl_thigh_joint",
+        "rr_thigh_joint",
+        "fl_calf_joint",
+        "fr_calf_joint",
+        "rl_calf_joint",
+        "rr_calf_joint"
+      ],
+      "by_terrain": {
+        "flat": {
+          "count": 1639,
+          "gate_mean": 0.9999999403953552,
+          "gate_min": 1.0,
+          "gate_max": 1.0,
+          "actual_abs_mean_per_joint": [
+            0.10743114352226257,
+            0.10413113236427307,
+            0.11554202437400818,
+            0.1120619848370552,
+            0.0657409131526947,
+            0.08355429768562317,
+            0.06021304428577423,
+            0.060857344418764114,
+            0.07038380950689316,
+            0.07191285490989685,
+            0.07224322110414505,
+            0.06719893962144852
+          ],
+          "actual_abs_max_per_joint": [
+            0.30664393305778503,
+            0.3710322380065918,
+            0.45513486862182617,
+            0.37472307682037354,
+            0.4245748519897461,
+            0.5795029997825623,
+            0.6301794648170471,
+            0.3055824041366577,
+            0.7435634136199951,
+            0.5524046421051025,
+            0.5944645404815674,
+            0.6236821413040161
+          ]
+        },
+        "pit": {
+          "count": 409,
+          "gate_mean": 0.8753219246864319,
+          "gate_min": 0.0,
+          "gate_max": 1.0,
+          "actual_abs_mean_per_joint": [
+            0.14004828035831451,
+            0.13104277849197388,
+            0.1587875783443451,
+            0.15137267112731934,
+            0.04404400289058685,
+            0.05597501993179321,
+            0.03832288831472397,
+            0.05937069281935692,
+            0.03860678896307945,
+            0.042411863803863525,
+            0.051431380212306976,
+            0.04541821777820587
+          ],
+          "actual_abs_max_per_joint": [
+            0.21009336411952972,
+            0.20191745460033417,
+            0.21001572906970978,
+            0.21009008586406708,
+            0.591663122177124,
+            0.43983346223831177,
+            0.5167849659919739,
+            0.43561089038848877,
+            0.7675457000732422,
+            0.26108503341674805,
+            0.16374385356903076,
+            0.3751790523529053
+          ]
+        },
+        "stairs": {
+          "count": 737,
+          "gate_mean": 0.09340569376945496,
+          "gate_min": 0.0,
+          "gate_max": 1.0,
+          "actual_abs_mean_per_joint": [
+            0.14429375529289246,
+            0.128494530916214,
+            0.14139875769615173,
+            0.14131292700767517,
+            0.3540656864643097,
+            0.22125257551670074,
+            0.46372127532958984,
+            0.22712254524230957,
+            0.3761829435825348,
+            0.24153852462768555,
+            0.2946975827217102,
+            0.21245044469833374
+          ],
+          "actual_abs_max_per_joint": [
+            0.5695189833641052,
+            0.52754145860672,
+            0.21006764471530914,
+            0.21002034842967987,
+            0.8475245833396912,
+            0.876022458076477,
+            1.4064931869506836,
+            1.1450977325439453,
+            1.231337308883667,
+            1.0511577129364014,
+            0.9946543574333191,
+            1.0113389492034912
+          ]
+        }
+      },
+      "normal_effective_hip_weight": -0.25,
+      "normal_effective_thigh_calf_weight": -0.21,
+      "climb_baseline_hip_weight": -0.05,
+      "climb_baseline_thigh_calf_weight": -0.01,
+      "diagnostic_scope": "current control step across training environments, not held-out performance"
+    },
+    "omni_commands": {
+      "profile": "omni_full_episode_v20",
+      "segment_s": 5.0,
+      "episode_s": 25.0,
+      "sampling_contract": {
+        "scope": "flat_only",
+        "nonzero_abs_ranges": {
+          "lin_vel_x": [
+            0.1,
+            2.0
+          ],
+          "lin_vel_y": [
+            0.2,
+            1.0
+          ],
+          "ang_vel_yaw": [
+            0.2,
+            1.5
+          ]
+        },
+        "zero_axes_and_full_stop_allowed": true,
+        "magnitude_distribution": "uniform before boundary handling",
+        "boundary_policy": "magnitude-preserving reflections, up to four resamples, then 0.2 m/s cardinal recovery",
+        "initial_ramp_probability": 0.5,
+        "initial_ramp_s": 0.2,
+        "probabilities_scope": "base sampler; sequence cohort and boundary handling alter final frequencies"
+      },
+      "current_goal_nonzero_abs_ranges": {
+        "lin_vel_x": [
+          0.1008514016866684,
+          1.9997749328613281
+        ],
+        "lin_vel_y": [
+          0.20217517018318176,
+          0.9998927116394043
+        ],
+        "ang_vel_yaw": [
+          0.20286178588867188,
+          1.4954568147659302
+        ]
+      },
+      "current_command_nonzero_abs_ranges": {
+        "lin_vel_x": [
+          0.1008514016866684,
+          1.9997749328613281
+        ],
+        "lin_vel_y": [
+          0.20217517018318176,
+          0.9998927116394043
+        ],
+        "ang_vel_yaw": [
+          0.20286178588867188,
+          1.4954568147659302
+        ]
+      },
+      "boundary": {
+        "physical_lower_xy": [
+          -99.0,
+          -27.0
+        ],
+        "physical_upper_xy": [
+          99.0,
+          0.0
+        ],
+        "planning_margin_m": 1.2,
+        "guard_root_margin_m": 1.0,
+        "reflections": 2974,
+        "resamples": 31,
+        "cardinal_recoveries": 0,
+        "guard_timeouts": 66,
+        "crossings": 0,
+        "prediction": "5s body twist integrated using measured yaw"
+      },
+      "sequence_fraction": 0.2,
+      "sampled_probabilities": {
+        "forward": 0.2,
+        "backward": 0.1,
+        "left": 0.1,
+        "right": 0.1,
+        "yaw_left": 0.1,
+        "yaw_right": 0.1,
+        "diagonal_a": 0.05,
+        "diagonal_b": 0.05,
+        "longitudinal_turn": 0.05,
+        "lateral_turn": 0.05,
+        "stop": 0.1
+      },
+      "kind_counts_by_learner": [
+        [
+          6550,
+          3912,
+          3506,
+          3597,
+          3511,
+          3459,
+          1754,
+          1770,
+          1752,
+          1718,
+          5920
+        ],
+        [
+          2211,
+          1339,
+          1148,
+          1135,
+          1156,
+          1173,
+          559,
+          584,
+          577,
+          582,
+          1926
+        ]
+      ],
+      "stop_restart_by_learner": [
+        [
+          5052,
+          5054
+        ],
+        [
+          1660,
+          1629
+        ]
+      ],
+      "current_full_zero": 168,
+      "current_pure_yaw": 307
+    },
+    "omni_lift": {
+      "profile": "omni_lift_v19",
+      "scope": "exact flat terrain membership; current training environments, not held-out performance",
+      "sensor": "per-wheel link filtered contact against /World/ground/terrain/mesh",
+      "clearance_reference": "wheel link z - flat env origin z - 0.093 m radius",
+      "weights": {
+        "lift_event": 0.5,
+        "landing_event": 1.0
+      },
+      "rules": {
+        "min_clearance_m": 0.03,
+        "ideal_clearance_m": 0.045,
+        "max_clearance_m": 0.06,
+        "min_air_s": 0.08,
+        "max_air_s": 0.45,
+        "lateral_command_min": 0.2,
+        "yaw_command_min": 0.2,
+        "pure_yaw_translation_max": 0.15,
+        "tracking_fraction_min": 0.35,
+        "lateral_error_floor": 0.25,
+        "yaw_error_floor": 0.3
+      },
+      "flat_count": 1639,
+      "relevant_command_count": 891,
+      "tracking_gate_count": 875,
+      "active_flights": 5283,
+      "valid_active_flights": 1051,
+      "current_episode_landing_events": 36713,
+      "landing_events_since_env_init": 249340,
+      "cumulative_by_command": {
+        "left": {
+          "tracking_gate_env_steps": 1950960,
+          "wheel_takeoffs": 407271,
+          "valid_flight_env_steps": 1280095,
+          "valid_wheel_landings": 84785,
+          "weighted_reward_integral": 2126.230772740377
+        },
+        "right": {
+          "tracking_gate_env_steps": 1927716,
+          "wheel_takeoffs": 442069,
+          "valid_flight_env_steps": 1288804,
+          "valid_wheel_landings": 66617,
+          "weighted_reward_integral": 1655.163612022182
+        },
+        "yawL": {
+          "tracking_gate_env_steps": 1124809,
+          "wheel_takeoffs": 251698,
+          "valid_flight_env_steps": 791118,
+          "valid_wheel_landings": 50995,
+          "weighted_reward_integral": 1262.8449440813338
+        },
+        "yawR": {
+          "tracking_gate_env_steps": 1106400,
+          "wheel_takeoffs": 255630,
+          "valid_flight_env_steps": 780003,
+          "valid_wheel_landings": 46943,
+          "weighted_reward_integral": 1165.597013645335
+        },
+        "other": {
+          "tracking_gate_env_steps": 0,
+          "wheel_takeoffs": 1326638,
+          "valid_flight_env_steps": 0,
+          "valid_wheel_landings": 0,
+          "weighted_reward_integral": 0.0
+        }
+      },
+      "mean_support_wheels": 2.8413665294647217
+    },
+    "profile": "early_phase_v14_no_reward",
+    "scope": "flat and geometry-normal stairs/high-platform phases; released while climbing",
+    "actual_joint_l1_no_deadzone": true,
+    "standing_all_axes_threshold": 0.05,
+    "standing_multiplier": 1.0,
+    "reward_diagnostics_source": "actual active RewardTermCfg function and params",
+    "target_height_m": 0.46,
+    "weights": {
+      "hip": -0.2,
+      "thigh_calf": -0.2,
+      "height": 0.0,
+      "vertical": 0.0
+    },
+    "source_weights": {
+      "hip": -0.2,
+      "thigh_calf": -0.08,
+      "height": -15.0,
+      "vertical": -0.5
+    },
+    "raw_mean": {
+      "hip": 0.23315724730491638,
+      "thigh_calf": 0.2615298330783844,
+      "height": 6.146438681753352e-05,
+      "vertical": 0.004027173388749361
+    },
+    "weighted_mean": {
+      "hip": -0.046631451696157455,
+      "thigh_calf": -0.05230596661567688,
+      "height": 0.0,
+      "vertical": 0.0
+    },
+    "cohort": {
+      "flat_count": 1223,
+      "fraction_per_learner": 0.75,
+      "teacher": 913,
+      "student": 310
+    },
+    "sampling": {
+      "version": "explicit_full_episode_v13",
+      "ramp_seconds": 0.2,
+      "explicit_fraction_of_normal_cohort": 0.5,
+      "ramp_probability": 0.5,
+      "kind_names": [
+        "forward",
+        "backward",
+        "left",
+        "right",
+        "yaw_left",
+        "yaw_right",
+        "diagonal_a",
+        "diagonal_b",
+        "longitudinal_turn",
+        "lateral_turn"
+      ],
+      "reset_counts": [
+        [
+          [
+            122,
+            161
+          ],
+          [
+            129,
+            152
+          ],
+          [
+            136,
+            155
+          ],
+          [
+            123,
+            134
+          ],
+          [
+            133,
+            109
+          ],
+          [
+            138,
+            133
+          ],
+          [
+            132,
+            142
+          ],
+          [
+            140,
+            151
+          ],
+          [
+            150,
+            142
+          ],
+          [
+            132,
+            140
+          ]
+        ],
+        [
+          [
+            62,
+            54
+          ],
+          [
+            43,
+            50
+          ],
+          [
+            46,
+            57
+          ],
+          [
+            50,
+            55
+          ],
+          [
+            36,
+            43
+          ],
+          [
+            57,
+            48
+          ],
+          [
+            54,
+            48
+          ],
+          [
+            44,
+            52
+          ],
+          [
+            38,
+            55
+          ],
+          [
+            49,
+            52
+          ]
+        ]
+      ],
+      "selected_by_learner": [
+        1152,
+        384
+      ],
+      "active_count": 0
+    },
+    "phase_counts": {
+      "flat_active": 1639,
+      "stairs_normal": 72,
+      "pit_normal": 404,
+      "climb_released": 670
+    },
+    "terrain_counts": {
+      "wave": 328,
+      "slope_up": 246,
+      "slope_down": 245,
+      "rough_slope": 328,
+      "stairs_up": 409,
+      "stairs_down": 328,
+      "obstacles": 164,
+      "stepping_stones": 0,
+      "gap": 0,
+      "flat": 1639,
+      "pit": 409
+    }
+  },
+  "phase_transition": null,
+  "flat_continuous": null,
+  "pit_course_profile": "global_v1",
+  "pit": {
+    "profile": "pit_exit_v1",
+    "frontier_level": 2,
+    "training_profile": "strict_v1",
+    "frontier_height_m": 0.25,
+    "max_height_m": 1.2,
+    "course": {
+      "frontier": 2,
+      "max_level": 21,
+      "min_samples": 64,
+      "streak": 0,
+      "window": [
+        [
+          64,
+          0,
+          4
+        ],
+        [
+          61,
+          0,
+          3
+        ],
+        [
+          67,
+          0,
+          3
+        ],
+        [
+          90,
+          0,
+          5
+        ]
+      ],
+      "decision_count": 45,
+      "decisions": [
+        {
+          "level": 2,
+          "counts": [
+            [
+              75,
+              0,
+              2
+            ],
+            [
+              64,
+              0,
+              1
+            ],
+            [
+              71,
+              0,
+              1
+            ],
+            [
+              69,
+              0,
+              2
+            ]
+          ],
+          "passed": false,
+          "advance": false
+        },
+        {
+          "level": 2,
+          "counts": [
+            [
+              66,
+              0,
+              0
+            ],
+            [
+              80,
+              0,
+              1
+            ],
+            [
+              72,
+              0,
+              2
+            ],
+            [
+              64,
+              0,
+              4
+            ]
+          ],
+          "passed": false,
+          "advance": false
+        },
+        {
+          "level": 2,
+          "counts": [
+            [
+              71,
+              0,
+              0
+            ],
+            [
+              68,
+              0,
+              1
+            ],
+            [
+              64,
+              0,
+              0
+            ],
+            [
+              68,
+              0,
+              5
+            ]
+          ],
+          "passed": false,
+          "advance": false
+        },
+        {
+          "level": 2,
+          "counts": [
+            [
+              77,
+              0,
+              1
+            ],
+            [
+              100,
+              0,
+              1
+            ],
+            [
+              79,
+              0,
+              1
+            ],
+            [
+              97,
+              0,
+              4
+            ]
+          ],
+          "passed": false,
+          "advance": false
+        },
+        {
+          "level": 2,
+          "counts": [
+            [
+              79,
+              0,
+              2
+            ],
+            [
+              97,
+              0,
+              2
+            ],
+            [
+              82,
+              0,
+              4
+            ],
+            [
+              110,
+              0,
+              4
+            ]
+          ],
+          "passed": false,
+          "advance": false
+        }
+      ]
+    },
+    "by_learner": {
+      "teacher": {
+        "totals": {
+          "episodes": 63549,
+          "success": 0,
+          "physical": 2865,
+          "base_contact": 1,
+          "overspeed": 2864,
+          "position": 0,
+          "torque": 0,
+          "out_of_lane": 9,
+          "timeout": 60677,
+          "front_supported": 62514,
+          "all_supported": 62278,
+          "early_failure": 222
+        },
+        "by_height_speed": [
+          [
+            [
+              1093,
+              0,
+              41,
+              0,
+              41,
+              0,
+              0,
+              0,
+              1052,
+              1076,
+              1072,
+              1
+            ],
+            [
+              993,
+              0,
+              38,
+              0,
+              38,
+              0,
+              0,
+              0,
+              955,
+              981,
+              977,
+              4
+            ],
+            [
+              1080,
+              0,
+              48,
+              0,
+              48,
+              0,
+              0,
+              0,
+              1032,
+              1059,
+              1056,
+              4
+            ],
+            [
+              987,
+              0,
+              66,
+              0,
+              66,
+              0,
+              0,
+              0,
+              921,
+              954,
+              952,
+              4
+            ]
+          ],
+          [
+            [
+              1053,
+              0,
+              26,
+              0,
+              26,
+              0,
+              0,
+              0,
+              1027,
+              1043,
+              1041,
+              3
+            ],
+            [
+              988,
+              0,
+              28,
+              0,
+              28,
+              0,
+              0,
+              0,
+              960,
+              981,
+              977,
+              4
+            ],
+            [
+              1086,
+              0,
+              50,
+              0,
+              50,
+              0,
+              0,
+              0,
+              1036,
+              1065,
+              1063,
+              7
+            ],
+            [
+              1039,
+              0,
+              64,
+              0,
+              64,
+              0,
+              0,
+              0,
+              975,
+              1012,
+              1007,
+              6
+            ]
+          ],
+          [
+            [
+              13888,
+              0,
+              527,
+              0,
+              527,
+              0,
+              0,
+              3,
+              13358,
+              13708,
+              13656,
+              23
+            ],
+            [
+              13826,
+              0,
+              577,
+              0,
+              577,
+              0,
+              0,
+              0,
+              13250,
+              13659,
+              13601,
+              25
+            ],
+            [
+              13868,
+              0,
+              683,
+              1,
+              682,
+              0,
+              0,
+              1,
+              13184,
+              13631,
+              13576,
+              62
+            ],
+            [
+              13648,
+              0,
+              717,
+              0,
+              717,
+              0,
+              0,
+              5,
+              12927,
+              13345,
+              13300,
+              79
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        ]
+      },
+      "student": {
+        "totals": {
+          "episodes": 21566,
+          "success": 0,
+          "physical": 1327,
+          "base_contact": 0,
+          "overspeed": 1327,
+          "position": 0,
+          "torque": 0,
+          "out_of_lane": 10,
+          "timeout": 20230,
+          "front_supported": 20866,
+          "all_supported": 20749,
+          "early_failure": 97
+        },
+        "by_height_speed": [
+          [
+            [
+              362,
+              0,
+              17,
+              0,
+              17,
+              0,
+              0,
+              0,
+              345,
+              355,
+              351,
+              1
+            ],
+            [
+              341,
+              0,
+              13,
+              0,
+              13,
+              0,
+              0,
+              0,
+              328,
+              335,
+              333,
+              0
+            ],
+            [
+              365,
+              0,
+              24,
+              0,
+              24,
+              0,
+              0,
+              0,
+              341,
+              351,
+              351,
+              1
+            ],
+            [
+              361,
+              0,
+              31,
+              0,
+              31,
+              0,
+              0,
+              0,
+              330,
+              335,
+              334,
+              2
+            ]
+          ],
+          [
+            [
+              356,
+              0,
+              11,
+              0,
+              11,
+              0,
+              0,
+              0,
+              345,
+              350,
+              349,
+              0
+            ],
+            [
+              372,
+              0,
+              21,
+              0,
+              21,
+              0,
+              0,
+              0,
+              351,
+              361,
+              360,
+              1
+            ],
+            [
+              351,
+              0,
+              23,
+              0,
+              23,
+              0,
+              0,
+              0,
+              328,
+              340,
+              338,
+              0
+            ],
+            [
+              353,
+              0,
+              26,
+              0,
+              26,
+              0,
+              0,
+              0,
+              327,
+              341,
+              338,
+              4
+            ]
+          ],
+          [
+            [
+              4683,
+              0,
+              194,
+              0,
+              194,
+              0,
+              0,
+              2,
+              4487,
+              4612,
+              4582,
+              5
+            ],
+            [
+              4638,
+              0,
+              254,
+              0,
+              254,
+              0,
+              0,
+              1,
+              4384,
+              4516,
+              4490,
+              13
+            ],
+            [
+              4619,
+              0,
+              302,
+              0,
+              302,
+              0,
+              0,
+              2,
+              4315,
+              4456,
+              4438,
+              27
+            ],
+            [
+              4765,
+              0,
+              411,
+              0,
+              411,
+              0,
+              0,
+              5,
+              4349,
+              4514,
+              4485,
+              43
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        ]
+      }
+    },
+    "acceptance": "all wheels supported on top, full collision body past edge, quiet/upright for 2s",
+    "stop_protocol": "external perfect-state stop command on platform; not autonomous student detection",
+    "course_evidence": "disjoint stochastic training batches; not independent held-out evaluation",
+    "course_profile": "global_v1"
+  },
+  "allocation_profile": "balanced_adaptive_v1",
+  "terrain_allocation": {
+    "profile": "balanced_adaptive_v1",
+    "bounds_profile": "omni_repair_v19",
+    "target_weights": {
+      "pit": 0.1,
+      "stairs_up": 0.1,
+      "stairs_down": 0.08,
+      "wave": 0.08,
+      "slope_up": 0.06,
+      "slope_down": 0.06,
+      "rough_slope": 0.08,
+      "obstacles": 0.04,
+      "flat": 0.4
+    },
+    "actual_counts": {
+      "flat": 1639,
+      "pit": 409,
+      "wave": 328,
+      "slope_down": 245,
+      "rough_slope": 328,
+      "slope_up": 246,
+      "stairs_up": 409,
+      "stairs_down": 328,
+      "obstacles": 164
+    },
+    "pending_moves": 0,
+    "moves_applied": 0,
+    "last_check": 33331,
+    "check_interval": 500,
+    "evidence": "matched training strata, not independent held-out validation",
+    "decisions": [
+      {
+        "iteration": 32831,
+        "scores": {
+          "pit": {
+            "ready": true,
+            "matched_episodes": 994.0,
+            "strata": 8,
+            "failure": 0.036523021271086864,
+            "reference_failure": 0.017614282475888695,
+            "error": 0.06615113793838774,
+            "reference_error": 0.057587231284662733,
+            "bad": false,
+            "severity": 0.6302912931732724
+          },
+          "stairs_up": {
+            "ready": true,
+            "matched_episodes": 2358.0,
+            "strata": 32,
+            "failure": 0.02564433067871925,
+            "reference_failure": 0.026471000565099365,
+            "error": 0.14907110119978426,
+            "reference_error": 0.13987397045803995,
+            "bad": false,
+            "severity": 0.22992826854360757
+          },
+          "stairs_down": {
+            "ready": true,
+            "matched_episodes": 1971.0,
+            "strata": 29,
+            "failure": 0.015845716878217477,
+            "reference_failure": 0.015201783430138375,
+            "error": 0.11911070329609921,
+            "reference_error": 0.12309152054259863,
+            "bad": false,
+            "severity": 0.021464448269303424
+          },
+          "wave": {
+            "ready": true,
+            "matched_episodes": 399.0,
+            "strata": 11,
+            "failure": 0.10566575849637277,
+            "reference_failure": 0.1796490806957314,
+            "error": 0.4605363573529967,
+            "reference_error": 0.48482638183013105,
+            "bad": false,
+            "severity": -0.25050229718774736
+          },
+          "slope_up": {
+            "ready": true,
+            "matched_episodes": 354.0,
+            "strata": 8,
+            "failure": 0.04048867344737351,
+            "reference_failure": 0.033861688583155976,
+            "error": 0.3107372089029003,
+            "reference_error": 0.32735178405037785,
+            "bad": false,
+            "severity": 0.2208994954739178
+          },
+          "slope_down": {
+            "ready": true,
+            "matched_episodes": 211.0,
+            "strata": 8,
+            "failure": 0.07197570947570948,
+            "reference_failure": 0.10200659315109442,
+            "error": 0.34540694795666044,
+            "reference_error": 0.369488748560867,
+            "bad": false,
+            "severity": -0.3258800260901516
+          },
+          "rough_slope": {
+            "ready": true,
+            "matched_episodes": 395.0,
+            "strata": 13,
+            "failure": 0.11580461831204686,
+            "reference_failure": 0.16742442299706228,
+            "error": 0.39800310690275525,
+            "reference_error": 0.4025509487670924,
+            "bad": false,
+            "severity": -0.05648777972410693
+          },
+          "obstacles": {
+            "ready": false,
+            "matched_episodes": 94.0
+          },
+          "flat": {
+            "ready": true,
+            "matched_episodes": 3969.0,
+            "strata": 29,
+            "failure": 0.016237219297569817,
+            "reference_failure": 0.017242190946713854,
+            "error": 0.09085403913864845,
+            "reference_error": 0.08720773027550507,
+            "bad": false,
+            "severity": 0.09115772157858443
+          }
+        },
+        "move": null,
+        "weights": {
+          "pit": 0.1,
+          "stairs_up": 0.1,
+          "stairs_down": 0.08,
+          "wave": 0.08,
+          "slope_up": 0.06,
+          "slope_down": 0.06,
+          "rough_slope": 0.08,
+          "obstacles": 0.04,
+          "flat": 0.4
+        }
+      },
+      {
+        "iteration": 33331,
+        "scores": {
+          "pit": {
+            "ready": true,
+            "matched_episodes": 913.0,
+            "strata": 9,
+            "failure": 0.020015099681567262,
+            "reference_failure": 0.015657139978567727,
+            "error": 0.06288272127243448,
+            "reference_error": 0.0571290813093268,
+            "bad": false,
+            "severity": 0.14526532343331786
+          },
+          "stairs_up": {
+            "ready": true,
+            "matched_episodes": 2386.0,
+            "strata": 33,
+            "failure": 0.0282790313053594,
+            "reference_failure": 0.02756278842676302,
+            "error": 0.14046647952232671,
+            "reference_error": 0.13880909656009705,
+            "bad": false,
+            "severity": 0.041434574055741746
+          },
+          "stairs_down": {
+            "ready": true,
+            "matched_episodes": 2014.0,
+            "strata": 31,
+            "failure": 0.022327349032478287,
+            "reference_failure": 0.014221023208839128,
+            "error": 0.11908555920530606,
+            "reference_error": 0.12115493730858364,
+            "bad": false,
+            "severity": 0.270210860787972
+          },
+          "wave": {
+            "ready": true,
+            "matched_episodes": 319.0,
+            "strata": 11,
+            "failure": 0.11612917512647075,
+            "reference_failure": 0.15439655544320618,
+            "error": 0.43131652257387015,
+            "reference_error": 0.4778379305313909,
+            "bad": false,
+            "severity": -0.4867906562564583
+          },
+          "slope_up": {
+            "ready": true,
+            "matched_episodes": 300.0,
+            "strata": 8,
+            "failure": 0.048796140508097025,
+            "reference_failure": 0.033861688583155976,
+            "error": 0.30567629656220024,
+            "reference_error": 0.3273517840503779,
+            "bad": false,
+            "severity": 0.4978150641647016
+          },
+          "slope_down": {
+            "ready": true,
+            "matched_episodes": 168.0,
+            "strata": 7,
+            "failure": 0.05035130960596799,
+            "reference_failure": 0.05215319329312752,
+            "error": 0.29145618591487754,
+            "reference_error": 0.31077260152246405,
+            "bad": false,
+            "severity": -0.06006278957198449
+          },
+          "rough_slope": {
+            "ready": true,
+            "matched_episodes": 323.0,
+            "strata": 11,
+            "failure": 0.16444000095583067,
+            "reference_failure": 0.16259925476067114,
+            "error": 0.399538218634334,
+            "reference_error": 0.3886418148281333,
+            "bad": false,
+            "severity": 0.14018568499917217
+          },
+          "obstacles": {
+            "ready": false,
+            "matched_episodes": 78.0
+          },
+          "flat": {
+            "ready": true,
+            "matched_episodes": 3168.0,
+            "strata": 29,
+            "failure": 0.01684541828463041,
+            "reference_failure": 0.01724219094671385,
+            "error": 0.09138712923171824,
+            "reference_error": 0.08720773027550506,
+            "bad": false,
+            "severity": 0.10448497390532947
+          }
+        },
+        "move": null,
+        "weights": {
+          "pit": 0.1,
+          "stairs_up": 0.1,
+          "stairs_down": 0.08,
+          "wave": 0.08,
+          "slope_up": 0.06,
+          "slope_down": 0.06,
+          "rough_slope": 0.08,
+          "obstacles": 0.04,
+          "flat": 0.4
+        }
+      }
+    ]
+  },
+  "terrain_by_type": {
+    "wave": {
+      "count": 328,
+      "mean": 5.963414634146342,
+      "counts_L0_to_L9": [
+        8,
+        14,
+        17,
+        19,
+        28,
+        36,
+        50,
+        43,
+        59,
+        54
+      ],
+      "curriculum_fraction": 0.6626016260162602
+    },
+    "slope_up": {
+      "count": 246,
+      "mean": 5.223577235772358,
+      "counts_L0_to_L9": [
+        0,
+        2,
+        4,
+        13,
+        46,
+        69,
+        81,
+        27,
+        4,
+        0
+      ],
+      "curriculum_fraction": 0.580397470641373,
+      "nominal_angle_deg_mean": 31.077235772357724,
+      "nominal_angle_deg_max": 42.5,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "slope_down": {
+      "count": 245,
+      "mean": 5.616326530612245,
+      "counts_L0_to_L9": [
+        4,
+        15,
+        19,
+        20,
+        19,
+        31,
+        32,
+        36,
+        33,
+        36
+      ],
+      "curriculum_fraction": 0.6240362811791383,
+      "nominal_angle_deg_mean": 32.01020408163265,
+      "nominal_angle_deg_max": 45.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "rough_slope": {
+      "count": 328,
+      "mean": 5.652439024390244,
+      "counts_L0_to_L9": [
+        8,
+        12,
+        27,
+        24,
+        29,
+        50,
+        39,
+        40,
+        55,
+        44
+      ],
+      "curriculum_fraction": 0.6280487804878049,
+      "nominal_angle_deg_mean": 32.172256097560975,
+      "nominal_angle_deg_max": 45.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "stairs_up": {
+      "count": 409,
+      "mean": 6.19559902200489,
+      "counts_L0_to_L9": [
+        5,
+        14,
+        30,
+        23,
+        28,
+        42,
+        51,
+        58,
+        65,
+        93
+      ],
+      "curriculum_fraction": 0.6883998913338767
+    },
+    "stairs_down": {
+      "count": 328,
+      "mean": 6.161585365853658,
+      "counts_L0_to_L9": [
+        4,
+        5,
+        25,
+        20,
+        26,
+        34,
+        38,
+        60,
+        60,
+        56
+      ],
+      "curriculum_fraction": 0.684620596205962
+    },
+    "obstacles": {
+      "count": 164,
+      "mean": 6.073170731707317,
+      "counts_L0_to_L9": [
+        1,
+        5,
+        6,
+        15,
+        10,
+        17,
+        26,
+        37,
+        29,
+        18
+      ],
+      "curriculum_fraction": 0.6747967479674797
+    },
+    "flat": {
+      "count": 1639,
+      "mean": 5.928615009151922,
+      "counts_L0_to_L9": [
+        41,
+        59,
+        77,
+        138,
+        146,
+        175,
+        208,
+        242,
+        288,
+        265
+      ],
+      "curriculum_fraction": 0.6587350010168802
+    },
+    "pit": {
+      "count": 409,
+      "mean": 1.8092909535452322,
+      "counts_L0_to_L21": [
+        28,
+        22,
+        359,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_height_m": 0.2404645476772616,
+      "curriculum_fraction": 0.08615671207358248
+    }
+  },
+  "command_ranges": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "flat_speed": null,
+  "uphill_speed": null,
+  "observed_command_abs_max": [
+    1.9997749328613281,
+    1.0000009536743164,
+    1.5
+  ],
+  "terrain": 5.896121501922607,
+  "value": 0.020493087824434042,
+  "surrogate": -0.0019222274422645569,
+  "entropy": 7.12646119594574,
+  "mean_latent_loss": 0.0019595064222812653,
+  "mean_load_balance_loss": 3.2334565457858846e-05
+}

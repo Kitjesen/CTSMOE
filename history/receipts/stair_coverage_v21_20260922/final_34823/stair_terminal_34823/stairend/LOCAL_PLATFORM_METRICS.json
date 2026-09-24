@@ -1,0 +1,4739 @@
+{
+  "cases": [
+    {
+      "id": 0,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 369,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.3381979465484619,
+          "negative_vz_min": -0.14591233432292938,
+          "q_rms_peak": 0.5354261704808655
+        },
+        "last_step": {
+          "steps": 230,
+          "first_s": 7.38,
+          "positive_vz_peak": 0.348000168800354,
+          "negative_vz_min": -0.1714627742767334,
+          "q_rms_peak": 0.5526472024590267
+        },
+        "platform_supported": {
+          "steps": 72,
+          "first_s": 11.02,
+          "positive_vz_peak": 0.0264365803450346,
+          "negative_vz_min": -0.0038308289367705584,
+          "q_rms_peak": 0.16342316880562904
+        }
+      },
+      "post_platform_positive_vz_peak": 0.0264365803450346,
+      "support_dwell_s": 1.44,
+      "last_velocity": [
+        0.3034959137439728,
+        -2.66276765614748e-05,
+        0.005360754672437906
+      ],
+      "last_yaw": 0.0005037785740569234
+    },
+    {
+      "id": 1,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 369,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.3381979465484619,
+          "negative_vz_min": -0.14591233432292938,
+          "q_rms_peak": 0.5354261704808655
+        },
+        "last_step": {
+          "steps": 182,
+          "first_s": 7.38,
+          "positive_vz_peak": 0.348000168800354,
+          "negative_vz_min": -0.1714627742767334,
+          "q_rms_peak": 0.5526472024590267
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 11.02,
+          "positive_vz_peak": 0.06274363398551941,
+          "negative_vz_min": -0.0028524594381451607,
+          "q_rms_peak": 0.16860323526217205
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 13.0,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0007072605658322573,
+          "q_rms_peak": 0.06004356607489651
+        }
+      },
+      "post_platform_positive_vz_peak": 0.06274363398551941,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.01989935152232647,
+        -0.0026379625778645277,
+        -0.00049605529056862
+      ],
+      "last_yaw": -0.009377450682222843
+    },
+    {
+      "id": 2,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 188,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.46828973293304443,
+          "negative_vz_min": -0.1735994666814804,
+          "q_rms_peak": 0.5158640282049192
+        },
+        "last_step": {
+          "steps": 134,
+          "first_s": 3.7600000000000002,
+          "positive_vz_peak": 0.3963991403579712,
+          "negative_vz_min": -0.1947537511587143,
+          "q_rms_peak": 0.5433494336030597
+        },
+        "platform_supported": {
+          "steps": 40,
+          "first_s": 5.96,
+          "positive_vz_peak": 0.09172593057155609,
+          "negative_vz_min": -0.008729090914130211,
+          "q_rms_peak": 0.17181168894403362
+        }
+      },
+      "post_platform_positive_vz_peak": 0.09172593057155609,
+      "support_dwell_s": 0.8,
+      "last_velocity": [
+        0.5901724696159363,
+        -0.001339407404884696,
+        0.008691838942468166
+      ],
+      "last_yaw": -0.006931954063475132
+    },
+    {
+      "id": 3,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 188,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.46828973293304443,
+          "negative_vz_min": -0.1735994666814804,
+          "q_rms_peak": 0.5158640282049192
+        },
+        "last_step": {
+          "steps": 110,
+          "first_s": 3.7600000000000002,
+          "positive_vz_peak": 0.3963991403579712,
+          "negative_vz_min": -0.1947537511587143,
+          "q_rms_peak": 0.5433494336030597
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 5.96,
+          "positive_vz_peak": 0.17950373888015747,
+          "negative_vz_min": -0.010354273952543736,
+          "q_rms_peak": 0.17181168894403362
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 7.94,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.00032441565417684615,
+          "q_rms_peak": 0.06737983989287476
+        }
+      },
+      "post_platform_positive_vz_peak": 0.17950373888015747,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.016666188836097717,
+        0.00037200329825282097,
+        -0.00018229846318718046
+      ],
+      "last_yaw": 0.0006306220893748105
+    },
+    {
+      "id": 4,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 112,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.7233295440673828,
+          "negative_vz_min": -0.2601800262928009,
+          "q_rms_peak": 0.5159752780839629
+        },
+        "last_step": {
+          "steps": 79,
+          "first_s": 2.24,
+          "positive_vz_peak": 0.7016916275024414,
+          "negative_vz_min": -0.326413631439209,
+          "q_rms_peak": 0.5340888715725985
+        },
+        "platform_supported": {
+          "steps": 18,
+          "first_s": 3.54,
+          "positive_vz_peak": 0.15933090448379517,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.20627255735921352
+        }
+      },
+      "post_platform_positive_vz_peak": 0.15933090448379517,
+      "support_dwell_s": 0.36,
+      "last_velocity": [
+        1.1724302768707275,
+        -0.0010586725547909737,
+        -0.002678337274119258
+      ],
+      "last_yaw": 0.09305724501609802
+    },
+    {
+      "id": 5,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 112,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.7233295440673828,
+          "negative_vz_min": -0.2601800262928009,
+          "q_rms_peak": 0.5159752780839629
+        },
+        "last_step": {
+          "steps": 65,
+          "first_s": 2.24,
+          "positive_vz_peak": 0.7016916275024414,
+          "negative_vz_min": -0.326413631439209,
+          "q_rms_peak": 0.5340888715725985
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 3.54,
+          "positive_vz_peak": 0.2778398096561432,
+          "negative_vz_min": -0.04210371896624565,
+          "q_rms_peak": 0.20627255735921352
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.5200000000000005,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0003948718076571822,
+          "q_rms_peak": 0.06817662258083128
+        }
+      },
+      "post_platform_positive_vz_peak": 0.2778398096561432,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.01202354021370411,
+        -0.00040142604848369956,
+        -0.00020751495321746916
+      ],
+      "last_yaw": -0.0070646172389388084
+    },
+    {
+      "id": 6,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 383,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.41956692934036255,
+          "negative_vz_min": -0.14591249823570251,
+          "q_rms_peak": 0.6417197737047652
+        },
+        "last_step": {
+          "steps": 273,
+          "first_s": 7.66,
+          "positive_vz_peak": 0.46490609645843506,
+          "negative_vz_min": -0.04287675768136978,
+          "q_rms_peak": 0.6540155735961979
+        },
+        "platform_supported": {
+          "steps": 70,
+          "first_s": 12.0,
+          "positive_vz_peak": 0.035141486674547195,
+          "negative_vz_min": -0.009041862562298775,
+          "q_rms_peak": 0.22550254611579604
+        }
+      },
+      "post_platform_positive_vz_peak": 0.035141486674547195,
+      "support_dwell_s": 1.4000000000000001,
+      "last_velocity": [
+        0.3019803762435913,
+        0.0014475248754024506,
+        -0.0006954505806788802
+      ],
+      "last_yaw": 0.025499416515231133
+    },
+    {
+      "id": 7,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 389,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.3834060728549957,
+          "negative_vz_min": -0.14591249823570251,
+          "q_rms_peak": 0.6452297078740172
+        },
+        "last_step": {
+          "steps": 213,
+          "first_s": 7.78,
+          "positive_vz_peak": 0.46345680952072144,
+          "negative_vz_min": -0.09611000865697861,
+          "q_rms_peak": 0.6493506991983461
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 12.040000000000001,
+          "positive_vz_peak": 0.10878614336252213,
+          "negative_vz_min": -0.018159449100494385,
+          "q_rms_peak": 0.22911337422395117
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 14.02,
+          "positive_vz_peak": 0.015023322775959969,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.09022134019900566
+        }
+      },
+      "post_platform_positive_vz_peak": 0.10878614336252213,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.031651172786951065,
+        0.002750024665147066,
+        0.015209995210170746
+      ],
+      "last_yaw": 0.008734498172998428
+    },
+    {
+      "id": 8,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 203,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.5566509366035461,
+          "negative_vz_min": -0.1735992729663849,
+          "q_rms_peak": 0.6476387505452346
+        },
+        "last_step": {
+          "steps": 147,
+          "first_s": 4.0600000000000005,
+          "positive_vz_peak": 0.5142691135406494,
+          "negative_vz_min": -0.13972608745098114,
+          "q_rms_peak": 0.643243240802686
+        },
+        "platform_supported": {
+          "steps": 38,
+          "first_s": 6.48,
+          "positive_vz_peak": 0.04538847133517265,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.16718324167929435
+        }
+      },
+      "post_platform_positive_vz_peak": 0.04538847133517265,
+      "support_dwell_s": 0.76,
+      "last_velocity": [
+        0.6021324992179871,
+        -0.0012541264295578003,
+        0.008533190004527569
+      ],
+      "last_yaw": 0.002885870635509491
+    },
+    {
+      "id": 9,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 204,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.544943630695343,
+          "negative_vz_min": -0.1735992729663849,
+          "q_rms_peak": 0.6462743859797275
+        },
+        "last_step": {
+          "steps": 121,
+          "first_s": 4.08,
+          "positive_vz_peak": 0.5046971440315247,
+          "negative_vz_min": -0.15339818596839905,
+          "q_rms_peak": 0.6442870170561268
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.5,
+          "positive_vz_peak": 0.1588229089975357,
+          "negative_vz_min": -0.016726860776543617,
+          "q_rms_peak": 0.16765954872713693
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.48,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.00046989467227831483,
+          "q_rms_peak": 0.07269643117073947
+        }
+      },
+      "post_platform_positive_vz_peak": 0.1588229089975357,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.010646507143974304,
+        0.0005020362441428006,
+        -0.0002916051889769733
+      ],
+      "last_yaw": 0.0031121824868023396
+    },
+    {
+      "id": 10,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 126,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.8222658038139343,
+          "negative_vz_min": -0.26016029715538025,
+          "q_rms_peak": 0.6372496683691012
+        },
+        "last_step": {
+          "steps": 93,
+          "first_s": 2.52,
+          "positive_vz_peak": 0.7286210656166077,
+          "negative_vz_min": -0.4959432780742645,
+          "q_rms_peak": 0.6332920093912615
+        },
+        "platform_unstable": {
+          "steps": 5,
+          "first_s": 4.12,
+          "positive_vz_peak": 0.04344355687499046,
+          "negative_vz_min": -0.028741413727402687,
+          "q_rms_peak": 0.31473171484028656
+        },
+        "platform_supported": {
+          "steps": 19,
+          "first_s": 4.16,
+          "positive_vz_peak": 0.1855282336473465,
+          "negative_vz_min": -0.00603581452742219,
+          "q_rms_peak": 0.2982450012184027
+        }
+      },
+      "post_platform_positive_vz_peak": 0.1855282336473465,
+      "support_dwell_s": 0.34,
+      "last_velocity": [
+        1.1869187355041504,
+        -0.006058871746063232,
+        0.0559544675052166
+      ],
+      "last_yaw": 0.010867065750062466
+    },
+    {
+      "id": 11,
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 126,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.8222658038139343,
+          "negative_vz_min": -0.26016029715538025,
+          "q_rms_peak": 0.6372496683691012
+        },
+        "last_step": {
+          "steps": 80,
+          "first_s": 2.52,
+          "positive_vz_peak": 0.7286210656166077,
+          "negative_vz_min": -0.4959432780742645,
+          "q_rms_peak": 0.6332920093912615
+        },
+        "platform_unstable": {
+          "steps": 5,
+          "first_s": 4.12,
+          "positive_vz_peak": 0.24238519370555878,
+          "negative_vz_min": -0.028741413727402687,
+          "q_rms_peak": 0.31473171484028656
+        },
+        "platform_supported": {
+          "steps": 105,
+          "first_s": 4.16,
+          "positive_vz_peak": 0.23935461044311523,
+          "negative_vz_min": -0.024678247049450874,
+          "q_rms_peak": 0.2982450012184027
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 6.32,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.001868843799456954,
+          "q_rms_peak": 0.07485002737761484
+        }
+      },
+      "post_platform_positive_vz_peak": 0.24238519370555878,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.002860690699890256,
+        -0.0013775030383840203,
+        -0.0019447673112154007
+      ],
+      "last_yaw": 0.0015601895283907652
+    },
+    {
+      "id": 12,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 423,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.013694318011403084,
+          "negative_vz_min": -0.4998108446598053,
+          "q_rms_peak": 0.4220818825073369
+        },
+        "last_step": {
+          "steps": 268,
+          "first_s": 8.46,
+          "positive_vz_peak": 0.20902003347873688,
+          "negative_vz_min": -0.604486346244812,
+          "q_rms_peak": 0.4071276876731629
+        },
+        "platform_supported": {
+          "steps": 83,
+          "first_s": 12.82,
+          "positive_vz_peak": 0.006926688365638256,
+          "negative_vz_min": -0.0034399242140352726,
+          "q_rms_peak": 0.07766917577658469
+        }
+      },
+      "post_platform_positive_vz_peak": 0.006926688365638256,
+      "support_dwell_s": 1.6600000000000001,
+      "last_velocity": [
+        0.33201614022254944,
+        -0.0051979608833789825,
+        -0.008634600788354874
+      ],
+      "last_yaw": -0.021524015814065933
+    },
+    {
+      "id": 13,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "timeout",
+      "phases": {
+        "climb": {
+          "steps": 423,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.013694318011403084,
+          "negative_vz_min": -0.4998108446598053,
+          "q_rms_peak": 0.4220818825073369
+        },
+        "last_step": {
+          "steps": 773,
+          "first_s": 8.46,
+          "positive_vz_peak": 0.20902003347873688,
+          "negative_vz_min": -0.604486346244812,
+          "q_rms_peak": 0.4071276876731629
+        },
+        "platform_supported": {
+          "steps": 53,
+          "first_s": 12.82,
+          "positive_vz_peak": 0.11778191477060318,
+          "negative_vz_min": -0.020589521154761314,
+          "q_rms_peak": 0.10606040408462104
+        }
+      },
+      "post_platform_positive_vz_peak": 0.11778191477060318,
+      "support_dwell_s": 1.06,
+      "last_velocity": [
+        -0.00042902183486148715,
+        -0.003216954879462719,
+        -0.000693165697157383
+      ],
+      "last_yaw": -0.002489649225026369
+    },
+    {
+      "id": 14,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 207,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.06588694453239441,
+          "negative_vz_min": -0.5694630146026611,
+          "q_rms_peak": 0.4509914015937027
+        },
+        "last_step": {
+          "steps": 129,
+          "first_s": 4.14,
+          "positive_vz_peak": 0.14655865728855133,
+          "negative_vz_min": -0.5648959875106812,
+          "q_rms_peak": 0.42545640881503893
+        },
+        "platform_supported": {
+          "steps": 41,
+          "first_s": 6.26,
+          "positive_vz_peak": 0.031224222853779793,
+          "negative_vz_min": -0.004702933598309755,
+          "q_rms_peak": 0.08684923485959854
+        }
+      },
+      "post_platform_positive_vz_peak": 0.031224222853779793,
+      "support_dwell_s": 0.8200000000000001,
+      "last_velocity": [
+        0.6217198371887207,
+        -0.031071750447154045,
+        0.07839009165763855
+      ],
+      "last_yaw": 0.038836769759655
+    },
+    {
+      "id": 15,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 207,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.06588694453239441,
+          "negative_vz_min": -0.5694630146026611,
+          "q_rms_peak": 0.4509914015937027
+        },
+        "last_step": {
+          "steps": 106,
+          "first_s": 4.14,
+          "positive_vz_peak": 0.14655865728855133,
+          "negative_vz_min": -0.5648959875106812,
+          "q_rms_peak": 0.42545640881503893
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.26,
+          "positive_vz_peak": 0.1856958419084549,
+          "negative_vz_min": -0.02843352220952511,
+          "q_rms_peak": 0.14806282944282972
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.24,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0006166617968119681,
+          "q_rms_peak": 0.0904080221426668
+        }
+      },
+      "post_platform_positive_vz_peak": 0.1856958419084549,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.013529911637306213,
+        -0.0047105406410992146,
+        -0.001049935002811253
+      ],
+      "last_yaw": 0.0065382919274270535
+    },
+    {
+      "id": 16,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 106,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.19524002075195312,
+          "negative_vz_min": -1.1599897146224976,
+          "q_rms_peak": 0.5182873130097445
+        },
+        "last_step": {
+          "steps": 70,
+          "first_s": 2.12,
+          "positive_vz_peak": 0.25084036588668823,
+          "negative_vz_min": -0.7966175079345703,
+          "q_rms_peak": 0.5370617679850044
+        },
+        "platform_unstable": {
+          "steps": 6,
+          "first_s": 3.34,
+          "positive_vz_peak": 0.33795464038848877,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.13444423497343086
+        },
+        "platform_supported": {
+          "steps": 11,
+          "first_s": 3.2800000000000002,
+          "positive_vz_peak": 0.3700627088546753,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.1743593729682564
+        }
+      },
+      "post_platform_positive_vz_peak": 0.3700627088546753,
+      "support_dwell_s": 0.16,
+      "last_velocity": [
+        1.0788203477859497,
+        0.13245531916618347,
+        0.03850322216749191
+      ],
+      "last_yaw": -0.11907698214054108
+    },
+    {
+      "id": 17,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 105,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.1874236911535263,
+          "negative_vz_min": -1.110929012298584,
+          "q_rms_peak": 0.5076006114882448
+        },
+        "last_step": {
+          "steps": 56,
+          "first_s": 2.1,
+          "positive_vz_peak": 0.17447584867477417,
+          "negative_vz_min": -0.7871089577674866,
+          "q_rms_peak": 0.5349115399137577
+        },
+        "platform_unstable": {
+          "steps": 1,
+          "first_s": 3.2600000000000002,
+          "positive_vz_peak": 0.25423604249954224,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.1636369010492643
+        },
+        "platform_supported": {
+          "steps": 101,
+          "first_s": 3.22,
+          "positive_vz_peak": 0.3065985143184662,
+          "negative_vz_min": -0.027409953996539116,
+          "q_rms_peak": 0.2082357513257027
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.26,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.000995373702608049,
+          "q_rms_peak": 0.10772064034407296
+        }
+      },
+      "post_platform_positive_vz_peak": 0.3065985143184662,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.02083960734307766,
+        -0.002111309440806508,
+        -0.0016843483317643404
+      ],
+      "last_yaw": 0.014769930392503738
+    },
+    {
+      "id": 18,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 471,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.0016090513672679663,
+          "negative_vz_min": -0.6979719996452332,
+          "q_rms_peak": 0.5091518077203534
+        },
+        "last_step": {
+          "steps": 288,
+          "first_s": 9.42,
+          "positive_vz_peak": 0.14795556664466858,
+          "negative_vz_min": -0.6993333101272583,
+          "q_rms_peak": 0.480858697652824
+        },
+        "platform_supported": {
+          "steps": 86,
+          "first_s": 14.3,
+          "positive_vz_peak": 0.07902123034000397,
+          "negative_vz_min": -0.0027779340744018555,
+          "q_rms_peak": 0.09761986585519744
+        }
+      },
+      "post_platform_positive_vz_peak": 0.07902123034000397,
+      "support_dwell_s": 1.72,
+      "last_velocity": [
+        0.28176021575927734,
+        -0.002677132375538349,
+        0.0064033945091068745
+      ],
+      "last_yaw": -0.02003210224211216
+    },
+    {
+      "id": 19,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 471,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.0016090513672679663,
+          "negative_vz_min": -0.6979719996452332,
+          "q_rms_peak": 0.5091518077203534
+        },
+        "last_step": {
+          "steps": 244,
+          "first_s": 9.42,
+          "positive_vz_peak": 0.14795556664466858,
+          "negative_vz_min": -0.6993333101272583,
+          "q_rms_peak": 0.480858697652824
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 14.3,
+          "positive_vz_peak": 0.20239610970020294,
+          "negative_vz_min": -0.02648041769862175,
+          "q_rms_peak": 0.12913060645069604
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 16.28,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0002981306752189994,
+          "q_rms_peak": 0.09454274638080644
+        }
+      },
+      "post_platform_positive_vz_peak": 0.20239610970020294,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.0060885995626449585,
+        0.0004850513651035726,
+        -0.0004564364207908511
+      ],
+      "last_yaw": -0.00039032381027936935
+    },
+    {
+      "id": 20,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 225,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.06753672659397125,
+          "negative_vz_min": -0.667289674282074,
+          "q_rms_peak": 0.5123598856927992
+        },
+        "last_step": {
+          "steps": 142,
+          "first_s": 4.5,
+          "positive_vz_peak": 0.1711191087961197,
+          "negative_vz_min": -0.6916635036468506,
+          "q_rms_peak": 0.5259191062005301
+        },
+        "platform_supported": {
+          "steps": 36,
+          "first_s": 6.9,
+          "positive_vz_peak": 0.16745206713676453,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.12973218240236659
+        }
+      },
+      "post_platform_positive_vz_peak": 0.16745206713676453,
+      "support_dwell_s": 0.72,
+      "last_velocity": [
+        0.6171452403068542,
+        -0.005423360038548708,
+        -0.005305772181600332
+      ],
+      "last_yaw": -0.047508131712675095
+    },
+    {
+      "id": 21,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 225,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.06753672659397125,
+          "negative_vz_min": -0.667289674282074,
+          "q_rms_peak": 0.5123598856927992
+        },
+        "last_step": {
+          "steps": 120,
+          "first_s": 4.5,
+          "positive_vz_peak": 0.1711191087961197,
+          "negative_vz_min": -0.6916635036468506,
+          "q_rms_peak": 0.5259191062005301
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.9,
+          "positive_vz_peak": 0.2497832477092743,
+          "negative_vz_min": -0.02050660364329815,
+          "q_rms_peak": 0.1571381911961895
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.88,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -7.039932097541168e-05,
+          "q_rms_peak": 0.10453540733879009
+        }
+      },
+      "post_platform_positive_vz_peak": 0.2497832477092743,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.022168301045894623,
+        -0.004915350582450628,
+        -0.0008841297822073102
+      ],
+      "last_yaw": 0.017178332433104515
+    },
+    {
+      "id": 22,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 109,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.18229690194129944,
+          "negative_vz_min": -1.3028141260147095,
+          "q_rms_peak": 0.5567715158535292
+        },
+        "last_step": {
+          "steps": 76,
+          "first_s": 2.18,
+          "positive_vz_peak": 0.22123605012893677,
+          "negative_vz_min": -1.0009475946426392,
+          "q_rms_peak": 0.6185001362602316
+        },
+        "platform_supported": {
+          "steps": 14,
+          "first_s": 3.42,
+          "positive_vz_peak": 0.4861735999584198,
+          "negative_vz_min": -0.06230570748448372,
+          "q_rms_peak": 0.2631771991965636
+        }
+      },
+      "post_platform_positive_vz_peak": 0.4861735999584198,
+      "support_dwell_s": 0.28,
+      "last_velocity": [
+        1.2071290016174316,
+        -0.008095121011137962,
+        0.04588437080383301
+      ],
+      "last_yaw": -0.061206016689538956
+    },
+    {
+      "id": 23,
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 109,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.18229690194129944,
+          "negative_vz_min": -1.3028141260147095,
+          "q_rms_peak": 0.5567715158535292
+        },
+        "last_step": {
+          "steps": 62,
+          "first_s": 2.18,
+          "positive_vz_peak": 0.22123605012893677,
+          "negative_vz_min": -1.0009475946426392,
+          "q_rms_peak": 0.6185001362602316
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 3.42,
+          "positive_vz_peak": 0.4507073760032654,
+          "negative_vz_min": -0.06230570748448372,
+          "q_rms_peak": 0.2631771991965636
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.4,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0009343185229226947,
+          "q_rms_peak": 0.1471572217776959
+        }
+      },
+      "post_platform_positive_vz_peak": 0.4507073760032654,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.043508611619472504,
+        -0.0016560020158067346,
+        -0.00237470050342381
+      ],
+      "last_yaw": 0.002927212743088603
+    },
+    {
+      "id": 24,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 392,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.2897321581840515,
+          "negative_vz_min": -0.1459718942642212,
+          "q_rms_peak": 0.5097200952332512
+        },
+        "last_step": {
+          "steps": 223,
+          "first_s": 7.84,
+          "positive_vz_peak": 0.327936589717865,
+          "negative_vz_min": -0.03992755338549614,
+          "q_rms_peak": 0.5364422892606211
+        },
+        "platform_supported": {
+          "steps": 87,
+          "first_s": 11.42,
+          "positive_vz_peak": 0.07920073717832565,
+          "negative_vz_min": -0.013316863216459751,
+          "q_rms_peak": 0.16377874728523492
+        }
+      },
+      "post_platform_positive_vz_peak": 0.07920073717832565,
+      "support_dwell_s": 1.74,
+      "last_velocity": [
+        0.2841309905052185,
+        -0.0025419769808650017,
+        0.0069150482304394245
+      ],
+      "last_yaw": -0.019638247787952423
+    },
+    {
+      "id": 25,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 392,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.2859225273132324,
+          "negative_vz_min": -0.1459718942642212,
+          "q_rms_peak": 0.5121240776078092
+        },
+        "last_step": {
+          "steps": 180,
+          "first_s": 7.84,
+          "positive_vz_peak": 0.32865607738494873,
+          "negative_vz_min": -0.04140158370137215,
+          "q_rms_peak": 0.5393289473138249
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 11.44,
+          "positive_vz_peak": 0.11303341388702393,
+          "negative_vz_min": -0.013612219132483006,
+          "q_rms_peak": 0.16263289436541722
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 13.42,
+          "positive_vz_peak": 0.0014973074430599809,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.06797567974257783
+        }
+      },
+      "post_platform_positive_vz_peak": 0.11303341388702393,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.03295736759901047,
+        0.0016240684781223536,
+        0.001744312816299498
+      ],
+      "last_yaw": -0.0008275800500996411
+    },
+    {
+      "id": 26,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 195,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.4118499159812927,
+          "negative_vz_min": -0.16319215297698975,
+          "q_rms_peak": 0.5196744791655649
+        },
+        "last_step": {
+          "steps": 133,
+          "first_s": 3.9,
+          "positive_vz_peak": 0.4552081823348999,
+          "negative_vz_min": -0.18725690245628357,
+          "q_rms_peak": 0.5504169975529583
+        },
+        "platform_unstable": {
+          "steps": 1,
+          "first_s": 6.1000000000000005,
+          "positive_vz_peak": 0.09571017324924469,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.1736345941249125
+        },
+        "platform_supported": {
+          "steps": 42,
+          "first_s": 6.08,
+          "positive_vz_peak": 0.11770525574684143,
+          "negative_vz_min": -0.0476992093026638,
+          "q_rms_peak": 0.17579579549674057
+        }
+      },
+      "post_platform_positive_vz_peak": 0.11770525574684143,
+      "support_dwell_s": 0.8200000000000001,
+      "last_velocity": [
+        0.5732002854347229,
+        -0.016846323385834694,
+        0.01968676783144474
+      ],
+      "last_yaw": -0.021011458709836006
+    },
+    {
+      "id": 27,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 195,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.4208050072193146,
+          "negative_vz_min": -0.16319215297698975,
+          "q_rms_peak": 0.5213084555134403
+        },
+        "last_step": {
+          "steps": 110,
+          "first_s": 3.9,
+          "positive_vz_peak": 0.45612162351608276,
+          "negative_vz_min": -0.2477329522371292,
+          "q_rms_peak": 0.5500029828429502
+        },
+        "platform_unstable": {
+          "steps": 2,
+          "first_s": 6.1000000000000005,
+          "positive_vz_peak": 0.10169483721256256,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.17891887042335736
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.140000000000001,
+          "positive_vz_peak": 0.07847148925065994,
+          "negative_vz_min": -0.020232724025845528,
+          "q_rms_peak": 0.1789502142484046
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.120000000000001,
+          "positive_vz_peak": 0.003987389616668224,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.08429024741189231
+        }
+      },
+      "post_platform_positive_vz_peak": 0.10169483721256256,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.007047104183584452,
+        0.0018014557426795363,
+        0.00414401525631547
+      ],
+      "last_yaw": 0.009441261179745197
+    },
+    {
+      "id": 28,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 108,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.683495819568634,
+          "negative_vz_min": -0.23929844796657562,
+          "q_rms_peak": 0.5327615306353501
+        },
+        "last_step": {
+          "steps": 76,
+          "first_s": 2.16,
+          "positive_vz_peak": 0.6904495358467102,
+          "negative_vz_min": -0.08981189131736755,
+          "q_rms_peak": 0.5394095823548947
+        },
+        "platform_supported": {
+          "steps": 21,
+          "first_s": 3.4,
+          "positive_vz_peak": 0.1878218650817871,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.22347433289882385
+        }
+      },
+      "post_platform_positive_vz_peak": 0.1878218650817871,
+      "support_dwell_s": 0.42,
+      "last_velocity": [
+        1.2053006887435913,
+        -0.01811937987804413,
+        0.028943605720996857
+      ],
+      "last_yaw": 0.0007289447821676731
+    },
+    {
+      "id": 29,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 108,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.683495819568634,
+          "negative_vz_min": -0.23929844796657562,
+          "q_rms_peak": 0.5327615306353501
+        },
+        "last_step": {
+          "steps": 62,
+          "first_s": 2.16,
+          "positive_vz_peak": 0.6904495358467102,
+          "negative_vz_min": -0.08981189131736755,
+          "q_rms_peak": 0.5394095823548947
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 3.4,
+          "positive_vz_peak": 0.2981760501861572,
+          "negative_vz_min": -0.030596420168876648,
+          "q_rms_peak": 0.22347433289882385
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.38,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.000516511092428118,
+          "q_rms_peak": 0.07487696009889744
+        }
+      },
+      "post_platform_positive_vz_peak": 0.2981760501861572,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.0010122965322807431,
+        0.0006651876028627157,
+        -0.0004913711454719305
+      ],
+      "last_yaw": 0.0011217708233743906
+    },
+    {
+      "id": 30,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 437,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.3564918637275696,
+          "negative_vz_min": -0.1459711641073227,
+          "q_rms_peak": 0.6451202583395471
+        },
+        "last_step": {
+          "steps": 246,
+          "first_s": 8.74,
+          "positive_vz_peak": 0.46708348393440247,
+          "negative_vz_min": -0.06589943170547485,
+          "q_rms_peak": 0.6510739308452071
+        },
+        "platform_supported": {
+          "steps": 89,
+          "first_s": 12.76,
+          "positive_vz_peak": 0.09019219130277634,
+          "negative_vz_min": -0.013311527669429779,
+          "q_rms_peak": 0.2038564036715279
+        }
+      },
+      "post_platform_positive_vz_peak": 0.09019219130277634,
+      "support_dwell_s": 1.78,
+      "last_velocity": [
+        0.29030656814575195,
+        -0.006185605190694332,
+        -0.0029801642522215843
+      ],
+      "last_yaw": -0.012693392112851143
+    },
+    {
+      "id": 31,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 437,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.3564918637275696,
+          "negative_vz_min": -0.1459711641073227,
+          "q_rms_peak": 0.6451202583395471
+        },
+        "last_step": {
+          "steps": 201,
+          "first_s": 8.74,
+          "positive_vz_peak": 0.46708348393440247,
+          "negative_vz_min": -0.06589943170547485,
+          "q_rms_peak": 0.6510739308452071
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 12.76,
+          "positive_vz_peak": 0.14347930252552032,
+          "negative_vz_min": -0.001694254926405847,
+          "q_rms_peak": 0.2038564036715279
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 14.74,
+          "positive_vz_peak": 0.00596431503072381,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.0800776157174
+        }
+      },
+      "post_platform_positive_vz_peak": 0.14347930252552032,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.046740058809518814,
+        0.005561893805861473,
+        0.006288681644946337
+      ],
+      "last_yaw": 0.008882266469299793
+    },
+    {
+      "id": 32,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 208,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.4868878126144409,
+          "negative_vz_min": -0.1631910800933838,
+          "q_rms_peak": 0.6538910403663541
+        },
+        "last_step": {
+          "steps": 153,
+          "first_s": 4.16,
+          "positive_vz_peak": 0.5497473478317261,
+          "negative_vz_min": -0.3666541874408722,
+          "q_rms_peak": 0.6449518065051068
+        },
+        "platform_supported": {
+          "steps": 42,
+          "first_s": 6.76,
+          "positive_vz_peak": 0.12914137542247772,
+          "negative_vz_min": -0.025493953377008438,
+          "q_rms_peak": 0.17804143522913896
+        }
+      },
+      "post_platform_positive_vz_peak": 0.12914137542247772,
+      "support_dwell_s": 0.84,
+      "last_velocity": [
+        0.5743243098258972,
+        -0.0047821179032325745,
+        0.011916590854525566
+      ],
+      "last_yaw": -0.009674119763076305
+    },
+    {
+      "id": 33,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 208,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.4868878126144409,
+          "negative_vz_min": -0.1631910800933838,
+          "q_rms_peak": 0.6538910403663541
+        },
+        "last_step": {
+          "steps": 130,
+          "first_s": 4.16,
+          "positive_vz_peak": 0.5497473478317261,
+          "negative_vz_min": -0.3666541874408722,
+          "q_rms_peak": 0.6449518065051068
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.76,
+          "positive_vz_peak": 0.14342989027500153,
+          "negative_vz_min": -0.0274325143545866,
+          "q_rms_peak": 0.17804143522913896
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.74,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0010830690152943134,
+          "q_rms_peak": 0.08011697752179035
+        }
+      },
+      "post_platform_positive_vz_peak": 0.14342989027500153,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.00047412494313903153,
+        0.0041864062659442425,
+        -0.0009667546837590635
+      ],
+      "last_yaw": 0.01337403617799282
+    },
+    {
+      "id": 34,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 116,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.8350211977958679,
+          "negative_vz_min": -0.23900742828845978,
+          "q_rms_peak": 0.6312070017586326
+        },
+        "last_step": {
+          "steps": 105,
+          "first_s": 2.32,
+          "positive_vz_peak": 0.7778785228729248,
+          "negative_vz_min": -0.5747191905975342,
+          "q_rms_peak": 0.6425673647111555
+        },
+        "platform_supported": {
+          "steps": 24,
+          "first_s": 4.18,
+          "positive_vz_peak": 0.30421242117881775,
+          "negative_vz_min": -0.1305810958147049,
+          "q_rms_peak": 0.32795254723891654
+        }
+      },
+      "post_platform_positive_vz_peak": 0.30421242117881775,
+      "support_dwell_s": 0.48,
+      "last_velocity": [
+        1.1754615306854248,
+        -0.03610353171825409,
+        0.055942781269550323
+      ],
+      "last_yaw": 0.03518899157643318
+    },
+    {
+      "id": 35,
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 117,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.8281996250152588,
+          "negative_vz_min": -0.23754461109638214,
+          "q_rms_peak": 0.634910444228237
+        },
+        "last_step": {
+          "steps": 89,
+          "first_s": 2.34,
+          "positive_vz_peak": 0.7819656133651733,
+          "negative_vz_min": -0.39015570282936096,
+          "q_rms_peak": 0.6440827856060597
+        },
+        "platform_unstable": {
+          "steps": 3,
+          "first_s": 4.16,
+          "positive_vz_peak": 0.39151984453201294,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.2615265628181167
+        },
+        "platform_supported": {
+          "steps": 103,
+          "first_s": 4.12,
+          "positive_vz_peak": 0.36398422718048096,
+          "negative_vz_min": -0.01699320413172245,
+          "q_rms_peak": 0.31173933332432874
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 6.24,
+          "positive_vz_peak": 0.006773253437131643,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.09651196849951967
+        }
+      },
+      "post_platform_positive_vz_peak": 0.39151984453201294,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.005021987482905388,
+        0.0012009040219709277,
+        0.006687758956104517
+      ],
+      "last_yaw": 0.0044525922276079655
+    },
+    {
+      "id": 36,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 457,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.02377096377313137,
+          "negative_vz_min": -0.4886261224746704,
+          "q_rms_peak": 0.40775663750813823
+        },
+        "last_step": {
+          "steps": 257,
+          "first_s": 9.14,
+          "positive_vz_peak": 0.056890539824962616,
+          "negative_vz_min": -0.5409875512123108,
+          "q_rms_peak": 0.4017829163996597
+        },
+        "platform_supported": {
+          "steps": 81,
+          "first_s": 13.22,
+          "positive_vz_peak": 0.007735700812190771,
+          "negative_vz_min": -0.0022505850065499544,
+          "q_rms_peak": 0.08610467981257762
+        }
+      },
+      "post_platform_positive_vz_peak": 0.007735700812190771,
+      "support_dwell_s": 1.62,
+      "last_velocity": [
+        0.27914801239967346,
+        -0.022948047146201134,
+        0.04547921195626259
+      ],
+      "last_yaw": -0.0384097695350647
+    },
+    {
+      "id": 37,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "timeout",
+      "phases": {
+        "climb": {
+          "steps": 457,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.02377096377313137,
+          "negative_vz_min": -0.4886261224746704,
+          "q_rms_peak": 0.40775663750813823
+        },
+        "last_step": {
+          "steps": 743,
+          "first_s": 9.14,
+          "positive_vz_peak": 0.056890539824962616,
+          "negative_vz_min": -0.5409875512123108,
+          "q_rms_peak": 0.4017829163996597
+        },
+        "platform_supported": {
+          "steps": 49,
+          "first_s": 13.22,
+          "positive_vz_peak": 0.07852625846862793,
+          "negative_vz_min": -0.009886763989925385,
+          "q_rms_peak": 0.09739556326324227
+        }
+      },
+      "post_platform_positive_vz_peak": 0.07852625846862793,
+      "support_dwell_s": 0.98,
+      "last_velocity": [
+        -0.0017967487219721079,
+        -0.0009734490886330605,
+        0.00032747277873568237
+      ],
+      "last_yaw": 0.0021036467514932156
+    },
+    {
+      "id": 38,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 214,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.049185000360012054,
+          "negative_vz_min": -0.5481948256492615,
+          "q_rms_peak": 0.43805009710181
+        },
+        "last_step": {
+          "steps": 133,
+          "first_s": 4.28,
+          "positive_vz_peak": 0.09882555902004242,
+          "negative_vz_min": -0.6182401180267334,
+          "q_rms_peak": 0.42836057317398
+        },
+        "platform_supported": {
+          "steps": 39,
+          "first_s": 6.4,
+          "positive_vz_peak": 0.04346037283539772,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.09191443392117038
+        }
+      },
+      "post_platform_positive_vz_peak": 0.04346037283539772,
+      "support_dwell_s": 0.78,
+      "last_velocity": [
+        0.6210923790931702,
+        -0.018825558945536613,
+        0.08211996406316757
+      ],
+      "last_yaw": -0.03808809816837311
+    },
+    {
+      "id": 39,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 214,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.049185000360012054,
+          "negative_vz_min": -0.5481948256492615,
+          "q_rms_peak": 0.43805009710181
+        },
+        "last_step": {
+          "steps": 106,
+          "first_s": 4.28,
+          "positive_vz_peak": 0.09882555902004242,
+          "negative_vz_min": -0.6182401180267334,
+          "q_rms_peak": 0.42836057317398
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.4,
+          "positive_vz_peak": 0.14018484950065613,
+          "negative_vz_min": -0.011926470324397087,
+          "q_rms_peak": 0.113180587942564
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.38,
+          "positive_vz_peak": 0.001035702764056623,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.07797355107566789
+        }
+      },
+      "post_platform_positive_vz_peak": 0.14018484950065613,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.02313559129834175,
+        -0.0003710805904120207,
+        0.0003682383394334465
+      ],
+      "last_yaw": 0.00046497085713781416
+    },
+    {
+      "id": 40,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 107,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.1578674018383026,
+          "negative_vz_min": -0.7845817804336548,
+          "q_rms_peak": 0.5016777713043612
+        },
+        "last_step": {
+          "steps": 69,
+          "first_s": 2.14,
+          "positive_vz_peak": 0.13553187251091003,
+          "negative_vz_min": -0.7333840131759644,
+          "q_rms_peak": 0.5143544473525029
+        },
+        "platform_unstable": {
+          "steps": 4,
+          "first_s": 3.3200000000000003,
+          "positive_vz_peak": 0.12328893691301346,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.11271826504908063
+        },
+        "platform_supported": {
+          "steps": 13,
+          "first_s": 3.2600000000000002,
+          "positive_vz_peak": 0.22686809301376343,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.1225238492293302
+        }
+      },
+      "post_platform_positive_vz_peak": 0.22686809301376343,
+      "support_dwell_s": 0.2,
+      "last_velocity": [
+        1.2222601175308228,
+        -0.021121837198734283,
+        -0.01559722051024437
+      ],
+      "last_yaw": -0.14883580803871155
+    },
+    {
+      "id": 41,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 107,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.1578674018383026,
+          "negative_vz_min": -0.7845817804336548,
+          "q_rms_peak": 0.5016777713043612
+        },
+        "last_step": {
+          "steps": 56,
+          "first_s": 2.14,
+          "positive_vz_peak": 0.13553187251091003,
+          "negative_vz_min": -0.7333840131759644,
+          "q_rms_peak": 0.5143544473525029
+        },
+        "platform_unstable": {
+          "steps": 1,
+          "first_s": 3.3000000000000003,
+          "positive_vz_peak": 0.12432075291872025,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.11523757466212822
+        },
+        "platform_supported": {
+          "steps": 101,
+          "first_s": 3.2600000000000002,
+          "positive_vz_peak": 0.22686809301376343,
+          "negative_vz_min": -0.020259827375411987,
+          "q_rms_peak": 0.19134437148611333
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.3,
+          "positive_vz_peak": 0.0009301116224378347,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.10301634835609999
+        }
+      },
+      "post_platform_positive_vz_peak": 0.22686809301376343,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.03526552394032478,
+        -0.005279011558741331,
+        -0.0003128964744973928
+      ],
+      "last_yaw": 0.02718167193233967
+    },
+    {
+      "id": 42,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 510,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.009452329948544502,
+          "negative_vz_min": -0.7386923432350159,
+          "q_rms_peak": 0.5000976382579876
+        },
+        "last_step": {
+          "steps": 267,
+          "first_s": 10.200000000000001,
+          "positive_vz_peak": 0.10699458420276642,
+          "negative_vz_min": -0.7241041660308838,
+          "q_rms_peak": 0.48994036595400353
+        },
+        "platform_supported": {
+          "steps": 89,
+          "first_s": 14.58,
+          "positive_vz_peak": 0.03787791728973389,
+          "negative_vz_min": -0.007016275078058243,
+          "q_rms_peak": 0.09602358714982481
+        }
+      },
+      "post_platform_positive_vz_peak": 0.03787791728973389,
+      "support_dwell_s": 1.78,
+      "last_velocity": [
+        0.2754504680633545,
+        -0.004559204448014498,
+        0.005160941276699305
+      ],
+      "last_yaw": 0.013482891954481602
+    },
+    {
+      "id": 43,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "timeout",
+      "phases": {
+        "climb": {
+          "steps": 513,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.010464913211762905,
+          "negative_vz_min": -0.7277591824531555,
+          "q_rms_peak": 0.502388368368832
+        },
+        "last_step": {
+          "steps": 706,
+          "first_s": 10.26,
+          "positive_vz_peak": 0.11061756312847137,
+          "negative_vz_min": -0.7147971987724304,
+          "q_rms_peak": 0.4898650081882446
+        },
+        "platform_supported": {
+          "steps": 30,
+          "first_s": 14.68,
+          "positive_vz_peak": 0.09296560287475586,
+          "negative_vz_min": -0.008917799219489098,
+          "q_rms_peak": 0.10459860475062085
+        }
+      },
+      "post_platform_positive_vz_peak": 0.09296560287475586,
+      "support_dwell_s": 0.6,
+      "last_velocity": [
+        0.004443132784217596,
+        0.0014131064526736736,
+        -0.0037168089766055346
+      ],
+      "last_yaw": 0.005340727511793375
+    },
+    {
+      "id": 44,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 232,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.06195620819926262,
+          "negative_vz_min": -0.695387065410614,
+          "q_rms_peak": 0.5099358407018709
+        },
+        "last_step": {
+          "steps": 138,
+          "first_s": 4.64,
+          "positive_vz_peak": 0.1396535336971283,
+          "negative_vz_min": -0.7207808494567871,
+          "q_rms_peak": 0.4913136398370899
+        },
+        "platform_supported": {
+          "steps": 40,
+          "first_s": 6.9,
+          "positive_vz_peak": 0.14835187792778015,
+          "negative_vz_min": -0.0004367823130451143,
+          "q_rms_peak": 0.11115292064408235
+        }
+      },
+      "post_platform_positive_vz_peak": 0.14835187792778015,
+      "support_dwell_s": 0.8,
+      "last_velocity": [
+        0.5702371001243591,
+        0.005967394914478064,
+        0.005529344081878662
+      ],
+      "last_yaw": -0.0318172425031662
+    },
+    {
+      "id": 45,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 232,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.04885786771774292,
+          "negative_vz_min": -0.6679563522338867,
+          "q_rms_peak": 0.5063082514722232
+        },
+        "last_step": {
+          "steps": 112,
+          "first_s": 4.64,
+          "positive_vz_peak": 0.09835676848888397,
+          "negative_vz_min": -0.7128340601921082,
+          "q_rms_peak": 0.49213344880956683
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.88,
+          "positive_vz_peak": 0.18469664454460144,
+          "negative_vz_min": -0.008623139932751656,
+          "q_rms_peak": 0.1184050178257592
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.86,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0032555609941482544,
+          "q_rms_peak": 0.08775026414426591
+        }
+      },
+      "post_platform_positive_vz_peak": 0.18469664454460144,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.03494293615221977,
+        0.000812933431006968,
+        -0.004530090838670731
+      ],
+      "last_yaw": -0.0066678342409431934
+    },
+    {
+      "id": 46,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 115,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.15966828167438507,
+          "negative_vz_min": -0.9106494784355164,
+          "q_rms_peak": 0.558777612968903
+        },
+        "last_step": {
+          "steps": 72,
+          "first_s": 2.3000000000000003,
+          "positive_vz_peak": 0.0495603010058403,
+          "negative_vz_min": -0.9622405171394348,
+          "q_rms_peak": 0.5782299188818287
+        },
+        "platform_unstable": {
+          "steps": 3,
+          "first_s": 3.58,
+          "positive_vz_peak": 0.20156361162662506,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.14643989427478787
+        },
+        "platform_supported": {
+          "steps": 14,
+          "first_s": 3.46,
+          "positive_vz_peak": 0.33530569076538086,
+          "negative_vz_min": -0.06272417306900024,
+          "q_rms_peak": 0.17822196106232288
+        }
+      },
+      "post_platform_positive_vz_peak": 0.33530569076538086,
+      "support_dwell_s": 0.14,
+      "last_velocity": [
+        1.1816027164459229,
+        -0.004710018634796143,
+        0.009720255620777607
+      ],
+      "last_yaw": 0.03747866675257683
+    },
+    {
+      "id": 47,
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 115,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.15966828167438507,
+          "negative_vz_min": -0.9106494784355164,
+          "q_rms_peak": 0.558777612968903
+        },
+        "last_step": {
+          "steps": 58,
+          "first_s": 2.3000000000000003,
+          "positive_vz_peak": 0.0495603010058403,
+          "negative_vz_min": -0.9622405171394348,
+          "q_rms_peak": 0.5782299188818287
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 3.46,
+          "positive_vz_peak": 0.26216208934783936,
+          "negative_vz_min": -0.06272417306900024,
+          "q_rms_peak": 0.1889130449440424
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.44,
+          "positive_vz_peak": 0.00046070877579040825,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.11731729079022338
+        }
+      },
+      "post_platform_positive_vz_peak": 0.26216208934783936,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.03706499561667442,
+        -0.00729350233450532,
+        -0.0008079291437752545
+      ],
+      "last_yaw": 0.011223438195884228
+    },
+    {
+      "id": 48,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 361,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.3692189157009125,
+          "negative_vz_min": -0.1432459056377411,
+          "q_rms_peak": 0.5520171957002621
+        },
+        "last_step": {
+          "steps": 240,
+          "first_s": 7.22,
+          "positive_vz_peak": 0.4112018346786499,
+          "negative_vz_min": -0.18736632168293,
+          "q_rms_peak": 0.5431526387685532
+        },
+        "platform_supported": {
+          "steps": 72,
+          "first_s": 11.16,
+          "positive_vz_peak": 0.04220958054065704,
+          "negative_vz_min": -0.0028017854783684015,
+          "q_rms_peak": 0.12772565326755958
+        }
+      },
+      "post_platform_positive_vz_peak": 0.04220958054065704,
+      "support_dwell_s": 1.44,
+      "last_velocity": [
+        0.3386205732822418,
+        0.0005316641181707382,
+        0.0013285591267049313
+      ],
+      "last_yaw": 0.0029051669407635927
+    },
+    {
+      "id": 49,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 361,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.3692189157009125,
+          "negative_vz_min": -0.1432459056377411,
+          "q_rms_peak": 0.5520171957002621
+        },
+        "last_step": {
+          "steps": 197,
+          "first_s": 7.22,
+          "positive_vz_peak": 0.4112018346786499,
+          "negative_vz_min": -0.18736632168293,
+          "q_rms_peak": 0.5431526387685532
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 11.16,
+          "positive_vz_peak": 0.0767788514494896,
+          "negative_vz_min": -0.014094238169491291,
+          "q_rms_peak": 0.12772565326755958
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 13.14,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.00044203110155649483,
+          "q_rms_peak": 0.055871814663144226
+        }
+      },
+      "post_platform_positive_vz_peak": 0.0767788514494896,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.0037210537120699883,
+        0.002191011793911457,
+        -0.00044830222032032907
+      ],
+      "last_yaw": -0.0022028901148587465
+    },
+    {
+      "id": 50,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 194,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.46684613823890686,
+          "negative_vz_min": -0.16247116029262543,
+          "q_rms_peak": 0.5459362412130334
+        },
+        "last_step": {
+          "steps": 131,
+          "first_s": 3.88,
+          "positive_vz_peak": 0.5003316402435303,
+          "negative_vz_min": -0.1984664797782898,
+          "q_rms_peak": 0.5353054547186281
+        },
+        "platform_supported": {
+          "steps": 40,
+          "first_s": 6.0600000000000005,
+          "positive_vz_peak": 0.09954490512609482,
+          "negative_vz_min": -0.0006002450827509165,
+          "q_rms_peak": 0.11460893678322959
+        }
+      },
+      "post_platform_positive_vz_peak": 0.09954490512609482,
+      "support_dwell_s": 0.8,
+      "last_velocity": [
+        0.6296938061714172,
+        0.004914857912808657,
+        -0.019488444551825523
+      ],
+      "last_yaw": -0.006870824843645096
+    },
+    {
+      "id": 51,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 194,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.46684613823890686,
+          "negative_vz_min": -0.16247116029262543,
+          "q_rms_peak": 0.5459362412130334
+        },
+        "last_step": {
+          "steps": 109,
+          "first_s": 3.88,
+          "positive_vz_peak": 0.5003316402435303,
+          "negative_vz_min": -0.1984664797782898,
+          "q_rms_peak": 0.5353054547186281
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.0600000000000005,
+          "positive_vz_peak": 0.09954490512609482,
+          "negative_vz_min": -0.01932157576084137,
+          "q_rms_peak": 0.11678926834470604
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.040000000000001,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -8.003578841453418e-05,
+          "q_rms_peak": 0.06560322460720229
+        }
+      },
+      "post_platform_positive_vz_peak": 0.09954490512609482,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.0018696616170927882,
+        -0.0002918994869105518,
+        -9.834536467678845e-05
+      ],
+      "last_yaw": 0.0016860638279467821
+    },
+    {
+      "id": 52,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 162,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.8495608568191528,
+          "negative_vz_min": -0.2786383032798767,
+          "q_rms_peak": 0.5253270586100861
+        },
+        "last_step": {
+          "steps": 86,
+          "first_s": 3.24,
+          "positive_vz_peak": 0.794175386428833,
+          "negative_vz_min": -0.2564011812210083,
+          "q_rms_peak": 0.556722056308585
+        },
+        "platform_unstable": {
+          "steps": 1,
+          "first_s": 4.76,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.004997970070689917,
+          "q_rms_peak": 0.06349966454169935
+        },
+        "platform_supported": {
+          "steps": 17,
+          "first_s": 4.7,
+          "positive_vz_peak": 0.015261143445968628,
+          "negative_vz_min": -0.02356799505650997,
+          "q_rms_peak": 0.07364224066242575
+        }
+      },
+      "post_platform_positive_vz_peak": 0.015261143445968628,
+      "support_dwell_s": 0.28,
+      "last_velocity": [
+        1.1900763511657715,
+        -0.006776214577257633,
+        -0.0009022949379868805
+      ],
+      "last_yaw": 0.046824581921100616
+    },
+    {
+      "id": 53,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 170,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.7384744882583618,
+          "negative_vz_min": -0.3147071897983551,
+          "q_rms_peak": 0.5479366257929852
+        },
+        "last_step": {
+          "steps": 70,
+          "first_s": 3.4,
+          "positive_vz_peak": 0.7946591973304749,
+          "negative_vz_min": -0.30986061692237854,
+          "q_rms_peak": 0.5486667181890094
+        },
+        "platform_unstable": {
+          "steps": 5,
+          "first_s": 5.12,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.06112721562385559,
+          "q_rms_peak": 0.09360662471917004
+        },
+        "platform_supported": {
+          "steps": 115,
+          "first_s": 4.8,
+          "positive_vz_peak": 0.08867573738098145,
+          "negative_vz_min": -0.06366805732250214,
+          "q_rms_peak": 0.09873047870328121
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 7.2,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0005064025754109025,
+          "q_rms_peak": 0.06887553283275015
+        }
+      },
+      "post_platform_positive_vz_peak": 0.08867573738098145,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.008677555248141289,
+        -2.087684151774738e-05,
+        -0.0006516674184240401
+      ],
+      "last_yaw": -0.00037733613862656057
+    },
+    {
+      "id": 54,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 391,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.45499187707901,
+          "negative_vz_min": -0.14324575662612915,
+          "q_rms_peak": 0.646974807204367
+        },
+        "last_step": {
+          "steps": 271,
+          "first_s": 7.82,
+          "positive_vz_peak": 0.4727603495121002,
+          "negative_vz_min": -0.1860574185848236,
+          "q_rms_peak": 0.6588354769117204
+        },
+        "platform_supported": {
+          "steps": 69,
+          "first_s": 12.42,
+          "positive_vz_peak": 0.04537305235862732,
+          "negative_vz_min": -0.00404811417683959,
+          "q_rms_peak": 0.14756683299393236
+        }
+      },
+      "post_platform_positive_vz_peak": 0.04537305235862732,
+      "support_dwell_s": 1.3800000000000001,
+      "last_velocity": [
+        0.33730512857437134,
+        0.002573686419054866,
+        -0.004514770116657019
+      ],
+      "last_yaw": 0.0013060126220807433
+    },
+    {
+      "id": 55,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 391,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.45499187707901,
+          "negative_vz_min": -0.14324575662612915,
+          "q_rms_peak": 0.646974807204367
+        },
+        "last_step": {
+          "steps": 230,
+          "first_s": 7.82,
+          "positive_vz_peak": 0.4727603495121002,
+          "negative_vz_min": -0.1860574185848236,
+          "q_rms_peak": 0.6588354769117204
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 12.42,
+          "positive_vz_peak": 0.06283818930387497,
+          "negative_vz_min": -0.00404811417683959,
+          "q_rms_peak": 0.14756683299393236
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 14.4,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0008599016582593322,
+          "q_rms_peak": 0.053512076118916764
+        }
+      },
+      "post_platform_positive_vz_peak": 0.06283818930387497,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.01068253256380558,
+        0.0004458700423128903,
+        -0.000996744609437883
+      ],
+      "last_yaw": -0.0004643961729016155
+    },
+    {
+      "id": 56,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 209,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.567629337310791,
+          "negative_vz_min": -0.16247104108333588,
+          "q_rms_peak": 0.658645641319688
+        },
+        "last_step": {
+          "steps": 147,
+          "first_s": 4.18,
+          "positive_vz_peak": 0.5875200033187866,
+          "negative_vz_min": -0.2215728610754013,
+          "q_rms_peak": 0.6520372488198043
+        },
+        "platform_supported": {
+          "steps": 38,
+          "first_s": 6.68,
+          "positive_vz_peak": 0.11177301406860352,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.16015000322313083
+        }
+      },
+      "post_platform_positive_vz_peak": 0.11177301406860352,
+      "support_dwell_s": 0.76,
+      "last_velocity": [
+        0.649197518825531,
+        0.0036507651675492525,
+        -0.0009847828187048435
+      ],
+      "last_yaw": 0.00236134952865541
+    },
+    {
+      "id": 57,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 209,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.567629337310791,
+          "negative_vz_min": -0.16247104108333588,
+          "q_rms_peak": 0.658645641319688
+        },
+        "last_step": {
+          "steps": 125,
+          "first_s": 4.18,
+          "positive_vz_peak": 0.5875200033187866,
+          "negative_vz_min": -0.2215728610754013,
+          "q_rms_peak": 0.6520372488198043
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.68,
+          "positive_vz_peak": 0.14740096032619476,
+          "negative_vz_min": -0.0006959665333852172,
+          "q_rms_peak": 0.16015000322313083
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.66,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -2.293618854309898e-05,
+          "q_rms_peak": 0.05724839279656509
+        }
+      },
+      "post_platform_positive_vz_peak": 0.14740096032619476,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.0010898142354562879,
+        -0.0005703466013073921,
+        -1.845083897933364e-05
+      ],
+      "last_yaw": -1.6696183593012393e-05
+    },
+    {
+      "id": 58,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 191,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.8843446969985962,
+          "negative_vz_min": -0.6648232936859131,
+          "q_rms_peak": 0.5681536465629938
+        },
+        "last_step": {
+          "steps": 104,
+          "first_s": 3.8200000000000003,
+          "positive_vz_peak": 0.7617180347442627,
+          "negative_vz_min": -0.1287079155445099,
+          "q_rms_peak": 0.6753772125933711
+        },
+        "platform_supported": {
+          "steps": 16,
+          "first_s": 5.64,
+          "positive_vz_peak": 0.05552878603339195,
+          "negative_vz_min": -0.007998510263860226,
+          "q_rms_peak": 0.1798470043261571
+        }
+      },
+      "post_platform_positive_vz_peak": 0.05552878603339195,
+      "support_dwell_s": 0.32,
+      "last_velocity": [
+        1.198423981666565,
+        0.015376879833638668,
+        -0.033506788313388824
+      ],
+      "last_yaw": 0.044036779552698135
+    },
+    {
+      "id": 59,
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 191,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.8843446969985962,
+          "negative_vz_min": -0.6648232936859131,
+          "q_rms_peak": 0.5681536465629938
+        },
+        "last_step": {
+          "steps": 91,
+          "first_s": 3.8200000000000003,
+          "positive_vz_peak": 0.7617180347442627,
+          "negative_vz_min": -0.1287079155445099,
+          "q_rms_peak": 0.6753772125933711
+        },
+        "platform_unstable": {
+          "steps": 1,
+          "first_s": 5.76,
+          "positive_vz_peak": 0.09983428567647934,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.1036934411300685
+        },
+        "platform_supported": {
+          "steps": 105,
+          "first_s": 5.64,
+          "positive_vz_peak": 0.0998111292719841,
+          "negative_vz_min": -0.09721417725086212,
+          "q_rms_peak": 0.1798470043261571
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 7.76,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0002651743416208774,
+          "q_rms_peak": 0.06422442430950571
+        }
+      },
+      "post_platform_positive_vz_peak": 0.09983428567647934,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.0011766506358981133,
+        -0.0005332967266440392,
+        -0.00025883884518407285
+      ],
+      "last_yaw": 0.0023471650201827288
+    },
+    {
+      "id": 60,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 418,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.026399224996566772,
+          "negative_vz_min": -0.853407084941864,
+          "q_rms_peak": 0.4069738445685096
+        },
+        "last_step": {
+          "steps": 266,
+          "first_s": 8.36,
+          "positive_vz_peak": 0.08105830103158951,
+          "negative_vz_min": -0.6913549304008484,
+          "q_rms_peak": 0.39208731971612193
+        },
+        "platform_supported": {
+          "steps": 73,
+          "first_s": 13.0,
+          "positive_vz_peak": 0.005852391477674246,
+          "negative_vz_min": -0.004254692234098911,
+          "q_rms_peak": 0.09076300649261404
+        }
+      },
+      "post_platform_positive_vz_peak": 0.005852391477674246,
+      "support_dwell_s": 1.46,
+      "last_velocity": [
+        0.2802262604236603,
+        0.045984044671058655,
+        0.07977759093046188
+      ],
+      "last_yaw": -0.11739092320203781
+    },
+    {
+      "id": 61,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "timeout",
+      "phases": {
+        "climb": {
+          "steps": 418,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.026399224996566772,
+          "negative_vz_min": -0.853407084941864,
+          "q_rms_peak": 0.4069738445685096
+        },
+        "last_step": {
+          "steps": 804,
+          "first_s": 8.36,
+          "positive_vz_peak": 0.08105830103158951,
+          "negative_vz_min": -0.6913549304008484,
+          "q_rms_peak": 0.39208731971612193
+        },
+        "platform_supported": {
+          "steps": 27,
+          "first_s": 13.0,
+          "positive_vz_peak": 0.18427018821239471,
+          "negative_vz_min": -0.10518404841423035,
+          "q_rms_peak": 0.12168709625814966
+        }
+      },
+      "post_platform_positive_vz_peak": 0.18427018821239471,
+      "support_dwell_s": 0.54,
+      "last_velocity": [
+        -0.012816918082535267,
+        0.0005692486301995814,
+        -0.0009571012342348695
+      ],
+      "last_yaw": -0.0011465530842542648
+    },
+    {
+      "id": 62,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 210,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.0311428215354681,
+          "negative_vz_min": -0.9584172368049622,
+          "q_rms_peak": 0.4035197556553281
+        },
+        "last_step": {
+          "steps": 131,
+          "first_s": 4.2,
+          "positive_vz_peak": 0.10374707728624344,
+          "negative_vz_min": -0.6667478680610657,
+          "q_rms_peak": 0.39270629687501235
+        },
+        "platform_supported": {
+          "steps": 39,
+          "first_s": 6.46,
+          "positive_vz_peak": 0.007227384950965643,
+          "negative_vz_min": -0.008701478131115437,
+          "q_rms_peak": 0.10126346591883183
+        }
+      },
+      "post_platform_positive_vz_peak": 0.007227384950965643,
+      "support_dwell_s": 0.78,
+      "last_velocity": [
+        0.6152701377868652,
+        0.04371626302599907,
+        0.10903947055339813
+      ],
+      "last_yaw": -0.23354008793830872
+    },
+    {
+      "id": 63,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 210,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.0311428215354681,
+          "negative_vz_min": -0.9584172368049622,
+          "q_rms_peak": 0.4035197556553281
+        },
+        "last_step": {
+          "steps": 113,
+          "first_s": 4.2,
+          "positive_vz_peak": 0.10374707728624344,
+          "negative_vz_min": -0.6667478680610657,
+          "q_rms_peak": 0.39270629687501235
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.46,
+          "positive_vz_peak": 0.16992977261543274,
+          "negative_vz_min": -0.08827795088291168,
+          "q_rms_peak": 0.13716432645806972
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.44,
+          "positive_vz_peak": 6.7597220549941994e-06,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.08217696347665464
+        }
+      },
+      "post_platform_positive_vz_peak": 0.16992977261543274,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.005089411046355963,
+        -0.0011184591567143798,
+        -0.00016108139243442565
+      ],
+      "last_yaw": -0.002086841966956854
+    },
+    {
+      "id": 64,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 108,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.15467378497123718,
+          "negative_vz_min": -1.0239543914794922,
+          "q_rms_peak": 0.41563948059903255
+        },
+        "last_step": {
+          "steps": 68,
+          "first_s": 2.16,
+          "positive_vz_peak": 0.1563478410243988,
+          "negative_vz_min": -0.7542142868041992,
+          "q_rms_peak": 0.4190212680618873
+        },
+        "platform_supported": {
+          "steps": 21,
+          "first_s": 3.3200000000000003,
+          "positive_vz_peak": 0.10005359351634979,
+          "negative_vz_min": -0.5111864805221558,
+          "q_rms_peak": 0.1164272299436174
+        }
+      },
+      "post_platform_positive_vz_peak": 0.10005359351634979,
+      "support_dwell_s": 0.42,
+      "last_velocity": [
+        1.1043026447296143,
+        -0.0016168970614671707,
+        0.09406682848930359
+      ],
+      "last_yaw": -0.10371023416519165
+    },
+    {
+      "id": 65,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 108,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.15467378497123718,
+          "negative_vz_min": -1.0239543914794922,
+          "q_rms_peak": 0.41563948059903255
+        },
+        "last_step": {
+          "steps": 58,
+          "first_s": 2.16,
+          "positive_vz_peak": 0.1563478410243988,
+          "negative_vz_min": -0.7542142868041992,
+          "q_rms_peak": 0.4190212680618873
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 3.3200000000000003,
+          "positive_vz_peak": 0.11937767267227173,
+          "negative_vz_min": -0.5111864805221558,
+          "q_rms_peak": 0.16771200180527718
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.3,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0013217428931966424,
+          "q_rms_peak": 0.08736706655282853
+        }
+      },
+      "post_platform_positive_vz_peak": 0.11937767267227173,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.016148488968610764,
+        -0.0011875322088599205,
+        -0.0020152258221060038
+      ],
+      "last_yaw": 0.006017428357154131
+    },
+    {
+      "id": 66,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 492,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.008393769152462482,
+          "negative_vz_min": -0.9817150235176086,
+          "q_rms_peak": 0.5152515059813054
+        },
+        "last_step": {
+          "steps": 324,
+          "first_s": 9.84,
+          "positive_vz_peak": 0.17237374186515808,
+          "negative_vz_min": -0.7144443392753601,
+          "q_rms_peak": 0.4964266830650151
+        },
+        "platform_supported": {
+          "steps": 77,
+          "first_s": 15.56,
+          "positive_vz_peak": 0.021931862458586693,
+          "negative_vz_min": -0.010503927245736122,
+          "q_rms_peak": 0.09214927821574721
+        }
+      },
+      "post_platform_positive_vz_peak": 0.021931862458586693,
+      "support_dwell_s": 1.54,
+      "last_velocity": [
+        0.31827375292778015,
+        -0.0017264739144593477,
+        0.004861306864768267
+      ],
+      "last_yaw": -0.0037334514781832695
+    },
+    {
+      "id": 67,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "timeout",
+      "phases": {
+        "climb": {
+          "steps": 492,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.008393769152462482,
+          "negative_vz_min": -0.9817150235176086,
+          "q_rms_peak": 0.5152515059813054
+        },
+        "last_step": {
+          "steps": 695,
+          "first_s": 9.84,
+          "positive_vz_peak": 0.17237374186515808,
+          "negative_vz_min": -0.7144443392753601,
+          "q_rms_peak": 0.4964266830650151
+        },
+        "platform_supported": {
+          "steps": 62,
+          "first_s": 15.56,
+          "positive_vz_peak": 0.22577615082263947,
+          "negative_vz_min": -0.07831966876983643,
+          "q_rms_peak": 0.1423467496570818
+        }
+      },
+      "post_platform_positive_vz_peak": 0.22577615082263947,
+      "support_dwell_s": 1.24,
+      "last_velocity": [
+        -0.013426154851913452,
+        0.002275726990774274,
+        -0.0016959758941084146
+      ],
+      "last_yaw": -0.0011862243991345167
+    },
+    {
+      "id": 68,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 230,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.0328991636633873,
+          "negative_vz_min": -1.065780758857727,
+          "q_rms_peak": 0.50960718647457
+        },
+        "last_step": {
+          "steps": 153,
+          "first_s": 4.6000000000000005,
+          "positive_vz_peak": 0.12689177691936493,
+          "negative_vz_min": -0.8389872312545776,
+          "q_rms_peak": 0.4869587065314691
+        },
+        "platform_supported": {
+          "steps": 40,
+          "first_s": 7.26,
+          "positive_vz_peak": 0.04800775647163391,
+          "negative_vz_min": -0.012730572372674942,
+          "q_rms_peak": 0.10630433485131617
+        }
+      },
+      "post_platform_positive_vz_peak": 0.04800775647163391,
+      "support_dwell_s": 0.8,
+      "last_velocity": [
+        0.6384233236312866,
+        -0.0028461101464927197,
+        0.030056113377213478
+      ],
+      "last_yaw": 0.006227546837180853
+    },
+    {
+      "id": 69,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 230,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.0328991636633873,
+          "negative_vz_min": -1.065780758857727,
+          "q_rms_peak": 0.50960718647457
+        },
+        "last_step": {
+          "steps": 133,
+          "first_s": 4.6000000000000005,
+          "positive_vz_peak": 0.12689177691936493,
+          "negative_vz_min": -0.8389872312545776,
+          "q_rms_peak": 0.4869587065314691
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 7.26,
+          "positive_vz_peak": 0.17967619001865387,
+          "negative_vz_min": -0.08137451112270355,
+          "q_rms_peak": 0.15797931437378204
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 9.24,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.001462647458538413,
+          "q_rms_peak": 0.0883337303802688
+        }
+      },
+      "post_platform_positive_vz_peak": 0.17967619001865387,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.02428862825036049,
+        -0.00022312893997877836,
+        -0.0024943342432379723
+      ],
+      "last_yaw": 0.0018449018243700266
+    },
+    {
+      "id": 70,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 115,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.15658153593540192,
+          "negative_vz_min": -1.230512261390686,
+          "q_rms_peak": 0.4990321522242104
+        },
+        "last_step": {
+          "steps": 77,
+          "first_s": 2.3000000000000003,
+          "positive_vz_peak": 0.20641537010669708,
+          "negative_vz_min": -0.9361417889595032,
+          "q_rms_peak": 0.49616272443371745
+        },
+        "platform_unstable": {
+          "steps": 1,
+          "first_s": 3.62,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.47784799337387085,
+          "q_rms_peak": 0.12135910012605265
+        },
+        "platform_supported": {
+          "steps": 16,
+          "first_s": 3.64,
+          "positive_vz_peak": 0.10940098017454147,
+          "negative_vz_min": -0.5617848634719849,
+          "q_rms_peak": 0.1240194767022232
+        }
+      },
+      "post_platform_positive_vz_peak": 0.10940098017454147,
+      "support_dwell_s": 0.32,
+      "last_velocity": [
+        1.1961337327957153,
+        0.005113842431455851,
+        0.02291118912398815
+      ],
+      "last_yaw": -0.03775416687130928
+    },
+    {
+      "id": 71,
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 115,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.15658153593540192,
+          "negative_vz_min": -1.230512261390686,
+          "q_rms_peak": 0.4990321522242104
+        },
+        "last_step": {
+          "steps": 66,
+          "first_s": 2.3000000000000003,
+          "positive_vz_peak": 0.20641537010669708,
+          "negative_vz_min": -0.9361417889595032,
+          "q_rms_peak": 0.49616272443371745
+        },
+        "platform_unstable": {
+          "steps": 1,
+          "first_s": 3.62,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.47784799337387085,
+          "q_rms_peak": 0.12135910012605265
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 3.64,
+          "positive_vz_peak": 0.143989697098732,
+          "negative_vz_min": -0.5617848634719849,
+          "q_rms_peak": 0.1811645954877074
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.62,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.000668094668071717,
+          "q_rms_peak": 0.10535225001281208
+        }
+      },
+      "post_platform_positive_vz_peak": 0.143989697098732,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.08127947151660919,
+        -0.0005132239894010127,
+        -0.003958056215196848
+      ],
+      "last_yaw": -0.003766074776649475
+    },
+    {
+      "id": 72,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 395,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.39072343707084656,
+          "negative_vz_min": -0.1440836787223816,
+          "q_rms_peak": 0.5242896211247138
+        },
+        "last_step": {
+          "steps": 230,
+          "first_s": 7.9,
+          "positive_vz_peak": 0.4104310870170593,
+          "negative_vz_min": -0.0672377422451973,
+          "q_rms_peak": 0.5517715215450791
+        },
+        "platform_supported": {
+          "steps": 78,
+          "first_s": 11.74,
+          "positive_vz_peak": 0.05061664059758186,
+          "negative_vz_min": -0.009227721951901913,
+          "q_rms_peak": 0.12099106110137894
+        }
+      },
+      "post_platform_positive_vz_peak": 0.05061664059758186,
+      "support_dwell_s": 1.56,
+      "last_velocity": [
+        0.30930787324905396,
+        -0.007479403167963028,
+        0.008021081797778606
+      ],
+      "last_yaw": -0.019436990842223167
+    },
+    {
+      "id": 73,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 395,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.39072343707084656,
+          "negative_vz_min": -0.1440836787223816,
+          "q_rms_peak": 0.5242896211247138
+        },
+        "last_step": {
+          "steps": 192,
+          "first_s": 7.9,
+          "positive_vz_peak": 0.4104310870170593,
+          "negative_vz_min": -0.0672377422451973,
+          "q_rms_peak": 0.5517715215450791
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 11.74,
+          "positive_vz_peak": 0.10731644183397293,
+          "negative_vz_min": -0.06105143576860428,
+          "q_rms_peak": 0.12099106110137894
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 13.72,
+          "positive_vz_peak": 0.00020037117064930499,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.0657006976606673
+        }
+      },
+      "post_platform_positive_vz_peak": 0.10731644183397293,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.028628846630454063,
+        -0.003631952917203307,
+        0.00036885865847580135
+      ],
+      "last_yaw": -0.001971358200535178
+    },
+    {
+      "id": 74,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 199,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.4681759774684906,
+          "negative_vz_min": -0.15859900414943695,
+          "q_rms_peak": 0.530977124569901
+        },
+        "last_step": {
+          "steps": 135,
+          "first_s": 3.98,
+          "positive_vz_peak": 0.46779900789260864,
+          "negative_vz_min": -0.06087953597307205,
+          "q_rms_peak": 0.544237624054328
+        },
+        "platform_supported": {
+          "steps": 38,
+          "first_s": 6.16,
+          "positive_vz_peak": 0.06201571226119995,
+          "negative_vz_min": -0.010592557489871979,
+          "q_rms_peak": 0.11336544962452033
+        }
+      },
+      "post_platform_positive_vz_peak": 0.06201571226119995,
+      "support_dwell_s": 0.76,
+      "last_velocity": [
+        0.5622901320457458,
+        -0.004536737687885761,
+        0.004664710257202387
+      ],
+      "last_yaw": -0.01648005284368992
+    },
+    {
+      "id": 75,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 199,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.4681759774684906,
+          "negative_vz_min": -0.15859900414943695,
+          "q_rms_peak": 0.530977124569901
+        },
+        "last_step": {
+          "steps": 109,
+          "first_s": 3.98,
+          "positive_vz_peak": 0.46779900789260864,
+          "negative_vz_min": -0.06087953597307205,
+          "q_rms_peak": 0.544237624054328
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.16,
+          "positive_vz_peak": 0.0654945820569992,
+          "negative_vz_min": -0.011449143290519714,
+          "q_rms_peak": 0.12047416273776437
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.14,
+          "positive_vz_peak": 0.0009044316248036921,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.06850309881653494
+        }
+      },
+      "post_platform_positive_vz_peak": 0.0654945820569992,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.03521101921796799,
+        -0.0007101604132913053,
+        0.0006173246074467897
+      ],
+      "last_yaw": 0.0003818708355538547
+    },
+    {
+      "id": 76,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 111,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.725766122341156,
+          "negative_vz_min": -0.18403524160385132,
+          "q_rms_peak": 0.5385606575120516
+        },
+        "last_step": {
+          "steps": 78,
+          "first_s": 2.22,
+          "positive_vz_peak": 0.7479386925697327,
+          "negative_vz_min": -0.0402553491294384,
+          "q_rms_peak": 0.5511193548610587
+        },
+        "platform_supported": {
+          "steps": 17,
+          "first_s": 3.52,
+          "positive_vz_peak": 0.08229097723960876,
+          "negative_vz_min": -0.018332961946725845,
+          "q_rms_peak": 0.14196115449335114
+        }
+      },
+      "post_platform_positive_vz_peak": 0.08229097723960876,
+      "support_dwell_s": 0.34,
+      "last_velocity": [
+        1.1596574783325195,
+        0.02868749015033245,
+        0.016185255721211433
+      ],
+      "last_yaw": -0.018430564552545547
+    },
+    {
+      "id": 77,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 111,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.725766122341156,
+          "negative_vz_min": -0.18403524160385132,
+          "q_rms_peak": 0.5385606575120516
+        },
+        "last_step": {
+          "steps": 65,
+          "first_s": 2.22,
+          "positive_vz_peak": 0.7479386925697327,
+          "negative_vz_min": -0.0402553491294384,
+          "q_rms_peak": 0.5511193548610587
+        },
+        "platform_unstable": {
+          "steps": 5,
+          "first_s": 3.7600000000000002,
+          "positive_vz_peak": 0.0010763922473415732,
+          "negative_vz_min": -0.08675079792737961,
+          "q_rms_peak": 0.10348940294512077
+        },
+        "platform_supported": {
+          "steps": 111,
+          "first_s": 3.52,
+          "positive_vz_peak": 0.08229097723960876,
+          "negative_vz_min": -0.06846779584884644,
+          "q_rms_peak": 0.14196115449335114
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.84,
+          "positive_vz_peak": 7.17978400643915e-05,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.07007789698015317
+        }
+      },
+      "post_platform_positive_vz_peak": 0.08229097723960876,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.002457207068800926,
+        0.0008388919522985816,
+        8.023133705137298e-05
+      ],
+      "last_yaw": 0.0006791772902943194
+    },
+    {
+      "id": 78,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 429,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.43493446707725525,
+          "negative_vz_min": -0.1440839320421219,
+          "q_rms_peak": 0.6424244779550911
+        },
+        "last_step": {
+          "steps": 268,
+          "first_s": 8.58,
+          "positive_vz_peak": 0.45698660612106323,
+          "negative_vz_min": -0.1255156695842743,
+          "q_rms_peak": 0.6553173885951834
+        },
+        "platform_supported": {
+          "steps": 78,
+          "first_s": 13.120000000000001,
+          "positive_vz_peak": 0.09806784987449646,
+          "negative_vz_min": -0.04388219490647316,
+          "q_rms_peak": 0.13165162281390144
+        }
+      },
+      "post_platform_positive_vz_peak": 0.09806784987449646,
+      "support_dwell_s": 1.56,
+      "last_velocity": [
+        0.31054848432540894,
+        -0.0015899420250207186,
+        -0.0010738103883340955
+      ],
+      "last_yaw": -0.0011650085216388106
+    },
+    {
+      "id": 79,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 429,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.43493446707725525,
+          "negative_vz_min": -0.1440839320421219,
+          "q_rms_peak": 0.6424244779550911
+        },
+        "last_step": {
+          "steps": 227,
+          "first_s": 8.58,
+          "positive_vz_peak": 0.45698660612106323,
+          "negative_vz_min": -0.1255156695842743,
+          "q_rms_peak": 0.6553173885951834
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 13.120000000000001,
+          "positive_vz_peak": 0.09806784987449646,
+          "negative_vz_min": -0.061588868498802185,
+          "q_rms_peak": 0.13165162281390144
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 15.1,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0006795345107093453,
+          "q_rms_peak": 0.06313585220671224
+        }
+      },
+      "post_platform_positive_vz_peak": 0.09806784987449646,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.03429083153605461,
+        -0.0009876367403194308,
+        -0.0010466397507116199
+      ],
+      "last_yaw": -0.0117555633187294
+    },
+    {
+      "id": 80,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 217,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.5486602187156677,
+          "negative_vz_min": -0.15859878063201904,
+          "q_rms_peak": 0.6474409806134704
+        },
+        "last_step": {
+          "steps": 148,
+          "first_s": 4.34,
+          "positive_vz_peak": 0.5687906742095947,
+          "negative_vz_min": -0.03492077440023422,
+          "q_rms_peak": 0.6599048310915353
+        },
+        "platform_supported": {
+          "steps": 40,
+          "first_s": 6.82,
+          "positive_vz_peak": 0.07530658692121506,
+          "negative_vz_min": -0.004555330146104097,
+          "q_rms_peak": 0.15893537796062032
+        }
+      },
+      "post_platform_positive_vz_peak": 0.07530658692121506,
+      "support_dwell_s": 0.8,
+      "last_velocity": [
+        0.6028978228569031,
+        0.0017898373771458864,
+        0.0035996900405734777
+      ],
+      "last_yaw": 0.005103484261780977
+    },
+    {
+      "id": 81,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 217,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.5486602187156677,
+          "negative_vz_min": -0.15859878063201904,
+          "q_rms_peak": 0.6474409806134704
+        },
+        "last_step": {
+          "steps": 124,
+          "first_s": 4.34,
+          "positive_vz_peak": 0.5687906742095947,
+          "negative_vz_min": -0.03492077440023422,
+          "q_rms_peak": 0.6599048310915353
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.82,
+          "positive_vz_peak": 0.12722012400627136,
+          "negative_vz_min": -0.00876691285520792,
+          "q_rms_peak": 0.15893537796062032
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.8,
+          "positive_vz_peak": 0.002807042794302106,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.07066493937388815
+        }
+      },
+      "post_platform_positive_vz_peak": 0.12722012400627136,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.04786369204521179,
+        -0.002660759724676609,
+        0.0027171385008841753
+      ],
+      "last_yaw": -0.011508295312523842
+    },
+    {
+      "id": 82,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 122,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.8667821884155273,
+          "negative_vz_min": -0.1840335726737976,
+          "q_rms_peak": 0.6489610629176656
+        },
+        "last_step": {
+          "steps": 86,
+          "first_s": 2.44,
+          "positive_vz_peak": 0.8356432318687439,
+          "negative_vz_min": -0.07793398201465607,
+          "q_rms_peak": 0.634386142245136
+        },
+        "platform_supported": {
+          "steps": 18,
+          "first_s": 3.9,
+          "positive_vz_peak": 0.10844669491052628,
+          "negative_vz_min": -0.0015477326232939959,
+          "q_rms_peak": 0.1509461828038496
+        }
+      },
+      "post_platform_positive_vz_peak": 0.10844669491052628,
+      "support_dwell_s": 0.36,
+      "last_velocity": [
+        1.1940785646438599,
+        0.014225037768483162,
+        0.0017894944176077843
+      ],
+      "last_yaw": 0.053916722536087036
+    },
+    {
+      "id": 83,
+      "policy": 3,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 122,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.8667821884155273,
+          "negative_vz_min": -0.1840335726737976,
+          "q_rms_peak": 0.6489610629176656
+        },
+        "last_step": {
+          "steps": 73,
+          "first_s": 2.44,
+          "positive_vz_peak": 0.8356432318687439,
+          "negative_vz_min": -0.07793398201465607,
+          "q_rms_peak": 0.634386142245136
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 3.9,
+          "positive_vz_peak": 0.16300924122333527,
+          "negative_vz_min": -0.07995867729187012,
+          "q_rms_peak": 0.1509461828038496
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.88,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0019541464280337095,
+          "q_rms_peak": 0.06118224103481678
+        }
+      },
+      "post_platform_positive_vz_peak": 0.16300924122333527,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.0148700550198555,
+        -0.00018292531603947282,
+        -0.002076126169413328
+      ],
+      "last_yaw": -0.019526267424225807
+    },
+    {
+      "id": 84,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 415,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.05244862288236618,
+          "negative_vz_min": -0.45427465438842773,
+          "q_rms_peak": 0.4073311961048824
+        },
+        "last_step": {
+          "steps": 262,
+          "first_s": 8.3,
+          "positive_vz_peak": 0.049957238137722015,
+          "negative_vz_min": -0.6314952373504639,
+          "q_rms_peak": 0.3930475282625776
+        },
+        "platform_supported": {
+          "steps": 81,
+          "first_s": 12.64,
+          "positive_vz_peak": 0.012157424353063107,
+          "negative_vz_min": -0.01030689012259245,
+          "q_rms_peak": 0.09663903044108935
+        }
+      },
+      "post_platform_positive_vz_peak": 0.012157424353063107,
+      "support_dwell_s": 1.62,
+      "last_velocity": [
+        0.2640577256679535,
+        -0.003353099338710308,
+        -0.021976875141263008
+      ],
+      "last_yaw": -0.1551506370306015
+    },
+    {
+      "id": 85,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "timeout",
+      "phases": {
+        "climb": {
+          "steps": 415,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.05244862288236618,
+          "negative_vz_min": -0.45427465438842773,
+          "q_rms_peak": 0.4073311961048824
+        },
+        "last_step": {
+          "steps": 783,
+          "first_s": 8.3,
+          "positive_vz_peak": 0.049957238137722015,
+          "negative_vz_min": -0.6314952373504639,
+          "q_rms_peak": 0.3930475282625776
+        },
+        "platform_supported": {
+          "steps": 51,
+          "first_s": 12.64,
+          "positive_vz_peak": 0.11362262070178986,
+          "negative_vz_min": -0.09760086238384247,
+          "q_rms_peak": 0.10830322617570604
+        }
+      },
+      "post_platform_positive_vz_peak": 0.11362262070178986,
+      "support_dwell_s": 1.02,
+      "last_velocity": [
+        0.001698553329333663,
+        -0.0014441140228882432,
+        0.0002767670666798949
+      ],
+      "last_yaw": 0.011776430532336235
+    },
+    {
+      "id": 86,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 210,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.027697252109646797,
+          "negative_vz_min": -0.5530765056610107,
+          "q_rms_peak": 0.4155817499514619
+        },
+        "last_step": {
+          "steps": 128,
+          "first_s": 4.2,
+          "positive_vz_peak": 0.09677480161190033,
+          "negative_vz_min": -0.6886600255966187,
+          "q_rms_peak": 0.4078158438928742
+        },
+        "platform_supported": {
+          "steps": 40,
+          "first_s": 6.34,
+          "positive_vz_peak": 0.052948400378227234,
+          "negative_vz_min": -0.01315990649163723,
+          "q_rms_peak": 0.09963225024570663
+        }
+      },
+      "post_platform_positive_vz_peak": 0.052948400378227234,
+      "support_dwell_s": 0.8,
+      "last_velocity": [
+        0.5859041810035706,
+        0.020010612905025482,
+        -0.032312653958797455
+      ],
+      "last_yaw": -0.11728168278932571
+    },
+    {
+      "id": 87,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 210,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.027697252109646797,
+          "negative_vz_min": -0.5530765056610107,
+          "q_rms_peak": 0.4155817499514619
+        },
+        "last_step": {
+          "steps": 107,
+          "first_s": 4.2,
+          "positive_vz_peak": 0.09677480161190033,
+          "negative_vz_min": -0.6886600255966187,
+          "q_rms_peak": 0.4078158438928742
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 6.34,
+          "positive_vz_peak": 0.19484451413154602,
+          "negative_vz_min": -0.09690742194652557,
+          "q_rms_peak": 0.13114342129643397
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 8.32,
+          "positive_vz_peak": 0.0008246231009252369,
+          "negative_vz_min": 0.0,
+          "q_rms_peak": 0.08094360059374975
+        }
+      },
+      "post_platform_positive_vz_peak": 0.19484451413154602,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        0.01101403497159481,
+        -0.002002069726586342,
+        0.0011895530624315143
+      ],
+      "last_yaw": -0.0061562806367874146
+    },
+    {
+      "id": 88,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 108,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.11405321210622787,
+          "negative_vz_min": -0.7797015905380249,
+          "q_rms_peak": 0.42610934721552085
+        },
+        "last_step": {
+          "steps": 67,
+          "first_s": 2.16,
+          "positive_vz_peak": 0.15668871998786926,
+          "negative_vz_min": -0.7576824426651001,
+          "q_rms_peak": 0.4378354754795457
+        },
+        "platform_supported": {
+          "steps": 21,
+          "first_s": 3.2800000000000002,
+          "positive_vz_peak": 0.07271840423345566,
+          "negative_vz_min": -0.48188772797584534,
+          "q_rms_peak": 0.090905986070809
+        }
+      },
+      "post_platform_positive_vz_peak": 0.07271840423345566,
+      "support_dwell_s": 0.42,
+      "last_velocity": [
+        1.0781177282333374,
+        0.07262285053730011,
+        0.14817222952842712
+      ],
+      "last_yaw": 0.17478211224079132
+    },
+    {
+      "id": 89,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 108,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.11405321210622787,
+          "negative_vz_min": -0.7797015905380249,
+          "q_rms_peak": 0.42610934721552085
+        },
+        "last_step": {
+          "steps": 56,
+          "first_s": 2.16,
+          "positive_vz_peak": 0.15668871998786926,
+          "negative_vz_min": -0.7576824426651001,
+          "q_rms_peak": 0.4378354754795457
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 3.2800000000000002,
+          "positive_vz_peak": 0.15569809079170227,
+          "negative_vz_min": -0.48188772797584534,
+          "q_rms_peak": 0.15001695633885603
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.26,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.00045955716632306576,
+          "q_rms_peak": 0.08794374752567369
+        }
+      },
+      "post_platform_positive_vz_peak": 0.15569809079170227,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.026414314284920692,
+        -0.005699983797967434,
+        -0.0014436027267947793
+      ],
+      "last_yaw": -0.00749190803617239
+    },
+    {
+      "id": 90,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 572,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.0223151296377182,
+          "negative_vz_min": -0.5364701151847839,
+          "q_rms_peak": 0.49782111106544485
+        },
+        "last_step": {
+          "steps": 282,
+          "first_s": 11.44,
+          "positive_vz_peak": 0.16727326810359955,
+          "negative_vz_min": -0.7375462055206299,
+          "q_rms_peak": 0.5154966999681886
+        },
+        "platform_supported": {
+          "steps": 89,
+          "first_s": 16.38,
+          "positive_vz_peak": 0.05830036848783493,
+          "negative_vz_min": -0.03701706603169441,
+          "q_rms_peak": 0.1043085888575318
+        }
+      },
+      "post_platform_positive_vz_peak": 0.05830036848783493,
+      "support_dwell_s": 1.78,
+      "last_velocity": [
+        0.33427661657333374,
+        -0.004423182923346758,
+        0.008883531205356121
+      ],
+      "last_yaw": 0.032930899411439896
+    },
+    {
+      "id": 91,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "timeout",
+      "phases": {
+        "climb": {
+          "steps": 572,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.0223151296377182,
+          "negative_vz_min": -0.5364701151847839,
+          "q_rms_peak": 0.49782111106544485
+        },
+        "last_step": {
+          "steps": 627,
+          "first_s": 11.44,
+          "positive_vz_peak": 0.16727326810359955,
+          "negative_vz_min": -0.7375462055206299,
+          "q_rms_peak": 0.5154966999681886
+        },
+        "platform_supported": {
+          "steps": 50,
+          "first_s": 16.38,
+          "positive_vz_peak": 0.13527041673660278,
+          "negative_vz_min": -0.06426448374986649,
+          "q_rms_peak": 0.12260847529228501
+        }
+      },
+      "post_platform_positive_vz_peak": 0.13527041673660278,
+      "support_dwell_s": 1.0,
+      "last_velocity": [
+        -0.0015990815591067076,
+        -0.0017625504406169057,
+        0.00030289930873550475
+      ],
+      "last_yaw": 0.005794645752757788
+    },
+    {
+      "id": 92,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 243,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.02678324282169342,
+          "negative_vz_min": -0.7037256956100464,
+          "q_rms_peak": 0.4933953818558397
+        },
+        "last_step": {
+          "steps": 143,
+          "first_s": 4.86,
+          "positive_vz_peak": 0.09414862096309662,
+          "negative_vz_min": -0.8257033228874207,
+          "q_rms_peak": 0.4951867530415657
+        },
+        "platform_supported": {
+          "steps": 41,
+          "first_s": 7.32,
+          "positive_vz_peak": 0.09370498359203339,
+          "negative_vz_min": -0.049854692071676254,
+          "q_rms_peak": 0.12338269763481872
+        }
+      },
+      "post_platform_positive_vz_peak": 0.09370498359203339,
+      "support_dwell_s": 0.8200000000000001,
+      "last_velocity": [
+        0.6563097238540649,
+        -0.007376097142696381,
+        0.02854102849960327
+      ],
+      "last_yaw": 0.05067754536867142
+    },
+    {
+      "id": 93,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 243,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.02678324282169342,
+          "negative_vz_min": -0.7037256956100464,
+          "q_rms_peak": 0.4933953818558397
+        },
+        "last_step": {
+          "steps": 123,
+          "first_s": 4.86,
+          "positive_vz_peak": 0.09414862096309662,
+          "negative_vz_min": -0.8257033228874207,
+          "q_rms_peak": 0.4951867530415657
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 7.32,
+          "positive_vz_peak": 0.18536251783370972,
+          "negative_vz_min": -0.06239016726613045,
+          "q_rms_peak": 0.14883478511030745
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 9.3,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.0036988272331655025,
+          "q_rms_peak": 0.09011786398542322
+        }
+      },
+      "post_platform_positive_vz_peak": 0.18536251783370972,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.029848450794816017,
+        -0.007604047190397978,
+        -0.004599145147949457
+      ],
+      "last_yaw": 0.024318458512425423
+    },
+    {
+      "id": 94,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "continue",
+      "physical": false,
+      "end_reason": "safe_tile_endpoint",
+      "phases": {
+        "climb": {
+          "steps": 116,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.11369815468788147,
+          "negative_vz_min": -0.947989284992218,
+          "q_rms_peak": 0.519756380300386
+        },
+        "last_step": {
+          "steps": 75,
+          "first_s": 2.32,
+          "positive_vz_peak": 0.23205086588859558,
+          "negative_vz_min": -0.9030817151069641,
+          "q_rms_peak": 0.5057054971113027
+        },
+        "platform_unstable": {
+          "steps": 2,
+          "first_s": 3.58,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.598939061164856,
+          "q_rms_peak": 0.10741975249406839
+        },
+        "platform_supported": {
+          "steps": 16,
+          "first_s": 3.62,
+          "positive_vz_peak": 0.10174990445375443,
+          "negative_vz_min": -0.3095606863498688,
+          "q_rms_peak": 0.09954200545874341
+        }
+      },
+      "post_platform_positive_vz_peak": 0.10174990445375443,
+      "support_dwell_s": 0.32,
+      "last_velocity": [
+        1.1663665771484375,
+        0.0074967630207538605,
+        0.04392225667834282
+      ],
+      "last_yaw": 0.04419482499361038
+    },
+    {
+      "id": 95,
+      "policy": 3,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "landing_mode": "stop",
+      "physical": false,
+      "end_reason": "supported_platform_dwell",
+      "phases": {
+        "climb": {
+          "steps": 116,
+          "first_s": 0.0,
+          "positive_vz_peak": 0.11369815468788147,
+          "negative_vz_min": -0.947989284992218,
+          "q_rms_peak": 0.519756380300386
+        },
+        "last_step": {
+          "steps": 63,
+          "first_s": 2.32,
+          "positive_vz_peak": 0.23205086588859558,
+          "negative_vz_min": -0.9030817151069641,
+          "q_rms_peak": 0.5057054971113027
+        },
+        "platform_unstable": {
+          "steps": 2,
+          "first_s": 3.58,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.598939061164856,
+          "q_rms_peak": 0.10741975249406839
+        },
+        "platform_supported": {
+          "steps": 99,
+          "first_s": 3.62,
+          "positive_vz_peak": 0.15852858126163483,
+          "negative_vz_min": -0.3095606863498688,
+          "q_rms_peak": 0.17212897672070213
+        },
+        "support_dwell_complete": {
+          "steps": 1,
+          "first_s": 5.6000000000000005,
+          "positive_vz_peak": 0.0,
+          "negative_vz_min": -0.001963547896593809,
+          "q_rms_peak": 0.09585011618832219
+        }
+      },
+      "post_platform_positive_vz_peak": 0.15852858126163483,
+      "support_dwell_s": 2.0,
+      "last_velocity": [
+        -0.06958688795566559,
+        -0.011141233146190643,
+        -0.004629899747669697
+      ],
+      "last_yaw": 0.013615692965686321
+    }
+  ],
+  "random_success_rate": false,
+  "note": "Two-second geometric contact support; velocity/posture reported independently, not assumed stationary."
+}

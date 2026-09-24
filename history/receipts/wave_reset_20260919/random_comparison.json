@@ -1,0 +1,39 @@
+{
+  "controls_matched": true,
+  "not_worse": true,
+  "groups": {
+    "random_original": {
+      "teacher": {
+        "count": 36,
+        "failures_first_second": 16.0,
+        "failures_first_035s": 16.0,
+        "actuator": 16,
+        "base_contact": 0
+      },
+      "student": {
+        "count": 36,
+        "failures_first_second": 18.0,
+        "failures_first_035s": 16.0,
+        "actuator": 18,
+        "base_contact": 0
+      }
+    },
+    "random_surface": {
+      "teacher": {
+        "count": 36,
+        "failures_first_second": 4.0,
+        "failures_first_035s": 4.0,
+        "actuator": 4,
+        "base_contact": 0
+      },
+      "student": {
+        "count": 36,
+        "failures_first_second": 7.0,
+        "failures_first_035s": 7.0,
+        "actuator": 7,
+        "base_contact": 0
+      }
+    }
+  },
+  "scope": "One second, randomized initial pose/joints/root velocities; no observation/parameter/push randomization; not a traversal success rate"
+}

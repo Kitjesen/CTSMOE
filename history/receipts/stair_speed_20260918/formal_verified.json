@@ -1,0 +1,400 @@
+{
+  "verified_at_utc": "2026-09-18T04:05:45.490715+00:00",
+  "checks_passed": true,
+  "new_updates": 29,
+  "starting_completed_updates": 18348,
+  "starting_terrain_mean": 5.11474609375,
+  "seconds_mean_last10": 6.369187450408935,
+  "last": {
+    "state": "training",
+    "completed_updates": 18377,
+    "seconds": 6.404504299163818,
+    "collect_seconds": 5.846261501312256,
+    "learn_seconds": 0.5582427978515625,
+    "fast_delay": false,
+    "command_curriculum_start": "intermediate",
+    "terrain_training_profile": "stairs80_v1",
+    "stair_command_profile": "straight_speed_v1",
+    "stair_speed": {
+      "profile": "straight_speed_v1",
+      "speed_edges": [
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "stairs_command_count": 3276,
+      "active_speed_bin_counts": [
+        1426,
+        781,
+        608,
+        461
+      ],
+      "vx_min_max": [
+        0.20006099343299866,
+        0.999257504940033
+      ],
+      "vy_wz_abs_max": [
+        0.0,
+        0.0
+      ],
+      "episode_statistics": {
+        "teacher": {
+          "stairs_up": [
+            {
+              "speed_range": [
+                0.2,
+                0.4
+              ],
+              "episodes": 34,
+              "grade_eligible": 34,
+              "radius_passes": 34,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.08910572879454669
+            },
+            {
+              "speed_range": [
+                0.4,
+                0.6
+              ],
+              "episodes": 380,
+              "grade_eligible": 380,
+              "radius_passes": 375,
+              "physical_failures": 5,
+              "vx_mae_mps": 0.11923934978089834
+            },
+            {
+              "speed_range": [
+                0.6,
+                0.8
+              ],
+              "episodes": 429,
+              "grade_eligible": 429,
+              "radius_passes": 426,
+              "physical_failures": 3,
+              "vx_mae_mps": 0.1655568946977873
+            },
+            {
+              "speed_range": [
+                0.8,
+                1.0
+              ],
+              "episodes": 475,
+              "grade_eligible": 475,
+              "radius_passes": 472,
+              "physical_failures": 3,
+              "vx_mae_mps": 0.23388723398509778
+            }
+          ],
+          "stairs_down": [
+            {
+              "speed_range": [
+                0.2,
+                0.4
+              ],
+              "episodes": 55,
+              "grade_eligible": 55,
+              "radius_passes": 55,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.07648127803748304
+            },
+            {
+              "speed_range": [
+                0.4,
+                0.6
+              ],
+              "episodes": 141,
+              "grade_eligible": 141,
+              "radius_passes": 141,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.09234916712058351
+            },
+            {
+              "speed_range": [
+                0.6,
+                0.8
+              ],
+              "episodes": 195,
+              "grade_eligible": 195,
+              "radius_passes": 195,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.10805152242000286
+            },
+            {
+              "speed_range": [
+                0.8,
+                1.0
+              ],
+              "episodes": 243,
+              "grade_eligible": 243,
+              "radius_passes": 243,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.1367787589844117
+            }
+          ]
+        },
+        "student": {
+          "stairs_up": [
+            {
+              "speed_range": [
+                0.2,
+                0.4
+              ],
+              "episodes": 10,
+              "grade_eligible": 10,
+              "radius_passes": 10,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.08990332633256912
+            },
+            {
+              "speed_range": [
+                0.4,
+                0.6
+              ],
+              "episodes": 111,
+              "grade_eligible": 111,
+              "radius_passes": 111,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.12535878264152253
+            },
+            {
+              "speed_range": [
+                0.6,
+                0.8
+              ],
+              "episodes": 162,
+              "grade_eligible": 162,
+              "radius_passes": 159,
+              "physical_failures": 3,
+              "vx_mae_mps": 0.18103117449783984
+            },
+            {
+              "speed_range": [
+                0.8,
+                1.0
+              ],
+              "episodes": 196,
+              "grade_eligible": 196,
+              "radius_passes": 192,
+              "physical_failures": 4,
+              "vx_mae_mps": 0.2504578207296376
+            }
+          ],
+          "stairs_down": [
+            {
+              "speed_range": [
+                0.2,
+                0.4
+              ],
+              "episodes": 11,
+              "grade_eligible": 11,
+              "radius_passes": 11,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.09391213140704414
+            },
+            {
+              "speed_range": [
+                0.4,
+                0.6
+              ],
+              "episodes": 52,
+              "grade_eligible": 52,
+              "radius_passes": 52,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.09897022214359961
+            },
+            {
+              "speed_range": [
+                0.6,
+                0.8
+              ],
+              "episodes": 64,
+              "grade_eligible": 64,
+              "radius_passes": 64,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.12036710837855935
+            },
+            {
+              "speed_range": [
+                0.8,
+                1.0
+              ],
+              "episodes": 86,
+              "grade_eligible": 86,
+              "radius_passes": 86,
+              "physical_failures": 0,
+              "vx_mae_mps": 0.14801885954342608
+            }
+          ]
+        }
+      },
+      "criterion": "eligible forward exit > 4m without physical termination; not independent stair completion",
+      "statistics_mode": "cumulative stochastic training episodes; no automatic speed-weight adjustment"
+    },
+    "base_height_penalty_weight": 0.0,
+    "terrain_by_type": {
+      "wave": {
+        "count": 63,
+        "mean": 6.142857142857143,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          3,
+          4,
+          3,
+          11,
+          12,
+          15,
+          10,
+          5
+        ]
+      },
+      "slope_up": {
+        "count": 127,
+        "mean": 6.377952755905512,
+        "counts_L0_to_L9": [
+          2,
+          3,
+          3,
+          6,
+          7,
+          16,
+          23,
+          18,
+          30,
+          19
+        ]
+      },
+      "slope_down": {
+        "count": 126,
+        "mean": 5.912698412698413,
+        "counts_L0_to_L9": [
+          1,
+          5,
+          7,
+          16,
+          7,
+          20,
+          11,
+          13,
+          21,
+          25
+        ]
+      },
+      "rough_slope": {
+        "count": 63,
+        "mean": 5.26984126984127,
+        "counts_L0_to_L9": [
+          4,
+          3,
+          3,
+          7,
+          4,
+          8,
+          12,
+          8,
+          8,
+          6
+        ]
+      },
+      "stairs_up": {
+        "count": 2457,
+        "mean": 5.253968253968254,
+        "counts_L0_to_L9": [
+          1,
+          22,
+          64,
+          180,
+          403,
+          670,
+          673,
+          340,
+          97,
+          7
+        ]
+      },
+      "stairs_down": {
+        "count": 819,
+        "mean": 5.892551892551893,
+        "counts_L0_to_L9": [
+          19,
+          34,
+          48,
+          51,
+          81,
+          102,
+          95,
+          117,
+          128,
+          144
+        ]
+      },
+      "obstacles": {
+        "count": 252,
+        "mean": 6.158730158730159,
+        "counts_L0_to_L9": [
+          3,
+          10,
+          13,
+          12,
+          20,
+          24,
+          33,
+          52,
+          47,
+          38
+        ]
+      },
+      "flat": {
+        "count": 189,
+        "mean": 6.037037037037037,
+        "counts_L0_to_L9": [
+          3,
+          9,
+          4,
+          10,
+          22,
+          21,
+          34,
+          21,
+          35,
+          30
+        ]
+      }
+    },
+    "command_ranges": {
+      "lin_vel_x": [
+        -1.0,
+        1.0
+      ],
+      "lin_vel_y": [
+        -1.0,
+        1.0
+      ],
+      "ang_vel_yaw": [
+        -1.5,
+        1.5
+      ]
+    },
+    "observed_command_abs_max": [
+      1.0,
+      1.0,
+      1.5
+    ],
+    "terrain": 5.54248046875,
+    "value": 0.012758765090256929,
+    "surrogate": 0.015668010152876378,
+    "entropy": 7.735359764099121,
+    "mean_latent_loss": 0.0020490628783591093,
+    "mean_load_balance_loss": 2.2293166580311663e-05
+  },
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true
+  }
+}

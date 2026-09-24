@@ -1,0 +1,625 @@
+{
+  "old_guarded": {
+    "checkpoint_updates": 19001,
+    "teacher": {
+      "cases": 27,
+      "passes": 13,
+      "actuator_terminated": 14,
+      "failed_before_035s": 14,
+      "failure_durations_s": [
+        0.19999998807907104,
+        0.2199999988079071,
+        0.19999998807907104,
+        0.2199999988079071,
+        0.19999998807907104,
+        0.2199999988079071,
+        0.19999998807907104,
+        0.19999998807907104,
+        0.2199999988079071,
+        0.29999998211860657,
+        0.19999998807907104,
+        0.19999998807907104,
+        0.19999998807907104,
+        0.19999998807907104
+      ],
+      "failures": [
+        {
+          "level": 6,
+          "speed": 0.3,
+          "repeat": 0,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.0037298202514648438,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.3,
+          "repeat": 2,
+          "duration_s": 0.2199999988079071,
+          "final_forward_m": 0.00675201416015625,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.6,
+          "repeat": 1,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.010326385498046875,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.6,
+          "repeat": 2,
+          "duration_s": 0.2199999988079071,
+          "final_forward_m": 0.01567363739013672,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.9,
+          "repeat": 0,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.00936126708984375,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.9,
+          "repeat": 1,
+          "duration_s": 0.2199999988079071,
+          "final_forward_m": 0.0179901123046875,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.9,
+          "repeat": 2,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.011415481567382812,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.3,
+          "repeat": 0,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.004108428955078125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.3,
+          "repeat": 1,
+          "duration_s": 0.2199999988079071,
+          "final_forward_m": 0.012531280517578125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.3,
+          "repeat": 2,
+          "duration_s": 0.29999998211860657,
+          "final_forward_m": 0.0215301513671875,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.6,
+          "repeat": 0,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.011928558349609375,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.6,
+          "repeat": 1,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.01313018798828125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.9,
+          "repeat": 1,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.008953094482421875,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.9,
+          "repeat": 2,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.01306915283203125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        }
+      ]
+    },
+    "student": {
+      "cases": 27,
+      "passes": 19,
+      "actuator_terminated": 8,
+      "failed_before_035s": 8,
+      "failure_durations_s": [
+        0.17999999225139618,
+        0.1599999964237213,
+        0.2199999988079071,
+        0.19999998807907104,
+        0.19999998807907104,
+        0.19999998807907104,
+        0.19999998807907104,
+        0.19999998807907104
+      ],
+      "failures": [
+        {
+          "level": 3,
+          "speed": 0.3,
+          "repeat": 0,
+          "duration_s": 0.17999999225139618,
+          "final_forward_m": 0.010866165161132812,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 3,
+          "speed": 0.9,
+          "repeat": 2,
+          "duration_s": 0.1599999964237213,
+          "final_forward_m": 0.021471023559570312,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.6,
+          "repeat": 0,
+          "duration_s": 0.2199999988079071,
+          "final_forward_m": 0.020908355712890625,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.6,
+          "repeat": 1,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.03217315673828125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.3,
+          "repeat": 0,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.0274200439453125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.3,
+          "repeat": 1,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.030231475830078125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.6,
+          "repeat": 2,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.03223419189453125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.9,
+          "repeat": 0,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.03862762451171875,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        }
+      ]
+    }
+  },
+  "old_no_actuator_termination": {
+    "checkpoint_updates": 19001,
+    "teacher": {
+      "cases": 27,
+      "passes": 27,
+      "actuator_terminated": 0,
+      "failed_before_035s": 0,
+      "failure_durations_s": [],
+      "failures": []
+    },
+    "student": {
+      "cases": 27,
+      "passes": 27,
+      "actuator_terminated": 0,
+      "failed_before_035s": 0,
+      "failure_durations_s": [],
+      "failures": []
+    }
+  },
+  "new_guarded": {
+    "checkpoint_updates": 21001,
+    "teacher": {
+      "cases": 27,
+      "passes": 21,
+      "actuator_terminated": 6,
+      "failed_before_035s": 6,
+      "failure_durations_s": [
+        0.14000000059604645,
+        0.3400000035762787,
+        0.2800000011920929,
+        0.2199999988079071,
+        0.19999998807907104,
+        0.19999998807907104
+      ],
+      "failures": [
+        {
+          "level": 3,
+          "speed": 0.3,
+          "repeat": 0,
+          "duration_s": 0.14000000059604645,
+          "final_forward_m": 0.01300811767578125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 3,
+          "speed": 0.6,
+          "repeat": 1,
+          "duration_s": 0.3400000035762787,
+          "final_forward_m": 0.06606864929199219,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.6,
+          "repeat": 0,
+          "duration_s": 0.2800000011920929,
+          "final_forward_m": 0.021579742431640625,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.3,
+          "repeat": 0,
+          "duration_s": 0.2199999988079071,
+          "final_forward_m": 0.016490936279296875,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.6,
+          "repeat": 0,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.021411895751953125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.9,
+          "repeat": 1,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.021427154541015625,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        }
+      ]
+    },
+    "student": {
+      "cases": 27,
+      "passes": 21,
+      "actuator_terminated": 6,
+      "failed_before_035s": 4,
+      "failure_durations_s": [
+        0.2199999988079071,
+        0.2800000011920929,
+        2.6599998474121094,
+        0.19999998807907104,
+        2.0999999046325684,
+        0.19999998807907104
+      ],
+      "failures": [
+        {
+          "level": 3,
+          "speed": 0.6,
+          "repeat": 2,
+          "duration_s": 0.2199999988079071,
+          "final_forward_m": 0.018082618713378906,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 6,
+          "speed": 0.9,
+          "repeat": 1,
+          "duration_s": 0.2800000011920929,
+          "final_forward_m": 0.02738666534423828,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.3,
+          "repeat": 0,
+          "duration_s": 2.6599998474121094,
+          "final_forward_m": 0.4613304138183594,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.3,
+          "repeat": 1,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.010700225830078125,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.9,
+          "repeat": 0,
+          "duration_s": 2.0999999046325684,
+          "final_forward_m": 1.4380722045898438,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        },
+        {
+          "level": 9,
+          "speed": 0.9,
+          "repeat": 2,
+          "duration_s": 0.19999998807907104,
+          "final_forward_m": 0.021755218505859375,
+          "termination_reasons": {
+            "time_out": false,
+            "actuator_violation": true,
+            "illegal_contact": false,
+            "stair_route_exit": false
+          }
+        }
+      ]
+    }
+  },
+  "timeline": [
+    {
+      "source": "actuator_guard_20260918/formal_run.json",
+      "updates": 20471,
+      "wave": {
+        "count": 63,
+        "mean": 6.2063492063492065,
+        "counts_L0_to_L9": [
+          1,
+          2,
+          2,
+          6,
+          2,
+          6,
+          11,
+          12,
+          10,
+          11
+        ]
+      }
+    },
+    {
+      "source": "actuator_peak_20260918/formal_run.json",
+      "updates": 20707,
+      "wave": {
+        "count": 63,
+        "mean": 0.4603174603174603,
+        "counts_L0_to_L9": [
+          43,
+          14,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "source": "status_check_20260918_after21434/progress.json",
+      "updates": 21973,
+      "wave": {
+        "count": 63,
+        "mean": 0.9047619047619048,
+        "counts_L0_to_L9": [
+          32,
+          17,
+          5,
+          6,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "source": "wave_regression_20260918/status.json",
+      "updates": 22073,
+      "wave": {
+        "count": 63,
+        "mean": 0.5238095238095238,
+        "counts_L0_to_L9": [
+          44,
+          7,
+          10,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

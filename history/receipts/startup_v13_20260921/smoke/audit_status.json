@@ -1,0 +1,34 @@
+{
+  "state": "AUDIT_SMOKE_COMPLETE",
+  "authoritative": true,
+  "written_before_learn_return": true,
+  "smoke_only": true,
+  "completed_updates": 44711,
+  "optimizer_updates": 0,
+  "control_steps": 3,
+  "simulated_seconds": 0.06,
+  "num_envs": 4096,
+  "profile": "omni_full_episode_v13",
+  "seed": 42,
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+  "reference": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+  "coefficient_donor": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+  "checkpoint_sha256": "66719b305a7c335e7fcc8cd062daa83a8c4a5e132c67790a79982b40b210ab34",
+  "reference_sha256": "bdde0ca02d7e0d9db9ecdfd8c9b352cc1f511db49a9af936cc14c8046f6a77f8",
+  "coefficient_donor_sha256": "73d961f5855d36b43d86852845a31f9a27259805cea53a317787e0bf023e5c76",
+  "checkpoint_artifacts_written": [],
+  "state_hashes_before": {
+    "model": "a147cfa065a53ddcfdc9b31e7d3fb3bc41998260544a25c92c4356561f8e6d1b",
+    "ppo_optimizer": "88f22f524dfee7c7503b651383d1f2ab64aeb0f1f1594abdc65e47ce2ddda143",
+    "student_optimizer": "b177337da36204c4d3b08c113367a24e1d375d8275120f713e4e916fb9d75737"
+  },
+  "state_hashes_after": {
+    "model": "a147cfa065a53ddcfdc9b31e7d3fb3bc41998260544a25c92c4356561f8e6d1b",
+    "ppo_optimizer": "88f22f524dfee7c7503b651383d1f2ab64aeb0f1f1594abdc65e47ce2ddda143",
+    "student_optimizer": "b177337da36204c4d3b08c113367a24e1d375d8275120f713e4e916fb9d75737"
+  },
+  "forbidden_calls": [],
+  "storage_cleared_each_horizon": true,
+  "stats_environment_patch_restored": true,
+  "mutation_patches_restored": true
+}

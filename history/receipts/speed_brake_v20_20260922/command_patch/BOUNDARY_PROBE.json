@@ -1,0 +1,291 @@
+{
+  "scope": "CPU body-twist geometry stress audit; no physics, training, or held-out policy performance claim",
+  "bounds_source": "D:\\inovxio\\brain\\train\\rough\\cts_moe\\official\\receipts\\omni_repair_v19_20260922\\recovery01\\PREFLIGHT_RUN.json",
+  "bounds_source_sha256": "a3bfd238ed96b95d621ecdf4513d293b0c114ef441a917fd9fecc444a86e6216",
+  "baseline_omni_sha256": "8d2393b4e34ed05be59466ef9fec337455122435ace1ed7e2d839b9e98070c7b",
+  "patched_omni_sha256": "57f3e5f08f4a28a6dc28139f0a57328b466eb9c090c472a910e3057a65506dc9",
+  "sampling": "moving-only stress draws; identical position/yaw and sampler seeds for V19/V20; 4 retries",
+  "flat_override": {
+    "scope": "flat_only",
+    "nonzero_abs_ranges": {
+      "lin_vel_x": [
+        0.1,
+        2.0
+      ],
+      "lin_vel_y": [
+        0.2,
+        1.0
+      ],
+      "ang_vel_yaw": [
+        0.2,
+        1.5
+      ]
+    },
+    "zero_axes_and_full_stop_allowed": true,
+    "magnitude_distribution": "uniform before boundary handling",
+    "boundary_policy": "magnitude-preserving reflections, up to four resamples, then 0.2 m/s cardinal recovery",
+    "initial_ramp_probability": 0.5,
+    "initial_ramp_s": 0.2,
+    "probabilities_scope": "base sampler; sequence cohort and boundary handling alter final frequencies"
+  },
+  "inherited_global_ranges_in_frozen_receipt": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "physical_lower_xy": [
+    -99.0,
+    -27.0
+  ],
+  "physical_upper_xy": [
+    99.0,
+    0.0
+  ],
+  "planning_lower_xy": [
+    -97.80000305175781,
+    -25.799999237060547
+  ],
+  "planning_upper_xy": [
+    97.80000305175781,
+    -1.2000000476837158
+  ],
+  "planning_size_xy": [
+    195.60000610351562,
+    24.599998474121094
+  ],
+  "max_straight_longitudinal_5s_m": 10.0,
+  "max_diagonal_5s_path_length_m": 11.180339887498949,
+  "cases": {
+    "uniform_planning_rectangle": {
+      "v19": {
+        "samples": 6000,
+        "first_goals_unresolved": 7,
+        "reflection_acceptances": 351,
+        "replacement_draws": 7,
+        "cardinal_recoveries": 0,
+        "magnitude_vector_changed": 7,
+        "final_kind_counts": {
+          "forward": 1294,
+          "backward": 690,
+          "left": 677,
+          "right": 689,
+          "yaw_left": 714,
+          "yaw_right": 661,
+          "diagonal_a": 303,
+          "diagonal_b": 314,
+          "longitudinal_turn": 318,
+          "lateral_turn": 340,
+          "stop": 0
+        },
+        "final_nonzero_abs_ranges": {
+          "lin_vel_x": [
+            0.20012913644313812,
+            0.9997748732566833
+          ],
+          "lin_vel_y": [
+            0.2000153362751007,
+            0.5998861193656921
+          ],
+          "ang_vel_yaw": [
+            0.3002749979496002,
+            0.9998047947883606
+          ]
+        },
+        "all_final_sampled_paths_within_planning_bounds": true
+      },
+      "v20": {
+        "samples": 6000,
+        "first_goals_unresolved": 25,
+        "reflection_acceptances": 582,
+        "replacement_draws": 26,
+        "cardinal_recoveries": 0,
+        "magnitude_vector_changed": 25,
+        "final_kind_counts": {
+          "forward": 1245,
+          "backward": 732,
+          "left": 683,
+          "right": 690,
+          "yaw_left": 715,
+          "yaw_right": 663,
+          "diagonal_a": 303,
+          "diagonal_b": 315,
+          "longitudinal_turn": 314,
+          "lateral_turn": 340,
+          "stop": 0
+        },
+        "final_nonzero_abs_ranges": {
+          "lin_vel_x": [
+            0.1003066822886467,
+            1.9994653463363647
+          ],
+          "lin_vel_y": [
+            0.20003066956996918,
+            0.9997721910476685
+          ],
+          "ang_vel_yaw": [
+            0.20051071047782898,
+            1.499637484550476
+          ]
+        },
+        "all_final_sampled_paths_within_planning_bounds": true
+      }
+    },
+    "one_cm_inside_planning_edge": {
+      "v19": {
+        "samples": 6000,
+        "first_goals_unresolved": 231,
+        "reflection_acceptances": 2354,
+        "replacement_draws": 277,
+        "cardinal_recoveries": 1,
+        "magnitude_vector_changed": 231,
+        "final_kind_counts": {
+          "forward": 958,
+          "backward": 1003,
+          "left": 701,
+          "right": 683,
+          "yaw_left": 743,
+          "yaw_right": 690,
+          "diagonal_a": 315,
+          "diagonal_b": 331,
+          "longitudinal_turn": 276,
+          "lateral_turn": 300,
+          "stop": 0
+        },
+        "final_nonzero_abs_ranges": {
+          "lin_vel_x": [
+            0.20012913644313812,
+            0.9997748732566833
+          ],
+          "lin_vel_y": [
+            0.20000000298023224,
+            0.5998861193656921
+          ],
+          "ang_vel_yaw": [
+            0.3002749979496002,
+            0.9997462630271912
+          ]
+        },
+        "all_final_sampled_paths_within_planning_bounds": true
+      },
+      "v20": {
+        "samples": 6000,
+        "first_goals_unresolved": 469,
+        "reflection_acceptances": 2312,
+        "replacement_draws": 573,
+        "cardinal_recoveries": 1,
+        "magnitude_vector_changed": 469,
+        "final_kind_counts": {
+          "forward": 949,
+          "backward": 1020,
+          "left": 715,
+          "right": 709,
+          "yaw_left": 772,
+          "yaw_right": 732,
+          "diagonal_a": 326,
+          "diagonal_b": 333,
+          "longitudinal_turn": 207,
+          "lateral_turn": 237,
+          "stop": 0
+        },
+        "final_nonzero_abs_ranges": {
+          "lin_vel_x": [
+            0.1003066822886467,
+            1.9994653463363647
+          ],
+          "lin_vel_y": [
+            0.20003066956996918,
+            0.9997721910476685
+          ],
+          "ang_vel_yaw": [
+            0.20051071047782898,
+            1.4995287656784058
+          ]
+        },
+        "all_final_sampled_paths_within_planning_bounds": true
+      }
+    },
+    "one_cm_inside_planning_corner": {
+      "v19": {
+        "samples": 6000,
+        "first_goals_unresolved": 2328,
+        "reflection_acceptances": 2086,
+        "replacement_draws": 3799,
+        "cardinal_recoveries": 78,
+        "magnitude_vector_changed": 2328,
+        "final_kind_counts": {
+          "forward": 726,
+          "backward": 778,
+          "left": 643,
+          "right": 597,
+          "yaw_left": 1125,
+          "yaw_right": 1078,
+          "diagonal_a": 437,
+          "diagonal_b": 447,
+          "longitudinal_turn": 82,
+          "lateral_turn": 87,
+          "stop": 0
+        },
+        "final_nonzero_abs_ranges": {
+          "lin_vel_x": [
+            0.20000000298023224,
+            0.9991528391838074
+          ],
+          "lin_vel_y": [
+            0.20000000298023224,
+            0.5998861193656921
+          ],
+          "ang_vel_yaw": [
+            0.3002749979496002,
+            0.9994850158691406
+          ]
+        },
+        "all_final_sampled_paths_within_planning_bounds": true
+      },
+      "v20": {
+        "samples": 6000,
+        "first_goals_unresolved": 2387,
+        "reflection_acceptances": 2012,
+        "replacement_draws": 4006,
+        "cardinal_recoveries": 89,
+        "magnitude_vector_changed": 2387,
+        "final_kind_counts": {
+          "forward": 724,
+          "backward": 761,
+          "left": 659,
+          "right": 617,
+          "yaw_left": 1167,
+          "yaw_right": 1090,
+          "diagonal_a": 409,
+          "diagonal_b": 424,
+          "longitudinal_turn": 58,
+          "lateral_turn": 91,
+          "stop": 0
+        },
+        "final_nonzero_abs_ranges": {
+          "lin_vel_x": [
+            0.1000501736998558,
+            1.997987985610962
+          ],
+          "lin_vel_y": [
+            0.20000000298023224,
+            0.9997721910476685
+          ],
+          "ang_vel_yaw": [
+            0.20051071047782898,
+            1.499043583869934
+          ]
+        },
+        "all_final_sampled_paths_within_planning_bounds": true
+      }
+    }
+  }
+}

@@ -1,0 +1,882 @@
+{
+  "resume": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_20470.pt",
+  "resume_sha256": "11647cd9d9ee6e9ff46d884090956b130071e97bd9d183cc427b885963d6c727",
+  "starting_completed_updates": 20471,
+  "additional_updates": 9529,
+  "target_completed_updates": 30000,
+  "command_curriculum_start": "intermediate",
+  "command_ranges": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true
+  },
+  "episode_length_s": 25.0,
+  "terrain_training_profile": "stairs80_v1",
+  "base_height_penalty": "off",
+  "stair_command_profile": "straight_speed_v1",
+  "actuator_profile": "rs0402_guard_v1",
+  "actuator_guard": {
+    "profile": "rs0402_guard_v1",
+    "limits": {
+      "leg_torque_nm": 35.0,
+      "wheel_torque_nm": 6.0,
+      "leg_speed_rad_s": 15.0,
+      "wheel_speed_rad_s": 30.0,
+      "leg_target_rate_rad_s": 6.0,
+      "speed_penalty_fraction": 0.8,
+      "speed_termination_fraction": 1.02,
+      "hard_position_termination_rad": 0.01
+    },
+    "samples_per_joint": 0,
+    "joints": {
+      "fl_hip_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "fr_hip_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "rl_hip_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "rr_hip_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "fl_thigh_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "fr_thigh_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "rl_thigh_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "rr_thigh_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "fl_calf_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "fr_calf_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "rl_calf_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "rr_calf_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "fl_foot_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "fr_foot_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "rl_foot_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      },
+      "rr_foot_joint": {
+        "peak_torque": 0.0,
+        "peak_speed": 0.0,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 0.0,
+        "clipped_sample_fraction": 0.0
+      }
+    },
+    "scope": "all training environments since last log; 200 Hz, including resets"
+  },
+  "initial_episode_lengths_randomized": false,
+  "stair_speed": {
+    "profile": "straight_speed_v1",
+    "speed_edges": [
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "stairs_command_count": 3276,
+    "active_speed_bin_counts": [
+      884,
+      824,
+      782,
+      786
+    ],
+    "vx_min_max": [
+      0.20006099343299866,
+      0.9999622106552124
+    ],
+    "vy_wz_abs_max": [
+      0.0,
+      0.0
+    ],
+    "episode_statistics": {
+      "teacher": {
+        "stairs_up": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 47191,
+            "grade_eligible": 43018,
+            "radius_passes": 41891,
+            "physical_failures": 6,
+            "vx_mae_mps": 0.050896811726114904
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 47250,
+            "grade_eligible": 47250,
+            "radius_passes": 47116,
+            "physical_failures": 11,
+            "vx_mae_mps": 0.059417666775051246
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 47293,
+            "grade_eligible": 47293,
+            "radius_passes": 47222,
+            "physical_failures": 7,
+            "vx_mae_mps": 0.0797234727878511
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 47235,
+            "grade_eligible": 47235,
+            "radius_passes": 47168,
+            "physical_failures": 10,
+            "vx_mae_mps": 0.12027152591877177
+          }
+        ],
+        "stairs_down": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 16288,
+            "grade_eligible": 14901,
+            "radius_passes": 14802,
+            "physical_failures": 4,
+            "vx_mae_mps": 0.049848372093813535
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 16424,
+            "grade_eligible": 16424,
+            "radius_passes": 16424,
+            "physical_failures": 0,
+            "vx_mae_mps": 0.05658273590176107
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 16382,
+            "grade_eligible": 16382,
+            "radius_passes": 16382,
+            "physical_failures": 0,
+            "vx_mae_mps": 0.069210487700423
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 16706,
+            "grade_eligible": 16706,
+            "radius_passes": 16706,
+            "physical_failures": 0,
+            "vx_mae_mps": 0.0897085307979675
+          }
+        ]
+      },
+      "student": {
+        "stairs_up": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 15512,
+            "grade_eligible": 14246,
+            "radius_passes": 13659,
+            "physical_failures": 7,
+            "vx_mae_mps": 0.06465393845342549
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 15343,
+            "grade_eligible": 15343,
+            "radius_passes": 15291,
+            "physical_failures": 2,
+            "vx_mae_mps": 0.07514794692659342
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 15474,
+            "grade_eligible": 15474,
+            "radius_passes": 15427,
+            "physical_failures": 10,
+            "vx_mae_mps": 0.1000439869816511
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 15267,
+            "grade_eligible": 15267,
+            "radius_passes": 15217,
+            "physical_failures": 31,
+            "vx_mae_mps": 0.15126508903977187
+          }
+        ],
+        "stairs_down": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 5441,
+            "grade_eligible": 4959,
+            "radius_passes": 4909,
+            "physical_failures": 0,
+            "vx_mae_mps": 0.05969869445114533
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 5579,
+            "grade_eligible": 5579,
+            "radius_passes": 5579,
+            "physical_failures": 0,
+            "vx_mae_mps": 0.06653494784499309
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 5465,
+            "grade_eligible": 5465,
+            "radius_passes": 5465,
+            "physical_failures": 0,
+            "vx_mae_mps": 0.07909410362083324
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 5572,
+            "grade_eligible": 5572,
+            "radius_passes": 5572,
+            "physical_failures": 0,
+            "vx_mae_mps": 0.09848047850542546
+          }
+        ]
+      }
+    },
+    "criterion": "eligible forward exit > 4m without physical termination; not independent stair completion",
+    "statistics_mode": "cumulative stochastic training episodes; no automatic speed-weight adjustment"
+  },
+  "terrain_column_names": [
+    "wave",
+    "slope_up",
+    "slope_up",
+    "slope_down",
+    "slope_down",
+    "rough_slope",
+    "stairs_up",
+    "stairs_up",
+    "stairs_up",
+    "stairs_up",
+    "stairs_up",
+    "stairs_down",
+    "stairs_down",
+    "obstacles",
+    "obstacles",
+    "obstacles",
+    "obstacles",
+    "flat",
+    "flat",
+    "flat"
+  ],
+  "terrain_by_type": {
+    "wave": {
+      "count": 63,
+      "mean": 6.2063492063492065,
+      "counts_L0_to_L9": [
+        1,
+        2,
+        2,
+        6,
+        2,
+        6,
+        11,
+        12,
+        10,
+        11
+      ]
+    },
+    "slope_up": {
+      "count": 127,
+      "mean": 5.984251968503937,
+      "counts_L0_to_L9": [
+        5,
+        3,
+        6,
+        10,
+        7,
+        12,
+        19,
+        24,
+        24,
+        17
+      ]
+    },
+    "slope_down": {
+      "count": 126,
+      "mean": 5.746031746031746,
+      "counts_L0_to_L9": [
+        0,
+        4,
+        12,
+        10,
+        21,
+        12,
+        11,
+        15,
+        18,
+        23
+      ]
+    },
+    "rough_slope": {
+      "count": 63,
+      "mean": 5.7936507936507935,
+      "counts_L0_to_L9": [
+        2,
+        4,
+        2,
+        4,
+        8,
+        9,
+        4,
+        6,
+        14,
+        10
+      ]
+    },
+    "stairs_up": {
+      "count": 2457,
+      "mean": 6.082621082621083,
+      "counts_L0_to_L9": [
+        44,
+        93,
+        114,
+        173,
+        223,
+        253,
+        305,
+        371,
+        408,
+        473
+      ]
+    },
+    "stairs_down": {
+      "count": 819,
+      "mean": 6.086691086691086,
+      "counts_L0_to_L9": [
+        16,
+        29,
+        40,
+        60,
+        72,
+        84,
+        92,
+        134,
+        130,
+        162
+      ]
+    },
+    "obstacles": {
+      "count": 252,
+      "mean": 5.896825396825397,
+      "counts_L0_to_L9": [
+        4,
+        12,
+        9,
+        17,
+        19,
+        36,
+        36,
+        45,
+        48,
+        26
+      ]
+    },
+    "flat": {
+      "count": 189,
+      "mean": 5.936507936507937,
+      "counts_L0_to_L9": [
+        3,
+        8,
+        10,
+        16,
+        21,
+        22,
+        11,
+        33,
+        30,
+        35
+      ]
+    }
+  },
+  "terrain_by_learner": {
+    "teacher": {
+      "wave": {
+        "count": 47,
+        "mean": 6.212765957446808,
+        "counts_L0_to_L9": [
+          1,
+          2,
+          2,
+          4,
+          1,
+          5,
+          8,
+          6,
+          7,
+          11
+        ]
+      },
+      "slope_up": {
+        "count": 95,
+        "mean": 5.968421052631579,
+        "counts_L0_to_L9": [
+          4,
+          3,
+          3,
+          8,
+          4,
+          7,
+          19,
+          19,
+          16,
+          12
+        ]
+      },
+      "slope_down": {
+        "count": 95,
+        "mean": 5.957894736842105,
+        "counts_L0_to_L9": [
+          0,
+          1,
+          8,
+          7,
+          16,
+          10,
+          8,
+          12,
+          15,
+          18
+        ]
+      },
+      "rough_slope": {
+        "count": 47,
+        "mean": 6.042553191489362,
+        "counts_L0_to_L9": [
+          2,
+          3,
+          1,
+          2,
+          5,
+          6,
+          3,
+          4,
+          12,
+          9
+        ]
+      },
+      "stairs_up": {
+        "count": 1843,
+        "mean": 6.011937059142702,
+        "counts_L0_to_L9": [
+          37,
+          79,
+          91,
+          134,
+          168,
+          187,
+          218,
+          284,
+          291,
+          354
+        ]
+      },
+      "stairs_down": {
+        "count": 614,
+        "mean": 6.068403908794788,
+        "counts_L0_to_L9": [
+          13,
+          22,
+          33,
+          41,
+          56,
+          63,
+          68,
+          99,
+          96,
+          123
+        ]
+      },
+      "obstacles": {
+        "count": 189,
+        "mean": 5.841269841269841,
+        "counts_L0_to_L9": [
+          3,
+          10,
+          8,
+          12,
+          16,
+          26,
+          24,
+          37,
+          32,
+          21
+        ]
+      },
+      "flat": {
+        "count": 142,
+        "mean": 5.852112676056338,
+        "counts_L0_to_L9": [
+          1,
+          7,
+          10,
+          10,
+          16,
+          19,
+          8,
+          26,
+          20,
+          25
+        ]
+      }
+    },
+    "student": {
+      "wave": {
+        "count": 16,
+        "mean": 6.1875,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          0,
+          2,
+          1,
+          1,
+          3,
+          6,
+          3,
+          0
+        ]
+      },
+      "slope_up": {
+        "count": 32,
+        "mean": 6.03125,
+        "counts_L0_to_L9": [
+          1,
+          0,
+          3,
+          2,
+          3,
+          5,
+          0,
+          5,
+          8,
+          5
+        ]
+      },
+      "slope_down": {
+        "count": 31,
+        "mean": 5.096774193548387,
+        "counts_L0_to_L9": [
+          0,
+          3,
+          4,
+          3,
+          5,
+          2,
+          3,
+          3,
+          3,
+          5
+        ]
+      },
+      "rough_slope": {
+        "count": 16,
+        "mean": 5.0625,
+        "counts_L0_to_L9": [
+          0,
+          1,
+          1,
+          2,
+          3,
+          3,
+          1,
+          2,
+          2,
+          1
+        ]
+      },
+      "stairs_up": {
+        "count": 614,
+        "mean": 6.2947882736156355,
+        "counts_L0_to_L9": [
+          7,
+          14,
+          23,
+          39,
+          55,
+          66,
+          87,
+          87,
+          117,
+          119
+        ]
+      },
+      "stairs_down": {
+        "count": 205,
+        "mean": 6.1414634146341465,
+        "counts_L0_to_L9": [
+          3,
+          7,
+          7,
+          19,
+          16,
+          21,
+          24,
+          35,
+          34,
+          39
+        ]
+      },
+      "obstacles": {
+        "count": 63,
+        "mean": 6.063492063492063,
+        "counts_L0_to_L9": [
+          1,
+          2,
+          1,
+          5,
+          3,
+          10,
+          12,
+          8,
+          16,
+          5
+        ]
+      },
+      "flat": {
+        "count": 47,
+        "mean": 6.191489361702128,
+        "counts_L0_to_L9": [
+          2,
+          1,
+          0,
+          6,
+          5,
+          3,
+          3,
+          7,
+          10,
+          10
+        ]
+      }
+    }
+  },
+  "terrain_migration": null,
+  "reward_weights": {
+    "lin_vel_z_l2": -0.0,
+    "base_height_l2": 0.0
+  }
+}

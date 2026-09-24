@@ -1,0 +1,268 @@
+{
+  "scope": "fixed paired cases, not random success rates",
+  "optimizer_updates": 0,
+  "source_completed": 31831,
+  "candidate_completed": 32131,
+  "suites": {
+    "terrain83": {
+      "early_31831": {
+        "cases": 83,
+        "pass": 56,
+        "physical": 19,
+        "target_step_peak_rad": 0.24000000953674316,
+        "mean_xy_mae": 0.17501495884035725,
+        "by_terrain": {
+          "flat": {
+            "pass": 13,
+            "total": 20
+          },
+          "stairs_up": {
+            "pass": 6,
+            "total": 6
+          },
+          "stairs_down": {
+            "pass": 6,
+            "total": 6
+          },
+          "slope_up": {
+            "pass": 2,
+            "total": 6
+          },
+          "slope_down": {
+            "pass": 6,
+            "total": 6
+          },
+          "wave": {
+            "pass": 4,
+            "total": 6
+          },
+          "rough_slope": {
+            "pass": 6,
+            "total": 6
+          },
+          "obstacles": {
+            "pass": 6,
+            "total": 6
+          },
+          "pit": {
+            "pass": 7,
+            "total": 21
+          }
+        }
+      },
+      "early_31831_teacher": {
+        "cases": 83,
+        "pass": 62,
+        "physical": 9,
+        "target_step_peak_rad": 0.24000000953674316,
+        "mean_xy_mae": 0.18394105763634644,
+        "by_terrain": {
+          "flat": {
+            "pass": 16,
+            "total": 20
+          },
+          "stairs_up": {
+            "pass": 5,
+            "total": 6
+          },
+          "stairs_down": {
+            "pass": 6,
+            "total": 6
+          },
+          "slope_up": {
+            "pass": 3,
+            "total": 6
+          },
+          "slope_down": {
+            "pass": 6,
+            "total": 6
+          },
+          "wave": {
+            "pass": 5,
+            "total": 6
+          },
+          "rough_slope": {
+            "pass": 6,
+            "total": 6
+          },
+          "obstacles": {
+            "pass": 6,
+            "total": 6
+          },
+          "pit": {
+            "pass": 9,
+            "total": 21
+          }
+        }
+      },
+      "V15_32131": {
+        "cases": 83,
+        "pass": 65,
+        "physical": 12,
+        "target_step_peak_rad": 0.24000000953674316,
+        "mean_xy_mae": 0.16697303645582084,
+        "by_terrain": {
+          "flat": {
+            "pass": 20,
+            "total": 20
+          },
+          "stairs_up": {
+            "pass": 6,
+            "total": 6
+          },
+          "stairs_down": {
+            "pass": 6,
+            "total": 6
+          },
+          "slope_up": {
+            "pass": 2,
+            "total": 6
+          },
+          "slope_down": {
+            "pass": 6,
+            "total": 6
+          },
+          "wave": {
+            "pass": 5,
+            "total": 6
+          },
+          "rough_slope": {
+            "pass": 6,
+            "total": 6
+          },
+          "obstacles": {
+            "pass": 6,
+            "total": 6
+          },
+          "pit": {
+            "pass": 8,
+            "total": 21
+          }
+        }
+      },
+      "V15_32131_teacher": {
+        "cases": 83,
+        "pass": 67,
+        "physical": 6,
+        "target_step_peak_rad": 0.24000000953674316,
+        "mean_xy_mae": 0.16955689347562303,
+        "by_terrain": {
+          "flat": {
+            "pass": 20,
+            "total": 20
+          },
+          "stairs_up": {
+            "pass": 6,
+            "total": 6
+          },
+          "stairs_down": {
+            "pass": 6,
+            "total": 6
+          },
+          "slope_up": {
+            "pass": 2,
+            "total": 6
+          },
+          "slope_down": {
+            "pass": 6,
+            "total": 6
+          },
+          "wave": {
+            "pass": 6,
+            "total": 6
+          },
+          "rough_slope": {
+            "pass": 6,
+            "total": 6
+          },
+          "obstacles": {
+            "pass": 6,
+            "total": 6
+          },
+          "pit": {
+            "pass": 9,
+            "total": 21
+          }
+        }
+      }
+    },
+    "flat25": {
+      "early_31831": {
+        "cases": 20,
+        "pass": 15,
+        "physical": 0,
+        "target_step_peak_rad": 0.24000000953674316,
+        "mean_xy_mae": 0.09948546700179577,
+        "by_terrain": {
+          "flat": {
+            "pass": 15,
+            "total": 20
+          }
+        }
+      },
+      "early_31831_teacher": {
+        "cases": 20,
+        "pass": 15,
+        "physical": 0,
+        "target_step_peak_rad": 0.24000000953674316,
+        "mean_xy_mae": 0.08962262365967036,
+        "by_terrain": {
+          "flat": {
+            "pass": 15,
+            "total": 20
+          }
+        }
+      },
+      "V15_32131": {
+        "cases": 20,
+        "pass": 18,
+        "physical": 0,
+        "target_step_peak_rad": 0.24000000953674316,
+        "mean_xy_mae": 0.07639022003859282,
+        "by_terrain": {
+          "flat": {
+            "pass": 18,
+            "total": 20
+          }
+        }
+      },
+      "V15_32131_teacher": {
+        "cases": 20,
+        "pass": 20,
+        "physical": 0,
+        "target_step_peak_rad": 0.24000000953674316,
+        "mean_xy_mae": 0.06080351285636425,
+        "by_terrain": {
+          "flat": {
+            "pass": 20,
+            "total": 20
+          }
+        }
+      }
+    }
+  },
+  "decision": "Continue the previously authorized bounded 10000-update learning experiment; this is not deployment acceptance. 300 updates already used, 9700 remain.",
+  "real_lost_cases": [
+    {
+      "policy": "student",
+      "terrain": "wave",
+      "level": 6,
+      "vx": 0.3,
+      "cause": "illegal_contact"
+    },
+    {
+      "policy": "teacher",
+      "terrain": "slope_up",
+      "level": 6,
+      "vx": 0.3,
+      "cause": "time_out"
+    }
+  ],
+  "evaluated_platform_height_max_m": 0.35,
+  "code_hashes": {
+    "evaluate_corrected.py": "02fee46ae531b78cd9fdd428a0b756eeab3e4ab0c6dbec2554beff504b8a494b",
+    "audit_helpers.py": "a91328caf608a1dc9f4180a4e039dd9bb97adeb5621b6de659f846423359541c",
+    "run_audit.py": "ac351bcf51cb67aa5b8a99436ac47b5e9f533d8770823ac96ae8e671e58fb332",
+    "early_protocol.py": "969cfb49f29571e7773a9d059ceb776fa72b601f1a9f3dadceea2da651b17c3c"
+  }
+}

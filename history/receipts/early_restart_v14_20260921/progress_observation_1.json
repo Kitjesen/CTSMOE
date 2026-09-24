@@ -1,0 +1,727 @@
+{
+  "pipeline": {
+    "state": "running",
+    "stage": "train_pilot300",
+    "pid": 294685,
+    "started_unix": 1789990294.2897136,
+    "source": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+    "source_completed_updates": 31831,
+    "updated_unix": 1789990442.6283584,
+    "code_hash_manifest": "/root/cts-early-restart-v14-20260921/code_hash_manifest.json",
+    "log": "/root/cts-early-restart-v14-20260921/train_pilot300.log",
+    "stage_started_unix": 1789990442.628356,
+    "last_checkpoint": "/root/cts-early-restart-v14-20260921/runs/smoke16/model_31846.pt",
+    "completed_updates": 31847,
+    "child_pid": 295231
+  },
+  "smoke16": {
+    "rows": 16,
+    "completed_updates": 31847,
+    "recent_seconds": 7.013914632797241,
+    "collect_seconds": 6.536930799484253,
+    "learn_seconds": 0.4533679485321045,
+    "early_restart": {
+      "profile": "early_phase_v14",
+      "scope": "flat and geometry-normal stairs/high-platform phases; released while climbing",
+      "actual_joint_l1_no_deadzone": true,
+      "standing_all_axes_threshold": 0.05,
+      "standing_multiplier": 3.0,
+      "target_height_m": 0.46,
+      "weights": {
+        "hip": -0.2,
+        "thigh_calf": -0.08,
+        "height": -15.0,
+        "vertical": -0.5
+      },
+      "raw_mean": {
+        "hip": 0.49748992919921875,
+        "thigh_calf": 1.4911904335021973,
+        "height": 0.000555057602468878,
+        "vertical": 0.008547671139240265
+      },
+      "weighted_mean": {
+        "hip": -0.09949798882007599,
+        "thigh_calf": -0.11929523199796677,
+        "height": -0.008325863629579544,
+        "vertical": -0.0042738355696201324
+      },
+      "cohort": {
+        "flat_count": 779,
+        "fraction_per_learner": 0.75,
+        "teacher": 581,
+        "student": 198
+      },
+      "sampling": {
+        "version": "explicit_full_episode_v13",
+        "ramp_seconds": 0.2,
+        "explicit_fraction_of_normal_cohort": 0.5,
+        "ramp_probability": 0.5,
+        "kind_names": [
+          "forward",
+          "backward",
+          "left",
+          "right",
+          "yaw_left",
+          "yaw_right",
+          "diagonal_a",
+          "diagonal_b",
+          "longitudinal_turn",
+          "lateral_turn"
+        ],
+        "reset_counts": [
+          [
+            [
+              20,
+              22
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              10,
+              9
+            ],
+            [
+              15,
+              9
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              12,
+              21
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              16,
+              19
+            ]
+          ],
+          [
+            [
+              8,
+              8
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              7
+            ]
+          ]
+        ],
+        "selected_by_learner": [
+          1152,
+          384
+        ],
+        "active_count": 3
+      },
+      "phase_counts": {
+        "flat_active": 1024,
+        "stairs_normal": 159,
+        "pit_normal": 1004,
+        "climb_released": 886
+      },
+      "terrain_counts": {
+        "wave": 205,
+        "slope_up": 205,
+        "slope_down": 205,
+        "rough_slope": 204,
+        "stairs_up": 615,
+        "stairs_down": 410,
+        "obstacles": 204,
+        "stepping_stones": 0,
+        "gap": 0,
+        "flat": 1024,
+        "pit": 1024
+      }
+    },
+    "terrain_by_type": {
+      "wave": {
+        "count": 205,
+        "mean": 6.487804878048781,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          5,
+          7,
+          14,
+          24,
+          61,
+          31,
+          27,
+          36
+        ],
+        "curriculum_fraction": 0.7208672086720868
+      },
+      "slope_up": {
+        "count": 205,
+        "mean": 4.88780487804878,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          1,
+          12,
+          41,
+          111,
+          35,
+          5,
+          0,
+          0
+        ],
+        "curriculum_fraction": 0.5430894308943089,
+        "nominal_angle_deg_mean": 29.4390243902439,
+        "nominal_angle_deg_max": 40.0,
+        "curriculum_max_angle_deg": 45.0
+      },
+      "slope_down": {
+        "count": 205,
+        "mean": 5.658536585365853,
+        "counts_L0_to_L9": [
+          14,
+          1,
+          17,
+          22,
+          11,
+          26,
+          18,
+          27,
+          33,
+          36
+        ],
+        "curriculum_fraction": 0.6287262872628726,
+        "nominal_angle_deg_mean": 32.01219512195122,
+        "nominal_angle_deg_max": 45.0,
+        "curriculum_max_angle_deg": 45.0
+      },
+      "rough_slope": {
+        "count": 204,
+        "mean": 5.921568627450981,
+        "counts_L0_to_L9": [
+          2,
+          0,
+          12,
+          26,
+          30,
+          23,
+          16,
+          31,
+          18,
+          46
+        ],
+        "curriculum_fraction": 0.6579520697167757,
+        "nominal_angle_deg_mean": 33.259803921568626,
+        "nominal_angle_deg_max": 45.0,
+        "curriculum_max_angle_deg": 45.0
+      },
+      "stairs_up": {
+        "count": 615,
+        "mean": 6.108943089430895,
+        "counts_L0_to_L9": [
+          16,
+          26,
+          38,
+          34,
+          43,
+          50,
+          86,
+          88,
+          107,
+          127
+        ],
+        "curriculum_fraction": 0.6787714543812106
+      },
+      "stairs_down": {
+        "count": 410,
+        "mean": 6.065853658536585,
+        "counts_L0_to_L9": [
+          12,
+          14,
+          19,
+          26,
+          33,
+          42,
+          54,
+          57,
+          85,
+          68
+        ],
+        "curriculum_fraction": 0.6739837398373983
+      },
+      "obstacles": {
+        "count": 204,
+        "mean": 5.549019607843137,
+        "counts_L0_to_L9": [
+          4,
+          17,
+          9,
+          17,
+          11,
+          35,
+          27,
+          29,
+          33,
+          22
+        ],
+        "curriculum_fraction": 0.616557734204793
+      },
+      "flat": {
+        "count": 1024,
+        "mean": 5.4853515625,
+        "counts_L0_to_L9": [
+          38,
+          9,
+          43,
+          97,
+          205,
+          80,
+          199,
+          93,
+          174,
+          86
+        ],
+        "curriculum_fraction": 0.6094835069444444
+      },
+      "pit": {
+        "count": 1024,
+        "mean": 1.796875,
+        "counts_L0_to_L21": [
+          71,
+          66,
+          887,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_height_m": 0.23984375,
+        "curriculum_fraction": 0.08556547619047619
+      }
+    },
+    "validation": {
+      "validated": true,
+      "checkpoint_sha256": "b87f658e53b33fd2108864e3057b913c6dd8e3caef03235e78a8b7abb166cbf6",
+      "structure": {
+        "model_state_dict": {
+          "tensor_count": 39,
+          "element_count": 2296009
+        },
+        "optimizer_state_dict": {
+          "tensor_count": 69,
+          "element_count": 1659289
+        },
+        "optimizer_stu_enc_state_dict": {
+          "tensor_count": 48,
+          "element_count": 2932768
+        }
+      },
+      "source_immutable": "04fcb792c8f18d3abe913d57eecea1d38b54a4e8a36a9899324bd39540b9876d",
+      "episode_seconds": 25.0,
+      "command_resampling_seconds": 5.0,
+      "validated_unix": 1789990442.6055849
+    }
+  },
+  "pilot300": {
+    "rows": 11,
+    "completed_updates": 31858,
+    "recent_seconds": 6.743216037750244,
+    "collect_seconds": 6.401440620422363,
+    "learn_seconds": 0.5116846561431885,
+    "early_restart": {
+      "profile": "early_phase_v14",
+      "scope": "flat and geometry-normal stairs/high-platform phases; released while climbing",
+      "actual_joint_l1_no_deadzone": true,
+      "standing_all_axes_threshold": 0.05,
+      "standing_multiplier": 3.0,
+      "target_height_m": 0.46,
+      "weights": {
+        "hip": -0.2,
+        "thigh_calf": -0.08,
+        "height": -15.0,
+        "vertical": -0.5
+      },
+      "raw_mean": {
+        "hip": 0.3938145041465759,
+        "thigh_calf": 1.233017921447754,
+        "height": 0.00048338648048229516,
+        "vertical": 0.00906490720808506
+      },
+      "weighted_mean": {
+        "hip": -0.07876290380954742,
+        "thigh_calf": -0.09864144027233124,
+        "height": -0.007250796537846327,
+        "vertical": -0.00453245360404253
+      },
+      "cohort": {
+        "flat_count": 779,
+        "fraction_per_learner": 0.75,
+        "teacher": 581,
+        "student": 198
+      },
+      "sampling": {
+        "version": "explicit_full_episode_v13",
+        "ramp_seconds": 0.2,
+        "explicit_fraction_of_normal_cohort": 0.5,
+        "ramp_probability": 0.5,
+        "kind_names": [
+          "forward",
+          "backward",
+          "left",
+          "right",
+          "yaw_left",
+          "yaw_right",
+          "diagonal_a",
+          "diagonal_b",
+          "longitudinal_turn",
+          "lateral_turn"
+        ],
+        "reset_counts": [
+          [
+            [
+              20,
+              23
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              10,
+              9
+            ],
+            [
+              14,
+              9
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              16,
+              21
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              12,
+              21
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              16,
+              19
+            ]
+          ],
+          [
+            [
+              8,
+              8
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ]
+          ]
+        ],
+        "selected_by_learner": [
+          1152,
+          384
+        ],
+        "active_count": 2
+      },
+      "phase_counts": {
+        "flat_active": 1024,
+        "stairs_normal": 42,
+        "pit_normal": 830,
+        "climb_released": 1177
+      },
+      "terrain_counts": {
+        "wave": 205,
+        "slope_up": 205,
+        "slope_down": 205,
+        "rough_slope": 204,
+        "stairs_up": 615,
+        "stairs_down": 410,
+        "obstacles": 204,
+        "stepping_stones": 0,
+        "gap": 0,
+        "flat": 1024,
+        "pit": 1024
+      }
+    },
+    "terrain_by_type": {
+      "wave": {
+        "count": 205,
+        "mean": 6.404878048780488,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          5,
+          8,
+          15,
+          24,
+          64,
+          31,
+          24,
+          34
+        ],
+        "curriculum_fraction": 0.7116531165311654
+      },
+      "slope_up": {
+        "count": 205,
+        "mean": 4.863414634146341,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          1,
+          14,
+          41,
+          110,
+          34,
+          5,
+          0,
+          0
+        ],
+        "curriculum_fraction": 0.5403794037940379,
+        "nominal_angle_deg_mean": 29.317073170731707,
+        "nominal_angle_deg_max": 40.0,
+        "curriculum_max_angle_deg": 45.0
+      },
+      "slope_down": {
+        "count": 205,
+        "mean": 5.668292682926829,
+        "counts_L0_to_L9": [
+          14,
+          1,
+          18,
+          21,
+          11,
+          26,
+          16,
+          29,
+          32,
+          37
+        ],
+        "curriculum_fraction": 0.629810298102981,
+        "nominal_angle_deg_mean": 32.048780487804876,
+        "nominal_angle_deg_max": 45.0,
+        "curriculum_max_angle_deg": 45.0
+      },
+      "rough_slope": {
+        "count": 204,
+        "mean": 5.892156862745098,
+        "counts_L0_to_L9": [
+          2,
+          1,
+          11,
+          26,
+          30,
+          23,
+          17,
+          30,
+          22,
+          42
+        ],
+        "curriculum_fraction": 0.6546840958605665,
+        "nominal_angle_deg_mean": 33.161764705882355,
+        "nominal_angle_deg_max": 45.0,
+        "curriculum_max_angle_deg": 45.0
+      },
+      "stairs_up": {
+        "count": 615,
+        "mean": 6.1414634146341465,
+        "counts_L0_to_L9": [
+          11,
+          24,
+          41,
+          38,
+          40,
+          52,
+          84,
+          92,
+          108,
+          125
+        ],
+        "curriculum_fraction": 0.6823848238482385
+      },
+      "stairs_down": {
+        "count": 410,
+        "mean": 6.109756097560975,
+        "counts_L0_to_L9": [
+          10,
+          14,
+          19,
+          25,
+          32,
+          45,
+          57,
+          52,
+          85,
+          71
+        ],
+        "curriculum_fraction": 0.6788617886178862
+      },
+      "obstacles": {
+        "count": 204,
+        "mean": 5.534313725490196,
+        "counts_L0_to_L9": [
+          4,
+          17,
+          9,
+          17,
+          11,
+          35,
+          28,
+          30,
+          31,
+          22
+        ],
+        "curriculum_fraction": 0.6149237472766884
+      },
+      "flat": {
+        "count": 1024,
+        "mean": 5.4765625,
+        "counts_L0_to_L9": [
+          39,
+          9,
+          44,
+          95,
+          206,
+          81,
+          197,
+          94,
+          174,
+          85
+        ],
+        "curriculum_fraction": 0.6085069444444444
+      },
+      "pit": {
+        "count": 1024,
+        "mean": 1.796875,
+        "counts_L0_to_L21": [
+          71,
+          66,
+          887,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_height_m": 0.23984375,
+        "curriculum_fraction": 0.08556547619047619
+      }
+    }
+  }
+}

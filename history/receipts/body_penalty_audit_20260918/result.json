@@ -1,0 +1,115 @@
+{
+  "completed_update_window": [
+    14311,
+    14410
+  ],
+  "weights_current": {
+    "track_lin_vel_xy_exp": 2.0,
+    "track_ang_vel_z_exp": 1.0,
+    "lin_vel_z_l2": -0.0,
+    "ang_vel_xy_l2": -0.05,
+    "joint_acc_l2": -1e-07,
+    "joint_power": -2e-05,
+    "joint_torques_l2": -0.0001,
+    "base_height_l2": -10.0,
+    "action_rate_l2": -0.01,
+    "action_smoothness_l2": -0.01,
+    "undesired_contacts": -1.0,
+    "joint_pos_limits": -2.0,
+    "feet_regulation": -0.05,
+    "hip_pos_penalty_l1": -0.05,
+    "joint_pos_penalty_l1": -0.01
+  },
+  "mean_episode_reward_log_last100": {
+    "track_lin_vel_xy_exp": 1.468551,
+    "track_ang_vel_z_exp": 0.783073,
+    "lin_vel_z_l2": 0.0,
+    "ang_vel_xy_l2": -0.060846,
+    "joint_acc_l2": -0.240117,
+    "joint_power": -0.006835,
+    "joint_torques_l2": -0.430021,
+    "base_height_l2": -0.014985,
+    "action_rate_l2": -0.053926,
+    "action_smoothness_l2": -0.117323,
+    "undesired_contacts": -0.027201,
+    "joint_pos_limits": -0.01735,
+    "feet_regulation": -0.052412,
+    "hip_pos_penalty_l1": -0.027623,
+    "joint_pos_penalty_l1": -0.019701
+  },
+  "log_definition": "Mean of 100 logger rows. Each logged term is weighted episode integral divided by fixed max_episode_length_s=25, averaged across completed episodes; all terrains and teacher/student mixed. Not a per-stair measurement.",
+  "trace_policy_completed_updates": 13501,
+  "trace_costs": [
+    {
+      "level": 7,
+      "intervals": [
+        {
+          "interval_s": [
+            2,
+            5
+          ],
+          "torque_cost_before_dt": -0.08860370140044393,
+          "leg_torque_cost_before_dt": -0.08618088381093593,
+          "wheel_torque_cost_before_dt": -0.002422817589507984,
+          "xy_tracking_reward_before_dt": 1.9615782267560575
+        },
+        {
+          "interval_s": [
+            6,
+            10
+          ],
+          "torque_cost_before_dt": -0.20431996166978916,
+          "leg_torque_cost_before_dt": -0.1990885082834096,
+          "wheel_torque_cost_before_dt": -0.005231453386379552,
+          "xy_tracking_reward_before_dt": 1.4869224192347192
+        },
+        {
+          "interval_s": [
+            12,
+            16
+          ],
+          "torque_cost_before_dt": -0.21915206257837164,
+          "leg_torque_cost_before_dt": -0.20930382678016418,
+          "wheel_torque_cost_before_dt": -0.00984823579820747,
+          "xy_tracking_reward_before_dt": 1.4136869607450846
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "intervals": [
+        {
+          "interval_s": [
+            2,
+            5
+          ],
+          "torque_cost_before_dt": -0.08639334485872839,
+          "leg_torque_cost_before_dt": -0.08434400825004915,
+          "wheel_torque_cost_before_dt": -0.0020493366086792456,
+          "xy_tracking_reward_before_dt": 1.9714147459745566
+        },
+        {
+          "interval_s": [
+            6,
+            10
+          ],
+          "torque_cost_before_dt": -0.17528829500058463,
+          "leg_torque_cost_before_dt": -0.1717927374392673,
+          "wheel_torque_cost_before_dt": -0.0034955575613173496,
+          "xy_tracking_reward_before_dt": 1.3633886663156027
+        },
+        {
+          "interval_s": [
+            12,
+            16
+          ],
+          "torque_cost_before_dt": -0.30311130073205206,
+          "leg_torque_cost_before_dt": -0.2995206122663525,
+          "wheel_torque_cost_before_dt": -0.003590688465699569,
+          "xy_tracking_reward_before_dt": 1.2807124448885798
+        }
+      ]
+    }
+  ],
+  "trace_limitations": "One nominal rollout per level. Torque sampled at final physics substep at 50 Hz. Costs recomputed before the common dt factor 0.02; these are not comparable as identical estimators to episode logs. No causal intervention."
+}

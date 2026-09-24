@@ -1,0 +1,414 @@
+{
+  "checked_at": "2026-09-18T03:37:56.374156+08:00",
+  "run": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000",
+  "status": {
+    "state": "training",
+    "completed_updates": 13497,
+    "seconds": 5.989427089691162,
+    "terrain": 4.8115234375,
+    "value": 0.01180319427512586,
+    "surrogate": 0.04679398108273745,
+    "entropy": 3.566598856449127,
+    "mean_latent_loss": 0.002323956962209195,
+    "mean_load_balance_loss": 2.5614749796432078e-05
+  },
+  "episode_length_s": "25.0",
+  "commands": {
+    "base_velocity": {
+      "class_type": "robot_lab.tasks.go2.mdp.commands:Go2RLGymCommand",
+      "resampling_time_range": [
+        "5.0",
+        "5.0"
+      ],
+      "debug_vis": "false",
+      "asset_name": "robot",
+      "dynamic_resample_commands": "true",
+      "limit_vel_invert_when_continuous": "true",
+      "zero_command_curriculum": {
+        "start_iter": "0",
+        "end_iter": "1500",
+        "start_value": "0.0",
+        "end_value": "0.1"
+      },
+      "limit_vel": {
+        "lin_vel_x": [
+          "-1",
+          "1"
+        ],
+        "lin_vel_y": [
+          "-1",
+          "1"
+        ],
+        "ang_vel_yaw": [
+          "-1",
+          "0",
+          "1"
+        ]
+      },
+      "command_range_curriculum": [
+        {
+          "iter": "20000",
+          "lin_vel_x": [
+            "-1.0",
+            "1.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        {
+          "iter": "50000",
+          "lin_vel_x": [
+            "-2.0",
+            "2.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-2.0",
+            "2.0"
+          ]
+        }
+      ],
+      "terrain_max_command_ranges": {
+        "wave": {
+          "lin_vel_x": [
+            "-1.5",
+            "1.5"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "slope_up": {
+          "lin_vel_x": [
+            "-1.5",
+            "1.5"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "slope_down": {
+          "lin_vel_x": [
+            "-1.5",
+            "1.5"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "rough_slope": {
+          "lin_vel_x": [
+            "-1.5",
+            "1.5"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "stairs_up": {
+          "lin_vel_x": [
+            "-1.0",
+            "1.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "stairs_down": {
+          "lin_vel_x": [
+            "-1.0",
+            "1.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "obstacles": {
+          "lin_vel_x": [
+            "-1.0",
+            "1.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "stepping_stones": {
+          "lin_vel_x": [
+            "-1.0",
+            "1.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "gap": {
+          "lin_vel_x": [
+            "-1.0",
+            "1.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "flat": {
+          "lin_vel_x": [
+            "-2.0",
+            "2.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-2.0",
+            "2.0"
+          ]
+        },
+        "random_rough": {
+          "lin_vel_x": [
+            "-1.5",
+            "1.5"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "hf_pyramid_slope": {
+          "lin_vel_x": [
+            "-1.5",
+            "1.5"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "hf_pyramid_slope_inv": {
+          "lin_vel_x": [
+            "-1.5",
+            "1.5"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "pyramid_stairs": {
+          "lin_vel_x": [
+            "-1.0",
+            "1.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "pyramid_stairs_inv": {
+          "lin_vel_x": [
+            "-1.0",
+            "1.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        },
+        "boxes": {
+          "lin_vel_x": [
+            "-1.0",
+            "1.0"
+          ],
+          "lin_vel_y": [
+            "-1.0",
+            "1.0"
+          ],
+          "ang_vel_yaw": [
+            "-1.5",
+            "1.5"
+          ]
+        }
+      },
+      "resampling_time": "5.0",
+      "limit_ang_vel_at_zero_command_prob": "0.2",
+      "limit_vel_prob": "0.2",
+      "num_steps_per_iter": "24",
+      "ranges": {
+        "lin_vel_x": [
+          "-0.5",
+          "0.5"
+        ],
+        "lin_vel_y": [
+          "-0.5",
+          "0.5"
+        ],
+        "ang_vel_yaw": [
+          "-1.0",
+          "1.0"
+        ]
+      },
+      "goal_vel_visualizer_cfg": {
+        "prim_path": "/Visuals/Command/velocity_goal",
+        "markers": {
+          "arrow": {
+            "func": "isaaclab.sim.spawners.from_files.from_files:spawn_from_usd",
+            "visible": "true",
+            "semantic_tags": "null",
+            "copy_from_source": "true",
+            "mass_props": "null",
+            "deformable_props": "null",
+            "rigid_props": "null",
+            "collision_props": "null",
+            "activate_contact_sensors": "false",
+            "scale": [
+              "1.0",
+              "0.1",
+              "0.1"
+            ],
+            "articulation_props": "null",
+            "fixed_tendons_props": "null",
+            "spatial_tendons_props": "null",
+            "joint_drive_props": "null",
+            "visual_material_path": "material",
+            "visual_material": {
+              "func": "isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface",
+              "diffuse_color": [
+                "0.0",
+                "1.0",
+                "0.0"
+              ],
+              "emissive_color": [
+                "0.0",
+                "0.0",
+                "0.0"
+              ],
+              "roughness": "0.5",
+              "metallic": "0.0",
+              "opacity": "1.0"
+            },
+            "usd_path": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/UIElements/arrow_x.usd",
+            "variants": "null"
+          }
+        }
+      },
+      "current_vel_visualizer_cfg": {
+        "prim_path": "/Visuals/Command/velocity_current",
+        "markers": {
+          "arrow": {
+            "func": "isaaclab.sim.spawners.from_files.from_files:spawn_from_usd",
+            "visible": "true",
+            "semantic_tags": "null",
+            "copy_from_source": "true",
+            "mass_props": "null",
+            "deformable_props": "null",
+            "rigid_props": "null",
+            "collision_props": "null",
+            "activate_contact_sensors": "false",
+            "scale": [
+              "1.0",
+              "0.1",
+              "0.1"
+            ],
+            "articulation_props": "null",
+            "fixed_tendons_props": "null",
+            "spatial_tendons_props": "null",
+            "joint_drive_props": "null",
+            "visual_material_path": "material",
+            "visual_material": {
+              "func": "isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface",
+              "diffuse_color": [
+                "0.0",
+                "0.0",
+                "1.0"
+              ],
+              "emissive_color": [
+                "0.0",
+                "0.0",
+                "0.0"
+              ],
+              "roughness": "0.5",
+              "metallic": "0.0",
+              "opacity": "1.0"
+            },
+            "usd_path": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/UIElements/arrow_x.usd",
+            "variants": "null"
+          }
+        }
+      }
+    }
+  }
+}

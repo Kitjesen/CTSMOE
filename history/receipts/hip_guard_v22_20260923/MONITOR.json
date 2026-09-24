@@ -1,0 +1,57 @@
+{
+  "state": "stopped_user_corrected_default_only",
+  "observed_local_time": "2026-09-23T02:08:00+08:00",
+  "remote_root": "/root/autodl-tmp/cts-omni-repair-v19-20260922/hip_guard_v22_attempt03",
+  "driver": "driver_v22_recovery01.py",
+  "supervisor_pid": 78405,
+  "training_pid_last_observed": null,
+  "source_completed_updates": 34823,
+  "latest_completed_updates_observed": 34925,
+  "training_running": false,
+  "new_optimizer_updates_observed": 102,
+  "num_envs": 4096,
+  "profile": "hip_inward012_v22",
+  "training_target_completed": 35823,
+  "training_new_update_limit": 1000,
+  "training_segments": [
+    16,
+    984
+  ],
+  "original_budget_remaining_at_source": 7000,
+  "original_budget_remaining_after_this_run": 6000,
+  "automatic_extension_after_1000": false,
+  "qualification": {
+    "runtime_preflight_attempt": "hip_guard_v22_attempt02",
+    "control_steps": 3000,
+    "optimizer_updates": 0,
+    "model_and_dual_optimizer_fingerprints_unchanged": true,
+    "attempt03_reran_3000_steps": false,
+    "attempt03_metadata_only_delta_independently_verified": true,
+    "evidence": "VERIFIED_READY.json"
+  },
+  "baseline": {
+    "completed": true,
+    "fixed_cases": 302,
+    "optimizer_updates": 0,
+    "groups": {
+      "terrain83": 166,
+      "flat25": 40,
+      "stairend": 48,
+      "stairend_15cm": 48
+    },
+    "physical_failure_reporting": "Use explicit illegal_contact/actuator_violation; pit_success is task success, not physical failure."
+  },
+  "behavior_status": "Not repaired/released: targets obey inward0.12 but actual hip can exceed the operating envelope.",
+  "after_training": "Paired source/candidate student/teacher332 nine-terrain+80flat25+96stairend+96stairs15; unconditional stop for behavior review.",
+  "mixed_stair_commands_enabled": false,
+  "slope_stair_combinations_enabled": false,
+  "hardware_release": false,
+  "seconds_per_update_last_observed": 7.454,
+  "initial16_completed": true,
+  "initial16_checkpoint": "training_34823_to_34839/model_34838.pt",
+  "second_segment_all_resume_checks_passed": true,
+  "superseded_by": "hip_default_v23_20260923",
+  "stop_reason": "User requested default0.12 only; additional inward target cap was an assistant interpretation error and is withdrawn.",
+  "saved_stop_checkpoint": "training_34839_to_35823/model_34924.pt",
+  "must_not_restart": true
+}

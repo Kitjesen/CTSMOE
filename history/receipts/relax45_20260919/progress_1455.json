@@ -1,0 +1,200 @@
+{
+  "mixed9_4096_60000_20260919": {
+    "start": 30246,
+    "end": 30346,
+    "terrain": 5.76953125,
+    "mean_levels_last100": {
+      "wave": 4.159375,
+      "slope_up": 5.46640625,
+      "slope_down": 5.26126984126984,
+      "rough_slope": 3.775806451612902,
+      "stairs_up": 6.019772172497965,
+      "stairs_down": 6.0789268292682905,
+      "obstacles": 5.4509599999999985,
+      "flat": 3.42882978723404,
+      "pit": 1.797626953125
+    },
+    "stairs": {
+      "teacher": {
+        "stairs_up": {
+          "episodes": 5468,
+          "grade_eligible": 5360,
+          "radius_passes": 4646,
+          "physical_failures": 725,
+          "vx_mae_mps": 0.1272753210875935
+        },
+        "stairs_down": {
+          "episodes": 1727,
+          "grade_eligible": 1686,
+          "radius_passes": 1476,
+          "physical_failures": 213,
+          "vx_mae_mps": 0.12049121269012505
+        }
+      },
+      "student": {
+        "stairs_up": {
+          "episodes": 1905,
+          "grade_eligible": 1876,
+          "radius_passes": 1464,
+          "physical_failures": 417,
+          "vx_mae_mps": 0.1637578691827666
+        },
+        "stairs_down": {
+          "episodes": 631,
+          "grade_eligible": 614,
+          "radius_passes": 499,
+          "physical_failures": 119,
+          "vx_mae_mps": 0.1518143818443612
+        }
+      }
+    },
+    "pit": {
+      "teacher": {
+        "episodes": 3374,
+        "success": 0,
+        "physical": 573,
+        "base_contact": 0,
+        "overspeed": 573,
+        "position": 0,
+        "torque": 0,
+        "out_of_lane": 1,
+        "timeout": 2801,
+        "front_supported": 3174,
+        "all_supported": 3134,
+        "early_failure": 27
+      },
+      "student": {
+        "episodes": 1208,
+        "success": 0,
+        "physical": 261,
+        "base_contact": 0,
+        "overspeed": 261,
+        "position": 0,
+        "torque": 0,
+        "out_of_lane": 1,
+        "timeout": 947,
+        "front_supported": 1063,
+        "all_supported": 1048,
+        "early_failure": 20
+      }
+    },
+    "pit_frontier": 0.25,
+    "guard": {
+      "overspeed_samples": 4673.0,
+      "torque_violation_samples": 0.0
+    },
+    "scalar_last100": {
+      "Episode_Termination/time_out": 0.45706371039152144,
+      "Episode_Termination/illegal_contact": 0.003781229732558131,
+      "Episode_Termination/actuator_violation": 0.1971909636259079,
+      "Episode_Termination/stair_route_exit": 0.34188965827226636,
+      "Episode_Termination/pit_success": 0.0,
+      "Episode_Termination/pit_outside": 7.904052756202873e-05,
+      "Loss/entropy": 12.175998029708863,
+      "Loss/learning_rate": 0.0001237781268719118,
+      "Train/mean_teacher_episode_length": 589.9838998413086,
+      "Train/mean_teacher_episode_length/time": 589.9838998413086,
+      "Train/mean_student_episode_length": 585.6722003173828,
+      "Train/mean_student_episode_length/time": 585.6722003173828
+    }
+  },
+  "mixed9_4096_60000_relax45_20260919": {
+    "start": 30642,
+    "end": 30742,
+    "terrain": 6.14404296875,
+    "mean_levels_last100": {
+      "wave": 6.05625,
+      "slope_up": 4.84875,
+      "slope_down": 6.354920634920634,
+      "rough_slope": 6.671935483870969,
+      "stairs_up": 6.210179007323028,
+      "stairs_down": 6.161463414634147,
+      "obstacles": 5.917999999999996,
+      "flat": 6.082553191489364,
+      "pit": 1.794072265625
+    },
+    "stairs": {
+      "teacher": {
+        "stairs_up": {
+          "episodes": 5065,
+          "grade_eligible": 4954,
+          "radius_passes": 4891,
+          "physical_failures": 58,
+          "vx_mae_mps": 0.08989529962203627
+        },
+        "stairs_down": {
+          "episodes": 1608,
+          "grade_eligible": 1576,
+          "radius_passes": 1560,
+          "physical_failures": 16,
+          "vx_mae_mps": 0.0791869783723039
+        }
+      },
+      "student": {
+        "stairs_up": {
+          "episodes": 1641,
+          "grade_eligible": 1608,
+          "radius_passes": 1573,
+          "physical_failures": 35,
+          "vx_mae_mps": 0.104428415426771
+        },
+        "stairs_down": {
+          "episodes": 542,
+          "grade_eligible": 522,
+          "radius_passes": 513,
+          "physical_failures": 9,
+          "vx_mae_mps": 0.09014691947186125
+        }
+      }
+    },
+    "pit": {
+      "teacher": {
+        "episodes": 3080,
+        "success": 0,
+        "physical": 9,
+        "base_contact": 0,
+        "overspeed": 9,
+        "position": 0,
+        "torque": 0,
+        "out_of_lane": 0,
+        "timeout": 3071,
+        "front_supported": 3075,
+        "all_supported": 3073,
+        "early_failure": 1
+      },
+      "student": {
+        "episodes": 1028,
+        "success": 0,
+        "physical": 5,
+        "base_contact": 0,
+        "overspeed": 5,
+        "position": 0,
+        "torque": 0,
+        "out_of_lane": 0,
+        "timeout": 1023,
+        "front_supported": 1024,
+        "all_supported": 1023,
+        "early_failure": 2
+      }
+    },
+    "pit_frontier": 0.25,
+    "guard": {
+      "overspeed_samples": 4527.0,
+      "torque_violation_samples": 0.0
+    },
+    "scalar_last100": {
+      "Episode_Termination/time_out": 0.5837834841012954,
+      "Episode_Termination/illegal_contact": 0.010582682499662042,
+      "Episode_Termination/actuator_violation": 0.011400960609316826,
+      "Episode_Termination/stair_route_exit": 0.3942328995466232,
+      "Episode_Termination/pit_success": 0.0,
+      "Episode_Termination/pit_outside": 0.0,
+      "Loss/entropy": 5.679293274879456,
+      "Loss/learning_rate": 0.00013113984579831594,
+      "Train/mean_teacher_episode_length": 500.28089813232424,
+      "Train/mean_teacher_episode_length/time": 500.28089813232424,
+      "Train/mean_student_episode_length": 541.8958010864258,
+      "Train/mean_student_episode_length/time": 541.8958010864258
+    }
+  }
+}

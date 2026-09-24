@@ -1,0 +1,364 @@
+{
+  "policy": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/student_11501.pt",
+  "policy_sha256": "577a8852eb00a8404d9c6a62b4dc2446708d6ace78519b93f2ae8b748faa4a6c",
+  "completed_updates": 11501,
+  "policy_kind": "student-only deterministic mean action",
+  "code_sha256": "143d6d881d6158cb19422a150b8f30868a8144f21141d85ddaf9503eba753abe",
+  "fps": 25,
+  "playback_speed": 1,
+  "num_envs": 1,
+  "physics_dt": 0.005,
+  "control_dt": 0.02,
+  "observation_noise": false,
+  "push_and_parameter_randomization": false,
+  "actuator_delay": "original independent 0-4 physics steps, resampled at reset",
+  "terrain_source": "pinned official generator; four equal columns, ten original difficulty rows",
+  "terrain_cells": [
+    {
+      "name": "flat",
+      "difficulty": 0.07739560485559634
+    },
+    {
+      "name": "flat",
+      "difficulty": 0.14388784397520524
+    },
+    {
+      "name": "flat",
+      "difficulty": 0.2858597919911382
+    },
+    {
+      "name": "flat",
+      "difficulty": 0.36973680290593636
+    },
+    {
+      "name": "flat",
+      "difficulty": 0.409417734788765
+    },
+    {
+      "name": "flat",
+      "difficulty": 0.5975622351636756
+    },
+    {
+      "name": "flat",
+      "difficulty": 0.6761139701990353
+    },
+    {
+      "name": "flat",
+      "difficulty": 0.7786064305276954
+    },
+    {
+      "name": "flat",
+      "difficulty": 0.8128113632675547
+    },
+    {
+      "name": "flat",
+      "difficulty": 0.9450385937895567
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.037079802423258125
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.1926764988848602
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.26438651200806645
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.382276161327083
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.4443414198827331
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.5227238721784777
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.6554584787015835
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.7063817256104176
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.8827631171992583
+    },
+    {
+      "name": "slope_up",
+      "difficulty": 0.9631664399122064
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.07580877400853739
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.13545259681298685
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.2970698024394903
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.3893121121322197
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.47783834970737615
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.5194638707851967
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.6466721003727034
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.7043803765787229
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.8154289492067548
+    },
+    {
+      "name": "stairs_up",
+      "difficulty": 0.9683048953242455
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.07447621559078171
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.196750973243421
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.23258253581381522
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.3370459706034869
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.4469555811275808
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.5189471359084286
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.6129921505335472
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.7475704926225933
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.8226909349050884
+    },
+    {
+      "name": "stairs_down",
+      "difficulty": 0.966981399468251
+    }
+  ],
+  "joint_names": [
+    "fl_hip_joint",
+    "fr_hip_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fl_thigh_joint",
+    "fr_thigh_joint",
+    "rl_thigh_joint",
+    "rr_thigh_joint",
+    "fl_calf_joint",
+    "fr_calf_joint",
+    "rl_calf_joint",
+    "rr_calf_joint",
+    "fl_foot_joint",
+    "fr_foot_joint",
+    "rl_foot_joint",
+    "rr_foot_joint"
+  ],
+  "clips": [
+    {
+      "name": "stairs_up_L3",
+      "file": "stairs_up_L3.mp4",
+      "terrain": {
+        "name": "stairs_up",
+        "level": 3,
+        "difficulty": 0.3893121121322197,
+        "nominal_step_height_m": 0.13058760721136947,
+        "height_quantization_m": 0.005,
+        "tread_m": 0.31
+      },
+      "duration_s": 16.26,
+      "terminated": false,
+      "truncated": false,
+      "min_upright": 0.8654628396034241,
+      "delta_world_xyz": [
+        4.005267143249512,
+        0.0666952133178711,
+        1.1547317504882812
+      ],
+      "rmse_vx_vy_wz": [
+        0.11937090405436353,
+        0.06023004990305393,
+        0.10007114860748248
+      ],
+      "reached_upgrade_distance": true,
+      "max_horizontal_distance_m": 4.005906105041504,
+      "stop_reason": "distance_threshold"
+    },
+    {
+      "name": "stairs_up_L4",
+      "file": "stairs_up_L4.mp4",
+      "terrain": {
+        "name": "stairs_up",
+        "level": 4,
+        "difficulty": 0.47783834970737615,
+        "nominal_step_height_m": 0.14891253838942686,
+        "height_quantization_m": 0.005,
+        "tread_m": 0.31
+      },
+      "duration_s": 17.16,
+      "terminated": false,
+      "truncated": false,
+      "min_upright": 0.8471916913986206,
+      "delta_world_xyz": [
+        3.9829928874969482,
+        0.356687068939209,
+        1.2709308862686157
+      ],
+      "rmse_vx_vy_wz": [
+        0.1289411298811589,
+        0.06408252466363469,
+        0.09828663142768117
+      ],
+      "reached_upgrade_distance": true,
+      "max_horizontal_distance_m": 4.000452041625977,
+      "stop_reason": "distance_threshold"
+    },
+    {
+      "name": "stairs_up_L5",
+      "file": "stairs_up_L5.mp4",
+      "terrain": {
+        "name": "stairs_up",
+        "level": 5,
+        "difficulty": 0.5194638707851967,
+        "nominal_step_height_m": 0.1575290212525357,
+        "height_quantization_m": 0.005,
+        "tread_m": 0.31
+      },
+      "duration_s": 16.38,
+      "terminated": false,
+      "truncated": false,
+      "min_upright": 0.8103389739990234,
+      "delta_world_xyz": [
+        3.930798053741455,
+        0.7610940933227539,
+        1.349339783191681
+      ],
+      "rmse_vx_vy_wz": [
+        0.1089910545059886,
+        0.06617161787227178,
+        0.08085064454247869
+      ],
+      "reached_upgrade_distance": true,
+      "max_horizontal_distance_m": 4.004436016082764,
+      "stop_reason": "distance_threshold"
+    },
+    {
+      "name": "stairs_up_L6",
+      "file": "stairs_up_L6.mp4",
+      "terrain": {
+        "name": "stairs_up",
+        "level": 6,
+        "difficulty": 0.6466721003727034,
+        "nominal_step_height_m": 0.1838611247771496,
+        "height_quantization_m": 0.005,
+        "tread_m": 0.31
+      },
+      "duration_s": 19.26,
+      "terminated": false,
+      "truncated": false,
+      "min_upright": 0.757402777671814,
+      "delta_world_xyz": [
+        3.9959211349487305,
+        0.21852731704711914,
+        1.5707100629806519
+      ],
+      "rmse_vx_vy_wz": [
+        0.15359613744741074,
+        0.07337329879796389,
+        0.09706117944505689
+      ],
+      "reached_upgrade_distance": true,
+      "max_horizontal_distance_m": 4.002518653869629,
+      "stop_reason": "distance_threshold"
+    }
+  ],
+  "body_names": [
+    "base_link",
+    "fl_hip_Link",
+    "fr_hip_link",
+    "rl_hip_Link",
+    "rr_hip_Link",
+    "fl_thigh_Link",
+    "fr_thigh_Link",
+    "rl_thigh_Link",
+    "rr_thigh_Link",
+    "fl_calf_Link",
+    "fr_calf_Link",
+    "rl_calf_Link",
+    "rr_calf_Link",
+    "fl_foot_Link",
+    "fr_foot_Link",
+    "rl_foot_Link",
+    "rr_foot_Link"
+  ],
+  "urdf_path": "/root/autodl-tmp/workspace/doso-thunder-cts-moe-20260917/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/urdf/thunder_v4.urdf",
+  "urdf_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+  "trace_only": true,
+  "limitations": "One nominal rollout per case. Not a terrain success-rate or robustness test. All first terminations retained; no teacher assistance or policy updates.",
+  "probe": {
+    "command_vx": 0.35,
+    "settle_s": 2,
+    "maximum_duration_s": 25,
+    "distance_threshold_m": 4.0,
+    "stop_at_distance_threshold": true,
+    "torque_sampling": "last physics substep at each 50 Hz control step",
+    "contact_body_names": [
+      "base_link",
+      "fl_hip_Link",
+      "fl_thigh_Link",
+      "fl_calf_Link",
+      "fl_foot_Link",
+      "fr_hip_link",
+      "fr_thigh_Link",
+      "fr_calf_Link",
+      "fr_foot_Link",
+      "rl_hip_Link",
+      "rl_thigh_Link",
+      "rl_calf_Link",
+      "rl_foot_Link",
+      "rr_hip_Link",
+      "rr_thigh_Link",
+      "rr_calf_Link",
+      "rr_foot_Link"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "state": "training",
+  "completed_updates": 43243,
+  "seconds": 7.116209983825684,
+  "collect_seconds": 6.609326601028442,
+  "learn_seconds": 0.5068833827972412,
+  "phase_transition": {
+    "profile": "omni_start_v8",
+    "recovery_s": 0.8,
+    "support_dwell_s": 0.12,
+    "approach_release_m": [
+      1.0,
+      0.5
+    ],
+    "climbing_l1_scale": 0.2,
+    "active_climb": 1142,
+    "recovering": 147,
+    "supported_level": 403,
+    "mean_weight_by_terrain": {
+      "pit": 0.42813143134117126,
+      "stairs": 0.1244129166007042
+    }
+  },
+  "error": null
+}

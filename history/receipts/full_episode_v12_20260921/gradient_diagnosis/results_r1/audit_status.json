@@ -1,0 +1,29 @@
+{
+  "state": "DIAGNOSIS_COMPLETE",
+  "authoritative": true,
+  "smoke_only": false,
+  "completed_updates": 45011,
+  "optimizer_updates": 0,
+  "control_steps": 288,
+  "horizons": 12,
+  "num_envs": 4096,
+  "state_hashes_before": {
+    "model": "6e027c88a7e1d47f89b02801c860826e2b30b4bc911ced1d89ad3ebd2d4ec068",
+    "reference": "53f059dcd84a14268fbdf12c358d52c02bd395e2ffccef43a2eb92bc7dc797cf",
+    "ppo_optimizer": "4734340d8d618ba4eee05e962bbb1af6ec038701e6b236f8301c3d80519ee17d",
+    "student_optimizer": "7be945990a0be4758a35b72f3dd05d1c8812e8df7a3a9dc2bb5e8f1bc1fad04e",
+    "coefficients": "{\"main\": 0.21093362834788681, \"student\": 0.0022221143221353456}"
+  },
+  "state_hashes_after": {
+    "model": "6e027c88a7e1d47f89b02801c860826e2b30b4bc911ced1d89ad3ebd2d4ec068",
+    "reference": "53f059dcd84a14268fbdf12c358d52c02bd395e2ffccef43a2eb92bc7dc797cf",
+    "ppo_optimizer": "4734340d8d618ba4eee05e962bbb1af6ec038701e6b236f8301c3d80519ee17d",
+    "student_optimizer": "7be945990a0be4758a35b72f3dd05d1c8812e8df7a3a9dc2bb5e8f1bc1fad04e",
+    "coefficients": "{\"main\": 0.21093362834788681, \"student\": 0.0022221143221353456}"
+  },
+  "fast_delay": false,
+  "forbidden_calls": [],
+  "compute_returns_used": true,
+  "fresh_on_policy_advantages": true,
+  "checkpoint_artifacts_written": []
+}

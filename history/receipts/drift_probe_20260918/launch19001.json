@@ -1,0 +1,17 @@
+{
+  "pid": 72523,
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt",
+  "checkpoint_updates": 19001,
+  "output": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/drift_probe_20260918/probe19001",
+  "training_updates_at_launch": 19007,
+  "argv": [
+    "/root/autodl-tmp/conda/envs/isaaclab/bin/python",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/drift_probe_20260918/evaluate_drift.py",
+    "--root",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917",
+    "--checkpoint",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt",
+    "--output",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/drift_probe_20260918/probe19001"
+  ]
+}

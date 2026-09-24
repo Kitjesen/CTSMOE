@@ -1,0 +1,10 @@
+{
+  "decision": "eligible_for_isolated_hip_request_test",
+  "source_path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+  "source_sha256": "521a31d1acfc7e0906f4ac3260ee30f161af5b1c18278367d0c0045b7afe3fa5",
+  "source_completed_updates": 34823,
+  "v23_evaluation_path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/hip_default_v23_20260923/evaluation_35721/FINALIZED.json",
+  "v23_evaluation_sha256": "f4c2f521e23f46cc855065d55708b1f7d8e03fac88585f54eae9946c1612ee9e",
+  "behavior_findings": "The zero-update four-policy V23 paired assessment finished 332 terrain, 80 full-episode flat, 96 stair-end, and 96 15-cm-stair fixed cases under the same plus/minus 0.12-rad hip default. For each student the 15-cm suite has 12 continue-route and 12 stop-platform cases: V23 improved route_4m 11/12 to 12/12 and removed two physical terminations, but two-second platform dwell fell 11/12 to 9/12. The two source terminations were the same 9-level ascent at 1.2 m/s in the two command modes, labeled actuator_violation. On 20 matched flat cases, startup 12-leg pose RMS peak increased from 0.071 to 0.085 rad and terminal mean from 0.081 to 0.093 rad; startup worsened in 19/20 and terminal in 18/20. All four hips showed greater actual inward-angle peaks; the candidate did not solve persistent hip adduction. Nine-terrain fixed cases show wave route_4m 6/6 to 5/6, obstacle 6/6 to 4/6, and pit success 7/21 to 6/21, while ascent stairs improved 5/6 to 6/6. Select the older 34823 checkpoint as the posture-preserving source for one isolated 1000-update hip-request cost test, preserving both checkpoints and comparing the same cases afterwards. This does not establish a random success rate or the cause of the user's 15-cm real-robot fault; no fault code or real hardware joint telemetry was provided.",
+  "real_robot_release": false
+}

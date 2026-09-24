@@ -1,0 +1,41 @@
+{
+  "updates": 284,
+  "steps_per_env": 24,
+  "num_envs": 4096,
+  "rollout_states": 27918336,
+  "cumulative_eligible_samples": {
+    "teacher": 11844,
+    "student": 4010
+  },
+  "eligible_fraction_all_rollout_states": 0.0005678705206499413,
+  "groups": {
+    "teacher": {
+      "zero_sample_updates": 84,
+      "nonzero_sample_updates": 200,
+      "sample_delta_min": 0,
+      "sample_delta_max": 2736,
+      "sample_delta_median": 23.0,
+      "sample_delta_last20_sum": 254,
+      "loss_key": "anchor_main_teacher",
+      "first20_logged_mean": 0.042775432802736754,
+      "last20_logged_mean": 0.02889644192531705,
+      "first20_nonzero_support_mean": 0.07129238800456127,
+      "last20_nonzero_support_mean": 0.04128063132188149,
+      "zero_loss_updates": 84
+    },
+    "student": {
+      "zero_sample_updates": 185,
+      "nonzero_sample_updates": 99,
+      "sample_delta_min": 0,
+      "sample_delta_max": 1008,
+      "sample_delta_median": 0.0,
+      "sample_delta_last20_sum": 71,
+      "loss_key": "anchor_student",
+      "first20_logged_mean": 0.01968339696060866,
+      "last20_logged_mean": 0.007875441079959274,
+      "first20_nonzero_support_mean": 0.04374088213468592,
+      "last20_nonzero_support_mean": 0.03937720539979636,
+      "zero_loss_updates": 185
+    }
+  }
+}

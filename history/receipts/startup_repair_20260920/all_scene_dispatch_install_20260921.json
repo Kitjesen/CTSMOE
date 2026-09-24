@@ -1,0 +1,64 @@
+{
+  "completed_updates_at_install": 43886,
+  "scope": "Future evaluation only; no change to training or rewards",
+  "core_sha256": "35ed06fab703511041c68d9b67e942189b224d40517038c9af8691566b22305f",
+  "dispatcher_sha256": "2e88930547e53ca838864cd3f3ac6702466d31bf0bde7102d51dc7b3e5d316b8",
+  "smoke_verification": {
+    "cases": 213,
+    "smoke_only": true,
+    "telemetry": {
+      "ground_relief": {
+        "shape": [
+          3,
+          213
+        ],
+        "finite": 639
+      },
+      "ground_scan_valid": {
+        "shape": [
+          3,
+          213
+        ],
+        "finite": 639
+      },
+      "wheel_clearance": {
+        "shape": [
+          3,
+          213,
+          4
+        ],
+        "finite": 2556
+      },
+      "wheel_ground_force": {
+        "shape": [
+          3,
+          213,
+          4
+        ],
+        "finite": 2556
+      },
+      "pit_front_gap": {
+        "shape": [
+          3,
+          213
+        ],
+        "finite": 81
+      },
+      "platform_stop": {
+        "shape": [
+          3,
+          213
+        ],
+        "finite": 639
+      }
+    },
+    "comparison": {
+      "initial_q": 0.0,
+      "initial_root": 0.0,
+      "raw_action": 0.0015759468078613281,
+      "joint_pos": 0.0027168206870555878,
+      "target": 0.0002830028533935547
+    }
+  },
+  "observation": "Separate simulator runs are not bitwise identical: see measured trace deltas. Telemetry reads are after env.step and do not modify actions or state."
+}

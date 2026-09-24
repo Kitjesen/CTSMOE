@@ -1,0 +1,107 @@
+{
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_uphill_speed_20260920/model_41000.pt",
+  "completed_updates": 41001,
+  "cases": [
+    {
+      "id": 0,
+      "speed": 0.3,
+      "level": 17,
+      "height_m": 1.0,
+      "end_step": 426,
+      "seconds": 8.540000000000001,
+      "climb": true,
+      "stable": false,
+      "physical": false,
+      "terms": [
+        "pit_settle_timeout"
+      ]
+    },
+    {
+      "id": 1,
+      "speed": 0.6,
+      "level": 17,
+      "height_m": 1.0,
+      "end_step": 427,
+      "seconds": 8.56,
+      "climb": true,
+      "stable": false,
+      "physical": false,
+      "terms": [
+        "pit_settle_timeout"
+      ]
+    },
+    {
+      "id": 2,
+      "speed": 0.9,
+      "level": 17,
+      "height_m": 1.0,
+      "end_step": 412,
+      "seconds": 8.26,
+      "climb": true,
+      "stable": false,
+      "physical": false,
+      "terms": [
+        "pit_settle_timeout"
+      ]
+    }
+  ],
+  "joint_names": [
+    "fl_hip_joint",
+    "fr_hip_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fl_thigh_joint",
+    "fr_thigh_joint",
+    "rl_thigh_joint",
+    "rr_thigh_joint",
+    "fl_calf_joint",
+    "fr_calf_joint",
+    "rl_calf_joint",
+    "rr_calf_joint",
+    "fl_foot_joint",
+    "fr_foot_joint",
+    "rl_foot_joint",
+    "rr_foot_joint"
+  ],
+  "body_names": [
+    "base_link",
+    "fl_hip_Link",
+    "fr_hip_link",
+    "rl_hip_Link",
+    "rr_hip_Link",
+    "fl_thigh_Link",
+    "fr_thigh_Link",
+    "rl_thigh_Link",
+    "rr_thigh_Link",
+    "fl_calf_Link",
+    "fr_calf_Link",
+    "rl_calf_Link",
+    "rr_calf_Link",
+    "fl_foot_Link",
+    "fr_foot_Link",
+    "rl_foot_Link",
+    "rr_foot_Link"
+  ],
+  "dt": 0.02,
+  "default_joint_pos": [
+    0.20000000298023224,
+    -0.20000000298023224,
+    -0.20000000298023224,
+    0.20000000298023224,
+    0.9300000071525574,
+    -0.9300000071525574,
+    -0.9300000071525574,
+    0.9300000071525574,
+    -1.9600000381469727,
+    1.9600000381469727,
+    1.9600000381469727,
+    -1.9600000381469727,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "posture_profile": "phase_stance_v1",
+  "urdf_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+  "protocol": "First episodes, frozen student mean action, nominal parameters, no observation noise/pushes, original actuator delay; external zero command once whole body clears platform; first terminal retained"
+}

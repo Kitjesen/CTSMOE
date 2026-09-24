@@ -1,0 +1,201 @@
+{
+  "allocation_smoke_v2_20260919": {
+    "start": 33349,
+    "end": 33365,
+    "checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "pit_climb_totals": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": false,
+      "stair_episode_totals": true
+    },
+    "counts": {
+      "stairs_up": 819,
+      "pit": 1639,
+      "wave": 246,
+      "stairs_down": 409,
+      "flat": 123,
+      "slope_up": 245,
+      "obstacles": 205,
+      "slope_down": 205,
+      "rough_slope": 205
+    },
+    "mean_seconds": 7.0617086589336395
+  },
+  "allocation_inherit_v2_20260919": {
+    "start": 33365,
+    "end": 33367,
+    "checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "pit_climb_totals": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true,
+      "terrain_allocation": true
+    },
+    "counts": {
+      "stairs_up": 819,
+      "pit": 1639,
+      "wave": 246,
+      "stairs_down": 409,
+      "flat": 123,
+      "slope_up": 245,
+      "obstacles": 205,
+      "slope_down": 205,
+      "rough_slope": 205
+    },
+    "mean_seconds": 6.9556519985198975
+  },
+  "allocation_reset_probe_v2_20260919": {
+    "start": 33367,
+    "end": 33383,
+    "checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "pit_climb_totals": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true,
+      "terrain_allocation": true
+    },
+    "counts": {
+      "stairs_up": 819,
+      "pit": 1563,
+      "wave": 321,
+      "stairs_down": 409,
+      "slope_up": 246,
+      "flat": 123,
+      "obstacles": 205,
+      "slope_down": 205,
+      "rough_slope": 205
+    },
+    "mean_seconds": 7.097281828522682
+  },
+  "live_reset_probe": {
+    "test_only": true,
+    "moves_applied": 76,
+    "pending_moves": 7,
+    "counts": {
+      "stairs_up": 819,
+      "pit": 1563,
+      "wave": 321,
+      "stairs_down": 409,
+      "slope_up": 246,
+      "flat": 123,
+      "obstacles": 205,
+      "slope_down": 205,
+      "rough_slope": 205
+    },
+    "checks": {
+      "old_level_cap": 9,
+      "pit_level_cap": 21,
+      "pit_rewards_zero_on_old": true,
+      "old_vertical_and_wheel_rewards_zero_on_pit": true,
+      "scanner_finite": true,
+      "old_level9_promotion_bounded": true,
+      "pit_count": 1563,
+      "shared_self_collisions": false,
+      "slope_geometry": [
+        {
+          "function": "pyramid_sloped_terrain",
+          "row": 0,
+          "nominal_angle_deg": 5.0,
+          "centerline_angle_deg_median": 5.710591129864065,
+          "centerline_angle_deg_min": 2.862393728954269,
+          "centerline_angle_deg_max": 5.710601590711999,
+          "slope_threshold": 10.0
+        },
+        {
+          "function": "pyramid_sloped_terrain",
+          "row": 9,
+          "nominal_angle_deg": 45.0,
+          "centerline_angle_deg_median": 45.00000853774206,
+          "centerline_angle_deg_min": 38.65984990160053,
+          "centerline_angle_deg_max": 46.39734589437677,
+          "slope_threshold": 10.0
+        },
+        {
+          "function": "pyramid_sloped_terrain",
+          "row": 0,
+          "nominal_angle_deg": 5.0,
+          "centerline_angle_deg_median": 5.710591129864065,
+          "centerline_angle_deg_min": 2.862393728954269,
+          "centerline_angle_deg_max": 5.710601590711999,
+          "slope_threshold": 10.0
+        },
+        {
+          "function": "pyramid_sloped_terrain",
+          "row": 9,
+          "nominal_angle_deg": 45.0,
+          "centerline_angle_deg_median": 45.00000853774206,
+          "centerline_angle_deg_min": 38.65984990160053,
+          "centerline_angle_deg_max": 46.39734589437677,
+          "slope_threshold": 10.0
+        },
+        {
+          "function": "pyramid_sloped_terrain",
+          "row": 0,
+          "nominal_angle_deg": 5.0,
+          "centerline_angle_deg_median": 5.710591129864065,
+          "centerline_angle_deg_min": 2.862393728954269,
+          "centerline_angle_deg_max": 5.710601590711999,
+          "slope_threshold": 10.0
+        },
+        {
+          "function": "pyramid_sloped_terrain",
+          "row": 9,
+          "nominal_angle_deg": 45.0,
+          "centerline_angle_deg_median": 45.00000853774206,
+          "centerline_angle_deg_min": 38.65984990160053,
+          "centerline_angle_deg_max": 46.39734589437677,
+          "slope_threshold": 10.0
+        },
+        {
+          "function": "pyramid_sloped_terrain",
+          "row": 0,
+          "nominal_angle_deg": 5.0,
+          "centerline_angle_deg_median": 5.710591129864065,
+          "centerline_angle_deg_min": 2.862393728954269,
+          "centerline_angle_deg_max": 5.710601590711999,
+          "slope_threshold": 10.0
+        },
+        {
+          "function": "pyramid_sloped_terrain",
+          "row": 9,
+          "nominal_angle_deg": 45.0,
+          "centerline_angle_deg_median": 45.00000853774206,
+          "centerline_angle_deg_min": 38.65984990160053,
+          "centerline_angle_deg_max": 46.39734589437677,
+          "slope_threshold": 10.0
+        },
+        {
+          "function": "rough_slope_terrain",
+          "row": 0,
+          "nominal_angle_deg": 5.0,
+          "centerline_angle_deg_median": 8.530793999626848,
+          "centerline_angle_deg_min": 2.862393728954269,
+          "centerline_angle_deg_max": 28.810819962527628,
+          "slope_threshold": 10.0
+        },
+        {
+          "function": "rough_slope_terrain",
+          "row": 9,
+          "nominal_angle_deg": 45.0,
+          "centerline_angle_deg_median": 38.61716062819855,
+          "centerline_angle_deg_min": 2.862391599851007,
+          "centerline_angle_deg_max": 57.17144716786956,
+          "slope_threshold": 10.0
+        }
+      ]
+    }
+  },
+  "formal_resume": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/allocation_inherit_v2_20260919/model_33366.pt"
+}

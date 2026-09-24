@@ -1,0 +1,25 @@
+{
+  "state": "AUDIT_COMPLETE",
+  "authoritative": true,
+  "smoke_only": false,
+  "completed_updates": 44759,
+  "optimizer_updates": 0,
+  "horizons": 20,
+  "control_steps": 480,
+  "num_envs": 4096,
+  "normalization_disabled": true,
+  "storage_cleared_each_horizon": true,
+  "mutation_patches_restored": true,
+  "stats_environment_patch_restored": true,
+  "forbidden_calls": [],
+  "state_hashes_before": {
+    "model": "ead572943bbb5c8dcafe59d23d4b71972def52b531f6c6394d14bee203faebba",
+    "ppo_optimizer": "2e96dc871fc742dece0352e201349ecbf71e12701a768066df8622ef4c3b54cf",
+    "student_optimizer": "d55e1f29c6444c4d8049808ac6b05c687a3b2cd124b9ae83bbc62f0e01d3318b"
+  },
+  "state_hashes_after": {
+    "model": "ead572943bbb5c8dcafe59d23d4b71972def52b531f6c6394d14bee203faebba",
+    "ppo_optimizer": "2e96dc871fc742dece0352e201349ecbf71e12701a768066df8622ef4c3b54cf",
+    "student_optimizer": "d55e1f29c6444c4d8049808ac6b05c687a3b2cd124b9ae83bbc62f0e01d3318b"
+  }
+}

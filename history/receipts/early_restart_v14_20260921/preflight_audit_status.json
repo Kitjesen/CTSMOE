@@ -1,0 +1,24 @@
+{
+  "state": "AUDIT_COMPLETE",
+  "written_before_learn_return": true,
+  "completed_updates": 31831,
+  "optimizer_updates": 0,
+  "control_steps": 3000,
+  "simulated_seconds": 60.0,
+  "num_envs": 4096,
+  "profile": "early_phase_v14",
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+  "checkpoint_sha256": "04fcb792c8f18d3abe913d57eecea1d38b54a4e8a36a9899324bd39540b9876d",
+  "state_hashes_before": {
+    "model": "4f20c33950baa7448877c1544ba4fe983eb40a7fc80dabc43e09396e107f6fa8",
+    "ppo_optimizer": "8511e136e00ad71f11cacb6dd0a82625ec6527bce171953a0d56b569370ebce8",
+    "student_optimizer": "d945dce1fae586fe4ed33684e1fd4674c67ceed49ebeeeeedfe113b78e0a9040"
+  },
+  "state_hashes_after": {
+    "model": "4f20c33950baa7448877c1544ba4fe983eb40a7fc80dabc43e09396e107f6fa8",
+    "ppo_optimizer": "8511e136e00ad71f11cacb6dd0a82625ec6527bce171953a0d56b569370ebce8",
+    "student_optimizer": "d945dce1fae586fe4ed33684e1fd4674c67ceed49ebeeeeedfe113b78e0a9040"
+  },
+  "forbidden_calls": [],
+  "checkpoint_artifacts_written": []
+}

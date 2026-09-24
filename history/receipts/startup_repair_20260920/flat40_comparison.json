@@ -1,0 +1,108 @@
+{
+  "before": {
+    "direct_pass": 9,
+    "settled_pass": 10,
+    "combined_pass": 15,
+    "forward": {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 0,
+      "end_step": 258,
+      "seconds": 5.18,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.0108489990234375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "max_side_m": 0.31832122802734375,
+      "straight_4m": true,
+      "label": "43106_before_flat40",
+      "first_rms": 0.45463756447536247,
+      "max_rms": 0.8244146434041002,
+      "height_min": 0.28622937202453613,
+      "height_max": 0.9726168513298035,
+      "max_xy_speed": 2.763324499130249,
+      "last_xy_error": 0.02307414822280407,
+      "last_yaw_error": 0.007949739694595337,
+      "early_failure": false,
+      "startup_pass": false,
+      "tracking_pass": true,
+      "combined_pass": false
+    }
+  },
+  "candidate": {
+    "direct_pass": 10,
+    "settled_pass": 10,
+    "combined_pass": 18,
+    "forward": {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 20,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 3.5145034790039062,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_flat40_96_20260920/model_43201.pt",
+      "max_side_m": 0.26714324951171875,
+      "straight_4m": false,
+      "label": "43202_flat40",
+      "first_rms": 0.1155588595224303,
+      "max_rms": 0.13170224598133357,
+      "height_min": 0.43933361768722534,
+      "height_max": 0.45334091782569885,
+      "max_xy_speed": 0.6088953018188477,
+      "last_xy_error": 0.0027461382560431957,
+      "last_yaw_error": 0.00728542311117053,
+      "early_failure": false,
+      "startup_pass": true,
+      "tracking_pass": true,
+      "combined_pass": true
+    }
+  },
+  "regression_before": {
+    "stair_pass": 8,
+    "stair_straight": 7,
+    "stair_count": 8,
+    "pit_climb": 3,
+    "pit_stable": 3,
+    "pit_count": 3,
+    "physical_fail": 0
+  },
+  "regression_current": {
+    "stair_pass": 8,
+    "stair_straight": 8,
+    "stair_count": 8,
+    "pit_climb": 0,
+    "pit_stable": 0,
+    "pit_count": 3,
+    "physical_fail": 3
+  },
+  "nominal_startup_gate": false,
+  "terrain_no_count_regression": false
+}

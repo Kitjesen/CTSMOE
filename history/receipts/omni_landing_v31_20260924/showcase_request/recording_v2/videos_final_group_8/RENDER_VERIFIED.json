@@ -1,0 +1,96 @@
+{
+  "max_fk_error_m": 1.9245038613574587e-05,
+  "physics_steps": 0,
+  "frames_per_video": 625,
+  "fps": 25,
+  "cases": [
+    {
+      "case": {
+        "column": 9,
+        "name": "long_up",
+        "level": 3,
+        "side": false,
+        "origin": [
+          -67.5,
+          -94.5,
+          0.0
+        ],
+        "env_id": 32
+      },
+      "end": {
+        "step": 452,
+        "time_s": 9.06,
+        "terms": [
+          "stair_route_exit"
+        ]
+      },
+      "max_hip_abs": 0.36683282256126404
+    },
+    {
+      "case": {
+        "column": 9,
+        "name": "long_up",
+        "level": 3,
+        "side": true,
+        "origin": [
+          -67.5,
+          -94.5,
+          0.0
+        ],
+        "env_id": 36
+      },
+      "end": {
+        "step": 1249,
+        "time_s": 25.0,
+        "terms": [
+          "time_out"
+        ]
+      },
+      "max_hip_abs": 0.3540244996547699
+    },
+    {
+      "case": {
+        "column": 9,
+        "name": "long_up",
+        "level": 6,
+        "side": false,
+        "origin": [
+          -40.5,
+          -94.5,
+          0.0
+        ],
+        "env_id": 40
+      },
+      "end": {
+        "step": 553,
+        "time_s": 11.08,
+        "terms": [
+          "stair_route_exit"
+        ]
+      },
+      "max_hip_abs": 0.37408316135406494
+    },
+    {
+      "case": {
+        "column": 9,
+        "name": "long_up",
+        "level": 6,
+        "side": true,
+        "origin": [
+          -40.5,
+          -94.5,
+          0.0
+        ],
+        "env_id": 44
+      },
+      "end": {
+        "step": 1249,
+        "time_s": 25.0,
+        "terms": [
+          "time_out"
+        ]
+      },
+      "max_hip_abs": 0.3576080799102783
+    }
+  ]
+}

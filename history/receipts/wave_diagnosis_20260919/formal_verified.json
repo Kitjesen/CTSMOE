@@ -1,0 +1,151 @@
+{
+  "verified": true,
+  "pid": 103171,
+  "starting_completed_updates": 25599,
+  "completed_updates": 25612,
+  "updates_observed": 13,
+  "target_completed_updates": 30000,
+  "leg_target_max_delta_rad": 0.24,
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true
+  },
+  "terrain": 5.60888671875,
+  "terrain_by_type": {
+    "wave": {
+      "count": 63,
+      "mean": 0.6507936507936508,
+      "counts_L0_to_L9": [
+        41,
+        14,
+        2,
+        4,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_up": {
+      "count": 127,
+      "mean": 5.118110236220472,
+      "counts_L0_to_L9": [
+        5,
+        3,
+        6,
+        18,
+        17,
+        16,
+        23,
+        20,
+        16,
+        3
+      ]
+    },
+    "slope_down": {
+      "count": 126,
+      "mean": 5.015873015873016,
+      "counts_L0_to_L9": [
+        6,
+        7,
+        11,
+        13,
+        15,
+        14,
+        17,
+        20,
+        15,
+        8
+      ]
+    },
+    "rough_slope": {
+      "count": 63,
+      "mean": 4.063492063492063,
+      "counts_L0_to_L9": [
+        9,
+        6,
+        7,
+        4,
+        7,
+        10,
+        7,
+        4,
+        5,
+        4
+      ]
+    },
+    "stairs_up": {
+      "count": 2457,
+      "mean": 5.986568986568987,
+      "counts_L0_to_L9": [
+        67,
+        68,
+        127,
+        164,
+        211,
+        284,
+        327,
+        380,
+        452,
+        377
+      ]
+    },
+    "stairs_down": {
+      "count": 819,
+      "mean": 6.014652014652015,
+      "counts_L0_to_L9": [
+        15,
+        22,
+        44,
+        54,
+        75,
+        93,
+        114,
+        134,
+        145,
+        123
+      ]
+    },
+    "obstacles": {
+      "count": 252,
+      "mean": 4.432539682539683,
+      "counts_L0_to_L9": [
+        15,
+        20,
+        21,
+        31,
+        33,
+        41,
+        39,
+        32,
+        13,
+        7
+      ]
+    },
+    "flat": {
+      "count": 189,
+      "mean": 3.4021164021164023,
+      "counts_L0_to_L9": [
+        46,
+        17,
+        18,
+        14,
+        22,
+        27,
+        16,
+        12,
+        8,
+        9
+      ]
+    }
+  },
+  "seconds_mean_last10": 8.41538679599762,
+  "limitations": "Training launch and accounting verified; frozen v2 policy did not improve simply by increasing slew. No automatic reduction schedule is enabled."
+}

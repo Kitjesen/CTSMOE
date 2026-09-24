@@ -1,0 +1,5377 @@
+{
+  "evaluation_revision": "early_ablation_v15_corrected_20260922",
+  "protocol_id": "flat25_80m",
+  "protocol_config_id": "early_restart_v14_zero_update_v1",
+  "protocol_config": {
+    "schema_version": 1,
+    "protocol_id": "early_restart_v14_zero_update_v1",
+    "purpose": "Matched source/candidate behavior gate; not historical training reconstruction.",
+    "runtime": {
+      "actuator_profile": "rs0402_transient_v4",
+      "slope_profile": "slope45_v1",
+      "stair_command_profile": "straight_speed_v1",
+      "wave_reset_profile": "wave_surface_v1",
+      "pit_training_profile": "strict_v1",
+      "base_height_penalty": "off",
+      "pit_posture_profile": "off",
+      "surface_posture_profile": "off",
+      "stance_strength_profile": "off",
+      "startup_repair_profile": "off",
+      "command_curriculum_start": "intermediate",
+      "common_step_counter": 0
+    },
+    "sources": [
+      {
+        "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "completed_updates": 31831
+      },
+      {
+        "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "completed_updates": 32831
+      }
+    ]
+  },
+  "historical_training_reconstruction": false,
+  "evaluation_runtime_source": "explicit protocol JSON; checkpoint profiles are not inherited",
+  "zero_update_evaluation": true,
+  "optimizer_steps": 0,
+  "training_updates": 0,
+  "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+  "completed_updates": 32831,
+  "history": [
+    {
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "label": "source31831",
+      "teacher": false,
+      "fields": {
+        "iter": 31830,
+        "completed_updates": 31831,
+        "common_step_counter": 763944,
+        "learning_rate": 0.00011390625000000003,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 31831,
+        "checkpoint_declared_completed_updates": 31831,
+        "checkpoint_declared_common_step_counter": 763944
+      }
+    },
+    {
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "label": "source31831_teacher",
+      "teacher": true,
+      "fields": {
+        "iter": 31830,
+        "completed_updates": 31831,
+        "common_step_counter": 763944,
+        "learning_rate": 0.00011390625000000003,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 31831,
+        "checkpoint_declared_completed_updates": 31831,
+        "checkpoint_declared_common_step_counter": 763944
+      }
+    },
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "label": "candidate",
+      "teacher": false,
+      "fields": {
+        "iter": 32830,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 32831,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 787944,
+        "learning_rate": 0.0002562890625000001,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 32831,
+        "checkpoint_declared_completed_updates": 32831,
+        "checkpoint_declared_common_step_counter": 787944
+      }
+    },
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "label": "candidate_teacher",
+      "teacher": true,
+      "fields": {
+        "iter": 32830,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 32831,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 787944,
+        "learning_rate": 0.0002562890625000001,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 32831,
+        "checkpoint_declared_completed_updates": 32831,
+        "checkpoint_declared_common_step_counter": 787944
+      }
+    }
+  ],
+  "cases": [
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 0,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 15.717618942260742,
+      "climb": false,
+      "terminal_target": [
+        0.3531036972999573,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.18234796822071075,
+        1.1688891649246216,
+        -1.1325362920761108,
+        -1.0224766731262207,
+        0.8009970188140869,
+        -2.2415878772735596,
+        2.182506561279297,
+        2.0783705711364746,
+        -1.8158233165740967,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2673797607421875,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 1,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -13.016946792602539,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.2785033583641052,
+        0.989018976688385,
+        -1.224787712097168,
+        -0.8750803470611572,
+        0.8698969483375549,
+        -2.1674981117248535,
+        2.1527562141418457,
+        2.1178808212280273,
+        -2.2645490169525146,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.806427001953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 2,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 5.986385345458984,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.11637377738952637,
+        0.7975908517837524,
+        -0.8280577659606934,
+        -1.0651239156723022,
+        0.9170564413070679,
+        -1.8239988088607788,
+        2.0083279609680176,
+        2.074934720993042,
+        -2.0179684162139893,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.9099578857421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 3,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.610527753829956,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.10501760989427567,
+        1.0677211284637451,
+        -1.066484808921814,
+        -1.0253829956054688,
+        0.8062911033630371,
+        -2.0911800861358643,
+        2.1021437644958496,
+        2.1681747436523438,
+        -1.6781188249588013,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 5.1905059814453125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 4,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.03215307369828224,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.16665996611118317,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.2156378030776978,
+        -1.031491756439209,
+        -0.8580007553100586,
+        0.7501427531242371,
+        -2.0979247093200684,
+        2.3012540340423584,
+        2.2378311157226562,
+        -1.4967379570007324,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.155242919921875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 5,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -0.04741344228386879,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.21613281965255737,
+        -0.21567019820213318,
+        0.3364374041557312,
+        0.809661328792572,
+        -0.8381047248840332,
+        -0.7382060289382935,
+        0.8151991367340088,
+        -2.068154811859131,
+        1.642913818359375,
+        1.763056755065918,
+        -2.228436231613159,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1434478759765625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 6,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 5.294496536254883,
+      "climb": false,
+      "terminal_target": [
+        0.24549104273319244,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3231297731399536,
+        0.8737881779670715,
+        -0.9057225584983826,
+        -1.0012953281402588,
+        1.0617595911026,
+        -1.7599295377731323,
+        2.153913974761963,
+        2.208752393722534,
+        -2.1783182621002197,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 6.8883514404296875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 7,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -4.792017936706543,
+      "climb": false,
+      "terminal_target": [
+        0.35279789566993713,
+        -0.11442319303750992,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.46602463722229,
+        -1.1349687576293945,
+        -0.7365357875823975,
+        0.892579972743988,
+        -2.388493537902832,
+        2.2135233879089355,
+        2.1169626712799072,
+        -2.1544268131256104,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 7.8798370361328125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 8,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0634297132492065,
+      "climb": false,
+      "terminal_target": [
+        0.23962657153606415,
+        -0.13098746538162231,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.0234954357147217,
+        -1.0839529037475586,
+        -0.8900922536849976,
+        0.7775352597236633,
+        -1.923248529434204,
+        2.3820900917053223,
+        2.1702654361724854,
+        -1.7990610599517822,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.677642822265625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 9,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0464824438095093,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.35266411304473877,
+        0.07956655323505402,
+        0.7544935941696167,
+        -0.8018589615821838,
+        -0.9675934314727783,
+        1.0152326822280884,
+        -1.968389868736267,
+        1.9609332084655762,
+        2.026853084564209,
+        -2.207218885421753,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.53607177734375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 10,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 14.262866020202637,
+      "climb": false,
+      "terminal_target": [
+        0.3495282828807831,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.17411702871322632,
+        1.119059681892395,
+        -1.0829250812530518,
+        -1.0583211183547974,
+        0.8435320854187012,
+        -2.2474546432495117,
+        2.148552417755127,
+        2.115400552749634,
+        -1.8646551370620728,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.9577484130859375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 11,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -11.944183349609375,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.2570478022098541,
+        0.950702428817749,
+        -1.2172842025756836,
+        -0.8773411512374878,
+        0.8720183968544006,
+        -2.138554811477661,
+        2.1392126083374023,
+        2.1127684116363525,
+        -2.278069019317627,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.4584808349609375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 12,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 5.166203498840332,
+      "climb": false,
+      "terminal_target": [
+        0.24955762922763824,
+        -0.33706194162368774,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9395848512649536,
+        -1.0381840467453003,
+        -0.8932862281799316,
+        0.9634643793106079,
+        -1.7986185550689697,
+        2.30963397026062,
+        2.204178810119629,
+        -2.100796937942505,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 3.20458984375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 13,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.3999431133270264,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3296360969543457,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.170596957206726,
+        -1.0729073286056519,
+        -0.897635281085968,
+        0.9773949384689331,
+        -2.2362375259399414,
+        2.0171988010406494,
+        2.162142515182495,
+        -1.9337284564971924,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 4.9152069091796875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 14,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.046268362551927567,
+      "climb": false,
+      "terminal_target": [
+        0.19272132217884064,
+        -0.11128564178943634,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9659727215766907,
+        -1.1044033765792847,
+        -0.9190143346786499,
+        0.7548121213912964,
+        -1.8324496746063232,
+        2.4487452507019043,
+        2.25142502784729,
+        -1.7576444149017334,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.078155517578125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 15,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.08725446462631226,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.1843697726726532,
+        -0.17751315236091614,
+        0.3689999580383301,
+        0.7906338572502136,
+        -0.8304265141487122,
+        -0.7564411759376526,
+        0.8299107551574707,
+        -2.0118494033813477,
+        1.7346742153167725,
+        1.826500415802002,
+        -2.154811382293701,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.115142822265625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 16,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 5.810349941253662,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.20251499116420746,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.8388649225234985,
+        -1.2536137104034424,
+        -0.8320099115371704,
+        0.8400455713272095,
+        -1.9593557119369507,
+        2.251201868057251,
+        1.757051944732666,
+        -2.2901082038879395,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 6.112548828125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 17,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -4.363365650177002,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        0.08475558459758759,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.2938501834869385,
+        -0.9866747856140137,
+        -0.751725435256958,
+        0.9498017430305481,
+        -2.4043376445770264,
+        1.8579161167144775,
+        2.008697748184204,
+        -1.9625496864318848,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 6.776275634765625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 18,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.6876978874206543,
+      "climb": false,
+      "terminal_target": [
+        0.21078729629516602,
+        -0.19994671642780304,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9747143387794495,
+        -0.9034343957901001,
+        -0.962891697883606,
+        0.807819128036499,
+        -2.1353394985198975,
+        2.2457966804504395,
+        2.177403688430786,
+        -1.698838233947754,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.8044891357421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 19,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0447982549667358,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.8828582167625427,
+        -0.9877569675445557,
+        -0.8729035258293152,
+        0.8575872182846069,
+        -2.151951551437378,
+        2.1470789909362793,
+        1.810070276260376,
+        -2.330721855163574,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5943145751953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 20,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 14.904257774353027,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3241378366947174,
+        1.2261862754821777,
+        -1.184333324432373,
+        -0.953000009059906,
+        0.8755030035972595,
+        -2.2963647842407227,
+        2.1864407062530518,
+        2.0956056118011475,
+        -1.902468204498291,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3914947509765625,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 21,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -14.174373626708984,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3221581280231476,
+        0.9445987939834595,
+        -1.201263666152954,
+        -0.8487295508384705,
+        0.8656379580497742,
+        -2.1274495124816895,
+        2.1815388202667236,
+        2.1133129596710205,
+        -2.3065390586853027,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.7252349853515625,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 22,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.696979522705078,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.17436961829662323,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.88007652759552,
+        -1.2294343709945679,
+        -0.9468369483947754,
+        0.8407531380653381,
+        -1.9992254972457886,
+        2.439495086669922,
+        2.114933967590332,
+        -2.2147974967956543,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 5.30548095703125,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 23,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.482344627380371,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.3821736574172974,
+        -1.1130306720733643,
+        -1.0142260789871216,
+        0.8642932176589966,
+        -2.4725401401519775,
+        1.9489082098007202,
+        2.2136199474334717,
+        -1.9417766332626343,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 4.8794403076171875,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 24,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.024318845942616463,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        0.01497681438922882,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9864227175712585,
+        -1.167477011680603,
+        -0.9113338589668274,
+        0.6879007816314697,
+        -2.1584484577178955,
+        2.5804200172424316,
+        2.275569438934326,
+        -1.784033179283142,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1300048828125,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 25,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -0.05319807305932045,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.29832923412323,
+        -0.2227921485900879,
+        0.3689999580383301,
+        0.7469151020050049,
+        -0.6851617693901062,
+        -0.9055265784263611,
+        0.8270065784454346,
+        -1.963085651397705,
+        1.7247792482376099,
+        2.043999433517456,
+        -2.009836196899414,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1297760009765625,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 26,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 6.975769996643066,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.13515853881835938,
+        0.3689999580383301,
+        0.7937264442443848,
+        -0.8956171274185181,
+        -0.8025067448616028,
+        0.8323971033096313,
+        -1.925801157951355,
+        1.741373062133789,
+        1.5275540351867676,
+        -2.1627047061920166,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 5.2510986328125,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 27,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -8.422530174255371,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.3269696235656738,
+        -0.9798142910003662,
+        -0.9730823636054993,
+        0.8233485221862793,
+        -2.476459503173828,
+        2.1173644065856934,
+        2.2666165828704834,
+        -1.9584354162216187,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 3.818695068359375,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 28,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.5954344868659973,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.2577502727508545,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.2346538305282593,
+        -0.9261705875396729,
+        -0.739324688911438,
+        1.0957527160644531,
+        -2.1932644844055176,
+        1.9938044548034668,
+        2.0025417804718018,
+        -2.0340614318847656,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.2495269775390625,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 29,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.9749701023101807,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        0.03435531258583069,
+        0.3113611340522766,
+        0.7472691535949707,
+        -0.7862372994422913,
+        -0.8868123292922974,
+        0.9003605842590332,
+        -1.913164734840393,
+        1.7961682081222534,
+        1.6851861476898193,
+        -2.04250168800354,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.57769775390625,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 30,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 13.76791763305664,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.25849348306655884,
+        1.197260856628418,
+        -1.171486258506775,
+        -0.9721893072128296,
+        0.8160113096237183,
+        -2.286036968231201,
+        2.208993673324585,
+        2.062260389328003,
+        -1.845619559288025,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.4111785888671875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 31,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -12.944060325622559,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.29294928908348083,
+        0.8807849287986755,
+        -1.2140367031097412,
+        -0.8450194597244263,
+        0.8534423112869263,
+        -2.071303367614746,
+        2.1620616912841797,
+        2.101332664489746,
+        -2.320448398590088,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.0071868896484375,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 32,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 3.8773696422576904,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        0.10960663855075836,
+        0.33722376823425293,
+        0.8459593653678894,
+        -0.8723723888397217,
+        -0.8177529573440552,
+        0.8825864195823669,
+        -1.936977505683899,
+        1.8178099393844604,
+        1.5026545524597168,
+        -2.1522884368896484,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 5.233642578125,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 33,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.3575692176818848,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.1308201551437378,
+        -0.9825547337532043,
+        -0.9864221811294556,
+        0.938983142375946,
+        -2.2129106521606445,
+        2.0396647453308105,
+        2.1842896938323975,
+        -1.9848158359527588,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 4.2434844970703125,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 34,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -0.01853817328810692,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        0.073844775557518,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.8932358026504517,
+        -1.3303461074829102,
+        -0.849970817565918,
+        0.7008801102638245,
+        -2.0590932369232178,
+        2.7791991233825684,
+        2.164191722869873,
+        -1.946488618850708,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0891571044921875,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 35,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.00994050968438387,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3027384579181671,
+        -0.1771106868982315,
+        0.3689999580383301,
+        0.7705740928649902,
+        -0.8922665119171143,
+        -0.8228561282157898,
+        0.7632262110710144,
+        -1.9758496284484863,
+        1.7013845443725586,
+        1.6731038093566895,
+        -2.112962484359741,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1224365234375,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 36,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 6.742575645446777,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.17074501514434814,
+        0.3689999580383301,
+        0.8030640482902527,
+        -0.6952714920043945,
+        -0.8488913178443909,
+        0.99069744348526,
+        -1.9446003437042236,
+        1.7779009342193604,
+        1.8819687366485596,
+        -1.9796282052993774,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 4.781005859375,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 37,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -8.256174087524414,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.3098814487457275,
+        -0.9356879591941833,
+        -0.9718942642211914,
+        0.8737467527389526,
+        -2.514270782470703,
+        2.210252285003662,
+        2.3000686168670654,
+        -1.9968310594558716,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.53204345703125,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 38,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.2352067232131958,
+      "climb": false,
+      "terminal_target": [
+        0.17602697014808655,
+        -0.1954984813928604,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.0328283309936523,
+        -1.1212430000305176,
+        -0.9147912263870239,
+        0.7109869718551636,
+        -1.956823468208313,
+        2.392378807067871,
+        2.1800765991210938,
+        -1.7691984176635742,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.2845306396484375,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 39,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.12871515750885,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        0.02612203359603882,
+        0.2768005430698395,
+        0.7605276107788086,
+        -0.7912923097610474,
+        -0.849871039390564,
+        0.9064328074455261,
+        -1.9780675172805786,
+        1.8132356405258179,
+        1.6740200519561768,
+        -2.0480587482452393,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5657196044921875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 40,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 15.665194511413574,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9522700309753418,
+        -0.8843335509300232,
+        -0.9659513235092163,
+        0.945827841758728,
+        -1.9952329397201538,
+        1.9789968729019165,
+        2.0167973041534424,
+        -2.0254604816436768,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.05877685546875,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 41,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -14.633917808532715,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9334092140197754,
+        -0.9207313060760498,
+        -0.9333885908126831,
+        1.013733983039856,
+        -2.084857225418091,
+        2.1551833152770996,
+        2.135153293609619,
+        -2.094806671142578,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6742401123046875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 42,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -2.6810250282287598,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.2537488639354706,
+        -0.009180769324302673,
+        0.3689999580383301,
+        1.09493088722229,
+        -0.9871141314506531,
+        -0.850487232208252,
+        0.9329256415367126,
+        -2.1956775188446045,
+        1.9400532245635986,
+        1.5661544799804688,
+        -2.2056469917297363,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 9.47515869140625,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 43,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -1.775875449180603,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.19118832051753998,
+        0.8384649157524109,
+        -0.9601381421089172,
+        -1.079115629196167,
+        1.0017699003219604,
+        -2.034087896347046,
+        2.1493990421295166,
+        2.2231316566467285,
+        -2.162034034729004,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 9.326202392578125,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 44,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.025683261454105377,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.21787557005882263,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.0460246801376343,
+        -0.979478657245636,
+        -0.9224572777748108,
+        0.9857752323150635,
+        -2.239635705947876,
+        2.0793516635894775,
+        2.2319231033325195,
+        -2.1490602493286133,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0251922607421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 45,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.08509547263383865,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.8637664914131165,
+        -0.9537001252174377,
+        -1.046126127243042,
+        0.8378316164016724,
+        -2.043041229248047,
+        2.113645076751709,
+        2.120579957962036,
+        -1.9372484683990479,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.05810546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 46,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 10.270359992980957,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.2978479564189911,
+        -0.12956953048706055,
+        0.35131314396858215,
+        0.9952195286750793,
+        -0.957111120223999,
+        -0.9014347791671753,
+        0.9765363931655884,
+        -2.138634443283081,
+        1.8761636018753052,
+        1.7315447330474854,
+        -2.1889445781707764,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 5.3690185546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 47,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -10.770277976989746,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.0108189582824707,
+        -0.9369952082633972,
+        -1.0359344482421875,
+        0.8668345808982849,
+        -2.212830066680908,
+        2.050779342651367,
+        2.212769031524658,
+        -1.9499537944793701,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.82568359375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 48,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.917895495891571,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.22905616462230682,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.1356189250946045,
+        -0.8580676317214966,
+        -0.8496474623680115,
+        1.0516481399536133,
+        -2.1718568801879883,
+        2.0200319290161133,
+        2.0537831783294678,
+        -2.136213779449463,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.571044921875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 49,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.6205180883407593,
+      "climb": false,
+      "terminal_target": [
+        0.20842194557189941,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.13351593911647797,
+        0.9326176643371582,
+        -0.9484647512435913,
+        -1.035378336906433,
+        1.0791306495666504,
+        -1.9659998416900635,
+        2.216979503631592,
+        2.158163070678711,
+        -2.180941343307495,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.981292724609375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 50,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 14.478031158447266,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9516438245773315,
+        -0.8847306966781616,
+        -0.9661633372306824,
+        0.9459136724472046,
+        -1.9950392246246338,
+        1.978887677192688,
+        2.015719413757324,
+        -2.025850296020508,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0790557861328125,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 51,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -13.372762680053711,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9294171333312988,
+        -0.9158885478973389,
+        -0.9445037245750427,
+        0.9930110573768616,
+        -2.0852794647216797,
+        2.141720771789551,
+        2.111150026321411,
+        -2.078127145767212,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1573944091796875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 52,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -2.5804097652435303,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.08416872471570969,
+        0.3689999580383301,
+        0.964361846446991,
+        -0.8375460505485535,
+        -0.9635844826698303,
+        1.087484359741211,
+        -2.146338939666748,
+        1.897477626800537,
+        1.9354195594787598,
+        -2.068927526473999,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 8.629989624023438,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 53,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -1.6371679306030273,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.1289210021495819,
+        0.8418680429458618,
+        -0.9616113305091858,
+        -1.0826184749603271,
+        0.9936627745628357,
+        -2.0018930435180664,
+        2.166543483734131,
+        2.2259016036987305,
+        -2.089576482772827,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 8.179336547851562,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 54,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.07861031591892242,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.962712824344635,
+        -0.8746416568756104,
+        -0.8813219666481018,
+        0.9690656065940857,
+        -2.059626340866089,
+        2.0828616619110107,
+        2.0926640033721924,
+        -2.079298257827759,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.021697998046875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 55,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.10576651990413666,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.15627577900886536,
+        -0.18079222738742828,
+        0.3689999580383301,
+        0.9293540120124817,
+        -0.9294127821922302,
+        -0.8947768211364746,
+        0.8709716200828552,
+        -2.2608096599578857,
+        1.9155967235565186,
+        1.8274751901626587,
+        -2.171778440475464,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.08392333984375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 56,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 9.70927906036377,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.28958070278167725,
+        -0.13089412450790405,
+        0.34948408603668213,
+        0.9899227619171143,
+        -0.9715940952301025,
+        -0.9116879105567932,
+        0.9643206000328064,
+        -2.1511685848236084,
+        1.872064232826233,
+        1.7070262432098389,
+        -2.199418306350708,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 4.7458648681640625,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 57,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -10.06525707244873,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.933240532875061,
+        -0.9401584267616272,
+        -1.0742284059524536,
+        0.9204502701759338,
+        -2.1876368522644043,
+        2.070258378982544,
+        2.2779994010925293,
+        -1.9234851598739624,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.95697021484375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 58,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.1678589582443237,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.13923773169517517,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9300742149353027,
+        -0.8490741848945618,
+        -0.8826134204864502,
+        0.9538188576698303,
+        -1.8845326900482178,
+        2.2227823734283447,
+        2.331003189086914,
+        -1.8507634401321411,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.699005126953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 59,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.6021534204483032,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.29861924052238464,
+        -0.05495552718639374,
+        0.3689999580383301,
+        0.9744142889976501,
+        -0.8970781564712524,
+        -0.9451383948326111,
+        1.0355535745620728,
+        -2.1710422039031982,
+        1.9799187183380127,
+        1.8472009897232056,
+        -2.117103338241577,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.051849365234375,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 60,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 15.677168846130371,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9645851254463196,
+        -0.8816442489624023,
+        -0.9587276577949524,
+        0.9618659019470215,
+        -1.9923171997070312,
+        1.9896246194839478,
+        2.020034074783325,
+        -2.019973039627075,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.368927001953125,
+      "straight_4m": true
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 61,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -14.98935317993164,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9386799335479736,
+        -0.9205450415611267,
+        -0.9257333278656006,
+        1.0113359689712524,
+        -2.0771195888519287,
+        2.154259443283081,
+        2.1283791065216064,
+        -2.089639186859131,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.715545654296875,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 62,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -2.5505473613739014,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.13742342591285706,
+        0.3689574599266052,
+        1.0523422956466675,
+        -0.8613737225532532,
+        -0.9031632542610168,
+        1.0095771551132202,
+        -2.1766586303710938,
+        1.9249321222305298,
+        1.9700039625167847,
+        -2.121506690979004,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 9.277908325195312,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 63,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.3861914873123169,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.06595629453659058,
+        0.9048089385032654,
+        -0.827828586101532,
+        -1.0518102645874023,
+        0.9633869528770447,
+        -1.8447668552398682,
+        2.1776416301727295,
+        2.3860273361206055,
+        -1.5991380214691162,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 8.535491943359375,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 64,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -0.023774785920977592,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3335370421409607,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.1165562868118286,
+        -0.7866594791412354,
+        -0.7836415767669678,
+        1.0521693229675293,
+        -2.1670098304748535,
+        1.8779773712158203,
+        1.908724308013916,
+        -2.093480348587036,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0248565673828125,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 65,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.06818165630102158,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.11367218941450119,
+        -0.25652432441711426,
+        0.3689999580383301,
+        0.9288210868835449,
+        -0.8702948689460754,
+        -0.9113450646400452,
+        0.90519118309021,
+        -2.2497575283050537,
+        1.8335065841674805,
+        1.8246140480041504,
+        -2.127880573272705,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.079986572265625,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 66,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 10.835914611816406,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.2618647515773773,
+        -0.1937074214220047,
+        0.3689999580383301,
+        1.0375384092330933,
+        -0.9368481636047363,
+        -0.8940937519073486,
+        0.999078631401062,
+        -2.1324923038482666,
+        1.867384433746338,
+        1.7249256372451782,
+        -2.1640076637268066,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 4.9316253662109375,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 67,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -11.347744941711426,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.1384831964969635,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.0577338933944702,
+        -0.8939598798751831,
+        -0.9077420830726624,
+        0.9089123606681824,
+        -2.3728318214416504,
+        1.6222906112670898,
+        1.972048044204712,
+        -2.116220474243164,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.407012939453125,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 68,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.6001625061035156,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.0064573287963867,
+        -0.813774585723877,
+        -0.8446328043937683,
+        1.0271152257919312,
+        -1.9559240341186523,
+        2.058152198791504,
+        2.090907335281372,
+        -1.9588652849197388,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.4517974853515625,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 69,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.5711864233016968,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.24070417881011963,
+        0.3531174659729004,
+        0.9697033762931824,
+        -0.8499084711074829,
+        -0.9252651929855347,
+        1.0754506587982178,
+        -2.099005937576294,
+        2.079293966293335,
+        2.0719075202941895,
+        -2.1679494380950928,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.7893524169921875,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 70,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 14.362846374511719,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9649428129196167,
+        -0.8806126117706299,
+        -0.9590075612068176,
+        0.9621660113334656,
+        -1.9920207262039185,
+        1.9907662868499756,
+        2.0204856395721436,
+        -2.0187277793884277,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0225982666015625,
+      "straight_4m": true
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 71,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -13.75239086151123,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9362686276435852,
+        -0.9121517539024353,
+        -0.9393106698989868,
+        0.9947601556777954,
+        -2.077072858810425,
+        2.1424694061279297,
+        2.108009099960327,
+        -2.0706841945648193,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1443939208984375,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 72,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -1.8698753118515015,
+      "climb": false,
+      "terminal_target": [
+        0.02756379544734955,
+        -0.23296278715133667,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9846547245979309,
+        -1.0059113502502441,
+        -0.9795767068862915,
+        0.8741777539253235,
+        -1.7855346202850342,
+        2.188119411468506,
+        2.1632821559906006,
+        -1.8462889194488525,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 8.604888916015625,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 73,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.4234471917152405,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3403434157371521,
+        0.016261950135231018,
+        0.8620096445083618,
+        -0.9472221732139587,
+        -1.061875581741333,
+        0.9960768222808838,
+        -1.890312671661377,
+        2.1353070735931396,
+        2.2124550342559814,
+        -1.883824110031128,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 7.7733001708984375,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 74,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.054462552070617676,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9610874652862549,
+        -0.8393946290016174,
+        -0.892278254032135,
+        0.9845086336135864,
+        -2.056933641433716,
+        2.0541446208953857,
+        2.1194653511047363,
+        -2.0505378246307373,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.031463623046875,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 75,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.032783955335617065,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.1456306427717209,
+        -0.177867591381073,
+        0.3689999580383301,
+        0.9589013457298279,
+        -0.9416244626045227,
+        -0.8882002830505371,
+        0.8902734518051147,
+        -2.2513484954833984,
+        1.9647231101989746,
+        1.8816386461257935,
+        -2.158857583999634,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0685272216796875,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 76,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": true,
+      "dx_m": 9.977738380432129,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3236572742462158,
+        0.3689999580383301,
+        1.048227071762085,
+        -0.9026567935943604,
+        -0.8192936778068542,
+        1.0276803970336914,
+        -2.0723063945770264,
+        2.0253288745880127,
+        2.020732879638672,
+        -2.1024935245513916,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 4.55816650390625,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 77,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -10.419039726257324,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3523311913013458,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.0363065004348755,
+        -0.9065486788749695,
+        -0.9636896252632141,
+        0.9760647416114807,
+        -2.2571189403533936,
+        1.919118881225586,
+        2.1719741821289062,
+        -2.0465190410614014,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.9191741943359375,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 78,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -0.4443091154098511,
+      "climb": false,
+      "terminal_target": [
+        0.3186125159263611,
+        -0.2734977602958679,
+        -0.3689999580383301,
+        0.05924771726131439,
+        0.996375322341919,
+        -0.8549607396125793,
+        -0.9070330858230591,
+        0.900868833065033,
+        -1.7327227592468262,
+        2.140791416168213,
+        2.27895450592041,
+        -1.695741057395935,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 3.3153839111328125,
+      "straight_4m": false
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 79,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.4108912944793701,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.23110245168209076,
+        -0.09986481070518494,
+        0.3689999580383301,
+        0.9547559022903442,
+        -0.9388817548751831,
+        -0.9099779725074768,
+        0.9396657347679138,
+        -2.2309303283691406,
+        1.9638445377349854,
+        1.715703010559082,
+        -2.138897180557251,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.809661865234375,
+      "straight_4m": false
+    }
+  ],
+  "joint_names": [
+    "fl_hip_joint",
+    "fr_hip_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fl_thigh_joint",
+    "fr_thigh_joint",
+    "rl_thigh_joint",
+    "rr_thigh_joint",
+    "fl_calf_joint",
+    "fr_calf_joint",
+    "rl_calf_joint",
+    "rr_calf_joint",
+    "fl_foot_joint",
+    "fr_foot_joint",
+    "rl_foot_joint",
+    "rr_foot_joint"
+  ],
+  "body_names": [
+    "base_link",
+    "fl_hip_Link",
+    "fr_hip_link",
+    "rl_hip_Link",
+    "rr_hip_Link",
+    "fl_thigh_Link",
+    "fr_thigh_Link",
+    "rl_thigh_Link",
+    "rr_thigh_Link",
+    "fl_calf_Link",
+    "fr_calf_Link",
+    "rl_calf_Link",
+    "rr_calf_Link",
+    "fl_foot_Link",
+    "fr_foot_Link",
+    "rl_foot_Link",
+    "rr_foot_Link"
+  ],
+  "dt": 0.02,
+  "default_q": [
+    0.20000000298023224,
+    -0.20000000298023224,
+    -0.20000000298023224,
+    0.20000000298023224,
+    0.9300000071525574,
+    -0.9300000071525574,
+    -0.9300000071525574,
+    0.9300000071525574,
+    -1.9600000381469727,
+    1.9600000381469727,
+    1.9600000381469727,
+    -1.9600000381469727,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "request_joint_ids": [
+    1,
+    5,
+    9,
+    0,
+    4,
+    8,
+    3,
+    7,
+    11,
+    2,
+    6,
+    10
+  ],
+  "actuator_limits": {
+    "leg_torque_nm": 120.0,
+    "wheel_torque_nm": 17.0,
+    "leg_speed_rad_s": 15.0,
+    "wheel_speed_rad_s": 30.0,
+    "leg_target_rate_rad_s": 12.0,
+    "speed_penalty_fraction": 0.9,
+    "speed_termination_fraction": 1.02,
+    "hard_position_termination_rad": 0.01,
+    "leg_load_reference_nm": 35.0,
+    "wheel_load_reference_nm": 6.0,
+    "speed_sustained_duration_s": 0.06,
+    "speed_extreme_termination_fraction": 1.5,
+    "load_penalty_weight": -0.1,
+    "speed_penalty_weight": -1.0,
+    "saturation_penalty_weight": -0.02,
+    "violation_penalty_weight": -25.0
+  },
+  "initial_state_matched": true,
+  "default_pose_initial_verified": true,
+  "smoke_only": false,
+  "initial_scripted_commands_verified": true,
+  "initial_flat_origins_verified": true,
+  "initial_episode_age_zero_verified": true,
+  "reset_targets": {
+    "version": "thunder_cts_v13_reset_targets_v1",
+    "robot": "robot"
+  },
+  "ramp_diagnostic": false,
+  "direct_gate_protocol": true,
+  "max_episode_length_steps": 1250,
+  "retained_reset_events": [
+    "reset_base",
+    "reset_robot_joints",
+    "wave_surface"
+  ],
+  "wave_reset_receipt": {
+    "profile": "wave_surface_v1",
+    "count": 0,
+    "clearance_m": 0.03,
+    "surface_spacing_m": 0.02,
+    "geometry_sha256": null,
+    "surface_points": 0,
+    "last": {}
+  },
+  "wave_surface_correction_verified": true,
+  "terrain_mapping": {
+    "atlas_columns": {
+      "wave": [
+        0,
+        1
+      ],
+      "slope_up": [
+        1,
+        3
+      ],
+      "slope_down": [
+        3,
+        5
+      ],
+      "rough_slope": [
+        5,
+        6
+      ],
+      "stairs_up": [
+        6,
+        11
+      ],
+      "stairs_down": [
+        11,
+        13
+      ],
+      "obstacles": [
+        13,
+        17
+      ],
+      "stepping_stones": [
+        17,
+        17
+      ],
+      "gap": [
+        17,
+        17
+      ],
+      "flat": [
+        17,
+        20
+      ],
+      "pit": [
+        20,
+        40
+      ]
+    },
+    "membership_asserted": true,
+    "pit_active_asserted": true,
+    "origins_assigned_after_mapping": true,
+    "origins_match_atlas_asserted": true
+  },
+  "slope_geometry": [],
+  "urdf_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+  "protocol": "Common early-checkpoint physics evaluation, not a reconstruction of historical training configuration. Model weights and each model's serialized observation normalizers are loaded; no optimizer or training update is executed. Deterministic default-pose reset with synchronized targets, no noise or pushes, fixed 10 ms delay. 20 all-direction flat cases per policy on 80 m patches, 25 s budget.",
+  "flat_patch_size_m": [
+    80.0,
+    80.0
+  ],
+  "flat_boundary_crossed": []
+}

@@ -1,0 +1,35 @@
+{
+  "time": "2026-09-19T17:08:01.702814+08:00",
+  "pid": 136431,
+  "state": "training",
+  "completed_updates": 31872,
+  "target": 60000,
+  "num_envs": 4096,
+  "seconds_mean": 6.588466201509748,
+  "frontier_m": 0.3,
+  "climbs": {
+    "teacher": {
+      "episodes": 2586,
+      "climb_success": 2575,
+      "failed": 11,
+      "stable_success": 0
+    },
+    "student": {
+      "episodes": 893,
+      "climb_success": 864,
+      "failed": 24,
+      "stable_success": 0
+    }
+  },
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "pit_climb_totals": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true
+  },
+  "torque_violations": 0
+}

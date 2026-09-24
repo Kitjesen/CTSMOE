@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "protocol_id": "early_restart_v14_zero_update_v1",
+  "purpose": "Matched zero-update source selection, both student and teacher, current reset and actuator contract",
+  "runtime": {
+    "actuator_profile": "rs0402_transient_v4",
+    "slope_profile": "slope45_v1",
+    "stair_command_profile": "straight_speed_v1",
+    "wave_reset_profile": "wave_surface_v1",
+    "pit_training_profile": "strict_v1",
+    "base_height_penalty": "off",
+    "pit_posture_profile": "off",
+    "surface_posture_profile": "off",
+    "stance_strength_profile": "off",
+    "startup_repair_profile": "off",
+    "command_curriculum_start": "intermediate",
+    "common_step_counter": 0
+  },
+  "sources": [
+    {
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "completed_updates": 31831
+    },
+    {
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_29999.pt",
+      "completed_updates": 30000
+    }
+  ]
+}

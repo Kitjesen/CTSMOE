@@ -1,0 +1,535 @@
+{
+  "state": "complete",
+  "optimizer_updates": 0,
+  "reverse_stair_control_samples": 31224,
+  "variety": {
+    "profile": "radial_routes_v30",
+    "variants": {
+      "single_curb_up": {
+        "column": 6,
+        "count": 132,
+        "mean_level": 6.0
+      },
+      "short_tread_up": {
+        "column": 7,
+        "count": 110,
+        "mean_level": 6.236363410949707
+      },
+      "long_tread_up": {
+        "column": 9,
+        "count": 89,
+        "mean_level": 6.528090000152588
+      },
+      "ramp_then_stairs_up": {
+        "column": 10,
+        "count": 128,
+        "mean_level": 6.28125
+      },
+      "short_tread_down": {
+        "column": 12,
+        "count": 296,
+        "mean_level": 6.064189434051514
+      }
+    },
+    "reverse_envs": 380,
+    "episode_statistics": [
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    ],
+    "statistic_axes": [
+      "variant_in_column_order",
+      "teacher_student",
+      "forward_backward",
+      "episodes_radius_exit_physical_failure"
+    ],
+    "interpretation": "Training distribution; not successful traversal counts"
+  },
+  "selected": "/root/autodl-tmp/cts-omni-repair-v19-20260922/terrain_variety_v30_20260923/training_35123_to_41123/model_36193.pt",
+  "selected_sha256": "0c686306877ec759dc95e3691edb5f7cecaa4c4b341722d78b3e8e560a017ade",
+  "common_terrain_source_sha256": "0c686306877ec759dc95e3691edb5f7cecaa4c4b341722d78b3e8e560a017ade",
+  "same_initial_terrain_assignment": true,
+  "student_environments": 1024,
+  "steps": 1250,
+  "control_period_s": 0.02,
+  "terrain": {
+    "flat": {
+      "control_samples": 256250,
+      "xy_tracking_mae_mps": 0.09426478296518326,
+      "yaw_tracking_mae_radps": 0.07475531101226807,
+      "any_hip_inward_ge_039_fraction": 0.0008468292653560638,
+      "physical_termination_events": 1,
+      "timeout_events": 204,
+      "posture_rms_rad": 0.1033645048737526,
+      "mean_body_height_from_tile_origin_m": 0.4496675133705139,
+      "first_second_posture_rms_rad": 0.12057642638683319,
+      "all_axis_zero_command_fraction": 0.16442535817623138
+    },
+    "stairs_up": {
+      "control_samples": 178750,
+      "xy_tracking_mae_mps": 0.1451522260904312,
+      "yaw_tracking_mae_radps": 0.09592950344085693,
+      "any_hip_inward_ge_039_fraction": 0.005247552413493395,
+      "physical_termination_events": 6,
+      "timeout_events": 314,
+      "posture_rms_rad": 0.263141393661499,
+      "mean_body_height_from_tile_origin_m": 0.6589133143424988,
+      "first_second_posture_rms_rad": 0.14622355997562408,
+      "all_axis_zero_command_fraction": 0.0
+    },
+    "stairs_down": {
+      "control_samples": 178750,
+      "xy_tracking_mae_mps": 0.10667762160301208,
+      "yaw_tracking_mae_radps": 0.08808962255716324,
+      "any_hip_inward_ge_039_fraction": 0.007250349503010511,
+      "physical_termination_events": 7,
+      "timeout_events": 357,
+      "posture_rms_rad": 0.2237306535243988,
+      "mean_body_height_from_tile_origin_m": 0.13599443435668945,
+      "first_second_posture_rms_rad": 0.14778195321559906,
+      "all_axis_zero_command_fraction": 0.0
+    },
+    "wave": {
+      "control_samples": 153750,
+      "xy_tracking_mae_mps": 0.30555421113967896,
+      "yaw_tracking_mae_radps": 0.2495042383670807,
+      "any_hip_inward_ge_039_fraction": 0.011863414198160172,
+      "physical_termination_events": 8,
+      "timeout_events": 115,
+      "posture_rms_rad": 0.260669082403183,
+      "mean_body_height_from_tile_origin_m": 0.17691707611083984,
+      "first_second_posture_rms_rad": 0.282044917345047,
+      "all_axis_zero_command_fraction": 0.09179837256669998
+    },
+    "slope_up": {
+      "control_samples": 128750,
+      "xy_tracking_mae_mps": 0.24731536209583282,
+      "yaw_tracking_mae_radps": 0.16655603051185608,
+      "any_hip_inward_ge_039_fraction": 0.003091262187808752,
+      "physical_termination_events": 5,
+      "timeout_events": 98,
+      "posture_rms_rad": 0.2238820344209671,
+      "mean_body_height_from_tile_origin_m": 0.6792682409286499,
+      "first_second_posture_rms_rad": 0.17752119898796082,
+      "all_axis_zero_command_fraction": 0.09864077717065811
+    },
+    "slope_down": {
+      "control_samples": 128750,
+      "xy_tracking_mae_mps": 0.2228100746870041,
+      "yaw_tracking_mae_radps": 0.16557933390140533,
+      "any_hip_inward_ge_039_fraction": 0.003176698926836252,
+      "physical_termination_events": 12,
+      "timeout_events": 93,
+      "posture_rms_rad": 0.2100832611322403,
+      "mean_body_height_from_tile_origin_m": -0.0478101447224617,
+      "first_second_posture_rms_rad": 0.1780582070350647,
+      "all_axis_zero_command_fraction": 0.13325048983097076
+    },
+    "rough_slope": {
+      "control_samples": 127500,
+      "xy_tracking_mae_mps": 0.2813916504383087,
+      "yaw_tracking_mae_radps": 0.2119438350200653,
+      "any_hip_inward_ge_039_fraction": 0.0066823530942201614,
+      "physical_termination_events": 9,
+      "timeout_events": 93,
+      "posture_rms_rad": 0.22741754353046417,
+      "mean_body_height_from_tile_origin_m": -0.1682702600955963,
+      "first_second_posture_rms_rad": 0.20106078684329987,
+      "all_axis_zero_command_fraction": 0.08772549778223038
+    },
+    "obstacles": {
+      "control_samples": 127500,
+      "xy_tracking_mae_mps": 0.29138803482055664,
+      "yaw_tracking_mae_radps": 0.23937711119651794,
+      "any_hip_inward_ge_039_fraction": 0.016635295003652573,
+      "physical_termination_events": 21,
+      "timeout_events": 89,
+      "posture_rms_rad": 0.21733605861663818,
+      "mean_body_height_from_tile_origin_m": 0.4240352511405945,
+      "first_second_posture_rms_rad": 0.17505918443202972,
+      "all_axis_zero_command_fraction": 0.07253333926200867
+    }
+  },
+  "hip_names": [
+    "fr_hip_joint",
+    "fl_hip_joint",
+    "rr_hip_joint",
+    "rl_hip_joint"
+  ],
+  "requested_inward_peak_rad": [
+    3.1799042224884033,
+    2.1825878620147705,
+    2.344248056411743,
+    6.1078948974609375
+  ],
+  "limited_target_inward_peak_rad": [
+    0.3689999580383301,
+    0.3689999580383301,
+    0.3689999580383301,
+    0.3689999580383301
+  ],
+  "actual_inward_peak_rad": [
+    0.41410353779792786,
+    0.41257813572883606,
+    0.4172860085964203,
+    0.4115917682647705
+  ],
+  "max_student_wheel_speed_radps": 44.453529357910156,
+  "max_student_leg_torque_nm": 120.0,
+  "flat_pure_yaw_control_samples": 47288,
+  "flat_pure_side_control_samples": 37476,
+  "flat_command_abs_max": [
+    1.999289631843567,
+    0.9996113777160645,
+    1.4983268976211548
+  ],
+  "landing_v31": {
+    "profile": "landing_force_velocity_v31",
+    "force_weight": -0.5,
+    "velocity_weight": -1.0,
+    "threshold_N": 337.09112548828125,
+    "previous_frame_speed_free_mps": 0.25,
+    "landings": [
+      166510,
+      167668,
+      173528,
+      166228
+    ],
+    "force_peak_N": [
+      7301.859375,
+      7436.125,
+      7073.0634765625,
+      6485.83056640625
+    ],
+    "previous_frame_down_peak_mps": [
+      5.023838043212891,
+      4.898284912109375,
+      5.190152168273926,
+      5.375497817993164
+    ],
+    "force_cost_sum": 2441119.25,
+    "speed_cost_sum": 508575.9375,
+    "scope": "all terrains; excludes initial unsupported settling; cumulative training evidence",
+    "force_history_hz": 200,
+    "velocity_hz": 50,
+    "threshold_is_hardware_limit": false
+  },
+  "force_window_summary": {
+    "p95_per_wheel_N": [
+      332.107177734375,
+      343.9546813964844,
+      333.0003967285156,
+      343.93780517578125
+    ],
+    "max_per_wheel_N": [
+      9883.8037109375,
+      11442.0947265625,
+      7650.740234375,
+      12792.638671875
+    ],
+    "interpretation": "200Hz force-history maxima per 50Hz control frame; includes support, not landing-only quantiles"
+  },
+  "fixed_route_events": [
+    [
+      [
+        48,
+        47,
+        1,
+        47
+      ],
+      [
+        6,
+        0,
+        1,
+        5
+      ],
+      [
+        18,
+        18,
+        0,
+        18
+      ],
+      [
+        19,
+        19,
+        0,
+        19
+      ],
+      [
+        14,
+        13,
+        1,
+        13
+      ]
+    ],
+    [
+      [
+        17,
+        14,
+        1,
+        16
+      ],
+      [
+        7,
+        0,
+        0,
+        7
+      ],
+      [
+        12,
+        12,
+        0,
+        12
+      ],
+      [
+        8,
+        8,
+        0,
+        8
+      ],
+      [
+        8,
+        8,
+        0,
+        8
+      ]
+    ],
+    [
+      [
+        19,
+        19,
+        0,
+        19
+      ],
+      [
+        5,
+        0,
+        0,
+        5
+      ],
+      [
+        13,
+        13,
+        0,
+        13
+      ],
+      [
+        6,
+        5,
+        1,
+        5
+      ],
+      [
+        3,
+        3,
+        0,
+        3
+      ]
+    ],
+    [
+      [
+        16,
+        16,
+        0,
+        16
+      ],
+      [
+        7,
+        0,
+        0,
+        7
+      ],
+      [
+        7,
+        7,
+        0,
+        7
+      ],
+      [
+        10,
+        10,
+        0,
+        10
+      ],
+      [
+        5,
+        4,
+        0,
+        5
+      ]
+    ],
+    [
+      [
+        83,
+        82,
+        1,
+        82
+      ],
+      [
+        27,
+        3,
+        3,
+        24
+      ],
+      [
+        35,
+        34,
+        1,
+        34
+      ],
+      [
+        29,
+        29,
+        0,
+        29
+      ],
+      [
+        22,
+        22,
+        0,
+        22
+      ]
+    ]
+  ],
+  "fixed_route_axes": [
+    "variant_in_column_order",
+    "command_group",
+    "episodes_supported_complete_physical_timeout"
+  ],
+  "omni_command_samples": [
+    292714,
+    378307,
+    101602,
+    105433,
+    63926
+  ],
+  "state_hashes_unchanged": true,
+  "meaning": "matched initial terrain and simulator seed; fixed zero-update student rollout, not real-world validation"
+}

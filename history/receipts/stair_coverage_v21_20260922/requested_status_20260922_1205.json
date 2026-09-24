@@ -1,0 +1,232 @@
+{
+  "utc": "2026-09-22T12:06:03.359648+00:00",
+  "status": {
+    "state": "training",
+    "completed_updates": 34726,
+    "seconds": 7.087155103683472,
+    "collect_seconds": 6.5693886280059814,
+    "learn_seconds": 0.5177664756774902,
+    "terrain": 5.868456840515137,
+    "value": 0.02944502290338278,
+    "surrogate": 0.014099232759326697,
+    "entropy": 8.11258111000061,
+    "mean_latent_loss": 0.0022541138110682367,
+    "mean_load_balance_loss": 3.273483603152272e-05
+  },
+  "pipeline": {
+    "state": "train_34823",
+    "supervisor_pid": 56642,
+    "completed_updates": 33881,
+    "stage_target": 34823,
+    "time_utc": "2026-09-22T10:24:32.316476+00:00",
+    "automatic_extension": false,
+    "authorized_new_updates": 10000,
+    "spent_new_updates": 2058,
+    "remaining_new_updates": 7942,
+    "discarded_optimizer_updates": 8,
+    "v21_new_updates": 16,
+    "v21_limit": 958,
+    "child_pid": 57086
+  },
+  "terrain_by_type": {
+    "wave": {
+      "count": 328,
+      "mean": 5.817073170731708,
+      "counts_L0_to_L9": [
+        5,
+        13,
+        18,
+        26,
+        36,
+        39,
+        38,
+        51,
+        61,
+        41
+      ],
+      "curriculum_fraction": 0.6463414634146342
+    },
+    "slope_up": {
+      "count": 246,
+      "mean": 5.117886178861789,
+      "counts_L0_to_L9": [
+        0,
+        2,
+        4,
+        16,
+        36,
+        92,
+        76,
+        19,
+        1,
+        0
+      ],
+      "curriculum_fraction": 0.5686540198735321,
+      "nominal_angle_deg_mean": 30.579268292682926,
+      "nominal_angle_deg_max": 42.5,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "slope_down": {
+      "count": 245,
+      "mean": 5.930612244897959,
+      "counts_L0_to_L9": [
+        5,
+        11,
+        17,
+        14,
+        23,
+        20,
+        33,
+        40,
+        42,
+        40
+      ],
+      "curriculum_fraction": 0.6589569160997732,
+      "nominal_angle_deg_mean": 33.40816326530612,
+      "nominal_angle_deg_max": 45.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "rough_slope": {
+      "count": 328,
+      "mean": 5.9939024390243905,
+      "counts_L0_to_L9": [
+        5,
+        12,
+        24,
+        27,
+        26,
+        34,
+        31,
+        50,
+        56,
+        63
+      ],
+      "curriculum_fraction": 0.6659891598915989,
+      "nominal_angle_deg_mean": 33.582317073170735,
+      "nominal_angle_deg_max": 45.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "stairs_up": {
+      "count": 409,
+      "mean": 6.34963325183374,
+      "counts_L0_to_L9": [
+        5,
+        21,
+        17,
+        17,
+        29,
+        46,
+        37,
+        69,
+        72,
+        96
+      ],
+      "curriculum_fraction": 0.7055148057593045
+    },
+    "stairs_down": {
+      "count": 328,
+      "mean": 5.847560975609756,
+      "counts_L0_to_L9": [
+        6,
+        10,
+        20,
+        24,
+        34,
+        46,
+        38,
+        48,
+        52,
+        50
+      ],
+      "curriculum_fraction": 0.6497289972899729
+    },
+    "obstacles": {
+      "count": 164,
+      "mean": 6.219512195121951,
+      "counts_L0_to_L9": [
+        1,
+        1,
+        9,
+        8,
+        14,
+        21,
+        30,
+        29,
+        26,
+        25
+      ],
+      "curriculum_fraction": 0.6910569105691057
+    },
+    "flat": {
+      "count": 1639,
+      "mean": 5.8059792556436856,
+      "counts_L0_to_L9": [
+        35,
+        63,
+        115,
+        117,
+        152,
+        194,
+        234,
+        213,
+        245,
+        271
+      ],
+      "curriculum_fraction": 0.6451088061826318
+    },
+    "pit": {
+      "count": 409,
+      "mean": 1.8117359413202934,
+      "counts_L0_to_L21": [
+        29,
+        19,
+        361,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_height_m": 0.24058679706601466,
+      "curriculum_fraction": 0.08627314006287111
+    }
+  },
+  "allocation": {
+    "flat": 1639,
+    "pit": 409,
+    "wave": 328,
+    "slope_down": 245,
+    "rough_slope": 328,
+    "slope_up": 246,
+    "stairs_up": 409,
+    "stairs_down": 328,
+    "obstacles": 164
+  },
+  "pit": {
+    "frontier_level": 2,
+    "frontier_height_m": 0.25,
+    "max_height_m": 1.2
+  },
+  "processes": "   PID     ELAPSED %CPU COMMAND\n 56191    01:54:06  0.0 python\n 56642    01:43:55  0.0 python\n 57086    01:41:31  145 python\n",
+  "gpu": "NVIDIA GeForce RTX 5090, 65 %, 13641 MiB, 32607 MiB\n",
+  "numeric_metrics_finite": true,
+  "evaluation_files": [],
+  "checkpoint_latest": {
+    "file": "model_34500.pt",
+    "bytes": 27817811
+  }
+}

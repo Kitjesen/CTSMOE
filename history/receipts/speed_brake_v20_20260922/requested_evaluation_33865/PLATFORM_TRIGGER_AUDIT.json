@@ -1,0 +1,270 @@
+{
+  "optimizer_updates": 0,
+  "scope": "existing immutable traces only",
+  "cases": [
+    {
+      "id": 49,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "end_reason": "safe_tile_endpoint",
+      "hull_steps": 72,
+      "hull_scan_relief_le_5cm_steps": 0,
+      "hull_3near_contacts_steps": 72,
+      "hull_scan_and_3contacts_steps": 0,
+      "recorded_supported_steps": 0,
+      "hull_scan_relief_range": [
+        0.09000205993652344,
+        0.34000396728515625
+      ],
+      "zero_command_steps": 0,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 51,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "end_reason": "safe_tile_endpoint",
+      "hull_steps": 40,
+      "hull_scan_relief_le_5cm_steps": 0,
+      "hull_3near_contacts_steps": 40,
+      "hull_scan_and_3contacts_steps": 0,
+      "recorded_supported_steps": 0,
+      "hull_scan_relief_range": [
+        0.09000396728515625,
+        0.3400001525878906
+      ],
+      "zero_command_steps": 0,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 53,
+      "terrain": "stairs_up",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "end_reason": "safe_tile_endpoint",
+      "hull_steps": 20,
+      "hull_scan_relief_le_5cm_steps": 0,
+      "hull_3near_contacts_steps": 20,
+      "hull_scan_and_3contacts_steps": 0,
+      "recorded_supported_steps": 0,
+      "hull_scan_relief_range": [
+        0.09000396728515625,
+        0.34000205993652344
+      ],
+      "zero_command_steps": 0,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 55,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "end_reason": "supported_platform_dwell",
+      "hull_steps": 162,
+      "hull_scan_relief_le_5cm_steps": 101,
+      "hull_3near_contacts_steps": 162,
+      "hull_scan_and_3contacts_steps": 101,
+      "recorded_supported_steps": 101,
+      "hull_scan_relief_range": [
+        0.045001983642578125,
+        0.4700050354003906
+      ],
+      "zero_command_steps": 99,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 57,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "end_reason": "supported_platform_dwell",
+      "hull_steps": 130,
+      "hull_scan_relief_le_5cm_steps": 101,
+      "hull_3near_contacts_steps": 130,
+      "hull_scan_and_3contacts_steps": 101,
+      "recorded_supported_steps": 101,
+      "hull_scan_relief_range": [
+        0.045001983642578125,
+        0.4700050354003906
+      ],
+      "zero_command_steps": 99,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 59,
+      "terrain": "stairs_up",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "end_reason": "timeout",
+      "hull_steps": 25,
+      "hull_scan_relief_le_5cm_steps": 6,
+      "hull_3near_contacts_steps": 20,
+      "hull_scan_and_3contacts_steps": 6,
+      "recorded_supported_steps": 6,
+      "hull_scan_relief_range": [
+        0.04500389099121094,
+        0.4700050354003906
+      ],
+      "zero_command_steps": 1022,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 61,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "end_reason": "timeout",
+      "hull_steps": 608,
+      "hull_scan_relief_le_5cm_steps": 23,
+      "hull_3near_contacts_steps": 608,
+      "hull_scan_and_3contacts_steps": 23,
+      "recorded_supported_steps": 23,
+      "hull_scan_relief_range": [
+        3.814697265625e-06,
+        0.17500686645507812
+      ],
+      "zero_command_steps": 564,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 63,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "end_reason": "supported_platform_dwell",
+      "hull_steps": 117,
+      "hull_scan_relief_le_5cm_steps": 101,
+      "hull_3near_contacts_steps": 117,
+      "hull_scan_and_3contacts_steps": 101,
+      "recorded_supported_steps": 101,
+      "hull_scan_relief_range": [
+        3.814697265625e-06,
+        0.17500686645507812
+      ],
+      "zero_command_steps": 99,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 65,
+      "terrain": "stairs_down",
+      "level": 6,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "end_reason": "timeout",
+      "hull_steps": 1087,
+      "hull_scan_relief_le_5cm_steps": 7,
+      "hull_3near_contacts_steps": 1084,
+      "hull_scan_and_3contacts_steps": 4,
+      "recorded_supported_steps": 4,
+      "hull_scan_relief_range": [
+        3.814697265625e-06,
+        0.1750049591064453
+      ],
+      "zero_command_steps": 1080,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 67,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "end_reason": "timeout",
+      "hull_steps": 534,
+      "hull_scan_relief_le_5cm_steps": 24,
+      "hull_3near_contacts_steps": 534,
+      "hull_scan_and_3contacts_steps": 24,
+      "recorded_supported_steps": 24,
+      "hull_scan_relief_range": [
+        3.814697265625e-06,
+        0.25000572204589844
+      ],
+      "zero_command_steps": 503,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 69,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "end_reason": "supported_platform_dwell",
+      "hull_steps": 114,
+      "hull_scan_relief_le_5cm_steps": 101,
+      "hull_3near_contacts_steps": 114,
+      "hull_scan_and_3contacts_steps": 101,
+      "recorded_supported_steps": 101,
+      "hull_scan_relief_range": [
+        3.814697265625e-06,
+        0.25000572204589844
+      ],
+      "zero_command_steps": 99,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    },
+    {
+      "id": 71,
+      "terrain": "stairs_down",
+      "level": 9,
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "end_reason": "supported_platform_dwell",
+      "hull_steps": 108,
+      "hull_scan_relief_le_5cm_steps": 104,
+      "hull_3near_contacts_steps": 107,
+      "hull_scan_and_3contacts_steps": 103,
+      "recorded_supported_steps": 103,
+      "hull_scan_relief_range": [
+        3.814697265625e-06,
+        0.2500038146972656
+      ],
+      "zero_command_steps": 102,
+      "note": "Recorded sensors may have update latency; these marginals do not prove counterfactual success without rerun."
+    }
+  ]
+}

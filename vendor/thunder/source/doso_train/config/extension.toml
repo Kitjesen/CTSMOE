@@ -1,0 +1,18 @@
+[package]
+version = "0.1.0"
+category = "isaaclab"
+readme = "../../README.md"
+title = "DOSO Thunder Training"
+author = "Shanghai Qiongpei Technology Co., Ltd."
+maintainer = "Kitjesen"
+description = "Private standalone Isaac Lab training tasks for DOSO Thunder v4."
+repository = "https://github.com/Kitjesen/doso-train"
+keywords = ["isaaclab", "doso", "thunder", "reinforcement-learning"]
+
+[dependencies]
+"isaaclab" = {}
+"isaaclab_rl" = {}
+"isaaclab_tasks" = {}
+
+[[python.module]]
+name = "doso_train"

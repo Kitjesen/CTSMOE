@@ -1,0 +1,495 @@
+{
+  "scope": "offline diagnostic; terminal pre-reset action targets are unavailable",
+  "suites": [
+    {
+      "suite": "terrain83",
+      "case_count": 332,
+      "dt_s": 0.02,
+      "leg_target_rate_rad_s": 12.0,
+      "nominal_target_step_rad": 0.24,
+      "target_step_limit_rad": 0.2401,
+      "raw_over_limit_count": 70,
+      "raw_over_limit_source_count": 40,
+      "raw_over_limit_candidate_count": 30,
+      "raw_over_limit_by_label": {
+        "early_31831": 20,
+        "early_31831_teacher": 20,
+        "V14_32131": 16,
+        "V14_32131_teacher": 14
+      },
+      "raw_over_limit_at_end_step_count": 70,
+      "raw_over_limit_with_termination_terms_count": 70,
+      "observable_over_limit_count": 0,
+      "observable_max_by_label_rad": {
+        "V14_32131": 0.24000000953674316,
+        "V14_32131_teacher": 0.24000000953674316,
+        "early_31831": 0.24000000953674316,
+        "early_31831_teacher": 0.24000000953674316
+      },
+      "termination_case_count": 143,
+      "termination_target_equals_joint_pos_count": 143,
+      "termination_target_joint_pos_max_error_rad": 0.0,
+      "lost_pre_reset_terminal_target_count": 143,
+      "candidate_raw_over_limit_samples": [
+        {
+          "id": 201,
+          "label": "V14_32131",
+          "terrain": "slope_up",
+          "level": 9,
+          "mode": "direct",
+          "direction": "forward",
+          "velocity": [
+            0.3,
+            0.0,
+            0.0
+          ],
+          "end_step": 832,
+          "terms": [
+            "actuator_violation"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.5683461427688599,
+            "step": 832,
+            "joint_column": 5,
+            "before_rad": -0.6915707588195801,
+            "after_rad": -1.25991690158844,
+            "joint": "fl_calf_joint"
+          }
+        },
+        {
+          "id": 227,
+          "label": "V14_32131",
+          "terrain": "obstacles",
+          "level": 9,
+          "mode": "direct",
+          "direction": "forward",
+          "velocity": [
+            1.2,
+            0.0,
+            0.0
+          ],
+          "end_step": 239,
+          "terms": [
+            "stair_route_exit"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.5627325773239136,
+            "step": 239,
+            "joint_column": 7,
+            "before_rad": 0.5096035003662109,
+            "after_rad": 1.0723360776901245,
+            "joint": "rr_thigh_joint"
+          }
+        },
+        {
+          "id": 203,
+          "label": "V14_32131",
+          "terrain": "slope_up",
+          "level": 9,
+          "mode": "direct",
+          "direction": "forward",
+          "velocity": [
+            1.2,
+            0.0,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.5498015880584717,
+            "step": 1249,
+            "joint_column": 7,
+            "before_rad": 1.796459436416626,
+            "after_rad": 1.2466578483581543,
+            "joint": "rr_thigh_joint"
+          }
+        },
+        {
+          "id": 286,
+          "label": "V14_32131_teacher",
+          "terrain": "slope_up",
+          "level": 9,
+          "mode": "direct",
+          "direction": "forward",
+          "velocity": [
+            1.2,
+            0.0,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.5397310256958008,
+            "step": 1249,
+            "joint_column": 7,
+            "before_rad": 2.03483510017395,
+            "after_rad": 1.4951040744781494,
+            "joint": "rr_thigh_joint"
+          }
+        },
+        {
+          "id": 292,
+          "label": "V14_32131_teacher",
+          "terrain": "slope_down",
+          "level": 9,
+          "mode": "direct",
+          "direction": "forward",
+          "velocity": [
+            1.2,
+            0.0,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.5001286268234253,
+            "step": 1249,
+            "joint_column": 7,
+            "before_rad": 1.8671221733093262,
+            "after_rad": 1.3669935464859009,
+            "joint": "rr_thigh_joint"
+          }
+        },
+        {
+          "id": 224,
+          "label": "V14_32131",
+          "terrain": "obstacles",
+          "level": 6,
+          "mode": "direct",
+          "direction": "forward",
+          "velocity": [
+            1.2,
+            0.0,
+            0.0
+          ],
+          "end_step": 204,
+          "terms": [
+            "stair_route_exit"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.49148285388946533,
+            "step": 204,
+            "joint_column": 7,
+            "before_rad": 0.5742346048355103,
+            "after_rad": 1.0657174587249756,
+            "joint": "rr_thigh_joint"
+          }
+        },
+        {
+          "id": 310,
+          "label": "V14_32131_teacher",
+          "terrain": "obstacles",
+          "level": 9,
+          "mode": "direct",
+          "direction": "forward",
+          "velocity": [
+            1.2,
+            0.0,
+            0.0
+          ],
+          "end_step": 229,
+          "terms": [
+            "stair_route_exit"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.45780205726623535,
+            "step": 229,
+            "joint_column": 7,
+            "before_rad": 0.15700006484985352,
+            "after_rad": 0.6148021221160889,
+            "joint": "rr_thigh_joint"
+          }
+        },
+        {
+          "id": 198,
+          "label": "V14_32131",
+          "terrain": "slope_up",
+          "level": 6,
+          "mode": "direct",
+          "direction": "forward",
+          "velocity": [
+            0.3,
+            0.0,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.44936323165893555,
+            "step": 1249,
+            "joint_column": 5,
+            "before_rad": -1.6564960479736328,
+            "after_rad": -1.2071328163146973,
+            "joint": "fl_calf_joint"
+          }
+        }
+      ]
+    },
+    {
+      "suite": "flat25",
+      "case_count": 80,
+      "dt_s": 0.02,
+      "leg_target_rate_rad_s": 12.0,
+      "nominal_target_step_rad": 0.24,
+      "target_step_limit_rad": 0.2401,
+      "raw_over_limit_count": 26,
+      "raw_over_limit_source_count": 14,
+      "raw_over_limit_candidate_count": 12,
+      "raw_over_limit_by_label": {
+        "early_31831": 7,
+        "early_31831_teacher": 7,
+        "V14_32131": 5,
+        "V14_32131_teacher": 7
+      },
+      "raw_over_limit_at_end_step_count": 26,
+      "raw_over_limit_with_termination_terms_count": 26,
+      "observable_over_limit_count": 0,
+      "observable_max_by_label_rad": {
+        "V14_32131": 0.24000000953674316,
+        "V14_32131_teacher": 0.24000000953674316,
+        "early_31831": 0.24000000953674316,
+        "early_31831_teacher": 0.24000000953674316
+      },
+      "termination_case_count": 80,
+      "termination_target_equals_joint_pos_count": 80,
+      "termination_target_joint_pos_max_error_rad": 0.0,
+      "lost_pre_reset_terminal_target_count": 80,
+      "candidate_raw_over_limit_samples": [
+        {
+          "id": 66,
+          "label": "V14_32131_teacher",
+          "terrain": "flat",
+          "level": 0,
+          "mode": "direct",
+          "direction": "diagonal",
+          "velocity": [
+            0.4,
+            0.3,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.4204287528991699,
+            "step": 1249,
+            "joint_column": 5,
+            "before_rad": -2.1436333656311035,
+            "after_rad": -1.7232046127319336,
+            "joint": "fl_calf_joint"
+          }
+        },
+        {
+          "id": 46,
+          "label": "V14_32131",
+          "terrain": "flat",
+          "level": 0,
+          "mode": "direct",
+          "direction": "diagonal",
+          "velocity": [
+            0.4,
+            0.3,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.4173126220703125,
+            "step": 1249,
+            "joint_column": 11,
+            "before_rad": 2.1242835521698,
+            "after_rad": 1.7069709300994873,
+            "joint": "rl_calf_joint"
+          }
+        },
+        {
+          "id": 43,
+          "label": "V14_32131",
+          "terrain": "flat",
+          "level": 0,
+          "mode": "direct",
+          "direction": "right",
+          "velocity": [
+            0.0,
+            -0.4,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.3972533941268921,
+            "step": 1249,
+            "joint_column": 8,
+            "before_rad": -2.1899850368499756,
+            "after_rad": -1.7927316427230835,
+            "joint": "rr_calf_joint"
+          }
+        },
+        {
+          "id": 67,
+          "label": "V14_32131_teacher",
+          "terrain": "flat",
+          "level": 0,
+          "mode": "direct",
+          "direction": "diagonal_back",
+          "velocity": [
+            -0.4,
+            -0.3,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.3632082939147949,
+            "step": 1249,
+            "joint_column": 8,
+            "before_rad": -2.0767784118652344,
+            "after_rad": -1.7135701179504395,
+            "joint": "rr_calf_joint"
+          }
+        },
+        {
+          "id": 77,
+          "label": "V14_32131_teacher",
+          "terrain": "flat",
+          "level": 0,
+          "mode": "settle",
+          "direction": "diagonal_back",
+          "velocity": [
+            -0.4,
+            -0.3,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.35679078102111816,
+            "step": 1249,
+            "joint_column": 8,
+            "before_rad": -2.0902576446533203,
+            "after_rad": -1.7334668636322021,
+            "joint": "rr_calf_joint"
+          }
+        },
+        {
+          "id": 56,
+          "label": "V14_32131",
+          "terrain": "flat",
+          "level": 0,
+          "mode": "settle",
+          "direction": "diagonal",
+          "velocity": [
+            0.4,
+            0.3,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.3469736576080322,
+            "step": 1249,
+            "joint_column": 8,
+            "before_rad": -2.2809295654296875,
+            "after_rad": -1.9339559078216553,
+            "joint": "rr_calf_joint"
+          }
+        },
+        {
+          "id": 63,
+          "label": "V14_32131_teacher",
+          "terrain": "flat",
+          "level": 0,
+          "mode": "direct",
+          "direction": "right",
+          "velocity": [
+            0.0,
+            -0.4,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.317061185836792,
+            "step": 1249,
+            "joint_column": 2,
+            "before_rad": 2.0767605304718018,
+            "after_rad": 1.7596993446350098,
+            "joint": "fr_calf_joint"
+          }
+        },
+        {
+          "id": 72,
+          "label": "V14_32131_teacher",
+          "terrain": "flat",
+          "level": 0,
+          "mode": "settle",
+          "direction": "left",
+          "velocity": [
+            0.0,
+            0.4,
+            0.0
+          ],
+          "end_step": 1249,
+          "terms": [
+            "time_out"
+          ],
+          "raw_peak": {
+            "peak_rad": 0.28939151763916016,
+            "step": 1249,
+            "joint_column": 2,
+            "before_rad": 2.233621835708618,
+            "after_rad": 1.944230318069458,
+            "joint": "fr_calf_joint"
+          }
+        }
+      ]
+    }
+  ],
+  "gate": {
+    "accepted": false,
+    "action": "reject",
+    "reason_count": 103,
+    "reason_counts": {
+      "absolute_max_rms": 4,
+      "lost_pose_pass": 3,
+      "xy_tail_regression": 9,
+      "hard_position_limit": 22,
+      "lost_tracking_pass": 1,
+      "target_step_limit": 42,
+      "lost_straight_case": 3,
+      "straight_regression": 14,
+      "new_physical_failure": 1,
+      "lost_skill_case": 2,
+      "stair_vz_regression": 1,
+      "yaw_tail_regression": 1
+    },
+    "target_step_reason_count": 42,
+    "independent_non_target_reason_count": 61
+  },
+  "interpretation": {
+    "observed_nonterminal_target_limit_violation": false,
+    "terminal_pre_reset_target_recovered": false,
+    "offline_mask_authorizes_gate_acceptance": false
+  }
+}

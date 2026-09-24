@@ -1,0 +1,132 @@
+{
+  "state": "evaluation_review_complete_diagnostic_amendment_prepared",
+  "source_completed_updates": 33174,
+  "source_checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+  "source_sha256": "6578617f2897ade0677c9cfbc080b491ad2dc2ffd131f6567c4e62aefa2ea24e",
+  "remote_root": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20",
+  "authorized_new_updates": 10000,
+  "spent_new_updates": 2042,
+  "remaining_new_updates": 7958,
+  "discarded_optimizer_updates": 8,
+  "targets": [
+    34823,
+    37823,
+    41823
+  ],
+  "num_envs": 4096,
+  "prior_training_stopped_cleanly": true,
+  "ssh_helper_session_id": 52414,
+  "automatic_parallel_training": false,
+  "hardware_deployment": false,
+  "latest_behavior_evaluation_completed": 33865,
+  "changed_runtime_files": [
+    "omni_commands.py",
+    "omni_lift.py"
+  ],
+  "next": "Prepare isolated stair-platform diagnostic fix with geometric/support evidence and tests; zero-update paired96 rerun only after audit. Training remains stopped33865. No automatic flat20/reward change or old-driver restart; prepare a single-factor finite repair from valid metrics.",
+  "automation_id": "thunder-v19-1",
+  "supervisor_pid": null,
+  "driver": "evaluate_requested_33865.py",
+  "last_checked_utc": "2026-09-22T08:39:02.351449+00:00",
+  "local_tests": "6 runtime/identity tests passed; command28 and braking15 passed; ruff passed",
+  "remote_tests": "43 command/braking +3 selected runtime tests passed",
+  "qualification_optimizer_updates": 0,
+  "launch_failure": "First driver rejected before STARTED or preflight: transcribed SHA had65 chars. Original failed files preserved. driver_v2 and verifier_v2 consume corrected identity from directly transferred SOURCE_33174_IDENTITY.json; source hash checked before launch.",
+  "completed_updates": 33865,
+  "training_pid": null,
+  "preflight": "passed3000_control_steps_zero_updates",
+  "independent_verification": "passed",
+  "focused_smoke": "passed_brake25_and_stairend_zero_updates",
+  "current_stage_target": 34823,
+  "latest_iteration_seconds": 7.230730056762695,
+  "collect_seconds": 6.666719913482666,
+  "learn_seconds": 0.5640101432800293,
+  "actual_terrain_counts": {
+    "flat": 1639,
+    "pit": 409,
+    "wave": 328,
+    "slope_down": 245,
+    "rough_slope": 328,
+    "slope_up": 246,
+    "stairs_up": 409,
+    "stairs_down": 328,
+    "obstacles": 164
+  },
+  "active_sampling": {
+    "scope": "flat_only",
+    "nonzero_abs_ranges": {
+      "lin_vel_x": [
+        0.1,
+        2.0
+      ],
+      "lin_vel_y": [
+        0.2,
+        1.0
+      ],
+      "ang_vel_yaw": [
+        0.2,
+        1.5
+      ]
+    },
+    "zero_axes_and_full_stop_allowed": true,
+    "magnitude_distribution": "uniform before boundary handling",
+    "boundary_policy": "magnitude-preserving reflections, up to four resamples, then 0.2 m/s cardinal recovery",
+    "initial_ramp_probability": 0.5,
+    "initial_ramp_s": 0.2,
+    "probabilities_scope": "base sampler; sequence cohort and boundary handling alter final frequencies"
+  },
+  "actual_sampled_goal_ranges": {
+    "lin_vel_x": [
+      0.10147158801555634,
+      1.9991925954818726
+    ],
+    "lin_vel_y": [
+      0.2023458629846573,
+      0.9961265921592712
+    ],
+    "ang_vel_yaw": [
+      0.20012670755386353,
+      1.499512791633606
+    ]
+  },
+  "stair_end_suppression_new_reward_enabled": false,
+  "last_health_check": {
+    "time_utc": "2026-09-22T08:39:02.351449+00:00",
+    "training_running": false,
+    "gpu_compute_processes": [],
+    "check_method": "nvidia-smi query compute-apps and finalized evaluation status",
+    "last_training_checkpoint": "model_33864.pt",
+    "completed_updates": 33865,
+    "expected_stop": true
+  },
+  "evaluation_root": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/requested_evaluation_33865",
+  "training_stopped_reason": "User requested immediate evaluation before considering flat20. STOP saved model and both optimizers; old pipeline nonzero exit is expected.",
+  "flat20_applied": false,
+  "flat20_decision": "deferred_new_speed_coverage_and_braking_incomplete",
+  "automatic_training": false,
+  "evaluation_summary": {
+    "fixed_cases": 652,
+    "optimizer_updates": 0,
+    "checkpoint_hashes_unchanged": true,
+    "student_flat_pose": {
+      "passed": 20,
+      "total": 20
+    },
+    "student_flat_joint_posture_tracking": {
+      "passed": 18,
+      "total": 20
+    },
+    "teacher_flat_joint_posture_tracking": {
+      "passed": 20,
+      "total": 20
+    },
+    "student_braking_physical_failures": 1,
+    "student_braking_total_cases": 36,
+    "overspeed_peak_rad_s": 46.12873077392578,
+    "stair_terminal_diagnostic_caveat": "Global scan relief rejects physically supported platform samples; ready timer is not a pure contact or stability metric. Requires isolated diagnostic amendment and paired zero-update rerun.",
+    "upstairs_vz_interpretation_correction": "0.755m/s is while still climbing at2.24s, not platform recovery. Case58 hull entry4.12s, post-entry max0.186; support4.50s, post-support max0.039. Downstairs case70 post-entry rebound0.486 remains real. Phase weight0 at both transition impacts; cannot attribute to sudden recovery reward."
+  },
+  "review_report": "D:\\inovxio\\brain\\train\\rough\\cts_moe\\official\\receipts\\speed_brake_v20_20260922\\requested_evaluation_33865\\EVALUATION_REVIEW.md",
+  "diagnostic_plot": "D:\\inovxio\\brain\\train\\rough\\cts_moe\\official\\receipts\\speed_brake_v20_20260922\\requested_evaluation_33865\\DIAGNOSTIC_OVERVIEW.png",
+  "stair_transition_cause_review": "requested_evaluation_33865/STAIR_TRANSITION_CAUSE_REVIEW.md"
+}

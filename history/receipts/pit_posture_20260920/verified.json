@@ -1,0 +1,62 @@
+{
+  "completed_updates": 41437,
+  "seconds": 7.092306137084961,
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "pit_climb_totals": true,
+    "pit_individual": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true,
+    "terrain_allocation": true
+  },
+  "starting_completed_updates": 41426,
+  "posture": {
+    "profile": "phase_stance_v1",
+    "target_height_m": 0.46,
+    "height_tolerance_m": 0.1,
+    "joint_tolerance_rad": {
+      "hip": 0.25,
+      "thigh": 0.45,
+      "calf": 0.55
+    },
+    "joint_weight": -1.0,
+    "height_weight": -0.5,
+    "settle_budget_s": 6.0,
+    "approach": {
+      "count": 5,
+      "acceptable": 0.0,
+      "rms_rad": 0.7745766043663025,
+      "height_m": 0.39850372076034546,
+      "joint_cost": 1.32209050655365,
+      "height_cost": 0.5907759666442871
+    },
+    "platform": {
+      "count": 1526,
+      "acceptable": 0.007863696664571762,
+      "rms_rad": 0.6176204681396484,
+      "height_m": 0.30299854278564453,
+      "joint_cost": 0.48840901255607605,
+      "height_cost": 2.4980673789978027
+    }
+  },
+  "counts": {
+    "stairs_up": 819,
+    "pit": 1639,
+    "wave": 246,
+    "stairs_down": 409,
+    "flat": 123,
+    "slope_up": 245,
+    "obstacles": 205,
+    "slope_down": 205,
+    "rough_slope": 205
+  },
+  "losses": {
+    "value": 0.20735587179660797,
+    "surrogate": -0.018212138896342368,
+    "mean_latent_loss": 0.0016579206159804017
+  }
+}

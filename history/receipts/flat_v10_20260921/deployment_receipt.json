@@ -1,0 +1,43 @@
+{
+  "completed_updates": 44727,
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "pit_climb_totals": true,
+    "pit_individual": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true,
+    "terrain_allocation": true
+  },
+  "reward": {
+    "profile": "flat_outlier_v1",
+    "weight": -2.0,
+    "deadband_rad": 0.0,
+    "command_gating": false,
+    "replaces": "surface_joint_posture on flat only",
+    "teacher": {
+      "count": 1229,
+      "cost": 0.29703301191329956,
+      "rms_rad": 0.08764056861400604,
+      "height_m": 0.460967093706131,
+      "mean_l1": 0.1932680904865265,
+      "tail_square": 0.20752988755702972,
+      "max_abs_joint_rad": 1.740704894065857
+    },
+    "student": {
+      "count": 410,
+      "cost": 0.3011583983898163,
+      "rms_rad": 0.09091392159461975,
+      "height_m": 0.4609357416629791,
+      "mean_l1": 0.19943960011005402,
+      "tail_square": 0.20343764126300812,
+      "max_abs_joint_rad": 0.6618058681488037
+    },
+    "top_k": 3,
+    "tail_weight": 0.5
+  },
+  "seconds": 6.993149280548096
+}

@@ -1,0 +1,6838 @@
+{
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_continuous1000_20260920/model_44105.pt",
+  "completed_updates": 44106,
+  "history": [
+    {
+      "path": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "label": "43106_before_continuous1000",
+      "teacher": false,
+      "fields": {
+        "iter": 43105,
+        "completed_updates": 43106,
+        "pit_posture_profile": "phase_stance_v1",
+        "surface_posture_profile": "level_surface_v1",
+        "stance_strength_profile": "strong_stand_v1",
+        "startup_repair_profile": "omni_start_v2",
+        "uphill_speed_limit": 1.2,
+        "common_step_counter": 1034544,
+        "learning_rate": 0.00011390625000000003,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "climb_first_v2",
+        "pit_course_profile": "individual_speed_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      }
+    },
+    {
+      "path": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "label": "44106_continuous1000",
+      "teacher": false,
+      "fields": {
+        "iter": 44105,
+        "completed_updates": 44106,
+        "pit_posture_profile": "phase_stance_v1",
+        "surface_posture_profile": "level_surface_v1",
+        "stance_strength_profile": "strong_stand_v1",
+        "startup_repair_profile": "omni_start_v7",
+        "uphill_speed_limit": 1.2,
+        "common_step_counter": 1058544,
+        "learning_rate": 0.00011390625000000005,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "climb_first_v2",
+        "pit_course_profile": "individual_speed_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      }
+    },
+    {
+      "path": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "label": "44106_continuous1000_teacher",
+      "teacher": true,
+      "fields": {
+        "iter": 44105,
+        "completed_updates": 44106,
+        "pit_posture_profile": "phase_stance_v1",
+        "surface_posture_profile": "level_surface_v1",
+        "stance_strength_profile": "strong_stand_v1",
+        "startup_repair_profile": "omni_start_v7",
+        "uphill_speed_limit": 1.2,
+        "common_step_counter": 1058544,
+        "learning_rate": 0.00011390625000000005,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "off",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "climb_first_v2",
+        "pit_course_profile": "individual_speed_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 0,
+      "end_step": 113,
+      "seconds": 2.2800000000000002,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.3590545654296875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1240234375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 1,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.7891616821289062,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.10977363586425781,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 2,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.2210540771484375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.0080184936523438,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 3,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.07811737060546875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.8384342193603516,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "id": 4,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.3944091796875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.06155967712402344,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "id": 5,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.032012939453125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.13907623291015625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 6,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 2.6610260009765625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.0397300720214844,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 7,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.166015625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.8033962249755859,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "id": 8,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 2.1691741943359375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.8455162048339844,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "id": 9,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.7859954833984375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5060291290283203,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 10,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 2.3032073974609375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1428699493408203,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 11,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -1.739105224609375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.06571578979492188,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 12,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.094482421875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.2062664031982422,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 13,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.15950775146484375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.2481117248535156,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "id": 14,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.00783538818359375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.03747749328613281,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "id": 15,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.1520538330078125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.10876846313476562,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 16,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 1.7335433959960938,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.8034114837646484,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 17,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -1.4424972534179688,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5299644470214844,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "id": 18,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 1.3452529907226562,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.13750457763671875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "id": 19,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.41771697998046875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.4840679168701172,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 20,
+      "end_step": 508,
+      "seconds": 10.18,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.003166198730469,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.41513824462890625,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 21,
+      "end_step": 350,
+      "seconds": 7.0200000000000005,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.0039520263671875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3424072265625,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 22,
+      "end_step": 341,
+      "seconds": 6.84,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.010089874267578,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6019668579101562,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 23,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.7432527542114258,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.18404388427734375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 24,
+      "end_step": 507,
+      "seconds": 10.16,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.007474899291992,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.27925872802734375,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 25,
+      "end_step": 307,
+      "seconds": 6.16,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.009273529052734,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.7454910278320312,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 26,
+      "end_step": 647,
+      "seconds": 12.96,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.002338409423828,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.54205322265625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 27,
+      "end_step": 348,
+      "seconds": 6.98,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.0018157958984375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1790771484375,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 28,
+      "end_step": 196,
+      "seconds": 3.94,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.017578125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1363525390625,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 29,
+      "end_step": 748,
+      "seconds": 14.98,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.0015058517456055,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.4511871337890625,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 30,
+      "end_step": 401,
+      "seconds": 8.040000000000001,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.00322151184082,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.21733856201171875,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 31,
+      "end_step": 225,
+      "seconds": 4.5200000000000005,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.009599685668945,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.14026641845703125,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 32,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 3.2289466857910156,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.232635498046875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 33,
+      "end_step": 733,
+      "seconds": 14.68,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.004180908203125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.56243896484375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 34,
+      "end_step": 274,
+      "seconds": 5.5,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.01123046875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.7328033447265625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 35,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.4817028045654297,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.33892822265625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 36,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.23653411865234375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 3.452362060546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 37,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.64469051361084,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.41162109375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 38,
+      "end_step": 524,
+      "seconds": 10.5,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.001350402832031,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6404571533203125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 39,
+      "end_step": 171,
+      "seconds": 3.44,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.008014678955078,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1576385498046875,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 40,
+      "end_step": 188,
+      "seconds": 3.7800000000000002,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.0148162841796875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2947998046875,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 41,
+      "end_step": 392,
+      "seconds": 7.86,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.004530906677246,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.18780517578125,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 42,
+      "end_step": 111,
+      "seconds": 2.24,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.2152442932128906,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1550445556640625,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 43,
+      "end_step": 96,
+      "seconds": 1.94,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.0978755950927734,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2036590576171875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 44,
+      "end_step": 600,
+      "seconds": 12.02,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.002937316894531,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.0958251953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 45,
+      "end_step": 336,
+      "seconds": 6.74,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.005100250244141,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.706817626953125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 46,
+      "end_step": 13,
+      "seconds": 0.28,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.0478363037109375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0222625732421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 47,
+      "end_step": 9,
+      "seconds": 0.2,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.030175209045410156,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.003143310546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 48,
+      "end_step": 325,
+      "seconds": 6.5200000000000005,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 3.85659122467041,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.158935546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 49,
+      "end_step": 210,
+      "seconds": 4.22,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.004515647888184,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.168304443359375,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 50,
+      "end_step": 502,
+      "seconds": 10.06,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.0045318603515625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.7465362548828125,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 51,
+      "end_step": 122,
+      "seconds": 2.46,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.8446197509765625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.22430419921875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 52,
+      "end_step": 190,
+      "seconds": 3.8200000000000003,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.008201599121094,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.233856201171875,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 53,
+      "end_step": 706,
+      "seconds": 14.14,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.003401756286621,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.890838623046875,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 54,
+      "end_step": 175,
+      "seconds": 3.52,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 4.015800476074219,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.9307708740234375,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 55,
+      "end_step": 161,
+      "seconds": 3.24,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.00969123840332,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.251922607421875,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 56,
+      "end_step": 109,
+      "seconds": 2.2,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.9768600463867188,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.14064407348632812,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 57,
+      "end_step": 339,
+      "seconds": 6.8,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.0076751708984375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.21168899536132812,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 58,
+      "end_step": 278,
+      "seconds": 5.58,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.004749298095703,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.217041015625,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 59,
+      "end_step": 447,
+      "seconds": 8.96,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.002627372741699,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3577766418457031,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 60,
+      "end_step": 265,
+      "seconds": 5.32,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.009047508239746,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5127983093261719,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 61,
+      "end_step": 180,
+      "seconds": 3.62,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.016700744628906,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2862434387207031,
+      "straight_4m": true
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 62,
+      "end_step": 234,
+      "seconds": 4.7,
+      "physical": false,
+      "terms": [
+        "pit_success"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.160220146179199,
+      "climb": true,
+      "stable": true,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3839225769042969,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 63,
+      "end_step": 232,
+      "seconds": 4.66,
+      "physical": false,
+      "terms": [
+        "pit_success"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.174806594848633,
+      "climb": true,
+      "stable": true,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.4247884750366211,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 64,
+      "end_step": 230,
+      "seconds": 4.62,
+      "physical": false,
+      "terms": [
+        "pit_success"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.1610231399536133,
+      "climb": true,
+      "stable": true,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.39919137954711914,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 65,
+      "end_step": 244,
+      "seconds": 4.9,
+      "physical": false,
+      "terms": [
+        "pit_success"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.1462554931640625,
+      "climb": true,
+      "stable": true,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3049788475036621,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 66,
+      "end_step": 235,
+      "seconds": 4.72,
+      "physical": false,
+      "terms": [
+        "pit_success"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.1507415771484375,
+      "climb": true,
+      "stable": true,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.318911075592041,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 67,
+      "end_step": 234,
+      "seconds": 4.7,
+      "physical": false,
+      "terms": [
+        "pit_success"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.14984130859375,
+      "climb": true,
+      "stable": true,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3193936347961426,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 68,
+      "end_step": 246,
+      "seconds": 4.94,
+      "physical": false,
+      "terms": [
+        "pit_success"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.132659912109375,
+      "climb": true,
+      "stable": true,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.38782453536987305,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 69,
+      "end_step": 240,
+      "seconds": 4.82,
+      "physical": false,
+      "terms": [
+        "pit_success"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.1478729248046875,
+      "climb": true,
+      "stable": true,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3765683174133301,
+      "straight_4m": false
+    },
+    {
+      "policy": 0,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 70,
+      "end_step": 240,
+      "seconds": 4.82,
+      "physical": false,
+      "terms": [
+        "pit_success"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.1444091796875,
+      "climb": true,
+      "stable": true,
+      "checkpoint": "runs/startup_repair_repeat96_20260920/model_43105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.42664623260498047,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 71,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 3.69415283203125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.19174766540527344,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 72,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -3.570465087890625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.011560440063476562,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 73,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.06695556640625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.962667465209961,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 74,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.2378387451171875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.019969940185547,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "id": 75,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.01413726806640625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.11868667602539062,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "id": 76,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.01897430419921875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.035350799560546875,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 77,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 2.3524322509765625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.8894729614257812,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 78,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.3916549682617188,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.7484207153320312,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "id": 79,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 1.82830810546875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.4323081970214844,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "id": 80,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 1.0135345458984375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5551128387451172,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 81,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 2.4209442138671875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.030336380004882812,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 82,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.3180084228515625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.03777503967285156,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 83,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.01149749755859375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.2916755676269531,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": false,
+      "id": 84,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.05023956298828125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.3707561492919922,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": false,
+      "id": 85,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.07706451416015625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.07146263122558594,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": false,
+      "id": 86,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.04894256591796875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.03190803527832031,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 87,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 1.6079864501953125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5310440063476562,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": false,
+      "id": 88,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -1.5488815307617188,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5350379943847656,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": false,
+      "id": 89,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 1.3558197021484375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.15496826171875,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": false,
+      "id": 90,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.6538009643554688,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5315742492675781,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 91,
+      "end_step": 698,
+      "seconds": 13.98,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.0062408447265625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6127243041992188,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 92,
+      "end_step": 361,
+      "seconds": 7.24,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.005916595458984,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.4298858642578125,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 93,
+      "end_step": 221,
+      "seconds": 4.44,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.007343292236328,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.44553375244140625,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 94,
+      "end_step": 689,
+      "seconds": 13.8,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.009343147277832,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5062484741210938,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 95,
+      "end_step": 389,
+      "seconds": 7.8,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.0054426193237305,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.514678955078125,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 96,
+      "end_step": 252,
+      "seconds": 5.0600000000000005,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.014645576477051,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.35614013671875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 97,
+      "end_step": 745,
+      "seconds": 14.92,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.005069732666016,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.238922119140625,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 98,
+      "end_step": 376,
+      "seconds": 7.54,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.0085906982421875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.19693756103515625,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 99,
+      "end_step": 196,
+      "seconds": 3.94,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.003215789794922,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.03847503662109375,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 100,
+      "end_step": 802,
+      "seconds": 16.06,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.003318786621094,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.12921905517578125,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 101,
+      "end_step": 419,
+      "seconds": 8.4,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.00277042388916,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.07483673095703125,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 102,
+      "end_step": 225,
+      "seconds": 4.5200000000000005,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.00716495513916,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.15566253662109375,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 103,
+      "end_step": 646,
+      "seconds": 12.94,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.8345375061035156,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.062652587890625,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 104,
+      "end_step": 715,
+      "seconds": 14.32,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.006458282470703,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.8392791748046875,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 105,
+      "end_step": 998,
+      "seconds": 19.98,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.014156341552734,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.356842041015625,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 106,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.614543914794922,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2803802490234375,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 107,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.678485870361328,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.099365234375,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 108,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -2.003790855407715,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 9.407882690429688,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 109,
+      "end_step": 680,
+      "seconds": 13.620000000000001,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.001983642578125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1218414306640625,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 110,
+      "end_step": 365,
+      "seconds": 7.32,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.001457214355469,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0980224609375,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 111,
+      "end_step": 185,
+      "seconds": 3.72,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.01800537109375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0747528076171875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 112,
+      "end_step": 557,
+      "seconds": 11.16,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.003783226013184,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.10540771484375,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 113,
+      "end_step": 394,
+      "seconds": 7.9,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.001578330993652,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1415252685546875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 114,
+      "end_step": 180,
+      "seconds": 3.62,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.0033063888549805,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1254119873046875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 115,
+      "end_step": 574,
+      "seconds": 11.5,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.003383636474609,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3362579345703125,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 116,
+      "end_step": 330,
+      "seconds": 6.62,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.009441375732422,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1171875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 117,
+      "end_step": 196,
+      "seconds": 3.94,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.001728057861328,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0470123291015625,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 118,
+      "end_step": 696,
+      "seconds": 13.94,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.003208160400391,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1096649169921875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 119,
+      "end_step": 10,
+      "seconds": 0.22,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "passed_4m": false,
+      "dx_m": 0.03953075408935547,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0095672607421875,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 120,
+      "end_step": 229,
+      "seconds": 4.6000000000000005,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.003384590148926,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.123443603515625,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 121,
+      "end_step": 630,
+      "seconds": 12.620000000000001,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.000148773193359,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.308624267578125,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 122,
+      "end_step": 354,
+      "seconds": 7.1000000000000005,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.00714111328125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1738739013671875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 123,
+      "end_step": 187,
+      "seconds": 3.7600000000000002,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.021503448486328,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.070770263671875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 124,
+      "end_step": 493,
+      "seconds": 9.88,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.002873420715332,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1753387451171875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 125,
+      "end_step": 324,
+      "seconds": 6.5,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.011998176574707,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2903900146484375,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 126,
+      "end_step": 184,
+      "seconds": 3.7,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.006381988525391,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0821380615234375,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 127,
+      "end_step": 749,
+      "seconds": 15.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.005084991455078,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.202545166015625,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 128,
+      "end_step": 348,
+      "seconds": 6.98,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.0092010498046875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3182334899902344,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 129,
+      "end_step": 180,
+      "seconds": 3.62,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.007835388183594,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.141571044921875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 130,
+      "end_step": 651,
+      "seconds": 13.040000000000001,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.00146484375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.048625946044921875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 131,
+      "end_step": 327,
+      "seconds": 6.5600000000000005,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.010987281799316,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0388641357421875,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 132,
+      "end_step": 171,
+      "seconds": 3.44,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.005524635314941,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0615234375,
+      "straight_4m": true
+    },
+    {
+      "policy": 1,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 133,
+      "end_step": 175,
+      "seconds": 3.52,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.084268569946289,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.01861095428466797,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 134,
+      "end_step": 89,
+      "seconds": 1.8,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.079010009765625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.02275228500366211,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 135,
+      "end_step": 66,
+      "seconds": 1.34,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.078843116760254,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.05186319351196289,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 136,
+      "end_step": 175,
+      "seconds": 3.52,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0842056274414062,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.018575191497802734,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 137,
+      "end_step": 90,
+      "seconds": 1.82,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0813331604003906,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.023299217224121094,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 138,
+      "end_step": 66,
+      "seconds": 1.34,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0789413452148438,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.051128387451171875,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 139,
+      "end_step": 175,
+      "seconds": 3.52,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0842666625976562,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.018575668334960938,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 140,
+      "end_step": 89,
+      "seconds": 1.8,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.07916259765625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.022640228271484375,
+      "straight_4m": false
+    },
+    {
+      "policy": 1,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 141,
+      "end_step": 66,
+      "seconds": 1.34,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.078826904296875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.05195283889770508,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 142,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 3.86907958984375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6604518890380859,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 143,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -3.6115341186523438,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.030673980712890625,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": true,
+      "id": 144,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.05992889404296875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.9660167694091797,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": true,
+      "id": 145,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.2654266357421875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.9648857116699219,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": true,
+      "id": 146,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.00635528564453125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.08614540100097656,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": true,
+      "id": 147,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.007415771484375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.04429817199707031,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": true,
+      "id": 148,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 2.3927078247070312,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.9851646423339844,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": true,
+      "id": 149,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.460357666015625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.9862003326416016,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": true,
+      "id": 150,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 1.8919525146484375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3939628601074219,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": true,
+      "id": 151,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.9904022216796875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5401039123535156,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 152,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 2.4662322998046875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.013916015625,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "reverse",
+      "velocity": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 153,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -2.3518295288085938,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.03919029235839844,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "left",
+      "velocity": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "teacher": true,
+      "id": 154,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.0023193359375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.2852401733398438,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "right",
+      "velocity": [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      "teacher": true,
+      "id": 155,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -0.07288360595703125,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.3239116668701172,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_left",
+      "velocity": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "teacher": true,
+      "id": 156,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.0484771728515625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.05361175537109375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "yaw_right",
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6
+      ],
+      "teacher": true,
+      "id": 157,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.04482269287109375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.04082298278808594,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal",
+      "velocity": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "teacher": true,
+      "id": 158,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 1.610260009765625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6658802032470703,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "diagonal_back",
+      "velocity": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "teacher": true,
+      "id": 159,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": -1.5778961181640625,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.7145633697509766,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "forward_turn",
+      "velocity": [
+        0.4,
+        0.0,
+        0.4
+      ],
+      "teacher": true,
+      "id": 160,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 1.3913421630859375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.4574241638183594,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "side_turn",
+      "velocity": [
+        0.0,
+        0.3,
+        -0.4
+      ],
+      "teacher": true,
+      "id": 161,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [],
+      "passed_4m": false,
+      "dx_m": 0.6292037963867188,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.5321464538574219,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 162,
+      "end_step": 678,
+      "seconds": 13.58,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.005706787109375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.518341064453125,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 163,
+      "end_step": 361,
+      "seconds": 7.24,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.010997772216797,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6649856567382812,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 164,
+      "end_step": 207,
+      "seconds": 4.16,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.0031585693359375,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.4947509765625,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 165,
+      "end_step": 689,
+      "seconds": 13.8,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.005995750427246,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.586029052734375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 166,
+      "end_step": 375,
+      "seconds": 7.5200000000000005,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.003725051879883,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.6841888427734375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 167,
+      "end_step": 255,
+      "seconds": 5.12,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.0102996826171875,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.47916412353515625,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 168,
+      "end_step": 764,
+      "seconds": 15.3,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.000240325927734,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.385040283203125,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 169,
+      "end_step": 384,
+      "seconds": 7.7,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.004920959472656,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.20235443115234375,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 170,
+      "end_step": 199,
+      "seconds": 4.0,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.021965026855469,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0612640380859375,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 171,
+      "end_step": 796,
+      "seconds": 15.94,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.006294250488281,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.06127166748046875,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 172,
+      "end_step": 423,
+      "seconds": 8.48,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.003779411315918,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.10406494140625,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "stairs_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 173,
+      "end_step": 225,
+      "seconds": 4.5200000000000005,
+      "physical": false,
+      "terms": [
+        "stair_route_exit"
+      ],
+      "passed_4m": true,
+      "dx_m": 4.017040252685547,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.13980865478515625,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 174,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.8560867309570312,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2010650634765625,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 175,
+      "end_step": 284,
+      "seconds": 5.7,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.7837753295898438,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2417449951171875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_up",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 176,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 3.025287628173828,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3594207763671875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 177,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.6712303161621094,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2785186767578125,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 178,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 2.5912351608276367,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.422454833984375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_up",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 179,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": -3.963155746459961,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 2.491241455078125,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 180,
+      "end_step": 666,
+      "seconds": 13.34,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.000026702880859,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1347198486328125,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 181,
+      "end_step": 356,
+      "seconds": 7.140000000000001,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.001972198486328,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2372894287109375,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_down",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 182,
+      "end_step": 189,
+      "seconds": 3.8000000000000003,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.002902984619141,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.070526123046875,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 183,
+      "end_step": 647,
+      "seconds": 12.96,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.006258010864258,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.135955810546875,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 184,
+      "end_step": 360,
+      "seconds": 7.22,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.004403114318848,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2184906005859375,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "slope_down",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 185,
+      "end_step": 193,
+      "seconds": 3.88,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.000260353088379,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.114990234375,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 186,
+      "end_step": 705,
+      "seconds": 14.120000000000001,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.000865936279297,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.8986663818359375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 187,
+      "end_step": 363,
+      "seconds": 7.28,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.006473541259766,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.740631103515625,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "wave",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 188,
+      "end_step": 187,
+      "seconds": 3.7600000000000002,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.017848968505859,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.274078369140625,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 189,
+      "end_step": 923,
+      "seconds": 18.48,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.005562782287598,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 3.2241058349609375,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 190,
+      "end_step": 395,
+      "seconds": 7.92,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.010622024536133,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.9290924072265625,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "wave",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 191,
+      "end_step": 196,
+      "seconds": 3.94,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.003255844116211,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.4198760986328125,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 192,
+      "end_step": 568,
+      "seconds": 11.38,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.001121520996094,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1916961669921875,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 193,
+      "end_step": 351,
+      "seconds": 7.04,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.003917694091797,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2134246826171875,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "rough_slope",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 194,
+      "end_step": 190,
+      "seconds": 3.8200000000000003,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.007621765136719,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1230926513671875,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 195,
+      "end_step": 536,
+      "seconds": 10.74,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.002969741821289,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.1394500732421875,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 196,
+      "end_step": 340,
+      "seconds": 6.82,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.004757881164551,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0821075439453125,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "rough_slope",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 197,
+      "end_step": 193,
+      "seconds": 3.88,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.019662857055664,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.169189453125,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 198,
+      "end_step": 823,
+      "seconds": 16.48,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.002006530761719,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2298126220703125,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 199,
+      "end_step": 328,
+      "seconds": 6.58,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.003688812255859,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.429290771484375,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "obstacles",
+      "level": 6,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 200,
+      "end_step": 213,
+      "seconds": 4.28,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.016139984130859,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.14406204223632812,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 201,
+      "end_step": 586,
+      "seconds": 11.74,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.000993728637695,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.3517951965332031,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 202,
+      "end_step": 310,
+      "seconds": 6.22,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.012145042419434,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.62371826171875,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "obstacles",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        1.2,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 203,
+      "end_step": 172,
+      "seconds": 3.46,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.020528793334961,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.042728424072265625,
+      "straight_4m": true
+    },
+    {
+      "policy": 2,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 204,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0698204040527344,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.027011394500732422,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 205,
+      "end_step": 106,
+      "seconds": 2.14,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0844860076904297,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.018390655517578125,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "pit",
+      "level": 9,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 206,
+      "end_step": 69,
+      "seconds": 1.4000000000000001,
+      "physical": true,
+      "terms": [
+        "illegal_contact"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0864458084106445,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.04786491394042969,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 207,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0631790161132812,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.029656410217285156,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 208,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0597152709960938,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.01838207244873047,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "pit",
+      "level": 15,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 209,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0474891662597656,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.0529780387878418,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.3,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 210,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0589370727539062,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.029802799224853516,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 211,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0478591918945312,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.01837015151977539,
+      "straight_4m": false
+    },
+    {
+      "policy": 2,
+      "terrain": "pit",
+      "level": 21,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.9,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "id": 212,
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 1.0381851196289062,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_continuous1000_20260920/model_44105.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.054415225982666016,
+      "straight_4m": false
+    }
+  ],
+  "joint_names": [
+    "fl_hip_joint",
+    "fr_hip_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fl_thigh_joint",
+    "fr_thigh_joint",
+    "rl_thigh_joint",
+    "rr_thigh_joint",
+    "fl_calf_joint",
+    "fr_calf_joint",
+    "rl_calf_joint",
+    "rr_calf_joint",
+    "fl_foot_joint",
+    "fr_foot_joint",
+    "rl_foot_joint",
+    "rr_foot_joint"
+  ],
+  "body_names": [
+    "base_link",
+    "fl_hip_Link",
+    "fr_hip_link",
+    "rl_hip_Link",
+    "rr_hip_Link",
+    "fl_thigh_Link",
+    "fr_thigh_Link",
+    "rl_thigh_Link",
+    "rr_thigh_Link",
+    "fl_calf_Link",
+    "fr_calf_Link",
+    "rl_calf_Link",
+    "rr_calf_Link",
+    "fl_foot_Link",
+    "fr_foot_Link",
+    "rl_foot_Link",
+    "rr_foot_Link"
+  ],
+  "dt": 0.02,
+  "default_q": [
+    0.20000000298023224,
+    -0.20000000298023224,
+    -0.20000000298023224,
+    0.20000000298023224,
+    0.9300000071525574,
+    -0.9300000071525574,
+    -0.9300000071525574,
+    0.9300000071525574,
+    -1.9600000381469727,
+    1.9600000381469727,
+    1.9600000381469727,
+    -1.9600000381469727,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "request_joint_ids": [
+    1,
+    5,
+    9,
+    0,
+    4,
+    8,
+    3,
+    7,
+    11,
+    2,
+    6,
+    10
+  ],
+  "actuator_limits": {
+    "leg_torque_nm": 120.0,
+    "wheel_torque_nm": 17.0,
+    "leg_speed_rad_s": 15.0,
+    "wheel_speed_rad_s": 30.0,
+    "leg_target_rate_rad_s": 12.0,
+    "speed_penalty_fraction": 0.9,
+    "speed_termination_fraction": 1.02,
+    "hard_position_termination_rad": 0.01,
+    "leg_load_reference_nm": 35.0,
+    "wheel_load_reference_nm": 6.0,
+    "speed_sustained_duration_s": 0.06,
+    "speed_extreme_termination_fraction": 1.5,
+    "load_penalty_weight": -0.1,
+    "speed_penalty_weight": -1.0,
+    "saturation_penalty_weight": -0.02,
+    "violation_penalty_weight": -25.0
+  },
+  "initial_state_matched": true,
+  "smoke_only": false,
+  "phase_telemetry": "geometry/support measurements only; stage acceptance not inferred from joint pose",
+  "slope_geometry": [
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 5.710591129864065,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 5.710601590711999,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "pyramid_sloped_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 45.00000853774206,
+      "centerline_angle_deg_min": 38.65984990160053,
+      "centerline_angle_deg_max": 46.39734589437677,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "rough_slope_terrain",
+      "row": 0,
+      "nominal_angle_deg": 5.0,
+      "centerline_angle_deg_median": 8.530773959820424,
+      "centerline_angle_deg_min": 2.862393728954269,
+      "centerline_angle_deg_max": 21.801431566722385,
+      "slope_threshold": 10.0
+    },
+    {
+      "function": "rough_slope_terrain",
+      "row": 9,
+      "nominal_angle_deg": 45.0,
+      "centerline_angle_deg_median": 38.659844695664,
+      "centerline_angle_deg_min": 2.862391599851007,
+      "centerline_angle_deg_max": 54.46234528299803,
+      "slope_threshold": 10.0
+    }
+  ],
+  "urdf_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+  "protocol": "Nine terrains, matched default joint/root states verified across policies. No noise or pushes; fixed10ms delay. 71 cases per policy: 20 all-direction flat starts (6s budget), seven other terrain types at L6/L9 and vx0.3/0.6/1.2, pit0.6/0.9/1.2m at vx0.3/0.6/0.9 (25s budget). No heading feedback. Pit external stop retained. 50Hz trajectories plus per-step 200Hz torque/speed/hard-limit peaks. Fixed cases, not success probabilities over random trials."
+}

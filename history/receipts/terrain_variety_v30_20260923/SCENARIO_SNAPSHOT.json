@@ -1,0 +1,322 @@
+{
+  "completed_updates": 35260,
+  "terrain": 5.786865234375,
+  "terrain_by_type": {
+    "wave": {
+      "count": 492,
+      "mean": 5.837398373983739,
+      "counts_L0_to_L9": [
+        9,
+        23,
+        27,
+        32,
+        39,
+        63,
+        77,
+        77,
+        78,
+        67
+      ],
+      "curriculum_fraction": 0.6485998193315266
+    },
+    "slope_up": {
+      "count": 410,
+      "mean": 5.075609756097561,
+      "counts_L0_to_L9": [
+        0,
+        1,
+        8,
+        21,
+        90,
+        135,
+        120,
+        34,
+        1,
+        0
+      ],
+      "curriculum_fraction": 0.5639566395663956,
+      "nominal_angle_deg_mean": 30.371951219512194,
+      "nominal_angle_deg_max": 42.5,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "slope_down": {
+      "count": 410,
+      "mean": 5.621951219512195,
+      "counts_L0_to_L9": [
+        8,
+        19,
+        28,
+        37,
+        39,
+        48,
+        54,
+        59,
+        76,
+        42
+      ],
+      "curriculum_fraction": 0.6246612466124661,
+      "nominal_angle_deg_mean": 32.13414634146341,
+      "nominal_angle_deg_max": 45.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "rough_slope": {
+      "count": 409,
+      "mean": 5.811735941320293,
+      "counts_L0_to_L9": [
+        8,
+        17,
+        25,
+        34,
+        45,
+        44,
+        44,
+        59,
+        66,
+        67
+      ],
+      "curriculum_fraction": 0.645748437924477,
+      "nominal_angle_deg_mean": 32.836185819070906,
+      "nominal_angle_deg_max": 45.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "stairs_up": {
+      "count": 573,
+      "mean": 5.802792321116929,
+      "counts_L0_to_L9": [
+        3,
+        5,
+        12,
+        35,
+        71,
+        120,
+        110,
+        119,
+        68,
+        30
+      ],
+      "curriculum_fraction": 0.6447547023463254
+    },
+    "stairs_down": {
+      "count": 573,
+      "mean": 5.815008726003491,
+      "counts_L0_to_L9": [
+        10,
+        10,
+        19,
+        49,
+        50,
+        94,
+        109,
+        95,
+        85,
+        52
+      ],
+      "curriculum_fraction": 0.6461120806670545
+    },
+    "obstacles": {
+      "count": 409,
+      "mean": 6.100244498777506,
+      "counts_L0_to_L9": [
+        12,
+        9,
+        22,
+        26,
+        26,
+        40,
+        64,
+        70,
+        74,
+        66
+      ],
+      "curriculum_fraction": 0.6778049443086118
+    },
+    "flat": {
+      "count": 820,
+      "mean": 5.995121951219512,
+      "counts_L0_to_L9": [
+        16,
+        32,
+        39,
+        66,
+        67,
+        91,
+        101,
+        129,
+        135,
+        144
+      ],
+      "curriculum_fraction": 0.6661246612466125
+    }
+  },
+  "terrain_variety": {
+    "profile": "radial_routes_v30",
+    "variants": {
+      "single_curb_up": {
+        "column": 6,
+        "count": 132,
+        "mean_level": 6.303030490875244
+      },
+      "short_tread_up": {
+        "column": 7,
+        "count": 110,
+        "mean_level": 5.309090614318848
+      },
+      "long_tread_up": {
+        "column": 9,
+        "count": 89,
+        "mean_level": 5.370786666870117
+      },
+      "ramp_then_stairs_up": {
+        "column": 10,
+        "count": 128,
+        "mean_level": 5.96875
+      },
+      "short_tread_down": {
+        "column": 12,
+        "count": 296,
+        "mean_level": 6.010135173797607
+      }
+    },
+    "reverse_envs": 555,
+    "episode_statistics": [
+      [
+        [
+          [
+            383,
+            359,
+            11
+          ],
+          [
+            351,
+            331,
+            13
+          ]
+        ],
+        [
+          [
+            96,
+            91,
+            4
+          ],
+          [
+            119,
+            104,
+            11
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            253,
+            234,
+            12
+          ],
+          [
+            288,
+            242,
+            35
+          ]
+        ],
+        [
+          [
+            103,
+            91,
+            9
+          ],
+          [
+            83,
+            76,
+            6
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            224,
+            209,
+            8
+          ],
+          [
+            206,
+            178,
+            21
+          ]
+        ],
+        [
+          [
+            84,
+            78,
+            5
+          ],
+          [
+            69,
+            57,
+            9
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            371,
+            343,
+            17
+          ],
+          [
+            336,
+            305,
+            28
+          ]
+        ],
+        [
+          [
+            93,
+            87,
+            4
+          ],
+          [
+            81,
+            76,
+            4
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            690,
+            624,
+            21
+          ],
+          [
+            789,
+            735,
+            29
+          ]
+        ],
+        [
+          [
+            272,
+            263,
+            4
+          ],
+          [
+            311,
+            296,
+            11
+          ]
+        ]
+      ]
+    ],
+    "statistic_axes": [
+      "variant_in_column_order",
+      "teacher_student",
+      "forward_backward",
+      "episodes_radius_exit_physical_failure"
+    ],
+    "interpretation": "Training distribution; not successful traversal counts"
+  },
+  "observed_utc": "2026-09-23T16:27:49.207848+00:00"
+}

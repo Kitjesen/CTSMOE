@@ -1,0 +1,35 @@
+[
+  {
+    "name": "guarded",
+    "pid": 83832,
+    "argv": [
+      "/root/autodl-tmp/conda/envs/isaaclab/bin/python",
+      "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/stair_failure_peak_20260918/probe_failure.py",
+      "--root",
+      "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917",
+      "--checkpoint",
+      "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt",
+      "--output",
+      "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/stair_failure_peak_20260918/guarded",
+      "--mode",
+      "heading"
+    ]
+  },
+  {
+    "name": "no_actuator_termination",
+    "pid": 83833,
+    "argv": [
+      "/root/autodl-tmp/conda/envs/isaaclab/bin/python",
+      "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/stair_failure_peak_20260918/probe_failure.py",
+      "--root",
+      "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917",
+      "--checkpoint",
+      "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt",
+      "--output",
+      "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/stair_failure_peak_20260918/no_actuator_termination",
+      "--mode",
+      "heading",
+      "--diagnostic-no-actuator-termination"
+    ]
+  }
+]

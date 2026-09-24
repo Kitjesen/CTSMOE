@@ -1,0 +1,41 @@
+{
+  "num_envs": 4096,
+  "resume": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_7000.pt",
+  "warmup": 8,
+  "block_size": 6,
+  "order": [
+    "reference",
+    "fast",
+    "fast",
+    "reference",
+    "reference",
+    "fast",
+    "fast",
+    "reference"
+  ],
+  "samples_per_mode": 24,
+  "collect_seconds": {
+    "medians": {
+      "reference": 5.396646022796631,
+      "fast": 5.391773700714111
+    },
+    "reduction": 0.000902842628910161,
+    "speedup": 1.0009036584903173
+  },
+  "learn_seconds": {
+    "medians": {
+      "reference": 0.5139205455780029,
+      "fast": 0.5474569797515869
+    },
+    "reduction": -0.06525606820382279,
+    "speedup": 0.9387414255110942
+  },
+  "seconds": {
+    "medians": {
+      "reference": 5.92085325717926,
+      "fast": 5.946205735206604
+    },
+    "reduction": -0.00428189602513851,
+    "speedup": 0.9957363604361626
+  }
+}

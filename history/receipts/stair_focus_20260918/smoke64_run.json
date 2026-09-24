@@ -1,0 +1,404 @@
+{
+  "resume": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/speed_expansion_20260918/smoke64_v2/model_1.pt",
+  "resume_sha256": "76e90525d7b592d49ea0614c55849b75244e50da7edcd825716f2c6e961b841b",
+  "starting_completed_updates": 2,
+  "additional_updates": 4,
+  "target_completed_updates": 6,
+  "command_curriculum_start": "intermediate",
+  "command_ranges": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": false
+  },
+  "episode_length_s": 25.0,
+  "terrain_training_profile": "stairs80_v1",
+  "base_height_penalty": "off",
+  "terrain_column_names": [
+    "wave",
+    "slope_up",
+    "slope_up",
+    "slope_down",
+    "slope_down",
+    "rough_slope",
+    "stairs_up",
+    "stairs_up",
+    "stairs_up",
+    "stairs_up",
+    "stairs_up",
+    "stairs_down",
+    "stairs_down",
+    "obstacles",
+    "obstacles",
+    "obstacles",
+    "obstacles",
+    "flat",
+    "flat",
+    "flat"
+  ],
+  "terrain_by_type": {
+    "wave": {
+      "count": 1,
+      "mean": 0.0,
+      "counts_L0_to_L9": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_up": {
+      "count": 2,
+      "mean": 2.5,
+      "counts_L0_to_L9": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_down": {
+      "count": 1,
+      "mean": 1.0,
+      "counts_L0_to_L9": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "rough_slope": {
+      "count": 1,
+      "mean": 4.0,
+      "counts_L0_to_L9": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "stairs_up": {
+      "count": 39,
+      "mean": 2.871794871794872,
+      "counts_L0_to_L9": [
+        0,
+        7,
+        7,
+        13,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "stairs_down": {
+      "count": 13,
+      "mean": 3.3846153846153846,
+      "counts_L0_to_L9": [
+        0,
+        0,
+        2,
+        5,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "obstacles": {
+      "count": 4,
+      "mean": 2.25,
+      "counts_L0_to_L9": [
+        0,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "flat": {
+      "count": 3,
+      "mean": 3.0,
+      "counts_L0_to_L9": [
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "terrain_by_learner": {
+    "teacher": {
+      "wave": {
+        "count": 1,
+        "mean": 0.0,
+        "counts_L0_to_L9": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "slope_up": {
+        "count": 1,
+        "mean": 5.0,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "slope_down": {
+        "count": 1,
+        "mean": 1.0,
+        "counts_L0_to_L9": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "rough_slope": {
+        "count": 1,
+        "mean": 4.0,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "stairs_up": {
+        "count": 29,
+        "mean": 2.9655172413793105,
+        "counts_L0_to_L9": [
+          0,
+          4,
+          5,
+          10,
+          8,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "stairs_down": {
+        "count": 10,
+        "mean": 3.5,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          0,
+          5,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "obstacles": {
+        "count": 3,
+        "mean": 2.3333333333333335,
+        "counts_L0_to_L9": [
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "flat": {
+        "count": 2,
+        "mean": 3.0,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "student": {
+      "slope_up": {
+        "count": 1,
+        "mean": 0.0,
+        "counts_L0_to_L9": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "stairs_up": {
+        "count": 10,
+        "mean": 2.6,
+        "counts_L0_to_L9": [
+          0,
+          3,
+          2,
+          3,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "stairs_down": {
+        "count": 3,
+        "mean": 3.0,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "obstacles": {
+        "count": 1,
+        "mean": 2.0,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "flat": {
+        "count": 1,
+        "mean": 3.0,
+        "counts_L0_to_L9": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "terrain_migration": "terrain_migration.json",
+  "reward_weights": {
+    "lin_vel_z_l2": -1.9973333333333334,
+    "base_height_l2": 0.0
+  }
+}

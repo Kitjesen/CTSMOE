@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "contract": {
+    "schema_version": 1,
+    "actuator_profile": "rs0402_guard_v1",
+    "limits": {
+      "leg_torque_nm": 35.0,
+      "wheel_torque_nm": 6.0,
+      "leg_speed_rad_s": 15.0,
+      "wheel_speed_rad_s": 30.0,
+      "leg_target_rate_rad_s": 6.0,
+      "speed_penalty_fraction": 0.8,
+      "speed_termination_fraction": 1.02,
+      "hard_position_termination_rad": 0.01
+    }
+  },
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true
+  }
+}

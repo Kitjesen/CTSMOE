@@ -1,0 +1,478 @@
+{
+  "state": "actual_mesh_cpu_regression_passed",
+  "source_npz_sha256": "6cafa384e17d1f2d1c37cd040906e6e3c9d5ab5d3b5ef7c0e606c0d90f2a3ba0",
+  "sample_kind": "stairs_down",
+  "sample_row": null,
+  "sample_column": null,
+  "row_column_note": "Capture did not record row/column; not inferred",
+  "original_vertex_count": 8227,
+  "original_face_count": 16200,
+  "rounding_failure": {
+    "rounded_cap_z_m": 0.24,
+    "original_cap_z_m": 0.23999999463558197,
+    "changed_protected_vertex_count": 107,
+    "max_abs_inner_delta_m": 5.364418020903372e-09,
+    "changed_inner_radius_range_m": [
+      2.6999998092651367,
+      2.6999998092651367
+    ]
+  },
+  "corrected_receipt": {
+    "kind": "stairs_down",
+    "coordinate_frame": "centered tile, before atlas placement",
+    "before_sha256": "fdcbe72e135b542dc4a3ecbaa5beab624848195c302ce19a38b46580ad26cff1",
+    "after_sha256": "40682be798fa16f4e887ae734664ee291b49b13cf545da01c79083c6440968f5",
+    "inner_radius_strict_less_m": 2.7,
+    "inner_vertices_before_sha256": "ed92280efdb089e131bbb9af872d2d2830dfee60ad522f7ee1eb7ce8783fb44d",
+    "inner_vertices_after_sha256": "ed92280efdb089e131bbb9af872d2d2830dfee60ad522f7ee1eb7ce8783fb44d",
+    "inner_triangle_vertex_positions_before_sha256": "ed92280efdb089e131bbb9af872d2d2830dfee60ad522f7ee1eb7ce8783fb44d",
+    "inner_triangle_vertex_positions_after_sha256": "ed92280efdb089e131bbb9af872d2d2830dfee60ad522f7ee1eb7ce8783fb44d",
+    "inner_nondegenerate_triangles_before_sha256": "75ce98a1d77d1f0ba062d9189cd4a90a3a9984f9e0998a3c8bd448ac5f446b5a",
+    "inner_nondegenerate_triangles_after_sha256": "75ce98a1d77d1f0ba062d9189cd4a90a3a9984f9e0998a3c8bd448ac5f446b5a",
+    "inner_vertices_unchanged": true,
+    "inner_nondegenerate_triangles_unchanged": true,
+    "xy_unchanged": true,
+    "cap_z_m": 0.23999999463558197,
+    "cap_rounded_mode_z_m": 0.24,
+    "cap_original_level_count": 1,
+    "center_z_m": 0.7200000286102295,
+    "cap_minus_center_m": -0.4800000339746475,
+    "cap_selection_radius_m": [
+      2.7,
+      2.9
+    ],
+    "changed_faces_outside_inner_square": true,
+    "changed_face_count": 9000,
+    "changed_faces_inner_square_overlap_count": 0,
+    "changed_faces_min_axis_separation_m": 0.2999999999999998,
+    "changed_vertex_count": 4542,
+    "removed_degenerate_faces": 1692,
+    "before_vertex_count": 8227,
+    "after_vertex_count": 8227,
+    "before_face_count": 16200,
+    "after_face_count": 14508,
+    "xy_bounds_m": [
+      [
+        -4.5,
+        -4.5
+      ],
+      [
+        4.5,
+        4.5
+      ]
+    ],
+    "geometry_before": {
+      "positive_x": {
+        "lateral_offset_abs_m": 0.0,
+        "surface_runs": [
+          {
+            "from_m": 0.0,
+            "to_m": 1.1999998,
+            "z_m": 0.7200000286102295
+          },
+          {
+            "from_m": 1.4000001,
+            "to_m": 1.5,
+            "z_m": 0.6399999856948853
+          },
+          {
+            "from_m": 1.6999998,
+            "to_m": 1.8000002,
+            "z_m": 0.5600000023841858
+          },
+          {
+            "from_m": 2.0,
+            "to_m": 2.0999999,
+            "z_m": 0.47999998927116394
+          },
+          {
+            "from_m": 2.3000002,
+            "to_m": 2.4000001,
+            "z_m": 0.4000000059604645
+          },
+          {
+            "from_m": 2.5999999,
+            "to_m": 2.6999998,
+            "z_m": 0.3199999928474426
+          },
+          {
+            "from_m": 2.9000001,
+            "to_m": 3.0,
+            "z_m": 0.23999999463558197
+          },
+          {
+            "from_m": 3.1999998,
+            "to_m": 3.3000002,
+            "z_m": 0.1599999964237213
+          },
+          {
+            "from_m": 3.5,
+            "to_m": 3.6000004,
+            "z_m": 0.07999999821186066
+          },
+          {
+            "from_m": 3.8000002,
+            "to_m": 4.5,
+            "z_m": 0.0
+          }
+        ],
+        "inner_riser_height_m": [
+          0.08
+        ]
+      },
+      "negative_x": {
+        "lateral_offset_abs_m": 0.0,
+        "surface_runs": [
+          {
+            "from_m": -0.0,
+            "to_m": 1.2,
+            "z_m": 0.7200000286102295
+          },
+          {
+            "from_m": 1.4000001,
+            "to_m": 1.5,
+            "z_m": 0.6399999856948853
+          },
+          {
+            "from_m": 1.7,
+            "to_m": 1.8,
+            "z_m": 0.5600000023841858
+          },
+          {
+            "from_m": 2.0,
+            "to_m": 2.0999999,
+            "z_m": 0.47999998927116394
+          },
+          {
+            "from_m": 2.3,
+            "to_m": 2.4000001,
+            "z_m": 0.4000000059604645
+          },
+          {
+            "from_m": 2.6,
+            "to_m": 2.7,
+            "z_m": 0.3199999928474426
+          },
+          {
+            "from_m": 2.9,
+            "to_m": 3.0,
+            "z_m": 0.23999999463558197
+          },
+          {
+            "from_m": 3.2,
+            "to_m": 3.3,
+            "z_m": 0.1599999964237213
+          },
+          {
+            "from_m": 3.5,
+            "to_m": 3.6,
+            "z_m": 0.07999999821186066
+          },
+          {
+            "from_m": 3.8,
+            "to_m": 4.5,
+            "z_m": 0.0
+          }
+        ],
+        "inner_riser_height_m": [
+          0.08
+        ]
+      },
+      "positive_y": {
+        "lateral_offset_abs_m": 0.0,
+        "surface_runs": [
+          {
+            "from_m": 0.0,
+            "to_m": 1.1999998,
+            "z_m": 0.7200000286102295
+          },
+          {
+            "from_m": 1.4000001,
+            "to_m": 1.5,
+            "z_m": 0.6399999856948853
+          },
+          {
+            "from_m": 1.6999998,
+            "to_m": 1.8000002,
+            "z_m": 0.5600000023841858
+          },
+          {
+            "from_m": 2.0,
+            "to_m": 2.0999999,
+            "z_m": 0.47999998927116394
+          },
+          {
+            "from_m": 2.3000002,
+            "to_m": 2.4000001,
+            "z_m": 0.4000000059604645
+          },
+          {
+            "from_m": 2.5999999,
+            "to_m": 2.6999998,
+            "z_m": 0.3199999928474426
+          },
+          {
+            "from_m": 2.9000001,
+            "to_m": 3.0,
+            "z_m": 0.23999999463558197
+          },
+          {
+            "from_m": 3.1999998,
+            "to_m": 3.3000002,
+            "z_m": 0.1599999964237213
+          },
+          {
+            "from_m": 3.5,
+            "to_m": 3.6000004,
+            "z_m": 0.07999999821186066
+          },
+          {
+            "from_m": 3.8000002,
+            "to_m": 4.5,
+            "z_m": 0.0
+          }
+        ],
+        "inner_riser_height_m": [
+          0.08
+        ]
+      },
+      "negative_y": {
+        "lateral_offset_abs_m": 0.0,
+        "surface_runs": [
+          {
+            "from_m": -0.0,
+            "to_m": 1.2,
+            "z_m": 0.7200000286102295
+          },
+          {
+            "from_m": 1.4000001,
+            "to_m": 1.5,
+            "z_m": 0.6399999856948853
+          },
+          {
+            "from_m": 1.7,
+            "to_m": 1.8,
+            "z_m": 0.5600000023841858
+          },
+          {
+            "from_m": 2.0,
+            "to_m": 2.0999999,
+            "z_m": 0.47999998927116394
+          },
+          {
+            "from_m": 2.3,
+            "to_m": 2.4000001,
+            "z_m": 0.4000000059604645
+          },
+          {
+            "from_m": 2.6,
+            "to_m": 2.7,
+            "z_m": 0.3199999928474426
+          },
+          {
+            "from_m": 2.9,
+            "to_m": 3.0,
+            "z_m": 0.23999999463558197
+          },
+          {
+            "from_m": 3.2,
+            "to_m": 3.3,
+            "z_m": 0.1599999964237213
+          },
+          {
+            "from_m": 3.5,
+            "to_m": 3.6,
+            "z_m": 0.07999999821186066
+          },
+          {
+            "from_m": 3.8,
+            "to_m": 4.5,
+            "z_m": 0.0
+          }
+        ],
+        "inner_riser_height_m": [
+          0.08
+        ]
+      }
+    },
+    "geometry_after": {
+      "positive_x": {
+        "lateral_offset_abs_m": 0.0,
+        "surface_runs": [
+          {
+            "from_m": 0.0,
+            "to_m": 1.1999998,
+            "z_m": 0.7200000286102295
+          },
+          {
+            "from_m": 1.4000001,
+            "to_m": 1.5,
+            "z_m": 0.6399999856948853
+          },
+          {
+            "from_m": 1.6999998,
+            "to_m": 1.8000002,
+            "z_m": 0.5600000023841858
+          },
+          {
+            "from_m": 2.0,
+            "to_m": 2.0999999,
+            "z_m": 0.47999998927116394
+          },
+          {
+            "from_m": 2.3000002,
+            "to_m": 2.4000001,
+            "z_m": 0.4000000059604645
+          },
+          {
+            "from_m": 2.5999999,
+            "to_m": 2.6999998,
+            "z_m": 0.3199999928474426
+          },
+          {
+            "from_m": 2.9000001,
+            "to_m": 4.5,
+            "z_m": 0.23999999463558197
+          }
+        ],
+        "inner_riser_height_m": [
+          0.08
+        ]
+      },
+      "negative_x": {
+        "lateral_offset_abs_m": 0.0,
+        "surface_runs": [
+          {
+            "from_m": -0.0,
+            "to_m": 1.2,
+            "z_m": 0.7200000286102295
+          },
+          {
+            "from_m": 1.4000001,
+            "to_m": 1.5,
+            "z_m": 0.6399999856948853
+          },
+          {
+            "from_m": 1.7,
+            "to_m": 1.8,
+            "z_m": 0.5600000023841858
+          },
+          {
+            "from_m": 2.0,
+            "to_m": 2.0999999,
+            "z_m": 0.47999998927116394
+          },
+          {
+            "from_m": 2.3,
+            "to_m": 2.4000001,
+            "z_m": 0.4000000059604645
+          },
+          {
+            "from_m": 2.6,
+            "to_m": 2.7,
+            "z_m": 0.3199999928474426
+          },
+          {
+            "from_m": 2.9,
+            "to_m": 4.5,
+            "z_m": 0.23999999463558197
+          }
+        ],
+        "inner_riser_height_m": [
+          0.08
+        ]
+      },
+      "positive_y": {
+        "lateral_offset_abs_m": 0.0,
+        "surface_runs": [
+          {
+            "from_m": 0.0,
+            "to_m": 1.1999998,
+            "z_m": 0.7200000286102295
+          },
+          {
+            "from_m": 1.4000001,
+            "to_m": 1.5,
+            "z_m": 0.6399999856948853
+          },
+          {
+            "from_m": 1.6999998,
+            "to_m": 1.8000002,
+            "z_m": 0.5600000023841858
+          },
+          {
+            "from_m": 2.0,
+            "to_m": 2.0999999,
+            "z_m": 0.47999998927116394
+          },
+          {
+            "from_m": 2.3000002,
+            "to_m": 2.4000001,
+            "z_m": 0.4000000059604645
+          },
+          {
+            "from_m": 2.5999999,
+            "to_m": 2.6999998,
+            "z_m": 0.3199999928474426
+          },
+          {
+            "from_m": 2.9000001,
+            "to_m": 4.5,
+            "z_m": 0.23999999463558197
+          }
+        ],
+        "inner_riser_height_m": [
+          0.08
+        ]
+      },
+      "negative_y": {
+        "lateral_offset_abs_m": 0.0,
+        "surface_runs": [
+          {
+            "from_m": -0.0,
+            "to_m": 1.2,
+            "z_m": 0.7200000286102295
+          },
+          {
+            "from_m": 1.4000001,
+            "to_m": 1.5,
+            "z_m": 0.6399999856948853
+          },
+          {
+            "from_m": 1.7,
+            "to_m": 1.8,
+            "z_m": 0.5600000023841858
+          },
+          {
+            "from_m": 2.0,
+            "to_m": 2.0999999,
+            "z_m": 0.47999998927116394
+          },
+          {
+            "from_m": 2.3,
+            "to_m": 2.4000001,
+            "z_m": 0.4000000059604645
+          },
+          {
+            "from_m": 2.6,
+            "to_m": 2.7,
+            "z_m": 0.3199999928474426
+          },
+          {
+            "from_m": 2.9,
+            "to_m": 4.5,
+            "z_m": 0.23999999463558197
+          }
+        ],
+        "inner_riser_height_m": [
+          0.08
+        ]
+      }
+    },
+    "difficulty_scope": "original row/riser/tread retained inside protected region; outer steps and total rise reduced"
+  },
+  "source_mutated": false,
+  "optimizer_updates": 0,
+  "validation_scope": "Actual failed mesh only. All 44 selected runtime cells still require attempt02 preflight receipts.",
+  "fixed_module_sha256": "54788c3c2179de8f9afb62fd0915b3c35ffa7a40691d754cb9a4187ecefa442a"
+}

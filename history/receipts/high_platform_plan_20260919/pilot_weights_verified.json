@@ -1,0 +1,29 @@
+{
+  "completed_updates": 24,
+  "families": {
+    "actor.": {
+      "max_abs_delta": 0.010043494403362274,
+      "changed_tensors": 8
+    },
+    "critic.": {
+      "max_abs_delta": 0.01909536123275757,
+      "changed_tensors": 8
+    },
+    "teacher_encoder.": {
+      "max_abs_delta": 0.011553836055099964,
+      "changed_tensors": 6
+    },
+    "student_moe_encoder.": {
+      "max_abs_delta": 0.12332034856081009,
+      "changed_tensors": 16
+    }
+  },
+  "optimizer_state_dict": {
+    "state_count": 23,
+    "max_step": 480.0
+  },
+  "optimizer_stu_enc_state_dict": {
+    "state_count": 16,
+    "max_step": 480.0
+  }
+}

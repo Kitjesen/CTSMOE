@@ -1,0 +1,174 @@
+{
+  "completed_updates": 41760,
+  "seconds": 6.886708736419678,
+  "starting_completed_updates": 41751,
+  "pid": 182569,
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "pit_climb_totals": true,
+    "pit_individual": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true,
+    "terrain_allocation": true
+  },
+  "surface_posture": {
+    "profile": "level_surface_v1",
+    "full_relief_m": 0.04,
+    "zero_relief_m": 0.1,
+    "full_speed_mps": 0.8,
+    "zero_speed_mps": 1.5,
+    "joint_weight": -1.0,
+    "height_weight": -2.0,
+    "height_command_gating": false,
+    "target_height_m": 0.46,
+    "joint_tolerance_rad": {
+      "hip": 0.25,
+      "thigh": 0.45,
+      "calf": 0.55
+    },
+    "wave": {
+      "count": 0,
+      "height_active_count": 0
+    },
+    "slope_up": {
+      "count": 12,
+      "height_active_count": 124,
+      "acceptable": 0.75,
+      "rms_rad": 0.21225333213806152,
+      "height_m": 0.43501222133636475,
+      "joint_cost": 0.0004769319202750921,
+      "height_cost": 0.09298478811979294
+    },
+    "slope_down": {
+      "count": 12,
+      "height_active_count": 97,
+      "acceptable": 0.5833333730697632,
+      "rms_rad": 0.23656682670116425,
+      "height_m": 0.4254849851131439,
+      "joint_cost": 0.002432734938338399,
+      "height_cost": 0.15248316526412964
+    },
+    "rough_slope": {
+      "count": 0,
+      "height_active_count": 1
+    },
+    "stairs_up": {
+      "count": 5,
+      "height_active_count": 5,
+      "acceptable": 0.6000000238418579,
+      "rms_rad": 0.2377583235502243,
+      "height_m": 0.4629170000553131,
+      "joint_cost": 0.004739795811474323,
+      "height_cost": 0.1288381963968277
+    },
+    "stairs_down": {
+      "count": 2,
+      "height_active_count": 2,
+      "acceptable": 0.5,
+      "rms_rad": 0.31186848878860474,
+      "height_m": 0.5480448603630066,
+      "joint_cost": 0.013772844336926937,
+      "height_cost": 1.5110915899276733
+    },
+    "obstacles": {
+      "count": 14,
+      "height_active_count": 77,
+      "acceptable": 0.5714285969734192,
+      "rms_rad": 0.24121305346488953,
+      "height_m": 0.42670318484306335,
+      "joint_cost": 0.0073599060997366905,
+      "height_cost": 0.17456172406673431
+    },
+    "stepping_stones": {
+      "count": 0,
+      "height_active_count": 0
+    },
+    "gap": {
+      "count": 0,
+      "height_active_count": 0
+    },
+    "flat": {
+      "count": 21,
+      "height_active_count": 122,
+      "acceptable": 0.5714285969734192,
+      "rms_rad": 0.2370939701795578,
+      "height_m": 0.4189198911190033,
+      "joint_cost": 0.004512561019510031,
+      "height_cost": 0.19859594106674194
+    },
+    "pit": {
+      "count": 0,
+      "height_active_count": 0
+    }
+  },
+  "pit_posture": {
+    "profile": "phase_stance_v1",
+    "target_height_m": 0.46,
+    "height_tolerance_m": 0.1,
+    "joint_tolerance_rad": {
+      "hip": 0.25,
+      "thigh": 0.45,
+      "calf": 0.55
+    },
+    "joint_weight": -1.0,
+    "height_weight": -2.0,
+    "settle_budget_s": 6.0,
+    "approach": {
+      "count": 9,
+      "acceptable": 0.4444444477558136,
+      "rms_rad": 0.45249196887016296,
+      "height_m": 0.4646129012107849,
+      "joint_cost": 0.42612436413764954,
+      "height_cost": 0.012530121952295303
+    },
+    "platform": {
+      "count": 1404,
+      "acceptable": 0.9779202342033386,
+      "rms_rad": 0.121847003698349,
+      "height_m": 0.44609692692756653,
+      "joint_cost": 0.011708256788551807,
+      "height_cost": 0.09087289124727249
+    }
+  },
+  "stance_strength": {
+    "profile": "strong_stand_v1",
+    "height_weight": -2.0,
+    "zero_command_weight": -2.0,
+    "zero_xy_threshold_mps": 0.05,
+    "zero_yaw_threshold_rad_s": 0.05,
+    "nominal_stance_deadband_rad": 0.0,
+    "height_command_gating": false,
+    "all": {
+      "count": 1407,
+      "mean_nominal_stance_cost": 0.12362594157457352
+    },
+    "pit": {
+      "count": 1404,
+      "mean_nominal_stance_cost": 0.12341482192277908
+    },
+    "other": {
+      "count": 3,
+      "mean_nominal_stance_cost": 0.22242680191993713
+    }
+  },
+  "counts": {
+    "stairs_up": 819,
+    "pit": 1639,
+    "wave": 246,
+    "stairs_down": 409,
+    "flat": 123,
+    "slope_up": 245,
+    "obstacles": 205,
+    "slope_down": 205,
+    "rough_slope": 205
+  },
+  "losses": {
+    "value": 0.05424543134868145,
+    "surrogate": 0.06296038273721934,
+    "mean_latent_loss": 0.0020223077153787017
+  }
+}

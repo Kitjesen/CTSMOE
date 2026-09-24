@@ -1,0 +1,394 @@
+{
+  "forward": [
+    {
+      "label": "V9_44711",
+      "first_rms": 0.3444278086478758,
+      "first_peak_rms": 0.4152258526729709,
+      "first_peak_joint_rad": 0.9341170787811279,
+      "first_peak_time_s": 0.7000000000000001,
+      "max_rms": 0.4152258526729709,
+      "height_min": 0.40548834204673767,
+      "height_max": 0.4533834457397461,
+      "last_height": 0.4258606731891632,
+      "last_rms": 0.36174940452136645,
+      "last_xy_error": 0.060958851128816605,
+      "last_yaw_error": 0.020833244547247887,
+      "pass": false
+    },
+    {
+      "label": "V9_44711_teacher",
+      "first_rms": 0.34835433359738643,
+      "first_peak_rms": 0.42050827110034705,
+      "first_peak_joint_rad": 0.9493870735168457,
+      "first_peak_time_s": 0.62,
+      "max_rms": 0.42050827110034705,
+      "height_min": 0.4029856324195862,
+      "height_max": 0.4533558487892151,
+      "last_height": 0.42887645959854126,
+      "last_rms": 0.3639461146236258,
+      "last_xy_error": 0.03530479967594147,
+      "last_yaw_error": 0.016911853104829788,
+      "pass": false
+    },
+    {
+      "label": "V6_43202",
+      "first_rms": 0.11891294581625642,
+      "first_peak_rms": 0.13227924335023708,
+      "first_peak_joint_rad": 0.3364410996437073,
+      "first_peak_time_s": 0.26,
+      "max_rms": 0.14627620041677972,
+      "height_min": 0.439255028963089,
+      "height_max": 0.45333999395370483,
+      "last_height": 0.4513872563838959,
+      "last_rms": 0.12977084581992107,
+      "last_xy_error": 0.003294942434877157,
+      "last_yaw_error": 0.004083623643964529,
+      "pass": true
+    },
+    {
+      "label": "V12_45011",
+      "first_rms": 0.3655204520212092,
+      "first_peak_rms": 0.4642669824931929,
+      "first_peak_joint_rad": 1.0284318923950195,
+      "first_peak_time_s": 0.28,
+      "max_rms": 0.4642669824931929,
+      "height_min": 0.34762144088745117,
+      "height_max": 0.453421950340271,
+      "last_height": 0.4351624548435211,
+      "last_rms": 0.16849554500037833,
+      "last_xy_error": 0.06378094106912613,
+      "last_yaw_error": 0.03305688127875328,
+      "pass": false
+    },
+    {
+      "label": "V12_45011_teacher",
+      "first_rms": 0.36094814063316627,
+      "first_peak_rms": 0.46378817437781955,
+      "first_peak_joint_rad": 0.9656338691711426,
+      "first_peak_time_s": 0.28,
+      "max_rms": 0.46378817437781955,
+      "height_min": 0.3768799901008606,
+      "height_max": 0.4533211588859558,
+      "last_height": 0.4234643876552582,
+      "last_rms": 0.2564160803065192,
+      "last_xy_error": 0.11213913559913635,
+      "last_yaw_error": 0.003267081454396248,
+      "pass": false
+    }
+  ],
+  "terrains": [
+    {
+      "label": "V9_44711",
+      "terrain": "flat",
+      "passed": 10,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V9_44711_teacher",
+      "terrain": "flat",
+      "passed": 12,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V6_43202",
+      "terrain": "flat",
+      "passed": 16,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V12_45011",
+      "terrain": "flat",
+      "passed": 15,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "V12_45011_teacher",
+      "terrain": "flat",
+      "passed": 17,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    }
+  ],
+  "pit": [],
+  "flat_failures": [
+    {
+      "label": "V9_44711",
+      "direction": "forward",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.060958851128816605,
+      "last_yaw_error": 0.020833244547247887
+    },
+    {
+      "label": "V9_44711",
+      "direction": "left",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.15081533789634705,
+      "last_yaw_error": 0.05544869974255562
+    },
+    {
+      "label": "V9_44711",
+      "direction": "diagonal",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.20183080434799194,
+      "last_yaw_error": 0.05268030986189842
+    },
+    {
+      "label": "V9_44711",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.20562908053398132,
+      "last_yaw_error": 0.0377957858145237
+    },
+    {
+      "label": "V9_44711",
+      "direction": "forward_turn",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.06108354032039642,
+      "last_yaw_error": 0.25736308097839355
+    },
+    {
+      "label": "V9_44711",
+      "direction": "forward",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.06148504838347435,
+      "last_yaw_error": 0.017745962366461754
+    },
+    {
+      "label": "V9_44711",
+      "direction": "left",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.223099485039711,
+      "last_yaw_error": 0.06718710064888
+    },
+    {
+      "label": "V9_44711",
+      "direction": "diagonal",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.17965561151504517,
+      "last_yaw_error": 0.04625646024942398
+    },
+    {
+      "label": "V9_44711",
+      "direction": "diagonal_back",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.17883752286434174,
+      "last_yaw_error": 0.04516511783003807
+    },
+    {
+      "label": "V9_44711",
+      "direction": "forward_turn",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.06690073758363724,
+      "last_yaw_error": 0.28920117020606995
+    },
+    {
+      "label": "V9_44711_teacher",
+      "direction": "forward",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.03530479967594147,
+      "last_yaw_error": 0.016911853104829788
+    },
+    {
+      "label": "V9_44711_teacher",
+      "direction": "diagonal",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.15850301086902618,
+      "last_yaw_error": 0.043532390147447586
+    },
+    {
+      "label": "V9_44711_teacher",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.16207121312618256,
+      "last_yaw_error": 0.04440583288669586
+    },
+    {
+      "label": "V9_44711_teacher",
+      "direction": "forward_turn",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.025721142068505287,
+      "last_yaw_error": 0.21107161045074463
+    },
+    {
+      "label": "V9_44711_teacher",
+      "direction": "forward",
+      "mode": "settle",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.034582074731588364,
+      "last_yaw_error": 0.015751834958791733
+    },
+    {
+      "label": "V9_44711_teacher",
+      "direction": "diagonal",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.16618981957435608,
+      "last_yaw_error": 0.05221295729279518
+    },
+    {
+      "label": "V9_44711_teacher",
+      "direction": "diagonal_back",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.16640280187129974,
+      "last_yaw_error": 0.053232427686452866
+    },
+    {
+      "label": "V9_44711_teacher",
+      "direction": "forward_turn",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.024980973452329636,
+      "last_yaw_error": 0.2267334759235382
+    },
+    {
+      "label": "V6_43202",
+      "direction": "left",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.15667134523391724,
+      "last_yaw_error": 0.06172822043299675
+    },
+    {
+      "label": "V6_43202",
+      "direction": "diagonal",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.15653926134109497,
+      "last_yaw_error": 0.07158617675304413
+    },
+    {
+      "label": "V6_43202",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.16710171103477478,
+      "last_yaw_error": 0.04367728531360626
+    },
+    {
+      "label": "V6_43202",
+      "direction": "diagonal",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.1585756242275238,
+      "last_yaw_error": 0.06837715208530426
+    },
+    {
+      "label": "V12_45011",
+      "direction": "forward",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.06378094106912613,
+      "last_yaw_error": 0.03305688127875328
+    },
+    {
+      "label": "V12_45011",
+      "direction": "left",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.20602159202098846,
+      "last_yaw_error": 0.0644908994436264
+    },
+    {
+      "label": "V12_45011",
+      "direction": "diagonal",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.2624991536140442,
+      "last_yaw_error": 0.09847917407751083
+    },
+    {
+      "label": "V12_45011",
+      "direction": "reverse",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.20849066972732544,
+      "last_yaw_error": 0.0009629708365537226
+    },
+    {
+      "label": "V12_45011",
+      "direction": "diagonal",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.22102601826190948,
+      "last_yaw_error": 0.05534134805202484
+    },
+    {
+      "label": "V12_45011_teacher",
+      "direction": "forward",
+      "mode": "direct",
+      "pose_pass": false,
+      "tracking_pass": true,
+      "last_xy_error": 0.11213913559913635,
+      "last_yaw_error": 0.003267081454396248
+    },
+    {
+      "label": "V12_45011_teacher",
+      "direction": "diagonal",
+      "mode": "direct",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.19625596702098846,
+      "last_yaw_error": 0.07496325671672821
+    },
+    {
+      "label": "V12_45011_teacher",
+      "direction": "diagonal",
+      "mode": "settle",
+      "pose_pass": true,
+      "tracking_pass": false,
+      "last_xy_error": 0.22076594829559326,
+      "last_yaw_error": 0.07087430357933044
+    }
+  ]
+}

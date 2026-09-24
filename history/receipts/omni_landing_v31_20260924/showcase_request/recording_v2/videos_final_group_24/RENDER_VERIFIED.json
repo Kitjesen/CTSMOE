@@ -1,0 +1,96 @@
+{
+  "max_fk_error_m": 2.0927963411320042e-05,
+  "physics_steps": 0,
+  "frames_per_video": 625,
+  "fps": 25,
+  "cases": [
+    {
+      "case": {
+        "column": 11,
+        "name": "reference_down",
+        "level": 3,
+        "side": false,
+        "origin": [
+          -67.5,
+          -76.5,
+          1.1699999570846558
+        ],
+        "env_id": 96
+      },
+      "end": {
+        "step": 659,
+        "time_s": 13.200000000000001,
+        "terms": [
+          "stair_route_exit"
+        ]
+      },
+      "max_hip_abs": 0.36657652258872986
+    },
+    {
+      "case": {
+        "column": 11,
+        "name": "reference_down",
+        "level": 3,
+        "side": true,
+        "origin": [
+          -67.5,
+          -76.5,
+          1.1699999570846558
+        ],
+        "env_id": 100
+      },
+      "end": {
+        "step": 1249,
+        "time_s": 25.0,
+        "terms": [
+          "time_out"
+        ]
+      },
+      "max_hip_abs": 0.34639668464660645
+    },
+    {
+      "case": {
+        "column": 11,
+        "name": "reference_down",
+        "level": 6,
+        "side": false,
+        "origin": [
+          -40.5,
+          -76.5,
+          1.6200000047683716
+        ],
+        "env_id": 104
+      },
+      "end": {
+        "step": 764,
+        "time_s": 15.3,
+        "terms": [
+          "stair_route_exit"
+        ]
+      },
+      "max_hip_abs": 0.3873404264450073
+    },
+    {
+      "case": {
+        "column": 11,
+        "name": "reference_down",
+        "level": 6,
+        "side": true,
+        "origin": [
+          -40.5,
+          -76.5,
+          1.6200000047683716
+        ],
+        "env_id": 108
+      },
+      "end": {
+        "step": 1249,
+        "time_s": 25.0,
+        "terms": [
+          "time_out"
+        ]
+      },
+      "max_hip_abs": 0.36567193269729614
+    }
+  ]
+}

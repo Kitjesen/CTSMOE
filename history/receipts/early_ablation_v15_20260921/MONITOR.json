@@ -1,0 +1,114 @@
+{
+  "server": "connect.weste.seetacloud.com:35324",
+  "remote_root": "/root/autodl-tmp/cts-v15-long-10000-20260922",
+  "source_completed_updates": 31831,
+  "source_checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+  "source_sha256": "04fcb792c8f18d3abe913d57eecea1d38b54a4e8a36a9899324bd39540b9876d",
+  "total_update_budget": 10000,
+  "gpu": "V15 bounded continuation PID 8285",
+  "disk": "/root/autodl-tmp 150G total, 101G free",
+  "old_v14": "not restarted",
+  "remote_child_pid": 8285,
+  "learn_seconds_latest": 0.5276131629943848,
+  "latest_training_terrain_mean": 5.8486328125,
+  "collect_seconds_latest": 6.367114782333374,
+  "pit_success_training": 0,
+  "pit_frontier_level": 2,
+  "pit_envs": 1024,
+  "stage": "continue_to_32831",
+  "optimizer_updates_completed": 437,
+  "updated_local": "2026-09-21T17:06:14.759139+00:00",
+  "latest_completed_updates": 32268,
+  "state": "training",
+  "remaining_updates": 9563,
+  "pit_frontier_height_m": 0.25,
+  "training_running": true,
+  "evaluation_audit": {
+    "state": "complete",
+    "remote_root": "/root/autodl-tmp/cts-v15-evaluation-audit-20260922",
+    "optimizer_updates": 0,
+    "historical_gate_not_valid_for_nine_terrain_decision": true,
+    "confirmed_issues": [
+      "terrain ordinal was used as atlas column",
+      "strict profile climb flag was never set",
+      "terminal targets overwritten by reset synchronization"
+    ],
+    "historical_gate_reasons": 103,
+    "terminal_target_reasons": 42,
+    "observable_nonterminal_target_violations": 0,
+    "training_checkpoint_preserved": "model_32130.pt",
+    "corrected_evaluator_pid": 6740,
+    "checkpoint_hashes_unchanged": true,
+    "corrected_results": "evaluation_audit_20260922/RESULT_SUMMARY.json",
+    "continuation_decision": "9700 remaining of authorized 10000; preparing isolated bounded driver"
+  },
+  "continuation": {
+    "remote_root": "/root/autodl-tmp/cts-v15-long-10000-20260922",
+    "state": "training",
+    "child_pid": 8285,
+    "source_completed_updates": 32131,
+    "remaining_authorized_updates": 9700,
+    "final_completed_updates": 41831,
+    "checkpoint_reviews": [
+      32831,
+      34831,
+      36831,
+      38831,
+      41831
+    ],
+    "num_envs": 4096,
+    "source_sha256": "7392007d4b4aa7fcad1722da72d7fba719aeb066537d629a87d790ffa30dd6691",
+    "latest_observed_completed_updates": 32268,
+    "iteration_seconds": 6.894727945327759,
+    "resume_model_and_both_optimizers_verified": true,
+    "terrain_restored_exactly": true,
+    "additional_updates_completed": 137
+  },
+  "historical_300_gate": {
+    "gate_reasons": 103,
+    "gate_accepted": false,
+    "finished_local": "2026-09-21 23:28:50 +08:00"
+  },
+  "terrain_by_type_latest": {
+    "wave": {
+      "count": 205,
+      "mean": 6.131707317073171
+    },
+    "slope_up": {
+      "count": 205,
+      "mean": 4.814634146341463
+    },
+    "slope_down": {
+      "count": 205,
+      "mean": 5.541463414634146
+    },
+    "rough_slope": {
+      "count": 204,
+      "mean": 5.480392156862745
+    },
+    "stairs_up": {
+      "count": 615,
+      "mean": 6.053658536585366
+    },
+    "stairs_down": {
+      "count": 410,
+      "mean": 6.260975609756097
+    },
+    "obstacles": {
+      "count": 204,
+      "mean": 6.147058823529412
+    },
+    "flat": {
+      "count": 1024,
+      "mean": 5.7861328125
+    },
+    "pit": {
+      "count": 1024,
+      "mean": 1.791015625
+    }
+  },
+  "coordination_transferred_to": "uphill_runup_v16_20260922/MONITOR.json",
+  "coordinator_pid": 10688,
+  "current_training_pid": 8285,
+  "current_training_unchanged": true
+}

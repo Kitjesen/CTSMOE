@@ -1,0 +1,1626 @@
+{
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31000.pt",
+  "completed_updates": 31001,
+  "stochastic": true,
+  "action_std": [
+    0.48529163002967834,
+    0.2533673048019409,
+    0.20739538967609406,
+    0.5859403014183044,
+    0.2864905297756195,
+    0.20514236390590668,
+    0.596034824848175,
+    0.2660956382751465,
+    0.2110893577337265,
+    0.6132276058197021,
+    0.2556823790073395,
+    0.2000540792942047,
+    0.40281733870506287,
+    0.3832724690437317,
+    0.3874867856502533,
+    0.39594313502311707
+  ],
+  "scope": "32 frozen student episodes at 25cm; four speeds; training randomization; no optimizer updates",
+  "cases": [
+    {
+      "speed": 0.3,
+      "repeat": 0,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.3600997924804688,
+        "rear_clearance_m": 0.42431640625,
+        "linear_speed": 0.022448163479566574,
+        "angular_speed": 0.242280974984169,
+        "tilt_deg": 2.9367167949676514,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 15.579999923706055,
+        "body_clear": 15.579999923706055,
+        "upright": 22.5,
+        "linear_quiet": 17.979999542236328,
+        "angular_quiet": 17.639999389648438,
+        "all_valid": 12.979999542236328,
+        "stop_command": 17.69999885559082
+      },
+      "after_stop_seconds": {
+        "all_support": 15.579999923706055,
+        "body_clear": 15.579999923706055,
+        "upright": 17.69999885559082,
+        "linear_quiet": 17.65999984741211,
+        "angular_quiet": 14.199999809265137,
+        "all_valid": 12.979999542236328,
+        "stop_command": 17.69999885559082
+      },
+      "maximum_valid_hold_seconds": 0.35999998450279236
+    },
+    {
+      "speed": 0.3,
+      "repeat": 1,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.0226898193359375,
+        "rear_clearance_m": 0.09581756591796875,
+        "linear_speed": 0.016998717561364174,
+        "angular_speed": 0.24598869681358337,
+        "tilt_deg": 1.6090030670166016,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 14.799999237060547,
+        "body_clear": 14.719999313354492,
+        "upright": 24.399999618530273,
+        "linear_quiet": 17.979999542236328,
+        "angular_quiet": 18.520000457763672,
+        "all_valid": 12.359999656677246,
+        "stop_command": 17.68000030517578
+      },
+      "after_stop_seconds": {
+        "all_support": 14.719999313354492,
+        "body_clear": 14.719999313354492,
+        "upright": 17.68000030517578,
+        "linear_quiet": 17.619998931884766,
+        "angular_quiet": 14.579999923706055,
+        "all_valid": 12.359999656677246,
+        "stop_command": 17.68000030517578
+      },
+      "maximum_valid_hold_seconds": 0.29999998211860657
+    },
+    {
+      "speed": 0.3,
+      "repeat": 2,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.598541259765625,
+        "rear_clearance_m": 0.6723556518554688,
+        "linear_speed": 0.05843011662364006,
+        "angular_speed": 0.3047158718109131,
+        "tilt_deg": 1.917956829071045,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 14.519999504089355,
+        "body_clear": 14.519999504089355,
+        "upright": 23.799999237060547,
+        "linear_quiet": 19.479999542236328,
+        "angular_quiet": 17.85999870300293,
+        "all_valid": 11.920000076293945,
+        "stop_command": 19.34000015258789
+      },
+      "after_stop_seconds": {
+        "all_support": 14.519999504089355,
+        "body_clear": 14.519999504089355,
+        "upright": 19.34000015258789,
+        "linear_quiet": 19.260000228881836,
+        "angular_quiet": 15.319999694824219,
+        "all_valid": 11.920000076293945,
+        "stop_command": 19.34000015258789
+      },
+      "maximum_valid_hold_seconds": 0.2800000011920929
+    },
+    {
+      "speed": 0.3,
+      "repeat": 3,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.1556396484375,
+        "rear_clearance_m": 0.2282562255859375,
+        "linear_speed": 0.02434598095715046,
+        "angular_speed": 0.47654491662979126,
+        "tilt_deg": 2.8030261993408203,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 13.479999542236328,
+        "body_clear": 13.460000038146973,
+        "upright": 23.939998626708984,
+        "linear_quiet": 17.739999771118164,
+        "angular_quiet": 17.69999885559082,
+        "all_valid": 10.960000038146973,
+        "stop_command": 17.619998931884766
+      },
+      "after_stop_seconds": {
+        "all_support": 13.460000038146973,
+        "body_clear": 13.460000038146973,
+        "upright": 17.619998931884766,
+        "linear_quiet": 17.579999923706055,
+        "angular_quiet": 13.579999923706055,
+        "all_valid": 10.960000038146973,
+        "stop_command": 17.619998931884766
+      },
+      "maximum_valid_hold_seconds": 0.29999998211860657
+    },
+    {
+      "speed": 0.3,
+      "repeat": 4,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.4331207275390625,
+        "rear_clearance_m": 0.5033416748046875,
+        "linear_speed": 0.018705783411860466,
+        "angular_speed": 0.3369289040565491,
+        "tilt_deg": 2.82930064201355,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 16.639999389648438,
+        "body_clear": 16.579999923706055,
+        "upright": 23.979999542236328,
+        "linear_quiet": 18.3799991607666,
+        "angular_quiet": 16.979999542236328,
+        "all_valid": 13.039999961853027,
+        "stop_command": 18.239999771118164
+      },
+      "after_stop_seconds": {
+        "all_support": 16.579999923706055,
+        "body_clear": 16.579999923706055,
+        "upright": 18.239999771118164,
+        "linear_quiet": 18.139999389648438,
+        "angular_quiet": 13.920000076293945,
+        "all_valid": 13.039999961853027,
+        "stop_command": 18.239999771118164
+      },
+      "maximum_valid_hold_seconds": 0.47999998927116394
+    },
+    {
+      "speed": 0.3,
+      "repeat": 5,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.26116943359375,
+        "rear_clearance_m": 0.3324737548828125,
+        "linear_speed": 0.03682313114404678,
+        "angular_speed": 0.11993466317653656,
+        "tilt_deg": 1.7223787307739258,
+        "hold_seconds": 0.019999999552965164,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 13.119999885559082,
+        "body_clear": 13.09999942779541,
+        "upright": 23.760000228881836,
+        "linear_quiet": 19.079999923706055,
+        "angular_quiet": 17.559999465942383,
+        "all_valid": 10.979999542236328,
+        "stop_command": 18.8799991607666
+      },
+      "after_stop_seconds": {
+        "all_support": 13.09999942779541,
+        "body_clear": 13.09999942779541,
+        "upright": 18.8799991607666,
+        "linear_quiet": 18.81999969482422,
+        "angular_quiet": 14.75999927520752,
+        "all_valid": 10.979999542236328,
+        "stop_command": 18.8799991607666
+      },
+      "maximum_valid_hold_seconds": 0.4399999976158142
+    },
+    {
+      "speed": 0.3,
+      "repeat": 6,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.2248153686523438,
+        "rear_clearance_m": 0.29871368408203125,
+        "linear_speed": 0.03408327326178551,
+        "angular_speed": 0.5927143096923828,
+        "tilt_deg": 1.9633376598358154,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 16.84000015258789,
+        "body_clear": 16.84000015258789,
+        "upright": 23.739999771118164,
+        "linear_quiet": 19.579999923706055,
+        "angular_quiet": 16.940000534057617,
+        "all_valid": 13.239999771118164,
+        "stop_command": 19.3799991607666
+      },
+      "after_stop_seconds": {
+        "all_support": 16.84000015258789,
+        "body_clear": 16.84000015258789,
+        "upright": 19.3799991607666,
+        "linear_quiet": 19.31999969482422,
+        "angular_quiet": 14.719999313354492,
+        "all_valid": 13.239999771118164,
+        "stop_command": 19.3799991607666
+      },
+      "maximum_valid_hold_seconds": 0.29999998211860657
+    },
+    {
+      "speed": 0.3,
+      "repeat": 7,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.3667068481445312,
+        "rear_clearance_m": 0.440032958984375,
+        "linear_speed": 0.05536191537976265,
+        "angular_speed": 0.1403503119945526,
+        "tilt_deg": 1.4731277227401733,
+        "hold_seconds": 0.019999999552965164,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 13.25999927520752,
+        "body_clear": 13.219999313354492,
+        "upright": 23.85999870300293,
+        "linear_quiet": 18.81999969482422,
+        "angular_quiet": 18.440000534057617,
+        "all_valid": 11.460000038146973,
+        "stop_command": 18.5
+      },
+      "after_stop_seconds": {
+        "all_support": 13.219999313354492,
+        "body_clear": 13.219999313354492,
+        "upright": 18.5,
+        "linear_quiet": 18.459999084472656,
+        "angular_quiet": 15.4399995803833,
+        "all_valid": 11.460000038146973,
+        "stop_command": 18.5
+      },
+      "maximum_valid_hold_seconds": 0.23999999463558197
+    },
+    {
+      "speed": 0.5,
+      "repeat": 0,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.226409912109375,
+        "rear_clearance_m": 0.2984161376953125,
+        "linear_speed": 0.04166707396507263,
+        "angular_speed": 0.19555751979351044,
+        "tilt_deg": 2.144388437271118,
+        "hold_seconds": 0.019999999552965164,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 17.8799991607666,
+        "body_clear": 17.8799991607666,
+        "upright": 24.139999389648438,
+        "linear_quiet": 20.31999969482422,
+        "angular_quiet": 17.639999389648438,
+        "all_valid": 14.460000038146973,
+        "stop_command": 20.34000015258789
+      },
+      "after_stop_seconds": {
+        "all_support": 17.8799991607666,
+        "body_clear": 17.8799991607666,
+        "upright": 20.34000015258789,
+        "linear_quiet": 20.260000228881836,
+        "angular_quiet": 15.59999942779541,
+        "all_valid": 14.460000038146973,
+        "stop_command": 20.34000015258789
+      },
+      "maximum_valid_hold_seconds": 0.29999998211860657
+    },
+    {
+      "speed": 0.5,
+      "repeat": 1,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.2217330932617188,
+        "rear_clearance_m": 0.29266357421875,
+        "linear_speed": 0.0927342101931572,
+        "angular_speed": 0.08908107876777649,
+        "tilt_deg": 2.5302579402923584,
+        "hold_seconds": 0.05999999865889549,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 17.85999870300293,
+        "body_clear": 17.84000015258789,
+        "upright": 24.01999855041504,
+        "linear_quiet": 19.899999618530273,
+        "angular_quiet": 19.600000381469727,
+        "all_valid": 15.420000076293945,
+        "stop_command": 19.959999084472656
+      },
+      "after_stop_seconds": {
+        "all_support": 17.84000015258789,
+        "body_clear": 17.84000015258789,
+        "upright": 19.959999084472656,
+        "linear_quiet": 19.85999870300293,
+        "angular_quiet": 16.8799991607666,
+        "all_valid": 15.420000076293945,
+        "stop_command": 19.959999084472656
+      },
+      "maximum_valid_hold_seconds": 0.6200000047683716
+    },
+    {
+      "speed": 0.5,
+      "repeat": 2,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.4100494384765625,
+        "rear_clearance_m": 0.48651123046875,
+        "linear_speed": 0.00945835467427969,
+        "angular_speed": 0.16474772989749908,
+        "tilt_deg": 1.0551761388778687,
+        "hold_seconds": 0.05999999865889549,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 18.65999984741211,
+        "body_clear": 18.639999389648438,
+        "upright": 24.459999084472656,
+        "linear_quiet": 21.139999389648438,
+        "angular_quiet": 18.19999885559082,
+        "all_valid": 15.219999313354492,
+        "stop_command": 21.15999984741211
+      },
+      "after_stop_seconds": {
+        "all_support": 18.639999389648438,
+        "body_clear": 18.639999389648438,
+        "upright": 21.15999984741211,
+        "linear_quiet": 21.03999900817871,
+        "angular_quiet": 16.719999313354492,
+        "all_valid": 15.219999313354492,
+        "stop_command": 21.15999984741211
+      },
+      "maximum_valid_hold_seconds": 0.3999999761581421
+    },
+    {
+      "speed": 0.5,
+      "repeat": 3,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.1511001586914062,
+        "rear_clearance_m": 0.2216949462890625,
+        "linear_speed": 0.026886792853474617,
+        "angular_speed": 0.14456942677497864,
+        "tilt_deg": 1.4859575033187866,
+        "hold_seconds": 0.019999999552965164,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 17.440000534057617,
+        "body_clear": 17.440000534057617,
+        "upright": 24.119998931884766,
+        "linear_quiet": 19.8799991607666,
+        "angular_quiet": 17.520000457763672,
+        "all_valid": 14.219999313354492,
+        "stop_command": 19.899999618530273
+      },
+      "after_stop_seconds": {
+        "all_support": 17.440000534057617,
+        "body_clear": 17.440000534057617,
+        "upright": 19.899999618530273,
+        "linear_quiet": 19.799999237060547,
+        "angular_quiet": 15.639999389648438,
+        "all_valid": 14.219999313354492,
+        "stop_command": 19.899999618530273
+      },
+      "maximum_valid_hold_seconds": 0.3999999761581421
+    },
+    {
+      "speed": 0.5,
+      "repeat": 4,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.1836166381835938,
+        "rear_clearance_m": 0.25664520263671875,
+        "linear_speed": 0.033652305603027344,
+        "angular_speed": 0.10408596694469452,
+        "tilt_deg": 1.6122835874557495,
+        "hold_seconds": 0.23999999463558197,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 17.219999313354492,
+        "body_clear": 17.219999313354492,
+        "upright": 24.15999984741211,
+        "linear_quiet": 20.479999542236328,
+        "angular_quiet": 17.19999885559082,
+        "all_valid": 13.34000015258789,
+        "stop_command": 20.479999542236328
+      },
+      "after_stop_seconds": {
+        "all_support": 17.219999313354492,
+        "body_clear": 17.219999313354492,
+        "upright": 20.479999542236328,
+        "linear_quiet": 20.399999618530273,
+        "angular_quiet": 15.239999771118164,
+        "all_valid": 13.34000015258789,
+        "stop_command": 20.479999542236328
+      },
+      "maximum_valid_hold_seconds": 0.3400000035762787
+    },
+    {
+      "speed": 0.5,
+      "repeat": 5,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.1921920776367188,
+        "rear_clearance_m": 0.26685333251953125,
+        "linear_speed": 0.021337512880563736,
+        "angular_speed": 0.10691983997821808,
+        "tilt_deg": 1.720332384109497,
+        "hold_seconds": 0.019999999552965164,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 18.619998931884766,
+        "body_clear": 18.600000381469727,
+        "upright": 24.34000015258789,
+        "linear_quiet": 20.479999542236328,
+        "angular_quiet": 18.5,
+        "all_valid": 15.619999885559082,
+        "stop_command": 20.520000457763672
+      },
+      "after_stop_seconds": {
+        "all_support": 18.600000381469727,
+        "body_clear": 18.600000381469727,
+        "upright": 20.520000457763672,
+        "linear_quiet": 20.420000076293945,
+        "angular_quiet": 16.53999900817871,
+        "all_valid": 15.619999885559082,
+        "stop_command": 20.520000457763672
+      },
+      "maximum_valid_hold_seconds": 0.3999999761581421
+    },
+    {
+      "speed": 0.5,
+      "repeat": 6,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.3522796630859375,
+        "rear_clearance_m": 0.42522430419921875,
+        "linear_speed": 0.0036888334434479475,
+        "angular_speed": 0.1116086021065712,
+        "tilt_deg": 2.8112545013427734,
+        "hold_seconds": 0.07999999821186066,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 15.5,
+        "body_clear": 15.5,
+        "upright": 24.299999237060547,
+        "linear_quiet": 20.639999389648438,
+        "angular_quiet": 18.520000457763672,
+        "all_valid": 12.960000038146973,
+        "stop_command": 20.65999984741211
+      },
+      "after_stop_seconds": {
+        "all_support": 15.5,
+        "body_clear": 15.5,
+        "upright": 20.65999984741211,
+        "linear_quiet": 20.579999923706055,
+        "angular_quiet": 16.31999969482422,
+        "all_valid": 12.960000038146973,
+        "stop_command": 20.65999984741211
+      },
+      "maximum_valid_hold_seconds": 0.3199999928474426
+    },
+    {
+      "speed": 0.5,
+      "repeat": 7,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.4931106567382812,
+        "rear_clearance_m": 0.5658035278320312,
+        "linear_speed": 0.039812635630369186,
+        "angular_speed": 0.14019471406936646,
+        "tilt_deg": 1.8274562358856201,
+        "hold_seconds": 0.03999999910593033,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 17.85999870300293,
+        "body_clear": 17.84000015258789,
+        "upright": 24.19999885559082,
+        "linear_quiet": 20.739999771118164,
+        "angular_quiet": 18.5,
+        "all_valid": 14.799999237060547,
+        "stop_command": 20.81999969482422
+      },
+      "after_stop_seconds": {
+        "all_support": 17.84000015258789,
+        "body_clear": 17.84000015258789,
+        "upright": 20.81999969482422,
+        "linear_quiet": 20.719999313354492,
+        "angular_quiet": 16.760000228881836,
+        "all_valid": 14.799999237060547,
+        "stop_command": 20.81999969482422
+      },
+      "maximum_valid_hold_seconds": 0.47999998927116394
+    },
+    {
+      "speed": 0.7,
+      "repeat": 0,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.37017822265625,
+        "rear_clearance_m": 0.432281494140625,
+        "linear_speed": 0.012318536639213562,
+        "angular_speed": 0.1900249719619751,
+        "tilt_deg": 2.5025672912597656,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 18.3799991607666,
+        "body_clear": 18.3799991607666,
+        "upright": 24.15999984741211,
+        "linear_quiet": 22.100000381469727,
+        "angular_quiet": 17.299999237060547,
+        "all_valid": 14.299999237060547,
+        "stop_command": 22.139999389648438
+      },
+      "after_stop_seconds": {
+        "all_support": 18.3799991607666,
+        "body_clear": 18.3799991607666,
+        "upright": 22.139999389648438,
+        "linear_quiet": 22.020000457763672,
+        "angular_quiet": 16.31999969482422,
+        "all_valid": 14.299999237060547,
+        "stop_command": 22.139999389648438
+      },
+      "maximum_valid_hold_seconds": 0.2800000011920929
+    },
+    {
+      "speed": 0.7,
+      "repeat": 1,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.2829742431640625,
+        "rear_clearance_m": 0.3554840087890625,
+        "linear_speed": 0.024394020438194275,
+        "angular_speed": 0.13771431148052216,
+        "tilt_deg": 1.7750883102416992,
+        "hold_seconds": 0.05999999865889549,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 17.920000076293945,
+        "body_clear": 17.920000076293945,
+        "upright": 24.299999237060547,
+        "linear_quiet": 21.779998779296875,
+        "angular_quiet": 17.279998779296875,
+        "all_valid": 14.019999504089355,
+        "stop_command": 21.85999870300293
+      },
+      "after_stop_seconds": {
+        "all_support": 17.920000076293945,
+        "body_clear": 17.920000076293945,
+        "upright": 21.85999870300293,
+        "linear_quiet": 21.739999771118164,
+        "angular_quiet": 16.31999969482422,
+        "all_valid": 14.019999504089355,
+        "stop_command": 21.85999870300293
+      },
+      "maximum_valid_hold_seconds": 0.5
+    },
+    {
+      "speed": 0.7,
+      "repeat": 2,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.3525466918945312,
+        "rear_clearance_m": 0.424285888671875,
+        "linear_speed": 0.07646817713975906,
+        "angular_speed": 0.3184907138347626,
+        "tilt_deg": 2.1410090923309326,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 17.600000381469727,
+        "body_clear": 17.579999923706055,
+        "upright": 24.239999771118164,
+        "linear_quiet": 21.260000228881836,
+        "angular_quiet": 18.85999870300293,
+        "all_valid": 15.039999961853027,
+        "stop_command": 21.3799991607666
+      },
+      "after_stop_seconds": {
+        "all_support": 17.579999923706055,
+        "body_clear": 17.579999923706055,
+        "upright": 21.3799991607666,
+        "linear_quiet": 21.239999771118164,
+        "angular_quiet": 17.459999084472656,
+        "all_valid": 15.039999961853027,
+        "stop_command": 21.3799991607666
+      },
+      "maximum_valid_hold_seconds": 0.47999998927116394
+    },
+    {
+      "speed": 0.7,
+      "repeat": 3,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.4552001953125,
+        "rear_clearance_m": 0.5306777954101562,
+        "linear_speed": 0.029579950496554375,
+        "angular_speed": 0.22389023005962372,
+        "tilt_deg": 1.7867363691329956,
+        "hold_seconds": 0.019999999552965164,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 17.760000228881836,
+        "body_clear": 17.739999771118164,
+        "upright": 24.31999969482422,
+        "linear_quiet": 21.760000228881836,
+        "angular_quiet": 18.619998931884766,
+        "all_valid": 14.699999809265137,
+        "stop_command": 21.84000015258789
+      },
+      "after_stop_seconds": {
+        "all_support": 17.739999771118164,
+        "body_clear": 17.739999771118164,
+        "upright": 21.84000015258789,
+        "linear_quiet": 21.719999313354492,
+        "angular_quiet": 17.34000015258789,
+        "all_valid": 14.699999809265137,
+        "stop_command": 21.84000015258789
+      },
+      "maximum_valid_hold_seconds": 0.4599999785423279
+    },
+    {
+      "speed": 0.7,
+      "repeat": 4,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.5660171508789062,
+        "rear_clearance_m": 0.6380386352539062,
+        "linear_speed": 0.035925671458244324,
+        "angular_speed": 0.2036096453666687,
+        "tilt_deg": 2.393673896789551,
+        "hold_seconds": 0.29999998211860657,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 18.559999465942383,
+        "body_clear": 18.559999465942383,
+        "upright": 24.5,
+        "linear_quiet": 21.779998779296875,
+        "angular_quiet": 17.53999900817871,
+        "all_valid": 14.59999942779541,
+        "stop_command": 21.8799991607666
+      },
+      "after_stop_seconds": {
+        "all_support": 18.559999465942383,
+        "body_clear": 18.559999465942383,
+        "upright": 21.8799991607666,
+        "linear_quiet": 21.739999771118164,
+        "angular_quiet": 16.440000534057617,
+        "all_valid": 14.59999942779541,
+        "stop_command": 21.8799991607666
+      },
+      "maximum_valid_hold_seconds": 0.29999998211860657
+    },
+    {
+      "speed": 0.7,
+      "repeat": 5,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.1551971435546875,
+        "rear_clearance_m": 0.229522705078125,
+        "linear_speed": 0.01745993085205555,
+        "angular_speed": 0.5180294513702393,
+        "tilt_deg": 2.0870354175567627,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 16.639999389648438,
+        "body_clear": 16.619998931884766,
+        "upright": 24.31999969482422,
+        "linear_quiet": 21.559999465942383,
+        "angular_quiet": 16.719999313354492,
+        "all_valid": 12.739999771118164,
+        "stop_command": 21.619998931884766
+      },
+      "after_stop_seconds": {
+        "all_support": 16.619998931884766,
+        "body_clear": 16.619998931884766,
+        "upright": 21.619998931884766,
+        "linear_quiet": 21.5,
+        "angular_quiet": 15.4399995803833,
+        "all_valid": 12.739999771118164,
+        "stop_command": 21.619998931884766
+      },
+      "maximum_valid_hold_seconds": 0.2800000011920929
+    },
+    {
+      "speed": 0.7,
+      "repeat": 6,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.0654983520507812,
+        "rear_clearance_m": 0.13365936279296875,
+        "linear_speed": 0.05591563880443573,
+        "angular_speed": 0.39855918288230896,
+        "tilt_deg": 3.615196466445923,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 19.299999237060547,
+        "body_clear": 19.299999237060547,
+        "upright": 24.15999984741211,
+        "linear_quiet": 21.81999969482422,
+        "angular_quiet": 19.3799991607666,
+        "all_valid": 16.84000015258789,
+        "stop_command": 21.8799991607666
+      },
+      "after_stop_seconds": {
+        "all_support": 19.299999237060547,
+        "body_clear": 19.299999237060547,
+        "upright": 21.8799991607666,
+        "linear_quiet": 21.739999771118164,
+        "angular_quiet": 18.239999771118164,
+        "all_valid": 16.84000015258789,
+        "stop_command": 21.8799991607666
+      },
+      "maximum_valid_hold_seconds": 0.47999998927116394
+    },
+    {
+      "speed": 0.7,
+      "repeat": 7,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.31451416015625,
+        "rear_clearance_m": 0.38906097412109375,
+        "linear_speed": 0.021942585706710815,
+        "angular_speed": 0.06659884005784988,
+        "tilt_deg": 1.3908607959747314,
+        "hold_seconds": 0.019999999552965164,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 18.520000457763672,
+        "body_clear": 18.5,
+        "upright": 24.420000076293945,
+        "linear_quiet": 21.439998626708984,
+        "angular_quiet": 18.739999771118164,
+        "all_valid": 15.319999694824219,
+        "stop_command": 21.520000457763672
+      },
+      "after_stop_seconds": {
+        "all_support": 18.5,
+        "body_clear": 18.5,
+        "upright": 21.520000457763672,
+        "linear_quiet": 21.420000076293945,
+        "angular_quiet": 17.299999237060547,
+        "all_valid": 15.319999694824219,
+        "stop_command": 21.520000457763672
+      },
+      "maximum_valid_hold_seconds": 0.4399999976158142
+    },
+    {
+      "speed": 0.9,
+      "repeat": 0,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.2657394409179688,
+        "rear_clearance_m": 0.339630126953125,
+        "linear_speed": 0.05035123974084854,
+        "angular_speed": 0.15469779074192047,
+        "tilt_deg": 1.4033269882202148,
+        "hold_seconds": 0.03999999910593033,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 16.34000015258789,
+        "body_clear": 16.31999969482422,
+        "upright": 24.35999870300293,
+        "linear_quiet": 21.8799991607666,
+        "angular_quiet": 18.0,
+        "all_valid": 13.139999389648438,
+        "stop_command": 22.0
+      },
+      "after_stop_seconds": {
+        "all_support": 16.31999969482422,
+        "body_clear": 16.31999969482422,
+        "upright": 22.0,
+        "linear_quiet": 21.84000015258789,
+        "angular_quiet": 16.899999618530273,
+        "all_valid": 13.139999389648438,
+        "stop_command": 22.0
+      },
+      "maximum_valid_hold_seconds": 0.25999999046325684
+    },
+    {
+      "speed": 0.9,
+      "repeat": 1,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.2610931396484375,
+        "rear_clearance_m": 0.3257598876953125,
+        "linear_speed": 0.014186332933604717,
+        "angular_speed": 0.0662388727068901,
+        "tilt_deg": 2.588231325149536,
+        "hold_seconds": 0.03999999910593033,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 18.779998779296875,
+        "body_clear": 18.760000228881836,
+        "upright": 24.260000228881836,
+        "linear_quiet": 21.85999870300293,
+        "angular_quiet": 18.420000076293945,
+        "all_valid": 15.460000038146973,
+        "stop_command": 21.939998626708984
+      },
+      "after_stop_seconds": {
+        "all_support": 18.760000228881836,
+        "body_clear": 18.760000228881836,
+        "upright": 21.939998626708984,
+        "linear_quiet": 21.81999969482422,
+        "angular_quiet": 17.639999389648438,
+        "all_valid": 15.460000038146973,
+        "stop_command": 21.939998626708984
+      },
+      "maximum_valid_hold_seconds": 0.5799999833106995
+    },
+    {
+      "speed": 0.9,
+      "repeat": 2,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.4682540893554688,
+        "rear_clearance_m": 0.5338973999023438,
+        "linear_speed": 0.003500816412270069,
+        "angular_speed": 0.2297266721725464,
+        "tilt_deg": 2.3688509464263916,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 15.75999927520752,
+        "body_clear": 15.75999927520752,
+        "upright": 24.439998626708984,
+        "linear_quiet": 22.399999618530273,
+        "angular_quiet": 17.079999923706055,
+        "all_valid": 12.559999465942383,
+        "stop_command": 22.51999855041504
+      },
+      "after_stop_seconds": {
+        "all_support": 15.75999927520752,
+        "body_clear": 15.75999927520752,
+        "upright": 22.51999855041504,
+        "linear_quiet": 22.3799991607666,
+        "angular_quiet": 16.5,
+        "all_valid": 12.559999465942383,
+        "stop_command": 22.51999855041504
+      },
+      "maximum_valid_hold_seconds": 0.2800000011920929
+    },
+    {
+      "speed": 0.9,
+      "repeat": 3,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.3467254638671875,
+        "rear_clearance_m": 0.412384033203125,
+        "linear_speed": 0.017575806006789207,
+        "angular_speed": 0.1814042180776596,
+        "tilt_deg": 1.4506388902664185,
+        "hold_seconds": 0.019999999552965164,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 20.299999237060547,
+        "body_clear": 20.299999237060547,
+        "upright": 24.19999885559082,
+        "linear_quiet": 22.059999465942383,
+        "angular_quiet": 18.3799991607666,
+        "all_valid": 16.619998931884766,
+        "stop_command": 22.139999389648438
+      },
+      "after_stop_seconds": {
+        "all_support": 20.299999237060547,
+        "body_clear": 20.299999237060547,
+        "upright": 22.139999389648438,
+        "linear_quiet": 22.020000457763672,
+        "angular_quiet": 17.5,
+        "all_valid": 16.619998931884766,
+        "stop_command": 22.139999389648438
+      },
+      "maximum_valid_hold_seconds": 0.3999999761581421
+    },
+    {
+      "speed": 0.9,
+      "repeat": 4,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.3583221435546875,
+        "rear_clearance_m": 0.4234619140625,
+        "linear_speed": 0.026607079431414604,
+        "angular_speed": 0.08845517039299011,
+        "tilt_deg": 2.2103655338287354,
+        "hold_seconds": 0.5199999809265137,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 19.65999984741211,
+        "body_clear": 19.65999984741211,
+        "upright": 24.299999237060547,
+        "linear_quiet": 22.239999771118164,
+        "angular_quiet": 18.31999969482422,
+        "all_valid": 16.079999923706055,
+        "stop_command": 22.399999618530273
+      },
+      "after_stop_seconds": {
+        "all_support": 19.65999984741211,
+        "body_clear": 19.65999984741211,
+        "upright": 22.399999618530273,
+        "linear_quiet": 22.219999313354492,
+        "angular_quiet": 17.68000030517578,
+        "all_valid": 16.079999923706055,
+        "stop_command": 22.399999618530273
+      },
+      "maximum_valid_hold_seconds": 0.5199999809265137
+    },
+    {
+      "speed": 0.9,
+      "repeat": 5,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.3203582763671875,
+        "rear_clearance_m": 0.3948516845703125,
+        "linear_speed": 0.040950957685709,
+        "angular_speed": 0.3473460376262665,
+        "tilt_deg": 1.1612955331802368,
+        "hold_seconds": 0.0,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 18.059999465942383,
+        "body_clear": 18.03999900817871,
+        "upright": 24.260000228881836,
+        "linear_quiet": 22.03999900817871,
+        "angular_quiet": 18.139999389648438,
+        "all_valid": 14.5,
+        "stop_command": 22.119998931884766
+      },
+      "after_stop_seconds": {
+        "all_support": 18.03999900817871,
+        "body_clear": 18.03999900817871,
+        "upright": 22.119998931884766,
+        "linear_quiet": 21.959999084472656,
+        "angular_quiet": 17.18000030517578,
+        "all_valid": 14.5,
+        "stop_command": 22.119998931884766
+      },
+      "maximum_valid_hold_seconds": 0.2800000011920929
+    },
+    {
+      "speed": 0.9,
+      "repeat": 6,
+      "level": 2,
+      "seconds": 3.1,
+      "success": false,
+      "physical": true,
+      "outside": false,
+      "timeout": false,
+      "last": {
+        "forward_m": 1.82159423828125,
+        "rear_clearance_m": -0.20090484619140625,
+        "linear_speed": 0.3305281400680542,
+        "angular_speed": 2.4482011795043945,
+        "tilt_deg": 15.355180740356445,
+        "hold_seconds": 0.0,
+        "command_vx": 0.8999999761581421,
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "stop_command": 0.0
+      },
+      "ever": {
+        "all_support": false,
+        "body_clear": false,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": false,
+        "stop_command": false
+      },
+      "condition_seconds": {
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "upright": 2.3999998569488525,
+        "linear_quiet": 0.23999999463558197,
+        "angular_quiet": 1.0,
+        "all_valid": 0.0,
+        "stop_command": 0.0
+      },
+      "after_stop_seconds": {
+        "all_support": 0.0,
+        "body_clear": 0.0,
+        "upright": 0.0,
+        "linear_quiet": 0.0,
+        "angular_quiet": 0.0,
+        "all_valid": 0.0,
+        "stop_command": 0.0
+      },
+      "maximum_valid_hold_seconds": 0.0
+    },
+    {
+      "speed": 0.9,
+      "repeat": 7,
+      "level": 2,
+      "seconds": 25.0,
+      "success": false,
+      "physical": false,
+      "outside": false,
+      "timeout": true,
+      "last": {
+        "forward_m": 2.2199554443359375,
+        "rear_clearance_m": 0.29132080078125,
+        "linear_speed": 0.07710054516792297,
+        "angular_speed": 0.24319840967655182,
+        "tilt_deg": 2.3016326427459717,
+        "hold_seconds": 0.019999999552965164,
+        "command_vx": 0.0,
+        "all_support": 1.0,
+        "body_clear": 1.0,
+        "stop_command": 1.0
+      },
+      "ever": {
+        "all_support": true,
+        "body_clear": true,
+        "upright": true,
+        "linear_quiet": true,
+        "angular_quiet": true,
+        "all_valid": true,
+        "stop_command": true
+      },
+      "condition_seconds": {
+        "all_support": 20.399999618530273,
+        "body_clear": 20.399999618530273,
+        "upright": 24.260000228881836,
+        "linear_quiet": 21.85999870300293,
+        "angular_quiet": 17.399999618530273,
+        "all_valid": 15.9399995803833,
+        "stop_command": 21.85999870300293
+      },
+      "after_stop_seconds": {
+        "all_support": 20.399999618530273,
+        "body_clear": 20.399999618530273,
+        "upright": 21.85999870300293,
+        "linear_quiet": 21.760000228881836,
+        "angular_quiet": 16.53999900817871,
+        "all_valid": 15.9399995803833,
+        "stop_command": 21.85999870300293
+      },
+      "maximum_valid_hold_seconds": 0.5199999809265137
+    }
+  ]
+}

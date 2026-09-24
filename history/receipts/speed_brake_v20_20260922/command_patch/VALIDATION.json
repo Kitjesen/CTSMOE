@@ -1,0 +1,28 @@
+{
+  "status": "local_cpu_verified_not_simulator_qualified",
+  "pytest": {
+    "passed": 28,
+    "failed": 0,
+    "elapsed_s": 40.28
+  },
+  "ruff": "all checks passed",
+  "runtime_files": {
+    "omni_commands.py": {
+      "baseline_sha256": "8d2393b4e34ed05be59466ef9fec337455122435ace1ed7e2d839b9e98070c7b",
+      "patched_sha256": "57f3e5f08f4a28a6dc28139f0a57328b466eb9c090c472a910e3057a65506dc9"
+    },
+    "omni_lift.py": {
+      "baseline_sha256": "daa25d9ac0c49f9875095f377ef99b648fe9e60fb5480d3c9c9076bdaa4a2e67",
+      "patched_sha256": "348ddea66bf1d1aa3e007aa81e25fdc1789d16960bd6b9303f0d8c336579e6ec"
+    }
+  },
+  "unchanged_dependency": {
+    "path": "D:\\inovxio\\brain\\train\\rough\\cts_moe\\official\\receipts\\omni_repair_v19_20260922\\recovery01\\code\\flat_boundary.py",
+    "sha256": "a7461781faa66a8e108357c467b67ff6e655d0d4ecd1b6b54e2839abe7ada726"
+  },
+  "boundary_probe": {
+    "path": "D:\\inovxio\\brain\\train\\rough\\cts_moe\\official\\receipts\\speed_brake_v20_20260922\\command_patch\\BOUNDARY_PROBE.json",
+    "sha256": "4f618271f70909a26dbd11ece6198aa1db3b255c9271e885916fc234ead4db54"
+  },
+  "lift_diff_exactly_one_authorized_threshold": true
+}

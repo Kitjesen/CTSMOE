@@ -1,0 +1,1003 @@
+{
+  "steps": 3000,
+  "simulated_seconds": 60.0,
+  "num_envs": 4096,
+  "optimizer_steps": 0,
+  "configuration": {
+    "episode_seconds": 25.0,
+    "ordinary_resampling_seconds": 5.0,
+    "startup_window": null,
+    "sampler": "normal_training_sampler",
+    "command_term_class": "MixedCommand",
+    "termination_terms": [
+      "time_out",
+      "illegal_contact",
+      "actuator_violation",
+      "stair_route_exit",
+      "pit_success",
+      "pit_outside",
+      "pit_settle_timeout"
+    ],
+    "step_dt": 0.02
+  },
+  "groups": {
+    "teacher_ordinary": {
+      "states": 912000,
+      "distinct_episodes": 1111,
+      "maximum_episode_age_seconds": 24.979999542236328,
+      "episode_ends": 807,
+      "timeout_ends": 480,
+      "normal_timeouts_age_ge_24p9_seconds": 480,
+      "physical_ends": 327,
+      "physical_failures_by_term": {
+        "actuator_violation": 251,
+        "illegal_contact": 77
+      },
+      "duration_state_counts": {
+        "nonzero_ge_3s": 755535,
+        "nonzero_ge_5s": 656259,
+        "segment_ge_3s": 351708,
+        "segment_ge_5s": 497
+      },
+      "startup_anchor_counts": {
+        "false": 912000,
+        "true": 0
+      },
+      "normal_translation_resample_intervals_seconds": {
+        "count": 2323,
+        "minimum": 5.0,
+        "maximum": 5.020000457763672,
+        "mean": 5.015032201838606,
+        "expected": 5.0,
+        "episode_generation_counts": {
+          "episode_0": 782,
+          "episode_1_plus": 1541
+        }
+      },
+      "short_intervals_involving_zero_translation": 15,
+      "pose_offset_from_default_rad": {
+        "actual": {
+          "states": 912000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.0058800406931785116,
+              "rms": 0.10793764574637016,
+              "abs_max": 0.6131758093833923
+            },
+            "fr_thigh_joint": {
+              "mean": 0.015438500516345365,
+              "rms": 0.1446620330587103,
+              "abs_max": 1.9856688976287842
+            },
+            "fr_calf_joint": {
+              "mean": -0.046903109267288655,
+              "rms": 0.18483948226798833,
+              "abs_max": 1.629154920578003
+            },
+            "fl_hip_joint": {
+              "mean": 0.007392865341287433,
+              "rms": 0.11597298483485177,
+              "abs_max": 0.6106051206588745
+            },
+            "fl_thigh_joint": {
+              "mean": 0.02883481346544597,
+              "rms": 0.14437603604071958,
+              "abs_max": 1.8871781826019287
+            },
+            "fl_calf_joint": {
+              "mean": 0.038955336607143023,
+              "rms": 0.17559024302966852,
+              "abs_max": 1.9600000381469727
+            },
+            "rr_hip_joint": {
+              "mean": 0.013757660494308526,
+              "rms": 0.1077796618849567,
+              "abs_max": 0.6106857657432556
+            },
+            "rr_thigh_joint": {
+              "mean": 0.027103055873036123,
+              "rms": 0.15189197804611204,
+              "abs_max": 1.5589301586151123
+            },
+            "rr_calf_joint": {
+              "mean": 0.023117748383301915,
+              "rms": 0.18504625862944646,
+              "abs_max": 2.3375511169433594
+            },
+            "rl_hip_joint": {
+              "mean": 0.0025826581769067334,
+              "rms": 0.11760904384887279,
+              "abs_max": 0.6115944981575012
+            },
+            "rl_thigh_joint": {
+              "mean": -0.008213513101532795,
+              "rms": 0.15184541766506643,
+              "abs_max": 1.374159336090088
+            },
+            "rl_calf_joint": {
+              "mean": 0.003323542827707634,
+              "rms": 0.18951668852718181,
+              "abs_max": 2.6550655364990234
+            }
+          }
+        },
+        "target": {
+          "states": 912000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.0179899047258261,
+              "rms": 0.16835392707278152,
+              "abs_max": 0.5689999461174011
+            },
+            "fr_thigh_joint": {
+              "mean": -0.006511970191703815,
+              "rms": 0.21232156917717998,
+              "abs_max": 2.05299973487854
+            },
+            "fr_calf_joint": {
+              "mean": 0.026386449436085264,
+              "rms": 0.26916021103591903,
+              "abs_max": 1.9600000381469727
+            },
+            "fl_hip_joint": {
+              "mean": 0.020574355933937784,
+              "rms": 0.16987188743921788,
+              "abs_max": 0.5689999461174011
+            },
+            "fl_thigh_joint": {
+              "mean": 0.04793941744514986,
+              "rms": 0.20856673663655728,
+              "abs_max": 2.0014655590057373
+            },
+            "fl_calf_joint": {
+              "mean": -0.03252072352301656,
+              "rms": 0.2735847278113956,
+              "abs_max": 1.9600000381469727
+            },
+            "rr_hip_joint": {
+              "mean": 0.016540330944680853,
+              "rms": 0.17292310314083445,
+              "abs_max": 0.5689999461174011
+            },
+            "rr_thigh_joint": {
+              "mean": 0.05086182493598838,
+              "rms": 0.23188047094864375,
+              "abs_max": 1.769580602645874
+            },
+            "rr_calf_joint": {
+              "mean": -0.04750811129723463,
+              "rms": 0.29198981764885307,
+              "abs_max": 2.4351325035095215
+            },
+            "rl_hip_joint": {
+              "mean": -0.010476634004284023,
+              "rms": 0.18113828400988033,
+              "abs_max": 0.5689999461174011
+            },
+            "rl_thigh_joint": {
+              "mean": -0.03600757327649677,
+              "rms": 0.22269710737781306,
+              "abs_max": 1.5700860023498535
+            },
+            "rl_calf_joint": {
+              "mean": 0.07096650592466457,
+              "rms": 0.28581263239347376,
+              "abs_max": 2.802912712097168
+            }
+          }
+        },
+        "request": {
+          "states": 912000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.07623146054200142,
+              "rms": 0.2808631297821489,
+              "abs_max": 4.567203521728516
+            },
+            "fr_thigh_joint": {
+              "mean": -0.005905530552886296,
+              "rms": 0.22382345567376258,
+              "abs_max": 2.4808804988861084
+            },
+            "fr_calf_joint": {
+              "mean": 0.0204224268079719,
+              "rms": 0.2727663237125962,
+              "abs_max": 2.1359994411468506
+            },
+            "fl_hip_joint": {
+              "mean": 0.0818073659238912,
+              "rms": 0.27456104716219354,
+              "abs_max": 3.2631757259368896
+            },
+            "fl_thigh_joint": {
+              "mean": 0.048224982892538897,
+              "rms": 0.22073599261477847,
+              "abs_max": 2.198338270187378
+            },
+            "fl_calf_joint": {
+              "mean": -0.0270438780900287,
+              "rms": 0.2828706975100034,
+              "abs_max": 2.458054542541504
+            },
+            "rr_hip_joint": {
+              "mean": 0.08538530230732928,
+              "rms": 0.2884902246352282,
+              "abs_max": 5.6992878913879395
+            },
+            "rr_thigh_joint": {
+              "mean": 0.05184900258641625,
+              "rms": 0.24423762684804542,
+              "abs_max": 1.8782713413238525
+            },
+            "rr_calf_joint": {
+              "mean": -0.038841887184663824,
+              "rms": 0.30205836253161056,
+              "abs_max": 2.4351325035095215
+            },
+            "rl_hip_joint": {
+              "mean": -0.07693136146301077,
+              "rms": 0.2948875668269381,
+              "abs_max": 4.486717700958252
+            },
+            "rl_thigh_joint": {
+              "mean": -0.03592489452637209,
+              "rms": 0.23517471793068995,
+              "abs_max": 1.6196885108947754
+            },
+            "rl_calf_joint": {
+              "mean": 0.06731956079458458,
+              "rms": 0.293549053875537,
+              "abs_max": 3.0412721633911133
+            }
+          }
+        }
+      }
+    },
+    "teacher_special": {
+      "states": 2775000,
+      "distinct_episodes": 3221,
+      "maximum_episode_age_seconds": 24.979999542236328,
+      "episode_ends": 2296,
+      "timeout_ends": 1484,
+      "normal_timeouts_age_ge_24p9_seconds": 1484,
+      "physical_ends": 812,
+      "physical_failures_by_term": {
+        "actuator_violation": 580,
+        "illegal_contact": 232
+      },
+      "duration_state_counts": {
+        "nonzero_ge_3s": 2296108,
+        "nonzero_ge_5s": 1995838,
+        "segment_ge_3s": 1071651,
+        "segment_ge_5s": 747
+      },
+      "startup_anchor_counts": {
+        "false": 2766207,
+        "true": 8793
+      },
+      "normal_translation_resample_intervals_seconds": {
+        "count": 7017,
+        "minimum": 5.0,
+        "maximum": 5.020000457763672,
+        "mean": 5.015034835495228,
+        "expected": 5.0,
+        "episode_generation_counts": {
+          "episode_0": 2572,
+          "episode_1_plus": 4445
+        }
+      },
+      "short_intervals_involving_zero_translation": 29,
+      "pose_offset_from_default_rad": {
+        "actual": {
+          "states": 2775000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.0045201800403455355,
+              "rms": 0.10786404130473612,
+              "abs_max": 0.6191419959068298
+            },
+            "fr_thigh_joint": {
+              "mean": 0.016844601961771646,
+              "rms": 0.14013693982538863,
+              "abs_max": 2.2071290016174316
+            },
+            "fr_calf_joint": {
+              "mean": -0.0473631711500185,
+              "rms": 0.18175716176800652,
+              "abs_max": 1.821894645690918
+            },
+            "fl_hip_joint": {
+              "mean": 0.008039883747788162,
+              "rms": 0.11662746909477309,
+              "abs_max": 0.6116959452629089
+            },
+            "fl_thigh_joint": {
+              "mean": 0.0276779770442924,
+              "rms": 0.14509625021766664,
+              "abs_max": 2.028294563293457
+            },
+            "fl_calf_joint": {
+              "mean": 0.040616398347648415,
+              "rms": 0.1738726834877929,
+              "abs_max": 1.9605011940002441
+            },
+            "rr_hip_joint": {
+              "mean": 0.013892355857695545,
+              "rms": 0.10605011039541419,
+              "abs_max": 0.6101080775260925
+            },
+            "rr_thigh_joint": {
+              "mean": 0.028636010984289754,
+              "rms": 0.14967834395659332,
+              "abs_max": 1.6364049911499023
+            },
+            "rr_calf_joint": {
+              "mean": 0.020487308430134712,
+              "rms": 0.17818958886212882,
+              "abs_max": 2.1412341594696045
+            },
+            "rl_hip_joint": {
+              "mean": 0.002324007028754767,
+              "rms": 0.11509657177923857,
+              "abs_max": 0.6116083264350891
+            },
+            "rl_thigh_joint": {
+              "mean": -0.011599700779066429,
+              "rms": 0.14765347459011816,
+              "abs_max": 1.2667498588562012
+            },
+            "rl_calf_joint": {
+              "mean": 0.010786131056987487,
+              "rms": 0.1894456265835215,
+              "abs_max": 2.779998540878296
+            }
+          }
+        },
+        "target": {
+          "states": 2775000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.01666422308480686,
+              "rms": 0.16872762517196402,
+              "abs_max": 0.5689999461174011
+            },
+            "fr_thigh_joint": {
+              "mean": -0.004526996293207547,
+              "rms": 0.21068017418486015,
+              "abs_max": 2.05299973487854
+            },
+            "fr_calf_joint": {
+              "mean": 0.02624259118516166,
+              "rms": 0.2701411761134479,
+              "abs_max": 1.9600000381469727
+            },
+            "fl_hip_joint": {
+              "mean": 0.02068821811513589,
+              "rms": 0.1704268699534735,
+              "abs_max": 0.5689999461174011
+            },
+            "fl_thigh_joint": {
+              "mean": 0.048029860585326545,
+              "rms": 0.21028008554144018,
+              "abs_max": 2.05299973487854
+            },
+            "fl_calf_joint": {
+              "mean": -0.030770466218703503,
+              "rms": 0.27522640346272265,
+              "abs_max": 1.9600000381469727
+            },
+            "rr_hip_joint": {
+              "mean": 0.016711208512836747,
+              "rms": 0.17260217400466019,
+              "abs_max": 0.5689999461174011
+            },
+            "rr_thigh_joint": {
+              "mean": 0.051533530655487166,
+              "rms": 0.23192800694779703,
+              "abs_max": 1.7965638637542725
+            },
+            "rr_calf_joint": {
+              "mean": -0.04951401754308391,
+              "rms": 0.28868452445362136,
+              "abs_max": 2.3750901222229004
+            },
+            "rl_hip_joint": {
+              "mean": -0.011430612737702893,
+              "rms": 0.1794032379590673,
+              "abs_max": 0.5689999461174011
+            },
+            "rl_thigh_joint": {
+              "mean": -0.038870100744286096,
+              "rms": 0.22117877900714822,
+              "abs_max": 1.5348114967346191
+            },
+            "rl_calf_joint": {
+              "mean": 0.07833257609393146,
+              "rms": 0.28719427258469504,
+              "abs_max": 2.9731009006500244
+            }
+          }
+        },
+        "request": {
+          "states": 2775000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.07454538644059552,
+              "rms": 0.27893209575855143,
+              "abs_max": 4.743859767913818
+            },
+            "fr_thigh_joint": {
+              "mean": -0.00382844511070767,
+              "rms": 0.2223552053773997,
+              "abs_max": 2.374699592590332
+            },
+            "fr_calf_joint": {
+              "mean": 0.020315282848633088,
+              "rms": 0.2740781620233764,
+              "abs_max": 2.3851675987243652
+            },
+            "fl_hip_joint": {
+              "mean": 0.08139574508548589,
+              "rms": 0.27939166286735634,
+              "abs_max": 4.073872089385986
+            },
+            "fl_thigh_joint": {
+              "mean": 0.048378491063257596,
+              "rms": 0.22228616379799543,
+              "abs_max": 2.31892991065979
+            },
+            "fl_calf_joint": {
+              "mean": -0.025205428970397056,
+              "rms": 0.2852138892512523,
+              "abs_max": 2.6240715980529785
+            },
+            "rr_hip_joint": {
+              "mean": 0.08497815904190412,
+              "rms": 0.2892734747434771,
+              "abs_max": 7.151970863342285
+            },
+            "rr_thigh_joint": {
+              "mean": 0.05280696548295451,
+              "rms": 0.24467704690623027,
+              "abs_max": 1.9339165687561035
+            },
+            "rr_calf_joint": {
+              "mean": -0.04167794774523727,
+              "rms": 0.29828826671495795,
+              "abs_max": 2.3750901222229004
+            },
+            "rl_hip_joint": {
+              "mean": -0.0766881480312777,
+              "rms": 0.2977879651516668,
+              "abs_max": 6.426370620727539
+            },
+            "rl_thigh_joint": {
+              "mean": -0.0389104622429663,
+              "rms": 0.2336259326226876,
+              "abs_max": 2.0174903869628906
+            },
+            "rl_calf_joint": {
+              "mean": 0.07502540586138631,
+              "rms": 0.2942254862579864,
+              "abs_max": 2.9731009006500244
+            }
+          }
+        }
+      }
+    },
+    "student_ordinary": {
+      "states": 315000,
+      "distinct_episodes": 375,
+      "maximum_episode_age_seconds": 24.979999542236328,
+      "episode_ends": 270,
+      "timeout_ends": 172,
+      "normal_timeouts_age_ge_24p9_seconds": 172,
+      "physical_ends": 98,
+      "physical_failures_by_term": {
+        "actuator_violation": 86,
+        "illegal_contact": 12
+      },
+      "duration_state_counts": {
+        "nonzero_ge_3s": 261975,
+        "nonzero_ge_5s": 228678,
+        "segment_ge_3s": 121984,
+        "segment_ge_5s": 0
+      },
+      "startup_anchor_counts": {
+        "false": 315000,
+        "true": 0
+      },
+      "normal_translation_resample_intervals_seconds": {
+        "count": 759,
+        "minimum": 5.0,
+        "maximum": 5.020000457763672,
+        "mean": 5.01509874140321,
+        "expected": 5.0,
+        "episode_generation_counts": {
+          "episode_0": 296,
+          "episode_1_plus": 463
+        }
+      },
+      "short_intervals_involving_zero_translation": 5,
+      "pose_offset_from_default_rad": {
+        "actual": {
+          "states": 315000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.008075576305389404,
+              "rms": 0.10546800329860291,
+              "abs_max": 0.6102331876754761
+            },
+            "fr_thigh_joint": {
+              "mean": 0.02234995444946819,
+              "rms": 0.14207388214695543,
+              "abs_max": 1.7677409648895264
+            },
+            "fr_calf_joint": {
+              "mean": -0.04665011408177633,
+              "rms": 0.17681244328356024,
+              "abs_max": 1.2530407905578613
+            },
+            "fl_hip_joint": {
+              "mean": 0.011078764972871259,
+              "rms": 0.1132979464588791,
+              "abs_max": 0.6100900173187256
+            },
+            "fl_thigh_joint": {
+              "mean": 0.02407979229102059,
+              "rms": 0.13991204955644077,
+              "abs_max": 1.5487761497497559
+            },
+            "fl_calf_joint": {
+              "mean": 0.042447805663517545,
+              "rms": 0.1705278730065019,
+              "abs_max": 1.7277772426605225
+            },
+            "rr_hip_joint": {
+              "mean": 0.013535048170837146,
+              "rms": 0.10768581662964574,
+              "abs_max": 0.6100648641586304
+            },
+            "rr_thigh_joint": {
+              "mean": 0.03421237631496929,
+              "rms": 0.15276798972244568,
+              "abs_max": 1.1495490074157715
+            },
+            "rr_calf_joint": {
+              "mean": 0.013947591799781436,
+              "rms": 0.17692691141660405,
+              "abs_max": 2.13616681098938
+            },
+            "rl_hip_joint": {
+              "mean": 0.0012001779490993137,
+              "rms": 0.11452319778678935,
+              "abs_max": 0.6112651228904724
+            },
+            "rl_thigh_joint": {
+              "mean": -0.016158219752046798,
+              "rms": 0.14450770690840586,
+              "abs_max": 1.2113590240478516
+            },
+            "rl_calf_joint": {
+              "mean": 0.011324672513727157,
+              "rms": 0.18044592118814395,
+              "abs_max": 2.459664821624756
+            }
+          }
+        },
+        "target": {
+          "states": 315000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.018971464981020442,
+              "rms": 0.1675317126505497,
+              "abs_max": 0.5689999461174011
+            },
+            "fr_thigh_joint": {
+              "mean": 2.63962291535877e-07,
+              "rms": 0.20999090885582536,
+              "abs_max": 1.8363606929779053
+            },
+            "fr_calf_joint": {
+              "mean": 0.025655295227633584,
+              "rms": 0.2616106387593661,
+              "abs_max": 1.9600000381469727
+            },
+            "fl_hip_joint": {
+              "mean": 0.02466451714892709,
+              "rms": 0.16745547861399707,
+              "abs_max": 0.5689999461174011
+            },
+            "fl_thigh_joint": {
+              "mean": 0.04415280717346403,
+              "rms": 0.20484716471928846,
+              "abs_max": 1.582139015197754
+            },
+            "fl_calf_joint": {
+              "mean": -0.031100017597561792,
+              "rms": 0.26918113515110365,
+              "abs_max": 1.9600000381469727
+            },
+            "rr_hip_joint": {
+              "mean": 0.015597448352144824,
+              "rms": 0.17404268792375746,
+              "abs_max": 0.5689999461174011
+            },
+            "rr_thigh_joint": {
+              "mean": 0.05732311013643704,
+              "rms": 0.23363600342895538,
+              "abs_max": 1.1823201179504395
+            },
+            "rr_calf_joint": {
+              "mean": -0.05607584721777174,
+              "rms": 0.28871317545594183,
+              "abs_max": 2.281844139099121
+            },
+            "rl_hip_joint": {
+              "mean": -0.010642602902225086,
+              "rms": 0.1790633156081675,
+              "abs_max": 0.5689999461174011
+            },
+            "rl_thigh_joint": {
+              "mean": -0.04219521204971132,
+              "rms": 0.21823852159411272,
+              "abs_max": 1.2183771133422852
+            },
+            "rl_calf_joint": {
+              "mean": 0.07929331672097009,
+              "rms": 0.2809063098954357,
+              "abs_max": 2.6445775032043457
+            }
+          }
+        },
+        "request": {
+          "states": 315000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.07606727260145403,
+              "rms": 0.27607878704097516,
+              "abs_max": 3.4923465251922607
+            },
+            "fr_thigh_joint": {
+              "mean": 0.00038415006664064194,
+              "rms": 0.22107226215173162,
+              "abs_max": 1.8363606929779053
+            },
+            "fr_calf_joint": {
+              "mean": 0.019857403699367764,
+              "rms": 0.2646547488699889,
+              "abs_max": 1.5011802911758423
+            },
+            "fl_hip_joint": {
+              "mean": 0.08649958189690397,
+              "rms": 0.2672003234527681,
+              "abs_max": 2.909928560256958
+            },
+            "fl_thigh_joint": {
+              "mean": 0.044635720734179964,
+              "rms": 0.21654356272621383,
+              "abs_max": 1.7973694801330566
+            },
+            "fl_calf_joint": {
+              "mean": -0.025878987179483687,
+              "rms": 0.27847423718475706,
+              "abs_max": 2.33703351020813
+            },
+            "rr_hip_joint": {
+              "mean": 0.0826373821900714,
+              "rms": 0.28356906923014574,
+              "abs_max": 2.4160256385803223
+            },
+            "rr_thigh_joint": {
+              "mean": 0.058244149887088745,
+              "rms": 0.24554591639991769,
+              "abs_max": 1.218339443206787
+            },
+            "rr_calf_joint": {
+              "mean": -0.047736419099853156,
+              "rms": 0.29811054556706174,
+              "abs_max": 2.325234889984131
+            },
+            "rl_hip_joint": {
+              "mean": -0.0744143961035543,
+              "rms": 0.284547825552164,
+              "abs_max": 2.8049569129943848
+            },
+            "rl_thigh_joint": {
+              "mean": -0.042259128938024006,
+              "rms": 0.23017292893217584,
+              "abs_max": 1.5172452926635742
+            },
+            "rl_calf_joint": {
+              "mean": 0.07595823679292013,
+              "rms": 0.2880193945240618,
+              "abs_max": 2.6445775032043457
+            }
+          }
+        }
+      }
+    },
+    "student_special": {
+      "states": 915000,
+      "distinct_episodes": 1036,
+      "maximum_episode_age_seconds": 24.979999542236328,
+      "episode_ends": 731,
+      "timeout_ends": 498,
+      "normal_timeouts_age_ge_24p9_seconds": 498,
+      "physical_ends": 233,
+      "physical_failures_by_term": {
+        "actuator_violation": 157,
+        "illegal_contact": 76
+      },
+      "duration_state_counts": {
+        "nonzero_ge_3s": 757822,
+        "nonzero_ge_5s": 659564,
+        "segment_ge_3s": 353372,
+        "segment_ge_5s": 250
+      },
+      "startup_anchor_counts": {
+        "false": 912191,
+        "true": 2809
+      },
+      "normal_translation_resample_intervals_seconds": {
+        "count": 2311,
+        "minimum": 5.0,
+        "maximum": 5.020000457763672,
+        "mean": 5.0151621881809545,
+        "expected": 5.0,
+        "episode_generation_counts": {
+          "episode_0": 853,
+          "episode_1_plus": 1458
+        }
+      },
+      "short_intervals_involving_zero_translation": 12,
+      "pose_offset_from_default_rad": {
+        "actual": {
+          "states": 915000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.00738513208219751,
+              "rms": 0.10579542900948696,
+              "abs_max": 0.6124165654182434
+            },
+            "fr_thigh_joint": {
+              "mean": 0.018340690950780617,
+              "rms": 0.13999506945207493,
+              "abs_max": 2.1524412631988525
+            },
+            "fr_calf_joint": {
+              "mean": -0.04321134923312182,
+              "rms": 0.17576614441212837,
+              "abs_max": 1.6079301834106445
+            },
+            "fl_hip_joint": {
+              "mean": 0.010176580116690183,
+              "rms": 0.11572883267988114,
+              "abs_max": 0.6101484894752502
+            },
+            "fl_thigh_joint": {
+              "mean": 0.028745737287809287,
+              "rms": 0.14352863759367782,
+              "abs_max": 2.096116781234741
+            },
+            "fl_calf_joint": {
+              "mean": 0.04442732974375532,
+              "rms": 0.17049119346985156,
+              "abs_max": 1.9600001573562622
+            },
+            "rr_hip_joint": {
+              "mean": 0.014010144322915155,
+              "rms": 0.1059371691950615,
+              "abs_max": 0.6101744174957275
+            },
+            "rr_thigh_joint": {
+              "mean": 0.027135905659329045,
+              "rms": 0.14718630725193882,
+              "abs_max": 1.289825439453125
+            },
+            "rr_calf_joint": {
+              "mean": 0.015052971298903064,
+              "rms": 0.17324811381501587,
+              "abs_max": 2.0952563285827637
+            },
+            "rl_hip_joint": {
+              "mean": 0.0026789349896497415,
+              "rms": 0.11530030850092081,
+              "abs_max": 0.6117638349533081
+            },
+            "rl_thigh_joint": {
+              "mean": -0.0104616724210033,
+              "rms": 0.14513903359650726,
+              "abs_max": 1.1800549030303955
+            },
+            "rl_calf_joint": {
+              "mean": 0.007987339594976498,
+              "rms": 0.18188579513686548,
+              "abs_max": 2.744718074798584
+            }
+          }
+        },
+        "target": {
+          "states": 915000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.018732609860061623,
+              "rms": 0.16768854422228732,
+              "abs_max": 0.5689999461174011
+            },
+            "fr_thigh_joint": {
+              "mean": -0.0034343302658346835,
+              "rms": 0.211115436782902,
+              "abs_max": 2.05299973487854
+            },
+            "fr_calf_joint": {
+              "mean": 0.030261153938666067,
+              "rms": 0.2679335966555225,
+              "abs_max": 1.9600000381469727
+            },
+            "fl_hip_joint": {
+              "mean": 0.021832552418145326,
+              "rms": 0.16982269779041917,
+              "abs_max": 0.5689999461174011
+            },
+            "fl_thigh_joint": {
+              "mean": 0.048351068324469476,
+              "rms": 0.20862700411315954,
+              "abs_max": 2.05299973487854
+            },
+            "fl_calf_joint": {
+              "mean": -0.027024885491660385,
+              "rms": 0.2732316240167011,
+              "abs_max": 1.9600000381469727
+            },
+            "rr_hip_joint": {
+              "mean": 0.016670821145681736,
+              "rms": 0.17309786543552738,
+              "abs_max": 0.5689999461174011
+            },
+            "rr_thigh_joint": {
+              "mean": 0.051003855488632545,
+              "rms": 0.2299445930725112,
+              "abs_max": 1.6867492198944092
+            },
+            "rr_calf_joint": {
+              "mean": -0.05436509913355926,
+              "rms": 0.2876585320876574,
+              "abs_max": 2.2678418159484863
+            },
+            "rl_hip_joint": {
+              "mean": -0.011796425185324064,
+              "rms": 0.17940705931225218,
+              "abs_max": 0.5689999461174011
+            },
+            "rl_thigh_joint": {
+              "mean": -0.036053111387927675,
+              "rms": 0.21631128723923698,
+              "abs_max": 1.4405982494354248
+            },
+            "rl_calf_joint": {
+              "mean": 0.07639253076686234,
+              "rms": 0.2817512426318633,
+              "abs_max": 2.967367172241211
+            }
+          }
+        },
+        "request": {
+          "states": 915000,
+          "joints": {
+            "fr_hip_joint": {
+              "mean": -0.07694673550633785,
+              "rms": 0.2741127160300685,
+              "abs_max": 4.323379993438721
+            },
+            "fr_thigh_joint": {
+              "mean": -0.0028774019691136365,
+              "rms": 0.2223949608483647,
+              "abs_max": 2.356412410736084
+            },
+            "fr_calf_joint": {
+              "mean": 0.02418650078714871,
+              "rms": 0.27135765306246123,
+              "abs_max": 2.1872925758361816
+            },
+            "fl_hip_joint": {
+              "mean": 0.08396640274462804,
+              "rms": 0.272704129652326,
+              "abs_max": 3.029874563217163
+            },
+            "fl_thigh_joint": {
+              "mean": 0.048596840512882815,
+              "rms": 0.22018807298292453,
+              "abs_max": 2.314915418624878
+            },
+            "fl_calf_joint": {
+              "mean": -0.021624694683642986,
+              "rms": 0.28291079031879884,
+              "abs_max": 2.4187514781951904
+            },
+            "rr_hip_joint": {
+              "mean": 0.08372907786436094,
+              "rms": 0.2832576461640665,
+              "abs_max": 3.8078367710113525
+            },
+            "rr_thigh_joint": {
+              "mean": 0.05213133088249326,
+              "rms": 0.24191975496849155,
+              "abs_max": 1.9355876445770264
+            },
+            "rr_calf_joint": {
+              "mean": -0.046220559472529614,
+              "rms": 0.29737364023015317,
+              "abs_max": 2.3017425537109375
+            },
+            "rl_hip_joint": {
+              "mean": -0.07568398390964406,
+              "rms": 0.2880180176776146,
+              "abs_max": 4.549713134765625
+            },
+            "rl_thigh_joint": {
+              "mean": -0.03611853848229992,
+              "rms": 0.22819077058387238,
+              "abs_max": 1.8222675323486328
+            },
+            "rl_calf_joint": {
+              "mean": 0.07345124396769727,
+              "rms": 0.2887642344976782,
+              "abs_max": 2.967367172241211
+            }
+          }
+        }
+      }
+    }
+  },
+  "timing": "pre-step state; termination terms captured after compute and before auto-reset",
+  "sampling": "original training noise and stochastic policy actions retained",
+  "algorithm_startup_anchor_counts": {
+    "teacher": 8793,
+    "student": 2809
+  },
+  "startup_anchor": {
+    "profile": "v6_normal_start_action_v1",
+    "reference": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+    "reference_sha256": "bdde0ca02d7e0d9db9ecdfd8c9b352cc1f511db49a9af936cc14c8046f6a77f8",
+    "coefficients": {
+      "main": 0.21093362834788681,
+      "student": 0.0022221143221353456
+    },
+    "coefficient_origin": {
+      "mode": "fixed_import_without_model_or_optimizer_transfer",
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "sha256": "73d961f5855d36b43d86852845a31f9a27259805cea53a317787e0bf023e5c76",
+      "donor_completed_updates": 44759,
+      "calibration_disabled": true
+    },
+    "calibration": {
+      "main": {
+        "primary_gradient_norm": 2.3702302888944837,
+        "anchor_gradient_norm": 1.1236853542315834,
+        "requested_ratio": 0.1,
+        "coefficient": 0.21093362834788681,
+        "achieved_ratio": 0.1
+      },
+      "student": {
+        "primary_gradient_norm": 0.003476357022773588,
+        "anchor_gradient_norm": 0.1564436621529434,
+        "requested_ratio": 0.1,
+        "coefficient": 0.0022221143221353456,
+        "achieved_ratio": 0.1
+      }
+    },
+    "sample_counter_scope": "current process only",
+    "startup_seconds": 1.0,
+    "command_abs_limits": [
+      1.2,
+      0.5,
+      0.8
+    ],
+    "mask": "default-reset startup cohort on flat, first1s; shared weights affect all terrains",
+    "samples": {
+      "teacher": 8793,
+      "student": 2809
+    }
+  }
+}

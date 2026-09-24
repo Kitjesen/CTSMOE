@@ -1,0 +1,186 @@
+{
+  "scope": {
+    "offline_fixed_audit_observations": true,
+    "not_training_minibatch_gradients": true,
+    "latent_gradient_excludes_load_balance": true,
+    "no_ppo_gradient_or_direction": true,
+    "not_causal_evidence": true,
+    "optimizer_steps": 0,
+    "does_not_start_training": true
+  },
+  "sources": {
+    "audit_output": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/distribution_audit_480_20260921",
+    "selection": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/anchor_v11_stage_20260921/late_diagnosis/selection.json",
+    "gradient_module": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/anchor_v11_stage_20260921/late_diagnosis/gradient_audit_v2.py",
+    "code": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/code_anchor_v11_20260921"
+  },
+  "audit_status": {
+    "state": "AUDIT_COMPLETE",
+    "optimizer_updates": 0,
+    "state_hashes_before": {
+      "model": "ead572943bbb5c8dcafe59d23d4b71972def52b531f6c6394d14bee203faebba",
+      "ppo_optimizer": "2e96dc871fc742dece0352e201349ecbf71e12701a768066df8622ef4c3b54cf",
+      "student_optimizer": "d55e1f29c6444c4d8049808ac6b05c687a3b2cd124b9ae83bbc62f0e01d3318b"
+    },
+    "state_hashes_after": {
+      "model": "ead572943bbb5c8dcafe59d23d4b71972def52b531f6c6394d14bee203faebba",
+      "ppo_optimizer": "2e96dc871fc742dece0352e201349ecbf71e12701a768066df8622ef4c3b54cf",
+      "student_optimizer": "d55e1f29c6444c4d8049808ac6b05c687a3b2cd124b9ae83bbc62f0e01d3318b"
+    },
+    "launcher_patch_restored": null,
+    "isolated_audit_process_exited": true,
+    "no_live_audit_process": true,
+    "input_files_unchanged": true
+  },
+  "coverage": {
+    "passed": false,
+    "states": 344,
+    "distinct_envs": 15,
+    "episode_ordinals": 3,
+    "thresholds": {
+      "states": 256,
+      "distinct_envs": 32,
+      "episode_ordinals": 2
+    }
+  },
+  "sample_sets": {
+    "state_weighted": {
+      "count": 4096,
+      "cap": 4096
+    },
+    "episode_balanced": {
+      "count": 64,
+      "cap": 64
+    }
+  },
+  "checkpoints": {
+    "V6": {
+      "label": "V6_43202",
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+      "completed_updates": 43202
+    },
+    "V9": {
+      "label": "V9_44711",
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+      "completed_updates": 44711
+    },
+    "V11": {
+      "label": "V11_44759",
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "completed_updates": 44759
+    }
+  },
+  "checkpoint_sha256": "73d961f5855d36b43d86852845a31f9a27259805cea53a317787e0bf023e5c76",
+  "reference_sha256": "bdde0ca02d7e0d9db9ecdfd8c9b352cc1f511db49a9af936cc14c8046f6a77f8",
+  "saved_anchor_student_coefficient": 0.0022221143221353456,
+  "model_state_sha256_before": {
+    "V6": "58255b366adc51435506edb887cc54f936420ec9718584155ccecde44a42af56",
+    "V9": "a58af75ce487bf7c01f25aefda0a617e16454194b4c7fd1bd2b903f6d8544d00",
+    "V11": "1d08c2e5cec4697d5478c878589237d4833525748e94cc8b5a8fd70bcc74bf96"
+  },
+  "model_state_sha256_after": {
+    "V6": "58255b366adc51435506edb887cc54f936420ec9718584155ccecde44a42af56",
+    "V9": "a58af75ce487bf7c01f25aefda0a617e16454194b4c7fd1bd2b903f6d8544d00",
+    "V11": "1d08c2e5cec4697d5478c878589237d4833525748e94cc8b5a8fd70bcc74bf96"
+  },
+  "parameters_unchanged": true,
+  "gradients_accumulated": false,
+  "results": {
+    "state_weighted": {
+      "sample_count": 4096,
+      "student_encoder": {
+        "v6_action_anchor_loss": 0.10701923072338104,
+        "cts_latent_distill_loss": 0.003249554429203272,
+        "moe_mean_usage": [
+          0.1251315176486969,
+          0.12423887103796005,
+          0.12143036723136902,
+          0.12165364623069763,
+          0.12865421175956726,
+          0.13605722784996033,
+          0.11953282356262207,
+          0.12330139428377151
+        ],
+        "v6_action_anchor_gradient_norm": 1.260741757486231,
+        "cts_latent_distill_gradient_norm": 0.050040021584812,
+        "gradient_cosine": 0.9701032819241019,
+        "anchor_student_coefficient": 0.0022221143221353456,
+        "weighted_anchor_gradient_norm": 0.0028015123158242404,
+        "weighted_anchor_to_distill_norm_ratio": 0.055985433800742945
+      },
+      "actions": {
+        "v11_student_vs_v6_rmse": 0.32713794708251953,
+        "v11_student_vs_v9_rmse": 0.2876407206058502,
+        "v11_teacher_vs_v6_rmse": 0.284911572933197,
+        "v11_teacher_vs_v9_rmse": 0.17419831454753876,
+        "v6_vs_v9_rmse": 0.3070065677165985
+      },
+      "main_action_anchor": {
+        "student_action_loss": 0.10701923072338104,
+        "teacher_action_loss": 0.08117459714412689,
+        "combined_half_sum_loss": 0.09409691393375397,
+        "student_branch_actor_gradient_norm": 1.7243472069646197,
+        "teacher_branch_actor_gradient_norm": 1.541106922070633,
+        "combined_actor_gradient_norm": 1.3369509920904004,
+        "teacher_encoder_gradient_norm": 0.060403238614652285
+      }
+    },
+    "episode_balanced": {
+      "sample_count": 64,
+      "student_encoder": {
+        "v6_action_anchor_loss": 0.08963145315647125,
+        "cts_latent_distill_loss": 0.00294437725096941,
+        "moe_mean_usage": [
+          0.1251315176486969,
+          0.12423887103796005,
+          0.12143036723136902,
+          0.12165364623069763,
+          0.12865421175956726,
+          0.13605722784996033,
+          0.11953282356262207,
+          0.12330139428377151
+        ],
+        "v6_action_anchor_gradient_norm": 1.077187699348205,
+        "cts_latent_distill_gradient_norm": 0.04553042448178283,
+        "gradient_cosine": 0.9648107382934464,
+        "anchor_student_coefficient": 0.0022221143221353456,
+        "weighted_anchor_gradient_norm": 0.002393634214349669,
+        "weighted_anchor_to_distill_norm_ratio": 0.05257219192646415
+      },
+      "actions": {
+        "v11_student_vs_v6_rmse": 0.299385130405426,
+        "v11_student_vs_v9_rmse": 0.24787718057632446,
+        "v11_teacher_vs_v6_rmse": 0.25901278853416443,
+        "v11_teacher_vs_v9_rmse": 0.16987767815589905,
+        "v6_vs_v9_rmse": 0.2959490716457367
+      },
+      "main_action_anchor": {
+        "student_action_loss": 0.08963145315647125,
+        "teacher_action_loss": 0.06708762794733047,
+        "combined_half_sum_loss": 0.07835954427719116,
+        "student_branch_actor_gradient_norm": 1.7271394288302881,
+        "teacher_branch_actor_gradient_norm": 1.4447789798857742,
+        "combined_actor_gradient_norm": 1.326732633650092,
+        "teacher_encoder_gradient_norm": 0.049604496038315495
+      }
+    }
+  },
+  "gate": {
+    "passed": false,
+    "checks": {
+      "coverage": false,
+      "state_weighted_cosine_at_least_0.5": true,
+      "state_weighted_ratio_in_0.03_to_0.15": true,
+      "balanced_cosine_not_opposite": true,
+      "balanced_cosine_absolute_difference_at_most_0.2": true,
+      "finite_nonzero_gradient_metrics": true
+    },
+    "observed": {
+      "state_weighted_cosine": 0.9701032819241019,
+      "state_weighted_weighted_norm_ratio": 0.055985433800742945,
+      "episode_balanced_cosine": 0.9648107382934464,
+      "cosine_absolute_difference": 0.005292543630655455
+    },
+    "decision": "reject_without_starting_training"
+  }
+}

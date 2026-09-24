@@ -1,0 +1,230 @@
+{
+  "climbfirst_smoke4096_20260919": {
+    "completed_updates": 31863,
+    "resume_checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true
+    },
+    "last_pit": {
+      "teacher": {
+        "episodes": 2579,
+        "climb_success": 2575,
+        "failed": 4,
+        "stable_success": 0
+      },
+      "student": {
+        "episodes": 885,
+        "climb_success": 864,
+        "failed": 16,
+        "stable_success": 0
+      }
+    },
+    "course": {
+      "frontier": 3,
+      "max_level": 21,
+      "min_samples": 64,
+      "streak": 0,
+      "window": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "decision_count": 2,
+      "decisions": [
+        {
+          "level": 2,
+          "counts": [
+            [
+              64,
+              63,
+              1
+            ],
+            [
+              94,
+              92,
+              1
+            ],
+            [
+              122,
+              118,
+              4
+            ],
+            [
+              121,
+              115,
+              6
+            ]
+          ],
+          "passed": true,
+          "advance": false
+        },
+        {
+          "level": 2,
+          "counts": [
+            [
+              65,
+              64,
+              0
+            ],
+            [
+              64,
+              63,
+              0
+            ],
+            [
+              80,
+              79,
+              1
+            ],
+            [
+              90,
+              88,
+              2
+            ]
+          ],
+          "passed": true,
+          "advance": true
+        }
+      ]
+    },
+    "mean_seconds": 6.814874291419983,
+    "old_terrain_reward_isolation": true
+  },
+  "climbfirst_inherit4096_20260919": {
+    "completed_updates": 31865,
+    "resume_checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "pit_climb_totals": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true
+    },
+    "last_pit": {
+      "teacher": {
+        "episodes": 2579,
+        "climb_success": 2575,
+        "failed": 4,
+        "stable_success": 0
+      },
+      "student": {
+        "episodes": 885,
+        "climb_success": 864,
+        "failed": 16,
+        "stable_success": 0
+      }
+    },
+    "course": {
+      "frontier": 3,
+      "max_level": 21,
+      "min_samples": 64,
+      "streak": 0,
+      "window": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "decision_count": 2,
+      "decisions": [
+        {
+          "level": 2,
+          "counts": [
+            [
+              64,
+              63,
+              1
+            ],
+            [
+              94,
+              92,
+              1
+            ],
+            [
+              122,
+              118,
+              4
+            ],
+            [
+              121,
+              115,
+              6
+            ]
+          ],
+          "passed": true,
+          "advance": false
+        },
+        {
+          "level": 2,
+          "counts": [
+            [
+              65,
+              64,
+              0
+            ],
+            [
+              64,
+              63,
+              0
+            ],
+            [
+              80,
+              79,
+              1
+            ],
+            [
+              90,
+              88,
+              2
+            ]
+          ],
+          "passed": true,
+          "advance": true
+        }
+      ]
+    },
+    "mean_seconds": 6.7718905210494995,
+    "old_terrain_reward_isolation": true
+  },
+  "checkpoint_contracts_and_finite_parameters": true
+}

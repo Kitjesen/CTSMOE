@@ -1,0 +1,33 @@
+{
+  "resume": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/speed_expansion_20260918/smoke64_v2/model_1.pt",
+  "resume_sha256": "76e90525d7b592d49ea0614c55849b75244e50da7edcd825716f2c6e961b841b",
+  "starting_completed_updates": 2,
+  "additional_updates": 2,
+  "target_completed_updates": 4,
+  "command_curriculum_start": "intermediate",
+  "command_ranges": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "terrain": true
+  },
+  "episode_length_s": 25.0,
+  "reward_weights": {
+    "lin_vel_z_l2": -1.9973333333333334,
+    "base_height_l2": -1.0036
+  }
+}

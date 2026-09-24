@@ -1,0 +1,86 @@
+{
+  "completed_updates": 37707,
+  "seconds": 6.578428030014038,
+  "starting_completed_updates": 37703,
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "pit_climb_totals": true,
+    "pit_individual": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true,
+    "terrain_allocation": true
+  },
+  "uphill_speed": {
+    "requested_limit_mps": 1.2,
+    "count": 245,
+    "effective_x_ranges": [
+      [
+        -1.2000000476837158,
+        1.2000000476837158
+      ]
+    ],
+    "sampled_min": [
+      -1.2000000476837158,
+      -1.0,
+      -1.5
+    ],
+    "sampled_max": [
+      1.2000000476837158,
+      1.0,
+      1.5
+    ]
+  },
+  "flat_speed": {
+    "profile": "flat_1p5_to_2_v1",
+    "start_step": 894792,
+    "target_limit_mps": 2.0,
+    "ramp_updates": 2000,
+    "scheduled_limit_mps": 1.606,
+    "count": 123,
+    "effective_x_ranges": [
+      [
+        -1.6059895753860474,
+        1.6059895753860474
+      ]
+    ],
+    "sampled_min": [
+      -1.6050000190734863,
+      -1.0,
+      -1.5
+    ],
+    "sampled_max": [
+      1.6050000190734863,
+      1.0,
+      1.5
+    ]
+  },
+  "original_command_ranges": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "counts": {
+    "stairs_up": 819,
+    "pit": 1639,
+    "wave": 246,
+    "stairs_down": 409,
+    "flat": 123,
+    "slope_up": 245,
+    "obstacles": 205,
+    "slope_down": 205,
+    "rough_slope": 205
+  }
+}

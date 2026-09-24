@@ -1,0 +1,67 @@
+{
+  "checkpoint": 25501,
+  "controls_matched": true,
+  "actual_slew_verified": true,
+  "groups": {
+    "original_rate12": {
+      "teacher": {
+        "count": 36,
+        "passes": 26.0,
+        "early_failures": 5,
+        "actuator": 5,
+        "base_contact": 4,
+        "timeouts": 1,
+        "by_level": {
+          "0": 7.0,
+          "3": 9.0,
+          "6": 6.0,
+          "9": 4.0
+        }
+      },
+      "student": {
+        "count": 36,
+        "passes": 25.0,
+        "early_failures": 6,
+        "actuator": 9,
+        "base_contact": 2,
+        "timeouts": 0,
+        "by_level": {
+          "0": 9.0,
+          "3": 8.0,
+          "6": 6.0,
+          "9": 2.0
+        }
+      }
+    },
+    "surface_rate12": {
+      "teacher": {
+        "count": 36,
+        "passes": 30.0,
+        "early_failures": 0,
+        "actuator": 1,
+        "base_contact": 3,
+        "timeouts": 2,
+        "by_level": {
+          "0": 9.0,
+          "3": 9.0,
+          "6": 6.0,
+          "9": 6.0
+        }
+      },
+      "student": {
+        "count": 36,
+        "passes": 32.0,
+        "early_failures": 0,
+        "actuator": 3,
+        "base_contact": 1,
+        "timeouts": 0,
+        "by_level": {
+          "0": 9.0,
+          "3": 8.0,
+          "6": 7.0,
+          "9": 8.0
+        }
+      }
+    }
+  }
+}

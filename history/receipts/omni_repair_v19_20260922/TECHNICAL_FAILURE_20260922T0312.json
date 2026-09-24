@@ -1,0 +1,20 @@
+{
+  "state": "technical_failure",
+  "supervisor_pid": 32334,
+  "time_utc": "2026-09-22T03:04:47.393160+00:00",
+  "source_completed": 31831,
+  "target_completed": 41831,
+  "authorized_new_updates": 10000,
+  "error": "train_34831 failed (1); preserve results and diagnose before resume",
+  "last_stage": {
+    "state": "train_34831",
+    "supervisor_pid": 32334,
+    "time_utc": "2026-09-22T03:03:17.977418+00:00",
+    "source_completed": 31831,
+    "target_completed": 41831,
+    "authorized_new_updates": 10000,
+    "child_pid": 38022,
+    "completed_updates": 32831
+  },
+  "automatic_retry": false
+}

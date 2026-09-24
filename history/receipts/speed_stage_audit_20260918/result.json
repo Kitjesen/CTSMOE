@@ -1,0 +1,224 @@
+{
+  "queried_at_utc": "2026-09-17T20:23:34.512428+00:00",
+  "status": {
+    "state": "training",
+    "completed_updates": 13945,
+    "seconds": 5.852153539657593,
+    "terrain": 4.93701171875,
+    "value": 0.014261129591614009,
+    "surrogate": 0.023169747181236745,
+    "entropy": 3.8351136803627015,
+    "mean_latent_loss": 0.002519795275293291,
+    "mean_load_balance_loss": 4.060106543875008e-05
+  },
+  "terrain_mean_last_500_updates": 4.8624052734375,
+  "seconds_mean_last_100_updates": 6.0161669421195985,
+  "episode_length_s": 25.0,
+  "control_dt": 0.02,
+  "commands": {
+    "ranges": {
+      "lin_vel_x": [
+        "-0.5",
+        "0.5"
+      ],
+      "lin_vel_y": [
+        "-0.5",
+        "0.5"
+      ],
+      "ang_vel_yaw": [
+        "-1.0",
+        "1.0"
+      ]
+    },
+    "command_range_curriculum": [
+      {
+        "iter": "20000",
+        "lin_vel_x": [
+          "-1.0",
+          "1.0"
+        ],
+        "lin_vel_y": [
+          "-1.0",
+          "1.0"
+        ],
+        "ang_vel_yaw": [
+          "-1.5",
+          "1.5"
+        ]
+      },
+      {
+        "iter": "50000",
+        "lin_vel_x": [
+          "-2.0",
+          "2.0"
+        ],
+        "lin_vel_y": [
+          "-1.0",
+          "1.0"
+        ],
+        "ang_vel_yaw": [
+          "-2.0",
+          "2.0"
+        ]
+      }
+    ],
+    "dynamic_resample_commands": "true",
+    "num_steps_per_iter": "24"
+  },
+  "checkpoint": "model_13500.pt",
+  "checkpoint_updates": 13501,
+  "checkpoint_common_step_counter": 324024,
+  "checkpoint_terrain": {
+    "wave": {
+      "n": 205,
+      "mean": 5.819512367248535,
+      "counts_L0_to_L9": [
+        5,
+        3,
+        9,
+        16,
+        23,
+        23,
+        35,
+        39,
+        34,
+        18
+      ]
+    },
+    "slope_up": {
+      "n": 410,
+      "mean": 6.312195301055908,
+      "counts_L0_to_L9": [
+        1,
+        7,
+        7,
+        21,
+        23,
+        51,
+        90,
+        95,
+        83,
+        32
+      ]
+    },
+    "slope_down": {
+      "n": 410,
+      "mean": 5.504878044128418,
+      "counts_L0_to_L9": [
+        14,
+        21,
+        17,
+        42,
+        51,
+        43,
+        55,
+        59,
+        58,
+        50
+      ]
+    },
+    "rough_slope": {
+      "n": 204,
+      "mean": 5.622549057006836,
+      "counts_L0_to_L9": [
+        9,
+        7,
+        16,
+        17,
+        18,
+        20,
+        24,
+        28,
+        40,
+        25
+      ]
+    },
+    "stairs_up": {
+      "n": 1024,
+      "mean": 2.3095703125,
+      "counts_L0_to_L9": [
+        126,
+        190,
+        249,
+        237,
+        153,
+        60,
+        9,
+        0,
+        0,
+        0
+      ]
+    },
+    "stairs_down": {
+      "n": 410,
+      "mean": 5.190243721008301,
+      "counts_L0_to_L9": [
+        20,
+        17,
+        30,
+        51,
+        51,
+        45,
+        42,
+        55,
+        59,
+        40
+      ]
+    },
+    "obstacles": {
+      "n": 819,
+      "mean": 5.769230842590332,
+      "counts_L0_to_L9": [
+        12,
+        28,
+        44,
+        57,
+        90,
+        113,
+        117,
+        145,
+        121,
+        92
+      ]
+    },
+    "flat": {
+      "n": 614,
+      "mean": 5.442996978759766,
+      "counts_L0_to_L9": [
+        22,
+        20,
+        39,
+        65,
+        72,
+        74,
+        85,
+        85,
+        82,
+        70
+      ]
+    }
+  },
+  "column_mapping": {
+    "0": "wave",
+    "1": "slope_up",
+    "2": "slope_up",
+    "3": "slope_down",
+    "4": "slope_down",
+    "5": "rough_slope",
+    "6": "stairs_up",
+    "7": "stairs_up",
+    "8": "stairs_up",
+    "9": "stairs_up",
+    "10": "stairs_up",
+    "11": "stairs_down",
+    "12": "stairs_down",
+    "13": "obstacles",
+    "14": "obstacles",
+    "15": "obstacles",
+    "16": "obstacles",
+    "17": "flat",
+    "18": "flat",
+    "19": "flat"
+  },
+  "remaining_seconds_to_20000_estimate": 36427.89083453417
+}

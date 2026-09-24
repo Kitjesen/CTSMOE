@@ -1,0 +1,111 @@
+{
+  "first": 37704,
+  "last": 41023,
+  "last100_seconds": 7.211205215454101,
+  "terrain": {
+    "wave": {
+      "first100": 6.075081300813008,
+      "last100": 5.799959349593496
+    },
+    "slope_up": {
+      "first100": 4.695591836734694,
+      "last100": 4.959836734693877
+    },
+    "slope_down": {
+      "first100": 6.04619512195122,
+      "last100": 5.655414634146341
+    },
+    "rough_slope": {
+      "first100": 5.828390243902438,
+      "last100": 5.889414634146341
+    },
+    "stairs_up": {
+      "first100": 6.081098901098901,
+      "last100": 6.112454212454212
+    },
+    "stairs_down": {
+      "first100": 6.122493887530562,
+      "last100": 6.1709535452322735
+    },
+    "obstacles": {
+      "first100": 6.011951219512195,
+      "last100": 6.174146341463414
+    },
+    "flat": {
+      "first100": 6.052276422764228,
+      "last100": 5.670325203252032
+    },
+    "pit": {
+      "first100": 18.547742525930445,
+      "last100": 18.728669920683345
+    }
+  },
+  "window": [
+    40523,
+    41023
+  ],
+  "pit_1p2m": {
+    "teacher": {
+      "episodes": 42347,
+      "climb": 39354,
+      "climb_rate": 0.9293220298958604,
+      "failed": 2288,
+      "stable": 0
+    },
+    "student": {
+      "episodes": 13896,
+      "climb": 11825,
+      "climb_rate": 0.8509643062751872,
+      "failed": 1785,
+      "stable": 0
+    }
+  },
+  "stairs": {
+    "teacher": {
+      "stairs_up": {
+        "episodes": 15744,
+        "grade_eligible": 15379,
+        "radius_passes": 14803,
+        "physical_failures": 532,
+        "physical_rate": 0.033790650406504065
+      },
+      "stairs_down": {
+        "episodes": 8114,
+        "grade_eligible": 7957,
+        "radius_passes": 7662,
+        "physical_failures": 299,
+        "physical_rate": 0.03684988908060143
+      }
+    },
+    "student": {
+      "stairs_up": {
+        "episodes": 4949,
+        "grade_eligible": 4847,
+        "radius_passes": 4469,
+        "physical_failures": 303,
+        "physical_rate": 0.061224489795918366
+      },
+      "stairs_down": {
+        "episodes": 2704,
+        "grade_eligible": 2657,
+        "radius_passes": 2569,
+        "physical_failures": 89,
+        "physical_rate": 0.032914201183431954
+      }
+    }
+  },
+  "finite_losses": {
+    "value": [
+      0.12965203933417796,
+      0.23646364361047745
+    ],
+    "surrogate": [
+      -0.0204144645947963,
+      0.04173449352383614
+    ],
+    "mean_latent_loss": [
+      0.0015037310018669813,
+      0.0018343895149882882
+    ]
+  }
+}

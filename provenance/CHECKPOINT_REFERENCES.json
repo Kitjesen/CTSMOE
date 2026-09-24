@@ -1,0 +1,2939 @@
+{
+  "status": "references only; weights retained at original storage, not uploaded to Git",
+  "records": [
+    {
+      "evidence": "history/receipts/delay_unsynchronized_diagnostic.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_7000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/parameter_update_verification_20260917.json",
+      "references": [
+        "model_10000.pt",
+        "model_10500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/terrain_diagnosis_20260918.json",
+      "references": [
+        "model_11500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_guard_20260918/formal_launch.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_20470.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_guard_20260918/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_20470.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_guard_20260918/heading19001_guard_complete.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_guard_20260918/REPORT.md",
+      "references": [
+        "model_20470.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_guard_20260918/resume_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/actuator_guard_20260918/smoke64/model_79.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_guard_20260918/smoke_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/stair_speed_20260918/resume64/model_71.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_peak_20260918/formal_launch.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402guard_20260918/model_20706.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_peak_20260918/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402guard_20260918/model_20706.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_peak_20260918/heading19001_peak.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_peak_20260918/REPORT.md",
+      "references": [
+        "model_20706.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/actuator_peak_20260918/smoke_resume_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/actuator_peak_20260918/smoke64/model_87.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/allocation_20260919/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/allocation_inherit_v2_20260919/model_33366.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/allocation_20260919/REPORT.md",
+      "references": [
+        "model_33348.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/allocation_20260919/validation.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/allocation_inherit_v2_20260919/model_33366.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/probe_selection.json",
+      "references": [
+        "model_43201.pt",
+        "model_44710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/source_decision.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/body_penalty_audit_20260918/run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_14119.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/climb_first_20260919/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/climbfirst_inherit4096_20260919/model_31864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/climb_first_20260919/inherit_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/climbfirst_smoke4096_20260919/model_31862.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/climb_first_20260919/REPORT.md",
+      "references": [
+        "model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/climb_first_20260919/smoke_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/continuous_training_v33_20260924/FROZEN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/continuous_training_v33_20260924/attempt04/source_migrated.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/continuous_training_v33_20260924/INTEGRATION_ASSESSMENT_FINALIZED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/continuous_training_v33_20260924/attempt04/integration16/model_44334.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/continuous_training_v33_20260924/MIGRATION.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/continuous_training_v33_20260924/attempt03/source_migrated.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/env8192_v32_20260924/attempt02/continuation/model_44318.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/continuous_training_v33_20260924/MIGRATION_FINAL.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/continuous_training_v33_20260924/attempt04/source_migrated.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/env8192_v32_20260924/attempt02/continuation/model_44318.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/delay_sync/summary.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_7000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/drift_cause_20260918/baseline19001.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/drift_cause_20260918/baseline19001_v2.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/drift_cause_20260918/heading19001_v2.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/drift_probe_20260918/launch18501.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_18500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/drift_probe_20260918/launch19001.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/drift_probe_20260918/REPORT.md",
+      "references": [
+        "model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/drift_probe_20260918/results18501.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_18500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/drift_probe_20260918/results19001.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/MONITOR.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/preflight_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/protocol_baseline.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_29999.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/selection_baseline.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_29999.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/source_selection.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/baseline_flat25_analysis.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_29999.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/baseline_terrain83_analysis.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_29999.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/MONITOR.json",
+      "references": [
+        "model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/pipeline_status_stopped.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-restart-v14-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "model_31846.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/preflight_audit_status.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/preflight_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/progress_observation_1.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-restart-v14-20260921/runs/smoke16/model_31846.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/progress_observation_2.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-restart-v14-20260921/runs/smoke16/model_31846.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/progress_observation_4.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-restart-v14-20260921/runs/smoke16/model_31846.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/protocol_baseline.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_29999.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/selection_baseline.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_29999.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/source_selection.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/env8192_v32_20260924/MIGRATION.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/yaw_stairs_v32_20260924/training_39162_to_46194/model_44123.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/env8192_v32_20260924/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_44123.pt",
+        "model_44155.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/env8192_v32_20260924/STATUS.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/env8192_v32_20260924/attempt02/trial32/model_44155.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/failure_diagnosis_20260920/REPORT.md",
+      "references": [
+        "model_35500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/failure_diagnosis_20260920/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_individualpit_20260919/model_35500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_speed_20260920/REPORT.md",
+      "references": [
+        "model_37282.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v10_20260921/eval_smoke_manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v10_smoke_20260921/model_44726.pt",
+        "model_44726.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v10_20260921/run_at_launch.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v10_smoke_20260921/model_44726.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v9_20260921/eval_smoke_selection.json",
+      "references": [
+        "model_43201.pt",
+        "model_43710.pt",
+        "model_43726.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v9_20260921/interim_44001_selection.json",
+      "references": [
+        "model_43201.pt",
+        "model_43710.pt",
+        "model_44000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v9_20260921/PLAN.md",
+      "references": [
+        "model_43710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/flat25_smoke_selection.json",
+      "references": [
+        "model_43201.pt",
+        "model_44710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/pilot300_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/full_episode_v12_smoke16_20260921/model_44726.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_44710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/preflight_runtime_receipt.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/smoke16_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/high_platform_plan_20260919/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_27500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/high_platform_plan_20260919/REPORT.md",
+      "references": [
+        "model_0.pt",
+        "model_27500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/high_platform_plan_20260919/resume64_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/pit_smoke64_20260919_v1/model_3.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/high_platform_plan_20260919/runtime_progress.json",
+      "references": [
+        "model_0.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/high_platform_plan_20260919/runtime_start.json",
+      "references": [
+        "model_0.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/high_platform_plan_20260919/smoke64_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_27500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_default_v23_20260923/MONITOR.json",
+      "references": [
+        "model_34838.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_default_v23_20260923/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_34924.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/MONITOR.json",
+      "references": [
+        "model_34838.pt",
+        "model_34924.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_34822.pt",
+        "model_34838.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/second_segment_run.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/hip_guard_v22_attempt03/training_34823_to_34839/model_34838.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/individual_pit_20260919/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/individual_pit_inherit_20260919/model_34447.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/individual_pit_20260919/REPORT.md",
+      "references": [
+        "model_34413.pt",
+        "model_34447.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/individual_pit_20260919/validation.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/individual_pit_inherit_20260919/model_34447.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/mixed9_20260919/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_29999.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/mixed9_20260919/REPORT.md",
+      "references": [
+        "model_29999.pt",
+        "model_30000.pt",
+        "model_30003.pt",
+        "model_5467.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/mixed9_20260919/resume_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_smoke4096_v2_20260919/model_30003.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/mixed9_20260919/runtime_first.json",
+      "references": [
+        "model_30000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/mixed9_20260919/runtime_progress.json",
+      "references": [
+        "model_30000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/mixed9_20260919/smoke_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919/model_29999.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/motion_quality_20260918/baseline_results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_23500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/motion_quality_20260918/heading_results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_23500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/motion_quality_20260918/REPORT.md",
+      "references": [
+        "model_23500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_eight_hip_v29_20260923/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_landing_v31_20260924/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_36193.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_landing_v31_20260924/SOURCE_FINALIZED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/terrain_variety_v30_20260923/training_35123_to_41123/model_36193.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/INITIAL_RUNTIME_QUALIFICATION04.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/MONITOR.json",
+      "references": [
+        "model_32000.pt",
+        "model_32830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_32000.pt",
+        "model_32500.pt",
+        "model_32830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/TRAINING_STARTED_RUNTIME.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/phase_pose_v18_20260922/BASELINE_30000_REVIEW.md",
+      "references": [
+        "model_29999.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/phase_pose_v18_20260922/COEFFICIENT_MAGNITUDE.json",
+      "references": [
+        "/root/autodl-tmp/cts-posture-stop-v17-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/phase_pose_v18_20260922/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/phase_v8_20260921/diagnose_flat_selection.json",
+      "references": [
+        "model_43500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/phase_v8_20260921/flat_43501_selection.json",
+      "references": [
+        "model_43500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_posture_20260920/inherit_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/pit_posture_smoke_20260920/model_41008.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_posture_20260920/preflight_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_uphill_speed_20260920/model_41000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_posture_20260920/switch_receipt.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_uphill_speed_20260920/model_41425.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_traverse_v26_20260923/SOURCE_25CM_REPORT.md",
+      "references": [
+        "model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_traverse_v26_20260923/SOURCE_REVIEW.md",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_cause_20260921/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "model_43201.pt",
+        "model_43710.pt",
+        "model_44710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_history_20260920/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_20260920/model_41911.pt",
+        "model_10000.pt",
+        "model_13000.pt",
+        "model_14000.pt",
+        "model_14119.pt",
+        "model_14534.pt",
+        "model_15000.pt",
+        "model_16000.pt",
+        "model_17000.pt",
+        "model_18000.pt",
+        "model_18347.pt",
+        "model_20000.pt",
+        "model_20470.pt",
+        "model_21000.pt",
+        "model_24000.pt",
+        "model_25598.pt",
+        "model_27000.pt",
+        "model_29999.pt",
+        "model_31000.pt",
+        "model_33000.pt",
+        "model_35000.pt",
+        "model_37000.pt",
+        "model_37500.pt",
+        "model_38000.pt",
+        "model_40000.pt",
+        "model_41000.pt",
+        "model_41500.pt",
+        "model_41750.pt",
+        "model_42000.pt",
+        "model_5000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_history_20260920/selection.json",
+      "references": [
+        "model_10000.pt",
+        "model_13000.pt",
+        "model_14000.pt",
+        "model_14119.pt",
+        "model_14534.pt",
+        "model_15000.pt",
+        "model_16000.pt",
+        "model_17000.pt",
+        "model_18000.pt",
+        "model_18347.pt",
+        "model_20000.pt",
+        "model_20470.pt",
+        "model_21000.pt",
+        "model_24000.pt",
+        "model_25598.pt",
+        "model_27000.pt",
+        "model_29999.pt",
+        "model_31000.pt",
+        "model_33000.pt",
+        "model_35000.pt",
+        "model_37000.pt",
+        "model_37500.pt",
+        "model_38000.pt",
+        "model_40000.pt",
+        "model_41000.pt",
+        "model_41500.pt",
+        "model_41750.pt",
+        "model_42000.pt",
+        "model_5000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_history_20260920/summary.json",
+      "references": [
+        "model_10000.pt",
+        "model_13000.pt",
+        "model_14000.pt",
+        "model_14119.pt",
+        "model_14534.pt",
+        "model_15000.pt",
+        "model_16000.pt",
+        "model_17000.pt",
+        "model_18000.pt",
+        "model_18347.pt",
+        "model_20000.pt",
+        "model_20470.pt",
+        "model_21000.pt",
+        "model_24000.pt",
+        "model_25598.pt",
+        "model_27000.pt",
+        "model_29999.pt",
+        "model_31000.pt",
+        "model_33000.pt",
+        "model_35000.pt",
+        "model_37000.pt",
+        "model_37500.pt",
+        "model_38000.pt",
+        "model_40000.pt",
+        "model_41000.pt",
+        "model_41500.pt",
+        "model_41750.pt",
+        "model_42000.pt",
+        "model_5000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_stop_v17_20260922/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_stop_v17_20260922/preflight_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_stop_v17_20260922/training_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/relax45_20260919/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_20260919/model_30345.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/relax45_20260919/inherit_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/relax45_smoke4096_20260919/model_30349.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/relax45_20260919/pit_deterministic31001.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/relax45_20260919/PIT_PREDICATE_DIAGNOSIS.md",
+      "references": [
+        "model_31000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/relax45_20260919/pit_stochastic31001.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/relax45_20260919/REPORT.md",
+      "references": [
+        "model_30345.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/relax45_20260919/smoke_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_20260919/model_30345.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/shared_posture_20260920/inherit_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/shared_posture_smoke_20260920/model_41508.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/shared_posture_20260920/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_pit_posture_20260920/model_41500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/shared_posture_20260920/preflight_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_pit_posture_20260920/model_41500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/shared_posture_20260920/REPORT.md",
+      "references": [
+        "model_41646.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/shared_posture_20260920/switch_receipt.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_pit_posture_20260920/model_41646.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/slope_audit_20260920/REPORT.md",
+      "references": [
+        "model_37282.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/slope_speed_20260920/inherit_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/uphill_speed_smoke_20260920/model_37504.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/slope_speed_20260920/preflight_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_flat_speed_20260920/model_37500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/slope_speed_20260920/REPORT.md",
+      "references": [
+        "model_37500.pt",
+        "model_37702.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/slope_speed_20260920/switch_receipt.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_flat_speed_20260920/model_37702.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/EVALUATION_33865_IDENTITY.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/MONITOR.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_33173.pt",
+        "model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/SOURCE_33174_IDENTITY.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/TRAINING_RUN_REMOTE.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_expansion_20260918/DIAGNOSIS.md",
+      "references": [
+        "model_14119.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_expansion_20260918/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_14119.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_expansion_20260918/formal_switch.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_14119.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_expansion_20260918/formal_verified.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_14119.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_expansion_20260918/smoke_resume_receipt.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/speed_expansion_20260918/smoke64_v2/model_1.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_stage_audit_20260918/result.json",
+      "references": [
+        "model_13500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/heartbeat_20260922_1154.json",
+      "references": [
+        "model_34000.pt",
+        "model_34500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/MONITOR.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/requested_status_20260922_1205.json",
+      "references": [
+        "model_34500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_failure_peak_20260918/guarded_results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_failure_peak_20260918/launch.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_failure_peak_20260918/no_actuator_termination_results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_focus_20260918/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_speed1_20260918/model_14534.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_focus_20260918/formal_switch.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_speed1_20260918/model_14534.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_focus_20260918/formal_verified.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_speed1_20260918/model_14534.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_focus_20260918/REPORT.md",
+      "references": [
+        "model_14534.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_focus_20260918/resume64_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/stair_focus_20260918/smoke64/model_5.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_focus_20260918/smoke64_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/speed_expansion_20260918/smoke64_v2/model_1.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_speed_20260918/baseline_results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_stairs80_noheight_20260918/model_18347.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_speed_20260918/formal_launch.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_stairs80_noheight_20260918/model_18347.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_speed_20260918/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_stairs80_noheight_20260918/model_18347.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_speed_20260918/REPORT.md",
+      "references": [
+        "model_18347.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_speed_20260918/smoke_resume_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/stair_speed_20260918/smoke64/model_67.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_speed_20260918/switch_source.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_stairs80_noheight_20260918/model_18347.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_stall_followup_20260918/current21001_results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_21000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_observation_20260922/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-v15-long-10000-20260922/runs/completed_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_observation_20260922/REPORT.md",
+      "references": [
+        "/root/autodl-tmp/cts-uphill-runup-v16-20260922/runs/completed_33831/model_33033.pt",
+        "model_33033.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_observation_20260922/STOPPED.json",
+      "references": [
+        "/root/autodl-tmp/cts-uphill-runup-v16-20260922/runs/completed_33831/model_33033.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_observation_20260922/stop_request.json",
+      "references": [
+        "/root/autodl-tmp/cts-uphill-runup-v16-20260922/runs/completed_32847/model_32846.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/balanced_smoke_comparison.json",
+      "references": [
+        "model_43105.pt",
+        "model_43113.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/balanced_smoke_selection.json",
+      "references": [
+        "model_43105.pt",
+        "model_43113.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/baseline_selection.json",
+      "references": [
+        "model_31830.pt",
+        "model_42913.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/candidate_selection.json",
+      "references": [
+        "model_42913.pt",
+        "model_43009.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/comparison.json",
+      "references": [
+        "model_42913.pt",
+        "model_43009.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/continuous1000_extension.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_continuous96_20260920/model_43130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/CONTINUOUS_REPAIR.md",
+      "references": [
+        "model_43130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/continuous_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/continuous_selection.json",
+      "references": [
+        "model_43105.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/cost_selection.json",
+      "references": [
+        "model_43105.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/flat40_comparison.json",
+      "references": [
+        "model_43105.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/flat40_eval_manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+        "model_43105.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/flat40_regression_manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/FLAT_FOCUS_RUN.md",
+      "references": [
+        "model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/flat_focus_selection.json",
+      "references": [
+        "model_43105.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/protected96_comparison.json",
+      "references": [
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/protected_run_actual.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/protected_selection.json",
+      "references": [
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/repair_comparison.json",
+      "references": [
+        "model_42913.pt",
+        "model_43009.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/repeat96_comparison.json",
+      "references": [
+        "model_42913.pt",
+        "model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/repeat_selection.json",
+      "references": [
+        "model_42913.pt",
+        "model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/REPORT.md",
+      "references": [
+        "model_42913.pt",
+        "model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/request96_comparison.json",
+      "references": [
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/request_selection.json",
+      "references": [
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/transition_selection.json",
+      "references": [
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/EARLY_RESTART_PROPOSAL.md",
+      "references": [
+        "model_29999.pt",
+        "model_31500.pt",
+        "model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/pilot_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_v13_smoke16_20260921/model_44726.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_29999.pt",
+        "model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/strong_stance_20260920/inherit_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/strong_stance_smoke_20260920/model_41654.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/strong_stance_20260920/preflight_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_pit_posture_20260920/model_41646.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/strong_stance_20260920/REPORT.md",
+      "references": [
+        "model_41750.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/strong_stance_20260920/switch_receipt.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_shared_posture_20260920/model_41750.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/terrain_variety_v30_20260923/SOURCE35123_FINALIZED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/omni_eight_hip_v29_20260923/training_34839_to_35123/model_35122.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/uphill_runup_v16_20260922/handoff.json",
+      "references": [
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/uphill_runup_v16_20260922/handoff_status.json",
+      "references": [
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/uphill_runup_v16_20260922/MONITOR.json",
+      "references": [
+        "/root/autodl-tmp/cts-uphill-runup-v16-20260922/runs/completed_33831/model_33033.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/uphill_runup_v16_20260922/overspeed_event.json",
+      "references": [
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_diagnosis_20260919/formal_launch.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_25598.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_diagnosis_20260919/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_25598.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_diagnosis_20260919/REPORT.md",
+      "references": [
+        "model_25598.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_limits_20260918/REPORT.md",
+      "references": [
+        "model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_limits_20260918/results19001.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_straightspeed_20260918/model_19000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_reset_20260919/formal_launch.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_slew12_20260919/model_26013.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_reset_20260919/formal_run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_slew12_20260919/model_26013.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_reset_20260919/REPORT.md",
+      "references": [
+        "model_26013.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/yaw_stairs_v32_20260924/PLAN_AND_EVIDENCE.md",
+      "references": [
+        "model_39161.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_reset_20260919/random_original/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_25500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_reset_20260919/random_surface/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_25500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_reset_20260919/surface_rate12/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_25500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_diagnosis_20260919/baseline/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_25500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_diagnosis_20260919/lower_reset/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_25500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_diagnosis_20260919/no_stop/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_25500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/wave_diagnosis_20260919/rate12/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_rs0402peak_20260918/model_25500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/v24_integrated_20260923/orchestration/SOURCE_REVIEW.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/v24_integrated_20260923/reference/v23_final_assessment/HASHES_BEFORE.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/hip_default_v23_20260923/training_34839_to_35721/model_35720.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/v24_integrated_20260923/reference/v23_final_assessment/stairend_15cm_manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/hip_default_v23_20260923/training_34839_to_35721/model_35720.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/v24_integrated_20260923/reference/v23_final_assessment/stairend_manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/hip_default_v23_20260923/training_34839_to_35721/model_35720.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/v24_integrated_20260923/reference/v23_partial_assessment/flat25_manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/hip_default_v23_20260923/training_34839_to_35721/model_35720.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/v24_integrated_20260923/reference/v23_partial_assessment/terrain83_manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/hip_default_v23_20260923/training_34839_to_35721/model_35720.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/uphill_runup_v16_20260922/evaluation_32831/terrain83/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/cts-v15-long-10000-20260922/runs/completed_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/terrain_variety_v30_20260923/orchestration/V30_FROZEN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/omni_eight_hip_v29_20260923/training_34839_to_35123/model_35122.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/terrain_variety_v30_20260923/orchestration/V30_FROZEN_TRANSCRIPTION_ATTEMPT01.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/omni_eight_hip_v29_20260923/training_34839_to_35123/model_35122.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/terrain_variety_v30_20260923/orchestration/V30_FROZEN_VERIFIED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/omni_eight_hip_v29_20260923/training_34839_to_35123/model_35122.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/recovery_receipt.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_v13_pilot300_20260921/model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/preflight_result/audit_status.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/preflight_result/full_episode_stats.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/preflight_result/run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/smoke/audit_status.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/failure_excerpts_r1/flat25.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_v13_pilot300_20260921/model_45010.pt",
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/failure_excerpts_r1/normal.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_v13_pilot300_20260921/model_45010.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/flat25/analysis.json",
+      "references": [
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/flat25/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_v13_pilot300_20260921/model_45010.pt",
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/normal/analysis.json",
+      "references": [
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/normal/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_v13_pilot300_20260921/model_45010.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/wave_reset_parity_r3/FINALIZED.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_v13_pilot300_20260921/model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/wave_reset_parity_r3/output/analysis.json",
+      "references": [
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_v13_20260921/evaluation300/wave_reset_parity_r3/output/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_v13_pilot300_20260921/model_45010.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/all_scene_v6/analysis.json",
+      "references": [
+        "model_43105.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/all_scene_v6/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+        "model_43105.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/all_scene_v7/analysis.json",
+      "references": [
+        "model_43105.pt",
+        "model_44105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/all_scene_v7/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_continuous1000_20260920/model_44105.pt",
+        "model_43105.pt",
+        "model_44105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/balanced_smoke/run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/balanced_smoke_eval/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_balanced_smoke_20260920/model_43113.pt",
+        "model_43105.pt",
+        "model_43113.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/balanced_smoke_eval/summary.json",
+      "references": [
+        "model_43105.pt",
+        "model_43113.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/balanced_smoke_regression/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_balanced_smoke_20260920/model_43113.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/baseline/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_video_20260920/model_42913.pt",
+        "model_31830.pt",
+        "model_42913.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/baseline/summary.json",
+      "references": [
+        "model_31830.pt",
+        "model_42913.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/candidate96/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_trial96_20260920/model_43009.pt",
+        "model_42913.pt",
+        "model_43009.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/candidate96/summary.json",
+      "references": [
+        "model_42913.pt",
+        "model_43009.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/continuous1000_eval/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_continuous1000_20260920/model_44105.pt",
+        "model_43105.pt",
+        "model_44105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/continuous1000_regression/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_continuous1000_20260920/model_44105.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/cost_probe/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_request96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/flat40_eval/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+        "model_43105.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/flat40_eval/summary.json",
+      "references": [
+        "model_43105.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/flat40_regression/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/flat_focus_launch/run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/protected96/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_protected96_20260920/model_43201.pt",
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/protected96/summary.json",
+      "references": [
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/protected_regression96/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_video_20260920/model_42913.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_protected96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/regression96/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_video_20260920/model_42913.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_trial96_20260920/model_43009.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/repeat96/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt",
+        "model_42913.pt",
+        "model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/repeat96/summary.json",
+      "references": [
+        "model_42913.pt",
+        "model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/repeat_regression96/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_video_20260920/model_42913.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_repeat96_20260920/model_43105.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/request96/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_request96_20260920/model_43201.pt",
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/request96/summary.json",
+      "references": [
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/request_regression96/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_video_20260920/model_42913.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_request96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/reward_probe/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_protected96_20260920/model_43201.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/stress/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_request96_20260920/model_43201.pt",
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/stress/summary.json",
+      "references": [
+        "model_42913.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/teacher_regression/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_video_20260920/model_42913.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_request96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_repair_20260920/transition_probe/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_protected96_20260920/model_43201.pt",
+        "model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_observation_20260922/latest/all_flat_analysis.json",
+      "references": [
+        "/root/autodl-tmp/cts-uphill-runup-v16-20260922/runs/completed_33831/model_33033.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_observation_20260922/latest/hashes.json",
+      "references": [
+        "/root/autodl-tmp/cts-uphill-runup-v16-20260922/runs/completed_33831/model_33033.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/startup_observation_20260922/latest/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-uphill-runup-v16-20260922/runs/completed_33831/model_33033.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/brake_context/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/aggregated_review_metrics.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/pipeline_status.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/runtime_evidence/PREPARED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/runtime_prepare/README.md",
+      "references": [
+        "model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/runtime_prepare/SOURCE_IDENTITY.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/stair_release_validation/PLAN.md",
+      "references": [
+        "model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/stair_release_validation/review/SELECTED_CASES.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/stair_release_validation/review/results_verified/nominal/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/stair_release_validation/review/results_verified/perturbed/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/runtime_evidence/training_33881_to_34823/run.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33865_to_33881/model_33880.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/braking_34823/hashes_before.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/braking_34823/protocol.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/braking_34823/selection.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/evaluation_34823/hashes_before.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/evaluation_34823/protocol.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/evaluation_34823/selection.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/stair_terminal_34823/hashes_before.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/stair_terminal_34823/protocol.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/stair_terminal_34823/selection.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/stair_terminal_34823/stairend/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/evaluation_34823/flat25/analysis.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/evaluation_34823/flat25/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/evaluation_34823/flat25/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/evaluation_34823/terrain83/analysis.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/evaluation_34823/terrain83/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/evaluation_34823/terrain83/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/braking_34823/brake25/BRAKE_METRICS_candidate.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/braking_34823/brake25/BRAKE_METRICS_candidate_teacher.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/braking_34823/brake25/BRAKE_METRICS_source33865.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/braking_34823/brake25/BRAKE_METRICS_source33865_teacher.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/stair_coverage_v21_20260922/final_34823/braking_34823/brake25/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/MONITOR_BEFORE_REVIEW.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "model_33500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/diagnostic_excerpts/brake25_manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/diagnostic_excerpts/stairend_manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/paired/flat25/analysis.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/paired/flat25/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/paired/flat25/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/paired/terrain83/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/paired/terrain83/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/focused/brake25/BRAKE_METRICS_candidate.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/focused/brake25/BRAKE_METRICS_candidate_teacher.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/focused/brake25/BRAKE_METRICS_source33174.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/focused/brake25/BRAKE_METRICS_source33174_teacher.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/focused/brake25/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/requested_evaluation_33865/focused/stairend/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/speed_brake_v20_20260922/landing_audit_v21/results_33865/stairend/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/slope_speed_20260920/controlled/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_flat_speed_20260920/model_37500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/slope_speed_20260920/training/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_flat_speed_20260920/model_37500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/slope_audit_20260920/controlled/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_individualpit_20260919/model_37282.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/slope_audit_20260920/training/results.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_individualpit_20260919/model_37282.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_stop_v17_20260922/recording_final_32831/all_flat_analysis.json",
+      "references": [
+        "/root/autodl-tmp/cts-posture-stop-v17-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_stop_v17_20260922/recording_final_32831/forward_manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-posture-stop-v17-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_stop_v17_20260922/recording_final_32831/hashes_before.json",
+      "references": [
+        "/root/autodl-tmp/cts-posture-stop-v17-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_history_20260920/fine/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_20260920/model_41911.pt",
+        "model_31000.pt",
+        "model_31500.pt",
+        "model_31830.pt",
+        "model_32000.pt",
+        "model_32500.pt",
+        "model_33000.pt",
+        "model_33348.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_history_20260920/fine/selection.json",
+      "references": [
+        "model_31000.pt",
+        "model_31500.pt",
+        "model_31830.pt",
+        "model_32000.pt",
+        "model_32500.pt",
+        "model_33000.pt",
+        "model_33348.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/posture_history_20260920/fine/summary.json",
+      "references": [
+        "model_31000.pt",
+        "model_31500.pt",
+        "model_31830.pt",
+        "model_32000.pt",
+        "model_32500.pt",
+        "model_33000.pt",
+        "model_33348.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_traverse_v26_20260923/orchestration/FROZEN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_posture_20260920/frozen/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_uphill_speed_20260920/model_41000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_hipmargin_v28_pending_20260923/orchestration/FROZEN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_hipmargin_v28_20260923/orchestration/FROZEN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_heading_v27_attempt02_20260923/orchestration/FROZEN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/pit_heading_v27_20260923/orchestration/FROZEN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/evaluation_32831/hashes_before.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/evaluation_32831/protocol.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/evaluation_32831/selection.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/recovery01/PREFLIGHT_RUN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/evaluation_32831/flat25/analysis.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/evaluation_32831/flat25/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/evaluation_32831/flat25/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/evaluation_32831/terrain83/analysis.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/evaluation_32831/terrain83/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_repair_v19_20260922/evaluation_32831/terrain83/manifest.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/training_31831_to_32831/model_32830.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_landing_v31_20260924/orchestration/V31_FROZEN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/terrain_variety_v30_20260923/training_35123_to_41123/model_36193.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_landing_v31_20260924/showcase_request/recording_v2/FINALIZED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/omni_landing_v31_20260924/training_36194_to_46194/model_38743.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_eight_hip_v29_20260923/orchestration/V29_FROZEN.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/omni_eight_hip_v29_20260923/real_stair_evidence/20260923_stair_power_loss/reference/MUJOCO_TEST_ASSUMPTIONS.md",
+      "references": [
+        "model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/candidate/PREPARED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/candidate/SOURCE_IDENTITY.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/candidate_attempt02/PREPARED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/candidate_attempt02/SOURCE_IDENTITY.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/candidate_attempt03/PREPARED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/candidate_attempt03/SOURCE_IDENTITY.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/reference_v21/launch_34823.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33865_to_33881/model_33880.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_guard_v22_20260923/reference_v21/SOURCE_IDENTITY.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_default_v23_20260923/candidate/PREPARED.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/hip_default_v23_20260923/candidate/SOURCE_IDENTITY.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/deep_startup_audit_20260921/selection.json",
+      "references": [
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/gradient_diagnosis/PLAN.md",
+      "references": [
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/pilot300_flat25/analysis.json",
+      "references": [
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/pilot300_flat25/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/full_episode_v12_pilot300_20260921/model_45010.pt",
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/pilot300_normal/analysis.json",
+      "references": [
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/pilot300_normal/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/full_episode_v12_pilot300_20260921/model_45010.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/preflight_results/audit_status.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/preflight_results/full_episode_stats.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/gradient_diagnosis/results_r1/run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/full_episode_v12_pilot300_20260921/model_45010.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/deep_startup_audit_20260921/results_r1/manifest.json",
+      "references": [
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/full_episode_v12_20260921/deep_startup_audit_20260921/results_r2/manifest.json",
+      "references": [
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45010.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v9_20260921/diagnostic/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/phase_v8_1000_20260921/model_43500.pt",
+        "model_43500.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v9_20260921/interim_44001/analysis.json",
+      "references": [
+        "model_43201.pt",
+        "model_43710.pt",
+        "model_44000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v9_20260921/interim_44001/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44000.pt",
+        "model_43201.pt",
+        "model_43710.pt",
+        "model_44000.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v10_20260921/baseline_v9_44711/analysis.json",
+      "references": [
+        "model_43201.pt",
+        "model_43710.pt",
+        "model_44710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/flat_v10_20260921/baseline_v9_44711/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "model_43201.pt",
+        "model_43710.pt",
+        "model_44710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/pilot300/run.json",
+      "references": [
+        "/root/cts-early-restart-v14-20260921/runs/smoke16/model_31846.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/evaluation300/flat25/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-restart-v14-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/evaluation300/flat25/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-restart-v14-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/evaluation300/terrain83/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-restart-v14-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_restart_v14_20260921/evaluation300/terrain83/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-restart-v14-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evaluation_audit_20260922/protocol.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evaluation_audit_20260922/selection.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/pipeline_status.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/protocol_300.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/selection_300.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/long_training_20260922/PLAN.md",
+      "references": [
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/long_training_20260922/start_evidence/pipeline_status.json",
+      "references": [
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/long_training_20260922/start_evidence/run.json",
+      "references": [
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/runs/pilot300/run.json",
+      "references": [
+        "/root/cts-early-ablation-v15-20260921/runs/smoke16/model_31846.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/runs/smoke16/run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/evaluation300/flat25/analysis.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/evaluation300/flat25/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/evaluation300/flat25/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/evaluation300/terrain83/analysis.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/evaluation300/terrain83/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evidence/evaluation300/terrain83/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evaluation_audit_20260922/flat25/analysis_v14.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evaluation_audit_20260922/terrain83/analysis.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evaluation_audit_20260922/terrain83/analysis_enriched.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/early_ablation_v15_20260921/evaluation_audit_20260922/terrain83/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+        "/root/cts-early-ablation-v15-20260921/runs/pilot300/model_32130.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/composite_integration_v25_20260923/orchestration/BEHAVIOR_ELIGIBILITY.template.json",
+      "references": [
+        "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/composite_integration_v25_20260923/orchestration/README.md",
+      "references": [
+        "model_34822.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/distribution_audit/gradient_gate.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/distribution_audit/run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/late_diagnosis/selection.json",
+      "references": [
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_44758.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/pilot48/analysis.json",
+      "references": [
+        "model_44710.pt",
+        "model_44758.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/pilot48/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "model_44710.pt",
+        "model_44758.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/pilot48/run.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_smoke_20260921/model_44726.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/v10_final/analysis.json",
+      "references": [
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/v10_final/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v10_1000_20260921/model_45710.pt",
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_45710.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/late_diagnosis/existing/diagnosis.json",
+      "references": [
+        "model_44710.pt",
+        "model_44758.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/late_diagnosis/existing/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "model_44710.pt",
+        "model_44758.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/late_diagnosis/result/gradient_audit.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt"
+      ]
+    },
+    {
+      "evidence": "history/receipts/anchor_v11_20260921/late_diagnosis/result/manifest.json",
+      "references": [
+        "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+        "model_43201.pt",
+        "model_44710.pt",
+        "model_44758.pt"
+      ]
+    }
+  ]
+}

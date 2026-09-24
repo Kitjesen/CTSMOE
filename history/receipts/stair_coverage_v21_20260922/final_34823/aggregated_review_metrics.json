@@ -1,0 +1,357 @@
+{
+  "braking": {
+    "source33865": {
+      "cases": 36,
+      "physical_cases": [
+        [
+          2,
+          "longitudinal_+1_2"
+        ]
+      ],
+      "stop_events": 72,
+      "valid_entry": 37,
+      "qualified": 36,
+      "max_stop_time": 0.64,
+      "max_path_until_stop": 0.34039103984832764,
+      "max_leg_torque": 104.92485046386719,
+      "max_wheel_torque": 17.0,
+      "max_leg_speed": 11.13656997680664,
+      "max_wheel_speed": 46.12873077392578
+    },
+    "source33865_teacher": {
+      "cases": 36,
+      "physical_cases": [],
+      "stop_events": 72,
+      "valid_entry": 46,
+      "qualified": 46,
+      "max_stop_time": 0.5,
+      "max_path_until_stop": 0.35235610604286194,
+      "max_leg_torque": 105.78282165527344,
+      "max_wheel_torque": 17.0,
+      "max_leg_speed": 8.44178581237793,
+      "max_wheel_speed": 32.60264205932617
+    },
+    "candidate": {
+      "cases": 36,
+      "physical_cases": [],
+      "stop_events": 72,
+      "valid_entry": 38,
+      "qualified": 38,
+      "max_stop_time": 0.7000000000000001,
+      "max_path_until_stop": 0.43206775188446045,
+      "max_leg_torque": 101.14205169677734,
+      "max_wheel_torque": 17.0,
+      "max_leg_speed": 8.702259063720703,
+      "max_wheel_speed": 38.88323211669922
+    },
+    "candidate_teacher": {
+      "cases": 36,
+      "physical_cases": [],
+      "stop_events": 72,
+      "valid_entry": 46,
+      "qualified": 46,
+      "max_stop_time": 0.58,
+      "max_path_until_stop": 0.4325060248374939,
+      "max_leg_torque": 97.7170639038086,
+      "max_wheel_torque": 17.0,
+      "max_leg_speed": 9.814356803894043,
+      "max_wheel_speed": 35.87850570678711
+    }
+  },
+  "stair_terminal": {
+    "0": {
+      "stairs_up_continue": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "safe_tile_endpoint": 6
+        },
+        "post_platform_vz_peak": 0.1855282336473465,
+        "support_dwell_min_s": 0.34
+      },
+      "stairs_up_stop": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "supported_platform_dwell": 6
+        },
+        "post_platform_vz_peak": 0.2778398096561432,
+        "support_dwell_min_s": 2.0
+      },
+      "stairs_down_continue": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "safe_tile_endpoint": 6
+        },
+        "post_platform_vz_peak": 0.4861735999584198,
+        "support_dwell_min_s": 0.16
+      },
+      "stairs_down_stop": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "timeout": 1,
+          "supported_platform_dwell": 5
+        },
+        "post_platform_vz_peak": 0.4507073760032654,
+        "support_dwell_min_s": 1.06
+      }
+    },
+    "1": {
+      "stairs_up_continue": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "safe_tile_endpoint": 6
+        },
+        "post_platform_vz_peak": 0.30421242117881775,
+        "support_dwell_min_s": 0.42
+      },
+      "stairs_up_stop": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "supported_platform_dwell": 6
+        },
+        "post_platform_vz_peak": 0.39151984453201294,
+        "support_dwell_min_s": 2.0
+      },
+      "stairs_down_continue": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "safe_tile_endpoint": 6
+        },
+        "post_platform_vz_peak": 0.33530569076538086,
+        "support_dwell_min_s": 0.14
+      },
+      "stairs_down_stop": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "timeout": 2,
+          "supported_platform_dwell": 4
+        },
+        "post_platform_vz_peak": 0.26216208934783936,
+        "support_dwell_min_s": 0.6
+      }
+    },
+    "2": {
+      "stairs_up_continue": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "safe_tile_endpoint": 6
+        },
+        "post_platform_vz_peak": 0.11177301406860352,
+        "support_dwell_min_s": 0.28
+      },
+      "stairs_up_stop": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "supported_platform_dwell": 6
+        },
+        "post_platform_vz_peak": 0.14740096032619476,
+        "support_dwell_min_s": 2.0
+      },
+      "stairs_down_continue": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "safe_tile_endpoint": 6
+        },
+        "post_platform_vz_peak": 0.10940098017454147,
+        "support_dwell_min_s": 0.32
+      },
+      "stairs_down_stop": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "timeout": 2,
+          "supported_platform_dwell": 4
+        },
+        "post_platform_vz_peak": 0.22577615082263947,
+        "support_dwell_min_s": 0.54
+      }
+    },
+    "3": {
+      "stairs_up_continue": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "safe_tile_endpoint": 6
+        },
+        "post_platform_vz_peak": 0.10844669491052628,
+        "support_dwell_min_s": 0.34
+      },
+      "stairs_up_stop": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "supported_platform_dwell": 6
+        },
+        "post_platform_vz_peak": 0.16300924122333527,
+        "support_dwell_min_s": 2.0
+      },
+      "stairs_down_continue": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "safe_tile_endpoint": 6
+        },
+        "post_platform_vz_peak": 0.10174990445375443,
+        "support_dwell_min_s": 0.32
+      },
+      "stairs_down_stop": {
+        "cases": 6,
+        "physical": 0,
+        "end_reasons": {
+          "timeout": 2,
+          "supported_platform_dwell": 4
+        },
+        "post_platform_vz_peak": 0.19484451413154602,
+        "support_dwell_min_s": 1.0
+      }
+    }
+  },
+  "stair_history": [
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+      "label": "source",
+      "teacher": false,
+      "fields": {
+        "iter": 33864,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 33865,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 812760,
+        "learning_rate": 0.00017085937500000009,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 33865,
+        "checkpoint_declared_completed_updates": 33865,
+        "checkpoint_declared_common_step_counter": 812760
+      }
+    },
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+      "label": "source_teacher",
+      "teacher": true,
+      "fields": {
+        "iter": 33864,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 33865,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 812760,
+        "learning_rate": 0.00017085937500000009,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 33865,
+        "checkpoint_declared_completed_updates": 33865,
+        "checkpoint_declared_common_step_counter": 812760
+      }
+    },
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+      "label": "candidate",
+      "teacher": false,
+      "fields": {
+        "iter": 34822,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 34823,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 835752,
+        "learning_rate": 0.00017085937500000009,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 34823,
+        "checkpoint_declared_completed_updates": 34823,
+        "checkpoint_declared_common_step_counter": 835752
+      }
+    },
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/stair_coverage_v21/training_33881_to_34823/model_34822.pt",
+      "label": "candidate_teacher",
+      "teacher": true,
+      "fields": {
+        "iter": 34822,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 34823,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 835752,
+        "learning_rate": 0.00017085937500000009,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 34823,
+        "checkpoint_declared_completed_updates": 34823,
+        "checkpoint_declared_common_step_counter": 835752
+      }
+    }
+  ]
+}

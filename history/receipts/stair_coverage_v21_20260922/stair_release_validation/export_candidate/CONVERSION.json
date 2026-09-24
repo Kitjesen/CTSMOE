@@ -1,0 +1,33 @@
+{
+  "conversion_passed": true,
+  "behavior_accepted": false,
+  "optimizer_updates": 0,
+  "source_sha256": "ea3603ee7a18d264c9eb487f15b544ef73829bb27f3008ad55faf927de0909ec",
+  "onnx_sha256": "29cf0e05b78e5ff4c73de9517c19a1aa7c849561336a99aa440bc08b2f3ee83c",
+  "batches": [
+    1,
+    4,
+    72
+  ],
+  "scales": [
+    0.0,
+    0.1,
+    1.0,
+    3.0
+  ],
+  "max_absolute_error": 4.9591064453125e-05,
+  "atol": 0.0001,
+  "rtol": 0.0001,
+  "onnx_version": "1.18.0",
+  "onnxruntime_version": "1.29.0",
+  "input_names": [
+    "history",
+    "single_obs"
+  ],
+  "input_shapes": [
+    "N,530",
+    "N,53"
+  ],
+  "output_shape": "N,16",
+  "opset": 17
+}

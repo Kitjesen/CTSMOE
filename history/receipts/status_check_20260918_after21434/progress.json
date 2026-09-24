@@ -1,0 +1,182 @@
+{
+  "completed_updates": 21973,
+  "terrain": 5.5458984375,
+  "terrain_by_type": {
+    "wave": {
+      "count": 63,
+      "mean": 0.9047619047619048,
+      "counts_L0_to_L9": [
+        32,
+        17,
+        5,
+        6,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_up": {
+      "count": 127,
+      "mean": 4.425196850393701,
+      "counts_L0_to_L9": [
+        7,
+        11,
+        12,
+        13,
+        21,
+        16,
+        22,
+        9,
+        15,
+        1
+      ]
+    },
+    "slope_down": {
+      "count": 126,
+      "mean": 4.857142857142857,
+      "counts_L0_to_L9": [
+        7,
+        6,
+        13,
+        19,
+        9,
+        15,
+        17,
+        17,
+        16,
+        7
+      ]
+    },
+    "rough_slope": {
+      "count": 63,
+      "mean": 3.5396825396825395,
+      "counts_L0_to_L9": [
+        12,
+        8,
+        6,
+        4,
+        8,
+        8,
+        8,
+        4,
+        2,
+        3
+      ]
+    },
+    "stairs_up": {
+      "count": 2457,
+      "mean": 5.9556369556369555,
+      "counts_L0_to_L9": [
+        53,
+        86,
+        139,
+        180,
+        206,
+        288,
+        297,
+        381,
+        427,
+        400
+      ]
+    },
+    "stairs_down": {
+      "count": 819,
+      "mean": 5.960927960927961,
+      "counts_L0_to_L9": [
+        15,
+        28,
+        45,
+        62,
+        86,
+        83,
+        102,
+        120,
+        135,
+        143
+      ]
+    },
+    "obstacles": {
+      "count": 252,
+      "mean": 4.4563492063492065,
+      "counts_L0_to_L9": [
+        12,
+        23,
+        19,
+        30,
+        50,
+        28,
+        35,
+        28,
+        17,
+        10
+      ]
+    },
+    "flat": {
+      "count": 189,
+      "mean": 3.3015873015873014,
+      "counts_L0_to_L9": [
+        29,
+        28,
+        31,
+        25,
+        18,
+        17,
+        9,
+        13,
+        14,
+        5
+      ]
+    }
+  },
+  "seconds_mean_last100": 7.043637375831604,
+  "remaining_hours_at_recent_speed": 15.705354782166747,
+  "previous500": {
+    "from_updates": 20973,
+    "to_updates": 21473,
+    "stairs_up": {
+      "episodes": 16839,
+      "grade_eligible": 16467,
+      "radius_passes": 13216,
+      "physical_failures": 3258,
+      "physical_failure_percent": 19.347942276857296,
+      "episode_mean_vx_mae_mps": 0.190194254536435
+    },
+    "stairs_down": {
+      "episodes": 6053,
+      "grade_eligible": 5893,
+      "radius_passes": 4625,
+      "physical_failures": 1297,
+      "physical_failure_percent": 21.427391376177102,
+      "episode_mean_vx_mae_mps": 0.16376195533834084
+    }
+  },
+  "recent500": {
+    "from_updates": 21473,
+    "to_updates": 21973,
+    "stairs_up": {
+      "episodes": 16489,
+      "grade_eligible": 16122,
+      "radius_passes": 13177,
+      "physical_failures": 2975,
+      "physical_failure_percent": 18.04233125113712,
+      "episode_mean_vx_mae_mps": 0.1828882744654076
+    },
+    "stairs_down": {
+      "episodes": 5972,
+      "grade_eligible": 5842,
+      "radius_passes": 4833,
+      "physical_failures": 1031,
+      "physical_failure_percent": 17.263898191560617,
+      "episode_mean_vx_mae_mps": 0.1506403322326617
+    }
+  },
+  "max_speed_last100": {
+    "leg": 37.3912353515625,
+    "wheel": 290.51385498046875
+  },
+  "torque_violation_samples_last100": 0.0,
+  "scope": "Existing stochastic training trajectories, mixed levels and randomization. Not a frozen-policy evaluation."
+}

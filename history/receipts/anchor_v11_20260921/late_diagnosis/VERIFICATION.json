@@ -1,0 +1,26 @@
+{
+  "probe_remote_sha256": "cbe5fbe1287ccf09cdc2ebb6c039ce6e21d1ac76bc7686ce63a615a5685a01c8",
+  "optimizer_steps": 0,
+  "case_count": 64,
+  "gradient_groups": 35,
+  "failed_attempt_preserved": true,
+  "source_sha256": {
+    "probe.py": "cbe5fbe1287ccf09cdc2ebb6c039ce6e21d1ac76bc7686ce63a615a5685a01c8",
+    "gradient_audit.py": "23c0bea2949f42aaaf133eee8fbba7d148d617a565aeac0d80e861e931882aaa",
+    "analyze_probe.py": "007f4b6c65e8124c863c4f7d1f66f7231f703889ad7d6adc1546ec4e22952cba",
+    "analyze_existing.py": "83c3336f07c1a35dac1d881cb2050018e74c2a80392f111b1ab429df20803370",
+    "plot_late.py": "63343269a2f07a830c052b94aa9abab275aa625dc4e39e4ab50f41d009997732"
+  },
+  "artifacts": {
+    "manifest.json": "efb42a9a04db5da9348f3aff2ad824fc5cd4600060005a2bc5de5e88e7241b5b",
+    "analysis.json": "333a43793ec750645e29e35bb38d5e031f77cf4001d80833b7e1b040311b400b",
+    "gradient_audit.json": "90de3ea665035217b76eaa130f3157c0142475b696bfeeecfeee8f4b9808f19e",
+    "traces.npz": "5a90929a7d2b54b12350c363afc1bbc2fa60b30e45487e260efe5bfa317e0048"
+  },
+  "ruff": "All checks passed",
+  "remote_after_diagnosis": {
+    "gpu_processes": 0,
+    "v11_pipeline_state": "pilot_rejected_pending_review",
+    "automatic_further_training": false
+  }
+}

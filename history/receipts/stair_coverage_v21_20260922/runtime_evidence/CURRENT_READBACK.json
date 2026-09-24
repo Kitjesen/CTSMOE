@@ -1,0 +1,172 @@
+{
+  "completed_updates": 34093,
+  "seconds": 6.787497282028198,
+  "collect_seconds": 6.450288772583008,
+  "learn_seconds": 0.33720850944519043,
+  "supervisor_pid": 56642,
+  "training_pid": 57086,
+  "source33865_new_updates": 228,
+  "spent_total": 2270,
+  "remaining_total": 7730,
+  "stage_target": 34823,
+  "preflight_steps": 3000,
+  "preflight_optimizer_updates": 0,
+  "preflight_state_unchanged": true,
+  "coverage_observation": {
+    "groups": {
+      "teacher/stairs_up": {
+        "initial_env_count": 60,
+        "measures": {
+          "valid": {
+            "env_steps": 179218,
+            "unique_envs": 60
+          },
+          "root_outer_band": {
+            "env_steps": 42176,
+            "unique_envs": 60,
+            "longest_continuous_seconds": 12.06
+          },
+          "wheel_envelope_outer_band": {
+            "env_steps": 24113,
+            "unique_envs": 60,
+            "longest_continuous_seconds": 6.12
+          },
+          "cached_phase_ready": {
+            "env_steps": 21702,
+            "unique_envs": 60,
+            "longest_continuous_seconds": 3.44
+          },
+          "outer_band_phase_ready": {
+            "env_steps": 2231,
+            "unique_envs": 52,
+            "longest_continuous_seconds": 1.52
+          },
+          "outer_band_pose_weight_ge_0p9": {
+            "env_steps": 3,
+            "unique_envs": 1,
+            "longest_continuous_seconds": 0.06
+          }
+        },
+        "outer_band_phase_weight_max": 1.0,
+        "outer_band_pose_weight_max": 0.9333327412605286
+      },
+      "teacher/stairs_down": {
+        "initial_env_count": 123,
+        "measures": {
+          "valid": {
+            "env_steps": 367375,
+            "unique_envs": 123
+          },
+          "root_outer_band": {
+            "env_steps": 92557,
+            "unique_envs": 123,
+            "longest_continuous_seconds": 15.18
+          },
+          "wheel_envelope_outer_band": {
+            "env_steps": 54927,
+            "unique_envs": 123,
+            "longest_continuous_seconds": 12.780000000000001
+          },
+          "cached_phase_ready": {
+            "env_steps": 38432,
+            "unique_envs": 123,
+            "longest_continuous_seconds": 3.42
+          },
+          "outer_band_phase_ready": {
+            "env_steps": 7449,
+            "unique_envs": 122,
+            "longest_continuous_seconds": 1.84
+          },
+          "outer_band_pose_weight_ge_0p9": {
+            "env_steps": 92,
+            "unique_envs": 6,
+            "longest_continuous_seconds": 0.92
+          }
+        },
+        "outer_band_phase_weight_max": 1.0,
+        "outer_band_pose_weight_max": 1.0
+      },
+      "student/stairs_up": {
+        "initial_env_count": 27,
+        "measures": {
+          "valid": {
+            "env_steps": 80635,
+            "unique_envs": 27
+          },
+          "root_outer_band": {
+            "env_steps": 16583,
+            "unique_envs": 27,
+            "longest_continuous_seconds": 5.4
+          },
+          "wheel_envelope_outer_band": {
+            "env_steps": 9262,
+            "unique_envs": 27,
+            "longest_continuous_seconds": 3.54
+          },
+          "cached_phase_ready": {
+            "env_steps": 10191,
+            "unique_envs": 27,
+            "longest_continuous_seconds": 3.12
+          },
+          "outer_band_phase_ready": {
+            "env_steps": 1095,
+            "unique_envs": 27,
+            "longest_continuous_seconds": 0.9400000000000001
+          },
+          "outer_band_pose_weight_ge_0p9": {
+            "env_steps": 0,
+            "unique_envs": 0,
+            "longest_continuous_seconds": 0.0
+          }
+        },
+        "outer_band_phase_weight_max": 1.0,
+        "outer_band_pose_weight_max": 0.6799996495246887
+      },
+      "student/stairs_down": {
+        "initial_env_count": 36,
+        "measures": {
+          "valid": {
+            "env_steps": 107513,
+            "unique_envs": 36
+          },
+          "root_outer_band": {
+            "env_steps": 24654,
+            "unique_envs": 36,
+            "longest_continuous_seconds": 6.04
+          },
+          "wheel_envelope_outer_band": {
+            "env_steps": 13303,
+            "unique_envs": 36,
+            "longest_continuous_seconds": 3.68
+          },
+          "cached_phase_ready": {
+            "env_steps": 13790,
+            "unique_envs": 36,
+            "longest_continuous_seconds": 2.7
+          },
+          "outer_band_phase_ready": {
+            "env_steps": 3295,
+            "unique_envs": 36,
+            "longest_continuous_seconds": 1.2
+          },
+          "outer_band_pose_weight_ge_0p9": {
+            "env_steps": 19,
+            "unique_envs": 1,
+            "longest_continuous_seconds": 0.38
+          }
+        },
+        "outer_band_phase_weight_max": 1.0,
+        "outer_band_pose_weight_max": 1.0
+      }
+    },
+    "cache_missing_control_steps": 0,
+    "control_dt_s": 0.02,
+    "outer_band_chebyshev_radius_m": [
+      2.9,
+      4.4
+    ],
+    "wheel_horizontal_envelope_radius_m": 0.093,
+    "excluded_frames": "done or episode_length<=1; missing cache interrupts every continuous streak",
+    "scope": "Read-only root/wheel XY geometry and existing cached phase/pose gates. Not contact-supported landing, full collision hull containment, behavior success, or evidence of sufficient learning dwell. Initial cohort IDs are held fixed."
+  }
+}

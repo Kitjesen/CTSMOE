@@ -1,0 +1,31 @@
+{
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_14119.pt",
+  "checkpoint_sha256": "5e20771507b20be52380e0d11fcf1cf4fbb570bce3d455addc2fa552d168f3a8",
+  "script_sha256": "8c16fd76a6f6c7e4a256656176db6c124c832553ef06532be2b26c011d5c82a1",
+  "completed_updates": 14120,
+  "remaining_updates": 15880,
+  "total_target": 30000,
+  "previous_status": {
+    "state": "stopped",
+    "error": "STOP requested after saving"
+  },
+  "terrain_mean_before_resume": 4.93017578125,
+  "common_step_counter": 338880,
+  "learning_rate": 0.0002562890625000001,
+  "argv": [
+    "/root/autodl-tmp/conda/envs/isaaclab/bin/python",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/code/train_speed_expanded_v2_20260918.py",
+    "--root",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917",
+    "--output",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_speed1_20260918",
+    "--num-envs",
+    "4096",
+    "--updates",
+    "15880",
+    "--resume",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_14119.pt",
+    "--command-curriculum-start",
+    "intermediate"
+  ]
+}

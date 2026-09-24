@@ -1,0 +1,2133 @@
+{
+  "accepted": false,
+  "stage": 300,
+  "action": "reject",
+  "next_updates": 0,
+  "stop": true,
+  "pairs": [
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131"
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher"
+    }
+  ],
+  "gates": [
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "suite": "normal",
+      "passed": false,
+      "reason_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "suite": "flat",
+      "passed": false,
+      "reason_indexes": [
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "suite": "normal",
+      "passed": false,
+      "reason_indexes": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ]
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "suite": "flat",
+      "passed": false,
+      "reason_indexes": [
+        98,
+        99,
+        100,
+        101,
+        102
+      ]
+    }
+  ],
+  "reasons": [
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.509463 > 0.2401",
+      "case": {
+        "terrain": "obstacles",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 224
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.361867 > 0.2401",
+      "case": {
+        "terrain": "obstacles",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 226
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.390359 > 0.2401",
+      "case": {
+        "terrain": "obstacles",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 227
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00123408 exceeds 0.001",
+      "case": {
+        "terrain": "obstacles",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 227
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "new_physical_failure",
+      "message": "candidate adds a physical failure",
+      "case": {
+        "terrain": "obstacles",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 227
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "lost_skill_case",
+      "message": "previously accepted terrain/level/speed case regressed",
+      "case": {
+        "terrain": "obstacles",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 227
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.336566 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 0,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 229
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "lost_straight_case",
+      "message": "previously straight 4 m traversal regressed",
+      "case": {
+        "terrain": "pit",
+        "level": 0,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 230
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.359638 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 15,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 244
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.400149 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 15,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 245
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.242777 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 2,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 232
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.434385 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 2,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 233
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.25305 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 21,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 246
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.384286 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 21,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 247
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.466952 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 21,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 248
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.258052 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 4,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 235
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.342026 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 4,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 236
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.378411 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 239
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.240697 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 240
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.362958 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 241
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.561271 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 242
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "straight_regression",
+      "message": "max_side_m=0.287537 > baseline 0.0984192 + allowance 0.1",
+      "case": {
+        "terrain": "rough_slope",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 216
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "straight_regression",
+      "message": "max_side_m=0.266159 > baseline 0.0930786 + allowance 0.1",
+      "case": {
+        "terrain": "rough_slope",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 217
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.242714 > 0.2401",
+      "case": {
+        "terrain": "slope_down",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 204
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00120339 exceeds 0.001",
+      "case": {
+        "terrain": "slope_down",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 206
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "straight_regression",
+      "message": "max_side_m=3.48274 > baseline 0.752731 + allowance 0.150546",
+      "case": {
+        "terrain": "slope_down",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 206
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.343216 > 0.2401",
+      "case": {
+        "terrain": "slope_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 207
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00129691 exceeds 0.001",
+      "case": {
+        "terrain": "slope_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 207
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.383981 > 0.2401",
+      "case": {
+        "terrain": "slope_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 208
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00127187 exceeds 0.001",
+      "case": {
+        "terrain": "slope_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 208
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.480477 > 0.2401",
+      "case": {
+        "terrain": "slope_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 209
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.261229 > 0.2401",
+      "case": {
+        "terrain": "slope_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 200
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "new_physical_failure",
+      "message": "candidate adds a physical failure",
+      "case": {
+        "terrain": "slope_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 200
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "lost_skill_case",
+      "message": "previously accepted terrain/level/speed case regressed",
+      "case": {
+        "terrain": "slope_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 200
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.320433 > 0.2401",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 201
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00144175 exceeds 0.001",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 201
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.288288 > 0.2401",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 202
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00161096 exceeds 0.001",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 202
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.503964 > 0.2401",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 203
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.0010139 exceeds 0.001",
+      "case": {
+        "terrain": "stairs_down",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 194
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00141615 exceeds 0.001",
+      "case": {
+        "terrain": "stairs_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 196
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00143602 exceeds 0.001",
+      "case": {
+        "terrain": "stairs_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 197
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "straight_regression",
+      "message": "max_side_m=0.265152 > baseline 0.106125 + allowance 0.1",
+      "case": {
+        "terrain": "stairs_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 186
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "straight_regression",
+      "message": "max_side_m=0.26123 > baseline 0.0801697 + allowance 0.1",
+      "case": {
+        "terrain": "stairs_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 187
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "stair_vz_regression",
+      "message": "end_vz_abs_peak=1.24718 > baseline 1.02787 + allowance 0.205574",
+      "case": {
+        "terrain": "stairs_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 188
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00137383 exceeds 0.001",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 211
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00184065 exceeds 0.001",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 212
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00143662 exceeds 0.001",
+      "case": {
+        "terrain": "wave",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 213
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00123563 exceeds 0.001",
+      "case": {
+        "terrain": "wave",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 214
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "straight_regression",
+      "message": "max_side_m=0.459335 > baseline 0.329971 + allowance 0.1",
+      "case": {
+        "terrain": "wave",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 214
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00114486 exceeds 0.001",
+      "case": {
+        "terrain": "wave",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 215
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "yaw_tail_regression",
+      "message": "last_yaw_error=0.138292 > baseline 0.07764 + allowance 0.05",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "direct",
+        "direction": "forward_turn",
+        "velocity": [
+          0.4,
+          0.0,
+          0.4
+        ],
+        "id": 48
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "xy_tail_regression",
+      "message": "last_xy_error=0.0987111 > baseline 0.06307 + allowance 0.03",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "direct",
+        "direction": "left",
+        "velocity": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "id": 42
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.278056 > 0.2401",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "settle",
+        "direction": "left",
+        "velocity": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "id": 52
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.278778 > 0.2401",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "settle",
+        "direction": "right",
+        "velocity": [
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "id": 53
+      }
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "target_step_limit",
+      "message": "target step 0.297419 > 0.2401",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "settle",
+        "direction": "side_turn",
+        "velocity": [
+          0.0,
+          0.3,
+          -0.4
+        ],
+        "id": 59
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "absolute_max_rms",
+      "message": "max_rms=0.370159 > 0.35",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "direct",
+        "direction": "reverse",
+        "velocity": [
+          -0.6,
+          0.0,
+          0.0
+        ],
+        "id": 250
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.431221 > 0.2401",
+      "case": {
+        "terrain": "obstacles",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 307
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.300677 > 0.2401",
+      "case": {
+        "terrain": "obstacles",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 309
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.676222 > 0.2401",
+      "case": {
+        "terrain": "obstacles",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 310
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.339732 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 0,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 312
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.306236 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 0,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 313
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.360701 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 15,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 327
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.57253 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 15,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 328
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.260274 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 2,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 316
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.422631 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 21,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 330
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.589909 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 21,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 331
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.311005 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 4,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 319
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.302138 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 322
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.363126 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 324
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.536584 > 0.2401",
+      "case": {
+        "terrain": "pit",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.9,
+          0.0,
+          0.0
+        ],
+        "id": 325
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "straight_regression",
+      "message": "max_side_m=0.935745 > baseline 0.673309 + allowance 0.134662",
+      "case": {
+        "terrain": "slope_down",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 288
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00123546 exceeds 0.001",
+      "case": {
+        "terrain": "slope_down",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 289
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.44012 > 0.2401",
+      "case": {
+        "terrain": "slope_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 290
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00198749 exceeds 0.001",
+      "case": {
+        "terrain": "slope_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 290
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.482144 > 0.2401",
+      "case": {
+        "terrain": "slope_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 292
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00139481 exceeds 0.001",
+      "case": {
+        "terrain": "slope_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 292
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.359749 > 0.2401",
+      "case": {
+        "terrain": "slope_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 281
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "lost_skill_case",
+      "message": "previously accepted terrain/level/speed case regressed",
+      "case": {
+        "terrain": "slope_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 281
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "lost_straight_case",
+      "message": "previously straight 4 m traversal regressed",
+      "case": {
+        "terrain": "slope_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 281
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00123942 exceeds 0.001",
+      "case": {
+        "terrain": "slope_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 282
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "straight_regression",
+      "message": "max_side_m=1.00449 > baseline 0.58699 + allowance 0.117398",
+      "case": {
+        "terrain": "slope_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 282
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "straight_regression",
+      "message": "max_side_m=1.26996 > baseline 0.617554 + allowance 0.123511",
+      "case": {
+        "terrain": "slope_up",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 283
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00240722 exceeds 0.001",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 284
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00107801 exceeds 0.001",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 285
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "new_physical_failure",
+      "message": "candidate adds a physical failure",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 285
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.548567 > 0.2401",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 286
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00100473 exceeds 0.001",
+      "case": {
+        "terrain": "slope_up",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 286
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "straight_regression",
+      "message": "max_side_m=0.267197 > baseline 0.100586 + allowance 0.1",
+      "case": {
+        "terrain": "stairs_down",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 277
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00188106 exceeds 0.001",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 293
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "hard_position_limit",
+      "message": "hard_position_excess_rad=0.00219119 exceeds 0.001",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 294
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "new_physical_failure",
+      "message": "candidate adds a physical failure",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 294
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "lost_skill_case",
+      "message": "previously accepted terrain/level/speed case regressed",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 294
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "lost_straight_case",
+      "message": "previously straight 4 m traversal regressed",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 294
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "lost_straight_case",
+      "message": "previously straight 4 m traversal regressed",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 295
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "straight_regression",
+      "message": "max_side_m=0.751099 > baseline 0.0371857 + allowance 0.1",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 295
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "straight_regression",
+      "message": "max_side_m=0.342682 > baseline 0.119171 + allowance 0.1",
+      "case": {
+        "terrain": "wave",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 296
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "straight_regression",
+      "message": "max_side_m=0.391953 > baseline 0.13591 + allowance 0.1",
+      "case": {
+        "terrain": "wave",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 298
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.294839 > 0.2401",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "direct",
+        "direction": "diagonal",
+        "velocity": [
+          0.4,
+          0.3,
+          0.0
+        ],
+        "id": 66
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.242117 > 0.2401",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "direct",
+        "direction": "diagonal_back",
+        "velocity": [
+          -0.4,
+          -0.3,
+          0.0
+        ],
+        "id": 67
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.330282 > 0.2401",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "direct",
+        "direction": "left",
+        "velocity": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "id": 62
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.268457 > 0.2401",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "settle",
+        "direction": "diagonal_back",
+        "velocity": [
+          -0.4,
+          -0.3,
+          0.0
+        ],
+        "id": 77
+      }
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "target_step_limit",
+      "message": "target step 0.355612 > 0.2401",
+      "case": {
+        "terrain": "flat",
+        "level": 0,
+        "mode": "settle",
+        "direction": "left",
+        "velocity": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "id": 72
+      }
+    }
+  ],
+  "observations": [
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "quality_comparison_skipped_new_success",
+      "case": {
+        "terrain": "stairs_down",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ],
+        "id": 196
+      },
+      "baseline_max_side_m": 0.24810791015625,
+      "candidate_max_side_m": 0.299560546875,
+      "baseline_end_vz_abs_peak": 1.228851318359375,
+      "candidate_end_vz_abs_peak": 1.1169264316558838
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "quality_comparison_skipped_new_success",
+      "case": {
+        "terrain": "wave",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 213
+      },
+      "baseline_max_side_m": 0.70855712890625,
+      "candidate_max_side_m": 1.5229949951171875,
+      "baseline_end_vz_abs_peak": null,
+      "candidate_end_vz_abs_peak": null
+    },
+    {
+      "source_label": "early_31831",
+      "candidate_label": "V14_32131",
+      "code": "quality_comparison_skipped_new_success",
+      "case": {
+        "terrain": "wave",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          1.2,
+          0.0,
+          0.0
+        ],
+        "id": 215
+      },
+      "baseline_max_side_m": 0.254669189453125,
+      "candidate_max_side_m": 0.14093017578125,
+      "baseline_end_vz_abs_peak": null,
+      "candidate_end_vz_abs_peak": null
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "quality_comparison_skipped_new_success",
+      "case": {
+        "terrain": "obstacles",
+        "level": 9,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 308
+      },
+      "baseline_max_side_m": 0.23227691650390625,
+      "candidate_max_side_m": 0.827239990234375,
+      "baseline_end_vz_abs_peak": null,
+      "candidate_end_vz_abs_peak": null
+    },
+    {
+      "source_label": "early_31831_teacher",
+      "candidate_label": "V14_32131_teacher",
+      "code": "quality_comparison_skipped_new_success",
+      "case": {
+        "terrain": "wave",
+        "level": 6,
+        "mode": "direct",
+        "direction": "forward",
+        "velocity": [
+          0.3,
+          0.0,
+          0.0
+        ],
+        "id": 293
+      },
+      "baseline_max_side_m": 0.4341888427734375,
+      "candidate_max_side_m": 0.06585693359375,
+      "baseline_end_vz_abs_peak": null,
+      "candidate_end_vz_abs_peak": null
+    }
+  ],
+  "thresholds": {
+    "first_second_rms_max": 0.25,
+    "first_second_joint_max_rad": 0.6,
+    "full_episode_rms_max": 0.35,
+    "height_m": [
+      0.34,
+      0.6
+    ],
+    "xy_tail_allowed_increase": "max(0.03, 20%)",
+    "yaw_tail_allowed_increase": "max(0.05, 20%)",
+    "straight_and_stair_vz_allowed_increase": "max(0.1, 20%)",
+    "leg_torque_nm": 120.0,
+    "wheel_torque_nm": 17.0,
+    "target_step_rad": 0.2401,
+    "hard_limit_excess_rad": 0.001
+  }
+}

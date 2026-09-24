@@ -1,0 +1,204 @@
+{
+  "individual_pit_smoke_20260919": {
+    "start": 34414,
+    "end": 34446,
+    "checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "pit_climb_totals": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true,
+      "terrain_allocation": true
+    },
+    "individual": {
+      "profile": "individual_speed_v1",
+      "success_streak": 2,
+      "failure_streak": 2,
+      "review_probability": 0.2,
+      "max_height_m": 1.2,
+      "interpretation": "independent exploration levels, not certified capability",
+      "by_learner": {
+        "teacher": {
+          "count": 1229,
+          "actual_counts": [
+            59,
+            62,
+            66,
+            54,
+            37,
+            42,
+            36,
+            46,
+            40,
+            733,
+            54,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_height_m": 0.5043124556541443,
+          "max_height_m": 0.6499999761581421,
+          "target_mean_height_by_speed": [
+            0.5524817109107971,
+            0.553417444229126,
+            0.553295373916626,
+            0.5525223612785339
+          ],
+          "promotions": 350,
+          "demotions": 6
+        },
+        "student": {
+          "count": 410,
+          "actual_counts": [
+            25,
+            14,
+            16,
+            23,
+            19,
+            9,
+            15,
+            19,
+            14,
+            238,
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_height_m": 0.5028048753738403,
+          "max_height_m": 0.6499999761581421,
+          "target_mean_height_by_speed": [
+            0.559512197971344,
+            0.5609756112098694,
+            0.5612195134162903,
+            0.5620732307434082
+          ],
+          "promotions": 86,
+          "demotions": 3
+        }
+      }
+    },
+    "mean_seconds": 7.14542380720377
+  },
+  "individual_pit_inherit_20260919": {
+    "start": 34446,
+    "end": 34448,
+    "checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "pit_climb_totals": true,
+      "pit_individual": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true,
+      "terrain_allocation": true
+    },
+    "individual": {
+      "profile": "individual_speed_v1",
+      "success_streak": 2,
+      "failure_streak": 2,
+      "review_probability": 0.2,
+      "max_height_m": 1.2,
+      "interpretation": "independent exploration levels, not certified capability",
+      "by_learner": {
+        "teacher": {
+          "count": 1229,
+          "actual_counts": [
+            56,
+            60,
+            68,
+            54,
+            37,
+            43,
+            35,
+            48,
+            42,
+            732,
+            54,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_height_m": 0.5052074790000916,
+          "max_height_m": 0.6499999761581421,
+          "target_mean_height_by_speed": [
+            0.5524817109107971,
+            0.5533767342567444,
+            0.5531733632087708,
+            0.5525223612785339
+          ],
+          "promotions": 350,
+          "demotions": 10
+        },
+        "student": {
+          "count": 410,
+          "actual_counts": [
+            23,
+            12,
+            17,
+            24,
+            19,
+            11,
+            15,
+            18,
+            13,
+            241,
+            17,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_height_m": 0.5046341419219971,
+          "max_height_m": 0.6499999761581421,
+          "target_mean_height_by_speed": [
+            0.559512197971344,
+            0.5609756112098694,
+            0.5612195134162903,
+            0.5620732307434082
+          ],
+          "promotions": 86,
+          "demotions": 3
+        }
+      }
+    },
+    "mean_seconds": 6.978726029396057
+  },
+  "formal_resume": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/individual_pit_inherit_20260919/model_34447.pt"
+}

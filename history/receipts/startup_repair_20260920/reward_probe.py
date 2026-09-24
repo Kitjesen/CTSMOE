@@ -1,0 +1,266 @@
+"""Matched stair first episodes before/after stronger posture rewards, plus 1.2 m pit."""
+import argparse
+import copy
+import hashlib
+import json
+import os
+from pathlib import Path
+import sys
+import traceback
+
+p=argparse.ArgumentParser()
+for key in ('root','output','selection'):
+    p.add_argument('--'+key,type=Path,required=True)
+a=p.parse_args()
+a.output.mkdir(parents=True,exist_ok=False)
+receipt=json.loads((a.root/'stairs_video_snapshot.json').read_text())
+selection=json.loads(a.selection.read_text())
+sys.path[:0]=[str(a.root/'code_startup_repair_20260920_v4'),str(a.root/'upstream/source/rsl_rl'),
+              str(a.root/'upstream/source/robot_lab'),str(a.root/'thunder/source/doso_train')]
+os.environ['OMNI_KIT_ACCEPT_EULA']='YES'
+from isaaclab.app import AppLauncher  # noqa: E402
+app=AppLauncher(headless=True,device='cuda:0').app
+try:
+    import numpy as np
+    import torch
+    from isaaclab.utils.warp import raycast_mesh
+    from isaaclab_rl.rsl_rl import RslRlVecEnvWrapper
+    from robot_lab.tasks.go2.env.go2_env import Go2Env
+    from robot_lab.tasks.go2.rsl_rl_cfg import MoECTSRunnerCfg
+    from rsl_rl.runners import OnPolicyRunnerCTS
+    from config import make_config
+    from actuator_guard import ActuatorGuard
+    from train import apply_command_curriculum_start
+    from training_profiles import configure_base_height_penalty
+    from stair_speed import configure_stair_speed
+    from wave_reset import configure_wave_reset
+    from mixed_task import configure_mixed, mixed_reset_root
+    from pit_posture import configure as configure_pit_posture
+    from surface_posture import configure as configure_surface_posture
+    from stance_strength import configure as configure_stance_strength
+
+    torch.set_num_threads(2)
+    latest=torch.load(a.root/selection[-1]['path'],map_location='cpu',weights_only=False)
+    commands=[('forward',[.6,0.,0.]),('reverse',[-.6,0.,0.]),
+              ('left',[0.,.4,0.]),('right',[0.,-.4,0.]),
+              ('yaw_left',[0.,0.,.6]),('yaw_right',[0.,0.,-.6]),
+              ('diagonal',[.4,.3,0.]),('diagonal_back',[-.4,-.3,0.]),
+              ('forward_turn',[.4,0.,.4]),('side_turn',[0.,.3,-.4])]
+    cases=[dict(policy=index,terrain='flat',level=0,mode=mode,direction=name,velocity=velocity,
+                teacher=item.get('teacher',False)) for index,item in enumerate(selection)
+           for mode in ('direct','settle') for name,velocity in commands]
+    for i,c in enumerate(cases):
+        c['id']=i
+    class FirstEpisode(Go2Env):
+        retain_terminal=False
+        def _reset_idx(self,ids):
+            if not self.retain_terminal:
+                super()._reset_idx(ids)
+    def reset_start(env,env_ids,pose_range,velocity_range,asset_cfg):
+        mixed_reset_root(env,env_ids,pose_range,velocity_range,asset_cfg)
+        ids=env_ids[~env.command_manager.get_term('base_velocity').pit.active[env_ids]]
+        robot=env.scene['robot']
+        state=robot.data.root_state_w[ids].clone()
+        state[:,3:7]=0.
+        state[:,3]=1.
+        robot.write_root_state_to_sim(state,env_ids=ids)
+        env.stair_axis[ids]=0
+
+    cfg=make_config(len(cases),a.root/'cache/usd',actuator_profile=latest['actuator_profile'])
+    cfg.seed,cfg.log_dir=123,str(a.output)
+    cfg.episode_length_s=6.
+    apply_command_curriculum_start(cfg.commands.base_velocity,latest['command_curriculum_start'])
+    configure_base_height_penalty(cfg,latest['base_height_penalty'])
+    configure_stair_speed(cfg,latest['stair_command_profile'])
+    configure_wave_reset(cfg,latest['wave_reset_profile'])
+    configure_mixed(cfg,slope_profile=latest['slope_profile'],pit_training_profile=latest['pit_training_profile'])
+    configure_pit_posture(cfg,latest['pit_posture_profile'])
+    configure_surface_posture(cfg,latest['surface_posture_profile'])
+    configure_stance_strength(cfg,latest['stance_strength_profile'])
+    from startup_repair import configure as configure_startup
+    command_class_before = cfg.commands.base_velocity.class_type
+    joint_reset_before = cfg.events.reset_robot_joints.func
+    configure_startup(cfg, latest['startup_repair_profile'])
+    # Reward audit only: preserve the independent start/stop evaluation protocol.
+    cfg.commands.base_velocity.class_type = command_class_before
+    cfg.events.reset_robot_joints.func = joint_reset_before
+    cfg.terminations.startup_window = None
+    for name in vars(cfg.curriculum):
+        setattr(cfg.curriculum,name,None)
+    for name in vars(cfg.events):
+        if name not in ('reset_base','reset_robot_joints'):
+            setattr(cfg.events,name,None)
+    for group in (cfg.observations.policy,cfg.observations.single_obs,cfg.observations.critic):
+        group.enable_corruption=False
+    cfg.events.reset_base.func=reset_start
+    cfg.events.reset_robot_joints.params.update(position_range=(1.,1.),velocity_range=(0.,0.))
+    for key in ('pose_range','velocity_range'):
+        for name in cfg.events.reset_base.params[key]:
+            cfg.events.reset_base.params[key][name]=(0.,0.)
+    for actuator in cfg.scene.robot.actuators.values():
+        actuator.min_delay=actuator.max_delay=2
+    cfg.rewards.lin_vel_z_l2.weight=0.
+    urdf=Path(cfg.scene.robot.spawn.asset_path)
+    (a.output/'runtime.urdf').write_bytes(urdf.read_bytes())
+    raw=FirstEpisode(cfg=cfg)
+    guard=ActuatorGuard(raw)
+    raw.common_step_counter=latest['common_step_counter']
+    terrain=raw.scene.terrain
+    terrain.terrain_types[:]=torch.tensor([latest['terrain_column_names'].index(c['terrain']) for c in cases],device=raw.device)
+    terrain.terrain_levels[:]=torch.tensor([c['level'] for c in cases],device=raw.device)
+    terrain.env_origins[:]=terrain.terrain_origins[terrain.terrain_levels,terrain.terrain_types]
+    raw.scene.env_origins[:]=terrain.env_origins
+    command=raw.command_manager.get_term('base_velocity')
+    command.refresh_membership()
+    pit=command.pit
+    pit.fixed_levels=terrain.terrain_levels.clone()
+    settle=torch.tensor([2. if c['mode']=='settle' else 0. for c in cases],device=raw.device)
+    velocities=torch.tensor([c['velocity'] for c in cases],device=raw.device)
+    def update():
+        elapsed=raw.episode_length_buf*raw.step_dt
+        command.commands[:]=velocities*((elapsed>=settle)&(elapsed<settle+2.))[:,None]
+        pit.commands[:]=command.commands
+        pit.held_speed[:]=command.commands[:,0]
+    def resample(ids):
+        command.time_left[ids]=1e9
+        update()
+    command._resample,command._update_command=resample,update
+    raw.pit_valid_spawn=torch.zeros(raw.num_envs,dtype=torch.bool,device=raw.device)
+    env=RslRlVecEnvWrapper(raw,clip_actions=MoECTSRunnerCfg().clip_actions)
+    agent=MoECTSRunnerCfg().to_dict()
+    agent['robogauge']={'enabled':False}
+    runner=OnPolicyRunnerCTS(env,agent,log_dir=str(a.output/'loader'),device=raw.device)
+    policy=runner.alg.policy
+    policy.load_state_dict(latest['model_state_dict'],strict=True)
+    runner.eval_mode()
+    policies=[]
+    metadata=[]
+    for index,item in enumerate(selection):
+        state=torch.load(a.root/item['path'],map_location='cpu',weights_only=False)
+        model=copy.deepcopy(policy)
+        model.load_state_dict(state['model_state_dict'],strict=True)
+        model.eval()
+        policies.append(model)
+        fields={k:v for k,v in state.items() if isinstance(v,(str,int,float,bool))}
+        metadata.append(dict(**item,fields=fields))
+        del state
+    indices=[torch.tensor([c['id'] for c in cases if c['policy']==k],device=raw.device)
+             for k in range(len(policies))]
+    def act(model,obs,teacher):
+        if not teacher:
+            return model.act_inference(obs)
+        critic=model.critic_obs_normalizer(model.get_critic_obs(obs))
+        single=model.single_obs_normalizer(obs['single_obs'])
+        return model.actor(torch.cat((model.teacher_encoder(critic),single),dim=-1))
+    print('LOADED',len(policies),flush=True)
+    pit.learner.fill_(1)
+    command.learner.fill_(1)
+    raw.retain_terminal=True
+    robot=raw.scene['robot']
+    origins=raw.scene.env_origins.clone()
+    initial=robot.data.root_pos_w.clone()
+    active=torch.ones(raw.num_envs,dtype=torch.bool,device=raw.device)
+    traces={k:[] for k in ('body_pos','body_quat','joint_pos','joint_vel','target','torque','command','velocity','root_clearance','climb','stable','active','angular_velocity','raw_action','student_action','teacher_action','expert_weights','latent_student','latent_teacher','single_observation','policy_observation','pre_joint_pos','weighted_reward','reward_total','posture_gates','reward_height','reward_command')}
+    scanner=raw.scene['height_scanner']
+    mesh=scanner.meshes[scanner.cfg.mesh_prim_paths[0]]
+    from surface_posture import measure as measure_surface
+    original_reward_compute = raw.reward_manager.compute
+    reward_capture = {}
+    def capture_reward(dt):
+        result = original_reward_compute(dt)
+        state = measure_surface(raw)
+        reward_capture['weighted_reward'] = raw.reward_manager._step_reward.clone()*dt
+        reward_capture['reward_total'] = result.clone()
+        reward_capture['posture_gates'] = torch.stack((state['weight'],state['height_weight']),dim=-1)
+        reward_capture['reward_height'] = state['height_m'].clone()
+        reward_capture['reward_command'] = command.commands.clone()
+        torch.testing.assert_close(reward_capture['weighted_reward'].sum(-1),result)
+        return result
+    raw.reward_manager.compute = capture_reward
+    obs=env.get_observations()
+    with torch.inference_mode():
+        for step in range(300):
+            issued=command.commands.clone()
+            students, teachers, gates, latents_s, latents_t = [], [], [], [], []
+            for i,model in enumerate(policies):
+                local = {k:v[indices[i]] for k,v in obs.items()}
+                single = model.single_obs_normalizer(local['single_obs'])
+                latent_s, weights = model.student_moe_encoder(model.actor_obs_normalizer(model.get_actor_obs(local)))
+                latent_t = model.teacher_encoder(model.critic_obs_normalizer(model.get_critic_obs(local)))
+                student = model.actor(torch.cat((latent_s,single),dim=-1))
+                teacher = model.actor(torch.cat((latent_t,single),dim=-1))
+                torch.testing.assert_close(student, model.act_inference(local))
+                torch.testing.assert_close(teacher, act(model,local,True))
+                students.append(student)
+                teachers.append(teacher)
+                gates.append(weights)
+                latents_s.append(latent_s)
+                latents_t.append(latent_t)
+            student_actions,teacher_actions = torch.cat(students),torch.cat(teachers)
+            actions=torch.cat([teachers[i] if item.get('teacher',False) else students[i]
+                               for i,item in enumerate(selection)])
+            extra = dict(student_action=student_actions.clone(),teacher_action=teacher_actions.clone(),
+                         expert_weights=torch.cat(gates),latent_student=torch.cat(latents_s),
+                         latent_teacher=torch.cat(latents_t),single_observation=obs['single_obs'].clone(),
+                         policy_observation=obs['policy'].clone(),pre_joint_pos=robot.data.joint_pos.clone())
+            actions[~active]=0.
+            obs,_,_,_=env.step(actions)
+            d=robot.data
+            start=d.root_pos_w[:,None,:].clone()
+            start[:,:,2]+=10.
+            direction=torch.zeros_like(start)
+            direction[:,:,2]=-1.
+            hits=raycast_mesh(start,direction,mesh)[0]
+            values=dict(body_pos=d.body_pos_w-origins[:,None,:],body_quat=d.body_quat_w,
+                        joint_pos=d.joint_pos,joint_vel=d.joint_vel,target=d.joint_pos_target,
+                        torque=d.applied_torque,command=issued,velocity=d.root_lin_vel_b,
+                        angular_velocity=d.root_ang_vel_b,raw_action=actions,
+                        root_clearance=d.root_pos_w[:,2]-hits[:,0,2],
+                        climb=pit.climb_seen,stable=pit.success,active=active)
+            values.update(extra)
+            values.update(reward_capture)
+            for k,v in values.items():
+                traces[k].append(v.clone())
+            dx=d.root_pos_w[:,0]-initial[:,0]
+            ended=active&(raw.termination_manager.terminated|raw.termination_manager.time_outs)
+            for i in ended.nonzero().flatten().tolist():
+                physical=bool(guard.violation[i]|pit.body_contact[i])
+                terms=[n for n in raw.termination_manager.active_terms if bool(raw.termination_manager.get_term(n)[i])]
+                cases[i].update(end_step=step,seconds=(step+1)*raw.step_dt,physical=physical,terms=terms,
+                                passed_4m=bool(dx[i]>=4. and not physical),dx_m=float(dx[i]),
+                                climb=bool(pit.climb_seen[i]&pit.platform_clear[i]&~pit.physical[i]&~pit.outside[i]),
+                                stable=bool(pit.success[i]),checkpoint=selection[cases[i]['policy']]['path'])
+            active[ended]=False
+            if step%200==0:
+                print('PROGRESS',step,int(active.sum()),flush=True)
+            if not bool(active.any()):
+                break
+    for c in cases:
+        if 'end_step' not in c:
+            c.update(end_step=step,seconds=(step+1)*raw.step_dt,physical=False,terms=['budget'],passed_4m=False)
+    arrays={k:torch.stack(v).cpu().numpy() for k,v in traces.items()}
+    for c in cases:
+        n=c['end_step']+1
+        c['max_side_m']=float(abs(arrays['body_pos'][:n,c['id'],robot.body_names.index('base_link'),1]).max())
+        c['straight_4m']=c['passed_4m'] and c['max_side_m']<=.5
+    np.savez_compressed(a.output/'traces.npz',**arrays)
+    manifest=dict(checkpoint=str(a.root/selection[-1]['path']),completed_updates=latest['completed_updates'],
+                  history=metadata,
+                  reward_names=raw.reward_manager.active_terms,
+                  reward_weights={name:raw.reward_manager.get_term_cfg(name).weight for name in raw.reward_manager.active_terms},
+                  cases=cases,joint_names=robot.joint_names,body_names=robot.body_names,dt=raw.step_dt,
+                  default_q=robot.data.default_joint_pos[0].cpu().tolist(),
+                  urdf_sha256=hashlib.sha256(urdf.read_bytes()).hexdigest(),
+                  protocol='Actual v4 reward-manager contribution audit on v3/v4 policies; no optimizer updates. Transition probe: move for 2s then stop; record same-state teacher/student before each step. Matched nominal flat L0, default pose and zero initial velocities; fixed10ms delay, no noise/push; ten all-direction commands with immediate and2s-settled starts;6s budget; teacher actor uses critic encoder, student actor uses history encoder; all first episodes')
+    (a.output/'manifest.json').write_text(json.dumps(manifest,indent=2))
+    print('DONE',len(cases),flush=True)
+except BaseException:
+    traceback.print_exc()
+    sys.stdout.flush()
+    sys.stderr.flush()
+    os._exit(1)
+else:
+    # All traces are persisted; prior Isaac shutdowns hung after completed jobs.
+    sys.stdout.flush()
+    sys.stderr.flush()
+    os._exit(0)

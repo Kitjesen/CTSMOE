@@ -1,0 +1,18 @@
+{
+  "name": "左轮坡面＋右轮台阶",
+  "description": "左侧连续坡，右侧三级20厘米台阶；最终同高60厘米。",
+  "units": "m",
+  "up_axis": "Z",
+  "forward_axis": "X",
+  "config": {
+    "width": 3,
+    "kind": "asymmetric",
+    "count": 1,
+    "slope_deg": 0
+  },
+  "length_m": 7,
+  "max_step_m": 0.2,
+  "training_integrated": false,
+  "mesh_contract": "closed visual assembly; seam collision validation pending",
+  "sha256": "fd2cf26df28df89115cacc9ad556373fe1ffc3c9f84581c4160bcdd771b0a22f"
+}

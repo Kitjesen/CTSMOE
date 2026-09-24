@@ -1,0 +1,688 @@
+{
+  "history": [
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+      "label": "source33174",
+      "teacher": false,
+      "fields": {
+        "iter": 33173,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 33174,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 796176,
+        "learning_rate": 0.00011390625000000006,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 33174,
+        "checkpoint_declared_completed_updates": 33174,
+        "checkpoint_declared_common_step_counter": 796176
+      }
+    },
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+      "label": "source33174_teacher",
+      "teacher": true,
+      "fields": {
+        "iter": 33173,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 33174,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 796176,
+        "learning_rate": 0.00011390625000000006,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 33174,
+        "checkpoint_declared_completed_updates": 33174,
+        "checkpoint_declared_common_step_counter": 796176
+      }
+    },
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+      "label": "candidate",
+      "teacher": false,
+      "fields": {
+        "iter": 33864,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 33865,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 812760,
+        "learning_rate": 0.00017085937500000009,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 33865,
+        "checkpoint_declared_completed_updates": 33865,
+        "checkpoint_declared_common_step_counter": 812760
+      }
+    },
+    {
+      "path": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+      "label": "candidate_teacher",
+      "teacher": true,
+      "fields": {
+        "iter": 33864,
+        "omni_repair_profile": "omni_repair_v19",
+        "phase_pose_profile": "phase_pose_v18",
+        "completed_updates": 33865,
+        "pit_posture_profile": "off",
+        "surface_posture_profile": "off",
+        "stance_strength_profile": "off",
+        "startup_repair_profile": "off",
+        "early_restart_profile": "early_phase_v14_no_reward",
+        "common_step_counter": 812760,
+        "learning_rate": 0.00017085937500000009,
+        "command_curriculum_start": "intermediate",
+        "terrain_training_profile": "stairs80_v1",
+        "base_height_penalty": "original",
+        "stair_command_profile": "straight_speed_v1",
+        "wave_reset_profile": "wave_surface_v1",
+        "slope_profile": "slope45_v1",
+        "pit_training_profile": "strict_v1",
+        "pit_course_profile": "global_v1",
+        "allocation_profile": "balanced_adaptive_v1",
+        "actuator_profile": "rs0402_transient_v4",
+        "mixed_profile": "mixed9_v1"
+      },
+      "explicit_source_contract": {
+        "completed_updates": 33865,
+        "checkpoint_declared_completed_updates": 33865,
+        "checkpoint_declared_common_step_counter": 812760
+      }
+    }
+  ],
+  "dt": 0.02,
+  "joint_names": [
+    "fl_hip_joint",
+    "fr_hip_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fl_thigh_joint",
+    "fr_thigh_joint",
+    "rl_thigh_joint",
+    "rr_thigh_joint",
+    "fl_calf_joint",
+    "fr_calf_joint",
+    "rl_calf_joint",
+    "rr_calf_joint",
+    "fl_foot_joint",
+    "fr_foot_joint",
+    "rl_foot_joint",
+    "rr_foot_joint"
+  ],
+  "body_names": [
+    "base_link",
+    "fl_hip_Link",
+    "fr_hip_link",
+    "rl_hip_Link",
+    "rr_hip_Link",
+    "fl_thigh_Link",
+    "fr_thigh_Link",
+    "rl_thigh_Link",
+    "rr_thigh_Link",
+    "fl_calf_Link",
+    "fr_calf_Link",
+    "rl_calf_Link",
+    "rr_calf_Link",
+    "fl_foot_Link",
+    "fr_foot_Link",
+    "rl_foot_Link",
+    "rr_foot_Link"
+  ],
+  "default_q": [
+    0.20000000298023224,
+    -0.20000000298023224,
+    -0.20000000298023224,
+    0.20000000298023224,
+    0.9300000071525574,
+    -0.9300000071525574,
+    -0.9300000071525574,
+    0.9300000071525574,
+    -1.9600000381469727,
+    1.9600000381469727,
+    1.9600000381469727,
+    -1.9600000381469727,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "request_joint_ids": [
+    1,
+    5,
+    9,
+    0,
+    4,
+    8,
+    3,
+    7,
+    11,
+    2,
+    6,
+    10
+  ],
+  "cases": [
+    {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "longitudinal_+1_2",
+      "velocity": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 0,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "end_reason": "timeout",
+      "platform_hold_s": 0.0,
+      "supported_platform_reached": false,
+      "actuator_or_base_contact": false,
+      "passed_4m": true,
+      "dx_m": 7.856907844543457,
+      "climb": false,
+      "terminal_target": [
+        0.3519645929336548,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.5988099575042725,
+        -0.6633230447769165,
+        -1.2238132953643799,
+        0.8215733766555786,
+        -1.8910609483718872,
+        1.9563345909118652,
+        1.7441211938858032,
+        -1.7079589366912842,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.7332305908203125,
+      "straight_4m": false,
+      "original_id": 2
+    },
+    {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "longitudinal_+1_2",
+      "velocity": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 1,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "end_reason": "timeout",
+      "platform_hold_s": 0.0,
+      "supported_platform_reached": false,
+      "actuator_or_base_contact": false,
+      "passed_4m": true,
+      "dx_m": 7.28338098526001,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.35396808385849,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.7040873765945435,
+        -0.6901309490203857,
+        -1.0922629833221436,
+        0.974077045917511,
+        -1.929575800895691,
+        1.990336537361145,
+        1.707159399986267,
+        -1.8062410354614258,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/recovery01/training_32831_to_34823/model_33173.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 1.639251708984375,
+      "straight_4m": false,
+      "original_id": 38
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "longitudinal_+1_2",
+      "velocity": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 2,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 751,
+      "seconds": 15.040000000000001,
+      "physical": true,
+      "terms": [
+        "actuator_violation"
+      ],
+      "end_reason": "physical_termination",
+      "platform_hold_s": 0.0,
+      "supported_platform_reached": false,
+      "actuator_or_base_contact": true,
+      "passed_4m": false,
+      "dx_m": 0.31138285994529724,
+      "climb": false,
+      "terminal_target": [
+        0.29376453161239624,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.6197835803031921,
+        -0.8532193303108215,
+        -1.114737629890442,
+        1.1210832595825195,
+        -2.0575308799743652,
+        1.990680456161499,
+        1.846497893333435,
+        -1.883996605873108,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 752,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+      "violation_causes": {
+        "speed": true,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.30523681640625,
+      "straight_4m": false,
+      "original_id": 74
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "lateral_+1_0.2",
+      "velocity": [
+        0.0,
+        0.2,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 3,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "end_reason": "timeout",
+      "platform_hold_s": 0.0,
+      "supported_platform_reached": false,
+      "actuator_or_base_contact": false,
+      "passed_4m": false,
+      "dx_m": -0.11883605271577835,
+      "climb": false,
+      "terminal_target": [
+        0.22310654819011688,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.35238057374954224,
+        0.8431228995323181,
+        -1.0074596405029297,
+        -0.9866532683372498,
+        0.9730194807052612,
+        -1.710723876953125,
+        2.1456944942474365,
+        2.0147011280059814,
+        -2.0022265911102295,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.928131103515625,
+      "straight_4m": false,
+      "original_id": 78
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "lateral_-1_0.2",
+      "velocity": [
+        0.0,
+        -0.2,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 4,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "end_reason": "timeout",
+      "platform_hold_s": 0.0,
+      "supported_platform_reached": false,
+      "actuator_or_base_contact": false,
+      "passed_4m": false,
+      "dx_m": 0.20057551562786102,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        1.012089729309082,
+        -0.942145049571991,
+        -0.8899674415588379,
+        0.8921345472335815,
+        -2.122718572616577,
+        1.9797940254211426,
+        2.0774197578430176,
+        -1.9273184537887573,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.2585906982421875,
+      "straight_4m": false,
+      "original_id": 81
+    },
+    {
+      "policy": 2,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "settle",
+      "direction": "lateral_-1_0.2",
+      "velocity": [
+        0.0,
+        -0.2,
+        0.0
+      ],
+      "teacher": false,
+      "suite": "flat25",
+      "id": 5,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "end_reason": "timeout",
+      "platform_hold_s": 0.0,
+      "supported_platform_reached": false,
+      "actuator_or_base_contact": false,
+      "passed_4m": false,
+      "dx_m": 0.03851758688688278,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.9874833822250366,
+        -0.9396575689315796,
+        -0.9223648309707642,
+        0.8812739849090576,
+        -2.091182231903076,
+        1.9937289953231812,
+        2.1169698238372803,
+        -1.8678339719772339,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.505950927734375,
+      "straight_4m": false,
+      "original_id": 99
+    },
+    {
+      "policy": 3,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "longitudinal_+1_2",
+      "velocity": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "teacher": true,
+      "suite": "flat25",
+      "id": 6,
+      "terrain_atlas_column": 17,
+      "terrain_origin": [
+        0.0,
+        -200.0,
+        0.0
+      ],
+      "end_step": 1249,
+      "seconds": 25.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "end_reason": "timeout",
+      "platform_hold_s": 0.0,
+      "supported_platform_reached": false,
+      "actuator_or_base_contact": false,
+      "passed_4m": true,
+      "dx_m": 8.853113174438477,
+      "climb": false,
+      "terminal_target": [
+        0.3689999580383301,
+        -0.3689999580383301,
+        -0.3689999580383301,
+        0.3689999580383301,
+        0.8120973110198975,
+        -0.9531867504119873,
+        -1.1518940925598145,
+        0.9116488695144653,
+        -1.921535849571228,
+        1.9715089797973633,
+        2.0308661460876465,
+        -2.065091609954834,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reset_metadata": {
+        "episode_length": 1250,
+        "reset_count": 2,
+        "captured_reset_count": 1,
+        "reset_occurred_after_capture": true
+      },
+      "stable": false,
+      "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/training_33174_to_34823/model_33864.pt",
+      "violation_causes": {
+        "speed": false,
+        "position": false,
+        "torque": false
+      },
+      "max_side_m": 0.75799560546875,
+      "straight_4m": false,
+      "original_id": 110
+    }
+  ]
+}

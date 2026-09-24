@@ -1,0 +1,294 @@
+{
+  "from_updates": 23308,
+  "completed_updates": 23808,
+  "state": "training",
+  "seconds_mean100": 7.348984529972077,
+  "terrain": 5.628662109375,
+  "terrain_by_type": {
+    "wave": {
+      "count": 63,
+      "mean": 0.8095238095238095,
+      "counts_L0_to_L9": [
+        30,
+        18,
+        12,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_up": {
+      "count": 127,
+      "mean": 4.905511811023622,
+      "counts_L0_to_L9": [
+        5,
+        7,
+        12,
+        12,
+        14,
+        24,
+        18,
+        15,
+        13,
+        7
+      ]
+    },
+    "slope_down": {
+      "count": 126,
+      "mean": 5.198412698412699,
+      "counts_L0_to_L9": [
+        3,
+        7,
+        9,
+        13,
+        14,
+        19,
+        18,
+        19,
+        17,
+        7
+      ]
+    },
+    "rough_slope": {
+      "count": 63,
+      "mean": 4.412698412698413,
+      "counts_L0_to_L9": [
+        3,
+        3,
+        8,
+        11,
+        8,
+        8,
+        7,
+        9,
+        5,
+        1
+      ]
+    },
+    "stairs_up": {
+      "count": 2457,
+      "mean": 5.999592999592999,
+      "counts_L0_to_L9": [
+        50,
+        86,
+        152,
+        162,
+        229,
+        241,
+        306,
+        366,
+        439,
+        426
+      ]
+    },
+    "stairs_down": {
+      "count": 819,
+      "mean": 5.9743589743589745,
+      "counts_L0_to_L9": [
+        21,
+        26,
+        40,
+        57,
+        79,
+        83,
+        110,
+        137,
+        128,
+        138
+      ]
+    },
+    "obstacles": {
+      "count": 252,
+      "mean": 4.535714285714286,
+      "counts_L0_to_L9": [
+        11,
+        19,
+        25,
+        37,
+        26,
+        44,
+        32,
+        28,
+        19,
+        11
+      ]
+    },
+    "flat": {
+      "count": 189,
+      "mean": 3.5502645502645502,
+      "counts_L0_to_L9": [
+        30,
+        22,
+        22,
+        23,
+        21,
+        24,
+        19,
+        9,
+        16,
+        3
+      ]
+    }
+  },
+  "student_last500": {
+    "stairs_up": {
+      "episodes": 16441,
+      "physical_failures": 2773,
+      "failure_percent": 16.866370658719056,
+      "episode_vx_mae_mps": 0.17190882655454381
+    },
+    "stairs_down": {
+      "episodes": 6026,
+      "physical_failures": 922,
+      "failure_percent": 15.300365084633256,
+      "episode_vx_mae_mps": 0.14371270076840018
+    }
+  },
+  "reward_telemetry": {
+    "Episode_Reward/track_lin_vel_xy_exp": {
+      "mean_last100": 0.6870682376623154,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/track_ang_vel_z_exp": {
+      "mean_last100": 0.33988105922937395,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/lin_vel_z_l2": {
+      "mean_last100": 0.0,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/ang_vel_xy_l2": {
+      "mean_last100": -0.010337747521698476,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/joint_acc_l2": {
+      "mean_last100": -0.04617403715848923,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/joint_power": {
+      "mean_last100": -0.0017366396065335722,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/joint_torques_l2": {
+      "mean_last100": -0.11944591239094735,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/base_height_l2": {
+      "mean_last100": 0.0,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/action_rate_l2": {
+      "mean_last100": -0.04035500507801771,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/action_smoothness_l2": {
+      "mean_last100": -0.09866177476942539,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/undesired_contacts": {
+      "mean_last100": -0.0032440402638167143,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/joint_pos_limits": {
+      "mean_last100": -0.01022313610650599,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/feet_regulation": {
+      "mean_last100": -0.009402883113361895,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/hip_pos_penalty_l1": {
+      "mean_last100": -0.010341010829433799,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/joint_pos_penalty_l1": {
+      "mean_last100": -0.010742167439311744,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/actuator_load": {
+      "mean_last100": -0.04885371413081884,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/actuator_speed": {
+      "mean_last100": -0.0001479521115834359,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/actuator_saturation": {
+      "mean_last100": -1.4727457107710506e-06,
+      "last_step": 23807,
+      "samples": 100
+    },
+    "Episode_Reward/actuator_violation": {
+      "mean_last100": -0.014506683680228888,
+      "last_step": 23807,
+      "samples": 100
+    }
+  },
+  "all_scalar_tags": [
+    "Episode_Reward/track_lin_vel_xy_exp",
+    "Episode_Reward/track_ang_vel_z_exp",
+    "Episode_Reward/lin_vel_z_l2",
+    "Episode_Reward/ang_vel_xy_l2",
+    "Episode_Reward/joint_acc_l2",
+    "Episode_Reward/joint_power",
+    "Episode_Reward/joint_torques_l2",
+    "Episode_Reward/base_height_l2",
+    "Episode_Reward/action_rate_l2",
+    "Episode_Reward/action_smoothness_l2",
+    "Episode_Reward/undesired_contacts",
+    "Episode_Reward/joint_pos_limits",
+    "Episode_Reward/feet_regulation",
+    "Episode_Reward/hip_pos_penalty_l1",
+    "Episode_Reward/joint_pos_penalty_l1",
+    "Episode_Reward/actuator_load",
+    "Episode_Reward/actuator_speed",
+    "Episode_Reward/actuator_saturation",
+    "Episode_Reward/actuator_violation",
+    "Curriculum/terrain_levels",
+    "Episode_Termination/time_out",
+    "Episode_Termination/illegal_contact",
+    "Episode_Termination/actuator_violation",
+    "Episode_Termination/stair_route_exit",
+    "Loss/value",
+    "Loss/surrogate",
+    "Loss/entropy",
+    "Loss/mean_latent_loss",
+    "Loss/mean_load_balance_loss",
+    "Loss/learning_rate",
+    "Policy/mean_noise_std",
+    "Perf/total_fps",
+    "Perf/collection_time",
+    "Perf/learning_time",
+    "Train/mean_teacher_reward",
+    "Train/mean_teacher_episode_length",
+    "Train/mean_teacher_reward/time",
+    "Train/mean_teacher_episode_length/time",
+    "Train/mean_student_reward",
+    "Train/mean_student_episode_length",
+    "Train/mean_student_reward/time",
+    "Train/mean_student_episode_length/time",
+    "Metrics/base_velocity/max_command_x"
+  ],
+  "reward_scope": "Existing Episode_Reward logging; normalized episode sums, not identical to instantaneous reward rates in the frozen probe."
+}

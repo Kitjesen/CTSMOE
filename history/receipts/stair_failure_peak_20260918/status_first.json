@@ -1,0 +1,596 @@
+{
+  "state": "training",
+  "completed_updates": 20797,
+  "seconds": 6.926198482513428,
+  "collect_seconds": 6.3817458152771,
+  "learn_seconds": 0.5444526672363281,
+  "fast_delay": false,
+  "actuator_profile": "rs0402_peak_v2",
+  "actuator_guard": {
+    "profile": "rs0402_peak_v2",
+    "limits": {
+      "leg_torque_nm": 120.0,
+      "wheel_torque_nm": 17.0,
+      "leg_speed_rad_s": 15.0,
+      "wheel_speed_rad_s": 30.0,
+      "leg_target_rate_rad_s": 6.0,
+      "speed_penalty_fraction": 0.8,
+      "speed_termination_fraction": 1.02,
+      "hard_position_termination_rad": 0.01,
+      "leg_load_reference_nm": 35.0,
+      "wheel_load_reference_nm": 6.0
+    },
+    "samples_per_joint": 393216,
+    "joints": {
+      "fl_hip_joint": {
+        "peak_torque": 106.742431640625,
+        "peak_speed": 7.921997547149658,
+        "max_hard_position_excess": 0.0012565255165100098,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 13.030971704037741,
+        "clipped_sample_fraction": 0.0
+      },
+      "fr_hip_joint": {
+        "peak_torque": 90.98619842529297,
+        "peak_speed": 9.479169845581055,
+        "max_hard_position_excess": 0.0021208524703979492,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 11.95378027887953,
+        "clipped_sample_fraction": 0.0
+      },
+      "rl_hip_joint": {
+        "peak_torque": 96.76969909667969,
+        "peak_speed": 9.272160530090332,
+        "max_hard_position_excess": 0.0016413629055023193,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 12.168364384619446,
+        "clipped_sample_fraction": 0.0
+      },
+      "rr_hip_joint": {
+        "peak_torque": 91.78182983398438,
+        "peak_speed": 10.231027603149414,
+        "max_hard_position_excess": 0.002261132001876831,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 11.105066851020078,
+        "clipped_sample_fraction": 0.0
+      },
+      "fl_thigh_joint": {
+        "peak_torque": 93.71530151367188,
+        "peak_speed": 9.827119827270508,
+        "max_hard_position_excess": 0.0018670981517061591,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 15.412628359748675,
+        "clipped_sample_fraction": 0.0
+      },
+      "fr_thigh_joint": {
+        "peak_torque": 113.72462463378906,
+        "peak_speed": 10.057147026062012,
+        "max_hard_position_excess": 2.3819774241928826e-07,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 2.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.009999999776482582,
+        "torque_rms_nm": 15.77088794505626,
+        "clipped_sample_fraction": 5.086263020833333e-06
+      },
+      "rl_thigh_joint": {
+        "peak_torque": 94.13317108154297,
+        "peak_speed": 8.864533424377441,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 16.965080749697304,
+        "clipped_sample_fraction": 0.0
+      },
+      "rr_thigh_joint": {
+        "peak_torque": 102.33312225341797,
+        "peak_speed": 8.160736083984375,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 0.0,
+        "overspeed_samples": 0.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.0,
+        "torque_rms_nm": 19.128949457739985,
+        "clipped_sample_fraction": 0.0
+      },
+      "fl_calf_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 17.041664123535156,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 40.0,
+        "overspeed_samples": 13.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.014999999664723873,
+        "torque_rms_nm": 17.130796616279504,
+        "clipped_sample_fraction": 0.00010172526041666667
+      },
+      "fr_calf_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 16.00933265686035,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 73.0,
+        "overspeed_samples": 7.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.009999999776482582,
+        "torque_rms_nm": 18.63383503046832,
+        "clipped_sample_fraction": 0.00018564860026041666
+      },
+      "rl_calf_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 19.78933334350586,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 67.0,
+        "overspeed_samples": 18.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.009999999776482582,
+        "torque_rms_nm": 16.993990565256627,
+        "clipped_sample_fraction": 0.00017038981119791666
+      },
+      "rr_calf_joint": {
+        "peak_torque": 120.0,
+        "peak_speed": 15.910303115844727,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 52.0,
+        "overspeed_samples": 16.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.009999999776482582,
+        "torque_rms_nm": 16.971777733065352,
+        "clipped_sample_fraction": 0.00013224283854166666
+      },
+      "fl_foot_joint": {
+        "peak_torque": 17.0,
+        "peak_speed": 35.56474685668945,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 680.0,
+        "overspeed_samples": 7.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.1250000149011612,
+        "torque_rms_nm": 3.438714569992719,
+        "clipped_sample_fraction": 0.0017293294270833333
+      },
+      "fr_foot_joint": {
+        "peak_torque": 17.0,
+        "peak_speed": 41.02574920654297,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 667.0,
+        "overspeed_samples": 8.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.1799999624490738,
+        "torque_rms_nm": 3.663379293702468,
+        "clipped_sample_fraction": 0.0016962687174479167
+      },
+      "rl_foot_joint": {
+        "peak_torque": 17.0,
+        "peak_speed": 44.09574890136719,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 1199.0,
+        "overspeed_samples": 12.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.13500000536441803,
+        "torque_rms_nm": 4.351608376572206,
+        "clipped_sample_fraction": 0.0030492146809895835
+      },
+      "rr_foot_joint": {
+        "peak_torque": 17.0,
+        "peak_speed": 35.2628288269043,
+        "max_hard_position_excess": 0.0,
+        "max_target_position_excess": 0.0,
+        "clipped_samples": 675.0,
+        "overspeed_samples": 10.0,
+        "torque_violation_samples": 0.0,
+        "max_clipped_duration_s": 0.17499996721744537,
+        "torque_rms_nm": 4.0893234121100495,
+        "clipped_sample_fraction": 0.00171661376953125
+      }
+    },
+    "scope": "all training environments since last log; 200 Hz, including resets"
+  },
+  "command_curriculum_start": "intermediate",
+  "terrain_training_profile": "stairs80_v1",
+  "stair_command_profile": "straight_speed_v1",
+  "stair_speed": {
+    "profile": "straight_speed_v1",
+    "speed_edges": [
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "stairs_command_count": 3276,
+    "active_speed_bin_counts": [
+      1303,
+      801,
+      640,
+      532
+    ],
+    "vx_min_max": [
+      0.20012284815311432,
+      0.9995750188827515
+    ],
+    "vy_wz_abs_max": [
+      0.0,
+      0.0
+    ],
+    "episode_statistics": {
+      "teacher": {
+        "stairs_up": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 54779,
+            "grade_eligible": 49997,
+            "radius_passes": 46800,
+            "physical_failures": 2073,
+            "vx_mae_mps": 0.06032576607537019
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 55461,
+            "grade_eligible": 55461,
+            "radius_passes": 53197,
+            "physical_failures": 2099,
+            "vx_mae_mps": 0.07581915763169485
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 55613,
+            "grade_eligible": 55613,
+            "radius_passes": 53385,
+            "physical_failures": 2136,
+            "vx_mae_mps": 0.10609228415131508
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 55444,
+            "grade_eligible": 55444,
+            "radius_passes": 52952,
+            "physical_failures": 2397,
+            "vx_mae_mps": 0.1606412765853326
+          }
+        ],
+        "stairs_down": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 19264,
+            "grade_eligible": 17637,
+            "radius_passes": 16785,
+            "physical_failures": 819,
+            "vx_mae_mps": 0.06064304840048826
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 19398,
+            "grade_eligible": 19398,
+            "radius_passes": 18660,
+            "physical_failures": 738,
+            "vx_mae_mps": 0.07106122974171337
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 19525,
+            "grade_eligible": 19525,
+            "radius_passes": 18603,
+            "physical_failures": 922,
+            "vx_mae_mps": 0.09103231035888423
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 19893,
+            "grade_eligible": 19893,
+            "radius_passes": 18814,
+            "physical_failures": 1079,
+            "vx_mae_mps": 0.11770847866171501
+          }
+        ]
+      },
+      "student": {
+        "stairs_up": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 17888,
+            "grade_eligible": 16435,
+            "radius_passes": 15154,
+            "physical_failures": 656,
+            "vx_mae_mps": 0.07322612274350675
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 17931,
+            "grade_eligible": 17931,
+            "radius_passes": 17194,
+            "physical_failures": 667,
+            "vx_mae_mps": 0.09116412820376044
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 18007,
+            "grade_eligible": 18007,
+            "radius_passes": 17246,
+            "physical_failures": 711,
+            "vx_mae_mps": 0.12524584295398697
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 17873,
+            "grade_eligible": 17873,
+            "radius_passes": 16890,
+            "physical_failures": 939,
+            "vx_mae_mps": 0.19081989020556886
+          }
+        ],
+        "stairs_down": [
+          {
+            "speed_range": [
+              0.2,
+              0.4
+            ],
+            "episodes": 6378,
+            "grade_eligible": 5799,
+            "radius_passes": 5538,
+            "physical_failures": 226,
+            "vx_mae_mps": 0.06804481425955447
+          },
+          {
+            "speed_range": [
+              0.4,
+              0.6
+            ],
+            "episodes": 6587,
+            "grade_eligible": 6587,
+            "radius_passes": 6358,
+            "physical_failures": 229,
+            "vx_mae_mps": 0.07843941495617668
+          },
+          {
+            "speed_range": [
+              0.6,
+              0.8
+            ],
+            "episodes": 6530,
+            "grade_eligible": 6530,
+            "radius_passes": 6209,
+            "physical_failures": 321,
+            "vx_mae_mps": 0.09950351295037163
+          },
+          {
+            "speed_range": [
+              0.8,
+              1.0
+            ],
+            "episodes": 6595,
+            "grade_eligible": 6595,
+            "radius_passes": 6229,
+            "physical_failures": 366,
+            "vx_mae_mps": 0.12093138400016182
+          }
+        ]
+      }
+    },
+    "criterion": "eligible forward exit > 4m without physical termination; not independent stair completion",
+    "statistics_mode": "cumulative stochastic training episodes; no automatic speed-weight adjustment"
+  },
+  "base_height_penalty_weight": 0.0,
+  "terrain_by_type": {
+    "wave": {
+      "count": 63,
+      "mean": 0.31746031746031744,
+      "counts_L0_to_L9": [
+        49,
+        11,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_up": {
+      "count": 127,
+      "mean": 3.543307086614173,
+      "counts_L0_to_L9": [
+        13,
+        12,
+        18,
+        23,
+        13,
+        21,
+        15,
+        10,
+        2,
+        0
+      ]
+    },
+    "slope_down": {
+      "count": 126,
+      "mean": 3.8492063492063493,
+      "counts_L0_to_L9": [
+        12,
+        14,
+        21,
+        13,
+        13,
+        18,
+        15,
+        9,
+        4,
+        7
+      ]
+    },
+    "rough_slope": {
+      "count": 63,
+      "mean": 2.6825396825396823,
+      "counts_L0_to_L9": [
+        15,
+        12,
+        8,
+        7,
+        8,
+        2,
+        5,
+        3,
+        0,
+        3
+      ]
+    },
+    "stairs_up": {
+      "count": 2457,
+      "mean": 5.817256817256817,
+      "counts_L0_to_L9": [
+        70,
+        101,
+        139,
+        190,
+        228,
+        292,
+        287,
+        363,
+        374,
+        413
+      ]
+    },
+    "stairs_down": {
+      "count": 819,
+      "mean": 5.937728937728938,
+      "counts_L0_to_L9": [
+        13,
+        28,
+        42,
+        63,
+        73,
+        96,
+        109,
+        129,
+        161,
+        105
+      ]
+    },
+    "obstacles": {
+      "count": 252,
+      "mean": 3.2301587301587302,
+      "counts_L0_to_L9": [
+        26,
+        39,
+        40,
+        41,
+        31,
+        30,
+        26,
+        11,
+        7,
+        1
+      ]
+    },
+    "flat": {
+      "count": 189,
+      "mean": 2.857142857142857,
+      "counts_L0_to_L9": [
+        46,
+        33,
+        18,
+        18,
+        24,
+        14,
+        15,
+        12,
+        4,
+        5
+      ]
+    }
+  },
+  "command_ranges": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "observed_command_abs_max": [
+    1.0000009536743164,
+    1.0000009536743164,
+    1.5
+  ],
+  "terrain": 5.28173828125,
+  "value": 0.06237785164266825,
+  "surrogate": 0.008634512405842542,
+  "entropy": 11.426853895187378,
+  "mean_latent_loss": 0.0014970833144616336,
+  "mean_load_balance_loss": 1.555242238282517e-05
+}

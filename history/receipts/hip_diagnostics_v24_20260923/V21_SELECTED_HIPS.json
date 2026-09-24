@@ -1,0 +1,2011 @@
+{
+  "schema": "hip_inward_time_audit_v1",
+  "input": {
+    "trace": "..\\stair_coverage_v21_20260922\\stair_release_validation\\review\\SELECTED_TRACES.npz",
+    "trace_sha256": "7d2ee22d398e4a7edb0727619c6578d05b63729323b5a25fe469012155903c31",
+    "manifest": "..\\stair_coverage_v21_20260922\\stair_release_validation\\review\\SELECTED_CASES.json",
+    "manifest_sha256": "102e3436fa38b578d781c33b8191b639bcc6c10d9b2bf1c390f469d6bb17df53",
+    "format": "prefixed_selected_cases"
+  },
+  "interpretation": [
+    "Positive mirrored angle means inward motion on every hip.",
+    "Samples and duration are at the policy control rate; 200 Hz peak channels, when present, are aggregate peaks inside each control step.",
+    "Above-default duration measures posture departure, not a physical-limit violation.",
+    "Contact coincidence alone cannot establish collision as the cause of inward motion.",
+    "Request/target same-frame overlap is not an exact clipping event because targets can be delayed and slew limited.",
+    "These selected/fixed trajectories are not a random success rate or a hardware fault diagnosis."
+  ],
+  "case_count": 5,
+  "cases": [
+    {
+      "case_id": 28,
+      "condition": "nominal",
+      "policy": null,
+      "terrain": "stairs_up",
+      "level": 9,
+      "timebase": {
+        "control_dt_s": 0.02,
+        "control_samples": 389,
+        "duration_s": 7.78
+      },
+      "channels_available": [
+        "angular_velocity",
+        "body_pos",
+        "gravity",
+        "joint_pos",
+        "quiet_hold_steps",
+        "requested",
+        "root_clearance",
+        "speed_peak",
+        "stair_platform_hull",
+        "stair_platform_supported",
+        "target",
+        "torque_peak",
+        "velocity",
+        "wheel_ground_force_z",
+        "world_velocity"
+      ],
+      "unavailable": [
+        "self-collision force and minimum leg-to-leg clearance",
+        "200 Hz joint angle and command trajectory (these traces are control-step samples)"
+      ],
+      "hips": {
+        "fl_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.790112316608429,
+            "p95_rad": 1.2260335683822632,
+            "peak_rad": 1.4785869121551514
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.24069328606128693,
+            "p95_rad": 0.32314977049827576,
+            "peak_rad": 0.3714396357536316
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.060169897973537445,
+            "p50_rad": 0.11007776856422424,
+            "p95_rad": 0.16061082482337952,
+            "minimum_rad": -0.3039049506187439,
+            "maximum_rad": 0.24467569589614868
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 5.5,
+              "longest_contiguous_s": 1.72
+            },
+            "target_at_soft_limit": {
+              "total_s": 5.5,
+              "longest_contiguous_s": 1.72
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 5.5,
+              "longest_contiguous_s": 1.72
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.02,
+              "longest_contiguous_s": 0.02
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.0,
+              "longest_contiguous_s": 0.0
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 5.96,
+              "longest_contiguous_s": 1.84
+            }
+          },
+          "peak_target_tracking_error_rad": 0.3039049506187439,
+          "at_actual_inward_peak": {
+            "time_s": 3.52,
+            "requested_inward_rad": 0.7710995674133301,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.3714396357536316,
+            "wheel_ground_support_peak_N": 403.7591552734375,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 12.914454460144043,
+            "p95": 20.565622329711914,
+            "peak": 33.008731842041016,
+            "at_actual_inward_peak": 3.6951050758361816
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.7524684071540833,
+            "p95": 2.6719677448272705,
+            "peak": 3.9267070293426514,
+            "at_actual_inward_peak": 0.44379305839538574
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 352,
+              "actual_inward_p95_rad": 0.3274095356464386,
+              "saturation_overlap_duration_s": 4.76
+            },
+            "on_or_after_platform": {
+              "samples": 37,
+              "actual_inward_p95_rad": 0.24295347929000854,
+              "saturation_overlap_duration_s": 0.74
+            }
+          }
+        },
+        "fr_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.22500097751617432,
+            "p95_rad": 0.9083434343338013,
+            "peak_rad": 1.276006817817688
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.22500097751617432,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.1588359922170639,
+            "p95_rad": 0.27188336849212646,
+            "peak_rad": 0.2991943359375
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.05861398205161095,
+            "p50_rad": 0.0949799194931984,
+            "p95_rad": 0.16217586398124695,
+            "minimum_rad": -0.27105140686035156,
+            "maximum_rad": 0.21513786911964417
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 3.14,
+              "longest_contiguous_s": 1.4000000000000001
+            },
+            "target_at_soft_limit": {
+              "total_s": 3.14,
+              "longest_contiguous_s": 1.4000000000000001
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 3.14,
+              "longest_contiguous_s": 1.4000000000000001
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.0,
+              "longest_contiguous_s": 0.0
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.0,
+              "longest_contiguous_s": 0.0
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 3.36,
+              "longest_contiguous_s": 1.42
+            }
+          },
+          "peak_target_tracking_error_rad": 0.27105140686035156,
+          "at_actual_inward_peak": {
+            "time_s": 6.54,
+            "requested_inward_rad": 0.7671632170677185,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.2991943359375,
+            "wheel_ground_support_peak_N": 167.67434692382812,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 13.184696197509766,
+            "p95": 21.49934959411621,
+            "peak": 50.17335891723633,
+            "at_actual_inward_peak": 8.897544860839844
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.5806950330734253,
+            "p95": 1.8308353424072266,
+            "peak": 3.6549429893493652,
+            "at_actual_inward_peak": 0.12081273645162582
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 352,
+              "actual_inward_p95_rad": 0.25556015968322754,
+              "saturation_overlap_duration_s": 2.4
+            },
+            "on_or_after_platform": {
+              "samples": 37,
+              "actual_inward_p95_rad": 0.28782132267951965,
+              "saturation_overlap_duration_s": 0.74
+            }
+          }
+        },
+        "rl_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 2.8989570140838623,
+            "p95_rad": 4.360317707061768,
+            "peak_rad": 4.543087005615234
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.2898443937301636,
+            "p95_rad": 0.40855690836906433,
+            "peak_rad": 0.4100012481212616
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.07654446363449097,
+            "p50_rad": 0.07733696699142456,
+            "p95_rad": 0.1805713176727295,
+            "minimum_rad": -0.04100129008293152,
+            "maximum_rad": 0.18222036957740784
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 7.7,
+              "longest_contiguous_s": 6.24
+            },
+            "target_at_soft_limit": {
+              "total_s": 7.72,
+              "longest_contiguous_s": 6.26
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 7.7,
+              "longest_contiguous_s": 6.24
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 1.5,
+              "longest_contiguous_s": 0.52
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.74,
+              "longest_contiguous_s": 0.22
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 6.5600000000000005,
+              "longest_contiguous_s": 6.36
+            }
+          },
+          "peak_target_tracking_error_rad": 0.18222036957740784,
+          "at_actual_inward_peak": {
+            "time_s": 5.28,
+            "requested_inward_rad": 3.8761677742004395,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.4100012481212616,
+            "wheel_ground_support_peak_N": 353.67041015625,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 12.044748306274414,
+            "p95": 22.576574325561523,
+            "peak": 26.691524505615234,
+            "at_actual_inward_peak": 4.925293922424316
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.37909454107284546,
+            "p95": 1.1484742164611816,
+            "peak": 2.2651686668395996,
+            "at_actual_inward_peak": 0.002800954971462488
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 352,
+              "actual_inward_p95_rad": 0.40900182723999023,
+              "saturation_overlap_duration_s": 6.96
+            },
+            "on_or_after_platform": {
+              "samples": 37,
+              "actual_inward_p95_rad": 0.3140365183353424,
+              "saturation_overlap_duration_s": 0.74
+            }
+          }
+        },
+        "rr_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 1.326744556427002,
+            "p95_rad": 2.350890874862671,
+            "peak_rad": 2.696640968322754
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.30611321330070496,
+            "p95_rad": 0.40451762080192566,
+            "peak_rad": 0.4099999666213989
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.05824098363518715,
+            "p50_rad": 0.06228679418563843,
+            "p95_rad": 0.1542319506406784,
+            "minimum_rad": -0.1669045090675354,
+            "maximum_rad": 0.1848863810300827
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 7.640000000000001,
+              "longest_contiguous_s": 5.92
+            },
+            "target_at_soft_limit": {
+              "total_s": 7.640000000000001,
+              "longest_contiguous_s": 5.92
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 7.640000000000001,
+              "longest_contiguous_s": 5.92
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 1.18,
+              "longest_contiguous_s": 0.38
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.62,
+              "longest_contiguous_s": 0.14
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 7.640000000000001,
+              "longest_contiguous_s": 7.640000000000001
+            }
+          },
+          "peak_target_tracking_error_rad": 0.1848863810300827,
+          "at_actual_inward_peak": {
+            "time_s": 3.16,
+            "requested_inward_rad": 1.1353217363357544,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.4099999666213989,
+            "wheel_ground_support_peak_N": 366.0051574707031,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 9.83864688873291,
+            "p95": 20.34942054748535,
+            "peak": 27.083881378173828,
+            "at_actual_inward_peak": 9.114566802978516
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.3592592179775238,
+            "p95": 1.07542884349823,
+            "peak": 1.9464778900146484,
+            "at_actual_inward_peak": 0.5921574234962463
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 352,
+              "actual_inward_p95_rad": 0.4056553244590759,
+              "saturation_overlap_duration_s": 6.9
+            },
+            "on_or_after_platform": {
+              "samples": 37,
+              "actual_inward_p95_rad": 0.29882657527923584,
+              "saturation_overlap_duration_s": 0.74
+            }
+          }
+        }
+      },
+      "four_hip_request_excess_above_soft_limit": {
+        "definition": "sum(max(inward_sign*raw_request - 0.369 rad, 0)) over four hips, at each control step",
+        "mean_rad_per_step": 3.7710569555318143,
+        "p95_rad_per_step": 6.107105565071105,
+        "peak_rad_per_step": 6.71972119808197,
+        "any_excess_duration_s": 7.78
+      }
+    },
+    {
+      "case_id": 64,
+      "condition": "nominal",
+      "policy": null,
+      "terrain": "stairs_down",
+      "level": 9,
+      "timebase": {
+        "control_dt_s": 0.02,
+        "control_samples": 425,
+        "duration_s": 8.5
+      },
+      "channels_available": [
+        "angular_velocity",
+        "body_pos",
+        "gravity",
+        "joint_pos",
+        "quiet_hold_steps",
+        "requested",
+        "root_clearance",
+        "speed_peak",
+        "stair_platform_hull",
+        "stair_platform_supported",
+        "target",
+        "torque_peak",
+        "velocity",
+        "wheel_ground_force_z",
+        "world_velocity"
+      ],
+      "unavailable": [
+        "self-collision force and minimum leg-to-leg clearance",
+        "200 Hz joint angle and command trajectory (these traces are control-step samples)"
+      ],
+      "hips": {
+        "fl_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 1.089012861251831,
+            "p95_rad": 1.6530225276947021,
+            "peak_rad": 1.8056330680847168
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.3323885500431061,
+            "p95_rad": 0.4067732095718384,
+            "peak_rad": 0.41012924909591675
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.08258742094039917,
+            "p50_rad": 0.036611407995224,
+            "p95_rad": 0.24925027787685394,
+            "minimum_rad": -0.04112929105758667,
+            "maximum_rad": 0.25844475626945496
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 8.5,
+              "longest_contiguous_s": 8.5
+            },
+            "target_at_soft_limit": {
+              "total_s": 8.5,
+              "longest_contiguous_s": 8.5
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 8.5,
+              "longest_contiguous_s": 8.5
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 1.78,
+              "longest_contiguous_s": 1.3800000000000001
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.54,
+              "longest_contiguous_s": 0.38
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 6.6000000000000005,
+              "longest_contiguous_s": 6.6000000000000005
+            }
+          },
+          "peak_target_tracking_error_rad": 0.25844475626945496,
+          "at_actual_inward_peak": {
+            "time_s": 2.74,
+            "requested_inward_rad": 1.1340997219085693,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.41012924909591675,
+            "wheel_ground_support_peak_N": 433.28619384765625,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 12.649086952209473,
+            "p95": 30.944982528686523,
+            "peak": 33.117549896240234,
+            "at_actual_inward_peak": 15.5566987991333
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.29968518018722534,
+            "p95": 0.9091914892196655,
+            "peak": 3.5520074367523193,
+            "at_actual_inward_peak": 1.7293877601623535
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 385,
+              "actual_inward_p95_rad": 0.40872836112976074,
+              "saturation_overlap_duration_s": 7.7
+            },
+            "on_or_after_platform": {
+              "samples": 40,
+              "actual_inward_p95_rad": 0.12091311812400818,
+              "saturation_overlap_duration_s": 0.8
+            }
+          }
+        },
+        "fr_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 1.8907209634780884,
+            "p95_rad": 2.4888558387756348,
+            "peak_rad": 2.5329926013946533
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.3004385828971863,
+            "p95_rad": 0.38498827815055847,
+            "peak_rad": 0.4100000262260437
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.10738451778888702,
+            "p50_rad": 0.0685613751411438,
+            "p95_rad": 0.27857792377471924,
+            "minimum_rad": -0.04100006818771362,
+            "maximum_rad": 0.2811428904533386
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 8.48,
+              "longest_contiguous_s": 8.48
+            },
+            "target_at_soft_limit": {
+              "total_s": 8.48,
+              "longest_contiguous_s": 8.48
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 8.48,
+              "longest_contiguous_s": 8.48
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.98,
+              "longest_contiguous_s": 0.48
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.16,
+              "longest_contiguous_s": 0.08
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 6.58,
+              "longest_contiguous_s": 6.58
+            }
+          },
+          "peak_target_tracking_error_rad": 0.2811428904533386,
+          "at_actual_inward_peak": {
+            "time_s": 3.3000000000000003,
+            "requested_inward_rad": 2.2343363761901855,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.4100000262260437,
+            "wheel_ground_support_peak_N": 872.9078369140625,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 14.638771057128906,
+            "p95": 34.4210319519043,
+            "peak": 38.42295455932617,
+            "at_actual_inward_peak": 7.672545433044434
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.2763834595680237,
+            "p95": 0.9126826524734497,
+            "peak": 2.396561861038208,
+            "at_actual_inward_peak": 0.480394184589386
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 385,
+              "actual_inward_p95_rad": 0.3874014616012573,
+              "saturation_overlap_duration_s": 7.68
+            },
+            "on_or_after_platform": {
+              "samples": 40,
+              "actual_inward_p95_rad": 0.09564351290464401,
+              "saturation_overlap_duration_s": 0.8
+            }
+          }
+        },
+        "rl_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 3.127223491668701,
+            "p95_rad": 4.128336429595947,
+            "peak_rad": 4.2905731201171875
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.3459623456001282,
+            "p95_rad": 0.38755205273628235,
+            "peak_rad": 0.41007405519485474
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.0688503161072731,
+            "p50_rad": 0.023037612438201904,
+            "p95_rad": 0.1809912621974945,
+            "minimum_rad": -0.04107409715652466,
+            "maximum_rad": 0.19452165067195892
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 8.5,
+              "longest_contiguous_s": 8.5
+            },
+            "target_at_soft_limit": {
+              "total_s": 8.5,
+              "longest_contiguous_s": 8.5
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 8.5,
+              "longest_contiguous_s": 8.5
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 1.32,
+              "longest_contiguous_s": 0.34
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.18,
+              "longest_contiguous_s": 0.18
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 6.62,
+              "longest_contiguous_s": 5.38
+            }
+          },
+          "peak_target_tracking_error_rad": 0.19452165067195892,
+          "at_actual_inward_peak": {
+            "time_s": 6.7,
+            "requested_inward_rad": 0.9361810684204102,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.41007405519485474,
+            "wheel_ground_support_peak_N": 389.7917785644531,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 10.250340461730957,
+            "p95": 22.950532913208008,
+            "peak": 30.72602081298828,
+            "at_actual_inward_peak": 5.876440525054932
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.27314820885658264,
+            "p95": 0.8396372199058533,
+            "peak": 2.5611753463745117,
+            "at_actual_inward_peak": 0.11955446749925613
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 385,
+              "actual_inward_p95_rad": 0.3878740966320038,
+              "saturation_overlap_duration_s": 7.7
+            },
+            "on_or_after_platform": {
+              "samples": 40,
+              "actual_inward_p95_rad": 0.36363133788108826,
+              "saturation_overlap_duration_s": 0.8
+            }
+          }
+        },
+        "rr_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 1.0487736463546753,
+            "p95_rad": 1.328383445739746,
+            "peak_rad": 1.3404514789581299
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.36374297738075256,
+            "p95_rad": 0.3978249430656433,
+            "peak_rad": 0.41042378544807434
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.04163878411054611,
+            "p50_rad": 0.005256980657577515,
+            "p95_rad": 0.14394760131835938,
+            "minimum_rad": -0.04142382740974426,
+            "maximum_rad": 0.18493951857089996
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 8.46,
+              "longest_contiguous_s": 8.46
+            },
+            "target_at_soft_limit": {
+              "total_s": 8.46,
+              "longest_contiguous_s": 8.46
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 8.46,
+              "longest_contiguous_s": 8.46
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 3.66,
+              "longest_contiguous_s": 1.82
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.32,
+              "longest_contiguous_s": 0.16
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 8.34,
+              "longest_contiguous_s": 8.34
+            }
+          },
+          "peak_target_tracking_error_rad": 0.18493951857089996,
+          "at_actual_inward_peak": {
+            "time_s": 6.18,
+            "requested_inward_rad": 1.003610372543335,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.41042378544807434,
+            "wheel_ground_support_peak_N": 951.14697265625,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 7.899259567260742,
+            "p95": 18.644323348999023,
+            "peak": 32.275394439697266,
+            "at_actual_inward_peak": 7.878561019897461
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.2328905165195465,
+            "p95": 0.7818226218223572,
+            "peak": 2.679281234741211,
+            "at_actual_inward_peak": 1.1112128496170044
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 385,
+              "actual_inward_p95_rad": 0.3985855281352997,
+              "saturation_overlap_duration_s": 7.66
+            },
+            "on_or_after_platform": {
+              "samples": 40,
+              "actual_inward_p95_rad": 0.3938922584056854,
+              "saturation_overlap_duration_s": 0.8
+            }
+          }
+        }
+      },
+      "four_hip_request_excess_above_soft_limit": {
+        "definition": "sum(max(inward_sign*raw_request - 0.369 rad, 0)) over four hips, at each control step",
+        "mean_rad_per_step": 4.795442360920065,
+        "p95_rad_per_step": 6.9968681871891025,
+        "peak_rad_per_step": 7.060216814279556,
+        "any_excess_duration_s": 8.5
+      }
+    },
+    {
+      "case_id": 33,
+      "condition": "perturbed",
+      "policy": null,
+      "terrain": "stairs_up",
+      "level": 9,
+      "timebase": {
+        "control_dt_s": 0.02,
+        "control_samples": 131,
+        "duration_s": 2.62
+      },
+      "channels_available": [
+        "angular_velocity",
+        "body_pos",
+        "gravity",
+        "joint_pos",
+        "quiet_hold_steps",
+        "requested",
+        "root_clearance",
+        "speed_peak",
+        "stair_platform_hull",
+        "stair_platform_supported",
+        "target",
+        "torque_peak",
+        "velocity",
+        "wheel_ground_force_z",
+        "world_velocity"
+      ],
+      "unavailable": [
+        "self-collision force and minimum leg-to-leg clearance",
+        "200 Hz joint angle and command trajectory (these traces are control-step samples)"
+      ],
+      "hips": {
+        "fl_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.6185088157653809,
+            "p95_rad": 1.2842681407928467,
+            "peak_rad": 1.4880390167236328
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.1728270798921585,
+            "p95_rad": 0.29022517800331116,
+            "peak_rad": 0.29828381538391113
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.06267903000116348,
+            "p50_rad": 0.1076514720916748,
+            "p95_rad": 0.36470404267311096,
+            "minimum_rad": -0.3968590795993805,
+            "maximum_rad": 0.4687962532043457
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 1.52,
+              "longest_contiguous_s": 0.9
+            },
+            "target_at_soft_limit": {
+              "total_s": 1.52,
+              "longest_contiguous_s": 0.9
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 1.52,
+              "longest_contiguous_s": 0.9
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.0,
+              "longest_contiguous_s": 0.0
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.0,
+              "longest_contiguous_s": 0.0
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 1.22,
+              "longest_contiguous_s": 1.2
+            }
+          },
+          "peak_target_tracking_error_rad": 0.4687962532043457,
+          "at_actual_inward_peak": {
+            "time_s": 1.06,
+            "requested_inward_rad": 0.14246299862861633,
+            "target_inward_rad": 0.14246299862861633,
+            "actual_inward_rad": 0.29828381538391113,
+            "wheel_ground_support_peak_N": 457.8377685546875,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 19.67287254333496,
+            "p95": 36.76504135131836,
+            "peak": 79.141357421875,
+            "at_actual_inward_peak": 24.76681137084961
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 1.2341415882110596,
+            "p95": 5.0898895263671875,
+            "peak": 6.263120651245117,
+            "at_actual_inward_peak": 0.7649707198143005
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 131,
+              "actual_inward_p95_rad": 0.29022517800331116,
+              "saturation_overlap_duration_s": 1.52
+            }
+          }
+        },
+        "fr_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.07617093622684479,
+            "p95_rad": 1.14618718624115,
+            "peak_rad": 1.179042100906372
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.07617093622684479,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.08675529807806015,
+            "p95_rad": 0.2589050531387329,
+            "peak_rad": 0.263292133808136
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.03613163158297539,
+            "p50_rad": 0.10181819647550583,
+            "p95_rad": 0.19367891550064087,
+            "minimum_rad": -0.39695268869400024,
+            "maximum_rad": 0.22534562647342682
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 0.86,
+              "longest_contiguous_s": 0.72
+            },
+            "target_at_soft_limit": {
+              "total_s": 0.86,
+              "longest_contiguous_s": 0.72
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 0.86,
+              "longest_contiguous_s": 0.72
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.0,
+              "longest_contiguous_s": 0.0
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.0,
+              "longest_contiguous_s": 0.0
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 0.84,
+              "longest_contiguous_s": 0.84
+            }
+          },
+          "peak_target_tracking_error_rad": 0.39695268869400024,
+          "at_actual_inward_peak": {
+            "time_s": 0.24,
+            "requested_inward_rad": 0.9529423713684082,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.263292133808136,
+            "wheel_ground_support_peak_N": 230.76715087890625,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 16.275651931762695,
+            "p95": 29.83966064453125,
+            "peak": 44.882110595703125,
+            "at_actual_inward_peak": 13.363975524902344
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.9247316718101501,
+            "p95": 2.499790668487549,
+            "peak": 4.355885028839111,
+            "at_actual_inward_peak": 0.0824628546833992
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 131,
+              "actual_inward_p95_rad": 0.2589050531387329,
+              "saturation_overlap_duration_s": 0.86
+            }
+          }
+        },
+        "rl_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 1.617355227470398,
+            "p95_rad": 4.005124092102051,
+            "peak_rad": 4.407876968383789
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.24165505170822144,
+            "p95_rad": 0.4099861979484558,
+            "peak_rad": 0.4099999666213989
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.09965406358242035,
+            "p50_rad": 0.12734490633010864,
+            "p95_rad": 0.22007517516613007,
+            "minimum_rad": -0.04804973304271698,
+            "maximum_rad": 0.2562924027442932
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 2.58,
+              "longest_contiguous_s": 1.74
+            },
+            "target_at_soft_limit": {
+              "total_s": 2.58,
+              "longest_contiguous_s": 1.74
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 2.58,
+              "longest_contiguous_s": 1.74
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.46,
+              "longest_contiguous_s": 0.26
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.3,
+              "longest_contiguous_s": 0.2
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 1.98,
+              "longest_contiguous_s": 1.1400000000000001
+            }
+          },
+          "peak_target_tracking_error_rad": 0.2562924027442932,
+          "at_actual_inward_peak": {
+            "time_s": 1.52,
+            "requested_inward_rad": 1.9534027576446533,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.4099999666213989,
+            "wheel_ground_support_peak_N": 502.8792419433594,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 16.344894409179688,
+            "p95": 30.984905242919922,
+            "peak": 35.403648376464844,
+            "at_actual_inward_peak": 13.913622856140137
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.691455602645874,
+            "p95": 1.9400179386138916,
+            "peak": 4.157641887664795,
+            "at_actual_inward_peak": 0.04702256619930267
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 131,
+              "actual_inward_p95_rad": 0.4099861979484558,
+              "saturation_overlap_duration_s": 2.58
+            }
+          }
+        },
+        "rr_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 1.2288031578063965,
+            "p95_rad": 2.018075942993164,
+            "peak_rad": 2.2517290115356445
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.30726122856140137,
+            "p95_rad": 0.40822532773017883,
+            "peak_rad": 0.41002702713012695
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.0709371492266655,
+            "p50_rad": 0.06173872947692871,
+            "p95_rad": 0.16276128590106964,
+            "minimum_rad": -0.07172092795372009,
+            "maximum_rad": 0.17466259002685547
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 2.56,
+              "longest_contiguous_s": 1.54
+            },
+            "target_at_soft_limit": {
+              "total_s": 2.56,
+              "longest_contiguous_s": 1.54
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 2.56,
+              "longest_contiguous_s": 1.54
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.74,
+              "longest_contiguous_s": 0.34
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.24,
+              "longest_contiguous_s": 0.1
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 2.52,
+              "longest_contiguous_s": 2.52
+            }
+          },
+          "peak_target_tracking_error_rad": 0.17466259002685547,
+          "at_actual_inward_peak": {
+            "time_s": 2.14,
+            "requested_inward_rad": 0.6936610341072083,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.41002702713012695,
+            "wheel_ground_support_peak_N": 340.3056945800781,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 13.187897682189941,
+            "p95": 22.227907180786133,
+            "peak": 28.581890106201172,
+            "at_actual_inward_peak": 11.589887619018555
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.606722891330719,
+            "p95": 1.6042344570159912,
+            "peak": 2.2545559406280518,
+            "at_actual_inward_peak": 0.8790602684020996
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 131,
+              "actual_inward_p95_rad": 0.40822532773017883,
+              "saturation_overlap_duration_s": 2.56
+            }
+          }
+        }
+      },
+      "four_hip_request_excess_above_soft_limit": {
+        "definition": "sum(max(inward_sign*raw_request - 0.369 rad, 0)) over four hips, at each control step",
+        "mean_rad_per_step": 2.9719437733861325,
+        "p95_rad_per_step": 5.099762558937073,
+        "peak_rad_per_step": 6.225812673568726,
+        "any_excess_duration_s": 2.62
+      }
+    },
+    {
+      "case_id": 50,
+      "condition": "perturbed",
+      "policy": null,
+      "terrain": "stairs_down",
+      "level": 6,
+      "timebase": {
+        "control_dt_s": 0.02,
+        "control_samples": 854,
+        "duration_s": 17.080000000000002
+      },
+      "channels_available": [
+        "angular_velocity",
+        "body_pos",
+        "gravity",
+        "joint_pos",
+        "quiet_hold_steps",
+        "requested",
+        "root_clearance",
+        "speed_peak",
+        "stair_platform_hull",
+        "stair_platform_supported",
+        "target",
+        "torque_peak",
+        "velocity",
+        "wheel_ground_force_z",
+        "world_velocity"
+      ],
+      "unavailable": [
+        "self-collision force and minimum leg-to-leg clearance",
+        "200 Hz joint angle and command trajectory (these traces are control-step samples)"
+      ],
+      "hips": {
+        "fl_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.8150145411491394,
+            "p95_rad": 1.2649129629135132,
+            "peak_rad": 1.4966830015182495
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.28947633504867554,
+            "p95_rad": 0.38492172956466675,
+            "peak_rad": 0.4099999964237213
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.09244900941848755,
+            "p50_rad": 0.07952362298965454,
+            "p95_rad": 0.18462619185447693,
+            "minimum_rad": -0.041000038385391235,
+            "maximum_rad": 0.19300469756126404
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 17.06,
+              "longest_contiguous_s": 17.06
+            },
+            "target_at_soft_limit": {
+              "total_s": 17.06,
+              "longest_contiguous_s": 17.06
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 17.06,
+              "longest_contiguous_s": 17.06
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 1.08,
+              "longest_contiguous_s": 1.02
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.22,
+              "longest_contiguous_s": 0.16
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 14.14,
+              "longest_contiguous_s": 13.56
+            }
+          },
+          "peak_target_tracking_error_rad": 0.19300469756126404,
+          "at_actual_inward_peak": {
+            "time_s": 7.7,
+            "requested_inward_rad": 1.4029549360275269,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.4099999964237213,
+            "wheel_ground_support_peak_N": 616.1140747070312,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 12.320484161376953,
+            "p95": 23.119829177856445,
+            "peak": 32.76629638671875,
+            "at_actual_inward_peak": 7.079163551330566
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.17491760849952698,
+            "p95": 0.5439340472221375,
+            "peak": 2.80985164642334,
+            "at_actual_inward_peak": 0.2698948383331299
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 782,
+              "actual_inward_p95_rad": 0.3877068758010864,
+              "saturation_overlap_duration_s": 15.620000000000001
+            },
+            "on_or_after_platform": {
+              "samples": 72,
+              "actual_inward_p95_rad": 0.187636137008667,
+              "saturation_overlap_duration_s": 1.44
+            }
+          }
+        },
+        "fr_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 1.3859843015670776,
+            "p95_rad": 2.109750270843506,
+            "peak_rad": 2.2932915687561035
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.27228379249572754,
+            "p95_rad": 0.36112433671951294,
+            "peak_rad": 0.3957405388355255
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.10813385993242264,
+            "p50_rad": 0.08876918256282806,
+            "p95_rad": 0.20834863185882568,
+            "minimum_rad": -0.11468341946601868,
+            "maximum_rad": 0.23352369666099548
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 16.98,
+              "longest_contiguous_s": 16.98
+            },
+            "target_at_soft_limit": {
+              "total_s": 16.98,
+              "longest_contiguous_s": 16.98
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 16.98,
+              "longest_contiguous_s": 16.98
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.32,
+              "longest_contiguous_s": 0.2
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.0,
+              "longest_contiguous_s": 0.0
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 12.06,
+              "longest_contiguous_s": 11.92
+            }
+          },
+          "peak_target_tracking_error_rad": 0.23352369666099548,
+          "at_actual_inward_peak": {
+            "time_s": 7.86,
+            "requested_inward_rad": 1.9342163801193237,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.3957405388355255,
+            "wheel_ground_support_peak_N": 396.5910949707031,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 13.915614128112793,
+            "p95": 25.828889846801758,
+            "peak": 31.77408218383789,
+            "at_actual_inward_peak": 4.136703014373779
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.1654641330242157,
+            "p95": 0.5013357996940613,
+            "peak": 2.1990208625793457,
+            "at_actual_inward_peak": 0.12443302571773529
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 782,
+              "actual_inward_p95_rad": 0.36266252398490906,
+              "saturation_overlap_duration_s": 15.540000000000001
+            },
+            "on_or_after_platform": {
+              "samples": 72,
+              "actual_inward_p95_rad": 0.16422635316848755,
+              "saturation_overlap_duration_s": 1.44
+            }
+          }
+        },
+        "rl_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 2.26240873336792,
+            "p95_rad": 3.2702717781066895,
+            "peak_rad": 3.4283933639526367
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.34417659044265747,
+            "p95_rad": 0.4015117883682251,
+            "peak_rad": 0.4100036323070526
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.06733747571706772,
+            "p50_rad": 0.0248233824968338,
+            "p95_rad": 0.1726948767900467,
+            "minimum_rad": -0.1599554866552353,
+            "maximum_rad": 0.17616689205169678
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 17.02,
+              "longest_contiguous_s": 17.02
+            },
+            "target_at_soft_limit": {
+              "total_s": 17.02,
+              "longest_contiguous_s": 17.02
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 17.02,
+              "longest_contiguous_s": 17.02
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 3.5,
+              "longest_contiguous_s": 1.04
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 1.02,
+              "longest_contiguous_s": 0.26
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 15.56,
+              "longest_contiguous_s": 15.56
+            }
+          },
+          "peak_target_tracking_error_rad": 0.17616689205169678,
+          "at_actual_inward_peak": {
+            "time_s": 11.3,
+            "requested_inward_rad": 2.8224828243255615,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.4100036323070526,
+            "wheel_ground_support_peak_N": 502.62628173828125,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 10.317371368408203,
+            "p95": 21.57599639892578,
+            "peak": 27.58612060546875,
+            "at_actual_inward_peak": 8.123701095581055
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.18220366537570953,
+            "p95": 0.5699707269668579,
+            "peak": 1.9932352304458618,
+            "at_actual_inward_peak": 0.40996381640434265
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 782,
+              "actual_inward_p95_rad": 0.4020250737667084,
+              "saturation_overlap_duration_s": 15.58
+            },
+            "on_or_after_platform": {
+              "samples": 72,
+              "actual_inward_p95_rad": 0.3700757920742035,
+              "saturation_overlap_duration_s": 1.44
+            }
+          }
+        },
+        "rr_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.9606181383132935,
+            "p95_rad": 1.2297054529190063,
+            "peak_rad": 1.2996668815612793
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.3479592800140381,
+            "p95_rad": 0.40178826451301575,
+            "peak_rad": 0.4102000594139099
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.04511405527591705,
+            "p50_rad": 0.0210406631231308,
+            "p95_rad": 0.1368701159954071,
+            "minimum_rad": -0.041200101375579834,
+            "maximum_rad": 0.16824153065681458
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 17.080000000000002,
+              "longest_contiguous_s": 17.080000000000002
+            },
+            "target_at_soft_limit": {
+              "total_s": 17.080000000000002,
+              "longest_contiguous_s": 17.080000000000002
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 17.080000000000002,
+              "longest_contiguous_s": 17.080000000000002
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 6.98,
+              "longest_contiguous_s": 2.74
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 1.02,
+              "longest_contiguous_s": 0.24
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 17.02,
+              "longest_contiguous_s": 16.96
+            }
+          },
+          "peak_target_tracking_error_rad": 0.16824153065681458,
+          "at_actual_inward_peak": {
+            "time_s": 12.16,
+            "requested_inward_rad": 0.7059555649757385,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.4102000594139099,
+            "wheel_ground_support_peak_N": 357.8810119628906,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 8.099122047424316,
+            "p95": 17.4914608001709,
+            "peak": 21.499465942382812,
+            "at_actual_inward_peak": 7.069478511810303
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.16792882978916168,
+            "p95": 0.4997590184211731,
+            "peak": 2.144411087036133,
+            "at_actual_inward_peak": 0.8966827392578125
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 782,
+              "actual_inward_p95_rad": 0.4027295708656311,
+              "saturation_overlap_duration_s": 15.64
+            },
+            "on_or_after_platform": {
+              "samples": 72,
+              "actual_inward_p95_rad": 0.3940237760543823,
+              "saturation_overlap_duration_s": 1.44
+            }
+          }
+        }
+      },
+      "four_hip_request_excess_above_soft_limit": {
+        "definition": "sum(max(inward_sign*raw_request - 0.369 rad, 0)) over four hips, at each control step",
+        "mean_rad_per_step": 3.795728719136754,
+        "p95_rad_per_step": 5.567042516171933,
+        "peak_rad_per_step": 5.767726540565491,
+        "any_excess_duration_s": 17.080000000000002
+      }
+    },
+    {
+      "case_id": 37,
+      "condition": "nominal",
+      "policy": null,
+      "terrain": "stairs_down",
+      "level": 3,
+      "timebase": {
+        "control_dt_s": 0.02,
+        "control_samples": 1250,
+        "duration_s": 25.0
+      },
+      "channels_available": [
+        "angular_velocity",
+        "body_pos",
+        "gravity",
+        "joint_pos",
+        "quiet_hold_steps",
+        "requested",
+        "root_clearance",
+        "speed_peak",
+        "stair_platform_hull",
+        "stair_platform_supported",
+        "target",
+        "torque_peak",
+        "velocity",
+        "wheel_ground_force_z",
+        "world_velocity"
+      ],
+      "unavailable": [
+        "self-collision force and minimum leg-to-leg clearance",
+        "200 Hz joint angle and command trajectory (these traces are control-step samples)"
+      ],
+      "hips": {
+        "fl_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.7586449384689331,
+            "p95_rad": 0.9603692889213562,
+            "peak_rad": 1.1864205598831177
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.24888533353805542,
+            "p95_rad": 0.3542201519012451,
+            "peak_rad": 0.387114942073822
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.109381765127182,
+            "p50_rad": 0.11969144642353058,
+            "p95_rad": 0.15927374362945557,
+            "minimum_rad": -0.018114984035491943,
+            "maximum_rad": 0.18424703180789948
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 24.88,
+              "longest_contiguous_s": 14.32
+            },
+            "target_at_soft_limit": {
+              "total_s": 24.88,
+              "longest_contiguous_s": 14.32
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 24.88,
+              "longest_contiguous_s": 14.32
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.52,
+              "longest_contiguous_s": 0.52
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.0,
+              "longest_contiguous_s": 0.0
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 24.740000000000002,
+              "longest_contiguous_s": 14.16
+            }
+          },
+          "peak_target_tracking_error_rad": 0.18424703180789948,
+          "at_actual_inward_peak": {
+            "time_s": 4.22,
+            "requested_inward_rad": 0.5581721663475037,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.387114942073822,
+            "wheel_ground_support_peak_N": 357.4829406738281,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 13.763412475585938,
+            "p95": 19.673961639404297,
+            "peak": 25.71476173400879,
+            "at_actual_inward_peak": 7.005815505981445
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.10274000465869904,
+            "p95": 0.43263453245162964,
+            "peak": 1.8791139125823975,
+            "at_actual_inward_peak": 0.4836110770702362
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 1163,
+              "actual_inward_p95_rad": 0.35624080896377563,
+              "saturation_overlap_duration_s": 23.26
+            },
+            "on_or_after_platform": {
+              "samples": 87,
+              "actual_inward_p95_rad": 0.21780407428741455,
+              "saturation_overlap_duration_s": 1.62
+            }
+          }
+        },
+        "fr_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.7485239505767822,
+            "p95_rad": 1.57744562625885,
+            "peak_rad": 1.8995474576950073
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.24767854809761047,
+            "p95_rad": 0.34862494468688965,
+            "peak_rad": 0.40803220868110657
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.11526484042406082,
+            "p50_rad": 0.12132140249013901,
+            "p95_rad": 0.16796332597732544,
+            "minimum_rad": -0.03903225064277649,
+            "maximum_rad": 0.18126364052295685
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 25.0,
+              "longest_contiguous_s": 25.0
+            },
+            "target_at_soft_limit": {
+              "total_s": 25.0,
+              "longest_contiguous_s": 25.0
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 25.0,
+              "longest_contiguous_s": 25.0
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 0.28,
+              "longest_contiguous_s": 0.16
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.04,
+              "longest_contiguous_s": 0.04
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 23.76,
+              "longest_contiguous_s": 14.14
+            }
+          },
+          "peak_target_tracking_error_rad": 0.18126364052295685,
+          "at_actual_inward_peak": {
+            "time_s": 5.18,
+            "requested_inward_rad": 1.4673006534576416,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.40803220868110657,
+            "wheel_ground_support_peak_N": 747.151123046875,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 14.429574966430664,
+            "p95": 20.834592819213867,
+            "peak": 28.426616668701172,
+            "at_actual_inward_peak": 9.593110084533691
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.09722479432821274,
+            "p95": 0.3532257676124573,
+            "peak": 2.070521354675293,
+            "at_actual_inward_peak": 0.678085207939148
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 1163,
+              "actual_inward_p95_rad": 0.3500251770019531,
+              "saturation_overlap_duration_s": 23.26
+            },
+            "on_or_after_platform": {
+              "samples": 87,
+              "actual_inward_p95_rad": 0.21231095492839813,
+              "saturation_overlap_duration_s": 1.74
+            }
+          }
+        },
+        "rl_hip_joint": {
+          "inward_sign": -1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.8542582988739014,
+            "p95_rad": 2.551499366760254,
+            "peak_rad": 2.82430362701416
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.38352519273757935,
+            "p95_rad": 0.390658438205719,
+            "peak_rad": 0.410000205039978
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.02552012726664543,
+            "p50_rad": -0.014525234699249268,
+            "p95_rad": 0.17086991667747498,
+            "minimum_rad": -0.04100024700164795,
+            "maximum_rad": 0.1793813705444336
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 25.0,
+              "longest_contiguous_s": 25.0
+            },
+            "target_at_soft_limit": {
+              "total_s": 25.0,
+              "longest_contiguous_s": 25.0
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 25.0,
+              "longest_contiguous_s": 25.0
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 16.22,
+              "longest_contiguous_s": 14.280000000000001
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 0.58,
+              "longest_contiguous_s": 0.34
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 23.56,
+              "longest_contiguous_s": 20.8
+            }
+          },
+          "peak_target_tracking_error_rad": 0.1793813705444336,
+          "at_actual_inward_peak": {
+            "time_s": 10.08,
+            "requested_inward_rad": 0.3758810758590698,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.410000205039978,
+            "wheel_ground_support_peak_N": 817.03564453125,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 6.1569719314575195,
+            "p95": 21.463632583618164,
+            "peak": 26.798892974853516,
+            "at_actual_inward_peak": 4.9538092613220215
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.09212356060743332,
+            "p95": 0.3445342481136322,
+            "peak": 1.5858142375946045,
+            "at_actual_inward_peak": 0.5180357098579407
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 1163,
+              "actual_inward_p95_rad": 0.3866144120693207,
+              "saturation_overlap_duration_s": 23.26
+            },
+            "on_or_after_platform": {
+              "samples": 87,
+              "actual_inward_p95_rad": 0.3917657434940338,
+              "saturation_overlap_duration_s": 1.74
+            }
+          }
+        },
+        "rr_hip_joint": {
+          "inward_sign": 1.0,
+          "default_inward_rad": 0.20000000298023224,
+          "soft_inward_limit_rad": 0.369,
+          "requested_inward": {
+            "p50_rad": 0.8316879868507385,
+            "p95_rad": 1.2329127788543701,
+            "peak_rad": 1.3023732900619507
+          },
+          "limited_target_inward": {
+            "p50_rad": 0.3689999580383301,
+            "p95_rad": 0.3689999580383301,
+            "peak_rad": 0.3689999580383301
+          },
+          "actual_inward": {
+            "p50_rad": 0.38664335012435913,
+            "p95_rad": 0.39632147550582886,
+            "peak_rad": 0.4106892943382263
+          },
+          "limited_target_minus_actual_inward": {
+            "mean_rad": 0.01479120459407568,
+            "p50_rad": -0.01764337718486786,
+            "p95_rad": 0.1350308060646057,
+            "minimum_rad": -0.04168933629989624,
+            "maximum_rad": 0.17324519157409668
+          },
+          "durations": {
+            "requested_beyond_soft_limit": {
+              "total_s": 24.96,
+              "longest_contiguous_s": 24.96
+            },
+            "target_at_soft_limit": {
+              "total_s": 24.96,
+              "longest_contiguous_s": 24.96
+            },
+            "request_and_limited_target_saturation_overlap": {
+              "total_s": 24.96,
+              "longest_contiguous_s": 24.96
+            },
+            "actual_beyond_soft_limit": {
+              "total_s": 16.36,
+              "longest_contiguous_s": 15.72
+            },
+            "actual_near_hard_limit_within_001_rad": {
+              "total_s": 1.02,
+              "longest_contiguous_s": 0.54
+            },
+            "actual_beyond_default_pose_not_failure": {
+              "total_s": 24.900000000000002,
+              "longest_contiguous_s": 24.900000000000002
+            }
+          },
+          "peak_target_tracking_error_rad": 0.17324519157409668,
+          "at_actual_inward_peak": {
+            "time_s": 10.08,
+            "requested_inward_rad": 0.6207554936408997,
+            "target_inward_rad": 0.3689999580383301,
+            "actual_inward_rad": 0.4106892943382263,
+            "wheel_ground_support_peak_N": 817.03564453125,
+            "torque_peak_available": true,
+            "speed_peak_available": true,
+            "self_collision_force_available": false,
+            "contact_window_s": 0.1
+          },
+          "torque_peak_at_control_samples": {
+            "mean": 5.643657207489014,
+            "p95": 17.224401473999023,
+            "peak": 22.459728240966797,
+            "at_actual_inward_peak": 5.40213680267334
+          },
+          "speed_peak_at_control_samples": {
+            "mean": 0.08589732646942139,
+            "p95": 0.35451382398605347,
+            "peak": 1.4566166400909424,
+            "at_actual_inward_peak": 0.060267478227615356
+          },
+          "stage_source": "stair_platform_hull",
+          "stage_summary": {
+            "before_platform": {
+              "samples": 1163,
+              "actual_inward_p95_rad": 0.39547526836395264,
+              "saturation_overlap_duration_s": 23.22
+            },
+            "on_or_after_platform": {
+              "samples": 87,
+              "actual_inward_p95_rad": 0.40939491987228394,
+              "saturation_overlap_duration_s": 1.74
+            }
+          }
+        }
+      },
+      "four_hip_request_excess_above_soft_limit": {
+        "definition": "sum(max(inward_sign*raw_request - 0.369 rad, 0)) over four hips, at each control step",
+        "mean_rad_per_step": 2.2902127792835234,
+        "p95_rad_per_step": 4.057339683175087,
+        "peak_rad_per_step": 4.390106916427612,
+        "any_excess_duration_s": 25.0
+      }
+    }
+  ]
+}

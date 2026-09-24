@@ -1,0 +1,16 @@
+{
+  "verified_at_utc": "2026-09-21T23:19:40Z",
+  "remote_root": "/root/autodl-tmp/cts-phase-pose-v18-20260922",
+  "state": "preflight",
+  "supervisor_pid": 27519,
+  "preflight_driver_pid": 27520,
+  "simulation_pid": 27523,
+  "source_completed": 31831,
+  "target_completed": 32831,
+  "maximum_new_updates": 1000,
+  "num_envs": 4096,
+  "training_started": false,
+  "baseline": "332 terrain and 80 full-episode flat cases complete; zero optimizer updates",
+  "next": "Check preflight qualification, then the existing supervisor automatically trains 1000 updates, evaluates source/V17/V18 and stops. Never duplicate launch; preserve results on failure.",
+  "review_caution": "31831 has better flat startup than 30000, but worse upstairs lateral deviation in this fixed batch. Include both in final assessment."
+}

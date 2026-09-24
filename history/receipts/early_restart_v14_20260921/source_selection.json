@@ -1,0 +1,16 @@
+{
+  "state": "selected",
+  "source": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+  "completed_updates": 31831,
+  "source_sha256": "04fcb792c8f18d3abe913d57eecea1d38b54a4e8a36a9899324bd39540b9876d",
+  "basis": {
+    "flat25": "complete",
+    "terrain83": "complete"
+  },
+  "reason": "Prefer measured normal starts over earliest iteration: 31831 student/teacher 15/20 and16/20 full25s versus30000 7/20 and9/20; all finish25s without physical termination. 31831 already trained low platforms. Preserve later high-skill checkpoints for independent reference; no claim 1.2m retained.",
+  "flat_summary": {
+    "student_forward_first_peak_rms": 0.14752363123943457,
+    "teacher_forward_first_peak_rms": 0.1390231586313581,
+    "student_single_joint_first_peak_worst": 0.51
+  }
+}

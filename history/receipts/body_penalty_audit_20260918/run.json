@@ -1,0 +1,33 @@
+{
+  "resume": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_14119.pt",
+  "resume_sha256": "5e20771507b20be52380e0d11fcf1cf4fbb570bce3d455addc2fa552d168f3a8",
+  "starting_completed_updates": 14120,
+  "additional_updates": 15880,
+  "target_completed_updates": 30000,
+  "command_curriculum_start": "intermediate",
+  "command_ranges": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "terrain": true
+  },
+  "episode_length_s": 25.0,
+  "reward_weights": {
+    "lin_vel_z_l2": -0.0,
+    "base_height_l2": -10.0
+  }
+}

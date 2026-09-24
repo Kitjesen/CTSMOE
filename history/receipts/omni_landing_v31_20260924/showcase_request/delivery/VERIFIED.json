@@ -1,0 +1,86 @@
+{
+  "checkpoint_completed": 38744,
+  "model_unchanged": true,
+  "optimizer_updates": 0,
+  "independent_sampled_all_link_fk_max_error_m": 1.9552691400938308e-05,
+  "video": [
+    {
+      "name": "single_up",
+      "title": "单级上台阶",
+      "frames": 625,
+      "fps": 25.0,
+      "size": [
+        960,
+        600
+      ],
+      "sha256": "a19e7165c846d406e78f545d8295550532cd8aefdcabd72596205172d6453a65"
+    },
+    {
+      "name": "short_up",
+      "title": "短踏面上楼",
+      "frames": 625,
+      "fps": 25.0,
+      "size": [
+        960,
+        600
+      ],
+      "sha256": "a28fbda58fbd9e245231fcdc6249a820d65ee0324df83c48a37d883460a7092d"
+    },
+    {
+      "name": "long_up",
+      "title": "长踏面上楼",
+      "frames": 625,
+      "fps": 25.0,
+      "size": [
+        960,
+        600
+      ],
+      "sha256": "989b89d6f93cb3094c17f2117255da728edae922ee0302fa8e1c1ba879e54b49"
+    },
+    {
+      "name": "ramp_up",
+      "title": "坡接楼梯",
+      "frames": 625,
+      "fps": 25.0,
+      "size": [
+        960,
+        600
+      ],
+      "sha256": "449c9f53dc616fbfff4059667b06dfa622b15bbde8a0c4f70d5f707e94122084"
+    },
+    {
+      "name": "short_down",
+      "title": "短踏面下楼",
+      "frames": 625,
+      "fps": 25.0,
+      "size": [
+        960,
+        600
+      ],
+      "sha256": "4c645c008079df427adb38067afe302253e5c91349bfabac354e666c9866cff1"
+    },
+    {
+      "name": "reference_up",
+      "title": "原参考上楼梯",
+      "frames": 625,
+      "fps": 25.0,
+      "size": [
+        960,
+        600
+      ],
+      "sha256": "339538279de161656d45390d8d68249f0fb2edfe5eb9cd0f57ba1fc64a972405"
+    },
+    {
+      "name": "reference_down",
+      "title": "原参考下楼梯",
+      "frames": 625,
+      "fps": 25.0,
+      "size": [
+        960,
+        600
+      ],
+      "sha256": "cb84fc6e2537b15ba86b246d66a953e6f2c3e4d4f0d3b2e7e8838994989548c0"
+    }
+  ],
+  "note": "Fixed first episodes, student mean action, training observation noise and random parameters retained. No physical simulation in renderer."
+}

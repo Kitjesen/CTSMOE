@@ -1,0 +1,18 @@
+{
+  "name": "错位坡面＋台阶 · 单轮接触组合",
+  "description": "坡段与台阶前后错开，产生前后轮不同接触组合；具体单轮状态需按实际轴距验证。",
+  "units": "m",
+  "up_axis": "Z",
+  "forward_axis": "X",
+  "config": {
+    "width": 3,
+    "kind": "asymmetric",
+    "count": 1,
+    "slope_deg": 0
+  },
+  "length_m": 7,
+  "max_step_m": 0.2,
+  "training_integrated": false,
+  "mesh_contract": "closed visual assembly; seam collision validation pending",
+  "sha256": "33f9c9070e01e5c231ca796f3c8afaca4161a3c49df494eafe83bc6f503cfdd2"
+}

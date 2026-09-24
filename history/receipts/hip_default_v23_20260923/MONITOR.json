@@ -1,0 +1,58 @@
+{
+  "state": "training_remaining_882",
+  "observed_local_time": "2026-09-23T03:00:12+08:00",
+  "remote_root": "/root/autodl-tmp/cts-omni-repair-v19-20260922/hip_default_v23_20260923",
+  "driver": "driver_v23.py",
+  "supervisor_pid": 81340,
+  "qualification_driver_pid": 81341,
+  "qualification_gpu_pid": 81345,
+  "training_running": true,
+  "new_optimizer_updates": 144,
+  "source_completed_updates": 34823,
+  "profile": "hip_default012_v23",
+  "default_rad": {
+    "fl_hip_joint": 0.12,
+    "fr_hip_joint": -0.12,
+    "rl_hip_joint": -0.12,
+    "rr_hip_joint": 0.12
+  },
+  "additional_hip_target_limit": false,
+  "inherited_hip_soft_limits": [
+    -0.369,
+    0.369
+  ],
+  "inherited_hip_hard_limits": [
+    -0.41,
+    0.41
+  ],
+  "preflight_required_steps": 3000,
+  "qualified": true,
+  "num_envs": 4096,
+  "new_update_limit": 898,
+  "target_completed_updates": 35721,
+  "segments": [
+    16,
+    882
+  ],
+  "discarded_v22_updates": 102,
+  "v22_stop_completed": 34925,
+  "v22_must_not_restart": true,
+  "remaining_original_budget_at_source_after_discarded": 6898,
+  "remaining_budget_after_this_run": 6000,
+  "automatic_training_after_verified_preflight": true,
+  "automatic_extension": false,
+  "final_paired_cases": 604,
+  "training_is_not_hardware_release": true,
+  "mixed_stair_commands_enabled": false,
+  "slope_stair_combinations_enabled": false,
+  "pit_environment_count": 409,
+  "last_observed_preflight_step": 3000,
+  "gpu_memory_used_MiB": 11309,
+  "latest_completed_updates_observed": 34967,
+  "training_pid_last_observed": 82804,
+  "seconds_per_update_last_observed": 7.26,
+  "initial16_completed": true,
+  "initial16_checkpoint": "training_34823_to_34839/model_34838.pt",
+  "second_segment_all_resume_checks_passed": true,
+  "final_review_plan": "NEXT_STAGE_PLAN.md"
+}

@@ -1,0 +1,163 @@
+{
+  "smoke64": {
+    "updates": 80,
+    "resume_checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true
+    },
+    "profile": "rs0402_guard_v1",
+    "last_seconds": 5.040867805480957
+  },
+  "resume64": {
+    "updates": 82,
+    "resume_checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true
+    },
+    "profile": "rs0402_guard_v1",
+    "last_seconds": 4.824955224990845
+  },
+  "frozen_student": {
+    "wave": {
+      "trials": 27,
+      "forward_exits": 17.0,
+      "physical_failures": 9.0,
+      "by_level": {
+        "3": {
+          "exits": 7.0,
+          "failures": 2.0
+        },
+        "6": {
+          "exits": 5.0,
+          "failures": 4.0
+        },
+        "9": {
+          "exits": 5.0,
+          "failures": 3.0
+        }
+      },
+      "hip": {
+        "max_applied_torque_nm": 35.0,
+        "max_speed_rad_s": 6.385034561157227,
+        "max_hard_excess_rad": 0.0013181567192077637,
+        "max_target_hard_excess_rad": 0.0
+      },
+      "thigh": {
+        "max_applied_torque_nm": 35.0,
+        "max_speed_rad_s": 8.9735689163208,
+        "max_hard_excess_rad": 1.256141558769741e-06,
+        "max_target_hard_excess_rad": 0.0
+      },
+      "calf": {
+        "max_applied_torque_nm": 35.0,
+        "max_speed_rad_s": 16.140270233154297,
+        "max_hard_excess_rad": 2.4751741989348375e-07,
+        "max_target_hard_excess_rad": 0.0
+      },
+      "foot": {
+        "max_applied_torque_nm": 6.0,
+        "max_speed_rad_s": 42.30259704589844,
+        "max_hard_excess_rad": 0.0,
+        "max_target_hard_excess_rad": 0.0
+      }
+    },
+    "stairs_up": {
+      "trials": 27,
+      "forward_exits": 11.0,
+      "physical_failures": 8.0,
+      "by_level": {
+        "3": {
+          "exits": 8.0,
+          "failures": 1.0
+        },
+        "6": {
+          "exits": 3.0,
+          "failures": 4.0
+        },
+        "9": {
+          "exits": 0.0,
+          "failures": 3.0
+        }
+      },
+      "hip": {
+        "max_applied_torque_nm": 35.0,
+        "max_speed_rad_s": 12.67319393157959,
+        "max_hard_excess_rad": 0.00012639164924621582,
+        "max_target_hard_excess_rad": 0.0
+      },
+      "thigh": {
+        "max_applied_torque_nm": 35.0,
+        "max_speed_rad_s": 8.164786338806152,
+        "max_hard_excess_rad": 0.0005645558703690767,
+        "max_target_hard_excess_rad": 0.0
+      },
+      "calf": {
+        "max_applied_torque_nm": 35.0,
+        "max_speed_rad_s": 15.000033378601074,
+        "max_hard_excess_rad": 2.851914473467332e-07,
+        "max_target_hard_excess_rad": 0.0
+      },
+      "foot": {
+        "max_applied_torque_nm": 6.0,
+        "max_speed_rad_s": 41.608524322509766,
+        "max_hard_excess_rad": 0.0,
+        "max_target_hard_excess_rad": 0.0
+      }
+    },
+    "stairs_down": {
+      "trials": 27,
+      "forward_exits": 26.0,
+      "physical_failures": 1.0,
+      "by_level": {
+        "3": {
+          "exits": 8.0,
+          "failures": 1.0
+        },
+        "6": {
+          "exits": 9.0,
+          "failures": 0.0
+        },
+        "9": {
+          "exits": 9.0,
+          "failures": 0.0
+        }
+      },
+      "hip": {
+        "max_applied_torque_nm": 35.0,
+        "max_speed_rad_s": 6.023624420166016,
+        "max_hard_excess_rad": 0.0,
+        "max_target_hard_excess_rad": 0.0
+      },
+      "thigh": {
+        "max_applied_torque_nm": 35.0,
+        "max_speed_rad_s": 7.897231101989746,
+        "max_hard_excess_rad": 0.0,
+        "max_target_hard_excess_rad": 0.0
+      },
+      "calf": {
+        "max_applied_torque_nm": 35.0,
+        "max_speed_rad_s": 15.286483764648438,
+        "max_hard_excess_rad": 0.0,
+        "max_target_hard_excess_rad": 0.0
+      },
+      "foot": {
+        "max_applied_torque_nm": 6.0,
+        "max_speed_rad_s": 32.195068359375,
+        "max_hard_excess_rad": 0.0,
+        "max_target_hard_excess_rad": 0.0
+      }
+    }
+  },
+  "implementation_checks_passed": true,
+  "scope": "implementation and budget checks; frozen pass counts are not training improvement"
+}

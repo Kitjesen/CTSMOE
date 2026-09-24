@@ -1,0 +1,341 @@
+{
+  "checkpoint_sha256": "3e6fb83b27198c07f9b64fc1e5617f8d4c5fd1242b5a7ee17d95b1b5ad264d65",
+  "completed_updates": 19001,
+  "scope": "Forward 4 m or first termination, maximum 25 s; no learning; not a full terrain success certification",
+  "conditions": "Nominal dynamics, no observation noise or parameter/push randomization; original action and actuator delays retained; three nominal-center repeats; seed 42; actual start captured after wrapper reset",
+  "heading_feedback": "wz_cmd=clip(-1.5*yaw,-0.6,0.6)",
+  "student": {
+    "wave": {
+      "v1_35_6": {
+        "cases": 27,
+        "exits": 17,
+        "physical_failures": 9,
+        "by_level": {
+          "3": {
+            "exits": 7,
+            "physical_failures": 2,
+            "timeouts": 0
+          },
+          "6": {
+            "exits": 5,
+            "physical_failures": 4,
+            "timeouts": 0
+          },
+          "9": {
+            "exits": 5,
+            "physical_failures": 3,
+            "timeouts": 1
+          }
+        },
+        "hip": {
+          "max_applied_torque_nm": 35.0,
+          "max_speed_rad_s": 6.385034561157227,
+          "max_hard_excess_rad": 0.0013181567192077637
+        },
+        "thigh": {
+          "max_applied_torque_nm": 35.0,
+          "max_speed_rad_s": 8.9735689163208,
+          "max_hard_excess_rad": 1.256141558769741e-06
+        },
+        "calf": {
+          "max_applied_torque_nm": 35.0,
+          "max_speed_rad_s": 16.140270233154297,
+          "max_hard_excess_rad": 2.4751741989348375e-07
+        },
+        "foot": {
+          "max_applied_torque_nm": 6.0,
+          "max_speed_rad_s": 42.30259704589844,
+          "max_hard_excess_rad": 0.0
+        }
+      },
+      "v2_120_17": {
+        "cases": 27,
+        "exits": 19,
+        "physical_failures": 8,
+        "by_level": {
+          "3": {
+            "exits": 7,
+            "physical_failures": 2,
+            "timeouts": 0
+          },
+          "6": {
+            "exits": 7,
+            "physical_failures": 2,
+            "timeouts": 0
+          },
+          "9": {
+            "exits": 5,
+            "physical_failures": 4,
+            "timeouts": 0
+          }
+        },
+        "hip": {
+          "max_applied_torque_nm": 83.16996002197266,
+          "max_speed_rad_s": 10.576204299926758,
+          "max_hard_excess_rad": 0.0011188089847564697
+        },
+        "thigh": {
+          "max_applied_torque_nm": 111.5999984741211,
+          "max_speed_rad_s": 8.011123657226562,
+          "max_hard_excess_rad": 9.201082775689429e-07
+        },
+        "calf": {
+          "max_applied_torque_nm": 120.0,
+          "max_speed_rad_s": 22.397069931030273,
+          "max_hard_excess_rad": 0.0
+        },
+        "foot": {
+          "max_applied_torque_nm": 17.0,
+          "max_speed_rad_s": 45.540000915527344,
+          "max_hard_excess_rad": 0.0
+        }
+      }
+    },
+    "stairs_up": {
+      "v1_35_6": {
+        "cases": 27,
+        "exits": 11,
+        "physical_failures": 8,
+        "by_level": {
+          "3": {
+            "exits": 8,
+            "physical_failures": 1,
+            "timeouts": 0
+          },
+          "6": {
+            "exits": 3,
+            "physical_failures": 4,
+            "timeouts": 2
+          },
+          "9": {
+            "exits": 0,
+            "physical_failures": 3,
+            "timeouts": 6
+          }
+        },
+        "hip": {
+          "max_applied_torque_nm": 35.0,
+          "max_speed_rad_s": 12.67319393157959,
+          "max_hard_excess_rad": 0.00012639164924621582
+        },
+        "thigh": {
+          "max_applied_torque_nm": 35.0,
+          "max_speed_rad_s": 8.164786338806152,
+          "max_hard_excess_rad": 0.0005645558703690767
+        },
+        "calf": {
+          "max_applied_torque_nm": 35.0,
+          "max_speed_rad_s": 15.000033378601074,
+          "max_hard_excess_rad": 2.851914473467332e-07
+        },
+        "foot": {
+          "max_applied_torque_nm": 6.0,
+          "max_speed_rad_s": 41.608524322509766,
+          "max_hard_excess_rad": 0.0
+        }
+      },
+      "v2_120_17": {
+        "cases": 27,
+        "exits": 23,
+        "physical_failures": 2,
+        "by_level": {
+          "3": {
+            "exits": 9,
+            "physical_failures": 0,
+            "timeouts": 0
+          },
+          "6": {
+            "exits": 7,
+            "physical_failures": 2,
+            "timeouts": 0
+          },
+          "9": {
+            "exits": 7,
+            "physical_failures": 0,
+            "timeouts": 2
+          }
+        },
+        "hip": {
+          "max_applied_torque_nm": 76.35211181640625,
+          "max_speed_rad_s": 8.039960861206055,
+          "max_hard_excess_rad": 1.2040138244628906e-05
+        },
+        "thigh": {
+          "max_applied_torque_nm": 111.5999984741211,
+          "max_speed_rad_s": 7.989382266998291,
+          "max_hard_excess_rad": 3.3924015951924957e-06
+        },
+        "calf": {
+          "max_applied_torque_nm": 120.0,
+          "max_speed_rad_s": 15.000018119812012,
+          "max_hard_excess_rad": 0.0
+        },
+        "foot": {
+          "max_applied_torque_nm": 17.0,
+          "max_speed_rad_s": 33.767372131347656,
+          "max_hard_excess_rad": 0.0
+        }
+      }
+    },
+    "stairs_down": {
+      "v1_35_6": {
+        "cases": 27,
+        "exits": 26,
+        "physical_failures": 1,
+        "by_level": {
+          "3": {
+            "exits": 8,
+            "physical_failures": 1,
+            "timeouts": 0
+          },
+          "6": {
+            "exits": 9,
+            "physical_failures": 0,
+            "timeouts": 0
+          },
+          "9": {
+            "exits": 9,
+            "physical_failures": 0,
+            "timeouts": 0
+          }
+        },
+        "hip": {
+          "max_applied_torque_nm": 35.0,
+          "max_speed_rad_s": 6.023624420166016,
+          "max_hard_excess_rad": 0.0
+        },
+        "thigh": {
+          "max_applied_torque_nm": 35.0,
+          "max_speed_rad_s": 7.897231101989746,
+          "max_hard_excess_rad": 0.0
+        },
+        "calf": {
+          "max_applied_torque_nm": 35.0,
+          "max_speed_rad_s": 15.286483764648438,
+          "max_hard_excess_rad": 0.0
+        },
+        "foot": {
+          "max_applied_torque_nm": 6.0,
+          "max_speed_rad_s": 32.195068359375,
+          "max_hard_excess_rad": 0.0
+        }
+      },
+      "v2_120_17": {
+        "cases": 27,
+        "exits": 26,
+        "physical_failures": 1,
+        "by_level": {
+          "3": {
+            "exits": 9,
+            "physical_failures": 0,
+            "timeouts": 0
+          },
+          "6": {
+            "exits": 9,
+            "physical_failures": 0,
+            "timeouts": 0
+          },
+          "9": {
+            "exits": 8,
+            "physical_failures": 1,
+            "timeouts": 0
+          }
+        },
+        "hip": {
+          "max_applied_torque_nm": 50.063575744628906,
+          "max_speed_rad_s": 5.436865329742432,
+          "max_hard_excess_rad": 0.0
+        },
+        "thigh": {
+          "max_applied_torque_nm": 111.5999984741211,
+          "max_speed_rad_s": 7.986396312713623,
+          "max_hard_excess_rad": 0.0
+        },
+        "calf": {
+          "max_applied_torque_nm": 120.0,
+          "max_speed_rad_s": 15.415478706359863,
+          "max_hard_excess_rad": 0.0
+        },
+        "foot": {
+          "max_applied_torque_nm": 17.0,
+          "max_speed_rad_s": 30.00031852722168,
+          "max_hard_excess_rad": 0.0
+        }
+      }
+    }
+  },
+  "v2_student_up_level9": [
+    {
+      "speed": 0.3,
+      "repeat": 0,
+      "forward_exit": 0.0,
+      "physical_failure": 0.0,
+      "duration_s": 25.0,
+      "final_forward_m": 1.892730712890625
+    },
+    {
+      "speed": 0.3,
+      "repeat": 1,
+      "forward_exit": 0.0,
+      "physical_failure": 0.0,
+      "duration_s": 25.0,
+      "final_forward_m": 2.6370887756347656
+    },
+    {
+      "speed": 0.3,
+      "repeat": 2,
+      "forward_exit": 1.0,
+      "physical_failure": 0.0,
+      "duration_s": 20.779998779296875,
+      "final_forward_m": 4.003551483154297
+    },
+    {
+      "speed": 0.6,
+      "repeat": 0,
+      "forward_exit": 1.0,
+      "physical_failure": 0.0,
+      "duration_s": 9.880000114440918,
+      "final_forward_m": 4.006130218505859
+    },
+    {
+      "speed": 0.6,
+      "repeat": 1,
+      "forward_exit": 1.0,
+      "physical_failure": 0.0,
+      "duration_s": 10.0,
+      "final_forward_m": 4.004661560058594
+    },
+    {
+      "speed": 0.6,
+      "repeat": 2,
+      "forward_exit": 1.0,
+      "physical_failure": 0.0,
+      "duration_s": 9.880000114440918,
+      "final_forward_m": 4.005603790283203
+    },
+    {
+      "speed": 0.9,
+      "repeat": 0,
+      "forward_exit": 1.0,
+      "physical_failure": 0.0,
+      "duration_s": 9.399999618530273,
+      "final_forward_m": 4.002338409423828
+    },
+    {
+      "speed": 0.9,
+      "repeat": 1,
+      "forward_exit": 1.0,
+      "physical_failure": 0.0,
+      "duration_s": 9.760000228881836,
+      "final_forward_m": 4.002281188964844
+    },
+    {
+      "speed": 0.9,
+      "repeat": 2,
+      "forward_exit": 1.0,
+      "physical_failure": 0.0,
+      "duration_s": 9.699999809265137,
+      "final_forward_m": 4.004936218261719
+    }
+  ]
+}

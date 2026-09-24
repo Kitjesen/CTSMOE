@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "checks": {
+    "smoke64": {
+      "completed_updates": 100,
+      "resume_checks": {
+        "model": true,
+        "ppo_optimizer": true,
+        "student_optimizer": true,
+        "terrain_assignment": true,
+        "command_terrain_membership": true,
+        "terrain_restored_exactly": true,
+        "stair_episode_totals": true
+      },
+      "reset": {
+        "profile": "wave_surface_v1",
+        "count": 5,
+        "clearance_m": 0.03,
+        "surface_spacing_m": 0.02,
+        "geometry_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+        "surface_points": 8440,
+        "last": {
+          "count": 1,
+          "delta_min": -0.17306172847747803,
+          "delta_max": -0.17306172847747803,
+          "collision_gap_min": 0.030000001192092896,
+          "nearest_wheel_gap_max": 0.030000001192092896
+        }
+      }
+    },
+    "resume64": {
+      "completed_updates": 102,
+      "resume_checks": {
+        "model": true,
+        "ppo_optimizer": true,
+        "student_optimizer": true,
+        "terrain_assignment": true,
+        "command_terrain_membership": true,
+        "terrain_restored_exactly": true,
+        "stair_episode_totals": true
+      },
+      "reset": {
+        "profile": "wave_surface_v1",
+        "count": 5,
+        "clearance_m": 0.03,
+        "surface_spacing_m": 0.02,
+        "geometry_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+        "surface_points": 8440,
+        "last": {
+          "count": 1,
+          "delta_min": -0.17306172847747803,
+          "delta_max": -0.17306172847747803,
+          "collision_gap_min": 0.030000001192092896,
+          "nearest_wheel_gap_max": 0.030000001192092896
+        }
+      }
+    }
+  }
+}

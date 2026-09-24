@@ -1,0 +1,204 @@
+{
+  "variety": {
+    "profile": "radial_routes_v30",
+    "variants": {
+      "single_curb_up": {
+        "column": 6,
+        "count": 132,
+        "mean_level": 5.93181848526001
+      },
+      "short_tread_up": {
+        "column": 7,
+        "count": 110,
+        "mean_level": 4.481818199157715
+      },
+      "long_tread_up": {
+        "column": 9,
+        "count": 89,
+        "mean_level": 4.696629047393799
+      },
+      "ramp_then_stairs_up": {
+        "column": 10,
+        "count": 128,
+        "mean_level": 4.796875
+      },
+      "short_tread_down": {
+        "column": 12,
+        "count": 296,
+        "mean_level": 5.814189434051514
+      }
+    },
+    "reverse_envs": 580,
+    "episode_statistics": [
+      [
+        [
+          [
+            346,
+            329,
+            7
+          ],
+          [
+            322,
+            307,
+            10
+          ]
+        ],
+        [
+          [
+            90,
+            83,
+            2
+          ],
+          [
+            88,
+            85,
+            2
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            229,
+            211,
+            15
+          ],
+          [
+            244,
+            207,
+            23
+          ]
+        ],
+        [
+          [
+            82,
+            76,
+            6
+          ],
+          [
+            68,
+            53,
+            9
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            189,
+            180,
+            5
+          ],
+          [
+            189,
+            168,
+            13
+          ]
+        ],
+        [
+          [
+            63,
+            62,
+            0
+          ],
+          [
+            52,
+            39,
+            6
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            327,
+            313,
+            10
+          ],
+          [
+            284,
+            237,
+            35
+          ]
+        ],
+        [
+          [
+            60,
+            55,
+            2
+          ],
+          [
+            77,
+            63,
+            6
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            681,
+            640,
+            12
+          ],
+          [
+            699,
+            651,
+            34
+          ]
+        ],
+        [
+          [
+            245,
+            236,
+            2
+          ],
+          [
+            265,
+            248,
+            13
+          ]
+        ]
+      ]
+    ],
+    "statistic_axes": [
+      "variant_in_column_order",
+      "teacher_student",
+      "forward_backward",
+      "episodes_radius_exit_physical_failure"
+    ],
+    "interpretation": "Training distribution; not successful traversal counts"
+  },
+  "state": "complete",
+  "optimizer_updates": 0,
+  "steps": 3000,
+  "envs": 4096,
+  "source_sha256": "b947a52409502ac38fc2007dd6fa6ebb04609e5945c4b1e7bbf79f35046558a3",
+  "model_and_dual_optimizer_before": {
+    "model": "7ba81a118a6cbffe3272ba7e30a6106130a2ecd3baeda3f0c61b48d0f0065915",
+    "ppo_optimizer": "15a3b979910f57f64130fa01d5e29a2ea641a6adc3351e1ac451a1dca64e9b12",
+    "student_optimizer": "4fdaf89a62abd01d854fb05b6dca1e2af766f5028a55f384874a3e9098b57dfc"
+  },
+  "model_and_dual_optimizer_after": {
+    "model": "7ba81a118a6cbffe3272ba7e30a6106130a2ecd3baeda3f0c61b48d0f0065915",
+    "ppo_optimizer": "15a3b979910f57f64130fa01d5e29a2ea641a6adc3351e1ac451a1dca64e9b12",
+    "student_optimizer": "4fdaf89a62abd01d854fb05b6dca1e2af766f5028a55f384874a3e9098b57dfc"
+  },
+  "forbidden_calls": [],
+  "mutation_guard_restored": true,
+  "pit_active_final": 0,
+  "mixed_steps": 1173000,
+  "mixed_nonzero_yaw_steps": 19538,
+  "mixed_nonzero_side_steps": 27108,
+  "terrain_counts": {
+    "flat": 820,
+    "obstacles": 409,
+    "stairs_up": 573,
+    "wave": 492,
+    "slope_up": 410,
+    "stairs_down": 573,
+    "slope_down": 410,
+    "rough_slope": 409
+  },
+  "interpretation": "sampling and configuration only; no learned improvement"
+}

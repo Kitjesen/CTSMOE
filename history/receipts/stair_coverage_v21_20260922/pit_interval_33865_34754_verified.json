@@ -1,0 +1,71 @@
+{
+  "source_completed_updates": 33865,
+  "source_iter": 33864,
+  "current_completed_updates": 34754,
+  "by_learner": {
+    "teacher": {
+      "all_heights_delta": {
+        "episodes": 5001,
+        "success": 0,
+        "physical": 98,
+        "base_contact": 0,
+        "overspeed": 98,
+        "position": 0,
+        "torque": 0,
+        "out_of_lane": 0,
+        "timeout": 4903,
+        "front_supported": 4950,
+        "all_supported": 4943,
+        "early_failure": 38
+      },
+      "level2_delta": {
+        "episodes": 4289,
+        "success": 0,
+        "physical": 86,
+        "base_contact": 0,
+        "overspeed": 86,
+        "position": 0,
+        "torque": 0,
+        "out_of_lane": 0,
+        "timeout": 4203,
+        "front_supported": 4245,
+        "all_supported": 4239,
+        "early_failure": 32
+      }
+    },
+    "student": {
+      "all_heights_delta": {
+        "episodes": 1672,
+        "success": 0,
+        "physical": 43,
+        "base_contact": 0,
+        "overspeed": 43,
+        "position": 0,
+        "torque": 0,
+        "out_of_lane": 0,
+        "timeout": 1629,
+        "front_supported": 1641,
+        "all_supported": 1637,
+        "early_failure": 12
+      },
+      "level2_delta": {
+        "episodes": 1445,
+        "success": 0,
+        "physical": 40,
+        "base_contact": 0,
+        "overspeed": 40,
+        "position": 0,
+        "torque": 0,
+        "out_of_lane": 0,
+        "timeout": 1405,
+        "front_supported": 1415,
+        "all_supported": 1411,
+        "early_failure": 12
+      }
+    }
+  },
+  "mixed_code_sha256": {
+    "mixed_logic.py": "4e1c37890c3a410bb760b5b175d5757ef2654adba680e649ee5744cfd10a5da9",
+    "mixed_task.py": "19617ac46905640ffcbbcb4fab953d58ba8e4a71bf3cfbad21f606a599b3d56a"
+  }
+}

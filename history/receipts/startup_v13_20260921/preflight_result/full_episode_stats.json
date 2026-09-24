@@ -1,0 +1,83 @@
+{
+  "steps": 3000,
+  "simulated_seconds": 60.0,
+  "num_envs": 4096,
+  "optimizer_steps": 0,
+  "configuration": {
+    "episode_seconds": 25.0,
+    "native_resampling_seconds": 5.0,
+    "evidence_scope": "flat normal cohort"
+  },
+  "maximum_episode_age_seconds": {
+    "teacher": 24.979999542236328,
+    "student": 24.979999542236328
+  },
+  "normal_timeouts_age_ge_24p9_seconds": {
+    "teacher": 1525,
+    "student": 505
+  },
+  "native_resample_intervals_seconds": {
+    "teacher": {
+      "count": 4518,
+      "minimum": 5.019998550415039,
+      "maximum": 5.020000457763672,
+      "mean": 5.0199998828783245,
+      "short_intervals_involving_zero_translation": 19
+    },
+    "student": {
+      "count": 1557,
+      "minimum": 5.0199995040893555,
+      "maximum": 5.020000457763672,
+      "mean": 5.0199998838440605,
+      "short_intervals_involving_zero_translation": 9
+    }
+  },
+  "algorithm_startup_anchor_counts": {
+    "teacher": 78871,
+    "student": 26061
+  },
+  "startup_anchor": {
+    "profile": "v6_normal_start_action_v1",
+    "reference": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+    "reference_sha256": "bdde0ca02d7e0d9db9ecdfd8c9b352cc1f511db49a9af936cc14c8046f6a77f8",
+    "coefficients": {
+      "main": 0.21093362834788681,
+      "student": 0.0022221143221353456
+    },
+    "coefficient_origin": {
+      "mode": "fixed_import_without_model_or_optimizer_transfer",
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "sha256": "73d961f5855d36b43d86852845a31f9a27259805cea53a317787e0bf023e5c76",
+      "donor_completed_updates": 44759,
+      "calibration_disabled": true
+    },
+    "calibration": {
+      "main": {
+        "primary_gradient_norm": 2.3702302888944837,
+        "anchor_gradient_norm": 1.1236853542315834,
+        "requested_ratio": 0.1,
+        "coefficient": 0.21093362834788681,
+        "achieved_ratio": 0.1
+      },
+      "student": {
+        "primary_gradient_norm": 0.003476357022773588,
+        "anchor_gradient_norm": 0.1564436621529434,
+        "requested_ratio": 0.1,
+        "coefficient": 0.0022221143221353456,
+        "achieved_ratio": 0.1
+      }
+    },
+    "sample_counter_scope": "current process only",
+    "startup_seconds": 1.0,
+    "command_abs_limits": [
+      1.2,
+      0.5,
+      0.8
+    ],
+    "mask": "default-reset startup cohort on flat, first1s; shared weights affect all terrains",
+    "samples": {
+      "teacher": 78871,
+      "student": 26061
+    }
+  }
+}

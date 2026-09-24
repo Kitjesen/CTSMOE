@@ -1,0 +1,28 @@
+{
+  "smoke_only": true,
+  "cases": 249,
+  "fields": {
+    "phase_weight": {
+      "shape": [
+        3,
+        249
+      ],
+      "finite": true
+    },
+    "phase_ready": {
+      "shape": [
+        3,
+        249
+      ],
+      "finite": true
+    },
+    "phase_stable_s": {
+      "shape": [
+        3,
+        249
+      ],
+      "finite": true
+    }
+  },
+  "protocol": "V8 landing geometry (shorter stair flight, outer plateau); phase telemetry enabled. Nine terrains, matched default joint/root states verified across policies. No noise or pushes; fixed10ms delay. 83 cases per policy: 20 all-direction flat starts (6s budget), seven other terrain types at L6/L9 and vx0.3/0.6/1.2, pit0.15/0.25/0.35/0.45/0.6/0.9/1.2m at vx0.3/0.6/0.9 (25s budget). No heading feedback. Pit external stop retained. 50Hz trajectories plus per-step 200Hz torque/speed/hard-limit peaks. Fixed cases, not success probabilities over random trials."
+}

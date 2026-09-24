@@ -1,0 +1,32 @@
+{
+  "state": "training",
+  "coordinator_pid": 169897,
+  "start": 39162,
+  "target": 46194,
+  "remaining": 7032,
+  "root": "/root/autodl-tmp/cts-omni-repair-v19-20260922/yaw_stairs_v32_20260924",
+  "status": "orchestration/STATUS_v32.json",
+  "entry": "orchestration/continuous_v32.py",
+  "old_v31": "stopped_by_user_requested_migration",
+  "training_started": true,
+  "preflight_pid": 169418,
+  "preflight_observed_steps": 900,
+  "automatic_training_after_preflight_and_source_assessment": true,
+  "do_not_restart": [
+    "continuous_v31.py",
+    "all old V31 supervisors"
+  ],
+  "cpu_validation": {
+    "v32_tests_passed": 8,
+    "inherited_mixed_tests_passed": 15,
+    "corrected_cpu_stair_tests_passed": 4
+  },
+  "training_pid": 170806,
+  "observed_completed": 42886,
+  "observed_local_time": "2026-09-24T18:47:55.146731",
+  "preflight_completed_steps": 3000,
+  "preflight_model_dual_optimizer_unchanged": true,
+  "observed_terrain_mean": 5.81884765625,
+  "observed_seconds_per_update": 7.874545574,
+  "final_assessment_available": false
+}

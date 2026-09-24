@@ -1,0 +1,108 @@
+{
+  "before": {
+    "direct_pass": 7,
+    "settled_pass": 10,
+    "combined_pass": 17,
+    "forward": {
+      "policy": 0,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 0,
+      "end_step": 238,
+      "seconds": 4.78,
+      "physical": false,
+      "terms": [],
+      "passed_4m": true,
+      "dx_m": 4.006431579589844,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/mixed9_4096_60000_strong_stance_video_20260920/model_42913.pt",
+      "max_side_m": 0.5867118835449219,
+      "straight_4m": false,
+      "label": "42914",
+      "first_rms": 0.5279269574328854,
+      "max_rms": 0.8061611390859593,
+      "height_min": 0.2824762463569641,
+      "height_max": 0.9764095544815063,
+      "max_xy_speed": 2.8680853843688965,
+      "last_xy_error": 0.033795177936553955,
+      "last_yaw_error": 0.00287770782597363,
+      "early_failure": false,
+      "startup_pass": false,
+      "tracking_pass": true,
+      "combined_pass": false
+    }
+  },
+  "candidate": {
+    "direct_pass": 10,
+    "settled_pass": 10,
+    "combined_pass": 18,
+    "forward": {
+      "policy": 1,
+      "terrain": "flat",
+      "level": 0,
+      "mode": "direct",
+      "direction": "forward",
+      "velocity": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "teacher": false,
+      "id": 20,
+      "end_step": 299,
+      "seconds": 6.0,
+      "physical": false,
+      "terms": [
+        "time_out"
+      ],
+      "passed_4m": false,
+      "dx_m": 3.1718215942382812,
+      "climb": false,
+      "stable": false,
+      "checkpoint": "runs/startup_repair_request96_20260920/model_43201.pt",
+      "max_side_m": 0.32701873779296875,
+      "straight_4m": false,
+      "label": "43202",
+      "first_rms": 0.12718137018199854,
+      "max_rms": 0.15477872083387695,
+      "height_min": 0.4320359230041504,
+      "height_max": 0.4533361792564392,
+      "max_xy_speed": 0.5593783259391785,
+      "last_xy_error": 0.060126326978206635,
+      "last_yaw_error": 0.0028422558680176735,
+      "early_failure": false,
+      "startup_pass": true,
+      "tracking_pass": true,
+      "combined_pass": true
+    }
+  },
+  "regression_before": {
+    "stair_pass": 7,
+    "stair_straight": 7,
+    "stair_count": 8,
+    "pit_climb": 2,
+    "pit_stable": 2,
+    "pit_count": 3,
+    "physical_fail": 1
+  },
+  "regression_current": {
+    "stair_pass": 8,
+    "stair_straight": 7,
+    "stair_count": 8,
+    "pit_climb": 0,
+    "pit_stable": 0,
+    "pit_count": 3,
+    "physical_fail": 3
+  },
+  "nominal_startup_gate": false,
+  "terrain_no_count_regression": false
+}

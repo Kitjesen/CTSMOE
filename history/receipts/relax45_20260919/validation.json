@@ -1,0 +1,139 @@
+{
+  "source_completed": 30346,
+  "unchanged_non_slope_types": [
+    "wave",
+    "stairs_up",
+    "stairs_down",
+    "obstacles",
+    "flat",
+    "pit"
+  ],
+  "max_parameter_changes": {
+    "actor.": 0.006725281476974487,
+    "teacher_encoder.": 0.00868881493806839,
+    "student_moe_encoder.": 0.14781546592712402
+  },
+  "training": {
+    "relax45_smoke4096_20260919": {
+      "completed": 30350,
+      "seconds_mean": 6.6022902727127075,
+      "tolerated_overspeed_samples": 313.0,
+      "sustained_overspeed_samples": 0.0,
+      "torque_violation_samples": 0
+    },
+    "relax45_inherit4096_20260919": {
+      "completed": 30352,
+      "seconds_mean": 6.668329358100891,
+      "tolerated_overspeed_samples": 220.0,
+      "sustained_overspeed_samples": 0.0,
+      "torque_violation_samples": 0
+    }
+  },
+  "matched_initial_states": true,
+  "wave_ab": {
+    "teacher": {
+      "v3": {
+        "n": 36,
+        "success": 25,
+        "physical": 10,
+        "overspeed": 5,
+        "early_physical": 5,
+        "by_level": {
+          "0": {
+            "n": 9,
+            "success": 9
+          },
+          "3": {
+            "n": 9,
+            "success": 9
+          },
+          "6": {
+            "n": 9,
+            "success": 6
+          },
+          "9": {
+            "n": 9,
+            "success": 1
+          }
+        }
+      },
+      "v4": {
+        "n": 36,
+        "success": 30,
+        "physical": 5,
+        "overspeed": 0,
+        "early_physical": 0,
+        "by_level": {
+          "0": {
+            "n": 9,
+            "success": 9
+          },
+          "3": {
+            "n": 9,
+            "success": 9
+          },
+          "6": {
+            "n": 9,
+            "success": 6
+          },
+          "9": {
+            "n": 9,
+            "success": 6
+          }
+        }
+      }
+    },
+    "student": {
+      "v3": {
+        "n": 36,
+        "success": 33,
+        "physical": 3,
+        "overspeed": 1,
+        "early_physical": 1,
+        "by_level": {
+          "0": {
+            "n": 9,
+            "success": 8
+          },
+          "3": {
+            "n": 9,
+            "success": 9
+          },
+          "6": {
+            "n": 9,
+            "success": 9
+          },
+          "9": {
+            "n": 9,
+            "success": 7
+          }
+        }
+      },
+      "v4": {
+        "n": 36,
+        "success": 34,
+        "physical": 2,
+        "overspeed": 0,
+        "early_physical": 0,
+        "by_level": {
+          "0": {
+            "n": 9,
+            "success": 8
+          },
+          "3": {
+            "n": 9,
+            "success": 9
+          },
+          "6": {
+            "n": 9,
+            "success": 9
+          },
+          "9": {
+            "n": 9,
+            "success": 8
+          }
+        }
+      }
+    }
+  }
+}

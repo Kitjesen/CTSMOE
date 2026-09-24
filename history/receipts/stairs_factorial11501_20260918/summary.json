@@ -1,0 +1,368 @@
+[
+  {
+    "commands": "direct",
+    "randomization": "nominal",
+    "num_envs": 64,
+    "level": 5,
+    "seed": 42,
+    "policy_sha256": "577a8852eb00a8404d9c6a62b4dc2446708d6ace78519b93f2ae8b748faa4a6c",
+    "categories": {
+      "crossed_4m": 64
+    },
+    "crossed_4m": 64,
+    "command_reference_crosses_4m_25s": 64,
+    "terminated_before_4m": 0,
+    "pass_seconds_mean": 17.5240625,
+    "mean_actual_max_radius_m": 4.003211011698205,
+    "mean_actual_path_m": 4.207708594571708,
+    "mean_command_reference_max_radius_25s_m": 8.049999862909472,
+    "mean_tracking_rmse_vx_vy_yaw": [
+      0.12609074299638118,
+      0.06564727634292047,
+      0.08985542420045109
+    ],
+    "mean_leg_clip_fraction": 0.0001889172684461661,
+    "mean_wheel_clip_fraction": 0.0030902933624538348,
+    "mean_calf_contact_over_5n_fraction": 1.7898052691867126e-05,
+    "mean_maximum_tilt_deg": 35.1399186892032,
+    "zones": {
+      "central_root_square": {
+        "samples": 19213,
+        "root_square_radius_range_m": [
+          0.0,
+          1.3
+        ],
+        "tracking_rmse_vx_vy_yaw": [
+          0.082257479429245,
+          0.03123619593679905,
+          0.06977250427007675
+        ],
+        "calf_contact_over_5n_fraction": 0.0,
+        "component_response": [
+          {
+            "samples": 12813,
+            "mean_abs_command": 0.34999990463256836,
+            "mean_velocity_along_command_sign": 0.31198200583457947
+          },
+          {
+            "samples": 0,
+            "mean_abs_command": null,
+            "mean_velocity_along_command_sign": null
+          },
+          {
+            "samples": 0,
+            "mean_abs_command": null,
+            "mean_velocity_along_command_sign": null
+          }
+        ]
+      },
+      "outer_stair_region": {
+        "samples": 30737,
+        "root_square_radius_range_m": [
+          1.8,
+          100.0
+        ],
+        "tracking_rmse_vx_vy_yaw": [
+          0.1495552510023117,
+          0.07894688844680786,
+          0.09862486273050308
+        ],
+        "calf_contact_over_5n_fraction": 3.253407944822201e-05,
+        "component_response": [
+          {
+            "samples": 30737,
+            "mean_abs_command": 0.34999990463256836,
+            "mean_velocity_along_command_sign": 0.2569669783115387
+          },
+          {
+            "samples": 0,
+            "mean_abs_command": null,
+            "mean_velocity_along_command_sign": null
+          },
+          {
+            "samples": 0,
+            "mean_abs_command": null,
+            "mean_velocity_along_command_sign": null
+          }
+        ]
+      }
+    },
+    "caveat": "One fixed level/terrain and seed, deterministic student actions. Command paths are planar kinematic references, not physically guaranteed targets. All state/failure metrics stop at first 4 m crossing or first termination; reference paths retain the full 25 s command schedule. Contact and torque are sampled at the last physics substep of each 20 ms control step."
+  },
+  {
+    "commands": "original",
+    "randomization": "nominal",
+    "num_envs": 64,
+    "level": 5,
+    "seed": 42,
+    "policy_sha256": "577a8852eb00a8404d9c6a62b4dc2446708d6ace78519b93f2ae8b748faa4a6c",
+    "categories": {
+      "crossed_4m": 4,
+      "survived_but_command_reference_below_4m": 32,
+      "survived_command_reference_above_4m_execution_below_4m": 27,
+      "terminated_before_4m": 1
+    },
+    "crossed_4m": 4,
+    "command_reference_crosses_4m_25s": 32,
+    "terminated_before_4m": 1,
+    "pass_seconds_mean": 13.46,
+    "mean_actual_max_radius_m": 2.5843636764594473,
+    "mean_actual_path_m": 9.205256221627106,
+    "mean_command_reference_max_radius_25s_m": 4.188108821065941,
+    "mean_tracking_rmse_vx_vy_yaw": [
+      0.11803548562550278,
+      0.16034113399009184,
+      0.18193149814336457
+    ],
+    "mean_leg_clip_fraction": 0.00021213766061203273,
+    "mean_wheel_clip_fraction": 0.0025489091177505136,
+    "mean_calf_contact_over_5n_fraction": 0.029756300865466413,
+    "mean_maximum_tilt_deg": 35.78292324169392,
+    "zones": {
+      "central_root_square": {
+        "samples": 43558,
+        "root_square_radius_range_m": [
+          0.0,
+          1.3
+        ],
+        "tracking_rmse_vx_vy_yaw": [
+          0.08428459614515305,
+          0.13283418118953705,
+          0.15492121875286102
+        ],
+        "calf_contact_over_5n_fraction": 0.0012167684466688094,
+        "component_response": [
+          {
+            "samples": 34983,
+            "mean_abs_command": 0.37146931886672974,
+            "mean_velocity_along_command_sign": 0.3326599597930908
+          },
+          {
+            "samples": 36071,
+            "mean_abs_command": 0.38944298028945923,
+            "mean_velocity_along_command_sign": 0.29969191551208496
+          },
+          {
+            "samples": 37891,
+            "mean_abs_command": 0.6824765205383301,
+            "mean_velocity_along_command_sign": 0.6412776708602905
+          }
+        ]
+      },
+      "outer_stair_region": {
+        "samples": 16801,
+        "root_square_radius_range_m": [
+          1.8,
+          100.0
+        ],
+        "tracking_rmse_vx_vy_yaw": [
+          0.1568193882703781,
+          0.19158704578876495,
+          0.21308869123458862
+        ],
+        "calf_contact_over_5n_fraction": 0.06291292184988989,
+        "component_response": [
+          {
+            "samples": 14170,
+            "mean_abs_command": 0.3776354491710663,
+            "mean_velocity_along_command_sign": 0.28689122200012207
+          },
+          {
+            "samples": 12765,
+            "mean_abs_command": 0.3864304721355438,
+            "mean_velocity_along_command_sign": 0.2460995316505432
+          },
+          {
+            "samples": 14100,
+            "mean_abs_command": 0.5852785706520081,
+            "mean_velocity_along_command_sign": 0.4899137616157532
+          }
+        ]
+      }
+    },
+    "caveat": "One fixed level/terrain and seed, deterministic student actions. Command paths are planar kinematic references, not physically guaranteed targets. All state/failure metrics stop at first 4 m crossing or first termination; reference paths retain the full 25 s command schedule. Contact and torque are sampled at the last physics substep of each 20 ms control step."
+  },
+  {
+    "commands": "direct",
+    "randomization": "full",
+    "num_envs": 64,
+    "level": 5,
+    "seed": 42,
+    "policy_sha256": "577a8852eb00a8404d9c6a62b4dc2446708d6ace78519b93f2ae8b748faa4a6c",
+    "categories": {
+      "crossed_4m": 63,
+      "survived_command_reference_above_4m_execution_below_4m": 1
+    },
+    "crossed_4m": 63,
+    "command_reference_crosses_4m_25s": 64,
+    "terminated_before_4m": 0,
+    "pass_seconds_mean": 17.11873015873016,
+    "mean_actual_max_radius_m": 4.001624779912689,
+    "mean_actual_path_m": 4.471297263324678,
+    "mean_command_reference_max_radius_25s_m": 7.996870397116132,
+    "mean_tracking_rmse_vx_vy_yaw": [
+      0.13516212243578082,
+      0.08841452196253473,
+      0.11657367293103273
+    ],
+    "mean_leg_clip_fraction": 0.00020378772705215408,
+    "mean_wheel_clip_fraction": 0.0028264401040946014,
+    "mean_calf_contact_over_5n_fraction": 0.005645170469831126,
+    "mean_maximum_tilt_deg": 35.063409175247585,
+    "zones": {
+      "central_root_square": {
+        "samples": 19065,
+        "root_square_radius_range_m": [
+          0.0,
+          1.3
+        ],
+        "tracking_rmse_vx_vy_yaw": [
+          0.09318652004003525,
+          0.07819360494613647,
+          0.10142984241247177
+        ],
+        "calf_contact_over_5n_fraction": 0.0,
+        "component_response": [
+          {
+            "samples": 12665,
+            "mean_abs_command": 0.34999993443489075,
+            "mean_velocity_along_command_sign": 0.3416125178337097
+          },
+          {
+            "samples": 0,
+            "mean_abs_command": null,
+            "mean_velocity_along_command_sign": null
+          },
+          {
+            "samples": 0,
+            "mean_abs_command": null,
+            "mean_velocity_along_command_sign": null
+          }
+        ]
+      },
+      "outer_stair_region": {
+        "samples": 28566,
+        "root_square_radius_range_m": [
+          1.8,
+          100.0
+        ],
+        "tracking_rmse_vx_vy_yaw": [
+          0.16467328369617462,
+          0.09478097409009933,
+          0.12792260944843292
+        ],
+        "calf_contact_over_5n_fraction": 0.011937268080935377,
+        "component_response": [
+          {
+            "samples": 28566,
+            "mean_abs_command": 0.34999990463256836,
+            "mean_velocity_along_command_sign": 0.2510492503643036
+          },
+          {
+            "samples": 0,
+            "mean_abs_command": null,
+            "mean_velocity_along_command_sign": null
+          },
+          {
+            "samples": 0,
+            "mean_abs_command": null,
+            "mean_velocity_along_command_sign": null
+          }
+        ]
+      }
+    },
+    "caveat": "One fixed level/terrain and seed, deterministic student actions. Command paths are planar kinematic references, not physically guaranteed targets. All state/failure metrics stop at first 4 m crossing or first termination; reference paths retain the full 25 s command schedule. Contact and torque are sampled at the last physics substep of each 20 ms control step."
+  },
+  {
+    "commands": "original",
+    "randomization": "full",
+    "num_envs": 64,
+    "level": 5,
+    "seed": 42,
+    "policy_sha256": "577a8852eb00a8404d9c6a62b4dc2446708d6ace78519b93f2ae8b748faa4a6c",
+    "categories": {
+      "crossed_4m": 6,
+      "survived_but_command_reference_below_4m": 37,
+      "survived_command_reference_above_4m_execution_below_4m": 21
+    },
+    "crossed_4m": 6,
+    "command_reference_crosses_4m_25s": 27,
+    "terminated_before_4m": 0,
+    "pass_seconds_mean": 19.72666666666667,
+    "mean_actual_max_radius_m": 2.5832768505249657,
+    "mean_actual_path_m": 9.188167864311634,
+    "mean_command_reference_max_radius_25s_m": 4.140043325576148,
+    "mean_tracking_rmse_vx_vy_yaw": [
+      0.13926139763529827,
+      0.18220169228513608,
+      0.20584450130925888
+    ],
+    "mean_leg_clip_fraction": 0.0003127251500031523,
+    "mean_wheel_clip_fraction": 0.003194012199203634,
+    "mean_calf_contact_over_5n_fraction": 0.032984342648970995,
+    "mean_maximum_tilt_deg": 34.221023973835706,
+    "zones": {
+      "central_root_square": {
+        "samples": 43649,
+        "root_square_radius_range_m": [
+          0.0,
+          1.3
+        ],
+        "tracking_rmse_vx_vy_yaw": [
+          0.11634750664234161,
+          0.15592734515666962,
+          0.18481320142745972
+        ],
+        "calf_contact_over_5n_fraction": 0.004100895782263053,
+        "component_response": [
+          {
+            "samples": 33363,
+            "mean_abs_command": 0.37388139963150024,
+            "mean_velocity_along_command_sign": 0.3277081251144409
+          },
+          {
+            "samples": 33030,
+            "mean_abs_command": 0.3802341818809509,
+            "mean_velocity_along_command_sign": 0.281376451253891
+          },
+          {
+            "samples": 37245,
+            "mean_abs_command": 0.6776086091995239,
+            "mean_velocity_along_command_sign": 0.6245577335357666
+          }
+        ]
+      },
+      "outer_stair_region": {
+        "samples": 17659,
+        "root_square_radius_range_m": [
+          1.8,
+          100.0
+        ],
+        "tracking_rmse_vx_vy_yaw": [
+          0.17195814847946167,
+          0.22262972593307495,
+          0.2345815896987915
+        ],
+        "calf_contact_over_5n_fraction": 0.07293731241859674,
+        "component_response": [
+          {
+            "samples": 15244,
+            "mean_abs_command": 0.39068150520324707,
+            "mean_velocity_along_command_sign": 0.30089834332466125
+          },
+          {
+            "samples": 14683,
+            "mean_abs_command": 0.39491066336631775,
+            "mean_velocity_along_command_sign": 0.22993095219135284
+          },
+          {
+            "samples": 13692,
+            "mean_abs_command": 0.5893515944480896,
+            "mean_velocity_along_command_sign": 0.4923189580440521
+          }
+        ]
+      }
+    },
+    "caveat": "One fixed level/terrain and seed, deterministic student actions. Command paths are planar kinematic references, not physically guaranteed targets. All state/failure metrics stop at first 4 m crossing or first termination; reference paths retain the full 25 s command schedule. Contact and torque are sampled at the last physics substep of each 20 ms control step."
+  }
+]

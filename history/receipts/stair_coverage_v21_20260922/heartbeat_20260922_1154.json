@@ -1,0 +1,48 @@
+{
+  "utc": "2026-09-22T11:56:57.620488+00:00",
+  "status": {
+    "state": "training",
+    "completed_updates": 34650,
+    "seconds": 7.179272890090942,
+    "collect_seconds": 6.6542809009552,
+    "learn_seconds": 0.5249919891357422,
+    "terrain": 5.895308017730713,
+    "value": 0.029305039346218108,
+    "surrogate": -0.01632151728263125,
+    "entropy": 8.004337120056153,
+    "mean_latent_loss": 0.00220586524810642,
+    "mean_load_balance_loss": 3.49918265328597e-05
+  },
+  "pipeline": {
+    "state": "train_34823",
+    "supervisor_pid": 56642,
+    "completed_updates": 33881,
+    "stage_target": 34823,
+    "time_utc": "2026-09-22T10:24:32.316476+00:00",
+    "automatic_extension": false,
+    "authorized_new_updates": 10000,
+    "spent_new_updates": 2058,
+    "remaining_new_updates": 7942,
+    "discarded_optimizer_updates": 8,
+    "v21_new_updates": 16,
+    "v21_limit": 958,
+    "child_pid": 57086
+  },
+  "checkpoints": [
+    {
+      "name": "model_34000.pt",
+      "bytes": 27815827,
+      "mtime": "2026-09-22T10:39:06.348044+00:00"
+    },
+    {
+      "name": "model_34500.pt",
+      "bytes": 27817811,
+      "mtime": "2026-09-22T11:38:53.892825+00:00"
+    }
+  ],
+  "processes": "   PID     ELAPSED %CPU COMMAND\n 56191    01:45:00  0.0 python\n 56642    01:34:49  0.0 python\n 57086    01:32:25  145 python\n",
+  "gpu": "NVIDIA GeForce RTX 5090, 65 %, 13641 MiB, 32607 MiB\n",
+  "gpu_processes": "57086, /root/autodl-tmp/conda/envs/isaaclab/bin/python, 13572 MiB\n57086, /root/autodl-tmp/conda/envs/isaaclab/bin/python, 13572 MiB\n",
+  "disk": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/md0        150G   56G   95G  38% /root/autodl-tmp\n",
+  "evaluation_files": []
+}

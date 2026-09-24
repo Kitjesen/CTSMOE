@@ -1,0 +1,84 @@
+{
+  "normal_student": {
+    "accepted": false,
+    "reasons": [
+      "obstacles: fewer accepted cases",
+      "obstacles: more physical failures",
+      "pit: a previously successful height/speed case regressed",
+      "rough_slope: fewer accepted cases",
+      "rough_slope: more physical failures",
+      "slope_up: more physical failures",
+      "stairs_down: fewer straight traversals",
+      "stairs_up: fewer accepted cases",
+      "stairs_up: more physical failures",
+      "stairs_up: fewer straight traversals",
+      "wave: fewer accepted cases",
+      "wave: more physical failures",
+      "forward startup RMS did not meet improvement criterion",
+      "flat/yaw_right/direct: yaw tracking regressed",
+      "flat/reverse/settle: XY tracking regressed"
+    ],
+    "baseline": "V9_44711",
+    "candidate": "V12_45011",
+    "forward_rms_before": 0.4154979682159929,
+    "forward_rms_after": 0.4649846706179459,
+    "threshold": 0.3323983745727943,
+    "final": false,
+    "fixed_cases_not_random_success_rate": true
+  },
+  "normal_teacher": {
+    "accepted": false,
+    "reasons": [
+      "slope_up: more physical failures",
+      "stairs_down: fewer straight traversals",
+      "stairs_up: fewer accepted cases",
+      "stairs_up: fewer straight traversals",
+      "forward startup RMS did not meet improvement criterion",
+      "flat/forward_turn/settle: yaw tracking regressed"
+    ],
+    "baseline": "V9_44711_teacher",
+    "candidate": "V12_45011_teacher",
+    "forward_rms_before": 0.42331255809839213,
+    "forward_rms_after": 0.46447750362614076,
+    "threshold": 0.3386500464787137,
+    "final": false,
+    "fixed_cases_not_random_success_rate": true
+  },
+  "flat25_student": {
+    "accepted": false,
+    "reasons": [
+      "forward/direct: full-episode posture regressed",
+      "forward/direct: startup improvement insufficient",
+      "forward/direct: delayed posture excursion or incomplete 25 seconds",
+      "left/direct: XY tracking regressed",
+      "diagonal/direct: XY tracking regressed",
+      "reverse/settle: XY tracking regressed",
+      "diagonal/settle: XY tracking regressed"
+    ],
+    "baseline": "V9_44711",
+    "candidate": "V12_45011",
+    "final": false,
+    "protocol": "flat25_80m",
+    "fixed_cases_not_random_success_rate": true,
+    "baseline_completions": 20,
+    "candidate_completions": 20
+  },
+  "flat25_teacher": {
+    "accepted": false,
+    "reasons": [
+      "forward/direct: full-episode posture regressed",
+      "forward/direct: startup improvement insufficient",
+      "forward/direct: delayed posture excursion or incomplete 25 seconds",
+      "diagonal/direct: XY tracking regressed",
+      "diagonal/settle: XY tracking regressed"
+    ],
+    "baseline": "V9_44711_teacher",
+    "candidate": "V12_45011_teacher",
+    "final": false,
+    "protocol": "flat25_80m",
+    "fixed_cases_not_random_success_rate": true,
+    "baseline_completions": 20,
+    "candidate_completions": 20
+  },
+  "accepted": false
+}

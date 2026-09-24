@@ -1,0 +1,69 @@
+{
+  "num_envs": 4096,
+  "resume": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_7000.pt",
+  "warmup": 4,
+  "block_size": 3,
+  "order": [
+    "reference",
+    "fast",
+    "fast",
+    "reference",
+    "reference",
+    "fast",
+    "fast",
+    "reference"
+  ],
+  "samples_per_mode": 12,
+  "compute_calls": {
+    "reference": 18456,
+    "fast": 13824
+  },
+  "collect_seconds": {
+    "medians": {
+      "reference": 5.345964670181274,
+      "fast": 5.237092852592468
+    },
+    "reduction": 0.02036523327512274,
+    "speedup": 1.0207885979212517
+  },
+  "learn_seconds": {
+    "medians": {
+      "reference": 0.5301563739776611,
+      "fast": 0.513227105140686
+    },
+    "reduction": 0.03193259511332114,
+    "speedup": 1.0329859211787624
+  },
+  "seconds": {
+    "medians": {
+      "reference": 5.878116846084595,
+      "fast": 5.7058717012405396
+    },
+    "reduction": 0.029302776612681214,
+    "speedup": 1.0301873497798077
+  },
+  "wall_collect_seconds": {
+    "medians": {
+      "reference": 5.346159564796835,
+      "fast": 5.237218555994332
+    },
+    "reduction": 0.020377433086706476,
+    "speedup": 1.0208013103974463
+  },
+  "wall_learn_seconds": {
+    "medians": {
+      "reference": 0.530137141700834,
+      "fast": 0.5132118896581233
+    },
+    "reduction": 0.03192617666517317,
+    "speedup": 1.0329790723554466
+  },
+  "wall_seconds": {
+    "medians": {
+      "reference": 5.878249851055443,
+      "fast": 5.705979799851775
+    },
+    "reduction": 0.029306350626238986,
+    "speedup": 1.0301911428442392
+  }
+}

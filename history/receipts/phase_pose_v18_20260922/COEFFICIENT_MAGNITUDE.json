@@ -1,0 +1,35 @@
+{
+  "chosen_extra_weight": -0.2,
+  "scope": "flat gate=1 actual-angle L1 sum over 12 leg joints",
+  "evidence": "Fixed recorded trajectories only, not proof that training will improve.",
+  "rows": [
+    {
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "window": "first1s",
+      "extra_cost_mean": 0.1984432834982872,
+      "extra_cost_max": 0.23767343163490295,
+      "extra_cost_integral": 0.1984432834982872
+    },
+    {
+      "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_relax45_20260919/model_31830.pt",
+      "window": "last5s",
+      "extra_cost_mean": 0.39281422064304355,
+      "extra_cost_max": 0.44480635523796086,
+      "extra_cost_integral": 1.9640711032152178
+    },
+    {
+      "checkpoint": "/root/autodl-tmp/cts-posture-stop-v17-20260922/training_31831_to_32831/model_32830.pt",
+      "window": "first1s",
+      "extra_cost_mean": 0.32153451508283626,
+      "extra_cost_max": 0.5575328320264816,
+      "extra_cost_integral": 0.32153451508283626
+    },
+    {
+      "checkpoint": "/root/autodl-tmp/cts-posture-stop-v17-20260922/training_31831_to_32831/model_32830.pt",
+      "window": "last5s",
+      "extra_cost_mean": 0.4195657698631287,
+      "extra_cost_max": 0.420785003900528,
+      "extra_cost_integral": 2.0978288493156434
+    }
+  ]
+}

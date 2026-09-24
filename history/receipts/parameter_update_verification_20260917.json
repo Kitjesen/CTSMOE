@@ -1,0 +1,113 @@
+{
+  "queried_at": "2026-09-17T22:54:13.274416+08:00",
+  "checkpoints": [
+    "model_10000.pt",
+    "model_10500.pt"
+  ],
+  "completed_updates": [
+    10001,
+    10501
+  ],
+  "live_status": {
+    "state": "training",
+    "completed_updates": 10709,
+    "seconds": 6.011730194091797,
+    "terrain": 4.975830078125,
+    "value": 0.013352662138640881,
+    "surrogate": 0.02868939805775881,
+    "entropy": 3.602630853652954,
+    "mean_latent_loss": 0.00271831089630723,
+    "mean_load_balance_loss": 8.12969587968837e-05
+  },
+  "model_keys": [
+    "model_state_dict",
+    "optimizer_state_dict",
+    "optimizer_stu_enc_state_dict",
+    "iter",
+    "infos",
+    "completed_updates",
+    "common_step_counter",
+    "terrain_levels",
+    "terrain_types",
+    "learning_rate"
+  ],
+  "parameter_groups": {
+    "teacher_encoder.": {
+      "tensors": 6,
+      "parameters": 289056,
+      "finite": true,
+      "changed_parameters": 289056,
+      "relative_l2_change": 0.130413594737836,
+      "rms_change": 0.02249461552818646,
+      "max_abs_change": 0.18681113421916962
+    },
+    "actor.": {
+      "tensors": 8,
+      "parameters": 210320,
+      "finite": true,
+      "changed_parameters": 210320,
+      "relative_l2_change": 0.16717487370769588,
+      "rms_change": 0.01750861261056846,
+      "max_abs_change": 0.12085553258657455
+    },
+    "critic.": {
+      "tensors": 8,
+      "parameters": 330241,
+      "finite": true,
+      "changed_parameters": 330241,
+      "relative_l2_change": 0.12552184551857243,
+      "rms_change": 0.025578884705777575,
+      "max_abs_change": 0.3341975212097168
+    },
+    "student_moe_encoder.": {
+      "tensors": 16,
+      "parameters": 1466376,
+      "finite": true,
+      "changed_parameters": 1327788,
+      "relative_l2_change": 0.14473098205979826,
+      "rms_change": 0.1056662885690758,
+      "max_abs_change": 1.8974933624267578
+    }
+  },
+  "optimizers": {
+    "optimizer_state_dict": {
+      "lr": [
+        0.00026012294873748907,
+        0.00026012294873748907,
+        0.00026012294873748907,
+        0.00026012294873748907
+      ],
+      "state_count": 23,
+      "old_step_range": [
+        200020.0,
+        200020.0
+      ],
+      "new_step_range": [
+        210020.0,
+        210020.0
+      ],
+      "step_increment_range": [
+        10000.0,
+        10000.0
+      ]
+    },
+    "optimizer_stu_enc_state_dict": {
+      "lr": [
+        0.001
+      ],
+      "state_count": 16,
+      "old_step_range": [
+        200020.0,
+        200020.0
+      ],
+      "new_step_range": [
+        210020.0,
+        210020.0
+      ],
+      "step_increment_range": [
+        10000.0,
+        10000.0
+      ]
+    }
+  }
+}

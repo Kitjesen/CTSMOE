@@ -1,0 +1,124 @@
+[
+  {
+    "run": "startup_repair_smoke_20260920",
+    "completed": 42922,
+    "resume_checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "pit_climb_totals": true,
+      "pit_individual": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true,
+      "terrain_allocation": true
+    },
+    "repair": {
+      "profile": "omni_start_v1",
+      "special_flat_count": 103,
+      "standing_count": 77,
+      "active_posture_count": 1826,
+      "target_weight": -2.0,
+      "vertical_weight": -2.0,
+      "command_abs_max": [
+        1.0947059392929077,
+        0.5168178677558899,
+        0.8734239339828491
+      ]
+    },
+    "allocation": {
+      "profile": "balanced_adaptive_v1",
+      "bounds_profile": "startup_flat8_v1",
+      "target_weights": {
+        "pit": 0.35,
+        "stairs_up": 0.2,
+        "stairs_down": 0.1,
+        "wave": 0.06,
+        "slope_up": 0.06,
+        "slope_down": 0.05,
+        "rough_slope": 0.05,
+        "obstacles": 0.05,
+        "flat": 0.08
+      },
+      "actual_counts": {
+        "stairs_up": 819,
+        "pit": 1620,
+        "wave": 246,
+        "stairs_down": 409,
+        "flat": 142,
+        "slope_up": 245,
+        "obstacles": 205,
+        "slope_down": 205,
+        "rough_slope": 205
+      },
+      "pending_moves": 187,
+      "moves_applied": 19,
+      "last_check": 42914,
+      "check_interval": 500,
+      "evidence": "matched training strata, not independent held-out validation",
+      "decisions": []
+    }
+  },
+  {
+    "run": "startup_repair_inherit_20260920",
+    "completed": 42924,
+    "resume_checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "pit_climb_totals": true,
+      "pit_individual": true,
+      "terrain_assignment": true,
+      "command_terrain_membership": true,
+      "terrain_restored_exactly": true,
+      "stair_episode_totals": true,
+      "terrain_allocation": true
+    },
+    "repair": {
+      "profile": "omni_start_v1",
+      "special_flat_count": 105,
+      "standing_count": 26,
+      "active_posture_count": 1519,
+      "target_weight": -2.0,
+      "vertical_weight": -2.0,
+      "command_abs_max": [
+        1.1935360431671143,
+        0.5805405974388123,
+        0.8513973951339722
+      ]
+    },
+    "allocation": {
+      "profile": "balanced_adaptive_v1",
+      "bounds_profile": "startup_flat8_v1",
+      "target_weights": {
+        "pit": 0.35,
+        "stairs_up": 0.2,
+        "stairs_down": 0.1,
+        "wave": 0.06,
+        "slope_up": 0.06,
+        "slope_down": 0.05,
+        "rough_slope": 0.05,
+        "obstacles": 0.05,
+        "flat": 0.08
+      },
+      "actual_counts": {
+        "stairs_up": 819,
+        "pit": 1617,
+        "wave": 246,
+        "stairs_down": 409,
+        "flat": 145,
+        "slope_up": 245,
+        "obstacles": 205,
+        "slope_down": 205,
+        "rough_slope": 205
+      },
+      "pending_moves": 184,
+      "moves_applied": 22,
+      "last_check": 42914,
+      "check_interval": 500,
+      "evidence": "matched training strata, not independent held-out validation",
+      "decisions": []
+    }
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "time": "2026-09-19T22:29:03.975673+08:00",
+  "pid": 147329,
+  "state": "training",
+  "completed_updates": 34450,
+  "start": 34448,
+  "target": 60000,
+  "mean_seconds": 7.12651526927948,
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "pit_climb_totals": true,
+    "pit_individual": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true,
+    "terrain_allocation": true
+  },
+  "individual": {
+    "profile": "individual_speed_v1",
+    "success_streak": 2,
+    "failure_streak": 2,
+    "review_probability": 0.2,
+    "max_height_m": 1.2,
+    "interpretation": "independent exploration levels, not certified capability",
+    "by_learner": {
+      "teacher": {
+        "count": 1229,
+        "actual_counts": [
+          56,
+          60,
+          67,
+          55,
+          36,
+          41,
+          36,
+          49,
+          44,
+          732,
+          53,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_height_m": 0.5054516196250916,
+        "max_height_m": 0.6499999761581421,
+        "target_mean_height_by_speed": [
+          0.5524410009384155,
+          0.5533360838890076,
+          0.5531733632087708,
+          0.5524817109107971
+        ],
+        "promotions": 350,
+        "demotions": 13
+      },
+      "student": {
+        "count": 410,
+        "actual_counts": [
+          24,
+          12,
+          17,
+          24,
+          22,
+          12,
+          14,
+          17,
+          16,
+          238,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_height_m": 0.5010976195335388,
+        "max_height_m": 0.6499999761581421,
+        "target_mean_height_by_speed": [
+          0.559512197971344,
+          0.5608536601066589,
+          0.5612195134162903,
+          0.5617073774337769
+        ],
+        "promotions": 86,
+        "demotions": 7
+      }
+    }
+  },
+  "counts": {
+    "stairs_up": 819,
+    "pit": 1639,
+    "wave": 246,
+    "stairs_down": 409,
+    "flat": 123,
+    "slope_up": 245,
+    "obstacles": 205,
+    "slope_down": 205,
+    "rough_slope": 205
+  }
+}

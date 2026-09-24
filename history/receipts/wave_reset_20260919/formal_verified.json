@@ -1,0 +1,165 @@
+{
+  "verified": true,
+  "pid": 107477,
+  "completed_updates": 26035,
+  "updates_observed": 21,
+  "starting_completed_updates": 26014,
+  "target_completed_updates": 30000,
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true
+  },
+  "seconds_mean_last10": 6.862671804428101,
+  "wave_reset": {
+    "profile": "wave_surface_v1",
+    "count": 283,
+    "clearance_m": 0.03,
+    "surface_spacing_m": 0.02,
+    "geometry_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+    "surface_points": 8440,
+    "last": {
+      "count": 1,
+      "delta_min": -0.23319733142852783,
+      "delta_max": -0.23319733142852783,
+      "collision_gap_min": 0.030000001192092896,
+      "nearest_wheel_gap_max": 0.030000001192092896
+    }
+  },
+  "terrain": 5.557861328125,
+  "terrain_by_type": {
+    "wave": {
+      "count": 63,
+      "mean": 0.7301587301587301,
+      "counts_L0_to_L9": [
+        39,
+        11,
+        8,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_up": {
+      "count": 127,
+      "mean": 4.582677165354331,
+      "counts_L0_to_L9": [
+        11,
+        8,
+        13,
+        15,
+        15,
+        13,
+        17,
+        12,
+        15,
+        8
+      ]
+    },
+    "slope_down": {
+      "count": 126,
+      "mean": 5.126984126984127,
+      "counts_L0_to_L9": [
+        3,
+        4,
+        11,
+        14,
+        14,
+        19,
+        25,
+        18,
+        11,
+        7
+      ]
+    },
+    "rough_slope": {
+      "count": 63,
+      "mean": 3.4126984126984126,
+      "counts_L0_to_L9": [
+        16,
+        7,
+        2,
+        9,
+        6,
+        7,
+        5,
+        3,
+        5,
+        3
+      ]
+    },
+    "stairs_up": {
+      "count": 2457,
+      "mean": 6.0288970288970285,
+      "counts_L0_to_L9": [
+        44,
+        96,
+        125,
+        163,
+        213,
+        260,
+        338,
+        350,
+        464,
+        404
+      ]
+    },
+    "stairs_down": {
+      "count": 819,
+      "mean": 5.948717948717949,
+      "counts_L0_to_L9": [
+        19,
+        24,
+        36,
+        73,
+        71,
+        99,
+        105,
+        118,
+        144,
+        130
+      ]
+    },
+    "obstacles": {
+      "count": 252,
+      "mean": 4.341269841269841,
+      "counts_L0_to_L9": [
+        17,
+        21,
+        19,
+        29,
+        41,
+        42,
+        36,
+        23,
+        19,
+        5
+      ]
+    },
+    "flat": {
+      "count": 189,
+      "mean": 2.6296296296296298,
+      "counts_L0_to_L9": [
+        53,
+        31,
+        19,
+        24,
+        19,
+        15,
+        5,
+        12,
+        8,
+        3
+      ]
+    }
+  },
+  "scope": "Implementation and live continuation verified; recovery of wave terrain level requires subsequent training"
+}

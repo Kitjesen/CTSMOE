@@ -1,0 +1,58 @@
+{
+  "queried_at": "2026-09-17T23:13:57.840784+08:00",
+  "status": {
+    "state": "training",
+    "completed_updates": 10905,
+    "seconds": 5.955305099487305,
+    "terrain": 4.969970703125,
+    "value": 0.011884900741279125,
+    "surrogate": 0.008731927070766688,
+    "entropy": 3.7823068857192994,
+    "mean_latent_loss": 0.0027652932214550672,
+    "mean_load_balance_loss": 0.00010548340005698265
+  },
+  "latest_student": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/student_10501.pt",
+  "tracking_terms": {
+    "track_lin_vel_xy_exp": {
+      "func": "robot_lab.tasks.go2.mdp.rewards:track_lin_vel_xy_exp",
+      "params": {
+        "command_name": "base_velocity",
+        "std": "0.5"
+      },
+      "weight": "2.0"
+    },
+    "track_ang_vel_z_exp": {
+      "func": "robot_lab.tasks.go2.mdp.rewards:track_ang_vel_z_exp",
+      "params": {
+        "command_name": "base_velocity",
+        "std": "0.5"
+      },
+      "weight": "1.0"
+    }
+  },
+  "metric_tags": [
+    "Episode_Reward/track_lin_vel_xy_exp",
+    "Episode_Reward/track_ang_vel_z_exp",
+    "Metrics/base_velocity/max_command_x"
+  ],
+  "metrics": {
+    "Episode_Reward/track_lin_vel_xy_exp": {
+      "last_step": 10904,
+      "last": 1.7841835021972656,
+      "mean_last100": 1.787784788608551,
+      "mean_last500": 1.7907991778850556
+    },
+    "Episode_Reward/track_ang_vel_z_exp": {
+      "last_step": 10904,
+      "last": 0.8795229196548462,
+      "mean_last100": 0.8855316358804702,
+      "mean_last500": 0.8835810736417771
+    },
+    "Metrics/base_velocity/max_command_x": {
+      "last_step": 10904,
+      "last": 0.5,
+      "mean_last100": 0.5,
+      "mean_last500": 0.5
+    }
+  }
+}

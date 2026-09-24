@@ -1,0 +1,22 @@
+{
+  "state": "recording_complete_startup_regression_confirmed",
+  "training_active": false,
+  "source_completed": 31831,
+  "preflight_steps": 3000,
+  "num_envs": 4096,
+  "optimizer_updates": 1000,
+  "observed_completed_updates": 32831,
+  "target_completed_updates": 32831,
+  "supervisor_pid": 19181,
+  "training_pid": 19184,
+  "observed_iteration_seconds": 6.593595266342163,
+  "training_output": "/root/autodl-tmp/cts-posture-stop-v17-20260922/training_31831_to_32831",
+  "verification": "VERIFIED_READY.json",
+  "preflight_evidence": "PREFLIGHT_FINALIZED.json",
+  "remote_root": "/root/autodl-tmp/cts-posture-stop-v17-20260922",
+  "next_action": "Recording and fixed-case comparison complete; training remains stopped after 1000 updates. Review regression evidence before any further training.",
+  "recording_queued": false,
+  "recording_supervisor_pid": 22691,
+  "recording_plan": "RECORDING_PLAN.md",
+  "recording_result": "recording_final_32831/RESULT.md"
+}

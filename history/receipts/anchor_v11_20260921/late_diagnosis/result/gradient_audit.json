@@ -1,0 +1,1696 @@
+{
+  "scope": {
+    "description": "offline gradients on six fixed continuous V11-student trajectories",
+    "not_training_minibatch_gradients": true,
+    "no_ppo_direction_without_advantage_and_logprob": true,
+    "not_causal_evidence": true,
+    "post_1s_anchor_gradients_are_counterfactual_not_applied_in_training": true,
+    "latent_gradient_excludes_load_balance": true,
+    "actual_student_primary_also_includes_load_balance": true,
+    "actual_student_primary_load_balance_coefficient": 0.01,
+    "optimizer_steps": 0
+  },
+  "sources": {
+    "selection": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/anchor_v11_stage_20260921/late_diagnosis/selection.json",
+    "traces_dir": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/recording/anchor_v11_late_diagnosis_attempt2_20260921",
+    "upstream_source": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/upstream/source/rsl_rl",
+    "runner_config": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/upstream/source/robot_lab/robot_lab/tasks/go2/rsl_rl_cfg.py",
+    "anchor_objective": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/code_anchor_v11_20260921/anchor_objective.py",
+    "position_action_config": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/upstream/source/robot_lab/robot_lab/tasks/go2/env_cfg.py",
+    "velocity_action_config": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/code_anchor_v11_20260921/config.py"
+  },
+  "architecture": {
+    "init_noise_std": 1.0,
+    "actor_obs_normalization": false,
+    "critic_obs_normalization": false,
+    "actor_hidden_dims": [
+      512,
+      256,
+      128
+    ],
+    "critic_hidden_dims": [
+      512,
+      256,
+      128
+    ],
+    "teacher_encoder_hidden_dims": [
+      512,
+      256
+    ],
+    "student_encoder_hidden_dims": [
+      512,
+      256,
+      256
+    ],
+    "expert_num": 8,
+    "activation": "elu",
+    "noise_std_type": "scalar",
+    "state_dependent_std": false,
+    "latent_dim": 32,
+    "norm_type": "l2norm",
+    "observation_dims": {
+      "policy": 530,
+      "single_obs": 53,
+      "critic": 291
+    },
+    "num_actions": 16
+  },
+  "action_normalization": {
+    "joint_position_actions": 12,
+    "joint_velocity_actions": 4,
+    "joint_position_scale": 0.25,
+    "joint_velocity_scale": 5.0,
+    "physical_scales_equal_action_scales": true,
+    "normalized_loss_equals_raw_action_mse": true
+  },
+  "checkpoints": {
+    "V6": {
+      "label": "V6_43202",
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_repair_flat40_96_20260920/model_43201.pt",
+      "completed_updates": 43202
+    },
+    "V9": {
+      "label": "V9_44711",
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt",
+      "completed_updates": 44711
+    },
+    "V11": {
+      "label": "V11_44759",
+      "path": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/anchor_v11_pilot_20260921/model_44758.pt",
+      "completed_updates": 44759
+    }
+  },
+  "model_state_sha256_before": {
+    "V6": "58255b366adc51435506edb887cc54f936420ec9718584155ccecde44a42af56",
+    "V9": "a58af75ce487bf7c01f25aefda0a617e16454194b4c7fd1bd2b903f6d8544d00",
+    "V11": "1d08c2e5cec4697d5478c878589237d4833525748e94cc8b5a8fd70bcc74bf96"
+  },
+  "model_state_sha256_after": {
+    "V6": "58255b366adc51435506edb887cc54f936420ec9718584155ccecde44a42af56",
+    "V9": "a58af75ce487bf7c01f25aefda0a617e16454194b4c7fd1bd2b903f6d8544d00",
+    "V11": "1d08c2e5cec4697d5478c878589237d4833525748e94cc8b5a8fd70bcc74bf96"
+  },
+  "parameters_unchanged": true,
+  "gradients_accumulated": false,
+  "manifest_dt": 0.02,
+  "continuous_cases": [
+    {
+      "id": 2,
+      "direction": "forward_0.6",
+      "command": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "end_step": 299,
+      "controller_source": "v11_student"
+    },
+    {
+      "id": 12,
+      "direction": "reverse_0.6",
+      "command": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "end_step": 299,
+      "controller_source": "v11_student"
+    },
+    {
+      "id": 22,
+      "direction": "left_0.4",
+      "command": [
+        0.0,
+        0.4,
+        0.0
+      ],
+      "end_step": 299,
+      "controller_source": "v11_student"
+    },
+    {
+      "id": 32,
+      "direction": "yaw_0.6",
+      "command": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "end_step": 299,
+      "controller_source": "v11_student"
+    },
+    {
+      "id": 42,
+      "direction": "diagonal_forward",
+      "command": [
+        0.4,
+        0.3,
+        0.0
+      ],
+      "end_step": 299,
+      "controller_source": "v11_student"
+    },
+    {
+      "id": 52,
+      "direction": "diagonal_reverse",
+      "command": [
+        -0.4,
+        -0.3,
+        0.0
+      ],
+      "end_step": 299,
+      "controller_source": "v11_student"
+    }
+  ],
+  "windows": [
+    {
+      "sample_count": 300,
+      "student_encoder": {
+        "v6_action_anchor_loss": 0.04487268626689911,
+        "cts_latent_distill_loss": 0.000458395981695503,
+        "moe_mean_usage": [
+          0.12513157725334167,
+          0.12423896789550781,
+          0.12142997980117798,
+          0.12165369838476181,
+          0.12865428626537323,
+          0.13605715334415436,
+          0.11953295767307281,
+          0.12330140918493271
+        ],
+        "v6_action_anchor_gradient_norm": 0.1574526984792495,
+        "cts_latent_distill_gradient_norm": 0.0016444093550924438,
+        "gradient_cosine": -0.42462737202464135,
+        "anchor_student_coefficient": 0.0022221143221353456,
+        "weighted_anchor_gradient_norm": 0.00034987789634959845,
+        "weighted_anchor_to_distill_norm_ratio": 0.21276812568968226
+      },
+      "actions": {
+        "v11_student_vs_v6_rmse": 0.211831733584404,
+        "v11_student_vs_v9_rmse": 0.16338740289211273,
+        "v11_teacher_vs_v6_rmse": 0.23212911188602448,
+        "v11_teacher_vs_v9_rmse": 0.17817185819149017,
+        "v6_vs_v9_rmse": 0.30712196230888367
+      },
+      "main_action_anchor": {
+        "student_action_loss": 0.04487268626689911,
+        "teacher_action_loss": 0.05388392135500908,
+        "combined_half_sum_loss": 0.04937830567359924,
+        "student_branch_actor_gradient_norm": 0.856027817543682,
+        "teacher_branch_actor_gradient_norm": 0.8822632936213718,
+        "combined_actor_gradient_norm": 0.8672030459979964,
+        "teacher_encoder_gradient_norm": 0.03564906356629421
+      },
+      "window_s": [
+        0.0,
+        1.0
+      ],
+      "samples_per_command": {
+        "forward_0.6": 50,
+        "reverse_0.6": 50,
+        "left_0.4": 50,
+        "yaw_0.6": 50,
+        "diagonal_forward": 50,
+        "diagonal_reverse": 50
+      },
+      "anchor_active_during_training": true,
+      "by_command": {
+        "forward_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.10101631283760071,
+            "cts_latent_distill_loss": 0.0005534008960239589,
+            "moe_mean_usage": [
+              0.12513156235218048,
+              0.12423896789550781,
+              0.12142996490001678,
+              0.12165370583534241,
+              0.12865431606769562,
+              0.13605715334415436,
+              0.11953296512365341,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.5386359860358945,
+            "cts_latent_distill_gradient_norm": 0.004520496454123782,
+            "gradient_cosine": 0.14579184410098522,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.001196910738987855,
+            "weighted_anchor_to_distill_norm_ratio": 0.26477417937049463
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.3178306221961975,
+            "v11_student_vs_v9_rmse": 0.24013234674930573,
+            "v11_teacher_vs_v6_rmse": 0.3478826880455017,
+            "v11_teacher_vs_v9_rmse": 0.2432888299226761,
+            "v6_vs_v9_rmse": 0.49355199933052063
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.10101631283760071,
+            "teacher_action_loss": 0.12102237343788147,
+            "combined_half_sum_loss": 0.11101934313774109,
+            "student_branch_actor_gradient_norm": 2.801916117004363,
+            "teacher_branch_actor_gradient_norm": 2.924852578811586,
+            "combined_actor_gradient_norm": 2.856647590021641,
+            "teacher_encoder_gradient_norm": 0.1253286415526457
+          },
+          "samples_per_command": {
+            "forward_0.6": 50
+          }
+        },
+        "reverse_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.018011806532740593,
+            "cts_latent_distill_loss": 0.0006028400384820998,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.1689739956457229,
+            "cts_latent_distill_gradient_norm": 0.004178732689834486,
+            "gradient_cosine": -0.2641842217836506,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0003754795357927964,
+            "weighted_anchor_to_distill_norm_ratio": 0.08985488272705681
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.1342080682516098,
+            "v11_student_vs_v9_rmse": 0.17429913580417633,
+            "v11_teacher_vs_v6_rmse": 0.16224877536296844,
+            "v11_teacher_vs_v9_rmse": 0.19516302645206451,
+            "v6_vs_v9_rmse": 0.2325412482023239
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.018011806532740593,
+            "teacher_action_loss": 0.026324667036533356,
+            "combined_half_sum_loss": 0.02216823771595955,
+            "student_branch_actor_gradient_norm": 1.167149748362993,
+            "teacher_branch_actor_gradient_norm": 1.2315801848561492,
+            "combined_actor_gradient_norm": 1.1867962470665274,
+            "teacher_encoder_gradient_norm": 0.034831923602701785
+          },
+          "samples_per_command": {
+            "reverse_0.6": 50
+          }
+        },
+        "left_0.4": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.030107468366622925,
+            "cts_latent_distill_loss": 0.0003315085778012872,
+            "moe_mean_usage": [
+              0.12513160705566406,
+              0.12423904240131378,
+              0.12142965197563171,
+              0.12165375798940659,
+              0.12865440547466278,
+              0.13605710864067078,
+              0.11953307688236237,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.06459331077866956,
+            "cts_latent_distill_gradient_norm": 0.0015239643004227202,
+            "gradient_cosine": 0.027672009354671043,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.00014353372099542102,
+            "weighted_anchor_to_distill_norm_ratio": 0.09418443788716531
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.17351503670215607,
+            "v11_student_vs_v9_rmse": 0.13095006346702576,
+            "v11_teacher_vs_v6_rmse": 0.18813645839691162,
+            "v11_teacher_vs_v9_rmse": 0.1414005011320114,
+            "v6_vs_v9_rmse": 0.2579745352268219
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.030107468366622925,
+            "teacher_action_loss": 0.03539532423019409,
+            "combined_half_sum_loss": 0.03275139629840851,
+            "student_branch_actor_gradient_norm": 1.0957794779202763,
+            "teacher_branch_actor_gradient_norm": 1.1706632978770382,
+            "combined_actor_gradient_norm": 1.1282145654746112,
+            "teacher_encoder_gradient_norm": 0.04930835158005393
+          },
+          "samples_per_command": {
+            "left_0.4": 50
+          }
+        },
+        "yaw_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.034079838544130325,
+            "cts_latent_distill_loss": 0.00039888048195280135,
+            "moe_mean_usage": [
+              0.12513157725334167,
+              0.12423897534608841,
+              0.1214299276471138,
+              0.12165370583534241,
+              0.12865431606769562,
+              0.13605716824531555,
+              0.11953297257423401,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.28808917356994707,
+            "cts_latent_distill_gradient_norm": 0.0021214641682658743,
+            "gradient_cosine": 0.5311905796269525,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0006401670786419149,
+            "weighted_anchor_to_distill_norm_ratio": 0.30175719591116157
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.18460725247859955,
+            "v11_student_vs_v9_rmse": 0.13651442527770996,
+            "v11_teacher_vs_v6_rmse": 0.1976703256368637,
+            "v11_teacher_vs_v9_rmse": 0.15379102528095245,
+            "v6_vs_v9_rmse": 0.2522253394126892
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.034079838544130325,
+            "teacher_action_loss": 0.03907356038689613,
+            "combined_half_sum_loss": 0.03657669946551323,
+            "student_branch_actor_gradient_norm": 1.2731001809273432,
+            "teacher_branch_actor_gradient_norm": 1.2441097249086224,
+            "combined_actor_gradient_norm": 1.2533288663144566,
+            "teacher_encoder_gradient_norm": 0.052010512368480435
+          },
+          "samples_per_command": {
+            "yaw_0.6": 50
+          }
+        },
+        "diagonal_forward": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.02338453195989132,
+            "cts_latent_distill_loss": 0.00034659451921470463,
+            "moe_mean_usage": [
+              0.12513160705566406,
+              0.12423904240131378,
+              0.1214296892285347,
+              0.12165374308824539,
+              0.1286543905735016,
+              0.13605710864067078,
+              0.11953306198120117,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.11481675792681749,
+            "cts_latent_distill_gradient_norm": 0.001638146443486782,
+            "gradient_cosine": 0.5010970317780499,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0002551359622103281,
+            "weighted_anchor_to_distill_norm_ratio": 0.15574673633406863
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.15292002260684967,
+            "v11_student_vs_v9_rmse": 0.11861710995435715,
+            "v11_teacher_vs_v6_rmse": 0.1724562793970108,
+            "v11_teacher_vs_v9_rmse": 0.13863331079483032,
+            "v6_vs_v9_rmse": 0.20478475093841553
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.02338453195989132,
+            "teacher_action_loss": 0.029741164296865463,
+            "combined_half_sum_loss": 0.026562847197055817,
+            "student_branch_actor_gradient_norm": 0.8940487562685435,
+            "teacher_branch_actor_gradient_norm": 0.8992170255550122,
+            "combined_actor_gradient_norm": 0.8913824016504972,
+            "teacher_encoder_gradient_norm": 0.03643229170867201
+          },
+          "samples_per_command": {
+            "diagonal_forward": 50
+          }
+        },
+        "diagonal_reverse": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.06263625621795654,
+            "cts_latent_distill_loss": 0.0005171506199985743,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.35654777030198986,
+            "cts_latent_distill_gradient_norm": 0.004424707748596663,
+            "gradient_cosine": -0.7078122783367289,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0007922899069134751,
+            "weighted_anchor_to_distill_norm_ratio": 0.1790603926699469
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.25027236342430115,
+            "v11_student_vs_v9_rmse": 0.14924754202365875,
+            "v11_teacher_vs_v6_rmse": 0.2678554058074951,
+            "v11_teacher_vs_v9_rmse": 0.1741500347852707,
+            "v6_vs_v9_rmse": 0.3101116716861725
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.06263625621795654,
+            "teacher_action_loss": 0.07174651324748993,
+            "combined_half_sum_loss": 0.06719138473272324,
+            "student_branch_actor_gradient_norm": 2.488014224387655,
+            "teacher_branch_actor_gradient_norm": 2.6041088721751158,
+            "combined_actor_gradient_norm": 2.5366020393793556,
+            "teacher_encoder_gradient_norm": 0.09651199758470592
+          },
+          "samples_per_command": {
+            "diagonal_reverse": 50
+          }
+        }
+      }
+    },
+    {
+      "sample_count": 300,
+      "student_encoder": {
+        "v6_action_anchor_loss": 0.05391685664653778,
+        "cts_latent_distill_loss": 0.0008881392423063517,
+        "moe_mean_usage": [
+          0.1251315325498581,
+          0.12423889338970184,
+          0.12143035233020782,
+          0.12165363878011703,
+          0.12865418195724487,
+          0.13605721294879913,
+          0.11953283101320267,
+          0.12330140918493271
+        ],
+        "v6_action_anchor_gradient_norm": 0.18461761932804438,
+        "cts_latent_distill_gradient_norm": 0.013470697553764274,
+        "gradient_cosine": 0.0314491896569747,
+        "anchor_student_coefficient": 0.0022221143221353456,
+        "weighted_anchor_gradient_norm": 0.0004102414560273786,
+        "weighted_anchor_to_distill_norm_ratio": 0.03045435875833617
+      },
+      "actions": {
+        "v11_student_vs_v6_rmse": 0.2322000414133072,
+        "v11_student_vs_v9_rmse": 0.1699254959821701,
+        "v11_teacher_vs_v6_rmse": 0.24170449376106262,
+        "v11_teacher_vs_v9_rmse": 0.1519458293914795,
+        "v6_vs_v9_rmse": 0.31150180101394653
+      },
+      "main_action_anchor": {
+        "student_action_loss": 0.05391685664653778,
+        "teacher_action_loss": 0.0584210604429245,
+        "combined_half_sum_loss": 0.05616895854473114,
+        "student_branch_actor_gradient_norm": 1.049966426248789,
+        "teacher_branch_actor_gradient_norm": 1.0447912716209093,
+        "combined_actor_gradient_norm": 1.0181322440742449,
+        "teacher_encoder_gradient_norm": 0.04042394603872036
+      },
+      "window_s": [
+        1.0,
+        2.0
+      ],
+      "samples_per_command": {
+        "forward_0.6": 50,
+        "reverse_0.6": 50,
+        "left_0.4": 50,
+        "yaw_0.6": 50,
+        "diagonal_forward": 50,
+        "diagonal_reverse": 50
+      },
+      "anchor_active_during_training": false,
+      "by_command": {
+        "forward_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.12402328103780746,
+            "cts_latent_distill_loss": 0.004695971496403217,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.6584912930762427,
+            "cts_latent_distill_gradient_norm": 0.07655921253544226,
+            "gradient_cosine": 0.6677865046082734,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0014632429333461421,
+            "weighted_anchor_to_distill_norm_ratio": 0.01911256509683599
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.352169394493103,
+            "v11_student_vs_v9_rmse": 0.27531638741493225,
+            "v11_teacher_vs_v6_rmse": 0.3723771274089813,
+            "v11_teacher_vs_v9_rmse": 0.21484357118606567,
+            "v6_vs_v9_rmse": 0.466474324464798
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.12402328103780746,
+            "teacher_action_loss": 0.13866472244262695,
+            "combined_half_sum_loss": 0.1313440054655075,
+            "student_branch_actor_gradient_norm": 3.4661110006836577,
+            "teacher_branch_actor_gradient_norm": 3.908661713443956,
+            "combined_actor_gradient_norm": 3.3912659235673726,
+            "teacher_encoder_gradient_norm": 0.161873497994498
+          },
+          "samples_per_command": {
+            "forward_0.6": 50
+          }
+        },
+        "reverse_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.015303499065339565,
+            "cts_latent_distill_loss": 0.0001435495214536786,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.21811394285281233,
+            "cts_latent_distill_gradient_norm": 0.004035308014150406,
+            "gradient_cosine": -0.6107479260176926,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0004846741162706446,
+            "weighted_anchor_to_distill_norm_ratio": 0.12010833239273505
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.12370730936527252,
+            "v11_student_vs_v9_rmse": 0.1726861596107483,
+            "v11_teacher_vs_v6_rmse": 0.13630476593971252,
+            "v11_teacher_vs_v9_rmse": 0.1662697196006775,
+            "v6_vs_v9_rmse": 0.22373083233833313
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.015303499065339565,
+            "teacher_action_loss": 0.018578989431262016,
+            "combined_half_sum_loss": 0.016941243782639503,
+            "student_branch_actor_gradient_norm": 1.2486012859440565,
+            "teacher_branch_actor_gradient_norm": 1.3722706342856077,
+            "combined_actor_gradient_norm": 1.303874806006511,
+            "teacher_encoder_gradient_norm": 0.055893509713677896
+          },
+          "samples_per_command": {
+            "reverse_0.6": 50
+          }
+        },
+        "left_0.4": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.026880664750933647,
+            "cts_latent_distill_loss": 9.230714204022661e-05,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.06141916649226001,
+            "cts_latent_distill_gradient_norm": 0.001196249950879133,
+            "gradient_cosine": 0.37782785533104024,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0001364804095160663,
+            "weighted_anchor_to_distill_norm_ratio": 0.11409021117682457
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.1639532446861267,
+            "v11_student_vs_v9_rmse": 0.12823401391506195,
+            "v11_teacher_vs_v6_rmse": 0.17656248807907104,
+            "v11_teacher_vs_v9_rmse": 0.1217581033706665,
+            "v6_vs_v9_rmse": 0.24909855425357819
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.026880664750933647,
+            "teacher_action_loss": 0.031174311414361,
+            "combined_half_sum_loss": 0.029027488082647324,
+            "student_branch_actor_gradient_norm": 1.057114132272522,
+            "teacher_branch_actor_gradient_norm": 1.1577795772952915,
+            "combined_actor_gradient_norm": 1.1006614959897347,
+            "teacher_encoder_gradient_norm": 0.04922517427463013
+          },
+          "samples_per_command": {
+            "left_0.4": 50
+          }
+        },
+        "yaw_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.03008118085563183,
+            "cts_latent_distill_loss": 9.374374349135906e-05,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.24697113467693957,
+            "cts_latent_distill_gradient_norm": 0.0013936915901491106,
+            "gradient_cosine": 0.3259906146774078,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0005487980955196447,
+            "weighted_anchor_to_distill_norm_ratio": 0.39377298349122486
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.17343926429748535,
+            "v11_student_vs_v9_rmse": 0.13808941841125488,
+            "v11_teacher_vs_v6_rmse": 0.17460335791110992,
+            "v11_teacher_vs_v9_rmse": 0.13313207030296326,
+            "v6_vs_v9_rmse": 0.24579179286956787
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.03008118085563183,
+            "teacher_action_loss": 0.03048633225262165,
+            "combined_half_sum_loss": 0.03028375655412674,
+            "student_branch_actor_gradient_norm": 1.2265796112650582,
+            "teacher_branch_actor_gradient_norm": 1.2142991460850614,
+            "combined_actor_gradient_norm": 1.2157915241725832,
+            "teacher_encoder_gradient_norm": 0.0464694027291963
+          },
+          "samples_per_command": {
+            "yaw_0.6": 50
+          }
+        },
+        "diagonal_forward": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.029341718181967735,
+            "cts_latent_distill_loss": 9.153244900517166e-05,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.16731204847122386,
+            "cts_latent_distill_gradient_norm": 0.0014273993364076133,
+            "gradient_cosine": 0.43914952222177245,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.00037178649917370967,
+            "weighted_anchor_to_distill_norm_ratio": 0.2604642510969621
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.17129424214363098,
+            "v11_student_vs_v9_rmse": 0.11448682099580765,
+            "v11_teacher_vs_v6_rmse": 0.16707226634025574,
+            "v11_teacher_vs_v9_rmse": 0.11897392570972443,
+            "v6_vs_v9_rmse": 0.2270926833152771
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.029341718181967735,
+            "teacher_action_loss": 0.027913140133023262,
+            "combined_half_sum_loss": 0.0286274291574955,
+            "student_branch_actor_gradient_norm": 1.17963658621883,
+            "teacher_branch_actor_gradient_norm": 1.1376002395927363,
+            "combined_actor_gradient_norm": 1.152387612506498,
+            "teacher_encoder_gradient_norm": 0.045995999991730485
+          },
+          "samples_per_command": {
+            "diagonal_forward": 50
+          }
+        },
+        "diagonal_reverse": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.097870834171772,
+            "cts_latent_distill_loss": 0.0002117265685228631,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.5837510313450492,
+            "cts_latent_distill_gradient_norm": 0.004375253222007426,
+            "gradient_cosine": -0.7642577871129367,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.001297161527313113,
+            "weighted_anchor_to_distill_norm_ratio": 0.2964769035054747
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.3128431439399719,
+            "v11_student_vs_v9_rmse": 0.1378711760044098,
+            "v11_teacher_vs_v6_rmse": 0.32203879952430725,
+            "v11_teacher_vs_v9_rmse": 0.13423050940036774,
+            "v6_vs_v9_rmse": 0.3748488426208496
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.097870834171772,
+            "teacher_action_loss": 0.10370898991823196,
+            "combined_half_sum_loss": 0.10078991204500198,
+            "student_branch_actor_gradient_norm": 3.2620422241290075,
+            "teacher_branch_actor_gradient_norm": 3.3839961418125752,
+            "combined_actor_gradient_norm": 3.3100930150784524,
+            "teacher_encoder_gradient_norm": 0.12594988787037978
+          },
+          "samples_per_command": {
+            "diagonal_reverse": 50
+          }
+        }
+      }
+    },
+    {
+      "sample_count": 300,
+      "student_encoder": {
+        "v6_action_anchor_loss": 0.13135668635368347,
+        "cts_latent_distill_loss": 0.002654962707310915,
+        "moe_mean_usage": [
+          0.1251315325498581,
+          0.12423889338970184,
+          0.12143035233020782,
+          0.12165363878011703,
+          0.12865418195724487,
+          0.13605721294879913,
+          0.11953283101320267,
+          0.12330140918493271
+        ],
+        "v6_action_anchor_gradient_norm": 2.0036465699544106,
+        "cts_latent_distill_gradient_norm": 0.04476464062979792,
+        "gradient_cosine": 0.978372637436522,
+        "anchor_student_coefficient": 0.0022221143221353456,
+        "weighted_anchor_gradient_norm": 0.0044523317395930555,
+        "weighted_anchor_to_distill_norm_ratio": 0.09946090657610078
+      },
+      "actions": {
+        "v11_student_vs_v6_rmse": 0.3624316155910492,
+        "v11_student_vs_v9_rmse": 0.40125739574432373,
+        "v11_teacher_vs_v6_rmse": 0.2510536015033722,
+        "v11_teacher_vs_v9_rmse": 0.15934687852859497,
+        "v6_vs_v9_rmse": 0.3045990467071533
+      },
+      "main_action_anchor": {
+        "student_action_loss": 0.13135668635368347,
+        "teacher_action_loss": 0.06302790343761444,
+        "combined_half_sum_loss": 0.09719229489564896,
+        "student_branch_actor_gradient_norm": 1.8871464562291194,
+        "teacher_branch_actor_gradient_norm": 1.1807171023215914,
+        "combined_actor_gradient_norm": 1.1966024524732466,
+        "teacher_encoder_gradient_norm": 0.06437244877805538
+      },
+      "window_s": [
+        2.0,
+        3.0
+      ],
+      "samples_per_command": {
+        "forward_0.6": 50,
+        "reverse_0.6": 50,
+        "left_0.4": 50,
+        "yaw_0.6": 50,
+        "diagonal_forward": 50,
+        "diagonal_reverse": 50
+      },
+      "anchor_active_during_training": false,
+      "by_command": {
+        "forward_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.6471050977706909,
+            "cts_latent_distill_loss": 0.015363745391368866,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 12.058222977538339,
+            "cts_latent_distill_gradient_norm": 0.26660654903097836,
+            "gradient_cosine": 0.9847344543701125,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.026794749977889453,
+            "weighted_anchor_to_distill_norm_ratio": 0.10050296992057774
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.8044284582138062,
+            "v11_student_vs_v9_rmse": 0.9310670495033264,
+            "v11_teacher_vs_v6_rmse": 0.47536224126815796,
+            "v11_teacher_vs_v9_rmse": 0.23448091745376587,
+            "v6_vs_v9_rmse": 0.5008097290992737
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.6471050977706909,
+            "teacher_action_loss": 0.22596926987171173,
+            "combined_half_sum_loss": 0.4365371763706207,
+            "student_branch_actor_gradient_norm": 10.102918614222974,
+            "teacher_branch_actor_gradient_norm": 5.278763295855311,
+            "combined_actor_gradient_norm": 5.233141618566943,
+            "teacher_encoder_gradient_norm": 0.3634872622382969
+          },
+          "samples_per_command": {
+            "forward_0.6": 50
+          }
+        },
+        "reverse_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.014861278235912323,
+            "cts_latent_distill_loss": 0.00014844730321783572,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.21250457172433546,
+            "cts_latent_distill_gradient_norm": 0.004153193672956031,
+            "gradient_cosine": -0.6476041967375794,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0004722094523478836,
+            "weighted_anchor_to_distill_norm_ratio": 0.11369791286708503
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.1219068393111229,
+            "v11_student_vs_v9_rmse": 0.17261947691440582,
+            "v11_teacher_vs_v6_rmse": 0.13586165010929108,
+            "v11_teacher_vs_v9_rmse": 0.16582249104976654,
+            "v6_vs_v9_rmse": 0.22369015216827393
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.014861278235912323,
+            "teacher_action_loss": 0.01845838688313961,
+            "combined_half_sum_loss": 0.01665983349084854,
+            "student_branch_actor_gradient_norm": 1.2294349724974492,
+            "teacher_branch_actor_gradient_norm": 1.3664378698653423,
+            "combined_actor_gradient_norm": 1.291193088652952,
+            "teacher_encoder_gradient_norm": 0.05626976067774551
+          },
+          "samples_per_command": {
+            "reverse_0.6": 50
+          }
+        },
+        "left_0.4": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.026249442249536514,
+            "cts_latent_distill_loss": 8.189403888536617e-05,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.06181306783728584,
+            "cts_latent_distill_gradient_norm": 0.0010517938512162124,
+            "gradient_cosine": 0.2236999784509448,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.00013735570333635655,
+            "weighted_anchor_to_distill_norm_ratio": 0.1305918485618918
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.16201679408550262,
+            "v11_student_vs_v9_rmse": 0.12788818776607513,
+            "v11_teacher_vs_v6_rmse": 0.1738022267818451,
+            "v11_teacher_vs_v9_rmse": 0.12116546183824539,
+            "v6_vs_v9_rmse": 0.2477727234363556
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.026249442249536514,
+            "teacher_action_loss": 0.030207213014364243,
+            "combined_half_sum_loss": 0.02822832763195038,
+            "student_branch_actor_gradient_norm": 1.0528743773818234,
+            "teacher_branch_actor_gradient_norm": 1.1553204696270436,
+            "combined_actor_gradient_norm": 1.098738550866545,
+            "teacher_encoder_gradient_norm": 0.04861770131419674
+          },
+          "samples_per_command": {
+            "left_0.4": 50
+          }
+        },
+        "yaw_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.02952849306166172,
+            "cts_latent_distill_loss": 9.350641630589962e-05,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.2378300334355645,
+            "cts_latent_distill_gradient_norm": 0.001569109238356147,
+            "gradient_cosine": 0.6747513189856327,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.000528485523531096,
+            "weighted_anchor_to_distill_norm_ratio": 0.3368060748178091
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.17183856666088104,
+            "v11_student_vs_v9_rmse": 0.1362336277961731,
+            "v11_teacher_vs_v6_rmse": 0.17017115652561188,
+            "v11_teacher_vs_v9_rmse": 0.13270680606365204,
+            "v6_vs_v9_rmse": 0.2434915006160736
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.02952849306166172,
+            "teacher_action_loss": 0.028958220034837723,
+            "combined_half_sum_loss": 0.029243357479572296,
+            "student_branch_actor_gradient_norm": 1.2169034320905947,
+            "teacher_branch_actor_gradient_norm": 1.1882256563281761,
+            "combined_actor_gradient_norm": 1.1977223454729458,
+            "teacher_encoder_gradient_norm": 0.04271979837557163
+          },
+          "samples_per_command": {
+            "yaw_0.6": 50
+          }
+        },
+        "diagonal_forward": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.02410176210105419,
+            "cts_latent_distill_loss": 9.47578955674544e-05,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.1352090940971525,
+            "cts_latent_distill_gradient_norm": 0.0019003634344456866,
+            "gradient_cosine": 0.6222765480948929,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0003004500644762282,
+            "weighted_anchor_to_distill_norm_ratio": 0.15810137104846259
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.15524742007255554,
+            "v11_student_vs_v9_rmse": 0.11283010244369507,
+            "v11_teacher_vs_v6_rmse": 0.15520448982715607,
+            "v11_teacher_vs_v9_rmse": 0.11837859451770782,
+            "v6_vs_v9_rmse": 0.21158947050571442
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.02410176210105419,
+            "teacher_action_loss": 0.024088434875011444,
+            "combined_half_sum_loss": 0.024095099419355392,
+            "student_branch_actor_gradient_norm": 0.976661952953359,
+            "teacher_branch_actor_gradient_norm": 0.9667146963420756,
+            "combined_actor_gradient_norm": 0.96579130837366,
+            "teacher_encoder_gradient_norm": 0.03575314729347673
+          },
+          "samples_per_command": {
+            "diagonal_forward": 50
+          }
+        },
+        "diagonal_reverse": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.04629359021782875,
+            "cts_latent_distill_loss": 0.00014741976337973028,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.3260178965117762,
+            "cts_latent_distill_gradient_norm": 0.0008479404882422906,
+            "gradient_cosine": -0.45700548327841073,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0007244490371112568,
+            "weighted_anchor_to_distill_norm_ratio": 0.8543630681122195
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.21515944600105286,
+            "v11_student_vs_v9_rmse": 0.14736168086528778,
+            "v11_teacher_vs_v6_rmse": 0.22469083964824677,
+            "v11_teacher_vs_v9_rmse": 0.15350733697414398,
+            "v6_vs_v9_rmse": 0.30064335465431213
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.04629359021782875,
+            "teacher_action_loss": 0.05048597231507301,
+            "combined_half_sum_loss": 0.04838978126645088,
+            "student_branch_actor_gradient_norm": 1.70101156372505,
+            "teacher_branch_actor_gradient_norm": 1.7554251965153154,
+            "combined_actor_gradient_norm": 1.7218616576092682,
+            "teacher_encoder_gradient_norm": 0.07099444918260536
+          },
+          "samples_per_command": {
+            "diagonal_reverse": 50
+          }
+        }
+      }
+    },
+    {
+      "sample_count": 300,
+      "student_encoder": {
+        "v6_action_anchor_loss": 0.1131790429353714,
+        "cts_latent_distill_loss": 0.0014133506920188665,
+        "moe_mean_usage": [
+          0.1251315325498581,
+          0.12423889338970184,
+          0.12143035233020782,
+          0.12165363878011703,
+          0.12865418195724487,
+          0.13605721294879913,
+          0.11953283101320267,
+          0.12330140918493271
+        ],
+        "v6_action_anchor_gradient_norm": 0.7048752865951249,
+        "cts_latent_distill_gradient_norm": 0.007919679005536374,
+        "gradient_cosine": 0.8114028380518424,
+        "anchor_student_coefficient": 0.0022221143221353456,
+        "weighted_anchor_gradient_norm": 0.0015663134696622834,
+        "weighted_anchor_to_distill_norm_ratio": 0.19777486796716479
+      },
+      "actions": {
+        "v11_student_vs_v6_rmse": 0.3364209234714508,
+        "v11_student_vs_v9_rmse": 0.2600850462913513,
+        "v11_teacher_vs_v6_rmse": 0.269822895526886,
+        "v11_teacher_vs_v9_rmse": 0.2109217494726181,
+        "v6_vs_v9_rmse": 0.3185318112373352
+      },
+      "main_action_anchor": {
+        "student_action_loss": 0.1131790429353714,
+        "teacher_action_loss": 0.07280439883470535,
+        "combined_half_sum_loss": 0.09299172461032867,
+        "student_branch_actor_gradient_norm": 1.320529041802041,
+        "teacher_branch_actor_gradient_norm": 0.9538246221536593,
+        "combined_actor_gradient_norm": 1.0114604845534656,
+        "teacher_encoder_gradient_norm": 0.040230116965461575
+      },
+      "window_s": [
+        3.0,
+        4.0
+      ],
+      "samples_per_command": {
+        "forward_0.6": 50,
+        "reverse_0.6": 50,
+        "left_0.4": 50,
+        "yaw_0.6": 50,
+        "diagonal_forward": 50,
+        "diagonal_reverse": 50
+      },
+      "anchor_active_during_training": false,
+      "by_command": {
+        "forward_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.5119335055351257,
+            "cts_latent_distill_loss": 0.007916620932519436,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 4.433063745225899,
+            "cts_latent_distill_gradient_norm": 0.045593366726869075,
+            "gradient_cosine": 0.7681310467051597,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.009850774439205425,
+            "weighted_anchor_to_distill_norm_ratio": 0.21605718433160076
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.7154952883720398,
+            "v11_student_vs_v9_rmse": 0.5529723167419434,
+            "v11_teacher_vs_v6_rmse": 0.5027467012405396,
+            "v11_teacher_vs_v9_rmse": 0.4175638258457184,
+            "v6_vs_v9_rmse": 0.534544825553894
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.5119335055351257,
+            "teacher_action_loss": 0.25275424122810364,
+            "combined_half_sum_loss": 0.3823438882827759,
+            "student_branch_actor_gradient_norm": 6.031217193535535,
+            "teacher_branch_actor_gradient_norm": 2.9582755767455415,
+            "combined_actor_gradient_norm": 3.420087791619042,
+            "teacher_encoder_gradient_norm": 0.15708842721937724
+          },
+          "samples_per_command": {
+            "forward_0.6": 50
+          }
+        },
+        "reverse_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.014397975988686085,
+            "cts_latent_distill_loss": 0.00015090432134456933,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.2068083360798601,
+            "cts_latent_distill_gradient_norm": 0.004170813399709999,
+            "gradient_cosine": -0.6738247215183417,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.00045955176554003706,
+            "weighted_anchor_to_distill_norm_ratio": 0.11018276808355659
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.11999156326055527,
+            "v11_student_vs_v9_rmse": 0.17259714007377625,
+            "v11_teacher_vs_v6_rmse": 0.1346965879201889,
+            "v11_teacher_vs_v9_rmse": 0.16590125858783722,
+            "v6_vs_v9_rmse": 0.22416214644908905
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.014397975988686085,
+            "teacher_action_loss": 0.018143171444535255,
+            "combined_half_sum_loss": 0.016270574182271957,
+            "student_branch_actor_gradient_norm": 1.2089427738488303,
+            "teacher_branch_actor_gradient_norm": 1.3531904005886994,
+            "combined_actor_gradient_norm": 1.2743642616599575,
+            "teacher_encoder_gradient_norm": 0.05609241936493692
+          },
+          "samples_per_command": {
+            "reverse_0.6": 50
+          }
+        },
+        "left_0.4": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.026008807122707367,
+            "cts_latent_distill_loss": 8.697654993738979e-05,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.06625348233340904,
+            "cts_latent_distill_gradient_norm": 0.0009590863484975608,
+            "gradient_cosine": 0.2990058894100973,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0001472228119844093,
+            "weighted_anchor_to_distill_norm_ratio": 0.1535031879194595
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.16127246618270874,
+            "v11_student_vs_v9_rmse": 0.12938277423381805,
+            "v11_teacher_vs_v6_rmse": 0.1734527349472046,
+            "v11_teacher_vs_v9_rmse": 0.1227329671382904,
+            "v6_vs_v9_rmse": 0.2482348084449768
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.026008807122707367,
+            "teacher_action_loss": 0.0300858523696661,
+            "combined_half_sum_loss": 0.028047330677509308,
+            "student_branch_actor_gradient_norm": 1.0355771906298956,
+            "teacher_branch_actor_gradient_norm": 1.1404193926781496,
+            "combined_actor_gradient_norm": 1.0817294031550282,
+            "teacher_encoder_gradient_norm": 0.04857301568574712
+          },
+          "samples_per_command": {
+            "left_0.4": 50
+          }
+        },
+        "yaw_0.6": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.029766052961349487,
+            "cts_latent_distill_loss": 8.614749094704166e-05,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.2508420007827629,
+            "cts_latent_distill_gradient_norm": 0.0013631802220517991,
+            "gradient_cosine": 0.5187915233060997,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.000557399602532463,
+            "weighted_anchor_to_distill_norm_ratio": 0.4088964859638952
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.17252841591835022,
+            "v11_student_vs_v9_rmse": 0.1363600492477417,
+            "v11_teacher_vs_v6_rmse": 0.17211449146270752,
+            "v11_teacher_vs_v9_rmse": 0.1323162168264389,
+            "v6_vs_v9_rmse": 0.24538494646549225
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.029766052961349487,
+            "teacher_action_loss": 0.029623398557305336,
+            "combined_half_sum_loss": 0.029694724828004837,
+            "student_branch_actor_gradient_norm": 1.229940470193325,
+            "teacher_branch_actor_gradient_norm": 1.2021985165546036,
+            "combined_actor_gradient_norm": 1.211926863450069,
+            "teacher_encoder_gradient_norm": 0.04487187398001616
+          },
+          "samples_per_command": {
+            "yaw_0.6": 50
+          }
+        },
+        "diagonal_forward": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.024092897772789,
+            "cts_latent_distill_loss": 8.5244799265638e-05,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.14677569019521822,
+            "cts_latent_distill_gradient_norm": 0.0016258427705868653,
+            "gradient_cosine": 0.1642087705249366,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.00032615236332409484,
+            "weighted_anchor_to_distill_norm_ratio": 0.20060510722470823
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.15521886944770813,
+            "v11_student_vs_v9_rmse": 0.11778391152620316,
+            "v11_teacher_vs_v6_rmse": 0.15570716559886932,
+            "v11_teacher_vs_v9_rmse": 0.1197735145688057,
+            "v6_vs_v9_rmse": 0.21478569507598877
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.024092897772789,
+            "teacher_action_loss": 0.024244720116257668,
+            "combined_half_sum_loss": 0.02416880801320076,
+            "student_branch_actor_gradient_norm": 1.0439296250475665,
+            "teacher_branch_actor_gradient_norm": 1.047694741157868,
+            "combined_actor_gradient_norm": 1.040717462591053,
+            "teacher_encoder_gradient_norm": 0.038012020277758435
+          },
+          "samples_per_command": {
+            "diagonal_forward": 50
+          }
+        },
+        "diagonal_reverse": {
+          "sample_count": 50,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.07287491858005524,
+            "cts_latent_distill_loss": 0.00015420735871884972,
+            "moe_mean_usage": [
+              0.1251315176486969,
+              0.12423887848854065,
+              0.12143035978078842,
+              0.12165363132953644,
+              0.12865419685840607,
+              0.13605722784996033,
+              0.11953282356262207,
+              0.12330138683319092
+            ],
+            "v6_action_anchor_gradient_norm": 0.45896852869582033,
+            "cts_latent_distill_gradient_norm": 0.003853240509319311,
+            "gradient_cosine": -0.8758513347998953,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0010198805410243698,
+            "weighted_anchor_to_distill_norm_ratio": 0.26468125686878946
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.26995354890823364,
+            "v11_student_vs_v9_rmse": 0.14522519707679749,
+            "v11_teacher_vs_v6_rmse": 0.28631269931793213,
+            "v11_teacher_vs_v9_rmse": 0.134641632437706,
+            "v6_vs_v9_rmse": 0.32376062870025635
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.07287491858005524,
+            "teacher_action_loss": 0.08197496086359024,
+            "combined_half_sum_loss": 0.07742494344711304,
+            "student_branch_actor_gradient_norm": 2.7259890315891706,
+            "teacher_branch_actor_gradient_norm": 2.922147069401402,
+            "combined_actor_gradient_norm": 2.8147019983762815,
+            "teacher_encoder_gradient_norm": 0.12172095560074803
+          },
+          "samples_per_command": {
+            "diagonal_reverse": 50
+          }
+        }
+      }
+    },
+    {
+      "sample_count": 600,
+      "student_encoder": {
+        "v6_action_anchor_loss": 0.03230123221874237,
+        "cts_latent_distill_loss": 0.00011201533197890967,
+        "moe_mean_usage": [
+          0.1251315325498581,
+          0.12423889338970184,
+          0.12143035233020782,
+          0.12165363878011703,
+          0.12865418195724487,
+          0.13605721294879913,
+          0.11953283101320267,
+          0.12330140918493271
+        ],
+        "v6_action_anchor_gradient_norm": 0.1300217823532169,
+        "cts_latent_distill_gradient_norm": 0.0011664527317320923,
+        "gradient_cosine": -0.7759604370662257,
+        "anchor_student_coefficient": 0.0022221143221353456,
+        "weighted_anchor_gradient_norm": 0.00028892326475664804,
+        "weighted_anchor_to_distill_norm_ratio": 0.24769393297885228
+      },
+      "actions": {
+        "v11_student_vs_v6_rmse": 0.17972543835639954,
+        "v11_student_vs_v9_rmse": 0.1349463313817978,
+        "v11_teacher_vs_v6_rmse": 0.18871238827705383,
+        "v11_teacher_vs_v9_rmse": 0.1323041170835495,
+        "v6_vs_v9_rmse": 0.25291287899017334
+      },
+      "main_action_anchor": {
+        "student_action_loss": 0.03230123221874237,
+        "teacher_action_loss": 0.03561236709356308,
+        "combined_half_sum_loss": 0.033956799656152725,
+        "student_branch_actor_gradient_norm": 0.8275189695373325,
+        "teacher_branch_actor_gradient_norm": 0.8788071477802247,
+        "combined_actor_gradient_norm": 0.8509633365806457,
+        "teacher_encoder_gradient_norm": 0.032181990470227066
+      },
+      "window_s": [
+        4.0,
+        6.0
+      ],
+      "samples_per_command": {
+        "forward_0.6": 100,
+        "reverse_0.6": 100,
+        "left_0.4": 100,
+        "yaw_0.6": 100,
+        "diagonal_forward": 100,
+        "diagonal_reverse": 100
+      },
+      "anchor_active_during_training": false,
+      "by_command": {
+        "forward_0.6": {
+          "sample_count": 100,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.030894063413143158,
+            "cts_latent_distill_loss": 9.240934741683304e-05,
+            "moe_mean_usage": [
+              0.1251315474510193,
+              0.12423890084028244,
+              0.12143037468194962,
+              0.12165360897779465,
+              0.12865422666072845,
+              0.13605719804763794,
+              0.11953282356262207,
+              0.1233014240860939
+            ],
+            "v6_action_anchor_gradient_norm": 0.12260680201639888,
+            "cts_latent_distill_gradient_norm": 0.0022548190122287023,
+            "gradient_cosine": -0.5122696825571904,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.00027244633075185275,
+            "weighted_anchor_to_distill_norm_ratio": 0.12082846972385693
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.17576706409454346,
+            "v11_student_vs_v9_rmse": 0.09287840873003006,
+            "v11_teacher_vs_v6_rmse": 0.18252365291118622,
+            "v11_teacher_vs_v9_rmse": 0.10090117901563644,
+            "v6_vs_v9_rmse": 0.2303607016801834
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.030894063413143158,
+            "teacher_action_loss": 0.03331488370895386,
+            "combined_half_sum_loss": 0.03210447356104851,
+            "student_branch_actor_gradient_norm": 1.6828500987540893,
+            "teacher_branch_actor_gradient_norm": 1.7425296487222335,
+            "combined_actor_gradient_norm": 1.6996817980073853,
+            "teacher_encoder_gradient_norm": 0.06281988342126565
+          },
+          "samples_per_command": {
+            "forward_0.6": 100
+          }
+        },
+        "reverse_0.6": {
+          "sample_count": 100,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.013702725991606712,
+            "cts_latent_distill_loss": 0.00015838492254260927,
+            "moe_mean_usage": [
+              0.1251315474510193,
+              0.12423890084028244,
+              0.12143037468194962,
+              0.12165360897779465,
+              0.12865422666072845,
+              0.13605719804763794,
+              0.11953282356262207,
+              0.1233014240860939
+            ],
+            "v6_action_anchor_gradient_norm": 0.19718149315997502,
+            "cts_latent_distill_gradient_norm": 0.004433667754294892,
+            "gradient_cosine": -0.732293039608822,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0004381598200108132,
+            "weighted_anchor_to_distill_norm_ratio": 0.09882558736756221
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.1170586422085762,
+            "v11_student_vs_v9_rmse": 0.1720937341451645,
+            "v11_teacher_vs_v6_rmse": 0.1341157704591751,
+            "v11_teacher_vs_v9_rmse": 0.16475418210029602,
+            "v6_vs_v9_rmse": 0.22439488768577576
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.013702725991606712,
+            "teacher_action_loss": 0.017987040802836418,
+            "combined_half_sum_loss": 0.015844883397221565,
+            "student_branch_actor_gradient_norm": 1.1771113264483721,
+            "teacher_branch_actor_gradient_norm": 1.3440829938298966,
+            "combined_actor_gradient_norm": 1.253730499919633,
+            "teacher_encoder_gradient_norm": 0.05670503453892919
+          },
+          "samples_per_command": {
+            "reverse_0.6": 100
+          }
+        },
+        "left_0.4": {
+          "sample_count": 100,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.02638617902994156,
+            "cts_latent_distill_loss": 8.209571387851611e-05,
+            "moe_mean_usage": [
+              0.1251315474510193,
+              0.12423890084028244,
+              0.12143037468194962,
+              0.12165360897779465,
+              0.12865422666072845,
+              0.13605719804763794,
+              0.11953282356262207,
+              0.1233014240860939
+            ],
+            "v6_action_anchor_gradient_norm": 0.06634502770317474,
+            "cts_latent_distill_gradient_norm": 0.0007081595427611575,
+            "gradient_cosine": -0.16161453043811858,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.00014742623626169086,
+            "weighted_anchor_to_distill_norm_ratio": 0.2081822348772805
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.16243822872638702,
+            "v11_student_vs_v9_rmse": 0.13037918508052826,
+            "v11_teacher_vs_v6_rmse": 0.17544284462928772,
+            "v11_teacher_vs_v9_rmse": 0.12251166999340057,
+            "v6_vs_v9_rmse": 0.2495690882205963
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.02638617902994156,
+            "teacher_action_loss": 0.030780190601944923,
+            "combined_half_sum_loss": 0.028583183884620667,
+            "student_branch_actor_gradient_norm": 1.0297204087378953,
+            "teacher_branch_actor_gradient_norm": 1.1463273722005554,
+            "combined_actor_gradient_norm": 1.082994192188681,
+            "teacher_encoder_gradient_norm": 0.049868824506215464
+          },
+          "samples_per_command": {
+            "left_0.4": 100
+          }
+        },
+        "yaw_0.6": {
+          "sample_count": 100,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.030651001259684563,
+            "cts_latent_distill_loss": 8.570093632442877e-05,
+            "moe_mean_usage": [
+              0.1251315474510193,
+              0.12423890084028244,
+              0.12143037468194962,
+              0.12165360897779465,
+              0.12865422666072845,
+              0.13605719804763794,
+              0.11953282356262207,
+              0.1233014240860939
+            ],
+            "v6_action_anchor_gradient_norm": 0.26638690585119895,
+            "cts_latent_distill_gradient_norm": 0.0013533358654697714,
+            "gradient_cosine": 0.5182671816304083,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0005919421587212691,
+            "weighted_anchor_to_distill_norm_ratio": 0.4373948654023098
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.1750742793083191,
+            "v11_student_vs_v9_rmse": 0.136490598320961,
+            "v11_teacher_vs_v6_rmse": 0.17431318759918213,
+            "v11_teacher_vs_v9_rmse": 0.1325380504131317,
+            "v6_vs_v9_rmse": 0.24923470616340637
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.030651001259684563,
+            "teacher_action_loss": 0.030385086312890053,
+            "combined_half_sum_loss": 0.030518043786287308,
+            "student_branch_actor_gradient_norm": 1.2440022067576981,
+            "teacher_branch_actor_gradient_norm": 1.2232087185374234,
+            "combined_actor_gradient_norm": 1.2297064759051508,
+            "teacher_encoder_gradient_norm": 0.04753295118196815
+          },
+          "samples_per_command": {
+            "yaw_0.6": 100
+          }
+        },
+        "diagonal_forward": {
+          "sample_count": 100,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.027537355199456215,
+            "cts_latent_distill_loss": 9.610187407815829e-05,
+            "moe_mean_usage": [
+              0.1251315474510193,
+              0.12423890084028244,
+              0.12143037468194962,
+              0.12165360897779465,
+              0.12865422666072845,
+              0.13605719804763794,
+              0.11953282356262207,
+              0.1233014240860939
+            ],
+            "v6_action_anchor_gradient_norm": 0.15672947540565388,
+            "cts_latent_distill_gradient_norm": 0.0015896295820216103,
+            "gradient_cosine": 0.3482947219604572,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0003482708119996629,
+            "weighted_anchor_to_distill_norm_ratio": 0.21908928717641862
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.16594383120536804,
+            "v11_student_vs_v9_rmse": 0.1140870600938797,
+            "v11_teacher_vs_v6_rmse": 0.16443394124507904,
+            "v11_teacher_vs_v9_rmse": 0.11827509105205536,
+            "v6_vs_v9_rmse": 0.22248215973377228
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.027537355199456215,
+            "teacher_action_loss": 0.02703852206468582,
+            "combined_half_sum_loss": 0.027287937700748444,
+            "student_branch_actor_gradient_norm": 1.0865757010527015,
+            "teacher_branch_actor_gradient_norm": 1.0669084537045361,
+            "combined_actor_gradient_norm": 1.0704142208990088,
+            "teacher_encoder_gradient_norm": 0.04116633154752109
+          },
+          "samples_per_command": {
+            "diagonal_forward": 100
+          }
+        },
+        "diagonal_reverse": {
+          "sample_count": 100,
+          "student_encoder": {
+            "v6_action_anchor_loss": 0.06463604420423508,
+            "cts_latent_distill_loss": 0.00015739913214929402,
+            "moe_mean_usage": [
+              0.1251315474510193,
+              0.12423890084028244,
+              0.12143037468194962,
+              0.12165360897779465,
+              0.12865422666072845,
+              0.13605719804763794,
+              0.11953282356262207,
+              0.1233014240860939
+            ],
+            "v6_action_anchor_gradient_norm": 0.3829956563450926,
+            "cts_latent_distill_gradient_norm": 0.002538439263168545,
+            "gradient_cosine": -0.9130656766001036,
+            "anchor_student_coefficient": 0.0022221143221353456,
+            "weighted_anchor_gradient_norm": 0.0008510601332800572,
+            "weighted_anchor_to_distill_norm_ratio": 0.3352690551349817
+          },
+          "actions": {
+            "v11_student_vs_v6_rmse": 0.2542361915111542,
+            "v11_student_vs_v9_rmse": 0.14958655834197998,
+            "v11_teacher_vs_v6_rmse": 0.2723389267921448,
+            "v11_teacher_vs_v9_rmse": 0.14538505673408508,
+            "v6_vs_v9_rmse": 0.32629653811454773
+          },
+          "main_action_anchor": {
+            "student_action_loss": 0.06463604420423508,
+            "teacher_action_loss": 0.07416849583387375,
+            "combined_half_sum_loss": 0.06940227001905441,
+            "student_branch_actor_gradient_norm": 2.156900389421795,
+            "teacher_branch_actor_gradient_norm": 2.3047862036190523,
+            "combined_actor_gradient_norm": 2.225573076165689,
+            "teacher_encoder_gradient_norm": 0.09411649613401034
+          },
+          "samples_per_command": {
+            "diagonal_reverse": 100
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "state": "complete",
+  "started_unix": 1789985264.725595,
+  "optimizer_updates": 0,
+  "single_change": "preserve deterministic wave_surface reset event",
+  "checkpoint_hashes": {
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/startup_v13_pilot300_20260921/model_45010.pt": "226dc40c79bed70cd617e65e4e2dda8ad287c748e13a0493552444a81529cdbe",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/flat_v9_1000_20260921/model_44710.pt": "66719b305a7c335e7fcc8cd062daa83a8c4a5e132c67790a79982b40b210ab34"
+  },
+  "finished_unix": 1789985447.616552,
+  "wave_reset_receipt": {
+    "profile": "wave_surface_v1",
+    "count": 24,
+    "clearance_m": 0.03,
+    "surface_spacing_m": 0.02,
+    "geometry_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+    "surface_points": 8440,
+    "last": {
+      "count": 24,
+      "delta_min": -0.17221695184707642,
+      "delta_max": -0.15317431092262268,
+      "collision_gap_min": 0.030000001192092896,
+      "nearest_wheel_gap_max": 0.030000001192092896
+    }
+  },
+  "checkpoints_unchanged": true
+}

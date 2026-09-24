@@ -1,0 +1,2191 @@
+{
+  "scope": "fixed cases, not random success rate; identical LiftState and thresholds to training",
+  "rules": {
+    "min_clearance_m": 0.03,
+    "ideal_clearance_m": 0.045,
+    "max_clearance_m": 0.06,
+    "min_air_s": 0.08,
+    "max_air_s": 0.45,
+    "lateral_command_min": 0.2,
+    "yaw_command_min": 0.3,
+    "pure_yaw_translation_max": 0.15,
+    "tracking_fraction_min": 0.35,
+    "lateral_error_floor": 0.25,
+    "yaw_error_floor": 0.3
+  },
+  "dt": 0.02,
+  "cases": [
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.009568452835083008,
+        0.010459080338478088,
+        0.009012825787067413,
+        0.008926242589950562
+      ],
+      "contact_fraction_per_wheel": [
+        0.9688,
+        0.9904,
+        0.9664,
+        0.984
+      ],
+      "less_than_two_support_fraction": 0.0032,
+      "label": "source31831",
+      "direction": "forward",
+      "mode": "direct",
+      "case_id": 0,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.008361965417861938,
+        0.007843852043151855,
+        0.008642509579658508,
+        0.009086020290851593
+      ],
+      "contact_fraction_per_wheel": [
+        0.9832,
+        0.9448,
+        0.9784,
+        0.952
+      ],
+      "less_than_two_support_fraction": 0.0024,
+      "label": "source31831",
+      "direction": "reverse",
+      "mode": "direct",
+      "case_id": 1,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        6,
+        0,
+        0,
+        6
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04127127677202225,
+        0.026853814721107483,
+        0.021057046949863434,
+        0.03691541403532028
+      ],
+      "contact_fraction_per_wheel": [
+        0.604,
+        0.5696,
+        0.5432,
+        0.6904
+      ],
+      "less_than_two_support_fraction": 0.0728,
+      "label": "source31831",
+      "direction": "left",
+      "mode": "direct",
+      "case_id": 2,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        3,
+        0,
+        10,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.06325332075357437,
+        0.026139885187149048,
+        0.06261535733938217,
+        0.020565494894981384
+      ],
+      "contact_fraction_per_wheel": [
+        0.5864,
+        0.7216,
+        0.6032,
+        0.664
+      ],
+      "less_than_two_support_fraction": 0.1064,
+      "label": "source31831",
+      "direction": "right",
+      "mode": "direct",
+      "case_id": 3,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03315407782793045,
+        0.029141664505004883,
+        0.06968627125024796,
+        0.04137914627790451
+      ],
+      "contact_fraction_per_wheel": [
+        0.836,
+        0.6184,
+        0.344,
+        0.832
+      ],
+      "less_than_two_support_fraction": 0.0152,
+      "label": "source31831",
+      "direction": "yaw_left",
+      "mode": "direct",
+      "case_id": 4,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.037423811852931976,
+        0.02278386801481247,
+        0.019046761095523834,
+        0.027688495814800262
+      ],
+      "contact_fraction_per_wheel": [
+        0.6112,
+        0.8576,
+        0.8096,
+        0.6488
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "source31831",
+      "direction": "yaw_right",
+      "mode": "direct",
+      "case_id": 5,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        4,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.06277845054864883,
+        0.02201095223426819,
+        0.04597071558237076,
+        0.05526836961507797
+      ],
+      "contact_fraction_per_wheel": [
+        0.608,
+        0.6872,
+        0.424,
+        0.6568
+      ],
+      "less_than_two_support_fraction": 0.156,
+      "label": "source31831",
+      "direction": "diagonal",
+      "mode": "direct",
+      "case_id": 6,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.032528482377529144,
+        0.023442447185516357,
+        0.07407773286104202,
+        0.03238943964242935
+      ],
+      "contact_fraction_per_wheel": [
+        0.7856,
+        0.6888,
+        0.6368,
+        0.7712
+      ],
+      "less_than_two_support_fraction": 0.024,
+      "label": "source31831",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "case_id": 7,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.02800380438566208,
+        0.024549052119255066,
+        0.053213976323604584,
+        0.03948340564966202
+      ],
+      "contact_fraction_per_wheel": [
+        0.8752,
+        0.7728,
+        0.5024,
+        0.8376
+      ],
+      "less_than_two_support_fraction": 0.036,
+      "label": "source31831",
+      "direction": "forward_turn",
+      "mode": "direct",
+      "case_id": 8,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        7,
+        0,
+        0,
+        3
+      ],
+      "max_clearance_m_per_wheel": [
+        0.040942661464214325,
+        0.015111960470676422,
+        0.019196562469005585,
+        0.061500124633312225
+      ],
+      "contact_fraction_per_wheel": [
+        0.556,
+        0.7976,
+        0.7016,
+        0.6936
+      ],
+      "less_than_two_support_fraction": 0.0504,
+      "label": "source31831",
+      "direction": "side_turn",
+      "mode": "direct",
+      "case_id": 9,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.009012274444103241,
+        0.00897216796875,
+        0.009012855589389801,
+        0.008947588503360748
+      ],
+      "contact_fraction_per_wheel": [
+        0.9521739130434783,
+        0.9634782608695652,
+        0.9634782608695652,
+        0.9895652173913043
+      ],
+      "less_than_two_support_fraction": 0.0,
+      "label": "source31831",
+      "direction": "forward",
+      "mode": "settle",
+      "case_id": 10,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.00848367065191269,
+        0.007761314511299133,
+        0.007643841207027435,
+        0.008306443691253662
+      ],
+      "contact_fraction_per_wheel": [
+        0.9869565217391304,
+        0.9339130434782609,
+        0.9765217391304348,
+        0.9565217391304348
+      ],
+      "less_than_two_support_fraction": 0.0,
+      "label": "source31831",
+      "direction": "reverse",
+      "mode": "settle",
+      "case_id": 11,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        12,
+        0,
+        0,
+        6
+      ],
+      "max_clearance_m_per_wheel": [
+        0.042198546230793,
+        0.02221173793077469,
+        0.035035423934459686,
+        0.03579724580049515
+      ],
+      "contact_fraction_per_wheel": [
+        0.5869565217391305,
+        0.5739130434782609,
+        0.5382608695652173,
+        0.6930434782608695
+      ],
+      "less_than_two_support_fraction": 0.07304347826086957,
+      "label": "source31831",
+      "direction": "left",
+      "mode": "settle",
+      "case_id": 12,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        4,
+        0,
+        7,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.06296693533658981,
+        0.020808227360248566,
+        0.06534288078546524,
+        0.0152335986495018
+      ],
+      "contact_fraction_per_wheel": [
+        0.5956521739130435,
+        0.7730434782608696,
+        0.6147826086956522,
+        0.6991304347826087
+      ],
+      "less_than_two_support_fraction": 0.07652173913043478,
+      "label": "source31831",
+      "direction": "right",
+      "mode": "settle",
+      "case_id": 13,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        0,
+        2,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.032593242824077606,
+        0.025357365608215332,
+        0.07192981988191605,
+        0.03542894870042801
+      ],
+      "contact_fraction_per_wheel": [
+        0.8278260869565217,
+        0.62,
+        0.35478260869565215,
+        0.8365217391304348
+      ],
+      "less_than_two_support_fraction": 0.014782608695652174,
+      "label": "source31831",
+      "direction": "yaw_left",
+      "mode": "settle",
+      "case_id": 14,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        13,
+        0,
+        0,
+        1
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04803917557001114,
+        0.024782434105873108,
+        0.02624410390853882,
+        0.04357229918241501
+      ],
+      "contact_fraction_per_wheel": [
+        0.6260869565217392,
+        0.8582608695652174,
+        0.8269565217391305,
+        0.6530434782608696
+      ],
+      "less_than_two_support_fraction": 0.006956521739130435,
+      "label": "source31831",
+      "direction": "yaw_right",
+      "mode": "settle",
+      "case_id": 15,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.06840977817773819,
+        0.02243121713399887,
+        0.05835919827222824,
+        0.052322082221508026
+      ],
+      "contact_fraction_per_wheel": [
+        0.5991304347826087,
+        0.7043478260869566,
+        0.4765217391304348,
+        0.7034782608695652
+      ],
+      "less_than_two_support_fraction": 0.1356521739130435,
+      "label": "source31831",
+      "direction": "diagonal",
+      "mode": "settle",
+      "case_id": 16,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        2,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.033981285989284515,
+        0.026206597685813904,
+        0.07781436294317245,
+        0.015095919370651245
+      ],
+      "contact_fraction_per_wheel": [
+        0.8156521739130435,
+        0.6947826086956522,
+        0.6808695652173913,
+        0.7817391304347826
+      ],
+      "less_than_two_support_fraction": 0.006956521739130435,
+      "label": "source31831",
+      "direction": "diagonal_back",
+      "mode": "settle",
+      "case_id": 17,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.026299014687538147,
+        0.0286557599902153,
+        0.04836992174386978,
+        0.03470649570226669
+      ],
+      "contact_fraction_per_wheel": [
+        0.7973913043478261,
+        0.7530434782608696,
+        0.5756521739130435,
+        0.8417391304347827
+      ],
+      "less_than_two_support_fraction": 0.03217391304347826,
+      "label": "source31831",
+      "direction": "forward_turn",
+      "mode": "settle",
+      "case_id": 18,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        10,
+        0,
+        0,
+        1
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04137066751718521,
+        0.017441682517528534,
+        0.03263796120882034,
+        0.03719881922006607
+      ],
+      "contact_fraction_per_wheel": [
+        0.5539130434782609,
+        0.7878260869565218,
+        0.6695652173913044,
+        0.6921739130434783
+      ],
+      "less_than_two_support_fraction": 0.05478260869565217,
+      "label": "source31831",
+      "direction": "side_turn",
+      "mode": "settle",
+      "case_id": 19,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.009079478681087494,
+        0.010364718735218048,
+        0.008999258279800415,
+        0.008472822606563568
+      ],
+      "contact_fraction_per_wheel": [
+        0.9672,
+        0.9872,
+        0.9832,
+        0.9816
+      ],
+      "less_than_two_support_fraction": 0.0032,
+      "label": "source31831_teacher",
+      "direction": "forward",
+      "mode": "direct",
+      "case_id": 20,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.007846802473068237,
+        0.008237600326538086,
+        0.011675506830215454,
+        0.008529044687747955
+      ],
+      "contact_fraction_per_wheel": [
+        0.9728,
+        0.9488,
+        0.9808,
+        0.9544
+      ],
+      "less_than_two_support_fraction": 0.0024,
+      "label": "source31831_teacher",
+      "direction": "reverse",
+      "mode": "direct",
+      "case_id": 21,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        3,
+        0,
+        1
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04226309806108475,
+        0.039301805198192596,
+        0.034094758331775665,
+        0.033566154539585114
+      ],
+      "contact_fraction_per_wheel": [
+        0.5304,
+        0.5832,
+        0.464,
+        0.6632
+      ],
+      "less_than_two_support_fraction": 0.1296,
+      "label": "source31831_teacher",
+      "direction": "left",
+      "mode": "direct",
+      "case_id": 22,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        0,
+        10,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.05221428722143173,
+        0.03609500080347061,
+        0.04888460785150528,
+        0.018456019461154938
+      ],
+      "contact_fraction_per_wheel": [
+        0.58,
+        0.748,
+        0.6888,
+        0.7264
+      ],
+      "less_than_two_support_fraction": 0.0704,
+      "label": "source31831_teacher",
+      "direction": "right",
+      "mode": "direct",
+      "case_id": 23,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        4,
+        2
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03152333199977875,
+        0.02347346395254135,
+        0.06776515394449234,
+        0.04044859856367111
+      ],
+      "contact_fraction_per_wheel": [
+        0.8024,
+        0.612,
+        0.312,
+        0.824
+      ],
+      "less_than_two_support_fraction": 0.0152,
+      "label": "source31831_teacher",
+      "direction": "yaw_left",
+      "mode": "direct",
+      "case_id": 24,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        18,
+        1,
+        0,
+        2
+      ],
+      "max_clearance_m_per_wheel": [
+        0.045878179371356964,
+        0.031273141503334045,
+        0.022547610104084015,
+        0.038401030004024506
+      ],
+      "contact_fraction_per_wheel": [
+        0.5448,
+        0.8472,
+        0.8048,
+        0.6432
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "source31831_teacher",
+      "direction": "yaw_right",
+      "mode": "direct",
+      "case_id": 25,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        7,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04528636485338211,
+        0.034396566450595856,
+        0.03702721744775772,
+        0.03555213660001755
+      ],
+      "contact_fraction_per_wheel": [
+        0.6288,
+        0.6784,
+        0.4776,
+        0.6936
+      ],
+      "less_than_two_support_fraction": 0.128,
+      "label": "source31831_teacher",
+      "direction": "diagonal",
+      "mode": "direct",
+      "case_id": 26,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        2,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.05275551229715347,
+        0.02321791648864746,
+        0.05653464049100876,
+        0.02291923761367798
+      ],
+      "contact_fraction_per_wheel": [
+        0.8632,
+        0.6064,
+        0.8392,
+        0.7368
+      ],
+      "less_than_two_support_fraction": 0.0632,
+      "label": "source31831_teacher",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "case_id": 27,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.02703554928302765,
+        0.030149094760417938,
+        0.04519685357809067,
+        0.04048576205968857
+      ],
+      "contact_fraction_per_wheel": [
+        0.8704,
+        0.7416,
+        0.4592,
+        0.8024
+      ],
+      "less_than_two_support_fraction": 0.0392,
+      "label": "source31831_teacher",
+      "direction": "forward_turn",
+      "mode": "direct",
+      "case_id": 28,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        13,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.041954405605793,
+        0.02266623079776764,
+        0.026087403297424316,
+        0.0320180281996727
+      ],
+      "contact_fraction_per_wheel": [
+        0.524,
+        0.772,
+        0.64,
+        0.656
+      ],
+      "less_than_two_support_fraction": 0.0536,
+      "label": "source31831_teacher",
+      "direction": "side_turn",
+      "mode": "direct",
+      "case_id": 29,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.009003937244415283,
+        0.008879244327545166,
+        0.009009256958961487,
+        0.008877068758010864
+      ],
+      "contact_fraction_per_wheel": [
+        0.9773913043478261,
+        0.9869565217391304,
+        0.9730434782608696,
+        0.9782608695652174
+      ],
+      "less_than_two_support_fraction": 0.0008695652173913044,
+      "label": "source31831_teacher",
+      "direction": "forward",
+      "mode": "settle",
+      "case_id": 30,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.008273549377918243,
+        0.008740797638893127,
+        0.036691345274448395,
+        0.008407540619373322
+      ],
+      "contact_fraction_per_wheel": [
+        0.9808695652173913,
+        0.9426086956521739,
+        0.9678260869565217,
+        0.96
+      ],
+      "less_than_two_support_fraction": 0.0008695652173913044,
+      "label": "source31831_teacher",
+      "direction": "reverse",
+      "mode": "settle",
+      "case_id": 31,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.044973112642765045,
+        0.0332973375916481,
+        0.02528069168329239,
+        0.030871927738189697
+      ],
+      "contact_fraction_per_wheel": [
+        0.5495652173913044,
+        0.611304347826087,
+        0.4991304347826087,
+        0.6730434782608695
+      ],
+      "less_than_two_support_fraction": 0.10695652173913044,
+      "label": "source31831_teacher",
+      "direction": "left",
+      "mode": "settle",
+      "case_id": 32,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        0,
+        8,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.05208469182252884,
+        0.04912515729665756,
+        0.05035146325826645,
+        0.014785423874855042
+      ],
+      "contact_fraction_per_wheel": [
+        0.5808695652173913,
+        0.7626086956521739,
+        0.6669565217391304,
+        0.7347826086956522
+      ],
+      "less_than_two_support_fraction": 0.0782608695652174,
+      "label": "source31831_teacher",
+      "direction": "right",
+      "mode": "settle",
+      "case_id": 33,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.031294070184230804,
+        0.026327669620513916,
+        0.07123204320669174,
+        0.030920512974262238
+      ],
+      "contact_fraction_per_wheel": [
+        0.8104347826086956,
+        0.6460869565217391,
+        0.28782608695652173,
+        0.8408695652173913
+      ],
+      "less_than_two_support_fraction": 0.009565217391304347,
+      "label": "source31831_teacher",
+      "direction": "yaw_left",
+      "mode": "settle",
+      "case_id": 34,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        17,
+        0,
+        0,
+        1
+      ],
+      "max_clearance_m_per_wheel": [
+        0.044467903673648834,
+        0.027466244995594025,
+        0.022846974432468414,
+        0.036775507032871246
+      ],
+      "contact_fraction_per_wheel": [
+        0.5582608695652174,
+        0.8486956521739131,
+        0.8034782608695652,
+        0.6478260869565218
+      ],
+      "less_than_two_support_fraction": 0.0008695652173913044,
+      "label": "source31831_teacher",
+      "direction": "yaw_right",
+      "mode": "settle",
+      "case_id": 35,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        5,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04302724450826645,
+        0.02938862144947052,
+        0.03084632009267807,
+        0.028654545545578003
+      ],
+      "contact_fraction_per_wheel": [
+        0.6304347826086957,
+        0.671304347826087,
+        0.4834782608695652,
+        0.671304347826087
+      ],
+      "less_than_two_support_fraction": 0.14608695652173914,
+      "label": "source31831_teacher",
+      "direction": "diagonal",
+      "mode": "settle",
+      "case_id": 36,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        1,
+        3,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.048001088201999664,
+        0.0306866392493248,
+        0.05835113674402237,
+        0.01681901514530182
+      ],
+      "contact_fraction_per_wheel": [
+        0.8991304347826087,
+        0.7165217391304348,
+        0.8878260869565218,
+        0.8565217391304348
+      ],
+      "less_than_two_support_fraction": 0.03739130434782609,
+      "label": "source31831_teacher",
+      "direction": "diagonal_back",
+      "mode": "settle",
+      "case_id": 37,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.022369064390659332,
+        0.028312228620052338,
+        0.04929041117429733,
+        0.03920348733663559
+      ],
+      "contact_fraction_per_wheel": [
+        0.8573913043478261,
+        0.7539130434782608,
+        0.5034782608695653,
+        0.8060869565217391
+      ],
+      "less_than_two_support_fraction": 0.02782608695652174,
+      "label": "source31831_teacher",
+      "direction": "forward_turn",
+      "mode": "settle",
+      "case_id": 38,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        8,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.046736814081668854,
+        0.025972500443458557,
+        0.02852063626050949,
+        0.041857995092868805
+      ],
+      "contact_fraction_per_wheel": [
+        0.5321739130434783,
+        0.7678260869565218,
+        0.6530434782608696,
+        0.6608695652173913
+      ],
+      "less_than_two_support_fraction": 0.05391304347826087,
+      "label": "source31831_teacher",
+      "direction": "side_turn",
+      "mode": "settle",
+      "case_id": 39,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.00945444405078888,
+        0.011003978550434113,
+        0.008628897368907928,
+        0.007999129593372345
+      ],
+      "contact_fraction_per_wheel": [
+        0.972,
+        0.9912,
+        0.9744,
+        0.9824
+      ],
+      "less_than_two_support_fraction": 0.0016,
+      "label": "candidate",
+      "direction": "forward",
+      "mode": "direct",
+      "case_id": 40,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.007900871336460114,
+        0.008631221950054169,
+        0.00863589346408844,
+        0.009305156767368317
+      ],
+      "contact_fraction_per_wheel": [
+        0.9864,
+        0.9512,
+        0.9928,
+        0.9672
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate",
+      "direction": "reverse",
+      "mode": "direct",
+      "case_id": 41,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        2,
+        4,
+        0,
+        2
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03978282958269119,
+        0.03512055426836014,
+        0.03911615163087845,
+        0.031216256320476532
+      ],
+      "contact_fraction_per_wheel": [
+        0.4304,
+        0.5528,
+        0.4344,
+        0.5048
+      ],
+      "less_than_two_support_fraction": 0.288,
+      "label": "candidate",
+      "direction": "left",
+      "mode": "direct",
+      "case_id": 42,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        9,
+        10,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.029916726052761078,
+        0.04591839760541916,
+        0.036023564636707306,
+        0.033144913613796234
+      ],
+      "contact_fraction_per_wheel": [
+        0.5456,
+        0.464,
+        0.4304,
+        0.5832
+      ],
+      "less_than_two_support_fraction": 0.2064,
+      "label": "candidate",
+      "direction": "right",
+      "mode": "direct",
+      "case_id": 43,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.02368706464767456,
+        0.027792148292064667,
+        0.022643916308879852,
+        0.018899202346801758
+      ],
+      "contact_fraction_per_wheel": [
+        0.7088,
+        0.6832,
+        0.6728,
+        0.7568
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate",
+      "direction": "yaw_left",
+      "mode": "direct",
+      "case_id": 44,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        50,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.034946851432323456,
+        0.021704748272895813,
+        0.021625109016895294,
+        0.029651202261447906
+      ],
+      "contact_fraction_per_wheel": [
+        0.52,
+        0.724,
+        0.7432,
+        0.512
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate",
+      "direction": "yaw_right",
+      "mode": "direct",
+      "case_id": 45,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        12,
+        0,
+        18
+      ],
+      "max_clearance_m_per_wheel": [
+        0.025538519024848938,
+        0.0327766016125679,
+        0.025268718600273132,
+        0.03344681113958359
+      ],
+      "contact_fraction_per_wheel": [
+        0.5728,
+        0.5992,
+        0.612,
+        0.6144
+      ],
+      "less_than_two_support_fraction": 0.0616,
+      "label": "candidate",
+      "direction": "diagonal",
+      "mode": "direct",
+      "case_id": 46,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        4,
+        0,
+        1,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03405623883008957,
+        0.025635793805122375,
+        0.03330887109041214,
+        0.03461306542158127
+      ],
+      "contact_fraction_per_wheel": [
+        0.6936,
+        0.6832,
+        0.7072,
+        0.576
+      ],
+      "less_than_two_support_fraction": 0.0408,
+      "label": "candidate",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "case_id": 47,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.027357958257198334,
+        0.026467643678188324,
+        0.03271990269422531,
+        0.019631333649158478
+      ],
+      "contact_fraction_per_wheel": [
+        0.7992,
+        0.7,
+        0.692,
+        0.8088
+      ],
+      "less_than_two_support_fraction": 0.0336,
+      "label": "candidate",
+      "direction": "forward_turn",
+      "mode": "direct",
+      "case_id": 48,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        0,
+        6,
+        23
+      ],
+      "max_clearance_m_per_wheel": [
+        0.031580857932567596,
+        0.028504878282546997,
+        0.04143712669610977,
+        0.03994569927453995
+      ],
+      "contact_fraction_per_wheel": [
+        0.5144,
+        0.5784,
+        0.5688,
+        0.4856
+      ],
+      "less_than_two_support_fraction": 0.0848,
+      "label": "candidate",
+      "direction": "side_turn",
+      "mode": "direct",
+      "case_id": 49,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.008706845343112946,
+        0.00809912383556366,
+        0.008634030818939209,
+        0.008001796901226044
+      ],
+      "contact_fraction_per_wheel": [
+        0.9878260869565217,
+        0.9834782608695652,
+        0.9895652173913043,
+        0.9886956521739131
+      ],
+      "less_than_two_support_fraction": 0.0,
+      "label": "candidate",
+      "direction": "forward",
+      "mode": "settle",
+      "case_id": 50,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.00785432755947113,
+        0.008838728070259094,
+        0.008165091276168823,
+        0.008580870926380157
+      ],
+      "contact_fraction_per_wheel": [
+        0.9904347826086957,
+        0.9243478260869565,
+        0.991304347826087,
+        0.9252173913043479
+      ],
+      "less_than_two_support_fraction": 0.0008695652173913044,
+      "label": "candidate",
+      "direction": "reverse",
+      "mode": "settle",
+      "case_id": 51,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        4,
+        1,
+        2
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03456328064203262,
+        0.041182734072208405,
+        0.031517624855041504,
+        0.030861325562000275
+      ],
+      "contact_fraction_per_wheel": [
+        0.42695652173913046,
+        0.5504347826086956,
+        0.45217391304347826,
+        0.4956521739130435
+      ],
+      "less_than_two_support_fraction": 0.2782608695652174,
+      "label": "candidate",
+      "direction": "left",
+      "mode": "settle",
+      "case_id": 52,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        4,
+        14,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.031152918934822083,
+        0.04432574659585953,
+        0.03757048398256302,
+        0.029012136161327362
+      ],
+      "contact_fraction_per_wheel": [
+        0.568695652173913,
+        0.4434782608695652,
+        0.4591304347826087,
+        0.6121739130434782
+      ],
+      "less_than_two_support_fraction": 0.17043478260869566,
+      "label": "candidate",
+      "direction": "right",
+      "mode": "settle",
+      "case_id": 53,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.02674706280231476,
+        0.028846248984336853,
+        0.02279602736234665,
+        0.020338408648967743
+      ],
+      "contact_fraction_per_wheel": [
+        0.7043478260869566,
+        0.68,
+        0.6817391304347826,
+        0.76
+      ],
+      "less_than_two_support_fraction": 0.0,
+      "label": "candidate",
+      "direction": "yaw_left",
+      "mode": "settle",
+      "case_id": 54,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        43,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.034976087510585785,
+        0.02570836991071701,
+        0.029828496277332306,
+        0.029655002057552338
+      ],
+      "contact_fraction_per_wheel": [
+        0.5304347826086957,
+        0.7269565217391304,
+        0.7486956521739131,
+        0.5139130434782608
+      ],
+      "less_than_two_support_fraction": 0.0008695652173913044,
+      "label": "candidate",
+      "direction": "yaw_right",
+      "mode": "settle",
+      "case_id": 55,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        14,
+        0,
+        20
+      ],
+      "max_clearance_m_per_wheel": [
+        0.030403360724449158,
+        0.032871879637241364,
+        0.02455127239227295,
+        0.0332021489739418
+      ],
+      "contact_fraction_per_wheel": [
+        0.56,
+        0.5939130434782609,
+        0.6173913043478261,
+        0.6078260869565217
+      ],
+      "less_than_two_support_fraction": 0.05391304347826087,
+      "label": "candidate",
+      "direction": "diagonal",
+      "mode": "settle",
+      "case_id": 56,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03787604719400406,
+        0.023985475301742554,
+        0.027170486748218536,
+        0.01781480759382248
+      ],
+      "contact_fraction_per_wheel": [
+        0.6791304347826087,
+        0.6808695652173913,
+        0.6956521739130435,
+        0.5869565217391305
+      ],
+      "less_than_two_support_fraction": 0.025217391304347827,
+      "label": "candidate",
+      "direction": "diagonal_back",
+      "mode": "settle",
+      "case_id": 57,
+      "physical": false,
+      "tracking_pass": false
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.027475543320178986,
+        0.029855802655220032,
+        0.03395631164312363,
+        0.019178427755832672
+      ],
+      "contact_fraction_per_wheel": [
+        0.7852173913043479,
+        0.7286956521739131,
+        0.7130434782608696,
+        0.8182608695652174
+      ],
+      "less_than_two_support_fraction": 0.029565217391304348,
+      "label": "candidate",
+      "direction": "forward_turn",
+      "mode": "settle",
+      "case_id": 58,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        4,
+        19
+      ],
+      "max_clearance_m_per_wheel": [
+        0.031192980706691742,
+        0.02648109942674637,
+        0.04302526265382767,
+        0.03726809471845627
+      ],
+      "contact_fraction_per_wheel": [
+        0.5078260869565218,
+        0.5834782608695652,
+        0.568695652173913,
+        0.49478260869565216
+      ],
+      "less_than_two_support_fraction": 0.0817391304347826,
+      "label": "candidate",
+      "direction": "side_turn",
+      "mode": "settle",
+      "case_id": 59,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.009238041937351227,
+        0.01024094969034195,
+        0.008831456303596497,
+        0.007862076163291931
+      ],
+      "contact_fraction_per_wheel": [
+        0.9856,
+        0.9872,
+        0.9856,
+        0.9824
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate_teacher",
+      "direction": "forward",
+      "mode": "direct",
+      "case_id": 60,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.00822044163942337,
+        0.008675679564476013,
+        0.008767753839492798,
+        0.009431369602680206
+      ],
+      "contact_fraction_per_wheel": [
+        0.984,
+        0.9496,
+        0.988,
+        0.9552
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate_teacher",
+      "direction": "reverse",
+      "mode": "direct",
+      "case_id": 61,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        5,
+        8,
+        2,
+        4
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04318063706159592,
+        0.03883422166109085,
+        0.041603170335292816,
+        0.03465721756219864
+      ],
+      "contact_fraction_per_wheel": [
+        0.4344,
+        0.5296,
+        0.4264,
+        0.468
+      ],
+      "less_than_two_support_fraction": 0.2784,
+      "label": "candidate_teacher",
+      "direction": "left",
+      "mode": "direct",
+      "case_id": 62,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        1,
+        13,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03531358391046524,
+        0.03246503323316574,
+        0.03535027056932449,
+        0.02579294890165329
+      ],
+      "contact_fraction_per_wheel": [
+        0.4648,
+        0.54,
+        0.4256,
+        0.5928
+      ],
+      "less_than_two_support_fraction": 0.2176,
+      "label": "candidate_teacher",
+      "direction": "right",
+      "mode": "direct",
+      "case_id": 63,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.02591930329799652,
+        0.027207843959331512,
+        0.025597475469112396,
+        0.019261181354522705
+      ],
+      "contact_fraction_per_wheel": [
+        0.6856,
+        0.68,
+        0.6648,
+        0.7592
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate_teacher",
+      "direction": "yaw_left",
+      "mode": "direct",
+      "case_id": 64,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        42,
+        0,
+        0,
+        37
+      ],
+      "max_clearance_m_per_wheel": [
+        0.035306476056575775,
+        0.023148231208324432,
+        0.02255702018737793,
+        0.03225810080766678
+      ],
+      "contact_fraction_per_wheel": [
+        0.5288,
+        0.7208,
+        0.7336,
+        0.4768
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate_teacher",
+      "direction": "yaw_right",
+      "mode": "direct",
+      "case_id": 65,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        6,
+        0,
+        27
+      ],
+      "max_clearance_m_per_wheel": [
+        0.027335621416568756,
+        0.03220268338918686,
+        0.029922597110271454,
+        0.03484732657670975
+      ],
+      "contact_fraction_per_wheel": [
+        0.564,
+        0.5832,
+        0.6144,
+        0.5496
+      ],
+      "less_than_two_support_fraction": 0.0416,
+      "label": "candidate_teacher",
+      "direction": "diagonal",
+      "mode": "direct",
+      "case_id": 66,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        29,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.039451561868190765,
+        0.025584086775779724,
+        0.03028104454278946,
+        0.036828167736530304
+      ],
+      "contact_fraction_per_wheel": [
+        0.6208,
+        0.6296,
+        0.6768,
+        0.5408
+      ],
+      "less_than_two_support_fraction": 0.0696,
+      "label": "candidate_teacher",
+      "direction": "diagonal_back",
+      "mode": "direct",
+      "case_id": 67,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.029317207634449005,
+        0.025441765785217285,
+        0.03781210631132126,
+        0.022020019590854645
+      ],
+      "contact_fraction_per_wheel": [
+        0.7888,
+        0.7144,
+        0.7008,
+        0.7992
+      ],
+      "less_than_two_support_fraction": 0.0336,
+      "label": "candidate_teacher",
+      "direction": "forward_turn",
+      "mode": "direct",
+      "case_id": 68,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        8,
+        30
+      ],
+      "max_clearance_m_per_wheel": [
+        0.027995124459266663,
+        0.027533605694770813,
+        0.0329204723238945,
+        0.03834772855043411
+      ],
+      "contact_fraction_per_wheel": [
+        0.5216,
+        0.6096,
+        0.5736,
+        0.4576
+      ],
+      "less_than_two_support_fraction": 0.0632,
+      "label": "candidate_teacher",
+      "direction": "side_turn",
+      "mode": "direct",
+      "case_id": 69,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.008873552083969116,
+        0.008192881941795349,
+        0.008864566683769226,
+        0.00790182501077652
+      ],
+      "contact_fraction_per_wheel": [
+        0.9904347826086957,
+        0.9921739130434782,
+        0.9860869565217392,
+        0.9791304347826087
+      ],
+      "less_than_two_support_fraction": 0.0008695652173913044,
+      "label": "candidate_teacher",
+      "direction": "forward",
+      "mode": "settle",
+      "case_id": 70,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.008052803575992584,
+        0.00879843533039093,
+        0.008260093629360199,
+        0.008545249700546265
+      ],
+      "contact_fraction_per_wheel": [
+        0.9878260869565217,
+        0.9182608695652174,
+        0.9939130434782608,
+        0.9173913043478261
+      ],
+      "less_than_two_support_fraction": 0.0017391304347826088,
+      "label": "candidate_teacher",
+      "direction": "reverse",
+      "mode": "settle",
+      "case_id": 71,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04078764468431473,
+        0.035650335252285004,
+        0.04080601781606674,
+        0.03319168835878372
+      ],
+      "contact_fraction_per_wheel": [
+        0.41739130434782606,
+        0.5139130434782608,
+        0.41130434782608694,
+        0.48
+      ],
+      "less_than_two_support_fraction": 0.31130434782608696,
+      "label": "candidate_teacher",
+      "direction": "left",
+      "mode": "settle",
+      "case_id": 72,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        2,
+        4,
+        18,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.032653145492076874,
+        0.03741755336523056,
+        0.0362548753619194,
+        0.029170460999011993
+      ],
+      "contact_fraction_per_wheel": [
+        0.5582608695652174,
+        0.3947826086956522,
+        0.46,
+        0.58
+      ],
+      "less_than_two_support_fraction": 0.20869565217391303,
+      "label": "candidate_teacher",
+      "direction": "right",
+      "mode": "settle",
+      "case_id": 73,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.025776520371437073,
+        0.02847735583782196,
+        0.025575950741767883,
+        0.02036699652671814
+      ],
+      "contact_fraction_per_wheel": [
+        0.6878260869565217,
+        0.6747826086956522,
+        0.6721739130434783,
+        0.7521739130434782
+      ],
+      "less_than_two_support_fraction": 0.0,
+      "label": "candidate_teacher",
+      "direction": "yaw_left",
+      "mode": "settle",
+      "case_id": 74,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        37,
+        1,
+        1,
+        31
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03533903509378433,
+        0.03099699318408966,
+        0.03020711988210678,
+        0.0331093892455101
+      ],
+      "contact_fraction_per_wheel": [
+        0.5356521739130434,
+        0.7304347826086957,
+        0.7391304347826086,
+        0.4817391304347826
+      ],
+      "less_than_two_support_fraction": 0.0017391304347826088,
+      "label": "candidate_teacher",
+      "direction": "yaw_right",
+      "mode": "settle",
+      "case_id": 75,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        4,
+        0,
+        24
+      ],
+      "max_clearance_m_per_wheel": [
+        0.030577339231967926,
+        0.03175846487283707,
+        0.024469994008541107,
+        0.03437822312116623
+      ],
+      "contact_fraction_per_wheel": [
+        0.568695652173913,
+        0.5747826086956521,
+        0.6243478260869565,
+        0.551304347826087
+      ],
+      "less_than_two_support_fraction": 0.035652173913043476,
+      "label": "candidate_teacher",
+      "direction": "diagonal",
+      "mode": "settle",
+      "case_id": 76,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        30,
+        1,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.039791010320186615,
+        0.03574236482381821,
+        0.02819041907787323,
+        0.02128821611404419
+      ],
+      "contact_fraction_per_wheel": [
+        0.6147826086956522,
+        0.6365217391304347,
+        0.6652173913043479,
+        0.5608695652173913
+      ],
+      "less_than_two_support_fraction": 0.05478260869565217,
+      "label": "candidate_teacher",
+      "direction": "diagonal_back",
+      "mode": "settle",
+      "case_id": 77,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.02766595035791397,
+        0.025935262441635132,
+        0.03458695858716965,
+        0.024053826928138733
+      ],
+      "contact_fraction_per_wheel": [
+        0.7921739130434783,
+        0.7052173913043478,
+        0.7043478260869566,
+        0.7965217391304348
+      ],
+      "less_than_two_support_fraction": 0.028695652173913042,
+      "label": "candidate_teacher",
+      "direction": "forward_turn",
+      "mode": "settle",
+      "case_id": 78,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        6,
+        22
+      ],
+      "max_clearance_m_per_wheel": [
+        0.028530076146125793,
+        0.025590650737285614,
+        0.039968155324459076,
+        0.03774947673082352
+      ],
+      "contact_fraction_per_wheel": [
+        0.5052173913043478,
+        0.6156521739130435,
+        0.5643478260869565,
+        0.46608695652173915
+      ],
+      "less_than_two_support_fraction": 0.07478260869565218,
+      "label": "candidate_teacher",
+      "direction": "side_turn",
+      "mode": "settle",
+      "case_id": 79,
+      "physical": false,
+      "tracking_pass": true
+    }
+  ],
+  "figures": [
+    "joints_source31831_forward.png",
+    "joints_source31831_left.png",
+    "joints_source31831_right.png",
+    "joints_source31831_yaw_left.png",
+    "joints_source31831_yaw_right.png",
+    "joints_candidate_forward.png",
+    "joints_candidate_left.png",
+    "joints_candidate_right.png",
+    "joints_candidate_yaw_left.png",
+    "joints_candidate_yaw_right.png"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "failure_reasons": {
+    "lateral_excursion_gt_0.5m": 34,
+    "quiet_supported_hold_lt_2s": 14,
+    "actuator_violation": 1,
+    "never_full_hull_and_three_wheel_platform_support": 1
+  },
+  "physical_cases": [
+    {
+      "condition": "perturbed",
+      "id": 33,
+      "terrain": "stairs_up",
+      "level": 9,
+      "speed": 1.2,
+      "mode": "direct",
+      "landing_mode": "stop",
+      "complete": false,
+      "physical": true,
+      "end_reason": "physical_termination",
+      "reasons": [
+        "actuator_violation",
+        "never_full_hull_and_three_wheel_platform_support",
+        "quiet_supported_hold_lt_2s"
+      ],
+      "seconds": 2.62,
+      "max_side_m": 0.4288330078125,
+      "platform_supported": false,
+      "quiet_hold_max_s": 0.0,
+      "step_rise_min_m": 0.23499995470046997,
+      "step_rise_max_m": 0.23500001430511475,
+      "measured_plateau_count": 7,
+      "profile_total_elevation_m": 1.4099998474121094,
+      "startup_rms_peak_rad": 0.45519221469536203,
+      "startup_joint_abs_peak_rad": 0.9380898475646973,
+      "leg_torque_peak_nm": 115.51446533203125,
+      "wheel_torque_peak_nm": 17.0,
+      "leg_speed_peak_rad_s": 18.7481689453125,
+      "wheel_speed_peak_rad_s": 49.87120819091797,
+      "leg_over15_control_steps": 1,
+      "wheel_over30_control_steps": 1,
+      "hard_position_excess_rad": 0.0005158039275556803,
+      "post_full_hull_positive_vz_peak_m_s": null
+    }
+  ],
+  "all_stop_cases": 72,
+  "quiet_stop_complete": 47,
+  "quiet_hold_achieved": 58,
+  "all_continue_cases": 72,
+  "continue_complete": 50,
+  "over_nominal_leg_speed_cases": 5,
+  "over_nominal_wheel_speed_cases": 18,
+  "peaks": {
+    "leg_torque_peak_nm": 120.0,
+    "wheel_torque_peak_nm": 17.0,
+    "leg_speed_peak_rad_s": 18.7481689453125,
+    "wheel_speed_peak_rad_s": 49.87120819091797,
+    "hard_position_excess_rad": 0.00245097279548645,
+    "startup_rms_peak_rad": 0.4684164288984418,
+    "startup_joint_abs_peak_rad": 1.0264061093330383,
+    "post_full_hull_positive_vz_peak_m_s": 0.2232525646686554
+  },
+  "geometry": [
+    {
+      "terrain": "stairs_up",
+      "level": 3,
+      "step_rise_min_m": 0.125,
+      "step_rise_max_m": 0.125,
+      "measured_plateau_count": 7,
+      "profile_total_elevation_m": 0.7500009536743164
+    },
+    {
+      "terrain": "stairs_up",
+      "level": 6,
+      "step_rise_min_m": 0.16999995708465576,
+      "step_rise_max_m": 0.17000001668930054,
+      "measured_plateau_count": 7,
+      "profile_total_elevation_m": 1.0200004577636719
+    },
+    {
+      "terrain": "stairs_up",
+      "level": 9,
+      "step_rise_min_m": 0.23499995470046997,
+      "step_rise_max_m": 0.23500001430511475,
+      "measured_plateau_count": 7,
+      "profile_total_elevation_m": 1.4099998474121094
+    },
+    {
+      "terrain": "stairs_down",
+      "level": 3,
+      "step_rise_min_m": 0.1199999749660492,
+      "step_rise_max_m": 0.12000003457069397,
+      "measured_plateau_count": 7,
+      "profile_total_elevation_m": 0.7199993133544922
+    },
+    {
+      "terrain": "stairs_down",
+      "level": 6,
+      "step_rise_min_m": 0.17499995231628418,
+      "step_rise_max_m": 0.17500001192092896,
+      "measured_plateau_count": 7,
+      "profile_total_elevation_m": 1.0499992370605469
+    },
+    {
+      "terrain": "stairs_down",
+      "level": 9,
+      "step_rise_min_m": 0.25,
+      "step_rise_max_m": 0.25,
+      "measured_plateau_count": 7,
+      "profile_total_elevation_m": 1.5
+    }
+  ]
+}

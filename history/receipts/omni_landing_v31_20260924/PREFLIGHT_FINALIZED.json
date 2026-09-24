@@ -1,0 +1,242 @@
+{
+  "landing": {
+    "profile": "landing_force_velocity_v31",
+    "force_weight": -0.5,
+    "velocity_weight": -1.0,
+    "threshold_N": 337.09112548828125,
+    "previous_frame_speed_free_mps": 0.25,
+    "landings": [
+      498475,
+      560707,
+      596798,
+      491125
+    ],
+    "force_peak_N": [
+      14080.2509765625,
+      11102.05078125,
+      6535.81640625,
+      8632.9150390625
+    ],
+    "previous_frame_down_peak_mps": [
+      5.848243236541748,
+      5.078248023986816,
+      5.464361190795898,
+      4.73028039932251
+    ],
+    "force_cost_sum": 5780973.5,
+    "speed_cost_sum": 1290582.0,
+    "scope": "all terrains; excludes initial unsupported settling; cumulative training evidence",
+    "force_history_hz": 200,
+    "velocity_hz": 50,
+    "threshold_is_hardware_limit": false
+  },
+  "new_command_samples": [
+    704538,
+    845962,
+    279092,
+    260555,
+    170854
+  ],
+  "variety": {
+    "profile": "radial_routes_v30",
+    "variants": {
+      "single_curb_up": {
+        "column": 6,
+        "count": 132,
+        "mean_level": 3.2803032398223877
+      },
+      "short_tread_up": {
+        "column": 7,
+        "count": 110,
+        "mean_level": 2.409090757369995
+      },
+      "long_tread_up": {
+        "column": 9,
+        "count": 89,
+        "mean_level": 2.4157304763793945
+      },
+      "ramp_then_stairs_up": {
+        "column": 10,
+        "count": 128,
+        "mean_level": 1.796875
+      },
+      "short_tread_down": {
+        "column": 12,
+        "count": 296,
+        "mean_level": 2.429054021835327
+      }
+    },
+    "reverse_envs": 380,
+    "episode_statistics": [
+      [
+        [
+          [
+            2927,
+            2734,
+            59
+          ],
+          [
+            2966,
+            2774,
+            114
+          ]
+        ],
+        [
+          [
+            833,
+            784,
+            31
+          ],
+          [
+            865,
+            801,
+            48
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            1937,
+            1652,
+            103
+          ],
+          [
+            1874,
+            1489,
+            198
+          ]
+        ],
+        [
+          [
+            718,
+            651,
+            45
+          ],
+          [
+            714,
+            558,
+            91
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            1758,
+            1536,
+            93
+          ],
+          [
+            1702,
+            1470,
+            149
+          ]
+        ],
+        [
+          [
+            623,
+            590,
+            22
+          ],
+          [
+            605,
+            519,
+            59
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            2698,
+            2550,
+            85
+          ],
+          [
+            2771,
+            2414,
+            225
+          ]
+        ],
+        [
+          [
+            672,
+            632,
+            25
+          ],
+          [
+            658,
+            542,
+            76
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            5435,
+            4293,
+            177
+          ],
+          [
+            5348,
+            4934,
+            215
+          ]
+        ],
+        [
+          [
+            2202,
+            2059,
+            67
+          ],
+          [
+            2253,
+            2106,
+            89
+          ]
+        ]
+      ]
+    ],
+    "statistic_axes": [
+      "variant_in_column_order",
+      "teacher_student",
+      "forward_backward",
+      "episodes_radius_exit_physical_failure"
+    ],
+    "interpretation": "Training distribution; not successful traversal counts"
+  },
+  "state": "complete",
+  "optimizer_updates": 0,
+  "steps": 3000,
+  "envs": 4096,
+  "source_sha256": "0c686306877ec759dc95e3691edb5f7cecaa4c4b341722d78b3e8e560a017ade",
+  "model_and_dual_optimizer_before": {
+    "model": "71183446506c24cb917697684ffa702f3d1cb5e5ab03394a5fa48b1b0ee23b45",
+    "ppo_optimizer": "de771f6d2c7a4e9161d74ea63bc268bc9ac670ef1210b984e0cac8d1582c3222",
+    "student_optimizer": "ea1c6f2901f5c7e58ae54ae0479074e13a5c3899135f0bf18c6956e5b6571a71"
+  },
+  "model_and_dual_optimizer_after": {
+    "model": "71183446506c24cb917697684ffa702f3d1cb5e5ab03394a5fa48b1b0ee23b45",
+    "ppo_optimizer": "de771f6d2c7a4e9161d74ea63bc268bc9ac670ef1210b984e0cac8d1582c3222",
+    "student_optimizer": "ea1c6f2901f5c7e58ae54ae0479074e13a5c3899135f0bf18c6956e5b6571a71"
+  },
+  "forbidden_calls": [],
+  "mutation_guard_restored": true,
+  "pit_active_final": 0,
+  "mixed_steps": 1173000,
+  "mixed_nonzero_yaw_steps": 18680,
+  "mixed_nonzero_side_steps": 20922,
+  "terrain_counts": {
+    "flat": 820,
+    "obstacles": 409,
+    "stairs_up": 573,
+    "wave": 492,
+    "slope_up": 410,
+    "stairs_down": 573,
+    "slope_down": 410,
+    "rough_slope": 409
+  },
+  "interpretation": "sampling and configuration only; no learned improvement"
+}

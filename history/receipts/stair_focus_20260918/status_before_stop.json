@@ -1,0 +1,34 @@
+{
+  "state": "training",
+  "completed_updates": 14532,
+  "seconds": 6.053140163421631,
+  "collect_seconds": 5.499965667724609,
+  "learn_seconds": 0.5531744956970215,
+  "fast_delay": false,
+  "command_curriculum_start": "intermediate",
+  "command_ranges": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "observed_command_abs_max": [
+    1.0000009536743164,
+    1.0000009536743164,
+    1.5
+  ],
+  "terrain": 5.24853515625,
+  "value": 0.05518035404384136,
+  "surrogate": 0.010524046467617154,
+  "entropy": 8.916623258590699,
+  "mean_latent_loss": 0.0024270529276691375,
+  "mean_load_balance_loss": 0.00012306153812460252
+}

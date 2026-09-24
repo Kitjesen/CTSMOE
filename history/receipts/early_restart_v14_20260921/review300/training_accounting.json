@@ -1,0 +1,215 @@
+{
+  "source": "training statistics, not evaluation performance",
+  "pilot_rows": 284,
+  "completed_updates": 32131,
+  "logged_gradient_by_terrain": false,
+  "scalars": {
+    "Loss/learning_rate": {
+      "first": 7.593750342493877e-05,
+      "last": 0.00017085937724914402,
+      "min": 9.999999747378752e-06,
+      "max": 0.0002562890585977584
+    },
+    "Loss/entropy": {
+      "first": 5.045453071594238,
+      "last": 7.17984676361084,
+      "min": 5.045453071594238,
+      "max": 7.189706802368164
+    },
+    "Policy/mean_noise_std": {
+      "first": 0.35590943694114685,
+      "last": 0.39529868960380554,
+      "min": 0.35590943694114685,
+      "max": 0.395818293094635
+    },
+    "Loss/mean_latent_loss": {
+      "first": 0.0026766639202833176,
+      "last": 0.0018486327026039362,
+      "min": 0.0012945829657837749,
+      "max": 0.0026766639202833176
+    }
+  },
+  "terrain_at_stop": {
+    "wave": {
+      "count": 205,
+      "mean": 6.146341463414634,
+      "counts_L0_to_L9": [
+        4,
+        7,
+        14,
+        11,
+        9,
+        25,
+        21,
+        38,
+        45,
+        31
+      ],
+      "curriculum_fraction": 0.6829268292682927
+    },
+    "slope_up": {
+      "count": 205,
+      "mean": 4.873170731707317,
+      "counts_L0_to_L9": [
+        1,
+        1,
+        3,
+        12,
+        47,
+        89,
+        41,
+        11,
+        0,
+        0
+      ],
+      "curriculum_fraction": 0.5414634146341464,
+      "nominal_angle_deg_mean": 29.365853658536587,
+      "nominal_angle_deg_max": 40.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "slope_down": {
+      "count": 205,
+      "mean": 5.990243902439024,
+      "counts_L0_to_L9": [
+        2,
+        7,
+        6,
+        20,
+        21,
+        27,
+        24,
+        29,
+        38,
+        31
+      ],
+      "curriculum_fraction": 0.6655826558265583,
+      "nominal_angle_deg_mean": 33.73170731707317,
+      "nominal_angle_deg_max": 45.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "rough_slope": {
+      "count": 204,
+      "mean": 5.4754901960784315,
+      "counts_L0_to_L9": [
+        7,
+        10,
+        21,
+        20,
+        17,
+        18,
+        24,
+        22,
+        36,
+        29
+      ],
+      "curriculum_fraction": 0.6083877995642701,
+      "nominal_angle_deg_mean": 31.225490196078432,
+      "nominal_angle_deg_max": 45.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "stairs_up": {
+      "count": 615,
+      "mean": 6.04390243902439,
+      "counts_L0_to_L9": [
+        12,
+        21,
+        37,
+        34,
+        51,
+        67,
+        76,
+        104,
+        120,
+        93
+      ],
+      "curriculum_fraction": 0.6715447154471544
+    },
+    "stairs_down": {
+      "count": 410,
+      "mean": 5.96829268292683,
+      "counts_L0_to_L9": [
+        12,
+        12,
+        21,
+        32,
+        37,
+        45,
+        52,
+        58,
+        63,
+        78
+      ],
+      "curriculum_fraction": 0.6631436314363144
+    },
+    "obstacles": {
+      "count": 204,
+      "mean": 5.818627450980392,
+      "counts_L0_to_L9": [
+        1,
+        10,
+        3,
+        20,
+        14,
+        30,
+        44,
+        33,
+        31,
+        18
+      ],
+      "curriculum_fraction": 0.6465141612200436
+    },
+    "flat": {
+      "count": 1024,
+      "mean": 5.98828125,
+      "counts_L0_to_L9": [
+        24,
+        40,
+        55,
+        73,
+        83,
+        118,
+        112,
+        164,
+        174,
+        181
+      ],
+      "curriculum_fraction": 0.6653645833333334
+    },
+    "pit": {
+      "count": 1024,
+      "mean": 1.79296875,
+      "counts_L0_to_L21": [
+        73,
+        66,
+        885,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_height_m": 0.2396484375,
+      "curriculum_fraction": 0.08537946428571429
+    }
+  },
+  "new_reward_accounting_at_stop": {
+    "hip": -0.08888982981443405,
+    "thigh_calf": -0.04338201507925987,
+    "height": -0.0025795181281864643,
+    "vertical": -0.0032531265169382095
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "steps": 1500,
+  "optimizer_updates": 0,
+  "hashes_unchanged": true,
+  "hold_mismatches": 0,
+  "groups": {
+    "teacher_all_heights": {
+      "episodes": 313,
+      "counters_match": true,
+      "success": 0,
+      "physical": 8,
+      "outside": 0,
+      "ever_by_condition": {
+        "support": 307,
+        "body_clear": 307,
+        "upright": 313,
+        "quiet_xy": 313,
+        "quiet_angular": 311,
+        "started_in_pit": 313,
+        "safe": 313,
+        "stop_latched": 307,
+        "actual_zero_command": 307,
+        "all_valid": 307,
+        "success": 0
+      },
+      "max_consecutive_s": {
+        "support": 0.84,
+        "body_clear": 0.84,
+        "upright": 25.0,
+        "quiet_xy": 22.76,
+        "quiet_angular": 0.52,
+        "started_in_pit": 25.0,
+        "safe": 25.0,
+        "stop_latched": 22.92,
+        "actual_zero_command": 22.900000000000002,
+        "all_valid": 0.3,
+        "success": 0.0
+      },
+      "max_hold_s": 0.29999998211860657,
+      "median_max_hold_s": 0.1599999964237213,
+      "post_stop_observed_steps": 319484,
+      "post_stop_bad_steps": {
+        "support": 106648,
+        "body_clear": 106648,
+        "upright": 0,
+        "quiet_xy": 2443,
+        "quiet_angular": 152113,
+        "started_in_pit": 0,
+        "safe": 2
+      },
+      "post_stop_bad_fraction": {
+        "support": 0.3338132739041705,
+        "body_clear": 0.3338132739041705,
+        "upright": 0.0,
+        "quiet_xy": 0.00764670531231611,
+        "quiet_angular": 0.4761208699027181,
+        "started_in_pit": 0.0,
+        "safe": 6.260094402223586e-06
+      },
+      "hold_reset_reason_counts": {
+        "support": 30833,
+        "body_clear": 30833,
+        "upright": 0,
+        "quiet_xy": 117,
+        "quiet_angular": 51849,
+        "started_in_pit": 0,
+        "safe": 0
+      },
+      "command_mismatch_steps": 0
+    },
+    "teacher_25cm": {
+      "episodes": 268,
+      "counters_match": true,
+      "success": 0,
+      "physical": 6,
+      "outside": 0,
+      "ever_by_condition": {
+        "support": 264,
+        "body_clear": 264,
+        "upright": 268,
+        "quiet_xy": 268,
+        "quiet_angular": 266,
+        "started_in_pit": 268,
+        "safe": 268,
+        "stop_latched": 264,
+        "actual_zero_command": 264,
+        "all_valid": 264,
+        "success": 0
+      },
+      "max_consecutive_s": {
+        "support": 0.84,
+        "body_clear": 0.84,
+        "upright": 23.3,
+        "quiet_xy": 22.76,
+        "quiet_angular": 0.52,
+        "started_in_pit": 25.0,
+        "safe": 25.0,
+        "stop_latched": 22.92,
+        "actual_zero_command": 22.900000000000002,
+        "all_valid": 0.3,
+        "success": 0.0
+      },
+      "max_hold_s": 0.29999998211860657,
+      "median_max_hold_s": 0.1599999964237213,
+      "post_stop_observed_steps": 275656,
+      "post_stop_bad_steps": {
+        "support": 91879,
+        "body_clear": 91879,
+        "upright": 0,
+        "quiet_xy": 2171,
+        "quiet_angular": 131043,
+        "started_in_pit": 0,
+        "safe": 2
+      },
+      "post_stop_bad_fraction": {
+        "support": 0.33331035783730445,
+        "body_clear": 0.33331035783730445,
+        "upright": 0.0,
+        "quiet_xy": 0.007875758191368952,
+        "quiet_angular": 0.47538598833328494,
+        "started_in_pit": 0.0,
+        "safe": 7.255419798589546e-06
+      },
+      "hold_reset_reason_counts": {
+        "support": 26593,
+        "body_clear": 26593,
+        "upright": 0,
+        "quiet_xy": 105,
+        "quiet_angular": 44766,
+        "started_in_pit": 0,
+        "safe": 0
+      },
+      "command_mismatch_steps": 0
+    },
+    "student_all_heights": {
+      "episodes": 110,
+      "counters_match": true,
+      "success": 0,
+      "physical": 9,
+      "outside": 0,
+      "ever_by_condition": {
+        "support": 102,
+        "body_clear": 102,
+        "upright": 110,
+        "quiet_xy": 110,
+        "quiet_angular": 110,
+        "started_in_pit": 110,
+        "safe": 110,
+        "stop_latched": 102,
+        "actual_zero_command": 102,
+        "all_valid": 102,
+        "success": 0
+      },
+      "max_consecutive_s": {
+        "support": 0.8200000000000001,
+        "body_clear": 0.8200000000000001,
+        "upright": 25.0,
+        "quiet_xy": 22.42,
+        "quiet_angular": 0.4,
+        "started_in_pit": 25.0,
+        "safe": 25.0,
+        "stop_latched": 22.7,
+        "actual_zero_command": 22.68,
+        "all_valid": 0.26,
+        "success": 0.0
+      },
+      "max_hold_s": 0.25999999046325684,
+      "median_max_hold_s": 0.14000000059604645,
+      "post_stop_observed_steps": 106168,
+      "post_stop_bad_steps": {
+        "support": 48583,
+        "body_clear": 49924,
+        "upright": 2856,
+        "quiet_xy": 3309,
+        "quiet_angular": 53174,
+        "started_in_pit": 0,
+        "safe": 1
+      },
+      "post_stop_bad_fraction": {
+        "support": 0.4576049280385804,
+        "body_clear": 0.47023585261095624,
+        "upright": 0.026900761057945897,
+        "quiet_xy": 0.031167583452641097,
+        "quiet_angular": 0.5008477130585487,
+        "started_in_pit": 0.0,
+        "safe": 9.419033983874614e-06
+      },
+      "hold_reset_reason_counts": {
+        "support": 7982,
+        "body_clear": 8067,
+        "upright": 0,
+        "quiet_xy": 50,
+        "quiet_angular": 13688,
+        "started_in_pit": 0,
+        "safe": 0
+      },
+      "command_mismatch_steps": 0
+    },
+    "student_25cm": {
+      "episodes": 97,
+      "counters_match": true,
+      "success": 0,
+      "physical": 9,
+      "outside": 0,
+      "ever_by_condition": {
+        "support": 89,
+        "body_clear": 89,
+        "upright": 97,
+        "quiet_xy": 97,
+        "quiet_angular": 97,
+        "started_in_pit": 97,
+        "safe": 97,
+        "stop_latched": 89,
+        "actual_zero_command": 89,
+        "all_valid": 89,
+        "success": 0
+      },
+      "max_consecutive_s": {
+        "support": 0.8200000000000001,
+        "body_clear": 0.8200000000000001,
+        "upright": 23.12,
+        "quiet_xy": 22.42,
+        "quiet_angular": 0.4,
+        "started_in_pit": 25.0,
+        "safe": 25.0,
+        "stop_latched": 22.7,
+        "actual_zero_command": 22.68,
+        "all_valid": 0.26,
+        "success": 0.0
+      },
+      "max_hold_s": 0.25999999046325684,
+      "median_max_hold_s": 0.14000000059604645,
+      "post_stop_observed_steps": 92928,
+      "post_stop_bad_steps": {
+        "support": 42163,
+        "body_clear": 43227,
+        "upright": 2747,
+        "quiet_xy": 3055,
+        "quiet_angular": 46559,
+        "started_in_pit": 0,
+        "safe": 1
+      },
+      "post_stop_bad_fraction": {
+        "support": 0.4537168560606061,
+        "body_clear": 0.4651665805785124,
+        "upright": 0.02956051997245179,
+        "quiet_xy": 0.03287491391184573,
+        "quiet_angular": 0.5010222968319559,
+        "started_in_pit": 0.0,
+        "safe": 1.0761019283746557e-05
+      },
+      "hold_reset_reason_counts": {
+        "support": 7010,
+        "body_clear": 7085,
+        "upright": 0,
+        "quiet_xy": 44,
+        "quiet_angular": 12082,
+        "started_in_pit": 0,
+        "safe": 0
+      },
+      "command_mismatch_steps": 0
+    }
+  }
+}

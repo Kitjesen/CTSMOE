@@ -1,0 +1,202 @@
+{
+  "file": "stair_failure_traces.npz",
+  "sample_period_s": 0.02,
+  "recorded_control_steps": 790,
+  "case_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "array_layout": "All time series use [control_step, selected_case, ...]; case_indices maps to results.json cases.",
+  "validity": "Use active_before_step. It includes the first ended sample; later samples for that case are invalid.",
+  "sample_time": "Post-control-step state; time_s starts at 0.02 s. command_body is the command issued before that step.",
+  "joint_order": [
+    "fl_hip_joint",
+    "fr_hip_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fl_thigh_joint",
+    "fr_thigh_joint",
+    "rl_thigh_joint",
+    "rr_thigh_joint",
+    "fl_calf_joint",
+    "fr_calf_joint",
+    "rl_calf_joint",
+    "rr_calf_joint",
+    "fl_foot_joint",
+    "fr_foot_joint",
+    "rl_foot_joint",
+    "rr_foot_joint"
+  ],
+  "wheel_order": [
+    "fl_foot_Link",
+    "fr_foot_Link",
+    "rl_foot_Link",
+    "rr_foot_Link"
+  ],
+  "termination_order": [
+    "time_out",
+    "illegal_contact",
+    "actuator_violation",
+    "stair_route_exit"
+  ],
+  "array_trailing_shapes": {
+    "requested_leg_target_rad": [
+      12
+    ],
+    "previous_leg_target_rad": [
+      12
+    ],
+    "reward_weighted_rate": [
+      19
+    ],
+    "root_pos_relative_w_m": [
+      3
+    ],
+    "root_quat_wxyz": [
+      4
+    ],
+    "root_link_lin_vel_w_mps": [
+      3
+    ],
+    "root_lin_vel_b_mps": [
+      3
+    ],
+    "root_ang_vel_w_rad_s": [
+      3
+    ],
+    "root_ang_vel_b_rad_s": [
+      3
+    ],
+    "joint_pos_rad": [
+      16
+    ],
+    "joint_vel_rad_s": [
+      16
+    ],
+    "joint_applied_torque_nm": [
+      16
+    ],
+    "joint_computed_torque_nm": [
+      16
+    ],
+    "joint_pos_target_rad": [
+      16
+    ],
+    "joint_vel_target_rad_s": [
+      16
+    ],
+    "wheel_pos_relative_w_m": [
+      4,
+      3
+    ],
+    "wheel_pos_root_relative_w_m": [
+      4,
+      3
+    ],
+    "wheel_contact_force_norm_n": [
+      4
+    ],
+    "command_body": [
+      3
+    ],
+    "active_before_step": [],
+    "ended_this_step": [],
+    "termination_values": [
+      4
+    ],
+    "terminated": [],
+    "truncated": [],
+    "forward_exit": []
+  },
+  "frames": {
+    "root_pos_relative_w_m": "Root link position minus its initial world position; world XYZ axes.",
+    "root_quat_wxyz": "Root world quaternion, scalar-first [w, x, y, z].",
+    "root_link_lin_vel_w_mps": "Root link-origin linear velocity in world XYZ.",
+    "root_lin_vel_b_mps": "Existing articulation root COM linear velocity in body XYZ.",
+    "root_ang_vel_w_rad_s": "Root angular velocity in world XYZ.",
+    "root_ang_vel_b_rad_s": "Root angular velocity in body XYZ.",
+    "wheel_pos_relative_w_m": "Wheel body origins minus initial root position; world XYZ axes, not contact points.",
+    "wheel_pos_root_relative_w_m": "Wheel body origins minus current root position; world XYZ axes, not body axes.",
+    "wheel_contact_force_norm_n": "Norm of contact_forces.data.net_forces_w for the matching wheel body; last physics substep, not a substep maximum.",
+    "command_body": "[vx m/s, vy m/s, wz rad/s] in body coordinates."
+  },
+  "termination_values": "Unmodified termination_manager.get_term values at each control step; columns follow termination_term_names.",
+  "termination_reasons": "results.json stores each raw term at the case's first termination/truncation/4 m exit; absent required terms are false and not in termination_term_names.",
+  "substep_caution": "These traces sample at 50 Hz. Original joints maxima/counters in results.json retain all active 200 Hz substeps, including spikes absent from control samples.",
+  "diagnostic_no_actuator_termination": false,
+  "diagnostic_ablation": {
+    "target_rate": null,
+    "reset_z": 0.0,
+    "settle_seconds": 0.0
+  }
+}

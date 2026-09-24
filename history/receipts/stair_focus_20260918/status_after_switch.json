@@ -1,0 +1,166 @@
+{
+  "state": "training",
+  "completed_updates": 14562,
+  "seconds": 6.280064582824707,
+  "collect_seconds": 5.735982894897461,
+  "learn_seconds": 0.5440816879272461,
+  "fast_delay": false,
+  "command_curriculum_start": "intermediate",
+  "terrain_training_profile": "stairs80_v1",
+  "base_height_penalty_weight": 0.0,
+  "terrain_by_type": {
+    "wave": {
+      "count": 63,
+      "mean": 5.873015873015873,
+      "counts_L0_to_L9": [
+        0,
+        1,
+        4,
+        3,
+        9,
+        9,
+        9,
+        11,
+        13,
+        4
+      ]
+    },
+    "slope_up": {
+      "count": 127,
+      "mean": 6.409448818897638,
+      "counts_L0_to_L9": [
+        5,
+        3,
+        7,
+        2,
+        9,
+        6,
+        13,
+        28,
+        35,
+        19
+      ]
+    },
+    "slope_down": {
+      "count": 126,
+      "mean": 5.492063492063492,
+      "counts_L0_to_L9": [
+        6,
+        2,
+        7,
+        16,
+        12,
+        19,
+        12,
+        21,
+        13,
+        18
+      ]
+    },
+    "rough_slope": {
+      "count": 63,
+      "mean": 5.301587301587301,
+      "counts_L0_to_L9": [
+        0,
+        3,
+        6,
+        8,
+        8,
+        7,
+        6,
+        12,
+        9,
+        4
+      ]
+    },
+    "stairs_up": {
+      "count": 2457,
+      "mean": 2.687830687830688,
+      "counts_L0_to_L9": [
+        184,
+        340,
+        550,
+        656,
+        470,
+        226,
+        31,
+        0,
+        0,
+        0
+      ]
+    },
+    "stairs_down": {
+      "count": 819,
+      "mean": 5.593406593406593,
+      "counts_L0_to_L9": [
+        34,
+        36,
+        52,
+        54,
+        99,
+        85,
+        100,
+        120,
+        133,
+        106
+      ]
+    },
+    "obstacles": {
+      "count": 252,
+      "mean": 5.420634920634921,
+      "counts_L0_to_L9": [
+        10,
+        18,
+        15,
+        21,
+        22,
+        28,
+        35,
+        37,
+        36,
+        30
+      ]
+    },
+    "flat": {
+      "count": 189,
+      "mean": 5.4867724867724865,
+      "counts_L0_to_L9": [
+        6,
+        9,
+        17,
+        20,
+        12,
+        16,
+        28,
+        31,
+        29,
+        21
+      ]
+    }
+  },
+  "command_ranges": {
+    "lin_vel_x": [
+      -1.0,
+      1.0
+    ],
+    "lin_vel_y": [
+      -1.0,
+      1.0
+    ],
+    "ang_vel_yaw": [
+      -1.5,
+      1.5
+    ]
+  },
+  "observed_command_abs_max": [
+    1.0000009536743164,
+    1.0000009536743164,
+    1.5
+  ],
+  "terrain": 3.85693359375,
+  "value": 0.047052147425711156,
+  "surrogate": 0.017134375218302012,
+  "entropy": 8.614335775375366,
+  "mean_latent_loss": 0.002596514951437712,
+  "mean_load_balance_loss": 6.708598293698742e-05
+}

@@ -1,0 +1,87 @@
+{
+  "checkpoint": "/root/autodl-tmp/cts-omni-repair-v19-20260922/continuous_training_v33_20260924/attempt04/continuation/model_45035.pt",
+  "sha256": "8ea50b5e929a9d218ed0cf07697297934faa956bb47c20b730fd073a7e248eda",
+  "completed": 45036,
+  "cases": [
+    {
+      "column": 18,
+      "name": "flat_long",
+      "level": 2,
+      "side": false,
+      "origin": [
+        -76.5,
+        -13.5,
+        0.0
+      ],
+      "env_id": 0
+    }
+  ],
+  "ends": [
+    null
+  ],
+  "joint_names": [
+    "fl_hip_joint",
+    "fr_hip_joint",
+    "rl_hip_joint",
+    "rr_hip_joint",
+    "fl_thigh_joint",
+    "fr_thigh_joint",
+    "rl_thigh_joint",
+    "rr_thigh_joint",
+    "fl_calf_joint",
+    "fr_calf_joint",
+    "rl_calf_joint",
+    "rr_calf_joint",
+    "fl_foot_joint",
+    "fr_foot_joint",
+    "rl_foot_joint",
+    "rr_foot_joint"
+  ],
+  "body_names": [
+    "base_link",
+    "fl_hip_Link",
+    "fr_hip_link",
+    "rl_hip_Link",
+    "rr_hip_Link",
+    "fl_thigh_Link",
+    "fr_thigh_Link",
+    "rl_thigh_Link",
+    "rr_thigh_Link",
+    "fl_calf_Link",
+    "fr_calf_Link",
+    "rl_calf_Link",
+    "rr_calf_Link",
+    "fl_foot_Link",
+    "fr_foot_Link",
+    "rl_foot_Link",
+    "rr_foot_Link"
+  ],
+  "dt": 0.02,
+  "steps": 1500,
+  "default_joint_pos": [
+    [
+      0.11999999731779099,
+      -0.11999999731779099,
+      -0.11999999731779099,
+      0.11999999731779099,
+      0.9300000071525574,
+      -0.9300000071525574,
+      -0.9300000071525574,
+      0.9300000071525574,
+      -1.9600000381469727,
+      1.9600000381469727,
+      1.9600000381469727,
+      -1.9600000381469727,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "zero_optimizer_updates": true,
+  "state_hashes_unchanged": true,
+  "observation_noise": "training configuration retained",
+  "randomization": "training configuration retained",
+  "commands": "2s zero then 28s straight 1.0 m/s; vy=yaw=0",
+  "interpretation": "one fixed first episode per case; not a random success rate"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "横坡12°＋交替小凸块",
+  "description": "12°横坡，三个10厘米圆滑凸块；左右交替布置。",
+  "units": "m",
+  "up_axis": "Z",
+  "forward_axis": "X",
+  "config": {
+    "width": 3,
+    "kind": "asymmetric",
+    "count": 1,
+    "slope_deg": 12
+  },
+  "length_m": 7,
+  "max_step_m": 0.1,
+  "training_integrated": false,
+  "mesh_contract": "closed visual assembly; seam collision validation pending",
+  "sha256": "910b2a12ce1017b50f8a329930511819d1616c813c7ec50ac1540eeffaf66ef2"
+}

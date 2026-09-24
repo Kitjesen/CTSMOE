@@ -1,0 +1,201 @@
+{
+  "queried_at": "2026-09-19T14:11:45.940838+08:00",
+  "pid": 129951,
+  "state": "training",
+  "completed_updates": 30354,
+  "target_updates": 60000,
+  "additional_verified": 8,
+  "seconds_last10_mean": 6.551868200302124,
+  "actuator_profile": "rs0402_transient_v4",
+  "slope_profile": "slope45_v1",
+  "num_envs": 4096,
+  "terrain_by_type": {
+    "wave": {
+      "count": 32,
+      "mean": 4.125,
+      "counts_L0_to_L9": [
+        2,
+        3,
+        5,
+        4,
+        6,
+        3,
+        2,
+        2,
+        3,
+        2
+      ],
+      "curriculum_fraction": 0.4583333333333333
+    },
+    "slope_up": {
+      "count": 64,
+      "mean": 2.375,
+      "counts_L0_to_L9": [
+        4,
+        11,
+        20,
+        15,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "curriculum_fraction": 0.2638888888888889,
+      "nominal_angle_deg_mean": 16.875,
+      "nominal_angle_deg_max": 25.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "slope_down": {
+      "count": 63,
+      "mean": 2.4603174603174605,
+      "counts_L0_to_L9": [
+        4,
+        13,
+        10,
+        22,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "curriculum_fraction": 0.2733686067019401,
+      "nominal_angle_deg_mean": 17.3015873015873,
+      "nominal_angle_deg_max": 25.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "rough_slope": {
+      "count": 31,
+      "mean": 1.7741935483870968,
+      "counts_L0_to_L9": [
+        4,
+        11,
+        6,
+        8,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "curriculum_fraction": 0.1971326164874552,
+      "nominal_angle_deg_mean": 13.870967741935484,
+      "nominal_angle_deg_max": 25.0,
+      "curriculum_max_angle_deg": 45.0
+    },
+    "stairs_up": {
+      "count": 1229,
+      "mean": 5.9877949552481695,
+      "counts_L0_to_L9": [
+        29,
+        40,
+        61,
+        98,
+        115,
+        132,
+        148,
+        169,
+        221,
+        216
+      ],
+      "curriculum_fraction": 0.6653105505831299
+    },
+    "stairs_down": {
+      "count": 410,
+      "mean": 6.078048780487805,
+      "counts_L0_to_L9": [
+        11,
+        15,
+        17,
+        29,
+        32,
+        45,
+        48,
+        69,
+        64,
+        80
+      ],
+      "curriculum_fraction": 0.6753387533875339
+    },
+    "obstacles": {
+      "count": 125,
+      "mean": 5.48,
+      "counts_L0_to_L9": [
+        2,
+        6,
+        9,
+        12,
+        14,
+        15,
+        18,
+        16,
+        23,
+        10
+      ],
+      "curriculum_fraction": 0.6088888888888889
+    },
+    "flat": {
+      "count": 94,
+      "mean": 3.5,
+      "counts_L0_to_L9": [
+        11,
+        16,
+        12,
+        12,
+        13,
+        10,
+        6,
+        2,
+        7,
+        5
+      ],
+      "curriculum_fraction": 0.3888888888888889
+    },
+    "pit": {
+      "count": 2048,
+      "mean": 1.80322265625,
+      "counts_L0_to_L21": [
+        128,
+        147,
+        1773,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_height_m": 0.2401611328125,
+      "curriculum_fraction": 0.08586774553571429
+    }
+  },
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": false,
+    "stair_episode_totals": true
+  },
+  "torque_violation_samples": 0,
+  "tolerated_overspeed_samples": 469.0,
+  "gpu": "69 %, 13633 MiB, 18479 MiB"
+}

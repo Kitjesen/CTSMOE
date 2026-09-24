@@ -1,0 +1,35 @@
+{
+  "student": {
+    "accepted": false,
+    "reasons": [
+      "obstacles: fewer accepted cases",
+      "stairs_up: fewer accepted cases",
+      "stairs_up: fewer straight traversals",
+      "flat/diagonal_back/direct: XY tracking regressed",
+      "flat/diagonal_back/settle: XY tracking regressed"
+    ],
+    "baseline": "V9_44711",
+    "candidate": "V11_44759",
+    "forward_rms_before": 0.4154979682159929,
+    "forward_rms_after": 0.2031384233419368,
+    "threshold": 0.3323983745727943,
+    "final": false,
+    "fixed_cases_not_random_success_rate": true
+  },
+  "teacher": {
+    "accepted": false,
+    "reasons": [
+      "obstacles: more physical failures",
+      "slope_up: fewer accepted cases",
+      "stairs_down: fewer straight traversals",
+      "flat/diagonal_back/direct: XY tracking regressed"
+    ],
+    "baseline": "V9_44711_teacher",
+    "candidate": "V11_44759_teacher",
+    "forward_rms_before": 0.42331255809839213,
+    "forward_rms_after": 0.22582411644082118,
+    "threshold": 0.3386500464787137,
+    "final": false,
+    "fixed_cases_not_random_success_rate": true
+  }
+}

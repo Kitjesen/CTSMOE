@@ -1,0 +1,25 @@
+{
+  "old_run": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_flat_speed_20260920",
+  "old_pid": 158275,
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_flat_speed_20260920/model_37702.pt",
+  "completed_updates": 37703,
+  "new_run": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_uphill_speed_20260920",
+  "new_pid": 162726,
+  "args": [
+    "/root/autodl-tmp/conda/envs/isaaclab/bin/python",
+    "train.py",
+    "--root",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917",
+    "--output",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_uphill_speed_20260920",
+    "--num-envs",
+    "4096",
+    "--updates",
+    "22297",
+    "--mixed-pit",
+    "--uphill-speed-limit",
+    "1.2",
+    "--resume",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_flat_speed_20260920/model_37702.pt"
+  ]
+}

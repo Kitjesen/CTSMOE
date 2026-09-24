@@ -1,0 +1,571 @@
+{
+  "profile": "stairs80_v1",
+  "target_weights": {
+    "wave": 0.015384615384615385,
+    "slope_up": 0.03076923076923077,
+    "slope_down": 0.03076923076923077,
+    "rough_slope": 0.015384615384615385,
+    "stairs_up": 0.6,
+    "stairs_down": 0.2,
+    "obstacles": 0.06153846153846154,
+    "flat": 0.04615384615384616
+  },
+  "group_counts": {
+    "teacher": {
+      "wave": 1,
+      "slope_up": 1,
+      "slope_down": 1,
+      "rough_slope": 1,
+      "stairs_up": 29,
+      "stairs_down": 10,
+      "obstacles": 3,
+      "flat": 2
+    },
+    "student": {
+      "wave": 0,
+      "slope_up": 1,
+      "slope_down": 0,
+      "rough_slope": 0,
+      "stairs_up": 10,
+      "stairs_down": 3,
+      "obstacles": 1,
+      "flat": 1
+    }
+  },
+  "retained_environments": 34,
+  "reassigned_environments": 30,
+  "difficulty_source": "saved same-terrain, same-learner donors",
+  "moves": [
+    {
+      "env_id": 42,
+      "donor_env_id": 29,
+      "learner": "teacher",
+      "from": "obstacles",
+      "to": "stairs_up",
+      "old_level": 3,
+      "new_level": 4
+    },
+    {
+      "env_id": 43,
+      "donor_env_id": 21,
+      "learner": "teacher",
+      "from": "obstacles",
+      "to": "stairs_up",
+      "old_level": 3,
+      "new_level": 4
+    },
+    {
+      "env_id": 10,
+      "donor_env_id": 26,
+      "learner": "teacher",
+      "from": "slope_down",
+      "to": "stairs_up",
+      "old_level": 3,
+      "new_level": 3
+    },
+    {
+      "env_id": 6,
+      "donor_env_id": 31,
+      "learner": "teacher",
+      "from": "slope_up",
+      "to": "stairs_up",
+      "old_level": 0,
+      "new_level": 3
+    },
+    {
+      "env_id": 15,
+      "donor_env_id": 27,
+      "learner": "teacher",
+      "from": "slope_down",
+      "to": "stairs_up",
+      "old_level": 4,
+      "new_level": 2
+    },
+    {
+      "env_id": 58,
+      "donor_env_id": 30,
+      "learner": "teacher",
+      "from": "flat",
+      "to": "stairs_up",
+      "old_level": 0,
+      "new_level": 3
+    },
+    {
+      "env_id": 1,
+      "donor_env_id": 33,
+      "learner": "teacher",
+      "from": "wave",
+      "to": "stairs_up",
+      "old_level": 3,
+      "new_level": 2
+    },
+    {
+      "env_id": 54,
+      "donor_env_id": 25,
+      "learner": "teacher",
+      "from": "obstacles",
+      "to": "stairs_up",
+      "old_level": 2,
+      "new_level": 3
+    },
+    {
+      "env_id": 47,
+      "donor_env_id": 23,
+      "learner": "teacher",
+      "from": "obstacles",
+      "to": "stairs_up",
+      "old_level": 4,
+      "new_level": 5
+    },
+    {
+      "env_id": 13,
+      "donor_env_id": 22,
+      "learner": "teacher",
+      "from": "slope_down",
+      "to": "stairs_up",
+      "old_level": 0,
+      "new_level": 1
+    },
+    {
+      "env_id": 17,
+      "donor_env_id": 34,
+      "learner": "teacher",
+      "from": "rough_slope",
+      "to": "stairs_up",
+      "old_level": 1,
+      "new_level": 1
+    },
+    {
+      "env_id": 19,
+      "donor_env_id": 35,
+      "learner": "teacher",
+      "from": "rough_slope",
+      "to": "stairs_up",
+      "old_level": 3,
+      "new_level": 4
+    },
+    {
+      "env_id": 5,
+      "donor_env_id": 29,
+      "learner": "teacher",
+      "from": "slope_up",
+      "to": "stairs_up",
+      "old_level": 3,
+      "new_level": 4
+    },
+    {
+      "env_id": 55,
+      "donor_env_id": 21,
+      "learner": "teacher",
+      "from": "flat",
+      "to": "stairs_up",
+      "old_level": 0,
+      "new_level": 4
+    },
+    {
+      "env_id": 63,
+      "donor_env_id": 26,
+      "learner": "teacher",
+      "from": "flat",
+      "to": "stairs_up",
+      "old_level": 4,
+      "new_level": 3
+    },
+    {
+      "env_id": 46,
+      "donor_env_id": 31,
+      "learner": "teacher",
+      "from": "obstacles",
+      "to": "stairs_up",
+      "old_level": 1,
+      "new_level": 3
+    },
+    {
+      "env_id": 7,
+      "donor_env_id": 27,
+      "learner": "teacher",
+      "from": "slope_up",
+      "to": "stairs_up",
+      "old_level": 4,
+      "new_level": 2
+    },
+    {
+      "env_id": 50,
+      "donor_env_id": 38,
+      "learner": "teacher",
+      "from": "obstacles",
+      "to": "stairs_down",
+      "old_level": 1,
+      "new_level": 3
+    },
+    {
+      "env_id": 3,
+      "donor_env_id": 41,
+      "learner": "teacher",
+      "from": "wave",
+      "to": "stairs_down",
+      "old_level": 0,
+      "new_level": 4
+    },
+    {
+      "env_id": 11,
+      "donor_env_id": 37,
+      "learner": "teacher",
+      "from": "slope_down",
+      "to": "stairs_down",
+      "old_level": 4,
+      "new_level": 3
+    },
+    {
+      "env_id": 61,
+      "donor_env_id": 39,
+      "learner": "teacher",
+      "from": "flat",
+      "to": "stairs_down",
+      "old_level": 0,
+      "new_level": 4
+    },
+    {
+      "env_id": 57,
+      "donor_env_id": 38,
+      "learner": "teacher",
+      "from": "flat",
+      "to": "stairs_down",
+      "old_level": 1,
+      "new_level": 3
+    },
+    {
+      "env_id": 45,
+      "donor_env_id": 41,
+      "learner": "teacher",
+      "from": "obstacles",
+      "to": "stairs_down",
+      "old_level": 3,
+      "new_level": 4
+    },
+    {
+      "env_id": 16,
+      "donor_env_id": 20,
+      "learner": "student",
+      "from": "slope_down",
+      "to": "stairs_up",
+      "old_level": 2,
+      "new_level": 3
+    },
+    {
+      "env_id": 52,
+      "donor_env_id": 28,
+      "learner": "student",
+      "from": "obstacles",
+      "to": "stairs_up",
+      "old_level": 3,
+      "new_level": 1
+    },
+    {
+      "env_id": 12,
+      "donor_env_id": 24,
+      "learner": "student",
+      "from": "slope_down",
+      "to": "stairs_up",
+      "old_level": 5,
+      "new_level": 5
+    },
+    {
+      "env_id": 4,
+      "donor_env_id": 32,
+      "learner": "student",
+      "from": "slope_up",
+      "to": "stairs_up",
+      "old_level": 5,
+      "new_level": 2
+    },
+    {
+      "env_id": 44,
+      "donor_env_id": 20,
+      "learner": "student",
+      "from": "obstacles",
+      "to": "stairs_up",
+      "old_level": 4,
+      "new_level": 3
+    },
+    {
+      "env_id": 60,
+      "donor_env_id": 28,
+      "learner": "student",
+      "from": "flat",
+      "to": "stairs_up",
+      "old_level": 5,
+      "new_level": 1
+    },
+    {
+      "env_id": 0,
+      "donor_env_id": 36,
+      "learner": "student",
+      "from": "wave",
+      "to": "stairs_down",
+      "old_level": 5,
+      "new_level": 2
+    }
+  ],
+  "from_profile": "original",
+  "before": {
+    "wave": {
+      "count": 4,
+      "mean": 2.0,
+      "counts_L0_to_L9": [
+        2,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_up": {
+      "count": 6,
+      "mean": 2.8333333333333335,
+      "counts_L0_to_L9": [
+        2,
+        0,
+        0,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_down": {
+      "count": 7,
+      "mean": 2.7142857142857144,
+      "counts_L0_to_L9": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "rough_slope": {
+      "count": 3,
+      "mean": 2.6666666666666665,
+      "counts_L0_to_L9": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "stairs_up": {
+      "count": 16,
+      "mean": 2.875,
+      "counts_L0_to_L9": [
+        0,
+        3,
+        3,
+        5,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "stairs_down": {
+      "count": 6,
+      "mean": 3.5,
+      "counts_L0_to_L9": [
+        0,
+        0,
+        1,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "obstacles": {
+      "count": 13,
+      "mean": 2.5384615384615383,
+      "counts_L0_to_L9": [
+        0,
+        3,
+        2,
+        6,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "flat": {
+      "count": 9,
+      "mean": 2.111111111111111,
+      "counts_L0_to_L9": [
+        3,
+        1,
+        0,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "after": {
+    "wave": {
+      "count": 1,
+      "mean": 0.0,
+      "counts_L0_to_L9": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_up": {
+      "count": 2,
+      "mean": 2.5,
+      "counts_L0_to_L9": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "slope_down": {
+      "count": 1,
+      "mean": 1.0,
+      "counts_L0_to_L9": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "rough_slope": {
+      "count": 1,
+      "mean": 4.0,
+      "counts_L0_to_L9": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "stairs_up": {
+      "count": 39,
+      "mean": 2.871794871794872,
+      "counts_L0_to_L9": [
+        0,
+        7,
+        7,
+        13,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "stairs_down": {
+      "count": 13,
+      "mean": 3.3846153846153846,
+      "counts_L0_to_L9": [
+        0,
+        0,
+        2,
+        5,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "obstacles": {
+      "count": 4,
+      "mean": 2.25,
+      "counts_L0_to_L9": [
+        0,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "flat": {
+      "count": 3,
+      "mean": 3.0,
+      "counts_L0_to_L9": [
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  }
+}

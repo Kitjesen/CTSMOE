@@ -1,0 +1,39 @@
+{
+  "kind": "CPU-only extraction of existing trajectories",
+  "optimizer_updates": 0,
+  "sources_unchanged": true,
+  "extracts": {
+    "brake25": {
+      "original_cases": [
+        2,
+        38,
+        74,
+        78,
+        81,
+        99,
+        110
+      ],
+      "source": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/requested_evaluation_33865/focused/brake25/traces.npz",
+      "outputs": [
+        "brake25_selected.npz",
+        "brake25_manifest.json"
+      ]
+    },
+    "stairend": {
+      "original_cases": [
+        10,
+        48,
+        49,
+        58,
+        59,
+        70,
+        71
+      ],
+      "source": "/root/autodl-tmp/cts-omni-repair-v19-20260922/speed_brake_v20/requested_evaluation_33865/focused/stairend/traces.npz",
+      "outputs": [
+        "stairend_selected.npz",
+        "stairend_manifest.json"
+      ]
+    }
+  }
+}

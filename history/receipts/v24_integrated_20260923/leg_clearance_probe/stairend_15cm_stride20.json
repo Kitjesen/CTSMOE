@@ -1,0 +1,5487 @@
+{
+  "method": "URDF collision primitives; MuJoCo FK + Bullet signed primitive distance at recorded joint positions",
+  "distance_unit": "m",
+  "positive_distance_meaning": "separated URDF collision envelopes",
+  "negative_distance_meaning": "overlapping URDF collision envelopes; not a measured contact or force",
+  "physx_self_contacts_measured": false,
+  "urdf_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+  "source_manifest": "rough\\cts_moe\\official\\receipts\\v24_integrated_20260923\\reference\\v23_final_assessment\\stairend_15cm_manifest.json",
+  "source_traces": "rough\\cts_moe\\official\\receipts\\v24_integrated_20260923\\reference\\v23_final_assessment\\stairend_15cm_traces.npz",
+  "stride": 20,
+  "cases": [
+    {
+      "case_id": 0,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 714,
+      "sampled_frames": 37,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08136640940677492,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 500
+          },
+          "p01_distance_m": 0.08710680196257325,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0008009005292011417,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": -0.0003121835229543681,
+          "fraction_negative_signed_distance": 0.02702702702702703,
+          "fraction_below_10mm": 0.4594594594594595
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0015868131022621613,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": 0.001981878840153295,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.24324324324324326
+        }
+      }
+    },
+    {
+      "case_id": 1,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 700,
+      "sampled_frames": 36,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08136640940677492,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 500
+          },
+          "p01_distance_m": 0.08694734661380107,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0008009005292011417,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": -0.00032575899535011173,
+          "fraction_negative_signed_distance": 0.027777777777777776,
+          "fraction_below_10mm": 0.4722222222222222
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0015868131022621613,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": 0.0019709047918785414,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 2,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 367,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10765396161842884,
+            "links": [
+              "fr_foot_Link",
+              "rr_calf_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.10853710252382334,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.005241999099566617,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.00540080697110553,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.75
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.00815006137746192,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.008223151695590564,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2
+        }
+      }
+    },
+    {
+      "case_id": 3,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 427,
+      "sampled_frames": 23,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10765396161842884,
+            "links": [
+              "fr_foot_Link",
+              "rr_calf_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.1086765458246751,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.005241999099566617,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.005425881898190621,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.782608695652174
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.00815006137746192,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.008234692272137193,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.17391304347826086
+        }
+      }
+    },
+    {
+      "case_id": 4,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 258,
+      "sampled_frames": 14,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.05087700081138059,
+            "links": [
+              "fl_foot_Link",
+              "rl_calf_Link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.055935493906907316,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.006455865636065162,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.006469177801001676,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6428571428571429
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.010688525114748944,
+            "links": [
+              "base_link",
+              "fr_thigh_Link"
+            ],
+            "step": 60
+          },
+          "p01_distance_m": 0.011357721141267775,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        }
+      }
+    },
+    {
+      "case_id": 5,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 349,
+      "sampled_frames": 19,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.05087700081138059,
+            "links": [
+              "fl_foot_Link",
+              "rl_calf_Link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.0578810681744176,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.004939058709656741,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.005091759448185033,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.7368421052631579
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.010688525114748944,
+            "links": [
+              "base_link",
+              "fr_thigh_Link"
+            ],
+            "step": 60
+          },
+          "p01_distance_m": 0.011615104228390401,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        }
+      }
+    },
+    {
+      "case_id": 6,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 709,
+      "sampled_frames": 37,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08032667983319737,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 500
+          },
+          "p01_distance_m": 0.08316324246703882,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0016309834876743925,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": -0.0008904568155080103,
+          "fraction_negative_signed_distance": 0.02702702702702703,
+          "fraction_below_10mm": 0.4864864864864865
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0025712482669779328,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 500
+          },
+          "p01_distance_m": 0.0028989605321329726,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.24324324324324326
+        }
+      }
+    },
+    {
+      "case_id": 7,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 696,
+      "sampled_frames": 36,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08032667983319737,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 500
+          },
+          "p01_distance_m": 0.08308444906054323,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0016309834876743925,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": -0.0009110270008459652,
+          "fraction_negative_signed_distance": 0.027777777777777776,
+          "fraction_below_10mm": 0.5
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0025712482669779328,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 500
+          },
+          "p01_distance_m": 0.0028898574136564437,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 8,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 363,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10331178463780669,
+            "links": [
+              "fr_foot_Link",
+              "rr_calf_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.10499797608841985,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.005054227346773791,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.0052696460005753915,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.75
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.00837887126208116,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.008559152209400659,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.15
+        }
+      }
+    },
+    {
+      "case_id": 9,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 423,
+      "sampled_frames": 23,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10331178463780669,
+            "links": [
+              "fr_foot_Link",
+              "rr_calf_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.10526421684377982,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.005054227346773791,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.005303659472228276,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.782608695652174
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.00837887126208116,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.008587617622135316,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.13043478260869565
+        }
+      }
+    },
+    {
+      "case_id": 10,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 41,
+      "sampled_frames": 4,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.14686394865420443,
+            "links": [
+              "fr_hip_link",
+              "fl_hip_Link"
+            ],
+            "step": 41
+          },
+          "p01_distance_m": 0.14686412369716695,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.012019130488535614,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 0
+          },
+          "p01_distance_m": 0.012019130512544362,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.03219501926578428,
+            "links": [
+              "base_link",
+              "rr_thigh_Link"
+            ],
+            "step": 41
+          },
+          "p01_distance_m": 0.03219751405385739,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        }
+      }
+    },
+    {
+      "case_id": 11,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 41,
+      "sampled_frames": 4,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.14686394865420443,
+            "links": [
+              "fr_hip_link",
+              "fl_hip_Link"
+            ],
+            "step": 41
+          },
+          "p01_distance_m": 0.14686412369716695,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.012019130488535614,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 0
+          },
+          "p01_distance_m": 0.012019130512544362,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.03219501926578428,
+            "links": [
+              "base_link",
+              "rr_thigh_Link"
+            ],
+            "step": 41
+          },
+          "p01_distance_m": 0.03219751405385739,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        }
+      }
+    },
+    {
+      "case_id": 12,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 684,
+      "sampled_frames": 36,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09253378577722969,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.09279350221672603,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0008462651413761626,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 440
+          },
+          "p01_distance_m": 0.0008827475049363063,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6666666666666666
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0008462651413761626,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 440
+          },
+          "p01_distance_m": 0.0015119206015855764,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2222222222222222
+        }
+      }
+    },
+    {
+      "case_id": 13,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 669,
+      "sampled_frames": 35,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09253378577722969,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.09278608174702614,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0008462651413761626,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 440
+          },
+          "p01_distance_m": 0.0008817051516917309,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.7428571428571429
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0008462651413761626,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 440
+          },
+          "p01_distance_m": 0.0014929018741510216,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.22857142857142856
+        }
+      }
+    },
+    {
+      "case_id": 14,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 362,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.07917887915504292,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.08482550582981344,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0002871140536758652,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": -0.00021401050867419553,
+          "fraction_negative_signed_distance": 0.05,
+          "fraction_below_10mm": 0.65
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0020677597678841622,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.0020929987264207595,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 15,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 468,
+      "sampled_frames": 25,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.07917887915504292,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.08631146021791095,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0002871140536758652,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": -0.00019477273367375617,
+          "fraction_negative_signed_distance": 0.04,
+          "fraction_below_10mm": 0.6
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0020677597678841622,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.002099640557614601,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2
+        }
+      }
+    },
+    {
+      "case_id": 16,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 191,
+      "sampled_frames": 11,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09799291781094185,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.09800109162235407,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0009032606857429248,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": -0.0008579711792596747,
+          "fraction_negative_signed_distance": 0.18181818181818182,
+          "fraction_below_10mm": 0.45454545454545453
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0010846577767985935,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.0013401911822035293,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 17,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 274,
+      "sampled_frames": 15,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09799291781094185,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.09800436114691895,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0009032606857429248,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": -0.0008398553766663747,
+          "fraction_negative_signed_distance": 0.13333333333333333,
+          "fraction_below_10mm": 0.3333333333333333
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0010846577767985935,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.0014424045443655038,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2
+        }
+      }
+    },
+    {
+      "case_id": 18,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 681,
+      "sampled_frames": 36,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09628377647648709,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 540
+          },
+          "p01_distance_m": 0.0964196067769533,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.00026116325140806756,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 380
+          },
+          "p01_distance_m": 0.0005076027258793106,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6388888888888888
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0009723320771195549,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 400
+          },
+          "p01_distance_m": 0.0009759099630086988,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.19444444444444445
+        }
+      }
+    },
+    {
+      "case_id": 19,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 667,
+      "sampled_frames": 35,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09628377647648709,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 540
+          },
+          "p01_distance_m": 0.09641572591122569,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.00026116325140806756,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 380
+          },
+          "p01_distance_m": 0.000500561598037275,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6285714285714286
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0009723320771195549,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 400
+          },
+          "p01_distance_m": 0.0009758077376975804,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2
+        }
+      }
+    },
+    {
+      "case_id": 20,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 361,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08160528983852001,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.08575240699868941,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0001910818041593067,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": -0.00015760789331937595,
+          "fraction_negative_signed_distance": 0.1,
+          "fraction_below_10mm": 0.55
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0010659616958835433,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.0011911423801025701,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 21,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 402,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08160528983852001,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.0861889456471283,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0001910818041593067,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": -0.00015408432375727798,
+          "fraction_negative_signed_distance": 0.09090909090909091,
+          "fraction_below_10mm": 0.6363636363636364
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0010659616958835433,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.0012043192942308887,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.22727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 22,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 190,
+      "sampled_frames": 11,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09587916569581556,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 60
+          },
+          "p01_distance_m": 0.09620539048071372,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.001107850088529806,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": -0.0010813162272809952,
+          "fraction_negative_signed_distance": 0.18181818181818182,
+          "fraction_below_10mm": 0.5454545454545454
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0016349018674025914,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.001824371050519205,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 23,
+      "policy": 0,
+      "policy_label": "source_default012",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 274,
+      "sampled_frames": 15,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09587916569581556,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 60
+          },
+          "p01_distance_m": 0.09633588039467297,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.001107850088529806,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": -0.0010707026827814707,
+          "fraction_negative_signed_distance": 0.13333333333333333,
+          "fraction_below_10mm": 0.4
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0016349018674025914,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.0019001587237658503,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2
+        }
+      }
+    },
+    {
+      "case_id": 24,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 754,
+      "sampled_frames": 39,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.0733768694148444,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": 0.07795910803667137,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0009512314021217208,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 360
+          },
+          "p01_distance_m": 0.0015833856823257633,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.4358974358974359
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0041598228950148215,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 360
+          },
+          "p01_distance_m": 0.004331157909730056,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.1282051282051282
+        }
+      }
+    },
+    {
+      "case_id": 25,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 729,
+      "sampled_frames": 38,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.0733768694148444,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": 0.0778385228097812,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0009512314021217208,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 360
+          },
+          "p01_distance_m": 0.0015667500433730252,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.4473684210526316
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0041598228950148215,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 360
+          },
+          "p01_distance_m": 0.004326649093553339,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.13157894736842105
+        }
+      }
+    },
+    {
+      "case_id": 26,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 366,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.11978239159145751,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.12005205821966526,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0017820957594779012,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.0023455277246810275,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.003763414593818957,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.004398264217933154,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 27,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 406,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.11978239159145751,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.12008044418052922,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0017820957594779012,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.002404836352597146,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5454545454545454
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.003763414593818957,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.004465090494155701,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.22727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 28,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 203,
+      "sampled_frames": 12,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.113932558932444,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 140
+          },
+          "p01_distance_m": 0.11396205537938728,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.006223333463148122,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.006249160532792591,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6666666666666666
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.007965658383836026,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.008458473670787569,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.08333333333333333
+        }
+      }
+    },
+    {
+      "case_id": 29,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 293,
+      "sampled_frames": 16,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.113932558932444,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 140
+          },
+          "p01_distance_m": 0.11397278136009392,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.005730484712637212,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.005781542963024458,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.75
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.007965658383836026,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.008637679229679038,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0625
+        }
+      }
+    },
+    {
+      "case_id": 30,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 745,
+      "sampled_frames": 39,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.07058978797677724,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": 0.07728743600012662,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0008628842650532167,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 360
+          },
+          "p01_distance_m": 0.0016162642811028665,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.4358974358974359
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0034045340842928425,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 360
+          },
+          "p01_distance_m": 0.003907455209908412,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.15384615384615385
+        }
+      }
+    },
+    {
+      "case_id": 31,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 720,
+      "sampled_frames": 37,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.07058978797677724,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 520
+          },
+          "p01_distance_m": 0.07693492820942402,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0008628842650532167,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 360
+          },
+          "p01_distance_m": 0.0015766127013107797,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.4594594594594595
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0034045340842928425,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 360
+          },
+          "p01_distance_m": 0.0038809856769812766,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.16216216216216217
+        }
+      }
+    },
+    {
+      "case_id": 32,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 365,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.11884933236166528,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.11921872658093008,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.002024238092926768,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.0025633210450000605,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.003980776465844727,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.004516015303448788,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 33,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 406,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.11884933236166528,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.11925761018295795,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.002024238092926768,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.0026200666189025125,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5454545454545454
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.003980776465844727,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.004572356233722899,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.22727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 34,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 204,
+      "sampled_frames": 12,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.11617267751963561,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 140
+          },
+          "p01_distance_m": 0.11644595656817297,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.006120923875551514,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.006170166664741941,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.75
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.009117152046251452,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.009312940673297623,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.08333333333333333
+        }
+      }
+    },
+    {
+      "case_id": 35,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 292,
+      "sampled_frames": 16,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.11363966606750936,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 140
+          },
+          "p01_distance_m": 0.11400287138855672,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0036771288266320137,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.0038904640878203705,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.875
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.008375449166488554,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.00885625739416091,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0625
+        }
+      }
+    },
+    {
+      "case_id": 36,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 717,
+      "sampled_frames": 37,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09429137329131565,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 580
+          },
+          "p01_distance_m": 0.09486005051161386,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0006675027342271213,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 460
+          },
+          "p01_distance_m": 0.0007349740280622611,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.7567567567567568
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.001446855866255448,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 420
+          },
+          "p01_distance_m": 0.0016109360867803122,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2702702702702703
+        }
+      }
+    },
+    {
+      "case_id": 37,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 1249,
+      "sampled_frames": 64,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09429137329131565,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 580
+          },
+          "p01_distance_m": 0.09528655842683753,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0006675027342271213,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 460
+          },
+          "p01_distance_m": 0.0007855774984386159,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5625
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.001446855866255448,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 420
+          },
+          "p01_distance_m": 0.0017339962521739603,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.15625
+        }
+      }
+    },
+    {
+      "case_id": 38,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 363,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.0721213485012691,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.07818112625079005,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0007410654474879666,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": -0.0003814166406034969,
+          "fraction_negative_signed_distance": 0.05,
+          "fraction_below_10mm": 0.65
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.002094186030540417,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.002295996243375867,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 39,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 403,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.0721213485012691,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.07881899759284489,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0007410654474879666,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": -0.00034355887145776326,
+          "fraction_negative_signed_distance": 0.045454545454545456,
+          "fraction_below_10mm": 0.5
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.002094186030540417,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.0023172394236743356,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.22727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 40,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 190,
+      "sampled_frames": 11,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10506723845570912,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.10542480355763549,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0008143149536071104,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": -0.000622364172226189,
+          "fraction_negative_signed_distance": 0.09090909090909091,
+          "fraction_below_10mm": 0.5454545454545454
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.002093831460852488,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.0021644458284204742,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 41,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 274,
+      "sampled_frames": 15,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10506723845570912,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.10556782959840603,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0008143149536071104,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": -0.0005455838596738204,
+          "fraction_negative_signed_distance": 0.06666666666666667,
+          "fraction_below_10mm": 0.4
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.002093831460852488,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.0021926915754476688,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2
+        }
+      }
+    },
+    {
+      "case_id": 42,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 716,
+      "sampled_frames": 37,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09053617234605221,
+            "links": [
+              "fl_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.09177531667382795,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0006195567378337705,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 280
+          },
+          "p01_distance_m": 0.0006878106254928447,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.7567567567567568
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0008472706402670583,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 480
+          },
+          "p01_distance_m": 0.0009581583931647128,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2702702702702703
+        }
+      }
+    },
+    {
+      "case_id": 43,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 1249,
+      "sampled_frames": 64,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09053617234605221,
+            "links": [
+              "fl_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.09270467491965975,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0006195567378337705,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 280
+          },
+          "p01_distance_m": 0.0007390010412371503,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.828125
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0008472706402670583,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 480
+          },
+          "p01_distance_m": 0.0010413242078379536,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.15625
+        }
+      }
+    },
+    {
+      "case_id": 44,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 363,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.06885974714042185,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.07547898639363836,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.000628738994872578,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": -0.0002860199370620187,
+          "fraction_negative_signed_distance": 0.05,
+          "fraction_below_10mm": 0.65
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0021992130262779696,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.0023301251050565925,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 45,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 402,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.06817136034421756,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.07574409596421364,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0010509874633974105,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": -0.0005406903274456398,
+          "fraction_negative_signed_distance": 0.045454545454545456,
+          "fraction_below_10mm": 0.5454545454545454
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0020570393093628557,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.002220475042580967,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.22727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 46,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 190,
+      "sampled_frames": 11,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10199202618444224,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.10249249305620149,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0010472134409015206,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": -0.0008700939989130562,
+          "fraction_negative_signed_distance": 0.09090909090909091,
+          "fraction_below_10mm": 0.5454545454545454
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0024643505658588395,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.0025313395886638612,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 47,
+      "policy": 1,
+      "policy_label": "source_default012_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 274,
+      "sampled_frames": 15,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10199202618444224,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.1026926798049052,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0010472134409015206,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": -0.0007992462221176704,
+          "fraction_negative_signed_distance": 0.06666666666666667,
+          "fraction_below_10mm": 0.4
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0024643505658588395,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.00255813519778587,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.2
+        }
+      }
+    },
+    {
+      "case_id": 48,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 708,
+      "sampled_frames": 37,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08123864133021841,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 300
+          },
+          "p01_distance_m": 0.08357252110233944,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0004937603774677422,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.0007470498640757244,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.7027027027027027
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0026298169847865814,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.002866904923348936,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.16216216216216217
+        }
+      }
+    },
+    {
+      "case_id": 49,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 1249,
+      "sampled_frames": 64,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08123864133021841,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 300
+          },
+          "p01_distance_m": 0.08532293093143022,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0004937603774677422,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.0009370169790317111,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.828125
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0026298169847865814,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.003044720877270702,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.09375
+        }
+      }
+    },
+    {
+      "case_id": 50,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 380,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09664006092699243,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.09705364685012802,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 8.561093198036036e-05,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.00012971846271333913,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.75
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.002278683211229102,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.0023165363981440703,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 51,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 433,
+      "sampled_frames": 23,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09664006092699243,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.0971189498906231,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 8.561093198036036e-05,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.00013668280967117787,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.782608695652174
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.002278683211229102,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.002322513217130644,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.21739130434782608
+        }
+      }
+    },
+    {
+      "case_id": 52,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 208,
+      "sampled_frames": 12,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.094561526398668,
+            "links": [
+              "fl_foot_Link",
+              "rl_calf_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.09607742010919786,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.002584344773925597,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.0029701309054560835,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.007834405736007582,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 140
+          },
+          "p01_distance_m": 0.008397215194027311,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.08333333333333333
+        }
+      }
+    },
+    {
+      "case_id": 53,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 278,
+      "sampled_frames": 15,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.094561526398668,
+            "links": [
+              "fl_foot_Link",
+              "rl_calf_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.09649084566661509,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.002584344773925597,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.003075345304964398,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.4666666666666667
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.007834405736007582,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 140
+          },
+          "p01_distance_m": 0.008550708682578147,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.06666666666666667
+        }
+      }
+    },
+    {
+      "case_id": 54,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 708,
+      "sampled_frames": 37,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08518392871017305,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.08624344610338136,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.00033390753442616786,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 500
+          },
+          "p01_distance_m": 0.0005833150155361904,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.7027027027027027
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.003094097042604586,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.0037361137273890796,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.1891891891891892
+        }
+      }
+    },
+    {
+      "case_id": 55,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 1249,
+      "sampled_frames": 64,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08518392871017305,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 240
+          },
+          "p01_distance_m": 0.08703808414828759,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.00033390753442616786,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 500
+          },
+          "p01_distance_m": 0.0007703706263687074,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.828125
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.003094097042604586,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.00421762624097745,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.109375
+        }
+      }
+    },
+    {
+      "case_id": 56,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 374,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08317270707874816,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.08455143150411379,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.004032643666055853,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.0041069933602024536,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.45
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.005835712435930193,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.005906460354233146,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.15
+        }
+      }
+    },
+    {
+      "case_id": 57,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 410,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08317270707874816,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.08469656039099438,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.004032643666055853,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.004114819643796833,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5909090909090909
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.005835712435930193,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 220
+          },
+          "p01_distance_m": 0.0059139075035281935,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.13636363636363635
+        }
+      }
+    },
+    {
+      "case_id": 58,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 208,
+      "sampled_frames": 12,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08855758409395233,
+            "links": [
+              "fl_foot_Link",
+              "rl_calf_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.09096248630718093,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0023880769216886154,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.0028036469810286185,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.007908579348493565,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 140
+          },
+          "p01_distance_m": 0.008472615687677551,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.08333333333333333
+        }
+      }
+    },
+    {
+      "case_id": 59,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 278,
+      "sampled_frames": 15,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08855758409395233,
+            "links": [
+              "fl_foot_Link",
+              "rl_calf_Link"
+            ],
+            "step": 120
+          },
+          "p01_distance_m": 0.09161836872897054,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0023880769216886154,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.0029169842699395283,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.4666666666666667
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.007908579348493565,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 140
+          },
+          "p01_distance_m": 0.008626443780182276,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.06666666666666667
+        }
+      }
+    },
+    {
+      "case_id": 60,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 780,
+      "sampled_frames": 40,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08635871694406756,
+            "links": [
+              "fl_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.09204557796801503,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0003276179158796951,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.0011354937453333241,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0020275394337022183,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.003675913771058791,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.075
+        }
+      }
+    },
+    {
+      "case_id": 61,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 1249,
+      "sampled_frames": 64,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.08635871694406756,
+            "links": [
+              "fl_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.09554518475198272,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0003276179158796951,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.0016326481019201728,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.546875
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0020275394337022183,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.004690297978662835,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.046875
+        }
+      }
+    },
+    {
+      "case_id": 62,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 371,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10925767980877389,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 320
+          },
+          "p01_distance_m": 0.10948898840943477,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0008388021252606287,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.0009774669193546377,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.55
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0021377595880322665,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 200
+          },
+          "p01_distance_m": 0.002432223413265884,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.15
+        }
+      }
+    },
+    {
+      "case_id": 63,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 414,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.11047509349646273,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 300
+          },
+          "p01_distance_m": 0.11113543423685483,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0008388021252606287,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.0009920632134697966,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0021377595880322665,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 200
+          },
+          "p01_distance_m": 0.0024632196053957383,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.13636363636363635
+        }
+      }
+    },
+    {
+      "case_id": 64,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 186,
+      "sampled_frames": 11,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10906262040032359,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.10906494166680099,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0006186730848292345,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.0006876023144444126,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.45454545454545453
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.003146603496212279,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.004421100024822906,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.09090909090909091
+        }
+      }
+    },
+    {
+      "case_id": 65,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 257,
+      "sampled_frames": 14,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10824038776686874,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.10835029565563849,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0006186730848292345,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.0007082810833289661,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.003146603496212279,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.004803448983406094,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.07142857142857142
+        }
+      }
+    },
+    {
+      "case_id": 66,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 778,
+      "sampled_frames": 40,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10438952980853267,
+            "links": [
+              "fl_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.10479476182175722,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0021835007487437785,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.0022139080614988265,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0021835007487437785,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.003629119192315727,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.05
+        }
+      }
+    },
+    {
+      "case_id": 67,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 777,
+      "sampled_frames": 40,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10438952980853267,
+            "links": [
+              "fl_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.10479476182175722,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0021835007487437785,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.0022139080614988265,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.6
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0021835007487437785,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.003629119192315727,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.05
+        }
+      }
+    },
+    {
+      "case_id": 68,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 373,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.11011227460211083,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 320
+          },
+          "p01_distance_m": 0.11094583752912021,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0010826555890320402,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.0011755832880921194,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.55
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0015717487419798252,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 200
+          },
+          "p01_distance_m": 0.002026988959367538,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.1
+        }
+      }
+    },
+    {
+      "case_id": 69,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 416,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.11109036338419445,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 320
+          },
+          "p01_distance_m": 0.11180627113296726,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0010826555890320402,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.001185365151151075,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0015717487419798252,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 200
+          },
+          "p01_distance_m": 0.0020749089822504553,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.09090909090909091
+        }
+      }
+    },
+    {
+      "case_id": 70,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 186,
+      "sampled_frames": 11,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10771283605858843,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.108022041988057,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.00057910398804792,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.0006304743504423115,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.45454545454545453
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.004973290527570746,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.005775097120605457,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.09090909090909091
+        }
+      }
+    },
+    {
+      "case_id": 71,
+      "policy": 2,
+      "policy_label": "candidate",
+      "teacher": false,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 257,
+      "sampled_frames": 14,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10771283605858843,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.108027729308605,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.00057910398804792,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.0006458854591606289,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.004973290527570746,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.0060156390985158705,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.07142857142857142
+        }
+      }
+    },
+    {
+      "case_id": 72,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 716,
+      "sampled_frames": 37,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.07557920120196626,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 540
+          },
+          "p01_distance_m": 0.08170872106330838,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0004103289854363334,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.00048385353014244613,
+          "fraction_negative_signed_distance": 0.02702702702702703,
+          "fraction_below_10mm": 0.5675675675675675
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0018572798868110186,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.0026377036913677776,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.1891891891891892
+        }
+      }
+    },
+    {
+      "case_id": 73,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 683,
+      "sampled_frames": 36,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.07557920120196626,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 540
+          },
+          "p01_distance_m": 0.08153845662271554,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0004103289854363334,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.0004590151269319246,
+          "fraction_negative_signed_distance": 0.027777777777777776,
+          "fraction_below_10mm": 0.5833333333333334
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0018572798868110186,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.002616025252352312,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.19444444444444445
+        }
+      }
+    },
+    {
+      "case_id": 74,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 378,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09164832956129748,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.09251177782414048,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0006441141050234579,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": -0.0005343214216773257,
+          "fraction_negative_signed_distance": 0.1,
+          "fraction_below_10mm": 0.8
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0016605953510854293,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.002369699163131924,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 75,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 413,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09164832956129748,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.09260266711496606,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0006441141050234579,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": -0.000522764297114575,
+          "fraction_negative_signed_distance": 0.09090909090909091,
+          "fraction_below_10mm": 0.8181818181818182
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0016605953510854293,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.002444341669663134,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.22727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 76,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 204,
+      "sampled_frames": 12,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10534641849022475,
+            "links": [
+              "fr_foot_Link",
+              "rr_calf_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.1056003422908536,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.006733888784348049,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.006801152370859597,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.4166666666666667
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.008478148496527794,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.00884727835027951,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.08333333333333333
+        }
+      }
+    },
+    {
+      "case_id": 77,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 6,
+      "end_step": 290,
+      "sampled_frames": 16,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10534641849022475,
+            "links": [
+              "fr_foot_Link",
+              "rr_calf_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.10569267821835501,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.006733888784348049,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.006825611856863796,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5625
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.008478148496527794,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.008981507388007407,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0625
+        }
+      }
+    },
+    {
+      "case_id": 78,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 719,
+      "sampled_frames": 37,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.07854405109088952,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.08091217674383377,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.00041711141102569824,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.00023378587064521697,
+          "fraction_negative_signed_distance": 0.02702702702702703,
+          "fraction_below_10mm": 0.5945945945945946
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.001851554562648885,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.0024144404646086965,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.1891891891891892
+        }
+      }
+    },
+    {
+      "case_id": 79,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 686,
+      "sampled_frames": 36,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.07854405109088952,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.08084639547569643,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.00041711141102569824,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.00021570539059880282,
+          "fraction_negative_signed_distance": 0.027777777777777776,
+          "fraction_below_10mm": 0.6111111111111112
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.001851554562648885,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 340
+          },
+          "p01_distance_m": 0.002398804745109813,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.19444444444444445
+        }
+      }
+    },
+    {
+      "case_id": 80,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 377,
+      "sampled_frames": 20,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09385358330571679,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.09428670132837796,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0002056131981787322,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": -0.00017679641184140937,
+          "fraction_negative_signed_distance": 0.1,
+          "fraction_below_10mm": 0.75
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.002030551242847685,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.0027393861803811023,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.25
+        }
+      }
+    },
+    {
+      "case_id": 81,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 412,
+      "sampled_frames": 22,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09385358330571679,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.0943322926991844,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0002056131981787322,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": -0.00017376306591116488,
+          "fraction_negative_signed_distance": 0.09090909090909091,
+          "fraction_below_10mm": 0.7727272727272727
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.002030551242847685,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.0028140003843319886,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.22727272727272727
+        }
+      }
+    },
+    {
+      "case_id": 82,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 205,
+      "sampled_frames": 12,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10990233332051023,
+            "links": [
+              "fl_foot_Link",
+              "rl_calf_Link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.1099396269352281,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.007006458320847871,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.007055097567721736,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5833333333333334
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.009205563689828087,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.00947335532232176,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.08333333333333333
+        }
+      }
+    },
+    {
+      "case_id": 83,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_up",
+      "level": 9,
+      "end_step": 289,
+      "sampled_frames": 16,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10990233332051023,
+            "links": [
+              "fl_foot_Link",
+              "rl_calf_Link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.10995318824967096,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.007006458320847871,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.007072784566584959,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.75
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.009205563689828087,
+            "links": [
+              "base_link",
+              "fl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.009570734097774005,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0625
+        }
+      }
+    },
+    {
+      "case_id": 84,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 796,
+      "sampled_frames": 41,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.0994512550726627,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 600
+          },
+          "p01_distance_m": 0.09969483702878093,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0009809111434840073,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 400
+          },
+          "p01_distance_m": 0.0011051232210115445,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5853658536585366
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0009809111434840073,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 400
+          },
+          "p01_distance_m": 0.0011826753681477252,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.12195121951219512
+        }
+      }
+    },
+    {
+      "case_id": 85,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 770,
+      "sampled_frames": 40,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.0994512550726627,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 600
+          },
+          "p01_distance_m": 0.09968874747987798,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0009809111434840073,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 400
+          },
+          "p01_distance_m": 0.001102017919073356,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.575
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0009809111434840073,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 400
+          },
+          "p01_distance_m": 0.0011776312625311322,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.125
+        }
+      }
+    },
+    {
+      "case_id": 86,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 384,
+      "sampled_frames": 21,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09248749405867517,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.09377331030542554,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.000785517413892907,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": -0.0005009148817182172,
+          "fraction_negative_signed_distance": 0.047619047619047616,
+          "fraction_below_10mm": 0.8095238095238095
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0031585899194706245,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 200
+          },
+          "p01_distance_m": 0.003996047557147848,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.09523809523809523
+        }
+      }
+    },
+    {
+      "case_id": 87,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 421,
+      "sampled_frames": 23,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09248749405867517,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.0939018919301006,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.000785517413892907,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": -0.00047245462850074816,
+          "fraction_negative_signed_distance": 0.043478260869565216,
+          "fraction_below_10mm": 0.6086956521739131
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0031585899194706245,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 200
+          },
+          "p01_distance_m": 0.00407979332091557,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.08695652173913043
+        }
+      }
+    },
+    {
+      "case_id": 88,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 190,
+      "sampled_frames": 11,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10122652529089375,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.1036344443997511,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.002511474133404027,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.002636602664761968,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5454545454545454
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.009955461018853288,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.010658468874036521,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.09090909090909091
+        }
+      }
+    },
+    {
+      "case_id": 89,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 6,
+      "end_step": 260,
+      "sampled_frames": 14,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10122652529089375,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.10251857089413498,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.002511474133404027,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.0026741412241693503,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5714285714285714
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.009955461018853288,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.010869371230591493,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.07142857142857142
+        }
+      }
+    },
+    {
+      "case_id": 90,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 792,
+      "sampled_frames": 41,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.0976344616348357,
+            "links": [
+              "fl_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.10057197922275934,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0008462081954009287,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 460
+          },
+          "p01_distance_m": 0.0009010220727914459,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5853658536585366
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0008462081954009287,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 460
+          },
+          "p01_distance_m": 0.0009010220727914459,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.12195121951219512
+        }
+      }
+    },
+    {
+      "case_id": 91,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 1249,
+      "sampled_frames": 64,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.0976344616348357,
+            "links": [
+              "fl_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 180
+          },
+          "p01_distance_m": 0.10226105183581544,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.0007179031798444655,
+            "links": [
+              "base_link",
+              "fl_hip_Link"
+            ],
+            "step": 1200
+          },
+          "p01_distance_m": 0.0007987353396450373,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5625
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0008462081954009287,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 460
+          },
+          "p01_distance_m": 0.0009325400522909931,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.078125
+        }
+      }
+    },
+    {
+      "case_id": 92,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 384,
+      "sampled_frames": 21,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09500264205197385,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.0956963057929722,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0003776794192808992,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": -5.8649564113953656e-05,
+          "fraction_negative_signed_distance": 0.047619047619047616,
+          "fraction_below_10mm": 0.8095238095238095
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0035663812669914892,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 200
+          },
+          "p01_distance_m": 0.0043181943238930496,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.09523809523809523
+        }
+      }
+    },
+    {
+      "case_id": 93,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 422,
+      "sampled_frames": 23,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.09500264205197385,
+            "links": [
+              "fr_thigh_Link",
+              "fl_thigh_Link"
+            ],
+            "step": 260
+          },
+          "p01_distance_m": 0.09576567216707203,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": -0.0003776794192808992,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": -2.6746578597259098e-05,
+          "fraction_negative_signed_distance": 0.043478260869565216,
+          "fraction_below_10mm": 0.6086956521739131
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.0035663812669914892,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 200
+          },
+          "p01_distance_m": 0.004393375629583206,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.08695652173913043
+        }
+      }
+    },
+    {
+      "case_id": 94,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 190,
+      "sampled_frames": 11,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10502106522683292,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.10702584509637146,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.002343480290081945,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.0024771663419412954,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5454545454545454
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.009647471167990989,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.009771285156055347,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.09090909090909091
+        }
+      }
+    },
+    {
+      "case_id": 95,
+      "policy": 3,
+      "policy_label": "candidate_teacher",
+      "teacher": true,
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "terrain": "stairs_down",
+      "level": 9,
+      "end_step": 260,
+      "sampled_frames": 14,
+      "categories": {
+        "inter_leg": {
+          "minimum": {
+            "distance_m": 0.10502106522683292,
+            "links": [
+              "rr_thigh_Link",
+              "rl_thigh_Link"
+            ],
+            "step": 160
+          },
+          "p01_distance_m": 0.10608967666287479,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.0
+        },
+        "leg_body": {
+          "minimum": {
+            "distance_m": 0.002343480290081945,
+            "links": [
+              "base_link",
+              "fr_hip_link"
+            ],
+            "step": 80
+          },
+          "p01_distance_m": 0.0025172721574991007,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.5714285714285714
+        },
+        "leg_body_distal": {
+          "minimum": {
+            "distance_m": 0.009647471167990989,
+            "links": [
+              "base_link",
+              "rl_thigh_Link"
+            ],
+            "step": 100
+          },
+          "p01_distance_m": 0.009808429352474654,
+          "fraction_negative_signed_distance": 0.0,
+          "fraction_below_10mm": 0.07142857142857142
+        }
+      }
+    }
+  ],
+  "paired": [
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 0,
+      "candidate_case_id": 48,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.00012776807655651146,
+        "leg_body": 0.0012946609066688838,
+        "leg_body_distal": 0.00104300388252442
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 1,
+      "candidate_case_id": 49,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.00012776807655651146,
+        "leg_body": 0.0012946609066688838,
+        "leg_body_distal": 0.00104300388252442
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 2,
+      "candidate_case_id": 50,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.011013900691436415,
+        "leg_body": -0.005156388167586257,
+        "leg_body_distal": -0.0058713781662328175
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 3,
+      "candidate_case_id": 51,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.011013900691436415,
+        "leg_body": -0.005156388167586257,
+        "leg_body_distal": -0.0058713781662328175
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 4,
+      "candidate_case_id": 52,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.0436845255872874,
+        "leg_body": -0.0038715208621395653,
+        "leg_body_distal": -0.0028541193787413616
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 5,
+      "candidate_case_id": 53,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.0436845255872874,
+        "leg_body": -0.002354713935731144,
+        "leg_body_distal": -0.0028541193787413616
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 6,
+      "candidate_case_id": 54,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.004857248876975681,
+        "leg_body": 0.0019648910221005604,
+        "leg_body_distal": 0.0005228487756266534
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 7,
+      "candidate_case_id": 55,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.004857248876975681,
+        "leg_body": 0.0019648910221005604,
+        "leg_body_distal": 0.0005228487756266534
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 8,
+      "candidate_case_id": 56,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.020139077559058527,
+        "leg_body": -0.0010215836807179381,
+        "leg_body_distal": -0.0025431588261509673
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 9,
+      "candidate_case_id": 57,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.020139077559058527,
+        "leg_body": -0.0010215836807179381,
+        "leg_body_distal": -0.0025431588261509673
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 10,
+      "candidate_case_id": 58,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.05830636456025211,
+        "leg_body": -0.009631053566846999,
+        "leg_body_distal": -0.024286439917290716
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 11,
+      "candidate_case_id": 59,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.05830636456025211,
+        "leg_body": -0.009631053566846999,
+        "leg_body_distal": -0.024286439917290716
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 12,
+      "candidate_case_id": 60,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.006175068833162128,
+        "leg_body": -0.0005186472254964675,
+        "leg_body_distal": 0.0011812742923260557
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 13,
+      "candidate_case_id": 61,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.006175068833162128,
+        "leg_body": -0.0005186472254964675,
+        "leg_body_distal": 0.0011812742923260557
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 14,
+      "candidate_case_id": 62,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.030078800653730975,
+        "leg_body": 0.001125916178936494,
+        "leg_body_distal": 6.999982014810422e-05
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 15,
+      "candidate_case_id": 63,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.03129621434141981,
+        "leg_body": 0.001125916178936494,
+        "leg_body_distal": 6.999982014810422e-05
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 16,
+      "candidate_case_id": 64,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.011069702589381739,
+        "leg_body": 0.0015219337705721593,
+        "leg_body_distal": 0.0020619457194136857
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 17,
+      "candidate_case_id": 65,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.010247469955926888,
+        "leg_body": 0.0015219337705721593,
+        "leg_body_distal": 0.0020619457194136857
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 18,
+      "candidate_case_id": 66,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.008105753332045579,
+        "leg_body": 0.001922337497335711,
+        "leg_body_distal": 0.0012111686716242236
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 19,
+      "candidate_case_id": 67,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.008105753332045579,
+        "leg_body": 0.001922337497335711,
+        "leg_body_distal": 0.0012111686716242236
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 20,
+      "candidate_case_id": 68,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.028506984763590815,
+        "leg_body": 0.001273737393191347,
+        "leg_body_distal": 0.0005057870460962819
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 21,
+      "candidate_case_id": 69,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.029485073545674437,
+        "leg_body": 0.001273737393191347,
+        "leg_body_distal": 0.0005057870460962819
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 22,
+      "candidate_case_id": 70,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.011833670362772872,
+        "leg_body": 0.001686954076577726,
+        "leg_body_distal": 0.0033383886601681544
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": false, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 23,
+      "candidate_case_id": 71,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.011833670362772872,
+        "leg_body": 0.001686954076577726,
+        "leg_body_distal": 0.0033383886601681544
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 24,
+      "candidate_case_id": 72,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.0022023317871218556,
+        "leg_body": -0.0013615603875580542,
+        "leg_body_distal": -0.002302543008203803
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 25,
+      "candidate_case_id": 73,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.0022023317871218556,
+        "leg_body": -0.0013615603875580542,
+        "leg_body_distal": -0.002302543008203803
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 26,
+      "candidate_case_id": 74,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.02813406203016003,
+        "leg_body": -0.002426209864501359,
+        "leg_body_distal": -0.002102819242733528
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 27,
+      "candidate_case_id": 75,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.02813406203016003,
+        "leg_body": -0.002426209864501359,
+        "leg_body_distal": -0.002102819242733528
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 28,
+      "candidate_case_id": 76,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.008586140442219253,
+        "leg_body": 0.0005105553211999271,
+        "leg_body_distal": 0.0005124901126917682
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-40.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 29,
+      "candidate_case_id": 77,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.008586140442219253,
+        "leg_body": 0.0010034040717108363,
+        "leg_body_distal": 0.0005124901126917682
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 30,
+      "candidate_case_id": 78,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.007954263114112278,
+        "leg_body": -0.001279995676078915,
+        "leg_body_distal": -0.0015529795216439575
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 31,
+      "candidate_case_id": 79,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.007954263114112278,
+        "leg_body": -0.001279995676078915,
+        "leg_body_distal": -0.0015529795216439575
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 32,
+      "candidate_case_id": 80,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.024995749055948493,
+        "leg_body": -0.0022298512911055005,
+        "leg_body_distal": -0.0019502252229970417
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 33,
+      "candidate_case_id": 81,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.024995749055948493,
+        "leg_body": -0.0022298512911055005,
+        "leg_body_distal": -0.0019502252229970417
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 34,
+      "candidate_case_id": 82,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.00627034419912538,
+        "leg_body": 0.0008855344452963574,
+        "leg_body_distal": 8.841164357663474e-05
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_up\", \"terrain_atlas_column\": 6, \"terrain_origin\": [-13.5, -121.5, -1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 35,
+      "candidate_case_id": 83,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.003737332746999125,
+        "leg_body": 0.0033293294942158573,
+        "leg_body_distal": 0.000830114523339533
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 36,
+      "candidate_case_id": 84,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.005159881781347048,
+        "leg_body": 0.000313408409256886,
+        "leg_body_distal": -0.0004659447227714406
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 37,
+      "candidate_case_id": 85,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.005159881781347048,
+        "leg_body": 0.000313408409256886,
+        "leg_body_distal": -0.0004659447227714406
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 38,
+      "candidate_case_id": 86,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.020366145557406068,
+        "leg_body": -4.4451966404940486e-05,
+        "leg_body_distal": 0.0010644038889302074
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 39,
+      "candidate_case_id": 87,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.020366145557406068,
+        "leg_body": -4.4451966404940486e-05,
+        "leg_body_distal": 0.0010644038889302074
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 40,
+      "candidate_case_id": 88,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.0038407131648153653,
+        "leg_body": 0.0033257890870111374,
+        "leg_body_distal": 0.0078616295580008
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 6, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-40.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 41,
+      "candidate_case_id": 89,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": -0.0038407131648153653,
+        "leg_body": 0.0033257890870111374,
+        "leg_body_distal": 0.0078616295580008
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 42,
+      "candidate_case_id": 90,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.007098289288783491,
+        "leg_body": 0.00022665145756715823,
+        "leg_body_distal": -1.062444866129636e-06
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.3, 0.0, 0.0]}",
+      "source_case_id": 43,
+      "candidate_case_id": 91,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.007098289288783491,
+        "leg_body": 9.8346442010695e-05,
+        "leg_body_distal": -1.062444866129636e-06
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 44,
+      "candidate_case_id": 92,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.026142894911552,
+        "leg_body": 0.0002510595755916788,
+        "leg_body_distal": 0.0013671682407135196
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [0.6, 0.0, 0.0]}",
+      "source_case_id": 45,
+      "candidate_case_id": 93,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.026831281707756297,
+        "leg_body": 0.0006733080441165113,
+        "leg_body_distal": 0.0015093419576286335
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"continue\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 46,
+      "candidate_case_id": 94,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.0030290390423906854,
+        "leg_body": 0.0033906937309834653,
+        "leg_body_distal": 0.007183120602132149
+      }
+    },
+    {
+      "case_key": "{\"direction\": \"forward\", \"landing_mode\": \"stop\", \"level\": 9, \"mode\": \"direct\", \"suite\": \"terrain83\", \"teacher\": true, \"terrain\": \"stairs_down\", \"terrain_atlas_column\": 11, \"terrain_origin\": [-13.5, -76.5, 1.350000023841858], \"velocity\": [1.2, 0.0, 0.0]}",
+      "source_case_id": 47,
+      "candidate_case_id": 95,
+      "candidate_minus_source_minimum_m": {
+        "inter_leg": 0.0030290390423906854,
+        "leg_body": 0.0033906937309834653,
+        "leg_body_distal": 0.007183120602132149
+      }
+    }
+  ]
+}

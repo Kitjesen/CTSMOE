@@ -1,0 +1,14 @@
+{
+  "state": "DIAGNOSIS_FAILED",
+  "optimizer_updates": 0,
+  "error": "'JointVelocityAction' object has no attribute 'joint_indices'",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/full_episode_v12_stage_20260921/gradient_diagnosis/launcher.py\", line 208, in diagnostic_learn\n    ledger = GradientLedger(alg, raw, output)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/full_episode_v12_stage_20260921/gradient_diagnosis/ledger.py\", line 145, in __init__\n    wheels = raw.action_manager.get_term('joint_vel').joint_indices\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'JointVelocityAction' object has no attribute 'joint_indices'\n",
+  "state_hashes_before": {
+    "model": "6e027c88a7e1d47f89b02801c860826e2b30b4bc911ced1d89ad3ebd2d4ec068",
+    "reference": "53f059dcd84a14268fbdf12c358d52c02bd395e2ffccef43a2eb92bc7dc797cf",
+    "ppo_optimizer": "4734340d8d618ba4eee05e962bbb1af6ec038701e6b236f8301c3d80519ee17d",
+    "student_optimizer": "7be945990a0be4758a35b72f3dd05d1c8812e8df7a3a9dc2bb5e8f1bc1fad04e",
+    "coefficients": "{\"main\": 0.21093362834788681, \"student\": 0.0022221143221353456}"
+  },
+  "forbidden_calls": []
+}

@@ -1,0 +1,56 @@
+{
+  "status": "deferred_after_33865_evaluation_not_applied",
+  "weights": {
+    "pit": 0.1,
+    "stairs_up": 0.13,
+    "stairs_down": 0.1,
+    "wave": 0.11,
+    "slope_up": 0.14,
+    "slope_down": 0.07,
+    "rough_slope": 0.11,
+    "obstacles": 0.04,
+    "flat": 0.2
+  },
+  "provisional_counts_4096": {
+    "pit": 409,
+    "stairs_up": 532,
+    "stairs_down": 409,
+    "wave": 451,
+    "slope_up": 573,
+    "slope_down": 287,
+    "rough_slope": 451,
+    "obstacles": 164,
+    "flat": 820
+  },
+  "learner_group_counts": {
+    "3072": {
+      "pit": 307,
+      "stairs_up": 399,
+      "stairs_down": 307,
+      "wave": 338,
+      "slope_up": 430,
+      "slope_down": 215,
+      "rough_slope": 338,
+      "obstacles": 123,
+      "flat": 615
+    },
+    "1024": {
+      "pit": 102,
+      "stairs_up": 133,
+      "stairs_down": 102,
+      "wave": 113,
+      "slope_up": 143,
+      "slope_down": 72,
+      "rough_slope": 113,
+      "obstacles": 41,
+      "flat": 205
+    }
+  },
+  "current_flat_count": 1639,
+  "retained_current_speed_and_stop_sampling": true,
+  "pit_fraction_unchanged": true,
+  "reward_change": false,
+  "training_launch": false,
+  "note": "Counts assume preserved3072/1024 learner partition and must be verified from actual migration. Final allocation depends on stopped33865 evaluation; not asserted optimal.",
+  "decision_evidence": "requested_evaluation_33865/EVALUATION_REVIEW.md"
+}

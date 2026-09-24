@@ -1,0 +1,1365 @@
+{
+  "state": "complete",
+  "optimizer_updates": 0,
+  "reverse_stair_control_samples": 294,
+  "variety": {
+    "profile": "radial_routes_v30",
+    "variants": {
+      "single_curb_up": {
+        "column": 6,
+        "count": 203,
+        "mean_level": 6.068965435028076
+      },
+      "short_tread_up": {
+        "column": 7,
+        "count": 187,
+        "mean_level": 6.748663425445557
+      },
+      "long_tread_up": {
+        "column": 9,
+        "count": 143,
+        "mean_level": 6.286713123321533
+      },
+      "ramp_then_stairs_up": {
+        "column": 10,
+        "count": 205,
+        "mean_level": 5.5756096839904785
+      },
+      "short_tread_down": {
+        "column": 12,
+        "count": 470,
+        "mean_level": 6.155318737030029
+      }
+    },
+    "reverse_envs": 618,
+    "episode_statistics": [
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    ],
+    "statistic_axes": [
+      "variant_in_column_order",
+      "teacher_student",
+      "forward_backward",
+      "episodes_radius_exit_physical_failure"
+    ],
+    "interpretation": "Training distribution; not successful traversal counts"
+  },
+  "selected": "/root/autodl-tmp/cts-omni-repair-v19-20260922/continuous_training_v33_20260924/attempt04/integration16/model_44334.pt",
+  "selected_sha256": "ffac3ab2ee0c0c42384d98776dce96d8e4413e59cf4e00b691a959a8a847ca9c",
+  "common_terrain_source_sha256": "52d9ed789d3e6599911b39c36e0429f3c87669d01dd360791cec5920d13a4e53",
+  "same_initial_terrain_assignment": true,
+  "student_environments": 2048,
+  "steps": 3,
+  "control_period_s": 0.02,
+  "terrain": {
+    "flat": {
+      "control_samples": 984,
+      "xy_tracking_mae_mps": 0.3862560987472534,
+      "yaw_tracking_mae_radps": 0.17214101552963257,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.15900768339633942,
+      "mean_body_height_from_tile_origin_m": 0.47903868556022644,
+      "first_second_posture_rms_rad": 0.1590077131986618,
+      "all_axis_zero_command_fraction": 0.24593494832515717
+    },
+    "stairs_up": {
+      "control_samples": 687,
+      "xy_tracking_mae_mps": 0.6481378078460693,
+      "yaw_tracking_mae_radps": 0.1774093210697174,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.3074607849121094,
+      "mean_body_height_from_tile_origin_m": 0.5574759244918823,
+      "first_second_posture_rms_rad": 0.30746087431907654,
+      "all_axis_zero_command_fraction": 0.0
+    },
+    "stairs_down": {
+      "control_samples": 687,
+      "xy_tracking_mae_mps": 0.6304828524589539,
+      "yaw_tracking_mae_radps": 0.18973425030708313,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.30387377738952637,
+      "mean_body_height_from_tile_origin_m": 0.5553500652313232,
+      "first_second_posture_rms_rad": 0.30387380719184875,
+      "all_axis_zero_command_fraction": 0.0
+    },
+    "wave": {
+      "control_samples": 591,
+      "xy_tracking_mae_mps": 0.9389258027076721,
+      "yaw_tracking_mae_radps": 0.7194276452064514,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.32318225502967834,
+      "mean_body_height_from_tile_origin_m": 0.32067757844924927,
+      "first_second_posture_rms_rad": 0.32318225502967834,
+      "all_axis_zero_command_fraction": 0.11675126850605011
+    },
+    "slope_up": {
+      "control_samples": 492,
+      "xy_tracking_mae_mps": 0.9402889609336853,
+      "yaw_tracking_mae_radps": 0.6699910759925842,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.31076353788375854,
+      "mean_body_height_from_tile_origin_m": 0.5440314412117004,
+      "first_second_posture_rms_rad": 0.31076356768608093,
+      "all_axis_zero_command_fraction": 0.07926829159259796
+    },
+    "slope_down": {
+      "control_samples": 492,
+      "xy_tracking_mae_mps": 0.9826297760009766,
+      "yaw_tracking_mae_radps": 0.7229775190353394,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.3045731484889984,
+      "mean_body_height_from_tile_origin_m": 0.5540511608123779,
+      "first_second_posture_rms_rad": 0.304573118686676,
+      "all_axis_zero_command_fraction": 0.09146340936422348
+    },
+    "rough_slope": {
+      "control_samples": 492,
+      "xy_tracking_mae_mps": 1.0236608982086182,
+      "yaw_tracking_mae_radps": 0.7916786670684814,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.30800819396972656,
+      "mean_body_height_from_tile_origin_m": 0.555500864982605,
+      "first_second_posture_rms_rad": 0.30800825357437134,
+      "all_axis_zero_command_fraction": 0.09146340936422348
+    },
+    "obstacles": {
+      "control_samples": 492,
+      "xy_tracking_mae_mps": 1.0170936584472656,
+      "yaw_tracking_mae_radps": 0.6817633509635925,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.31172776222229004,
+      "mean_body_height_from_tile_origin_m": 0.5532166361808777,
+      "first_second_posture_rms_rad": 0.3117277920246124,
+      "all_axis_zero_command_fraction": 0.07926829159259796
+    },
+    "continuous_curbs": {
+      "control_samples": 306,
+      "xy_tracking_mae_mps": 0.6768926978111267,
+      "yaw_tracking_mae_radps": 0.19990213215351105,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.31955990195274353,
+      "mean_body_height_from_tile_origin_m": 0.5550531148910522,
+      "first_second_posture_rms_rad": 0.31955987215042114,
+      "all_axis_zero_command_fraction": 0.0
+    },
+    "continuous_blocks": {
+      "control_samples": 246,
+      "xy_tracking_mae_mps": 0.6970582008361816,
+      "yaw_tracking_mae_radps": 0.23356741666793823,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.3104616701602936,
+      "mean_body_height_from_tile_origin_m": 0.5603509545326233,
+      "first_second_posture_rms_rad": 0.3104616701602936,
+      "all_axis_zero_command_fraction": 0.0
+    },
+    "continuous_ramp_stairs": {
+      "control_samples": 246,
+      "xy_tracking_mae_mps": 0.6879279017448425,
+      "yaw_tracking_mae_radps": 0.21778957545757294,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.3059408366680145,
+      "mean_body_height_from_tile_origin_m": 0.5536619424819946,
+      "first_second_posture_rms_rad": 0.3059408962726593,
+      "all_axis_zero_command_fraction": 0.0
+    },
+    "continuous_split_height": {
+      "control_samples": 153,
+      "xy_tracking_mae_mps": 0.7007416486740112,
+      "yaw_tracking_mae_radps": 0.22655639052391052,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.31944540143013,
+      "mean_body_height_from_tile_origin_m": 0.5507157444953918,
+      "first_second_posture_rms_rad": 0.31944540143013,
+      "all_axis_zero_command_fraction": 0.0
+    },
+    "continuous_cross_bumps": {
+      "control_samples": 123,
+      "xy_tracking_mae_mps": 0.7000851035118103,
+      "yaw_tracking_mae_radps": 0.20246385037899017,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.3088187277317047,
+      "mean_body_height_from_tile_origin_m": 0.548992931842804,
+      "first_second_posture_rms_rad": 0.3088186979293823,
+      "all_axis_zero_command_fraction": 0.0
+    },
+    "continuous_split_route": {
+      "control_samples": 153,
+      "xy_tracking_mae_mps": 0.672990620136261,
+      "yaw_tracking_mae_radps": 0.19247683882713318,
+      "any_hip_inward_ge_039_fraction": 0.0,
+      "physical_termination_events": 0,
+      "timeout_events": 0,
+      "posture_rms_rad": 0.30868303775787354,
+      "mean_body_height_from_tile_origin_m": 0.5561457276344299,
+      "first_second_posture_rms_rad": 0.30868300795555115,
+      "all_axis_zero_command_fraction": 0.0
+    }
+  },
+  "hip_names": [
+    "fr_hip_joint",
+    "fl_hip_joint",
+    "rr_hip_joint",
+    "rl_hip_joint"
+  ],
+  "requested_inward_peak_rad": [
+    0.8391568064689636,
+    0.5260905623435974,
+    0.690099835395813,
+    1.1454451084136963
+  ],
+  "limited_target_inward_peak_rad": [
+    0.3689999580383301,
+    0.3689999580383301,
+    0.3689999580383301,
+    0.3689999580383301
+  ],
+  "actual_inward_peak_rad": [
+    0.2806601822376251,
+    0.25657790899276733,
+    0.3068745732307434,
+    0.2600380480289459
+  ],
+  "max_student_wheel_speed_radps": 30.000642776489258,
+  "max_student_leg_torque_nm": 91.71562957763672,
+  "flat_pure_yaw_control_samples": 156,
+  "flat_pure_side_control_samples": 177,
+  "flat_command_abs_max": [
+    1.9952555894851685,
+    0.9992895722389221,
+    1.4746606349945068
+  ],
+  "landing_v31": {
+    "profile": "landing_force_velocity_v31",
+    "force_weight": -0.5,
+    "velocity_weight": -1.0,
+    "threshold_N": 337.0773010253906,
+    "previous_frame_speed_free_mps": 0.25,
+    "landings": [
+      172,
+      142,
+      129,
+      158
+    ],
+    "force_peak_N": [
+      1935.4696044921875,
+      2076.71630859375,
+      2499.05517578125,
+      3081.663330078125
+    ],
+    "previous_frame_down_peak_mps": [
+      2.628453254699707,
+      1.6052520275115967,
+      2.2311317920684814,
+      1.5624229907989502
+    ],
+    "force_cost_sum": 1534.925048828125,
+    "speed_cost_sum": 133.41966247558594,
+    "scope": "all terrains; excludes initial unsupported settling; cumulative training evidence",
+    "force_history_hz": 200,
+    "velocity_hz": 50,
+    "threshold_is_hardware_limit": false
+  },
+  "force_window_summary": {
+    "p95_per_wheel_N": [
+      217.4405059814453,
+      279.7541809082031,
+      304.3036193847656,
+      312.6580505371094
+    ],
+    "max_per_wheel_N": [
+      5127.61572265625,
+      15255.822265625,
+      8607.0595703125,
+      6690.84765625
+    ],
+    "interpretation": "200Hz force-history maxima per 50Hz control frame; includes support, not landing-only quantiles"
+  },
+  "fixed_route_events": [
+    [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  ],
+  "fixed_route_axes": [
+    "variant_in_column_order",
+    "command_group",
+    "episodes_supported_complete_physical_timeout"
+  ],
+  "continuous_route_events": [
+    [
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ]
+  ],
+  "continuous_route_axes": [
+    "learner_teacher_student",
+    "family",
+    "level",
+    "episodes_success_boundary_physical"
+  ],
+  "teacher_action_protocol": "critic_observation_teacher_encoder_actor_mean_or_state_dependent_first_component",
+  "omni_command_samples": [
+    2310,
+    0,
+    480,
+    500,
+    333
+  ],
+  "state_hashes_unchanged": true,
+  "meaning": "matched initial terrain and simulator seed; fixed zero-update student rollout, not real-world validation",
+  "new_route_level_protocol": "new_routes_balanced_levels0..9"
+}

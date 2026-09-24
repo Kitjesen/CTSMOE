@@ -1,0 +1,68 @@
+{
+  "queried_at": "2026-09-19T06:36:00.913966+08:00",
+  "runs": {
+    "original": {
+      "state": "training",
+      "completed_updates": 27879,
+      "seconds": 9.429451942443848,
+      "pid": 107477,
+      "directory": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000_wave_surface_20260919"
+    },
+    "pit": {
+      "state": "training",
+      "completed_updates": 76,
+      "seconds": 4.480153322219849,
+      "pid": 115374,
+      "directory": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/pit_formal1024_v3_20260919",
+      "num_envs": 1024,
+      "teacher_envs": 768,
+      "student_envs": 256,
+      "target_updates": 30000,
+      "seconds_last10_mean": 4.4415284395217896,
+      "frontier_height_m": 0.25,
+      "max_height_m": 1.2,
+      "learning_rate": 2.2500000000000008e-05,
+      "losses": {
+        "value": 0.09430119469761848,
+        "surrogate": -0.009265083912760019,
+        "entropy": 12.0649742603302,
+        "mean_latent_loss": 0.0009977809269912541,
+        "mean_load_balance_loss": 4.839415032620309e-05
+      },
+      "learner_totals": {
+        "teacher": {
+          "episodes": 1096,
+          "success": 0,
+          "physical": 411,
+          "base_contact": 56,
+          "overspeed": 355,
+          "position": 0,
+          "torque": 0,
+          "out_of_lane": 0,
+          "timeout": 685,
+          "front_supported": 965,
+          "all_supported": 876,
+          "early_failure": 24
+        },
+        "student": {
+          "episodes": 425,
+          "success": 0,
+          "physical": 196,
+          "base_contact": 22,
+          "overspeed": 174,
+          "position": 0,
+          "torque": 0,
+          "out_of_lane": 0,
+          "timeout": 229,
+          "front_supported": 316,
+          "all_supported": 290,
+          "early_failure": 12
+        }
+      },
+      "checkpoint_names": [
+        "model_0.pt"
+      ]
+    }
+  },
+  "gpu": "name, memory.used [MiB], memory.free [MiB], utilization.gpu [%]\nNVIDIA GeForce RTX 5090, 22288 MiB, 9824 MiB, 88 %"
+}

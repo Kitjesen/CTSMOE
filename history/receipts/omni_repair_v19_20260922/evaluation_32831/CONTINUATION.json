@@ -1,0 +1,125 @@
+{
+  "severe": false,
+  "forward": {
+    "source31831": {
+      "label": "source31831",
+      "first_rms": 0.11595603483267805,
+      "first_peak_rms": 0.14901060080833095,
+      "first_peak_joint_rad": 0.3542715907096863,
+      "first_peak_time_s": 0.3,
+      "max_rms": 0.21247820267603962,
+      "height_min": 0.4471995532512665,
+      "height_max": 0.47761768102645874,
+      "last_height": 0.47292762994766235,
+      "last_rms": 0.1990438817321861,
+      "last_xy_error": 0.05533286929130554,
+      "last_yaw_error": 0.015937095507979393,
+      "pass": true
+    },
+    "source31831_teacher": {
+      "label": "source31831_teacher",
+      "first_rms": 0.11439161872888214,
+      "first_peak_rms": 0.13768331447505894,
+      "first_peak_joint_rad": 0.33018797636032104,
+      "first_peak_time_s": 0.34,
+      "max_rms": 0.18782272535141442,
+      "height_min": 0.4522630572319031,
+      "height_max": 0.4744962155818939,
+      "last_height": 0.4741402864456177,
+      "last_rms": 0.18469630678690624,
+      "last_xy_error": 0.01396214496344328,
+      "last_yaw_error": 0.009841984137892723,
+      "pass": true
+    },
+    "candidate": {
+      "label": "candidate",
+      "first_rms": 0.05207088192411745,
+      "first_peak_rms": 0.07787556277847359,
+      "first_peak_joint_rad": 0.16375333070755005,
+      "first_peak_time_s": 0.16,
+      "max_rms": 0.07787556277847359,
+      "height_min": 0.44399136304855347,
+      "height_max": 0.4613303542137146,
+      "last_height": 0.46129828691482544,
+      "last_rms": 0.07182686052620489,
+      "last_xy_error": 0.02556602470576763,
+      "last_yaw_error": 0.0004266233881935477,
+      "pass": true
+    },
+    "candidate_teacher": {
+      "label": "candidate_teacher",
+      "first_rms": 0.04562059615111076,
+      "first_peak_rms": 0.06718204149833928,
+      "first_peak_joint_rad": 0.12708228826522827,
+      "first_peak_time_s": 0.14,
+      "max_rms": 0.07491133119958199,
+      "height_min": 0.4443751573562622,
+      "height_max": 0.46259424090385437,
+      "last_height": 0.46255719661712646,
+      "last_rms": 0.07483048756784905,
+      "last_xy_error": 0.02675512619316578,
+      "last_yaw_error": 0.0011617779964581132,
+      "pass": true
+    }
+  },
+  "flat": {
+    "source31831": {
+      "label": "source31831",
+      "terrain": "flat",
+      "passed": 17,
+      "count": 20,
+      "physical": 0,
+      "straight": 1
+    },
+    "source31831_teacher": {
+      "label": "source31831_teacher",
+      "terrain": "flat",
+      "passed": 15,
+      "count": 20,
+      "physical": 0,
+      "straight": 2
+    },
+    "candidate": {
+      "label": "candidate",
+      "terrain": "flat",
+      "passed": 17,
+      "count": 20,
+      "physical": 0,
+      "straight": 2
+    },
+    "candidate_teacher": {
+      "label": "candidate_teacher",
+      "terrain": "flat",
+      "passed": 20,
+      "count": 20,
+      "physical": 0,
+      "straight": 2
+    }
+  },
+  "terrain_regressions": [],
+  "pose_regressions": [],
+  "lift_counts": {
+    "candidate:left:direct": 19,
+    "candidate:right:direct": 3,
+    "candidate:yaw_left:direct": 46,
+    "candidate:yaw_right:direct": 45,
+    "candidate:left:settle": 19,
+    "candidate:right:settle": 9,
+    "candidate:yaw_left:settle": 42,
+    "candidate:yaw_right:settle": 40,
+    "candidate_teacher:left:direct": 35,
+    "candidate_teacher:right:direct": 2,
+    "candidate_teacher:yaw_left:direct": 44,
+    "candidate_teacher:yaw_right:direct": 45,
+    "candidate_teacher:left:settle": 33,
+    "candidate_teacher:right:settle": 2,
+    "candidate_teacher:yaw_left:settle": 41,
+    "candidate_teacher:yaw_right:settle": 40
+  },
+  "no_candidate_lift": false,
+  "rule": "at least half flat cases physically fail for either policy OR both forward startup RMS >0.8 rad",
+  "repeated_terrain_regressions": [],
+  "repeated_no_lift": false,
+  "repeated_pose_regressions": [],
+  "stop_for_review": false
+}

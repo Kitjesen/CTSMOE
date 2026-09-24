@@ -1,0 +1,131 @@
+{
+  "severe": false,
+  "forward": {
+    "source31831": {
+      "label": "source31831",
+      "first_rms": 0.11606697771570808,
+      "first_peak_rms": 0.1497244214044387,
+      "first_peak_joint_rad": 0.35640770196914673,
+      "first_peak_time_s": 0.32,
+      "max_rms": 0.21242711289592042,
+      "height_min": 0.44832712411880493,
+      "height_max": 0.4772116541862488,
+      "last_height": 0.4755564033985138,
+      "last_rms": 0.18616136944290448,
+      "last_xy_error": 0.028583703562617302,
+      "last_yaw_error": 0.019854122772812843,
+      "pass": true
+    },
+    "source31831_teacher": {
+      "label": "source31831_teacher",
+      "first_rms": 0.11439161872888214,
+      "first_peak_rms": 0.13768331447505894,
+      "first_peak_joint_rad": 0.33018797636032104,
+      "first_peak_time_s": 0.34,
+      "max_rms": 0.18782272535141442,
+      "height_min": 0.4522630572319031,
+      "height_max": 0.4744962155818939,
+      "last_height": 0.4741402864456177,
+      "last_rms": 0.18469630678690624,
+      "last_xy_error": 0.01396214496344328,
+      "last_yaw_error": 0.009841984137892723,
+      "pass": true
+    },
+    "candidate": {
+      "label": "candidate",
+      "first_rms": 0.04511291312808708,
+      "first_peak_rms": 0.06038978438589927,
+      "first_peak_joint_rad": 0.14442038536071777,
+      "first_peak_time_s": 0.64,
+      "max_rms": 0.11084021097104083,
+      "height_min": 0.45003125071525574,
+      "height_max": 0.47516515851020813,
+      "last_height": 0.4750959873199463,
+      "last_rms": 0.11046255571414783,
+      "last_xy_error": 0.02323504537343979,
+      "last_yaw_error": 0.0007490276475436985,
+      "pass": true
+    },
+    "candidate_teacher": {
+      "label": "candidate_teacher",
+      "first_rms": 0.04403999670929235,
+      "first_peak_rms": 0.05543348300487045,
+      "first_peak_joint_rad": 0.12918317317962646,
+      "first_peak_time_s": 0.72,
+      "max_rms": 0.09257608300676763,
+      "height_min": 0.4494038224220276,
+      "height_max": 0.4705547094345093,
+      "last_height": 0.47038209438323975,
+      "last_rms": 0.09206211581434737,
+      "last_xy_error": 0.01827365718781948,
+      "last_yaw_error": 0.0005925067234784365,
+      "pass": true
+    }
+  },
+  "flat": {
+    "source31831": {
+      "label": "source31831",
+      "terrain": "flat",
+      "passed": 15,
+      "count": 20,
+      "physical": 0,
+      "straight": 1
+    },
+    "source31831_teacher": {
+      "label": "source31831_teacher",
+      "terrain": "flat",
+      "passed": 15,
+      "count": 20,
+      "physical": 0,
+      "straight": 2
+    },
+    "candidate": {
+      "label": "candidate",
+      "terrain": "flat",
+      "passed": 20,
+      "count": 20,
+      "physical": 0,
+      "straight": 2
+    },
+    "candidate_teacher": {
+      "label": "candidate_teacher",
+      "terrain": "flat",
+      "passed": 20,
+      "count": 20,
+      "physical": 0,
+      "straight": 2
+    }
+  },
+  "terrain_regressions": [],
+  "pose_regressions": [],
+  "lift_counts": {
+    "candidate:left:direct": 9,
+    "candidate:right:direct": 8,
+    "candidate:yaw_left:direct": 33,
+    "candidate:yaw_right:direct": 42,
+    "candidate:left:settle": 11,
+    "candidate:right:settle": 16,
+    "candidate:yaw_left:settle": 31,
+    "candidate:yaw_right:settle": 39,
+    "candidate_teacher:left:direct": 21,
+    "candidate_teacher:right:direct": 9,
+    "candidate_teacher:yaw_left:direct": 16,
+    "candidate_teacher:yaw_right:direct": 56,
+    "candidate_teacher:left:settle": 22,
+    "candidate_teacher:right:settle": 11,
+    "candidate_teacher:yaw_left:settle": 21,
+    "candidate_teacher:yaw_right:settle": 46
+  },
+  "no_candidate_lift": false,
+  "rule": "at least half flat cases physically fail for either policy OR both forward startup RMS >0.8 rad",
+  "repeated_terrain_regressions": [],
+  "repeated_pose_regressions": [],
+  "repeated_no_lift": false,
+  "stop_for_review": false,
+  "retained_new_updates": 2992,
+  "discarded_optimizer_updates": 8,
+  "spent_new_updates": 3000,
+  "remaining_new_updates": 7000,
+  "automatic_continuation": false,
+  "next_review": "Joint review of posture, speed, qualified braking, all terrains and local terminal traces"
+}

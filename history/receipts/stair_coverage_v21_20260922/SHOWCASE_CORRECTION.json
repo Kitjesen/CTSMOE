@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-09-22T11:21:28.006670+00:00",
+  "status": "verified_complete",
+  "checkpoint_completed_updates": 33865,
+  "cause": "L6 and L9 visible terrains were simultaneously placed at origin; panel widths also overlapped.",
+  "training_physics_changed": false,
+  "policy_changed": false,
+  "pytest_passed": 5,
+  "ruff_passed": true,
+  "panel_scene_checks": 4941,
+  "artifacts": [
+    {
+      "file": "stairs_down_final_20260922.mp4",
+      "sha256": "011395146e2befbe03029fc2415bdb650ba077e4c299a18052091b4c3cd2629d",
+      "frame_count": 202,
+      "fps": 25,
+      "canvas_size": [
+        1280,
+        448
+      ],
+      "renderer_sha256": "4130aaa17f1036ccac9ae7e89fd4e9dbc20c42288025f36c9c8fe90d11c42e7c",
+      "trace_sha256": "8258bc425e9a83a415db782fda2d561585a5604f0cdc14d186eac1c9c7debede",
+      "scene_checks": 606,
+      "max_link_error_m": 1.8842257601686466e-05
+    },
+    {
+      "file": "stairs_up_final_20260922.mp4",
+      "sha256": "a4db5ec9640b645776465c6126072bad150e031fa244f360006efadc6e66650b",
+      "frame_count": 195,
+      "fps": 25,
+      "canvas_size": [
+        1280,
+        448
+      ],
+      "renderer_sha256": "4130aaa17f1036ccac9ae7e89fd4e9dbc20c42288025f36c9c8fe90d11c42e7c",
+      "trace_sha256": "8258bc425e9a83a415db782fda2d561585a5604f0cdc14d186eac1c9c7debede",
+      "scene_checks": 585,
+      "max_link_error_m": 1.651091695562057e-05
+    },
+    {
+      "file": "flat_final_20260922.mp4",
+      "sha256": "67665189a1d640fa05ee3a38efc9254376279203e34ec0ed4221264354e5b5cd",
+      "frame_count": 625,
+      "fps": 25,
+      "canvas_size": [
+        1280,
+        768
+      ],
+      "renderer_sha256": "4130aaa17f1036ccac9ae7e89fd4e9dbc20c42288025f36c9c8fe90d11c42e7c",
+      "trace_sha256": "8258bc425e9a83a415db782fda2d561585a5604f0cdc14d186eac1c9c7debede",
+      "scene_checks": 3750,
+      "max_link_error_m": 3.719337296497518e-05
+    }
+  ],
+  "same_frame_preview": "D:\\inovxio\\brain\\train\\rough\\cts_moe\\official\\recordings\\student_33865_20260922\\stairs_down_final_20260922_frame_0125.jpg",
+  "old_stair_videos_withdrawn": true,
+  "old_flat_video_withdrawn": "Intermediate smoke overwrote flat.mp4; complete25s replay regenerated from unchanged source trace under final name.",
+  "frozen_showcase_metadata": "Preserved; this is an explicit correction and does not rewrite the original presentation record."
+}

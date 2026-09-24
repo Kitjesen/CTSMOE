@@ -1,0 +1,357 @@
+{
+  "state": "verified_not_training",
+  "source_completed": 31831,
+  "source_common_step_counter": 763944,
+  "source_sha256": "04fcb792c8f18d3abe913d57eecea1d38b54a4e8a36a9899324bd39540b9876d",
+  "actual_runner_resume_verified": true,
+  "preflight": {
+    "state": "complete",
+    "optimizer_updates": 0,
+    "steps": 3000,
+    "num_envs": 4096,
+    "source_completed": 31831,
+    "checkpoint_sha256": "04fcb792c8f18d3abe913d57eecea1d38b54a4e8a36a9899324bd39540b9876d",
+    "full_zero_flat_env_steps": 804921,
+    "rotation_flat_env_steps": 908267,
+    "within_episode_stop_transitions": 2715,
+    "within_episode_restart_transitions": 2380,
+    "settings": {
+      "profile": "posture_stop_v17",
+      "height_weight": -1.225,
+      "soft_limit_weight": -2.0,
+      "height_course_source_completed": 31831,
+      "height_course_updates": 5000,
+      "full_zero_flat_envs": 433,
+      "rotation_only_flat_envs": 251,
+      "relevant_phase_weight_min": 0.0,
+      "relevant_phase_weight_max": 1.0,
+      "height_target_m": 0.46,
+      "extra_joint_posture_weights_unchanged": true,
+      "phase_pose": {
+        "profile": "phase_pose_v18",
+        "extra_l1_weight": -0.2,
+        "recovery_s": 1.5,
+        "release_reference_gap_m": [
+          0.85,
+          0.35
+        ],
+        "fixed_front_extent_m": 0.4337119460105896,
+        "joint_names": [
+          "fl_hip_joint",
+          "fr_hip_joint",
+          "rl_hip_joint",
+          "rr_hip_joint",
+          "fl_thigh_joint",
+          "fr_thigh_joint",
+          "rl_thigh_joint",
+          "rr_thigh_joint",
+          "fl_calf_joint",
+          "fr_calf_joint",
+          "rl_calf_joint",
+          "rr_calf_joint"
+        ],
+        "by_terrain": {
+          "flat": {
+            "count": 1639,
+            "gate_mean": 0.9999999403953552,
+            "gate_min": 1.0,
+            "gate_max": 1.0,
+            "actual_abs_mean_per_joint": [
+              0.12355713546276093,
+              0.13167938590049744,
+              0.12682011723518372,
+              0.12315024435520172,
+              0.2107062041759491,
+              0.13468237221240997,
+              0.08529696613550186,
+              0.10537481307983398,
+              0.26334449648857117,
+              0.23131217062473297,
+              0.12404930591583252,
+              0.14628909528255463
+            ],
+            "actual_abs_max_per_joint": [
+              0.23043955862522125,
+              0.36520594358444214,
+              0.33951082825660706,
+              0.26165875792503357,
+              0.6437757611274719,
+              0.4750733971595764,
+              0.41912728548049927,
+              0.4265165328979492,
+              0.6163320541381836,
+              0.5525527000427246,
+              0.41441917419433594,
+              0.5148727893829346
+            ]
+          },
+          "pit": {
+            "count": 409,
+            "gate_mean": 0.8558434844017029,
+            "gate_min": 0.0,
+            "gate_max": 1.0,
+            "actual_abs_mean_per_joint": [
+              0.1470004916191101,
+              0.1616072952747345,
+              0.13339097797870636,
+              0.13198739290237427,
+              0.24365171790122986,
+              0.0839771255850792,
+              0.04396495595574379,
+              0.0785100981593132,
+              0.467372328042984,
+              0.4107840657234192,
+              0.16139979660511017,
+              0.17898976802825928
+            ],
+            "actual_abs_max_per_joint": [
+              0.20252878963947296,
+              0.20579920709133148,
+              0.19953949749469757,
+              0.20545317232608795,
+              0.4026358723640442,
+              0.19466716051101685,
+              0.23177051544189453,
+              0.3014293909072876,
+              0.6038720607757568,
+              0.543175220489502,
+              0.28793811798095703,
+              0.28862547874450684
+            ]
+          },
+          "stairs": {
+            "count": 737,
+            "gate_mean": 0.11788331717252731,
+            "gate_min": 0.0,
+            "gate_max": 1.0,
+            "actual_abs_mean_per_joint": [
+              0.14900897443294525,
+              0.12808667123317719,
+              0.13287431001663208,
+              0.1230870857834816,
+              0.35487061738967896,
+              0.30885282158851624,
+              0.4946881830692291,
+              0.25031694769859314,
+              0.3498781621456146,
+              0.2266918569803238,
+              0.28367066383361816,
+              0.22410176694393158
+            ],
+            "actual_abs_max_per_joint": [
+              0.5322158336639404,
+              0.46825897693634033,
+              0.274568110704422,
+              0.23606114089488983,
+              0.9450746178627014,
+              1.1733899116516113,
+              1.5397448539733887,
+              1.0404033660888672,
+              1.3311151266098022,
+              1.0104509592056274,
+              1.0236339569091797,
+              1.209856629371643
+            ]
+          }
+        },
+        "normal_effective_hip_weight": -0.25,
+        "normal_effective_thigh_calf_weight": -0.21,
+        "climb_baseline_hip_weight": -0.05,
+        "climb_baseline_thigh_calf_weight": -0.01,
+        "diagnostic_scope": "current control step across training environments, not held-out performance"
+      },
+      "omni": {
+        "profile": "omni_full_episode_v19",
+        "segment_s": 5.0,
+        "episode_s": 25.0,
+        "boundary": {
+          "physical_lower_xy": [
+            -99.0,
+            -27.0
+          ],
+          "physical_upper_xy": [
+            99.0,
+            0.0
+          ],
+          "planning_margin_m": 1.2,
+          "guard_root_margin_m": 1.0,
+          "reflections": 630,
+          "resamples": 4,
+          "cardinal_recoveries": 0,
+          "guard_timeouts": 10,
+          "crossings": 0,
+          "prediction": "5s body twist integrated using measured yaw"
+        },
+        "sequence_fraction": 0.2,
+        "sampled_probabilities": {
+          "forward": 0.2,
+          "backward": 0.1,
+          "left": 0.1,
+          "right": 0.1,
+          "yaw_left": 0.1,
+          "yaw_right": 0.1,
+          "diagonal_a": 0.05,
+          "diagonal_b": 0.05,
+          "longitudinal_turn": 0.05,
+          "lateral_turn": 0.05,
+          "stop": 0.1
+        },
+        "kind_counts_by_learner": [
+          [
+            2612,
+            1516,
+            1408,
+            1474,
+            1413,
+            1407,
+            754,
+            721,
+            701,
+            669,
+            2449
+          ],
+          [
+            832,
+            520,
+            455,
+            468,
+            430,
+            462,
+            280,
+            237,
+            232,
+            243,
+            796
+          ]
+        ],
+        "stop_restart_by_learner": [
+          [
+            2044,
+            1799
+          ],
+          [
+            671,
+            581
+          ]
+        ],
+        "current_full_zero": 433,
+        "current_pure_yaw": 251
+      },
+      "lift": {
+        "profile": "omni_lift_v19",
+        "scope": "exact flat terrain membership; current training environments, not held-out performance",
+        "sensor": "per-wheel link filtered contact against /World/ground/terrain/mesh",
+        "clearance_reference": "wheel link z - flat env origin z - 0.093 m radius",
+        "weights": {
+          "lift_event": 0.5,
+          "landing_event": 1.0
+        },
+        "rules": {
+          "min_clearance_m": 0.03,
+          "ideal_clearance_m": 0.045,
+          "max_clearance_m": 0.06,
+          "min_air_s": 0.08,
+          "max_air_s": 0.45,
+          "lateral_command_min": 0.2,
+          "yaw_command_min": 0.3,
+          "pure_yaw_translation_max": 0.15,
+          "tracking_fraction_min": 0.35,
+          "lateral_error_floor": 0.25,
+          "yaw_error_floor": 0.3
+        },
+        "flat_count": 1639,
+        "relevant_command_count": 734,
+        "tracking_gate_count": 679,
+        "active_flights": 4424,
+        "valid_active_flights": 785,
+        "current_episode_landing_events": 8578,
+        "landing_events_since_env_init": 52181,
+        "cumulative_by_command": {
+          "left": {
+            "tracking_gate_env_steps": 749112,
+            "wheel_takeoffs": 186729,
+            "valid_flight_env_steps": 526831,
+            "valid_wheel_landings": 20317,
+            "weighted_reward_integral": 503.50750663042993
+          },
+          "right": {
+            "tracking_gate_env_steps": 680339,
+            "wheel_takeoffs": 187951,
+            "valid_flight_env_steps": 441838,
+            "valid_wheel_landings": 14036,
+            "weighted_reward_integral": 350.4183774757458
+          },
+          "yawL": {
+            "tracking_gate_env_steps": 419258,
+            "wheel_takeoffs": 104672,
+            "valid_flight_env_steps": 284230,
+            "valid_wheel_landings": 7709,
+            "weighted_reward_integral": 190.02672811269912
+          },
+          "yawR": {
+            "tracking_gate_env_steps": 420332,
+            "wheel_takeoffs": 94103,
+            "valid_flight_env_steps": 272100,
+            "valid_wheel_landings": 10119,
+            "weighted_reward_integral": 249.23445463181102
+          },
+          "other": {
+            "tracking_gate_env_steps": 0,
+            "wheel_takeoffs": 375976,
+            "valid_flight_env_steps": 0,
+            "valid_wheel_landings": 0,
+            "weighted_reward_integral": 0.0
+          }
+        },
+        "mean_support_wheels": 3.1946308612823486
+      },
+      "allocation": {
+        "profile": "balanced_adaptive_v1",
+        "bounds_profile": "omni_repair_v19",
+        "target_weights": {
+          "pit": 0.1,
+          "stairs_up": 0.1,
+          "stairs_down": 0.08,
+          "wave": 0.08,
+          "slope_up": 0.06,
+          "slope_down": 0.06,
+          "rough_slope": 0.08,
+          "obstacles": 0.04,
+          "flat": 0.4
+        },
+        "actual_counts": {
+          "flat": 1639,
+          "pit": 409,
+          "wave": 328,
+          "slope_down": 245,
+          "rough_slope": 328,
+          "slope_up": 246,
+          "stairs_up": 409,
+          "stairs_down": 328,
+          "obstacles": 164
+        },
+        "pending_moves": 0,
+        "moves_applied": 0,
+        "last_check": 31831,
+        "check_interval": 500,
+        "evidence": "matched training strata, not independent held-out validation",
+        "decisions": []
+      }
+    },
+    "phase_coverage": {
+      "flat": [
+        1.0,
+        1.0
+      ],
+      "stairs": [
+        0.0,
+        1.0
+      ],
+      "pit": [
+        0.0,
+        1.0
+      ]
+    },
+    "qualification": "Runtime/sampling validation, not learned posture improvement"
+  }
+}

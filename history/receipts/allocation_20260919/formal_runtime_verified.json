@@ -1,0 +1,90 @@
+{
+  "time": "2026-09-19T20:14:02.289599+08:00",
+  "pid": 142957,
+  "state": "training",
+  "completed_updates": 33370,
+  "start": 33367,
+  "target": 60000,
+  "mean_seconds": 7.012519359588623,
+  "resume_checks": {
+    "model": true,
+    "ppo_optimizer": true,
+    "student_optimizer": true,
+    "pit_climb_totals": true,
+    "terrain_assignment": true,
+    "command_terrain_membership": true,
+    "terrain_restored_exactly": true,
+    "stair_episode_totals": true,
+    "terrain_allocation": true
+  },
+  "allocation": {
+    "profile": "balanced_adaptive_v1",
+    "target_weights": {
+      "pit": 0.4,
+      "stairs_up": 0.2,
+      "stairs_down": 0.1,
+      "wave": 0.06,
+      "slope_up": 0.06,
+      "slope_down": 0.05,
+      "rough_slope": 0.05,
+      "obstacles": 0.05,
+      "flat": 0.03
+    },
+    "actual_counts": {
+      "stairs_up": 819,
+      "pit": 1639,
+      "wave": 246,
+      "stairs_down": 409,
+      "flat": 123,
+      "slope_up": 245,
+      "obstacles": 205,
+      "slope_down": 205,
+      "rough_slope": 205
+    },
+    "pending_moves": 0,
+    "moves_applied": 0,
+    "last_check": 33349,
+    "check_interval": 500,
+    "evidence": "matched training strata, not independent held-out validation",
+    "decisions": []
+  },
+  "frontier_m": 0.6,
+  "terrain": {
+    "wave": {
+      "count": 246,
+      "mean": 5.308943089430894
+    },
+    "slope_up": {
+      "count": 245,
+      "mean": 3.9959183673469387
+    },
+    "slope_down": {
+      "count": 205,
+      "mean": 5.517073170731707
+    },
+    "rough_slope": {
+      "count": 205,
+      "mean": 5.190243902439025
+    },
+    "stairs_up": {
+      "count": 819,
+      "mean": 6.123321123321123
+    },
+    "stairs_down": {
+      "count": 409,
+      "mean": 5.882640586797066
+    },
+    "obstacles": {
+      "count": 205,
+      "mean": 5.853658536585366
+    },
+    "flat": {
+      "count": 123,
+      "mean": 5.682926829268292
+    },
+    "pit": {
+      "count": 1639,
+      "mean": 8.089688834655277
+    }
+  }
+}

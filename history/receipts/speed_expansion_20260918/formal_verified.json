@@ -1,0 +1,224 @@
+{
+  "queried_at_utc": "2026-09-17T20:44:46.948434+00:00",
+  "run_receipt": {
+    "resume": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/official4096_30000/model_14119.pt",
+    "resume_sha256": "5e20771507b20be52380e0d11fcf1cf4fbb570bce3d455addc2fa552d168f3a8",
+    "starting_completed_updates": 14120,
+    "additional_updates": 15880,
+    "target_completed_updates": 30000,
+    "command_curriculum_start": "intermediate",
+    "command_ranges": {
+      "lin_vel_x": [
+        -1.0,
+        1.0
+      ],
+      "lin_vel_y": [
+        -1.0,
+        1.0
+      ],
+      "ang_vel_yaw": [
+        -1.5,
+        1.5
+      ]
+    },
+    "resume_checks": {
+      "model": true,
+      "ppo_optimizer": true,
+      "student_optimizer": true,
+      "terrain": true
+    },
+    "episode_length_s": 25.0,
+    "reward_weights": {
+      "lin_vel_z_l2": -0.0,
+      "base_height_l2": -10.0
+    }
+  },
+  "latest": {
+    "state": "training",
+    "completed_updates": 14133,
+    "seconds": 5.97062087059021,
+    "collect_seconds": 5.431002855300903,
+    "learn_seconds": 0.5396180152893066,
+    "fast_delay": false,
+    "command_curriculum_start": "intermediate",
+    "command_ranges": {
+      "lin_vel_x": [
+        -1.0,
+        1.0
+      ],
+      "lin_vel_y": [
+        -1.0,
+        1.0
+      ],
+      "ang_vel_yaw": [
+        -1.5,
+        1.5
+      ]
+    },
+    "observed_command_abs_max": [
+      1.0000009536743164,
+      1.0000009536743164,
+      1.5
+    ],
+    "terrain": 4.765380859375,
+    "value": 0.03933591116219759,
+    "surrogate": 0.022185082361102105,
+    "entropy": 4.017318868637085,
+    "mean_latent_loss": 0.002116977050900459,
+    "mean_load_balance_loss": 4.551134561552317e-05
+  },
+  "new_updates_observed": 13,
+  "seconds_mean_last10": 6.060735821723938,
+  "checkpoint_terrain": {
+    "wave": {
+      "n": 205,
+      "mean": 5.931707382202148,
+      "counts_L0_to_L9": [
+        6,
+        8,
+        12,
+        9,
+        16,
+        18,
+        32,
+        41,
+        43,
+        20
+      ]
+    },
+    "slope_up": {
+      "n": 410,
+      "mean": 6.339024543762207,
+      "counts_L0_to_L9": [
+        2,
+        6,
+        12,
+        19,
+        31,
+        42,
+        80,
+        82,
+        100,
+        36
+      ]
+    },
+    "slope_down": {
+      "n": 410,
+      "mean": 5.541463375091553,
+      "counts_L0_to_L9": [
+        6,
+        19,
+        31,
+        36,
+        42,
+        52,
+        54,
+        70,
+        59,
+        41
+      ]
+    },
+    "rough_slope": {
+      "n": 204,
+      "mean": 5.171568393707275,
+      "counts_L0_to_L9": [
+        7,
+        18,
+        17,
+        17,
+        26,
+        22,
+        22,
+        18,
+        33,
+        24
+      ]
+    },
+    "stairs_up": {
+      "n": 1024,
+      "mean": 2.6318359375,
+      "counts_L0_to_L9": [
+        75,
+        185,
+        206,
+        258,
+        193,
+        90,
+        17,
+        0,
+        0,
+        0
+      ]
+    },
+    "stairs_down": {
+      "n": 410,
+      "mean": 5.375609874725342,
+      "counts_L0_to_L9": [
+        13,
+        15,
+        35,
+        39,
+        53,
+        53,
+        52,
+        37,
+        63,
+        50
+      ]
+    },
+    "obstacles": {
+      "n": 819,
+      "mean": 5.755799770355225,
+      "counts_L0_to_L9": [
+        21,
+        28,
+        48,
+        65,
+        66,
+        103,
+        129,
+        124,
+        141,
+        94
+      ]
+    },
+    "flat": {
+      "n": 614,
+      "mean": 5.600977420806885,
+      "counts_L0_to_L9": [
+        13,
+        29,
+        39,
+        62,
+        62,
+        76,
+        78,
+        79,
+        87,
+        89
+      ]
+    }
+  },
+  "column_mapping": {
+    "0": "wave",
+    "1": "slope_up",
+    "2": "slope_up",
+    "3": "slope_down",
+    "4": "slope_down",
+    "5": "rough_slope",
+    "6": "stairs_up",
+    "7": "stairs_up",
+    "8": "stairs_up",
+    "9": "stairs_up",
+    "10": "stairs_up",
+    "11": "stairs_down",
+    "12": "stairs_down",
+    "13": "obstacles",
+    "14": "obstacles",
+    "15": "obstacles",
+    "16": "obstacles",
+    "17": "flat",
+    "18": "flat",
+    "19": "flat"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "counterfactual_reward_only_not_behavior_improvement",
+  "excludes_environment_dt_factor": true,
+  "cases": [
+    {
+      "label": "V6_43202",
+      "first_second_old_cost": 0.3958534896373749,
+      "first_second_new_cost": 0.5962764024734497,
+      "at_pose_peak_old_cost": 0.41041454672813416,
+      "at_pose_peak_new_cost": 0.6783154010772705
+    },
+    {
+      "label": "V8_43711",
+      "first_second_old_cost": 1.2505922317504883,
+      "first_second_new_cost": 3.759211540222168,
+      "at_pose_peak_old_cost": 1.3651057481765747,
+      "at_pose_peak_new_cost": 4.510894775390625
+    },
+    {
+      "label": "V9_44001",
+      "first_second_old_cost": 1.2981661558151245,
+      "first_second_new_cost": 3.6145615577697754,
+      "at_pose_peak_old_cost": 1.864498257637024,
+      "at_pose_peak_new_cost": 5.5474772453308105
+    },
+    {
+      "label": "V9_44001_teacher",
+      "first_second_old_cost": 1.246375560760498,
+      "first_second_new_cost": 3.527261972427368,
+      "at_pose_peak_old_cost": 1.715675711631775,
+      "at_pose_peak_new_cost": 4.87966775894165
+    }
+  ]
+}

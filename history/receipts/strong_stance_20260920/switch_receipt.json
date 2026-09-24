@@ -1,0 +1,24 @@
+{
+  "old_run": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_shared_posture_20260920",
+  "new_run": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_20260920",
+  "checkpoint": "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_shared_posture_20260920/model_41750.pt",
+  "completed_updates": 41751,
+  "new_pid": 182569,
+  "args": [
+    "/root/autodl-tmp/conda/envs/isaaclab/bin/python",
+    "train.py",
+    "--root",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917",
+    "--output",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_strong_stance_20260920",
+    "--num-envs",
+    "4096",
+    "--updates",
+    "18249",
+    "--mixed-pit",
+    "--stance-strength-profile",
+    "strong_stand_v1",
+    "--resume",
+    "/root/autodl-tmp/workspace/doso-thunder-cts-official-20260917/runs/mixed9_4096_60000_shared_posture_20260920/model_41750.pt"
+  ]
+}

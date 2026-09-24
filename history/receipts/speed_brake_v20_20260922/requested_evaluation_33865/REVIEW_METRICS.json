@@ -1,0 +1,1417 @@
+{
+  "scope": "652 fixed deterministic-protocol cases, not random success rates",
+  "completed": 33865,
+  "flat25": {
+    "source31831": {
+      "count": 20,
+      "pose": 19,
+      "tracking": 16,
+      "joint": 15,
+      "physical": 0,
+      "first_peak_rms_mean": 0.18943658389679335,
+      "first_peak_rms_max": 0.2692183191656906,
+      "end_rms_mean": 0.1557628345985498,
+      "end_height_mean": 0.46622165441513064,
+      "leg_torque_peak": 88.51332092285156,
+      "wheel_torque_peak": 17.0,
+      "leg_speed_peak": 9.783279418945312,
+      "wheel_speed_peak": 36.64386749267578,
+      "failures": [
+        {
+          "direction": "diagonal_back",
+          "mode": "direct",
+          "pose": true,
+          "xy_error": 0.15027391910552979,
+          "yaw_error": 0.061835188418626785
+        },
+        {
+          "direction": "reverse",
+          "mode": "settle",
+          "pose": false,
+          "xy_error": 0.08375874161720276,
+          "yaw_error": 0.0054101780988276005
+        },
+        {
+          "direction": "right",
+          "mode": "settle",
+          "pose": true,
+          "xy_error": 0.20053087174892426,
+          "yaw_error": 0.07068263739347458
+        },
+        {
+          "direction": "diagonal",
+          "mode": "settle",
+          "pose": true,
+          "xy_error": 0.22014528512954712,
+          "yaw_error": 0.13622140884399414
+        },
+        {
+          "direction": "diagonal_back",
+          "mode": "settle",
+          "pose": true,
+          "xy_error": 0.2423613965511322,
+          "yaw_error": 0.05351050943136215
+        }
+      ]
+    },
+    "source31831_teacher": {
+      "count": 20,
+      "pose": 19,
+      "tracking": 16,
+      "joint": 15,
+      "physical": 0,
+      "first_peak_rms_mean": 0.18439819409459185,
+      "first_peak_rms_max": 0.25295216507265766,
+      "end_rms_mean": 0.1604660960878077,
+      "end_height_mean": 0.467238949239254,
+      "leg_torque_peak": 80.36698150634766,
+      "wheel_torque_peak": 17.0,
+      "leg_speed_peak": 9.274140357971191,
+      "wheel_speed_peak": 33.965736389160156,
+      "failures": [
+        {
+          "direction": "right",
+          "mode": "direct",
+          "pose": true,
+          "xy_error": 0.18700508773326874,
+          "yaw_error": 0.07922414690256119
+        },
+        {
+          "direction": "diagonal_back",
+          "mode": "direct",
+          "pose": true,
+          "xy_error": 0.18758270144462585,
+          "yaw_error": 0.05119262635707855
+        },
+        {
+          "direction": "reverse",
+          "mode": "settle",
+          "pose": false,
+          "xy_error": 0.029450444504618645,
+          "yaw_error": 0.004231765866279602
+        },
+        {
+          "direction": "right",
+          "mode": "settle",
+          "pose": true,
+          "xy_error": 0.20797356963157654,
+          "yaw_error": 0.0609389990568161
+        },
+        {
+          "direction": "diagonal_back",
+          "mode": "settle",
+          "pose": true,
+          "xy_error": 0.29552027583122253,
+          "yaw_error": 0.010369772091507912
+        }
+      ]
+    },
+    "candidate": {
+      "count": 20,
+      "pose": 20,
+      "tracking": 18,
+      "joint": 18,
+      "physical": 0,
+      "first_peak_rms_mean": 0.10120621016388992,
+      "first_peak_rms_max": 0.13605219347836017,
+      "end_rms_mean": 0.07497350918163806,
+      "end_height_mean": 0.4623974412679672,
+      "leg_torque_peak": 65.44039916992188,
+      "wheel_torque_peak": 17.0,
+      "leg_speed_peak": 7.748287200927734,
+      "wheel_speed_peak": 37.47468948364258,
+      "failures": [
+        {
+          "direction": "diagonal_back",
+          "mode": "direct",
+          "pose": true,
+          "xy_error": 0.19406713545322418,
+          "yaw_error": 0.053247250616550446
+        },
+        {
+          "direction": "diagonal_back",
+          "mode": "settle",
+          "pose": true,
+          "xy_error": 0.2712152600288391,
+          "yaw_error": 0.04879190772771835
+        }
+      ]
+    },
+    "candidate_teacher": {
+      "count": 20,
+      "pose": 20,
+      "tracking": 20,
+      "joint": 20,
+      "physical": 0,
+      "first_peak_rms_mean": 0.09932919713067472,
+      "first_peak_rms_max": 0.12561067632316572,
+      "end_rms_mean": 0.07822990899121629,
+      "end_height_mean": 0.4636641263961792,
+      "leg_torque_peak": 67.2908935546875,
+      "wheel_torque_peak": 17.0,
+      "leg_speed_peak": 9.147941589355469,
+      "wheel_speed_peak": 31.19451141357422,
+      "failures": []
+    }
+  },
+  "terrain": [
+    {
+      "label": "source31831",
+      "terrain": "flat",
+      "passed": 13,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "source31831",
+      "terrain": "stairs_up",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "source31831",
+      "terrain": "stairs_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "source31831",
+      "terrain": "slope_up",
+      "passed": 2,
+      "count": 6,
+      "physical": 3,
+      "straight": 0
+    },
+    {
+      "label": "source31831",
+      "terrain": "slope_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "source31831",
+      "terrain": "wave",
+      "passed": 4,
+      "count": 6,
+      "physical": 2,
+      "straight": 3
+    },
+    {
+      "label": "source31831",
+      "terrain": "rough_slope",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 5
+    },
+    {
+      "label": "source31831",
+      "terrain": "obstacles",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "source31831",
+      "terrain": "pit",
+      "passed": 7,
+      "count": 21,
+      "physical": 14,
+      "straight": 0
+    },
+    {
+      "label": "source31831_teacher",
+      "terrain": "flat",
+      "passed": 16,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "source31831_teacher",
+      "terrain": "stairs_up",
+      "passed": 5,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "source31831_teacher",
+      "terrain": "stairs_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "source31831_teacher",
+      "terrain": "slope_up",
+      "passed": 3,
+      "count": 6,
+      "physical": 0,
+      "straight": 1
+    },
+    {
+      "label": "source31831_teacher",
+      "terrain": "slope_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "source31831_teacher",
+      "terrain": "wave",
+      "passed": 5,
+      "count": 6,
+      "physical": 1,
+      "straight": 5
+    },
+    {
+      "label": "source31831_teacher",
+      "terrain": "rough_slope",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 5
+    },
+    {
+      "label": "source31831_teacher",
+      "terrain": "obstacles",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "source31831_teacher",
+      "terrain": "pit",
+      "passed": 9,
+      "count": 21,
+      "physical": 8,
+      "straight": 0
+    },
+    {
+      "label": "candidate",
+      "terrain": "flat",
+      "passed": 20,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "candidate",
+      "terrain": "stairs_up",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 3
+    },
+    {
+      "label": "candidate",
+      "terrain": "stairs_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 5
+    },
+    {
+      "label": "candidate",
+      "terrain": "slope_up",
+      "passed": 2,
+      "count": 6,
+      "physical": 2,
+      "straight": 0
+    },
+    {
+      "label": "candidate",
+      "terrain": "slope_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "candidate",
+      "terrain": "wave",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "candidate",
+      "terrain": "rough_slope",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "candidate",
+      "terrain": "obstacles",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 5
+    },
+    {
+      "label": "candidate",
+      "terrain": "pit",
+      "passed": 7,
+      "count": 21,
+      "physical": 13,
+      "straight": 0
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "flat",
+      "passed": 20,
+      "count": 20,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "stairs_up",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "stairs_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "slope_up",
+      "passed": 2,
+      "count": 6,
+      "physical": 0,
+      "straight": 0
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "slope_down",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "wave",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "rough_slope",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 6
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "obstacles",
+      "passed": 6,
+      "count": 6,
+      "physical": 0,
+      "straight": 5
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "pit",
+      "passed": 8,
+      "count": 21,
+      "physical": 7,
+      "straight": 0
+    }
+  ],
+  "braking": {
+    "source33174": {
+      "cases": 36,
+      "physical": 0,
+      "events": 72,
+      "entry_qualified": 33,
+      "qualified_stops": 33,
+      "median_stop_s": 0.28,
+      "max_stop_s": 0.98,
+      "max_distance_m": 0.3514598309993744,
+      "counts_by_axis": {
+        "longitudinal": {
+          "total": 24,
+          "entry": 13,
+          "stopped": 13
+        },
+        "lateral": {
+          "total": 24,
+          "entry": 4,
+          "stopped": 4
+        },
+        "yaw": {
+          "total": 24,
+          "entry": 16,
+          "stopped": 16
+        }
+      }
+    },
+    "source33174_teacher": {
+      "cases": 36,
+      "physical": 0,
+      "events": 72,
+      "entry_qualified": 39,
+      "qualified_stops": 39,
+      "median_stop_s": 0.22,
+      "max_stop_s": 0.62,
+      "max_distance_m": 0.37554290890693665,
+      "counts_by_axis": {
+        "longitudinal": {
+          "total": 24,
+          "entry": 19,
+          "stopped": 19
+        },
+        "lateral": {
+          "total": 24,
+          "entry": 4,
+          "stopped": 4
+        },
+        "yaw": {
+          "total": 24,
+          "entry": 16,
+          "stopped": 16
+        }
+      }
+    },
+    "candidate": {
+      "cases": 36,
+      "physical": 1,
+      "events": 72,
+      "entry_qualified": 37,
+      "qualified_stops": 36,
+      "median_stop_s": 0.31,
+      "max_stop_s": 0.64,
+      "max_distance_m": 0.34039103984832764,
+      "counts_by_axis": {
+        "longitudinal": {
+          "total": 24,
+          "entry": 16,
+          "stopped": 15
+        },
+        "lateral": {
+          "total": 24,
+          "entry": 5,
+          "stopped": 5
+        },
+        "yaw": {
+          "total": 24,
+          "entry": 16,
+          "stopped": 16
+        }
+      }
+    },
+    "candidate_teacher": {
+      "cases": 36,
+      "physical": 0,
+      "events": 72,
+      "entry_qualified": 46,
+      "qualified_stops": 46,
+      "median_stop_s": 0.24,
+      "max_stop_s": 0.5,
+      "max_distance_m": 0.35235610604286194,
+      "counts_by_axis": {
+        "longitudinal": {
+          "total": 24,
+          "entry": 23,
+          "stopped": 23
+        },
+        "lateral": {
+          "total": 24,
+          "entry": 10,
+          "stopped": 10
+        },
+        "yaw": {
+          "total": 24,
+          "entry": 13,
+          "stopped": 13
+        }
+      }
+    }
+  },
+  "stair_terminal": [
+    {
+      "label": "source33174",
+      "terrain": "stairs_up",
+      "mode": "continue",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 6
+      },
+      "support_seen": 3,
+      "positive_world_vz_peak": 0.9696690440177917
+    },
+    {
+      "label": "source33174",
+      "terrain": "stairs_up",
+      "mode": "stop",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 3,
+        "supported_platform_dwell": 2,
+        "timeout": 1
+      },
+      "support_seen": 3,
+      "positive_world_vz_peak": 0.9696690440177917
+    },
+    {
+      "label": "source33174",
+      "terrain": "stairs_down",
+      "mode": "continue",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 6
+      },
+      "support_seen": 6,
+      "positive_world_vz_peak": 0.4167376458644867
+    },
+    {
+      "label": "source33174",
+      "terrain": "stairs_down",
+      "mode": "stop",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "supported_platform_dwell": 3,
+        "timeout": 3
+      },
+      "support_seen": 6,
+      "positive_world_vz_peak": 0.4058682322502136
+    },
+    {
+      "label": "source33174_teacher",
+      "terrain": "stairs_up",
+      "mode": "continue",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 6
+      },
+      "support_seen": 3,
+      "positive_world_vz_peak": 0.9747408032417297
+    },
+    {
+      "label": "source33174_teacher",
+      "terrain": "stairs_up",
+      "mode": "stop",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 3,
+        "supported_platform_dwell": 3
+      },
+      "support_seen": 3,
+      "positive_world_vz_peak": 0.9763588309288025
+    },
+    {
+      "label": "source33174_teacher",
+      "terrain": "stairs_down",
+      "mode": "continue",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 6
+      },
+      "support_seen": 6,
+      "positive_world_vz_peak": 0.2588871419429779
+    },
+    {
+      "label": "source33174_teacher",
+      "terrain": "stairs_down",
+      "mode": "stop",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "timeout": 2,
+        "supported_platform_dwell": 4
+      },
+      "support_seen": 6,
+      "positive_world_vz_peak": 0.25296369194984436
+    },
+    {
+      "label": "candidate",
+      "terrain": "stairs_up",
+      "mode": "continue",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 6
+      },
+      "support_seen": 3,
+      "positive_world_vz_peak": 0.755393922328949
+    },
+    {
+      "label": "candidate",
+      "terrain": "stairs_up",
+      "mode": "stop",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 3,
+        "supported_platform_dwell": 2,
+        "timeout": 1
+      },
+      "support_seen": 3,
+      "positive_world_vz_peak": 0.755393922328949
+    },
+    {
+      "label": "candidate",
+      "terrain": "stairs_down",
+      "mode": "continue",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 6
+      },
+      "support_seen": 6,
+      "positive_world_vz_peak": 0.4861735999584198
+    },
+    {
+      "label": "candidate",
+      "terrain": "stairs_down",
+      "mode": "stop",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "timeout": 3,
+        "supported_platform_dwell": 3
+      },
+      "support_seen": 6,
+      "positive_world_vz_peak": 0.4861735999584198
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "stairs_up",
+      "mode": "continue",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 6
+      },
+      "support_seen": 3,
+      "positive_world_vz_peak": 0.8165376782417297
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "stairs_up",
+      "mode": "stop",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 3,
+        "supported_platform_dwell": 2,
+        "timeout": 1
+      },
+      "support_seen": 3,
+      "positive_world_vz_peak": 0.8165376782417297
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "stairs_down",
+      "mode": "continue",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 6
+      },
+      "support_seen": 5,
+      "positive_world_vz_peak": 0.33530569076538086
+    },
+    {
+      "label": "candidate_teacher",
+      "terrain": "stairs_down",
+      "mode": "stop",
+      "count": 6,
+      "physical": 0,
+      "end_reasons": {
+        "safe_tile_endpoint": 1,
+        "timeout": 2,
+        "supported_platform_dwell": 3
+      },
+      "support_seen": 5,
+      "positive_world_vz_peak": 0.33530569076538086
+    }
+  ],
+  "student_joints": [
+    {
+      "joint": "fr_hip_joint",
+      "startup_actual_peak": 0.20849080383777618,
+      "full_actual_peak": 0.2260313779115677,
+      "full_requested_peak": 0.6452282667160034,
+      "full_target_peak": 0.2508034110069275
+    },
+    {
+      "joint": "fr_thigh_joint",
+      "startup_actual_peak": 0.24806123971939087,
+      "full_actual_peak": 0.24806123971939087,
+      "full_requested_peak": 0.4008757472038269,
+      "full_target_peak": 0.4008757472038269
+    },
+    {
+      "joint": "fr_calf_joint",
+      "startup_actual_peak": 0.3062775135040283,
+      "full_actual_peak": 0.31505465507507324,
+      "full_requested_peak": 0.4986468553543091,
+      "full_target_peak": 0.4986468553543091
+    },
+    {
+      "joint": "fl_hip_joint",
+      "startup_actual_peak": 0.18574850261211395,
+      "full_actual_peak": 0.21019293367862701,
+      "full_requested_peak": 0.7374264597892761,
+      "full_target_peak": 0.35033118724823
+    },
+    {
+      "joint": "fl_thigh_joint",
+      "startup_actual_peak": 0.17751145362854004,
+      "full_actual_peak": 0.18921178579330444,
+      "full_requested_peak": 0.47321921586990356,
+      "full_target_peak": 0.47321921586990356
+    },
+    {
+      "joint": "fl_calf_joint",
+      "startup_actual_peak": 0.2689410448074341,
+      "full_actual_peak": 0.3429778814315796,
+      "full_requested_peak": 0.6169359683990479,
+      "full_target_peak": 0.5643337965011597
+    },
+    {
+      "joint": "rr_hip_joint",
+      "startup_actual_peak": 0.19724614918231964,
+      "full_actual_peak": 0.21006210148334503,
+      "full_requested_peak": 0.8831526637077332,
+      "full_target_peak": 0.335355669260025
+    },
+    {
+      "joint": "rr_thigh_joint",
+      "startup_actual_peak": 0.1555803418159485,
+      "full_actual_peak": 0.21404224634170532,
+      "full_requested_peak": 0.3047071099281311,
+      "full_target_peak": 0.3047071099281311
+    },
+    {
+      "joint": "rr_calf_joint",
+      "startup_actual_peak": 0.21197986602783203,
+      "full_actual_peak": 0.3166036605834961,
+      "full_requested_peak": 0.5117270946502686,
+      "full_target_peak": 0.5117270946502686
+    },
+    {
+      "joint": "rl_hip_joint",
+      "startup_actual_peak": 0.20343302190303802,
+      "full_actual_peak": 0.2100968211889267,
+      "full_requested_peak": 1.7910106182098389,
+      "full_target_peak": 0.2992821931838989
+    },
+    {
+      "joint": "rl_thigh_joint",
+      "startup_actual_peak": 0.1985236406326294,
+      "full_actual_peak": 0.1985236406326294,
+      "full_requested_peak": 0.33741313219070435,
+      "full_target_peak": 0.33741313219070435
+    },
+    {
+      "joint": "rl_calf_joint",
+      "startup_actual_peak": 0.24071919918060303,
+      "full_actual_peak": 0.36376094818115234,
+      "full_requested_peak": 0.43633925914764404,
+      "full_target_peak": 0.43633925914764404
+    }
+  ],
+  "lift": [
+    {
+      "qualifying_lift_landings_per_wheel": [
+        2,
+        4,
+        0,
+        2
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03978282958269119,
+        0.03512055426836014,
+        0.03911615163087845,
+        0.031216256320476532
+      ],
+      "contact_fraction_per_wheel": [
+        0.4304,
+        0.5528,
+        0.4344,
+        0.5048
+      ],
+      "less_than_two_support_fraction": 0.288,
+      "label": "candidate",
+      "direction": "left",
+      "mode": "direct",
+      "case_id": 42,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        9,
+        10,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.029916726052761078,
+        0.04591839760541916,
+        0.036023564636707306,
+        0.033144913613796234
+      ],
+      "contact_fraction_per_wheel": [
+        0.5456,
+        0.464,
+        0.4304,
+        0.5832
+      ],
+      "less_than_two_support_fraction": 0.2064,
+      "label": "candidate",
+      "direction": "right",
+      "mode": "direct",
+      "case_id": 43,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.02368706464767456,
+        0.027792148292064667,
+        0.022643916308879852,
+        0.018899202346801758
+      ],
+      "contact_fraction_per_wheel": [
+        0.7088,
+        0.6832,
+        0.6728,
+        0.7568
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate",
+      "direction": "yaw_left",
+      "mode": "direct",
+      "case_id": 44,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        50,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.034946851432323456,
+        0.021704748272895813,
+        0.021625109016895294,
+        0.029651202261447906
+      ],
+      "contact_fraction_per_wheel": [
+        0.52,
+        0.724,
+        0.7432,
+        0.512
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate",
+      "direction": "yaw_right",
+      "mode": "direct",
+      "case_id": 45,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        4,
+        1,
+        2
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03456328064203262,
+        0.041182734072208405,
+        0.031517624855041504,
+        0.030861325562000275
+      ],
+      "contact_fraction_per_wheel": [
+        0.42695652173913046,
+        0.5504347826086956,
+        0.45217391304347826,
+        0.4956521739130435
+      ],
+      "less_than_two_support_fraction": 0.2782608695652174,
+      "label": "candidate",
+      "direction": "left",
+      "mode": "settle",
+      "case_id": 52,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        4,
+        14,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.031152918934822083,
+        0.04432574659585953,
+        0.03757048398256302,
+        0.029012136161327362
+      ],
+      "contact_fraction_per_wheel": [
+        0.568695652173913,
+        0.4434782608695652,
+        0.4591304347826087,
+        0.6121739130434782
+      ],
+      "less_than_two_support_fraction": 0.17043478260869566,
+      "label": "candidate",
+      "direction": "right",
+      "mode": "settle",
+      "case_id": 53,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.02674706280231476,
+        0.028846248984336853,
+        0.02279602736234665,
+        0.020338408648967743
+      ],
+      "contact_fraction_per_wheel": [
+        0.7043478260869566,
+        0.68,
+        0.6817391304347826,
+        0.76
+      ],
+      "less_than_two_support_fraction": 0.0,
+      "label": "candidate",
+      "direction": "yaw_left",
+      "mode": "settle",
+      "case_id": 54,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        43,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.034976087510585785,
+        0.02570836991071701,
+        0.029828496277332306,
+        0.029655002057552338
+      ],
+      "contact_fraction_per_wheel": [
+        0.5304347826086957,
+        0.7269565217391304,
+        0.7486956521739131,
+        0.5139130434782608
+      ],
+      "less_than_two_support_fraction": 0.0008695652173913044,
+      "label": "candidate",
+      "direction": "yaw_right",
+      "mode": "settle",
+      "case_id": 55,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        5,
+        8,
+        2,
+        4
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04318063706159592,
+        0.03883422166109085,
+        0.041603170335292816,
+        0.03465721756219864
+      ],
+      "contact_fraction_per_wheel": [
+        0.4344,
+        0.5296,
+        0.4264,
+        0.468
+      ],
+      "less_than_two_support_fraction": 0.2784,
+      "label": "candidate_teacher",
+      "direction": "left",
+      "mode": "direct",
+      "case_id": 62,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        1,
+        13,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03531358391046524,
+        0.03246503323316574,
+        0.03535027056932449,
+        0.02579294890165329
+      ],
+      "contact_fraction_per_wheel": [
+        0.4648,
+        0.54,
+        0.4256,
+        0.5928
+      ],
+      "less_than_two_support_fraction": 0.2176,
+      "label": "candidate_teacher",
+      "direction": "right",
+      "mode": "direct",
+      "case_id": 63,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.02591930329799652,
+        0.027207843959331512,
+        0.025597475469112396,
+        0.019261181354522705
+      ],
+      "contact_fraction_per_wheel": [
+        0.6856,
+        0.68,
+        0.6648,
+        0.7592
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate_teacher",
+      "direction": "yaw_left",
+      "mode": "direct",
+      "case_id": 64,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        42,
+        0,
+        0,
+        37
+      ],
+      "max_clearance_m_per_wheel": [
+        0.035306476056575775,
+        0.023148231208324432,
+        0.02255702018737793,
+        0.03225810080766678
+      ],
+      "contact_fraction_per_wheel": [
+        0.5288,
+        0.7208,
+        0.7336,
+        0.4768
+      ],
+      "less_than_two_support_fraction": 0.0008,
+      "label": "candidate_teacher",
+      "direction": "yaw_right",
+      "mode": "direct",
+      "case_id": 65,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "max_clearance_m_per_wheel": [
+        0.04078764468431473,
+        0.035650335252285004,
+        0.04080601781606674,
+        0.03319168835878372
+      ],
+      "contact_fraction_per_wheel": [
+        0.41739130434782606,
+        0.5139130434782608,
+        0.41130434782608694,
+        0.48
+      ],
+      "less_than_two_support_fraction": 0.31130434782608696,
+      "label": "candidate_teacher",
+      "direction": "left",
+      "mode": "settle",
+      "case_id": 72,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        2,
+        4,
+        18,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.032653145492076874,
+        0.03741755336523056,
+        0.0362548753619194,
+        0.029170460999011993
+      ],
+      "contact_fraction_per_wheel": [
+        0.5582608695652174,
+        0.3947826086956522,
+        0.46,
+        0.58
+      ],
+      "less_than_two_support_fraction": 0.20869565217391303,
+      "label": "candidate_teacher",
+      "direction": "right",
+      "mode": "settle",
+      "case_id": 73,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_clearance_m_per_wheel": [
+        0.025776520371437073,
+        0.02847735583782196,
+        0.025575950741767883,
+        0.02036699652671814
+      ],
+      "contact_fraction_per_wheel": [
+        0.6878260869565217,
+        0.6747826086956522,
+        0.6721739130434783,
+        0.7521739130434782
+      ],
+      "less_than_two_support_fraction": 0.0,
+      "label": "candidate_teacher",
+      "direction": "yaw_left",
+      "mode": "settle",
+      "case_id": 74,
+      "physical": false,
+      "tracking_pass": true
+    },
+    {
+      "qualifying_lift_landings_per_wheel": [
+        37,
+        1,
+        1,
+        31
+      ],
+      "max_clearance_m_per_wheel": [
+        0.03533903509378433,
+        0.03099699318408966,
+        0.03020711988210678,
+        0.0331093892455101
+      ],
+      "contact_fraction_per_wheel": [
+        0.5356521739130434,
+        0.7304347826086957,
+        0.7391304347826086,
+        0.4817391304347826
+      ],
+      "less_than_two_support_fraction": 0.0017391304347826088,
+      "label": "candidate_teacher",
+      "direction": "yaw_right",
+      "mode": "settle",
+      "case_id": 75,
+      "physical": false,
+      "tracking_pass": true
+    }
+  ],
+  "original_verdict": {
+    "severe": false,
+    "forward": {
+      "source31831": {
+        "label": "source31831",
+        "first_rms": 0.11606697771570808,
+        "first_peak_rms": 0.1497244214044387,
+        "first_peak_joint_rad": 0.35640770196914673,
+        "first_peak_time_s": 0.32,
+        "max_rms": 0.21242711289592042,
+        "height_min": 0.44832712411880493,
+        "height_max": 0.4772116541862488,
+        "last_height": 0.4755564033985138,
+        "last_rms": 0.18616136944290448,
+        "last_xy_error": 0.028583703562617302,
+        "last_yaw_error": 0.019854122772812843,
+        "pass": true
+      },
+      "source31831_teacher": {
+        "label": "source31831_teacher",
+        "first_rms": 0.11439161872888214,
+        "first_peak_rms": 0.13768331447505894,
+        "first_peak_joint_rad": 0.33018797636032104,
+        "first_peak_time_s": 0.34,
+        "max_rms": 0.18782272535141442,
+        "height_min": 0.4522630572319031,
+        "height_max": 0.4744962155818939,
+        "last_height": 0.4741402864456177,
+        "last_rms": 0.18469630678690624,
+        "last_xy_error": 0.01396214496344328,
+        "last_yaw_error": 0.009841984137892723,
+        "pass": true
+      },
+      "candidate": {
+        "label": "candidate",
+        "first_rms": 0.057612842943542894,
+        "first_peak_rms": 0.09171031930940798,
+        "first_peak_joint_rad": 0.16316509246826172,
+        "first_peak_time_s": 0.14,
+        "max_rms": 0.09171031930940798,
+        "height_min": 0.44204917550086975,
+        "height_max": 0.4612220227718353,
+        "last_height": 0.46121326088905334,
+        "last_rms": 0.07627047411583913,
+        "last_xy_error": 0.00930069200694561,
+        "last_yaw_error": 0.00034000660525634885,
+        "pass": true
+      },
+      "candidate_teacher": {
+        "label": "candidate_teacher",
+        "first_rms": 0.05536186929436083,
+        "first_peak_rms": 0.08895570252971971,
+        "first_peak_joint_rad": 0.16542375087738037,
+        "first_peak_time_s": 0.14,
+        "max_rms": 0.08895570252971971,
+        "height_min": 0.4429715871810913,
+        "height_max": 0.4627377986907959,
+        "last_height": 0.46266254782676697,
+        "last_rms": 0.0819678648732267,
+        "last_xy_error": 0.015774516388773918,
+        "last_yaw_error": 0.0010787169449031353,
+        "pass": true
+      }
+    },
+    "flat": {
+      "source31831": {
+        "label": "source31831",
+        "terrain": "flat",
+        "passed": 15,
+        "count": 20,
+        "physical": 0,
+        "straight": 1
+      },
+      "source31831_teacher": {
+        "label": "source31831_teacher",
+        "terrain": "flat",
+        "passed": 15,
+        "count": 20,
+        "physical": 0,
+        "straight": 2
+      },
+      "candidate": {
+        "label": "candidate",
+        "terrain": "flat",
+        "passed": 18,
+        "count": 20,
+        "physical": 0,
+        "straight": 2
+      },
+      "candidate_teacher": {
+        "label": "candidate_teacher",
+        "terrain": "flat",
+        "passed": 20,
+        "count": 20,
+        "physical": 0,
+        "straight": 2
+      }
+    },
+    "terrain_regressions": [],
+    "pose_regressions": [],
+    "lift_counts": {
+      "candidate:left:direct": 8,
+      "candidate:right:direct": 19,
+      "candidate:yaw_left:direct": 0,
+      "candidate:yaw_right:direct": 50,
+      "candidate:left:settle": 7,
+      "candidate:right:settle": 18,
+      "candidate:yaw_left:settle": 0,
+      "candidate:yaw_right:settle": 43,
+      "candidate_teacher:left:direct": 19,
+      "candidate_teacher:right:direct": 14,
+      "candidate_teacher:yaw_left:direct": 0,
+      "candidate_teacher:yaw_right:direct": 79,
+      "candidate_teacher:left:settle": 11,
+      "candidate_teacher:right:settle": 24,
+      "candidate_teacher:yaw_left:settle": 0,
+      "candidate_teacher:yaw_right:settle": 70
+    },
+    "no_candidate_lift": false,
+    "rule": "at least half flat cases physically fail for either policy OR both forward startup RMS >0.8 rad",
+    "repeated_terrain_regressions": [],
+    "repeated_pose_regressions": [],
+    "repeated_no_lift": false,
+    "stop_for_review": false,
+    "retained_new_updates": 2034,
+    "discarded_optimizer_updates": 8,
+    "spent_new_updates": 2042,
+    "remaining_new_updates": 7958,
+    "automatic_training": false,
+    "allocation_change": "not_applied_pending_user_requested_review"
+  },
+  "flat20_applied": false,
+  "allocation_recommendation": "Defer direct40-to20 change while low-speed lateral tracking and reverse braking remain unresolved. Preserve20 as a later controlled candidate.",
+  "training_running": false
+}
