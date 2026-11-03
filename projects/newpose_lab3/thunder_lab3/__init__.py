@@ -4,6 +4,7 @@ import os
 import gymnasium as gym
 
 TASK_ID = "Thunder-Newpose-Newton3-v0"
+FRESH_TASK_ID = "Thunder-Newpose-Newton3-Fresh-v0"
 
 
 def make_env(cfg, **kwargs):
@@ -15,6 +16,12 @@ def make_env(cfg, **kwargs):
         raise ValueError("Unsupported Thunder candidate configuration override")
     for name, value in overrides.items():
         setattr(cfg, name, value)
+    seed=os.environ.get("NEWPOSE_SEED")
+    if seed is not None:
+        seed=int(seed)
+        if not 0<=seed<2**32:
+            raise ValueError("NEWPOSE_SEED must be in [0, 2**32)")
+        cfg.seed=seed
     cfg.apply_candidate_features()
     return ManagerBasedRLEnv(cfg=cfg, **kwargs)
 
@@ -26,6 +33,17 @@ gym.register(
     kwargs={
         "env_cfg_entry_point": "thunder_lab3.env_cfg:ThunderNewposeEnvCfg",
         "play_env_cfg_entry_point": "thunder_lab3.env_cfg:ThunderNewposePlayEnvCfg",
+        "rsl_rl_cfg_entry_point": "thunder_lab3.rsl_rl_cfg:ThunderMoeCtsRunnerCfg",
+    },
+)
+
+gym.register(
+    id=FRESH_TASK_ID,
+    entry_point="thunder_lab3:make_env",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": "thunder_lab3.env_cfg:ThunderFreshEnvCfg",
+        "play_env_cfg_entry_point": "thunder_lab3.env_cfg:ThunderFreshPlayEnvCfg",
         "rsl_rl_cfg_entry_point": "thunder_lab3.rsl_rl_cfg:ThunderMoeCtsRunnerCfg",
     },
 )

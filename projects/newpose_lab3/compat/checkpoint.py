@@ -18,6 +18,14 @@ from . import HISTORY_LAYOUT, UPSTREAM_COMMIT
 from .environment_state import retain_legacy_state, validate_retained_state
 
 FORMAT = "thunder_go2_lab3_v1"
+FRESH_FORMAT = "thunder_newton_fresh_v1"
+
+
+def fresh_signature(critic_dim=309):
+    return {"frame": 53, "history": 10, "actions": 16, "experts": 8,
+            "latent": 32, "critic": critic_dim,
+            "privileged_extension": list(FEATURE_NAMES),
+            "material_schema": ["newton_shared_mu", "restitution"]}
 
 
 def validate_signature(signature, critic_dim):
@@ -35,8 +43,22 @@ def validate_signature(signature, critic_dim):
 
 
 def normalize_checkpoint(saved, source_sha256, critic_dim=309):
-    """Return upstream key names; only verified 19538 lineage is accepted."""
-    if saved.get("compat_format") == FORMAT:
+    """Distinguish native fresh runs from the separately verified legacy lineage."""
+    native = saved.get("compat_format") == FRESH_FORMAT
+    if native:
+        result = dict(saved)
+        provenance = saved.get("compat_provenance", {})
+        if provenance.get("initialization") != "random" or not provenance.get("run_id"):
+            raise ValueError("Missing fresh-run ancestry")
+        if saved.get("upstream_commit") != UPSTREAM_COMMIT:
+            raise ValueError("Native checkpoint uses a different upstream algorithm revision")
+        if saved.get("history_layout") != HISTORY_LAYOUT or saved.get("timeout_bootstrap") != "terminal_observation":
+            raise ValueError("Native checkpoint observation/timeout contract differs")
+        if saved.get("iter") != saved.get("completed_updates"):
+            raise ValueError("Native checkpoint iteration must equal completed updates")
+        if not saved.get("training_contract") or not saved.get("environment_state"):
+            raise ValueError("Native checkpoint has no task/course provenance")
+    elif saved.get("compat_format") == FORMAT:
         result = dict(saved)
         if saved.get("compat_provenance", {}).get("formal_source_sha256") != SOURCE_SHA256:
             raise ValueError("Missing verified formal checkpoint ancestry")
@@ -84,8 +106,9 @@ def normalize_checkpoint(saved, source_sha256, critic_dim=309):
         raise ValueError("Unknown checkpoint container; do not infer counts from filenames or raw iter")
     validate_signature(result["signature"], critic_dim)
     completed = result.get("completed_updates")
-    if isinstance(completed, bool) or not isinstance(completed, int) or not 19538 <= completed <= 20000:
-        raise ValueError("Completed update count outside the formal continuation contract")
+    minimum = 0 if native else 19538
+    if isinstance(completed, bool) or not isinstance(completed, int) or not minimum <= completed <= 20000:
+        raise ValueError("Completed update count outside the experiment contract")
     rate = float(result["learning_rate"])
     if not math.isfinite(rate) or rate <= 0:
         raise ValueError("Invalid saved adaptive learning rate")
@@ -110,12 +133,16 @@ def validate_for_algorithm(saved, algorithm):
         if len(source["param_groups"]) != len(optimizer.param_groups):
             raise ValueError(f"Optimizer group layout differs: {key}")
         all_ids = []
+        initial_optimizer = (saved.get("compat_format") == FRESH_FORMAT
+                             and saved["completed_updates"] == 0 and not source["state"])
         for src, dst in zip(source["param_groups"], optimizer.param_groups):
             if len(src["params"]) != len(dst["params"]):
                 raise ValueError(f"Optimizer parameter count differs: {key}")
             all_ids.extend(src["params"])
             for identifier, parameter in zip(src["params"], dst["params"]):
                 moment = source["state"].get(identifier)
+                if initial_optimizer:
+                    continue
                 if moment is None or not {"step", "exp_avg", "exp_avg_sq"} <= moment.keys():
                     raise ValueError(f"Incomplete Adam state: {key}")
                 for field, tensor in moment.items():
@@ -127,7 +154,7 @@ def validate_for_algorithm(saved, algorithm):
                                 raise ValueError("Adam step must be scalar")
                         elif tensor.shape != parameter.shape:
                             raise ValueError(f"Adam moment shape differs: {key}/{field}")
-        if len(set(all_ids)) != len(all_ids) or set(all_ids) != set(source["state"]):
+        if len(set(all_ids)) != len(all_ids) or (not initial_optimizer and set(all_ids) != set(source["state"])):
             raise ValueError(f"Unexpected/repeated optimizer IDs: {key}")
 
 

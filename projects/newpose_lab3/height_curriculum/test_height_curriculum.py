@@ -141,6 +141,7 @@ class AdapterTest(unittest.TestCase):
         managers = types.ModuleType("isaaclab.managers")
         managers.ManagerTermBase = ManagerTermBase
         with patch.dict(sys.modules, {"isaaclab.managers": managers}):
+            sys.modules.pop(__package__ + ".isaac_height", None)
             module = importlib.import_module(__package__ + ".isaac_height")
             for proxy in (False, True):
                 wrap = Proxy if proxy else lambda a: a
@@ -162,7 +163,6 @@ class AdapterTest(unittest.TestCase):
                 self.assertEqual(term(env, **params).tolist(), [0.])
                 term.reset(torch.tensor([0]))
                 self.assertFalse(bool(term.reference.initialized.any()))
-        sys.modules.pop(__package__ + ".isaac_height", None)
 
 
 if __name__ == "__main__":

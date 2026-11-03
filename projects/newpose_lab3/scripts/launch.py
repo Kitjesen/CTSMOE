@@ -1,8 +1,7 @@
 """Plan or run pinned Go2 train/play entry points with the Thunder task registered.
 
-Example (prints a plan only): python scripts/launch.py play --urdf /abs/thunder_v4.urdf \
-    --checkpoint /abs/model_19538.pt --video --video-length 600
-Add --execute to run. Training additionally requires an explicit --updates budget.
+Example (prints a plan only): python scripts/launch.py train --urdf /abs/thunder_v4.urdf --updates 2
+Add --execute to run. Fresh training loads no checkpoint; --resume must be explicit.
 """
 import argparse
 from datetime import datetime, timezone
@@ -22,7 +21,11 @@ def main():
     parser.add_argument("mode", choices=("train", "play"))
     parser.add_argument("--go2-root", type=Path, default=project / "upstream" / "go2_rl_lab")
     parser.add_argument("--urdf", type=Path, required=True)
-    parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--checkpoint", type=Path)
+    parser.add_argument("--resume", action="store_true", help="Resume a native fresh-run checkpoint")
+    parser.add_argument("--legacy", action="store_true", help="Playback only: use the frozen 19538 environment")
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--run-name", default="")
     parser.add_argument("--usd-cache", type=Path, default=project / "generated" / "thunder_usd")
     parser.add_argument("--num-envs", type=int, default=32)
     parser.add_argument("--device", default="cuda:0")
@@ -42,6 +45,14 @@ def main():
         parser.error("Training requires an explicit --updates value in [1,20000]")
     if args.mode == "play" and args.updates is not None:
         parser.error("--updates only applies to training")
+    if args.mode == "play" and args.checkpoint is None:
+        parser.error("Playback requires --checkpoint")
+    if args.resume and (args.mode != "train" or args.checkpoint is None):
+        parser.error("--resume requires training and an explicit --checkpoint")
+    if args.mode == "train" and args.checkpoint is not None and not args.resume:
+        parser.error("Fresh training loads no checkpoint; use --resume explicitly for native continuation")
+    if args.legacy and args.mode != "play":
+        parser.error("Legacy checkpoints are playback-only; fresh training uses the new task")
     if args.mode != "play" and (args.terrain is not None or args.level is not None):
         parser.error("--terrain and --level are playback-only")
     if args.terrain == "flat" and args.level not in (None, 0):
@@ -61,11 +72,18 @@ def main():
     entry = go2 / "scripts" / "rsl_rl" / f"{args.mode}.py"
     play_output = (project / "results" / ("play_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
                    + "_" + uuid.uuid4().hex[:8])) if args.mode == "play" else None
-    checkpoint = play_output / args.checkpoint.name if play_output else args.checkpoint.resolve()
-    upstream_args = [str(entry), "--task", "Thunder-Newpose-Newton3-v0", "--num_envs", str(args.num_envs),
-                     "--device", args.device, "--checkpoint", str(checkpoint)]
+    checkpoint = (play_output / args.checkpoint.name if play_output else args.checkpoint.resolve()) if args.checkpoint else None
+    task = "Thunder-Newpose-Newton3-v0" if args.legacy else "Thunder-Newpose-Newton3-Fresh-v0"
+    upstream_args = [str(entry), "--task", task, "--num_envs", str(args.num_envs),
+                     "--device", args.device]
+    if checkpoint is not None:
+        upstream_args += ["--checkpoint", str(checkpoint)]
     if args.mode == "train":
-        upstream_args += ["--resume", "--max_iterations", str(args.updates), "--logger", "tensorboard"]
+        upstream_args += ["--max_iterations", str(args.updates), "--logger", "tensorboard", "--seed", str(args.seed)]
+        if args.resume:
+            upstream_args += ["--resume"]
+        if args.run_name:
+            upstream_args += ["--run_name", args.run_name]
     if args.video:
         # Leaving the visualizer unspecified lets Go2 select its official headless Newton GL recorder.
         upstream_args += ["--video", "--video_length", str(args.video_length)]
@@ -77,15 +95,17 @@ def main():
             "play_terrain": args.terrain or "mixed" if args.mode == "play" else None,
             "play_fixed_level": args.level,
             "candidate_overrides": candidate_overrides,
-            "checkpoint_source": str(args.checkpoint.resolve()),
+            "seed": args.seed,
+            "checkpoint_source": str(args.checkpoint.resolve()) if args.checkpoint else None,
             "play_output": str(play_output) if play_output else None,
-            "training_state": "formal continuation is blocked pending validated terrain/RNG restoration",
-            "checkpoint_validation": "compat.runner validates schema, SHA, history and remaining updates before learn",
+            "training_state": ("playback" if args.mode == "play" else
+                               "native_resume_with_episode_reset" if args.resume else "fresh_random_initialization_from_0"),
+            "checkpoint_validation": "native format/task/course checked for resume; legacy continuation remains blocked",
             "recording": "Go2 video_utils / env.video_recorders / Newton GL" if args.video else "disabled"}
     print(json.dumps(plan, indent=2), flush=True)
     if not args.execute:
         return 0
-    for path in (entry, args.urdf, args.checkpoint):
+    for path in (entry, args.urdf, *([args.checkpoint] if args.checkpoint else [])):
         if not path.is_file():
             parser.error(f"Required file is missing: {path}")
     if play_output:
@@ -114,6 +134,8 @@ def main():
     os.environ["NEWPOSE_URDF"] = str(args.urdf.resolve())
     os.environ["NEWPOSE_USD_CACHE"] = str(args.usd_cache.resolve())
     os.environ["NEWPOSE_CANDIDATE_OVERRIDES"] = json.dumps(candidate_overrides)
+    os.environ["NEWPOSE_RUN_MODE"] = args.mode
+    os.environ["NEWPOSE_SEED"] = str(args.seed)
     if args.mode == "play":
         os.environ["NEWPOSE_EVAL_TERRAIN"] = args.terrain or "mixed"
         if args.level is not None:

@@ -5,9 +5,9 @@ or `play.py` with `runpy`. It does not copy either training loop, the video writ
 MoE-CTS algorithm. The upstream checkout defaults to `upstream/go2_rl_lab`; `--go2-root`
 can select another checkout of the same pinned revision.
 
-Both modes print a plan unless `--execute` is supplied. Training requires an explicit
-additional update count and checkpoint. The compatibility runner validates cumulative
-updates against 20000; passing 20000 as an additional count after 19538 is rejected.
+Both modes print a plan unless `--execute` is supplied. Fresh training requires an explicit
+update count and loads no checkpoint. `--resume --checkpoint PATH` resumes only a new native
+run; the compatibility runner enforces `completed_updates + updates <= 20000`.
 The default runner config has zero updates, log standard deviation, no observation
 normalizer, no extra wrapper reward/action clipping, and no Go2 mirror mapping.
 The imported checkpoint restores its saved optimizer learning rate.
@@ -19,19 +19,26 @@ No cumulative environment-step estimate is fabricated when migration changes env
 ```bash
 # Review the plan first. This does not import the simulator or load the checkpoint.
 python scripts/launch.py train --urdf /ABS/thunder/urdf/thunder_v4.urdf \
-  --checkpoint /ABS/model_19538.pt --num-envs 32 --updates 2
+  --num-envs 32 --updates 2 --seed 42 --run-name migration_smoke
+
+# Resume a new native run, restoring course/RNG then starting new episodes.
+python scripts/launch.py train --urdf /ABS/thunder/urdf/thunder_v4.urdf \
+  --resume --checkpoint /ABS/model_2.pt --num-envs 32 --updates 2 --seed 42
 
 # Official Newton GL recording through Go2 env.video_recorders; 600 steps at 50 Hz = 12 s.
 python scripts/launch.py play --urdf /ABS/thunder/urdf/thunder_v4.urdf \
-  --checkpoint /ABS/model_19538.pt --num-envs 4 --video --video-length 600 --execute
+  --checkpoint /ABS/model_2.pt --num-envs 4 --video --video-length 600 --execute
 
 # Fixed staircase row; use stairs_down for the descent counterpart and --level 9 for L9.
 python scripts/launch.py play --urdf /ABS/thunder/urdf/thunder_v4.urdf \
-  --checkpoint /ABS/model_19538.pt --num-envs 4 --terrain stairs_up --level 6 \
+  --checkpoint /ABS/model_2.pt --num-envs 4 --terrain stairs_up --level 6 \
   --video --video-length 600 --execute
 ```
 
-Playback terrain selectors are consumed by `ThunderNewposePlayEnvCfg`: `stairs_up` maps to
+Add `--legacy` for the old 19538 checkpoint and frozen environment. Legacy continuation is
+blocked; a legacy checkpoint must not become a fresh run by changing its filename.
+
+Playback terrain selectors are consumed by the selected fresh or legacy play config: `stairs_up` maps to
 the inward/upward stair tile (`pyramid_stairs_inv`), `stairs_down` to `pyramid_stairs`, and
 `flat` to a plane tile. `--level` chooses a fixed row, not a random upper initialization bound.
 These options are rejected for training and do not overwrite the ten-level mixed curriculum.
@@ -45,12 +52,14 @@ The wrapper intentionally supports only the standalone Newton runtime; it does n
 Kit bindings. Playback copies and SHA-verifies the checkpoint into a fresh `results/play_*`
 directory first; the upstream entry point writes its exports and videos beside that copy.
 Training logs use `logs/`, and generated URDF conversion output uses `generated/`.
-Formal continuation currently fails closed pending validated terrain/RNG/course restoration;
-the training plan is not a claim that the continuation gate has passed.
+Native resume checks the saved source/configuration fingerprint, URDF, environment count,
+terrain origins, both optimizer states and update budget. It restores course levels/types and
+RNG before resetting episodes; it does not restore an in-flight physical trajectory.
+Old PhysX-to-Newton continuation still fails closed.
 
 This wiring does not establish checkpoint transfer equivalence, successful locomotion,
 or stair acceptance. The environment, history, 309-dimensional critic, reset, both optimizer
-updates and exported policy must pass native checks before a formal continuation.
+updates and exported policy must pass native checks before a long training run.
 
 `probe_native.py` instantiates the integrated eight-terrain environment without a runner or
 optimizer. Start with `--steps 16 --num-envs 32`; use `--steps 1002` to verify real timeout and

@@ -73,6 +73,13 @@ class ActionsCfg:
         scale=5.,use_default_offset=True,clip={".*":(-44.,44.)})
 
 
+def fresh_actions_cfg():
+    """Bound fresh-policy leg targets by URDF limits after scale and default-pose offset."""
+    actions = ActionsCfg()
+    actions.joint_pos.clip = validate_urdf(os.environ["NEWPOSE_URDF"])["joint_position_limits"]
+    return actions
+
+
 @configclass
 class CommandsCfg:
     base_velocity = mdp.UniformVelocityCommandCfg(asset_name="robot",resampling_time_range=(20.,20.),
@@ -110,4 +117,4 @@ class ThunderCompatibilityCfg(ManagerBasedRLEnvCfg):
         self.decimation = 8
         self.episode_length_s = 20.
         self.sim = sim_utils.SimulationCfg(dt=.0025,render_interval=8,use_newton_actuators=False,
-            physics=NewtonCfg(solver_cfg=MJWarpSolverCfg(),num_substeps=1))
+            physics=NewtonCfg(solver_cfg=MJWarpSolverCfg(use_mujoco_contacts=False),num_substeps=1))

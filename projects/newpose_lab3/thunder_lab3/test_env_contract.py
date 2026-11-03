@@ -8,14 +8,175 @@ import numpy as np
 import torch
 import yaml
 
-from .env_cfg import RewardsCfg,CommandsCfg,ObservationsCfg,ThunderNewposeEnvCfg,ThunderNewposePlayEnvCfg
+from .env_cfg import (RewardsCfg,FreshRewardsCfg,CommandsCfg,ObservationsCfg,
+    ThunderNewposeEnvCfg,ThunderNewposePlayEnvCfg,ThunderFreshEnvCfg,ThunderFreshPlayEnvCfg)
 from height_curriculum.height import HeightOptions
 from height_curriculum.boxes import gradual_random_grid_terrain
 from .terrain import terrain_cfg,pyramid_slope
 from . import mdp
+from . import make_env
 
 
 class FullContractTest(unittest.TestCase):
+    @staticmethod
+    def contact_fixture(count=1):
+        history=torch.zeros(count,8,1,3)
+        sensor=NS(cfg=NS(update_period=.0025,history_length=8),
+            data=NS(net_normal_forces_w_history=NS(torch=history)))
+        env=NS(num_envs=count,device='cpu',physics_dt=.0025,step_dt=.02,common_step_counter=0,
+            cfg=NS(scene=NS(lazy_sensor_update=False)),scene=NS(sensors={'contact_forces':sensor}),
+            _physics_handles_decimation=False)
+        return env,NS(name='contact_forces',body_ids=[0]),history
+
+    def test_fresh_contact_does_not_turn_sparse_impacts_into_continuous_duration(self):
+        env,cfg,history=self.contact_fixture()
+        for step in range(1,6):
+            env.common_step_counter=step;history.zero_();history[:,3,0,2]=30.
+            self.assertFalse(bool(mdp.fresh_leg_contact_failure(env,cfg).any()))
+            self.assertEqual(env._leg_contact['samples'].item(),0)
+            self.assertEqual(env._leg_contact['duration'].item(),0.)
+        self.assertTrue(env._leg_contact['touched'].item())
+
+    def test_fresh_contact_exactly_forty_consecutive_samples_fail_not_thirty_nine(self):
+        env,cfg,history=self.contact_fixture(2)
+        history[:,:,:,2]=30.
+        for step in range(1,5):
+            env.common_step_counter=step
+            self.assertFalse(bool(mdp.fresh_leg_contact_failure(env,cfg).any()))
+        env.common_step_counter=5
+        history[1,0,0,2]=0.
+        self.assertEqual(mdp.fresh_leg_contact_failure(env,cfg).tolist(),[True,False])
+        self.assertEqual(env._leg_contact['samples'].tolist(),[40,0])
+        self.assertAlmostEqual(env._leg_contact['duration'][0].item(),.1,places=7)
+
+    def test_fresh_contact_retains_peak_and_touch_thresholds(self):
+        env,cfg,history=self.contact_fixture(3)
+        history[:,4,0,2]=torch.tensor([500.,499.,5.])
+        self.assertEqual(mdp.fresh_leg_contact_failure(env,cfg).tolist(),[True,False,False])
+        self.assertEqual(env._leg_contact['touched'].tolist(),[True,True,False])
+        self.assertEqual(env._leg_contact['duration'].tolist(),[0.,0.,0.])
+
+    def test_fresh_contact_rejects_overlapping_or_lazy_history(self):
+        for key,value in (('period',.005),('length',7),('physics',.005),('lazy',True),('decimation',True)):
+            env,cfg,_=self.contact_fixture()
+            sensor=env.scene.sensors['contact_forces']
+            if key=='period':sensor.cfg.update_period=value
+            elif key=='length':sensor.cfg.history_length=value
+            elif key=='physics':env.physics_dt=value
+            elif key=='lazy':env.cfg.scene.lazy_sensor_update=value
+            else:env._physics_handles_decimation=value
+            with self.assertRaises(ValueError):mdp.fresh_leg_contact_failure(env,cfg)
+
+    def test_fresh_contact_partial_reset_and_duplicate_calls_do_not_recount_samples(self):
+        env,cfg,history=self.contact_fixture(2)
+        history[:,:,:,2]=30.
+        env.common_step_counter=1
+        mdp.fresh_leg_contact_failure(env,cfg)
+        mdp.fresh_leg_contact_failure(env,cfg)
+        self.assertEqual(env._leg_contact['samples'].tolist(),[8,8])
+        term=object.__new__(mdp.ThunderVelocityCommand);term._env=env
+        term.robot=NS(data=NS(root_pos_w=NS(torch=torch.zeros(2,3)),
+            root_quat_w=NS(torch=torch.tensor([[0.,0.,0.,1.]]).repeat(2,1))))
+        for name in ('travel_expected','travel_progress','travel_peak','travel_radius','tilt_duration'):
+            setattr(term,name,torch.ones(2))
+        term.travel_failed=torch.ones(2,dtype=torch.bool)
+        term.travel_previous=torch.ones(2,2);term.travel_step=torch.ones(2,dtype=torch.long)
+        term.travel_yaw=torch.ones(2);term.travel_axis=torch.ones(2,2)
+        with patch.object(mdp.lab_mdp.UniformVelocityCommand,'reset',return_value={}):term.reset([0])
+        self.assertEqual(env._leg_contact['samples'].tolist(),[0,8])
+        mdp.fresh_leg_contact_failure(env,cfg)
+        self.assertEqual(env._leg_contact['samples'].tolist(),[0,8])
+        env.common_step_counter=2
+        mdp.fresh_leg_contact_failure(env,cfg)
+        self.assertEqual(env._leg_contact['samples'].tolist(),[8,16])
+
+    def test_explicit_seed_reaches_environment_before_construction(self):
+        cfg=NS(seed=0,apply_candidate_features=lambda:None)
+        with patch.dict('os.environ',{'NEWPOSE_SEED':'17','NEWPOSE_CANDIDATE_OVERRIDES':'{}'}), \
+                patch('isaaclab.envs.ManagerBasedRLEnv',return_value='created') as constructor:
+            self.assertEqual(make_env(cfg),'created')
+            self.assertEqual(cfg.seed,17)
+            constructor.assert_called_once_with(cfg=cfg)
+        with patch.dict('os.environ',{'NEWPOSE_SEED':'-1','NEWPOSE_CANDIDATE_OVERRIDES':'{}'}):
+            with self.assertRaises(ValueError):make_env(cfg)
+
+    def test_fresh_defaults_are_independent_of_legacy_and_start_on_level_zero(self):
+        with patch('thunder_lab3.env_cfg.robot_cfg',return_value=None), \
+                patch('thunder_lab3.env_cfg.fresh_actions_cfg',return_value=NS(fresh_actions=True)):
+            fresh=ThunderFreshEnvCfg();legacy=ThunderNewposeEnvCfg()
+        self.assertEqual(fresh.newpose_terrain_schema,'thunder_fresh_10level_v2')
+        self.assertEqual(fresh.newpose_physics_schema,'newton_mjwarp_triangle_v1')
+        self.assertEqual(fresh.scene.terrain.max_init_terrain_level,0)
+        self.assertEqual(legacy.scene.terrain.max_init_terrain_level,5)
+        self.assertTrue(fresh.actions.fresh_actions)
+        self.assertEqual(fresh.episode_length_s,20.)
+        self.assertEqual(fresh.scene.contact_forces.update_period,.0025)
+        self.assertEqual(fresh.scene.contact_forces.history_length,8)
+        self.assertAlmostEqual(fresh.scene.contact_forces.update_period*fresh.scene.contact_forces.history_length,
+            fresh.sim.dt*fresh.decimation)
+        self.assertEqual(legacy.scene.contact_forces.history_length,3)
+        self.assertIs(fresh.scene.terrain.terrain_generator.sub_terrains['boxes'].function,gradual_random_grid_terrain)
+        self.assertEqual(fresh.scene.terrain.terrain_generator.sub_terrains['boxes'].grid_height_range,(.01,.20))
+        self.assertIsNot(legacy.scene.terrain.terrain_generator.sub_terrains['boxes'].function,gradual_random_grid_terrain)
+        self.assertEqual((fresh.height_weight,fresh.hip_extra_weight),(0.,0.))
+        self.assertIs(fresh.terminations.terrain_tile_exit.func,mdp.terrain_tile_exit)
+        self.assertTrue(fresh.terminations.terrain_tile_exit.time_out)
+        self.assertFalse(fresh.terminations.body_inverted.time_out)
+        self.assertIs(fresh.terminations.leg_contact.func,mdp.fresh_leg_contact_failure)
+        self.assertIs(legacy.terminations.leg_contact.func,mdp.leg_contact_failure)
+
+    def test_fresh_reward_changes_remove_contact_onset_bonus_and_unverified_mirror(self):
+        old=RewardsCfg();fresh=FreshRewardsCfg()
+        def weights(cfg):return {k:v.weight for k,v in vars(cfg).items() if hasattr(v,'weight') and v.weight}
+        expected=weights(old)
+        for name in ('feet_contact_without_cmd','joint_mirror','upward'):expected.pop(name)
+        self.assertEqual(weights(fresh),expected)
+        self.assertEqual(fresh.track_lin_vel_xy_exp.params,{'std':.5,'stair_std':.5})
+        self.assertIsNone(fresh.upward)
+        self.assertFalse(any('air_time' in name or 'lift' in name for name in weights(fresh)))
+
+    def test_fresh_stair_tracking_signal_and_normal_slope_upright_gate(self):
+        data=NS(root_lin_vel_b=NS(torch=torch.zeros(2,3)),
+            projected_gravity_b=NS(torch=torch.tensor([[0.,0.,-1.],[math.sin(math.radians(40)),0.,-math.cos(math.radians(40))]])))
+        env=NS(scene={'robot':NS(data=data)},command_manager=NS(get_command=lambda _:torch.tensor([[.5,0.,0.],[.5,0.,0.]])))
+        with patch.object(mdp,'moving_stairs',return_value=torch.ones(2,dtype=torch.bool)):
+            legacy=mdp.track_xy(env);fresh=mdp.track_xy(env,stair_std=.5)
+        torch.testing.assert_close(legacy,torch.full((2,),math.exp(-4)))
+        torch.testing.assert_close(fresh,torch.full((2,),math.exp(-1)))
+        self.assertFalse(bool(mdp.body_inverted(env).any()))
+        data.projected_gravity_b.torch[1,2]=.1
+        self.assertEqual(mdp.body_inverted(env).tolist(),[False,True])
+
+    def test_tile_exit_and_promotion_use_the_same_boundary(self):
+        n=3;called=[]
+        positions=torch.tensor([[4.,0.,.5],[4.001,0.,.5],[-4.001,0.,.5]])
+        term=NS(accumulate=lambda ids:None,travel_expected=torch.full((n,),5.),
+            travel_progress=torch.full((n,),4.5),travel_axis=torch.tensor([[1.,0.]]).repeat(n,1),
+            travel_failed=torch.zeros(n,dtype=torch.bool),travel_peak=positions[:,0].clone(),travel_radius=positions[:,0].abs())
+        robot=NS(data=NS(root_pos_w=NS(torch=positions),projected_gravity_b=NS(torch=torch.tensor([[0.,0.,-1.]]).repeat(n,1))))
+        terrain=NS(cfg=NS(terrain_generator=NS(size=(8.,8.))),terrain_levels=torch.zeros(n,dtype=torch.long),
+            update_env_origins=lambda ids,up,down:called.append((up.clone(),down.clone())))
+        class Scene(dict):pass
+        scene=Scene(robot=robot);scene.terrain=terrain;scene.env_origins=torch.zeros(n,3)
+        env=NS(scene=scene,num_envs=n,device='cpu',command_manager=NS(get_term=lambda _:term),
+            termination_manager=NS(terminated=torch.zeros(n,dtype=torch.bool)))
+        self.assertEqual(mdp.terrain_tile_exit(env).tolist(),[False,True,True])
+        with patch.object(mdp,'stairs',return_value=torch.ones(n,dtype=torch.bool)):
+            mdp.terrain_levels(env,None)
+        self.assertEqual(called[-1][0].tolist(),[False,True,False])
+        self.assertEqual(called[-1][1].tolist(),[False,False,False])
+
+    def test_fresh_playback_holds_exact_stair_level_and_disables_curriculum(self):
+        with patch('thunder_lab3.env_cfg.robot_cfg',return_value=None), \
+                patch('thunder_lab3.env_cfg.fresh_actions_cfg',return_value=None), \
+                patch.dict('os.environ',{'NEWPOSE_EVAL_TERRAIN':'stairs_up','NEWPOSE_EVAL_LEVEL':'9'}):
+            cfg=ThunderFreshPlayEnvCfg()
+        self.assertIsNone(cfg.curriculum)
+        self.assertEqual(list(cfg.scene.terrain.terrain_generator.sub_terrains),['pyramid_stairs_inv'])
+        self.assertEqual(cfg.scene.terrain.fixed_level,9)
+        self.assertFalse(cfg.gradual_boxes)
+        cfg.apply_candidate_features()
+
     def test_play_camera_tracks_far_environment_without_changing_robot_or_training(self):
         positions=torch.tensor([[80.,-24.,.5],[0.,0.,1.]])
         before=positions.clone();calls=[]

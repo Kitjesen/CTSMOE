@@ -2,7 +2,8 @@
 
 python scripts/probe_native.py --urdf /abs/thunder_v4.urdf --output /abs/fresh-probe \
     --num-envs 32 --steps 16 --visualizer none --device cuda:0
-Use --steps 1002 for real reset/history verification, or --policy for a legacy 530-to-16 JIT.
+Use --fresh for the from-scratch task, --steps 1002 for reset/history verification,
+or --policy for a compatible 530-to-16 JIT.
 """
 import argparse
 import json
@@ -20,6 +21,7 @@ def main():
     parser.add_argument("--num-envs", type=int, default=32)
     parser.add_argument("--steps", type=int, default=16)
     parser.add_argument("--policy", type=Path)
+    parser.add_argument("--fresh", action="store_true", help="Probe the independent from-scratch task")
     preliminary, _ = parser.parse_known_args()
     go2 = preliminary.go2_root.resolve()
     sys.path[:0] = [str(project), str(go2 / "source" / "rsl_rl"), str(go2 / "source" / "go2_rl_lab")]
@@ -39,15 +41,16 @@ def main():
     import gymnasium as gym
     import numpy as np
     import torch
-    from thunder_lab3 import TASK_ID
-    from thunder_lab3.env_cfg import ThunderNewposeEnvCfg
+    from thunder_lab3 import TASK_ID, FRESH_TASK_ID
+    from thunder_lab3.env_cfg import ThunderNewposeEnvCfg, ThunderFreshEnvCfg
     from compat.history import validate_observations
     from task_port.observations import verify_student_contract
     from task_port.probe_evidence import append_history, reset_verdict
     from go2_rl_lab.utils.terrains import get_assigned_terrain_masks
     from teacher.privileged import JOINTS, WHEEL_BODIES
 
-    cfg = ThunderNewposeEnvCfg()
+    task_id = FRESH_TASK_ID if args.fresh else TASK_ID
+    cfg = ThunderFreshEnvCfg() if args.fresh else ThunderNewposeEnvCfg()
     cfg.scene.num_envs = args.num_envs
     cfg.sim.device = args.device
     cfg.seed = 42
@@ -64,7 +67,7 @@ def main():
     result = {"completed": False, "training_started": False, "optimizer_updates": 0,
               "steps_requested": args.steps, "seed": cfg.seed, "num_envs": args.num_envs,
               "policy": str(args.policy.resolve()) if args.policy else None,
-              "action_source": "legacy JIT" if args.policy else "zero actions", "task": TASK_ID}
+              "action_source": "external JIT" if args.policy else "zero actions", "task": task_id}
 
     def terrain_snapshot(env):
         terrain = env.scene.terrain
@@ -76,11 +79,11 @@ def main():
                 for name, mask in get_assigned_terrain_masks(env).items()}
 
     with launch_simulation(cfg.sim, args):
-        env = gym.make(TASK_ID, cfg=cfg)
+        env = gym.make(task_id, cfg=cfg)
         base = env.unwrapped
         try:
             obs, _ = env.reset()
-            result["student_contract"] = verify_student_contract(base)
+            result["student_contract"] = verify_student_contract(base, fresh=args.fresh)
             obs, _ = env.reset()
             validate_observations(obs)
             expected_history = obs["single_obs"][:, None].repeat(1, 10, 1)
@@ -103,6 +106,8 @@ def main():
             result["physics_configuration"] = {
                 "use_mujoco_contacts": bool(base.cfg.sim.physics.solver_cfg.use_mujoco_contacts),
                 "physics_dt_s": base.cfg.sim.dt, "control_decimation": base.cfg.decimation,
+                "contact_period_s": base.cfg.scene.contact_forces.update_period,
+                "contact_history_samples": base.cfg.scene.contact_forces.history_length,
             }
             result["backend"] = type(robot).__module__
             if not result["backend"].startswith("isaaclab_newton"):
@@ -126,6 +131,7 @@ def main():
                     "joint_vel": robot.data.joint_vel.torch[ids][:, joint_ids],
                     "contact_normal": contact.data.net_normal_forces_w.torch[ids],
                     "contact_normal_history_peak_per_body": contact.data.net_normal_forces_w_history.torch[ids].norm(dim=-1).amax(dim=1),
+                    "leg_normal_history_newest_first": contact.data.net_normal_forces_w_history.torch[ids][:, :, leg_ids],
                     "terrain_levels": base.scene.terrain.terrain_levels[ids],
                     "terrain_types": base.scene.terrain.terrain_types[ids],
                     "leg_contact_duration_before": state["duration"][ids],
@@ -178,7 +184,7 @@ def main():
                     "root_pos_w": robot.data.root_pos_w.torch, "root_quat_xyzw": robot.data.root_quat_w.torch,
                     "root_lin_vel_b": robot.data.root_lin_vel_b.torch, "root_ang_vel_b": robot.data.root_ang_vel_b.torch,
                     "joint_pos": robot.data.joint_pos.torch[:, joint_ids], "joint_vel": robot.data.joint_vel.torch[:, joint_ids],
-                    "joint_acc": robot.data.joint_acc.torch[:, joint_ids], "torque_proxy": robot.data.applied_torque.torch[:, joint_ids],
+                    "joint_acc": robot.data.joint_acc.torch[:, joint_ids], "torque_proxy": robot.actuators.applied_effort.torch[:, joint_ids],
                     "contact_normal": contact.data.net_normal_forces_w.torch, "contact_total": contact.data.net_forces_w.torch,
                     "commands": base.command_manager.get_command("base_velocity"),
                     "reward_term_weighted_rates": base.reward_manager._step_reward,

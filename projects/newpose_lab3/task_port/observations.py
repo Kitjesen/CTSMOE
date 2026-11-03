@@ -20,7 +20,8 @@ def policy_frame(env):
 
 
 def policy_tensor_frame(angular_velocity, gravity, commands, relative_legs, relative_velocities, actions):
-    """19538 noise-free evaluation contract: clip each raw term BEFORE scaling."""
+    """53 values: body omega 3, gravity 3, command 3, leg q 12, joint dq 16, previous action 16."""
+    # Preserve the old reference contract: observation terms are clipped before scaling.
     return torch.cat(tuple(value.clamp(-100,100) * scale for value, scale in (
         (angular_velocity,.25),(gravity,1.),(commands,1.),(relative_legs,1.),
         (relative_velocities,.05),(actions,1.))), dim=-1)
@@ -75,7 +76,7 @@ def critic_frame(env):
         - env.scene["height_scanner"].data.ray_hits_w.torch[..., 2] - 0.5).clamp(-1, 1)
     kp, kd = actuator_ratios(robot, ids)
     privileged = normalized_features(robot.data.joint_acc.torch[:, ids],
-        robot.data.applied_torque.torch[:, ids],
+        robot.actuators.applied_effort.torch[:, ids],
         sensor.data.net_normal_forces_w.torch[:, env._newpose_wheel_order], env.episode_length_buf == 0)
     core = torch.cat((robot.data.root_lin_vel_b.torch, robot.data.root_ang_vel_b.torch,
         robot.data.projected_gravity_b.torch, env.command_manager.get_command("base_velocity"),
@@ -88,9 +89,9 @@ def critic_frame(env):
     return result
 
 
-def verify_student_contract(env):
-    """Exercise actual Lab action processing before any old student policy is evaluated."""
-    from runtime.thunder_contract import POSE
+def verify_student_contract(env, *, fresh=False):
+    """Exercise actual Lab action processing; select fresh URDF bounds explicitly."""
+    from runtime.thunder_contract import POSE, validate_urdf
     robot=env.scene["robot"]
     position=env.action_manager.get_term("joint_pos")
     velocity=env.action_manager.get_term("joint_vel")
@@ -103,9 +104,20 @@ def verify_student_contract(env):
     torch.testing.assert_close(robot.data.default_joint_pos.torch[:,ids],expected[None].expand(env.num_envs,-1))
     probe=torch.arange(16,device=env.device,dtype=torch.float32)[None].repeat(env.num_envs,1)-4
     probe[:,-1]=100.
+    probe[1::2].neg_()
     env.action_manager.process_action(probe)
     scales=torch.tensor([.125,.25,.25]*4,device=env.device)
-    torch.testing.assert_close(position.processed_actions,(probe[:,:12]*scales+expected[:12]).clamp(-100,100))
+    targets=probe[:,:12]*scales+expected[:12]
+    if fresh:
+        import os
+        limits=validate_urdf(os.environ["NEWPOSE_URDF"])["joint_position_limits"]
+        bounds=torch.tensor([limits[name] for name in LEG_JOINTS],device=env.device)
+        targets=targets.clamp(min=bounds[:,0],max=bounds[:,1])
+    else:
+        targets=targets.clamp(-100,100)
+    torch.testing.assert_close(position.processed_actions,targets)
     torch.testing.assert_close(velocity.processed_actions,(probe[:,12:]*5.).clamp(-44,44))
-    return {"action_order":list(JOINTS),"pose":POSE,"clip_before_scale":True,
+    return {"action_order":list(JOINTS),"pose":POSE,"observation_clip_before_scale":True,
+            "action_clip_after_scale":True,
+            "leg_target_bounds":"URDF hard limits" if fresh else "historical +/-100 rad",
             "history":"10 frames, oldest first, frame-major","noise":"disabled in interface probe"}

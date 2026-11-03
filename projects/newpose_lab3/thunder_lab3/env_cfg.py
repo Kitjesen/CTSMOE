@@ -14,7 +14,7 @@ from isaaclab.managers import (ObservationGroupCfg,ObservationTermCfg,EventTermC
 from isaaclab.terrains import TerrainImporterCfg
 from isaaclab.utils import configclass
 from isaaclab_newton.physics import NewtonCfg,MJWarpSolverCfg
-from task_port.env_cfg import SceneCfg,ActionsCfg,robot_cfg
+from task_port.env_cfg import SceneCfg,ActionsCfg,robot_cfg,fresh_actions_cfg
 from task_port.observations import policy_frame,critic_frame
 from teacher.privileged import LEG_JOINTS,JOINTS,WHEEL_BODIES
 from height_curriculum import configure as configure_candidates
@@ -96,11 +96,29 @@ class RewardsCfg:
 
 
 @configclass
+class FreshRewardsCfg(RewardsCfg):
+    # Contact onsets reward bouncing, and diagonal joint signs are not a verified symmetry.
+    feet_contact_without_cmd=None
+    joint_mirror=None
+    # Velocity rewards already gate on uprightness; avoid a large stand-still survival bonus.
+    upward=None
+    track_lin_vel_xy_exp=RewardTermCfg(func=mdp.track_xy,weight=3.75,
+        params={'std':.5,'stair_std':.5})
+
+
+@configclass
 class TerminationsCfg:
     time_out=TerminationTermCfg(func=lab_mdp.time_out,time_out=True)
     terrain_out_of_bounds=TerminationTermCfg(func=mdp.terrain_out_of_bounds,time_out=True)
     stair_base_contact=TerminationTermCfg(func=mdp.base_contact,params={'threshold':1.,'sensor_cfg':SceneEntityCfg('contact_forces',body_names='base_link')})
     leg_contact=TerminationTermCfg(func=mdp.leg_contact_failure,params={'sensor_cfg':LEG_CONTACTS})
+
+
+@configclass
+class FreshTerminationsCfg(TerminationsCfg):
+    leg_contact=TerminationTermCfg(func=mdp.fresh_leg_contact_failure,params={'sensor_cfg':LEG_CONTACTS})
+    terrain_tile_exit=TerminationTermCfg(func=mdp.terrain_tile_exit,time_out=True)
+    body_inverted=TerminationTermCfg(func=mdp.body_inverted)
 
 
 @configclass
@@ -169,23 +187,53 @@ class ThunderNewposeEnvCfg(ManagerBasedRLEnvCfg):
         return self
 
 
+def configure_playback(cfg):
+    cfg.scene.num_envs=64
+    cfg.curriculum=None
+    cfg.events.play_camera_reset=EventTermCfg(func=mdp.follow_play_camera,mode='reset')
+    cfg.events.play_camera_interval=EventTermCfg(func=mdp.follow_play_camera,mode='interval',
+        interval_range_s=(.02,.02),is_global_time=True,resample_interval_on_reset=False)
+    choice=os.environ.get('NEWPOSE_EVAL_TERRAIN','mixed')
+    names={'flat':'flat','stairs_up':'pyramid_stairs_inv','stairs_down':'pyramid_stairs'}
+    if choice!='mixed':
+        if choice not in names:raise ValueError('unknown NEWPOSE_EVAL_TERRAIN')
+        key=names[choice];selected=cfg.scene.terrain.terrain_generator.sub_terrains[key]
+        selected.proportion=1.;cfg.scene.terrain.terrain_generator.sub_terrains={key:selected}
+        cfg.gradual_boxes=False
+    level=os.environ.get('NEWPOSE_EVAL_LEVEL')
+    if level is not None:
+        level=int(level)
+        if not 0<=level<=9:raise ValueError('NEWPOSE_EVAL_LEVEL must be 0..9')
+        cfg.scene.terrain.fixed_level=level
+
+
 @configclass
 class ThunderNewposePlayEnvCfg(ThunderNewposeEnvCfg):
     def __post_init__(self):
-        super().__post_init__();self.scene.num_envs=64
-        self.curriculum=None
-        self.events.play_camera_reset=EventTermCfg(func=mdp.follow_play_camera,mode='reset')
-        self.events.play_camera_interval=EventTermCfg(func=mdp.follow_play_camera,mode='interval',
-            interval_range_s=(.02,.02),is_global_time=True,resample_interval_on_reset=False)
-        choice=os.environ.get('NEWPOSE_EVAL_TERRAIN','mixed')
-        names={'flat':'flat','stairs_up':'pyramid_stairs_inv','stairs_down':'pyramid_stairs'}
-        if choice!='mixed':
-            if choice not in names:raise ValueError('unknown NEWPOSE_EVAL_TERRAIN')
-            key=names[choice];selected=self.scene.terrain.terrain_generator.sub_terrains[key]
-            selected.proportion=1.;self.scene.terrain.terrain_generator.sub_terrains={key:selected}
-        level=os.environ.get('NEWPOSE_EVAL_LEVEL')
-        if level is not None:
-            level=int(level)
-            if not 0<=level<=9:raise ValueError('NEWPOSE_EVAL_LEVEL must be 0..9')
-            self.scene.terrain.fixed_level=level
-            # Playback never advances the training curriculum.
+        super().__post_init__()
+        configure_playback(self)
+
+
+@configclass
+class ThunderFreshEnvCfg(ThunderNewposeEnvCfg):
+    """Independent from-scratch baseline; old policy playback retains its original contract."""
+    rewards=FreshRewardsCfg()
+    terminations=FreshTerminationsCfg()
+    gradual_boxes: bool=True
+    newpose_terrain_schema: str='thunder_fresh_10level_v2'
+    newpose_physics_schema: str='newton_mjwarp_triangle_v1'
+
+    def __post_init__(self):
+        super().__post_init__()
+        self.actions=fresh_actions_cfg()
+        self.scene.terrain.max_init_terrain_level=0
+        self.scene.terrain.terrain_generator.sub_terrains['boxes'].grid_height_range=(.01,.20)
+        self.scene.contact_forces.update_period=self.sim.dt
+        self.scene.contact_forces.history_length=self.decimation
+
+
+@configclass
+class ThunderFreshPlayEnvCfg(ThunderFreshEnvCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        configure_playback(self)

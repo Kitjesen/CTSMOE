@@ -2,7 +2,9 @@
 
 2026-11-03 决定：继续使用 Thunder 四轮腿机器人，复用 Go2 `lab3.0` 的 CTS+MoE 框架，在 Isaac Lab 3 / Newton 中建立独立实验，目标为 **0 → 20000 次参数更新**。旧策略仅作对照，不继承其权重、优化器或地形课程进度。
 
-**当前是代码和资产基线，尚未启动从零训练。** `scripts/launch.py` 和 `compat/runner.py` 仍保留之前的旧检查点回放/续训适配行为；它们不是已经完成的新训练入口。机器人、默认站姿、动作、奖励与课程将按顺序核对后再改。
+**当前提供独立的从零训练入口，长训练尚未启动。** 新任务为 `Thunder-Newpose-Newton3-Fresh-v0`，不提供检查点就从随机网络和空优化器开始；恢复必须显式使用 `--resume --checkpoint`，且只接受同任务的新检查点。旧 19538 只能通过 `play --legacy` 回放。
+
+本轮迁移差异见 [环境、地形和奖励说明](thunder_lab3/MIGRATION.md)，验证结果见 [VALIDATION.md](VALIDATION.md)。短测试的参数更新与旧正式进度、未来长训练分别记录；接口通过不代表站立或步态通过。
 
 ## 代码与资产
 
@@ -12,8 +14,8 @@
 | `task_port/`、`runtime/` | Thunder 模型导入、16 个动作、观测与默认站姿 |
 | `teacher/` | 教师接触/动力学输入及镜像审计辅助代码 |
 | `height_curriculum/` | 相对地面高度与渐进方块候选 |
-| `compat/` | 旧模型回放、导出及兼容性检查，保留作对照 |
-| `scripts/` | 原有回放入口及不更新策略的原生环境探针 |
+| `compat/` | 官方 CTS+MoE runner 的计数/超时适配、新模型保存恢复、导出和旧模型回放 |
+| `scripts/` | 从零训练/显式恢复/回放统一入口，以及不更新策略的原生环境探针 |
 | `legacy/thunder/` | `thunder_v4.urdf` 和 21 个 STL 网格 |
 | `legacy/diagnostics/` | 旧奖励配置测试所需的 `env.yaml`，不是新训练配置 |
 | `upstream/go2_rl_lab/` | 固定提交的上游 Git 子模块 |
@@ -45,6 +47,31 @@ cd CTSMOE/projects/newpose_lab3
 
 保留上游自身许可证：`upstream/go2_rl_lab/LICENSE` 和 `upstream/go2_rl_lab/source/rsl_rl/LICENSE`。Thunder 资产不因此被重新授权为 MIT 或其他上游许可证。
 
+## 运行入口
+
+以下命令从本目录执行，需先准备上述 Linux 原生运行环境。默认只打印执行计划，增加 `--execute` 才运行。
+
+```bash
+# 随机初始化的两次更新测试，不载入旧模型。
+python scripts/launch.py train \
+  --urdf legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/urdf/thunder_v4.urdf \
+  --num-envs 32 --updates 2 --seed 42 --run-name migration_smoke
+
+# 明确恢复新任务的检查点，updates 表示额外更新数。
+python scripts/launch.py train \
+  --urdf legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/urdf/thunder_v4.urdf \
+  --num-envs 32 --updates 1 --seed 42 --resume --checkpoint /absolute/path/model_2.pt
+
+# 新任务的动作、输入、接触及超时探针，不更新策略。
+python scripts/probe_native.py --fresh \
+  --urdf legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/urdf/thunder_v4.urdf \
+  --output results/native_fresh --num-envs 32 --steps 1002 --visualizer none --device cuda:0
+```
+
+原生恢复核对模型、两个 Adam 优化器、实际配置、课程和随机数状态；回合重新开始，不保证物理轨迹逐位连续。`model_N.pt` 中 N 为已完成参数更新数，累计上限 20000。
+
+新配置从 L0 开始，保持 10 级、8 类地形、20 秒回合、x/y ±1 m/s、yaw ±1.5 rad/s；楼梯单独限速。腿目标按 URDF 硬限位裁剪，轮目标按缩放后 ±44 rad/s 裁剪。新奖励移除了静止首次触地正奖励、未验证的对角镜像项和持续的 upright 正项；未加入强制抬腿奖励。
+
 ## 验证边界
 
-这次入库只核对文件清单、源码语法、URDF 网格引用与来源哈希；不会启动训练。之前的迁移实验建立了接口与回放证据，但不能证明新策略更稳定或楼梯碰撞已解决。新的从零入口、机器人参数和新奖励仍待实现/验收，不能直接运行旧续训命令作为新训练。
+机器人站姿和真实机械范围仍未验收。相对地面高度与额外髋惩罚仍是默认关闭的候选，观测噪声与域随机化也未开启；本轮不能证明步态更稳定、楼梯通行改善或实机可部署。

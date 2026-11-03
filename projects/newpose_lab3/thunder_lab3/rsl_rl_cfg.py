@@ -18,7 +18,7 @@ class ThunderMoeCtsRunnerCfg(RslRlMoeCtsRunnerCfg):
     clip_rewards = None
     save_interval = 100
     log_interval = 1
-    experiment_name = "NEWPOSE_NEWTON3_CANDIDATE"
+    experiment_name = "NEWPOSE_NEWTON3_FRESH"
     obs_groups = {"policy": ["policy"], "critic": ["critic"]}
     robogauge = RoboGaugeEvaluatorCfg(enabled=False)
     newpose_compat = {

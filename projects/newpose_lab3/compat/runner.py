@@ -3,17 +3,19 @@
 import copy
 import os
 import re
+import uuid
 from pathlib import Path
 
 import torch
 from rsl_rl.moe_cts.runner import MoeCtsRunner
 
 from . import HISTORY_LAYOUT, UPSTREAM_COMMIT
-from .checkpoint import FORMAT, load_checkpoint, validate_for_algorithm
+from .checkpoint import FORMAT, FRESH_FORMAT, fresh_signature, load_checkpoint, validate_for_algorithm
 from .exporter import export_jit, export_onnx
 from .history import validate_observations
 from .timeout import terminal_timeout_reward
 from .environment_state import describe_state, require_formal_continuation
+from .fresh_state import capture_course, restore_course, training_contract, validate_course
 
 
 class ThunderMoeCtsRunner(MoeCtsRunner):
@@ -42,14 +44,38 @@ class ThunderMoeCtsRunner(MoeCtsRunner):
         validate_observations(env.get_observations(), self.critic_dim)
         self.completed_updates = 0
         self._checkpoint_loaded = False
+        self._native_run = getattr(env.cfg, "newpose_physics_schema", None) == "newton_mjwarp_triangle_v1"
+        self._optimizer_loaded = self._native_run
+        self._resume_course_pending = False
         self._compat_signature = None
         self._compat_provenance = None
         self._environment_state = None
+        raw_env = getattr(env, "unwrapped", env)
+        self._training_contract = training_contract(raw_env) if self._native_run else None
+        if self._native_run:
+            self._training_contract.update(network=copy.deepcopy(train_cfg["policy"]),
+                                           algorithm=copy.deepcopy(train_cfg["algorithm"]),
+                                           rollout_steps=train_cfg["num_steps_per_env"])
+            self._compat_signature = fresh_signature(self.critic_dim)
+            self._compat_provenance = {"initialization": "random", "run_id": uuid.uuid4().hex,
+                                       "upstream_commit": UPSTREAM_COMMIT}
+            self.environment_resume_status = {"mode": "fresh_random_initialization", "start_update": 0}
         super().__init__(env, train_cfg, log_dir, device)
 
     def load(self, path, load_optimizer=True, map_location=None):
+        # The upstream play entry loads with its default True; playback never resumes a course.
+        if os.environ.get("NEWPOSE_RUN_MODE") == "play":
+            load_optimizer = False
         saved = load_checkpoint(path, self.critic_dim, map_location or self.device)
         validate_for_algorithm(saved, self.alg)
+        native = saved["compat_format"] == FRESH_FORMAT
+        if native != self._native_run:
+            raise ValueError("Checkpoint lineage and task differ: select the fresh task, or --legacy for 19538 playback")
+        raw_env = getattr(self.env, "unwrapped", self.env)
+        if native and load_optimizer:
+            if self._training_contract != saved["training_contract"]:
+                raise ValueError("Native resume requires the saved task/asset/control/reward configuration")
+            validate_course(raw_env, saved["environment_state"], saved["completed_updates"])
         infos = super()._load_checkpoint_state(saved, load_optimizer)
         # The upstream loader restores Adam lr but not alg.learning_rate.
         self.alg.learning_rate = float(saved["learning_rate"])
@@ -57,10 +83,17 @@ class ThunderMoeCtsRunner(MoeCtsRunner):
         self.current_learning_iteration = self.completed_updates
         self._checkpoint_loaded = True
         self._optimizer_loaded = bool(load_optimizer)
+        self._native_run = native
         self._compat_signature = saved["signature"]
         self._compat_provenance = saved["compat_provenance"]
         self._environment_state = saved.get("environment_state")
-        self.environment_resume_status = describe_state(self._environment_state, optimizer_loaded=load_optimizer)
+        if native:
+            self._training_contract = saved["training_contract"]
+            self._resume_course_pending = bool(load_optimizer)
+            self.environment_resume_status = {"mode": "native_resume_pending" if load_optimizer else "diagnostic_fresh_course",
+                                              "course_restored": False, "physics_state_restored": False}
+        else:
+            self.environment_resume_status = describe_state(self._environment_state, optimizer_loaded=load_optimizer)
         print("NEWPOSE_ENVIRONMENT_RESUME", self.environment_resume_status, flush=True)
         return infos
 
@@ -68,14 +101,24 @@ class ThunderMoeCtsRunner(MoeCtsRunner):
         require_formal_continuation(self)
 
     def learn(self, num_learning_iterations, init_at_random_ep_len=False):
-        if not self._checkpoint_loaded or not self._optimizer_loaded:
-            raise ValueError("Continuation requires a verified checkpoint and both optimizers")
+        if not self._optimizer_loaded or (not self._native_run and not self._checkpoint_loaded):
+            raise ValueError("Learning requires fresh native initialization or a verified resumable checkpoint")
         if isinstance(num_learning_iterations, bool) or not isinstance(num_learning_iterations, int):
             raise ValueError("Update budget must be an integer")
         if not 0 < num_learning_iterations <= self.cumulative_target - self.completed_updates:
             raise ValueError("Requested updates exceed remaining cumulative budget or are nonpositive")
-        self._validate_formal_continuation()
+        if self._native_run:
+            if self._resume_course_pending:
+                # Upstream train.py rewrites counters with iter+1 after load; restore at this boundary.
+                self.environment_resume_status = restore_course(
+                    getattr(self.env, "unwrapped", self.env), self._environment_state, self.completed_updates)
+                self._resume_course_pending = False
+                init_at_random_ep_len = False
+        else:
+            self._validate_formal_continuation()
         self.current_learning_iteration = self.completed_updates
+        if self._native_run and self.completed_updates == 0 and self.logger.log_dir is not None:
+            self.save(Path(self.logger.log_dir) / "model_0.pt")
         upstream_update = self.alg.update
         upstream_process = self.alg.process_env_step
 
@@ -103,16 +146,20 @@ class ThunderMoeCtsRunner(MoeCtsRunner):
             self.current_learning_iteration = self.completed_updates
 
     def _checkpoint_state(self, infos):
-        if not self._checkpoint_loaded or not self._optimizer_loaded:
-            raise ValueError("A continuation checkpoint requires the verified model and both restored optimizers")
+        if not self._optimizer_loaded or (not self._native_run and not self._checkpoint_loaded):
+            raise ValueError("A training checkpoint requires initialized or restored model and both optimizers")
         result = super()._checkpoint_state(infos)
-        result.update(compat_format=FORMAT, history_layout=HISTORY_LAYOUT,
+        if self._native_run:
+            self._environment_state = capture_course(getattr(self.env, "unwrapped", self.env), self.completed_updates)
+        result.update(compat_format=FRESH_FORMAT if self._native_run else FORMAT, history_layout=HISTORY_LAYOUT,
                       signature=self._compat_signature, compat_provenance=self._compat_provenance,
                       completed_updates=self.completed_updates, iter=self.completed_updates,
                       timeout_bootstrap="terminal_observation",
                       environment_state=self._environment_state,
                       environment_resume_status=self.environment_resume_status,
                       learning_rate=float(self.alg.learning_rate), upstream_commit=UPSTREAM_COMMIT)
+        if self._native_run:
+            result["training_contract"] = self._training_contract
         return result
 
     def save(self, path, infos=None, *, iteration=None, final=False):

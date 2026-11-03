@@ -51,9 +51,9 @@ def moving_stairs(env):
     return stairs(env)&(env.command_manager.get_command('base_velocity')[:,0]>.1)
 
 
-def track_xy(env,std=.5,command_name='base_velocity'):
+def track_xy(env,std=.5,command_name='base_velocity',stair_std=.25):
     err=(env.command_manager.get_command(command_name)[:,:2]-env.scene['robot'].data.root_lin_vel_b.torch[:,:2]).square().sum(1)
-    variance=torch.where(moving_stairs(env),.25**2,std**2)
+    variance=torch.where(moving_stairs(env),stair_std**2,std**2)
     return torch.exp(-err/variance)*upright_scale(env)
 
 
@@ -128,6 +128,43 @@ def leg_contact_failure(env,sensor_cfg):
         state['duration']=torch.where(peak>20.,state['duration']+env.step_dt,0.)
         state['touched']|=peak>5.;state['failed']|=(peak>=500.)|(state['duration']>=.1)
         state['step']=env.common_step_counter
+    return state['failed']
+
+
+def fresh_leg_contact_failure(env, sensor_cfg):
+    """Count consecutive physics samples, not whole windows containing one contact."""
+    sensor = env.scene.sensors[sensor_cfg.name]
+    if not hasattr(env, '_leg_contact'):
+        sample_dt = float(sensor.cfg.update_period)
+        history = sensor.data.net_normal_forces_w_history.torch
+        if (not math.isfinite(sample_dt) or sample_dt <= 0
+                or not math.isclose(sample_dt, env.physics_dt, rel_tol=1.e-6, abs_tol=1.e-9)
+                or history.shape[1] != sensor.cfg.history_length
+                or not math.isclose(history.shape[1] * sample_dt, env.step_dt, rel_tol=1.e-6, abs_tol=1.e-9)
+                or env.cfg.scene.lazy_sensor_update
+                or getattr(env, '_physics_handles_decimation', False)):
+            raise ValueError('Fresh leg contact duration requires one eager sensor update per physics sample and one nonoverlapping control window')
+        env._leg_contact = {
+            'duration': torch.zeros(env.num_envs, device=env.device),
+            'samples': torch.zeros(env.num_envs, device=env.device, dtype=torch.long),
+            'touched': torch.zeros(env.num_envs, device=env.device, dtype=torch.bool),
+            'failed': torch.zeros(env.num_envs, device=env.device, dtype=torch.bool),
+            'step': -1,
+            'sample_dt': sample_dt,
+            'failure_samples': math.ceil(.1 / sample_dt - 1.e-9),
+        }
+    state = env._leg_contact
+    if state['step'] != env.common_step_counter:
+        history = sensor.data.net_normal_forces_w_history.torch
+        peaks = history[:, :, sensor_cfg.body_ids].norm(dim=-1).amax(dim=2)
+        state['touched'] |= peaks.amax(dim=1) > 5.
+        state['failed'] |= peaks.amax(dim=1) >= 500.
+        # Newton stores newest first; a below-threshold sample breaks continuity.
+        for index in range(peaks.shape[1] - 1, -1, -1):
+            state['samples'] = torch.where(peaks[:, index] > 20., state['samples'] + 1, 0)
+            state['failed'] |= state['samples'] >= state['failure_samples']
+        state['duration'].copy_((state['samples'].double() * state['sample_dt']).to(state['duration'].dtype))
+        state['step'] = env.common_step_counter
     return state['failed']
 
 
@@ -244,6 +281,7 @@ class ThunderVelocityCommand(lab_mdp.UniformVelocityCommand):
         state=getattr(self._env,'_leg_contact',None)
         if state is not None:
             for key in ('duration','touched','failed'):state[key][ids]=0
+            if 'samples' in state:state['samples'][ids]=0
         for name in ('travel_expected','travel_progress','travel_peak','travel_radius','tilt_duration'):getattr(self,name)[ids]=0
         self.travel_failed[ids]=False;self.travel_previous[ids]=self.robot.data.root_pos_w.torch[ids,:2];self.travel_step[ids]=-1
         yaw=euler_xyz_from_quat(self.robot.data.root_quat_w.torch[ids])[2];self.travel_yaw[ids]=yaw
@@ -304,3 +342,15 @@ def terrain_out_of_bounds(env,distance_buffer=3.):
     gen=env.scene.terrain.cfg.terrain_generator;xy=env.scene['robot'].data.root_pos_w.torch[:,:2]
     extent=torch.tensor([gen.num_rows*gen.size[0],gen.num_cols*gen.size[1]],device=env.device)/2+gen.border_width-distance_buffer
     return (xy.abs()>extent).any(1)
+
+
+def terrain_tile_exit(env):
+    """End at the assigned tile boundary before neighbouring terrain affects its grade."""
+    size=torch.tensor(env.scene.terrain.cfg.terrain_generator.size,device=env.device)
+    offset=env.scene['robot'].data.root_pos_w.torch[:,:2]-env.scene.env_origins[:,:2]
+    return (offset.abs()>size/2).any(1)
+
+
+def body_inverted(env):
+    """A body tilted past vertical is a failure; a normal 40-degree climb is not."""
+    return env.scene['robot'].data.projected_gravity_b.torch[:,2]>=0

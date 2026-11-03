@@ -17,6 +17,20 @@ is available when the environment does not already implement this contract.
 
 ## Checkpoint and progress
 
+New `Thunder-Newpose-Newton3-Fresh-v0` runs start from random initialization at update 0.
+They save format `thunder_newton_fresh_v1`, an initial `model_0.pt`, both optimizers, completed
+update counts, task/asset/source fingerprints and native course/RNG state. Resume accepts only
+the same configuration, terrain layout and environment count. It restores course and RNG
+immediately before starting new episodes, correcting upstream's `iter + 1` counter rewrite;
+physical trajectories and partially completed episodes are not restored.
+
+`python -m unittest compat.test_fresh_runner scripts.test_launch` checks the fresh CLI boundary
+and actual upstream CPU teacher/student optimizer updates, timeout handling, checkpoint
+round-trip, course reset, count/budget checks and student JIT export. The synthetic test uses
+temporary files, not the robot simulator or formal training budget.
+
+The following describes the separately retained **legacy 19538 playback bridge**:
+
 The verified old 19538 checkpoint is SHA256
 `8db552f69ab35105f737e74be9477c82e2d539a5d3984b2c32e41c1e992c226e`.
 The old model tensor names and optimizer parameter groups match the upstream
@@ -32,7 +46,7 @@ are **not restored** into Newton by assumption. CUDA device/state-format
 differences are reported explicitly. Native observations, action semantics and trajectories still need
 official-environment regression before further formal training.
 
-Production `learn()` now refuses a fresh course: environment count, explicit
+Legacy `learn()` refuses an unverified migrated course: environment count, explicit
 terrain/physics schema, terrain-column assignments and state update count must
 match, and course/RNG restoration plus native acceptance must be verified.
 The current PhysX-to-Newton bridge has no accepted restoration/mapping, so it
