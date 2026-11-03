@@ -1,5 +1,6 @@
 """Thunder URDF import and actuator configuration for Newton."""
 import os
+import math
 from pathlib import Path
 
 import isaaclab.sim as sim_utils
@@ -11,8 +12,12 @@ from isaaclab_newton.sim.schemas import NewtonArticulationCfg
 from .contract import POSE, validate_urdf
 
 
-def robot_cfg():
-    asset = validate_urdf(os.environ["NEWPOSE_URDF"])
+def robot_cfg(*, pose=None, spawn_height=0.46):
+    """Build a robot; alternate poses and their reset height require explicit opt-in."""
+    pose = dict(POSE if pose is None else pose)
+    if not math.isfinite(spawn_height) or spawn_height <= 0:
+        raise ValueError("Spawn height must be finite and positive")
+    asset = validate_urdf(os.environ["NEWPOSE_URDF"], pose=pose)
     cache = str(Path(os.environ["NEWPOSE_USD_CACHE"]).resolve())
     return ArticulationCfg(prim_path="{ENV_REGEX_NS}/Robot",
         spawn=sim_utils.UrdfFileCfg(asset_path=asset["urdf"], usd_dir=cache,
@@ -20,7 +25,7 @@ def robot_cfg():
             collision_from_visuals=False, collision_type="Convex Hull", self_collision=False,
             joint_drive=UrdfConverterCfg.JointDriveCfg(gains=UrdfConverterCfg.JointDriveCfg.PDGainsCfg(stiffness=0., damping=0.)),
             activate_contact_sensors=True, articulation_props=[NewtonArticulationCfg(self_collision_enabled=False)]),
-        init_state=ArticulationCfg.InitialStateCfg(pos=(0.,0.,0.46),rot=(0.,0.,0.,1.),joint_pos=POSE,joint_vel={".*":0.}),
+        init_state=ArticulationCfg.InitialStateCfg(pos=(0.,0.,spawn_height),rot=(0.,0.,0.,1.),joint_pos=pose,joint_vel={".*":0.}),
         soft_joint_pos_limit_factor=0.9,
         actuators={"legs": DCMotorCfg(joint_names_expr=[".*_hip_joint", ".*_thigh_joint", ".*_calf_joint"],
             actuator_effort_limit=120., actuator_velocity_limit=17.48, joint_effort_limit=120., joint_velocity_limit=17.48,

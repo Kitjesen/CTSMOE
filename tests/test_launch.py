@@ -32,6 +32,17 @@ class LaunchTests(unittest.TestCase):
         self.plan("train", "--updates", "2", "--resume", success=False)
         self.plan("train", "--updates", "2", "--legacy", success=False)
 
+    def test_environment_count_uses_task_default_until_explicitly_overridden(self):
+        default = self.plan("train", "--updates", "2")
+        self.assertNotIn("--num_envs", default["argv"])
+        explicit = self.plan("train", "--updates", "2", "--num-envs", "32")
+        index = explicit["argv"].index("--num_envs")
+        self.assertEqual(explicit["argv"][index + 1], "32")
+        for invalid in ("0", "-4", "3", "6"):
+            with self.subTest(invalid=invalid):
+                self.plan("train", "--updates", "2", "--num-envs", invalid, success=False)
+        self.assertEqual(default["cumulative_target"], 20000)
+
     def test_play_requires_model_and_distinguishes_legacy(self):
         self.plan("play", success=False)
         fresh = self.plan("play", "--checkpoint", "model_2.pt", "--terrain", "stairs_up", "--level", "9")
@@ -39,6 +50,8 @@ class LaunchTests(unittest.TestCase):
         self.assertNotIn("--seed", fresh["argv"])
         old = self.plan("play", "--checkpoint", "model_19538.pt", "--legacy")
         self.assertIn("Thunder-Newpose-Newton3-v0", old["argv"])
+        self.assertNotIn("--num_envs", fresh["argv"])
+        self.assertNotIn("--num_envs", old["argv"])
 
 
 if __name__ == "__main__":

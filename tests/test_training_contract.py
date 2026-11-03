@@ -47,6 +47,40 @@ class ConfigurationEncodingTests(unittest.TestCase):
             cfg.rewards.track_lin_vel_xy_exp.weight += .1
             self.assertNotEqual(first["sha256"], training_contract(env)["sha256"])
 
+    def test_fresh_runner_matches_official_core_and_keeps_legacy_separate(self):
+        import gymnasium as gym
+        from go2_rl_lab.tasks.mixed.rsl_rl_cfg import Go2MoECTSRunnerCfg
+        from thunder_lab3.tasks.thunder import FRESH_TASK_ID,TASK_ID
+        from thunder_lab3.tasks.thunder.agents.rsl_rl_cfg import ThunderFreshMoeCtsRunnerCfg,ThunderMoeCtsRunnerCfg
+
+        fresh=ThunderFreshMoeCtsRunnerCfg();official=Go2MoECTSRunnerCfg();legacy=ThunderMoeCtsRunnerCfg()
+        for field in ('num_steps_per_env','clip_rewards','save_interval','obs_groups'):
+            self.assertEqual(getattr(fresh,field),getattr(official,field),field)
+        for field in ('init_noise_std','noise_std_type','actor_hidden_dims','critic_hidden_dims',
+                'teacher_encoder_hidden_dims','student_encoder_hidden_dims','expert_num','latent_dim',
+                'norm_type','activation'):
+            self.assertEqual(getattr(fresh.policy,field),getattr(official.policy,field),field)
+        for field in ('value_loss_coef','load_balance_coef','use_clipped_value_loss','clip_param','entropy_coef',
+                'num_learning_epochs','num_mini_batches','learning_rate','student_encoder_learning_rate',
+                'schedule','gamma','lam','betas','weight_decay','desired_kl','max_grad_norm',
+                'teacher_env_ratio','normalize_advantage_per_mini_batch'):
+            self.assertEqual(getattr(fresh.algorithm,field),getattr(official.algorithm,field),field)
+        self.assertIsNone(fresh.algorithm.symmetry_cfg)
+        self.assertIsNotNone(official.algorithm.symmetry_cfg)
+        self.assertEqual(fresh.max_iterations,0)  # Launch requires an explicit update budget.
+        self.assertEqual(fresh.newpose_compat['cumulative_target'],20000)
+        self.assertEqual(official.max_iterations,100000)
+        self.assertEqual(legacy.policy.noise_std_type,'log')
+        self.assertIsNone(legacy.clip_rewards)
+        self.assertEqual(legacy.save_interval,100)
+        self.assertEqual(gym.spec(FRESH_TASK_ID).kwargs['rsl_rl_cfg_entry_point'],
+            'thunder_lab3.tasks.thunder.agents.rsl_rl_cfg:ThunderFreshMoeCtsRunnerCfg')
+        self.assertEqual(gym.spec(TASK_ID).kwargs['rsl_rl_cfg_entry_point'],
+            'thunder_lab3.tasks.thunder.agents.rsl_rl_cfg:ThunderMoeCtsRunnerCfg')
+        fresh.policy.actor_hidden_dims[0]=1
+        self.assertEqual(legacy.policy.actor_hidden_dims,[512,256,128])
+        self.assertEqual(ThunderFreshMoeCtsRunnerCfg().policy.actor_hidden_dims,[512,256,128])
+
 
 if __name__ == "__main__":
     unittest.main()

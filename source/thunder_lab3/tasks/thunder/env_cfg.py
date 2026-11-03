@@ -13,8 +13,11 @@ from isaaclab.managers import (ObservationGroupCfg,ObservationTermCfg,EventTermC
     RewardTermCfg,CurriculumTermCfg,TerminationTermCfg,SceneEntityCfg)
 from isaaclab.terrains import TerrainImporterCfg
 from isaaclab.utils import configclass
-from isaaclab_newton.physics import NewtonCfg,MJWarpSolverCfg
+from isaaclab_newton.physics import NewtonCfg,MJWarpSolverCfg,NewtonCollisionPipelineCfg,NewtonShapeCfg
 from thunder_lab3.assets.robot import robot_cfg
+from thunder_lab3.assets.contract import A_POSE,A_POSE_CONTACT_HEIGHT,A_POSE_SPAWN_HEIGHT
+from go2_rl_lab.tasks.mixed.mdp.curriculums import gradual_reward_weight_modification
+from .commands import ThunderRLGymVelocityCommandCfg
 from .scene_cfg import SceneCfg,ActionsCfg,fresh_actions_cfg
 from thunder_lab3.tasks.thunder.mdp.observations import policy_frame,critic_frame
 from thunder_lab3.tasks.thunder.mdp.privileged import LEG_JOINTS,JOINTS,WHEEL_BODIES
@@ -60,6 +63,11 @@ class CommandsCfg:
         rel_standing_envs=.1,rel_pure_yaw_envs=.1,rel_pure_lateral_envs=.1,heading_command=False,
         rel_heading_envs=0.,debug_vis=False,
         ranges=lab_mdp.UniformVelocityCommandCfg.Ranges(lin_vel_x=(-1.,1.),lin_vel_y=(-1.,1.),ang_vel_z=(-1.5,1.5)))
+
+
+@configclass
+class FreshCommandsCfg:
+    base_velocity=ThunderRLGymVelocityCommandCfg(debug_vis=False)
 
 
 @configclass
@@ -128,6 +136,16 @@ class CurriculumCfg:
 
 
 @configclass
+class FreshCurriculumCfg(CurriculumCfg):
+    base_linear_velocity_z=CurriculumTermCfg(func=gradual_reward_weight_modification,
+        params={'term_name':'lin_vel_z_l2','initial_weight':-2.,'final_weight':0.,
+                'start_it':0,'end_it':1500})
+    base_height=CurriculumTermCfg(func=gradual_reward_weight_modification,
+        params={'term_name':'cropped_ground_height','initial_weight':-1.,'final_weight':-10.,
+                'start_it':0,'end_it':5000})
+
+
+@configclass
 class ThunderNewposeEnvCfg(ManagerBasedRLEnvCfg):
     scene=SceneCfg(num_envs=4096,env_spacing=2.5,lazy_sensor_update=False)
     observations=ObservationsCfg()
@@ -175,6 +193,11 @@ class ThunderNewposeEnvCfg(ManagerBasedRLEnvCfg):
         self.height_options=options
         if self.height_weight:self.rewards.cropped_ground_height=candidate.rewards.cropped_ground_height
         elif hasattr(self.rewards,'cropped_ground_height'):delattr(self.rewards,'cropped_ground_height')
+        if isinstance(self.curriculum,FreshCurriculumCfg):
+            self.curriculum.base_height=(CurriculumTermCfg(func=gradual_reward_weight_modification,
+                params={'term_name':'cropped_ground_height','initial_weight':self.height_weight,
+                        'final_weight':10*self.height_weight,'start_it':0,'end_it':5000})
+                if self.height_weight else None)
         if self.gradual_boxes:
             if boxes.function is not gradual_random_grid_terrain:self._baseline_boxes_function=boxes.function
             boxes.function=gradual_random_grid_terrain
@@ -218,14 +241,26 @@ class ThunderNewposePlayEnvCfg(ThunderNewposeEnvCfg):
 @configclass
 class ThunderFreshEnvCfg(ThunderNewposeEnvCfg):
     """Independent from-scratch baseline; old policy playback retains its original contract."""
+    scene=SceneCfg(num_envs=16384,env_spacing=2.5,lazy_sensor_update=False)
+    commands=FreshCommandsCfg()
+    curriculum=FreshCurriculumCfg()
     rewards=FreshRewardsCfg()
     terminations=FreshTerminationsCfg()
     gradual_boxes: bool=True
-    newpose_terrain_schema: str='thunder_fresh_10level_v2'
+    height_weight: float=-1.
+    height_options: object=HeightOptions(target_height=A_POSE_CONTACT_HEIGHT,tolerance=.02,
+        max_reference_speed=.5,max_reference_lag=.1,min_valid_fraction=.8)
+    newpose_terrain_schema: str='thunder_fresh_10level_v3_go2_commands_a_pose'
     newpose_physics_schema: str='newton_mjwarp_triangle_v1'
 
     def __post_init__(self):
         super().__post_init__()
+        self.scene.robot=robot_cfg(pose=A_POSE,spawn_height=A_POSE_SPAWN_HEIGHT)
+        # Match Go2's allocation: the 1M default overflows contact hashing at 16384 environments.
+        self.sim.physics.collision_cfg=NewtonCollisionPipelineCfg(max_triangle_pairs=2_500_000)
+        self.sim.physics.solver_cfg.integrator='implicitfast'
+        self.sim.physics.solver_cfg.nconmax=128
+        self.sim.physics.default_shape_cfg=NewtonShapeCfg(margin=.01)
         self.actions=fresh_actions_cfg()
         self.scene.terrain.max_init_terrain_level=0
         self.scene.terrain.terrain_generator.sub_terrains['boxes'].grid_height_range=(.01,.20)

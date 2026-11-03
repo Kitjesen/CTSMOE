@@ -80,6 +80,25 @@ class RobotAssetTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     validate_urdf(target, verify_meshes=False)
 
+    def test_explicit_pose_rejects_missing_extra_nonfinite_and_out_of_range_positions(self):
+        candidates = []
+        missing = dict(POSE); missing.pop("fr_foot_joint"); candidates.append(missing)
+        extra = dict(POSE, unexpected_joint=0.); candidates.append(extra)
+        for name in ("fr_hip_joint", "fr_foot_joint"):
+            for value in (float("nan"), float("inf"), -float("inf"), "0", True):
+                candidates.append(dict(POSE, **{name: value}))
+        candidates.append(dict(POSE, fr_hip_joint=.42))
+        for pose in candidates:
+            with self.subTest(pose=pose), self.assertRaises(ValueError):
+                validate_urdf(URDF, pose=pose)
+
+    def test_explicit_pose_does_not_mutate_legacy_reference(self):
+        before = dict(POSE)
+        alternative = dict(POSE, fr_thigh_joint=-.7)
+        validate_urdf(URDF, pose=alternative)
+        self.assertEqual(POSE, before)
+        self.assertEqual(POSE["fr_thigh_joint"], -.93)
+
 
 if __name__ == "__main__":
     unittest.main()

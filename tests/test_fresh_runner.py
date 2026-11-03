@@ -14,8 +14,15 @@ import torch
 from thunder_lab3.training.checkpoint import FRESH_FORMAT, load_checkpoint, normalize_checkpoint, validate_for_algorithm
 from thunder_lab3.training.history import FrameHistory
 from thunder_lab3.training.runner import ThunderMoeCtsRunner
-from tools.legacy.verify_bridge import equal_nested, runner_config, verify_timeout_boundary
+from tools.legacy.verify_bridge import equal_nested, runner_config as legacy_runner_config, verify_timeout_boundary
 from tools.legacy.verify_timeout_runner import TimeoutEnv
+
+
+def runner_config():
+    cfg=legacy_runner_config()
+    cfg['policy']['noise_std_type']='scalar'
+    cfg['clip_rewards']=10.
+    return cfg
 
 
 class NativeSyntheticEnv(TimeoutEnv):
@@ -146,6 +153,45 @@ class FreshRunnerTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 other.load(Path(directory) / "model_0.pt")
             self.assertTrue(equal_nested(before, other.alg.policy.state_dict()))
+            for field,value in (("clip_rewards",5.),("clip_actions",2.)):
+                with self.subTest(changed_field=field):
+                    changed=runner_config();changed[field]=value
+                    other=ThunderMoeCtsRunner(NativeSyntheticEnv(),changed,device="cpu")
+                    before={key:value.clone() for key,value in other.alg.policy.state_dict().items()}
+                    with self.assertRaises(ValueError):
+                        other.load(Path(directory) / "model_0.pt")
+                    self.assertTrue(equal_nested(before,other.alg.policy.state_dict()))
+
+    def test_resume_restores_reward_course_before_any_step_without_terrain_advance(self):
+        from go2_rl_lab.tasks.mixed.mdp.curriculums import gradual_reward_weight_modification
+        from thunder_lab3.training.fresh_state import capture_course,restore_course
+
+        env=NativeSyntheticEnv()
+        env.common_step_counter=5000*24
+        env._sim_step_counter=env.common_step_counter*8
+        env.cfg.rewards=SimpleNamespace(lin_vel_z_l2=SimpleNamespace(weight=-2.),
+            cropped_ground_height=SimpleNamespace(weight=-1.))
+        weights=copy.deepcopy(vars(env.cfg.rewards))
+        env.reward_manager=SimpleNamespace(get_term_cfg=lambda name:weights[name],
+            set_term_cfg=lambda name,cfg:weights.update({name:cfg}))
+        def schedule(term_name,initial,final,end):
+            return SimpleNamespace(func=gradual_reward_weight_modification,
+                params=dict(term_name=term_name,initial_weight=initial,final_weight=final,start_it=0,end_it=end))
+        env.cfg.curriculum=SimpleNamespace(
+            base_linear_velocity_z=schedule('lin_vel_z_l2',-2.,0.,1500),
+            base_height=schedule('cropped_ground_height',-1.,-10.,5000))
+        state=capture_course(env,5000)
+        env.common_step_counter=0
+        env.scene.terrain.terrain_levels.zero_()
+        restore_course(env,state,5000)
+        self.assertEqual(weights['lin_vel_z_l2'].weight,0.)
+        self.assertEqual(weights['cropped_ground_height'].weight,-10.)
+        self.assertEqual(env.cfg.rewards.lin_vel_z_l2.weight,-2.)
+        self.assertEqual(env.cfg.rewards.cropped_ground_height.weight,-1.)
+        self.assertEqual(env.common_step_counter,5000*24)
+        self.assertEqual(env.curriculum_calls,0)
+        self.assertEqual(env.reset_calls,1)
+        torch.testing.assert_close(env.scene.terrain.terrain_levels,state['terrain_levels'])
 
 
 if __name__ == "__main__":

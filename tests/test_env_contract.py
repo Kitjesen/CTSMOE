@@ -15,6 +15,7 @@ from thunder_lab3.tasks.thunder.boxes import gradual_random_grid_terrain
 from thunder_lab3.tasks.thunder.terrain import terrain_cfg,pyramid_slope
 from thunder_lab3.tasks.thunder.mdp import terms as mdp
 from thunder_lab3.tasks.thunder import make_env
+from thunder_lab3.assets.contract import A_POSE,A_POSE_CONTACT_HEIGHT,A_POSE_SPAWN_HEIGHT,POSE
 
 
 class FullContractTest(unittest.TestCase):
@@ -104,7 +105,7 @@ class FullContractTest(unittest.TestCase):
         with patch('thunder_lab3.tasks.thunder.env_cfg.robot_cfg',return_value=None), \
                 patch('thunder_lab3.tasks.thunder.env_cfg.fresh_actions_cfg',return_value=NS(fresh_actions=True)):
             fresh=ThunderFreshEnvCfg();legacy=ThunderNewposeEnvCfg()
-        self.assertEqual(fresh.newpose_terrain_schema,'thunder_fresh_10level_v2')
+        self.assertEqual(fresh.newpose_terrain_schema,'thunder_fresh_10level_v3_go2_commands_a_pose')
         self.assertEqual(fresh.newpose_physics_schema,'newton_mjwarp_triangle_v1')
         self.assertEqual(fresh.scene.terrain.max_init_terrain_level,0)
         self.assertEqual(legacy.scene.terrain.max_init_terrain_level,5)
@@ -118,12 +119,71 @@ class FullContractTest(unittest.TestCase):
         self.assertIs(fresh.scene.terrain.terrain_generator.sub_terrains['boxes'].function,gradual_random_grid_terrain)
         self.assertEqual(fresh.scene.terrain.terrain_generator.sub_terrains['boxes'].grid_height_range,(.01,.20))
         self.assertIsNot(legacy.scene.terrain.terrain_generator.sub_terrains['boxes'].function,gradual_random_grid_terrain)
-        self.assertEqual((fresh.height_weight,fresh.hip_extra_weight),(0.,0.))
+        self.assertEqual((fresh.height_weight,fresh.hip_extra_weight),(-1.,0.))
+        self.assertEqual((legacy.height_weight,legacy.hip_extra_weight),(0.,0.))
         self.assertIs(fresh.terminations.terrain_tile_exit.func,mdp.terrain_tile_exit)
         self.assertTrue(fresh.terminations.terrain_tile_exit.time_out)
         self.assertFalse(fresh.terminations.body_inverted.time_out)
         self.assertIs(fresh.terminations.leg_contact.func,mdp.fresh_leg_contact_failure)
         self.assertIs(legacy.terminations.leg_contact.func,mdp.leg_contact_failure)
+
+    def test_fresh_pose_height_and_reward_course_do_not_mutate_legacy(self):
+        from go2_rl_lab.tasks.mixed.env_cfg import PhysicsCfg as Go2PhysicsCfg
+        from isaaclab_newton.physics import NewtonCollisionPipelineCfg
+
+        def asset(**kwargs):
+            return NS(init_state=NS(joint_pos=dict(kwargs.get('pose',POSE)),
+                pos=(0.,0.,kwargs.get('spawn_height',.46))))
+        with patch('thunder_lab3.tasks.thunder.env_cfg.robot_cfg',side_effect=asset), \
+                patch('thunder_lab3.tasks.thunder.env_cfg.fresh_actions_cfg',return_value=None):
+            fresh=ThunderFreshEnvCfg();legacy=ThunderNewposeEnvCfg();other=ThunderFreshEnvCfg()
+        self.assertEqual(fresh.scene.robot.init_state.joint_pos,A_POSE)
+        self.assertEqual(fresh.scene.robot.init_state.pos[2],A_POSE_SPAWN_HEIGHT)
+        self.assertEqual(legacy.scene.robot.init_state.joint_pos,POSE)
+        self.assertEqual(legacy.scene.robot.init_state.pos[2],.46)
+        self.assertEqual(fresh.scene.num_envs,16384)
+        self.assertEqual(legacy.scene.num_envs,4096)
+        self.assertEqual(fresh.sim.physics.collision_cfg.max_triangle_pairs,2_500_000)
+        self.assertEqual(fresh.sim.physics.collision_cfg.max_triangle_pairs,
+            Go2PhysicsCfg().newton_mjwarp.collision_cfg.max_triangle_pairs)
+        self.assertIsNone(legacy.sim.physics.collision_cfg)
+        self.assertEqual(NewtonCollisionPipelineCfg().max_triangle_pairs,1_000_000)
+        official=Go2PhysicsCfg().newton_mjwarp
+        for name in ('integrator','njmax','nconmax','cone','impratio','update_data_interval','use_mujoco_contacts'):
+            self.assertEqual(getattr(fresh.sim.physics.solver_cfg,name),getattr(official.solver_cfg,name))
+        self.assertEqual(fresh.sim.physics.default_shape_cfg.margin,official.default_shape_cfg.margin)
+        self.assertEqual((legacy.sim.physics.solver_cfg.integrator,legacy.sim.physics.solver_cfg.nconmax,
+            legacy.sim.physics.default_shape_cfg.margin),('euler',None,0.))
+        self.assertEqual((fresh.sim.dt,fresh.decimation,fresh.episode_length_s),(.0025,8,20.))
+        self.assertEqual(fresh.height_options.target_height,A_POSE_CONTACT_HEIGHT)
+        self.assertEqual(fresh.height_options.tolerance,.02)
+        self.assertEqual(fresh.height_options.max_reference_speed,.5)
+        self.assertEqual(fresh.height_options.max_reference_lag,.1)
+        self.assertEqual(fresh.height_options.min_valid_fraction,.8)
+        self.assertEqual(fresh.rewards.cropped_ground_height.weight,-1.)
+        self.assertFalse(hasattr(legacy.rewards,'cropped_ground_height'))
+        self.assertEqual(fresh.curriculum.base_linear_velocity_z.params,
+            dict(term_name='lin_vel_z_l2',initial_weight=-2.,final_weight=0.,start_it=0,end_it=1500))
+        self.assertEqual(fresh.curriculum.base_height.params,
+            dict(term_name='cropped_ground_height',initial_weight=-1.,final_weight=-10.,start_it=0,end_it=5000))
+        self.assertFalse(hasattr(legacy.curriculum,'base_height'))
+        fresh.scene.robot.init_state.joint_pos['fr_thigh_joint']=0.
+        fresh.height_options.target_height=.5
+        self.assertEqual(other.scene.robot.init_state.joint_pos,A_POSE)
+        self.assertEqual(other.height_options.target_height,A_POSE_CONTACT_HEIGHT)
+        self.assertEqual(legacy.scene.robot.init_state.joint_pos,POSE)
+
+    def test_fresh_height_ablation_removes_and_restores_its_schedule(self):
+        with patch('thunder_lab3.tasks.thunder.env_cfg.robot_cfg',return_value=None), \
+                patch('thunder_lab3.tasks.thunder.env_cfg.fresh_actions_cfg',return_value=None):
+            cfg=ThunderFreshEnvCfg()
+        cfg.height_weight=0.;cfg.apply_candidate_features()
+        self.assertFalse(hasattr(cfg.rewards,'cropped_ground_height'))
+        self.assertIsNone(cfg.curriculum.base_height)
+        cfg.height_weight=-.5;cfg.apply_candidate_features()
+        self.assertEqual(cfg.rewards.cropped_ground_height.weight,-.5)
+        self.assertEqual(cfg.curriculum.base_height.params['initial_weight'],-.5)
+        self.assertEqual(cfg.curriculum.base_height.params['final_weight'],-5.)
 
     def test_fresh_reward_changes_remove_contact_onset_bonus_and_unverified_mirror(self):
         old=RewardsCfg();fresh=FreshRewardsCfg()
@@ -341,7 +401,7 @@ class FullContractTest(unittest.TestCase):
 
     def test_candidate_composition_is_explicit_idempotent_and_reversible(self):
         cfg=NS(scene=NS(terrain=NS(terrain_generator=terrain_cfg())),rewards=RewardsCfg(),
-            gradual_boxes=False,height_weight=0.,height_options=None,hip_extra_weight=0.)
+            gradual_boxes=False,height_weight=0.,height_options=None,hip_extra_weight=0.,curriculum=None)
         apply=lambda:ThunderNewposeEnvCfg.apply_candidate_features(cfg)
         boxes=cfg.scene.terrain.terrain_generator.sub_terrains['boxes'];baseline=boxes.function
         apply();apply()

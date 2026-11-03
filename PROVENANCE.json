@@ -6,8 +6,8 @@
     "target_updates": 20000,
     "formal_training_started": false,
     "fresh_training_entry_ready": true,
-    "isolated_native_updates_total": 6,
-    "final_diagnostic_completed_updates": 3,
+    "isolated_native_updates_total": 10,
+    "final_diagnostic_completed_updates": 2,
     "historical_reference_updates": 19538,
     "accepted_formal_checkpoint": null
   },
@@ -27,7 +27,8 @@
     "sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
     "mesh_count": 21,
     "mechanical_limits_verified": false,
-    "new_stance_accepted": false
+    "new_stance_accepted": false,
+    "default_pose": "A_POSE"
   },
   "excluded": [
     "checkpoints",
@@ -81,5 +82,60 @@
     "evidence_archive_sha256": "b61c6682e0cdd47be0f29eb6265e12803e7fc0a9493bdce8b3c8700260f64c0b",
     "source_files_matched": 40,
     "final_checkpoint_sha256": "a79f0534a2011bf1170d9ee6cffae6075f9f6ca9b742485cd44b509bb0b43f99d"
+  },
+  "alignment": {
+    "date": "2026-11-03",
+    "scope": "new from-scratch task; legacy 19538 playback preserved",
+    "terrain_schema": "thunder_fresh_10level_v3_go2_commands_a_pose",
+    "default_num_envs": 16384,
+    "pose": "A_POSE",
+    "pose_spawn_height_m": 0.4124442921856309,
+    "geometric_contact_base_height_m": 0.39244429218563087,
+    "base_height_initial_weight": -1.0,
+    "base_height_final_weight": -10.0,
+    "base_height_final_update": 5000,
+    "command_sampler": "pinned Go2 RLGymVelCommand with Thunder terrain mapping and constrained-command budget",
+    "user_velocity_cap": {
+      "x": [
+        -1,
+        1
+      ],
+      "y": [
+        -1,
+        1
+      ],
+      "yaw": [
+        -1.5,
+        1.5
+      ]
+    },
+    "ppo_noise_std_type": "scalar",
+    "clip_rewards": 10.0,
+    "save_interval": 500,
+    "prior_diagnostic_resume_compatible": false,
+    "prior_diagnostic_playback_requires_matching_source": true,
+    "formal_training_started": false,
+    "motion_acceptance_passed": false,
+    "validation_status": "bounded native checks passed; motion not accepted",
+    "physics": {
+      "integrator": "implicitfast",
+      "nconmax": 128,
+      "max_triangle_pairs": 2500000,
+      "margin_m": 0.01
+    },
+    "cpu_tests_passed": 68,
+    "source_files_matched": 51,
+    "basic_stance_envs": 128,
+    "basic_stance_seconds": 20,
+    "basic_stance_seed": 42,
+    "basic_stance_screen_passed": true,
+    "base_height_steady_median_m": 0.34846705198287964,
+    "capacity_sim_only_envs": 16384,
+    "capacity_hash_overflow_observed": false,
+    "capacity_sim_only_env_steps_per_second": 93250.15291259103,
+    "final_isolated_smoke_updates": 2,
+    "final_checkpoint_sha256": "cae78c4a77e5020e233dc3e19a4de145995331da4591f825ea99f44fba3e6158",
+    "evidence_archive_sha256": "4d2d0e05310ff3cde19a392e100721ef44b3d5293c12177af4cf9ac987e78990",
+    "official_19538_unchanged": true
   }
 }

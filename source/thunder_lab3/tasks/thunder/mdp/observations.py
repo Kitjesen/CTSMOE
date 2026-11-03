@@ -91,7 +91,7 @@ def critic_frame(env):
 
 def verify_student_contract(env, *, fresh=False):
     """Exercise actual Lab action processing; select fresh URDF bounds explicitly."""
-    from thunder_lab3.assets.contract import POSE, validate_urdf
+    from thunder_lab3.assets.contract import validate_urdf
     robot=env.scene["robot"]
     position=env.action_manager.get_term("joint_pos")
     velocity=env.action_manager.get_term("joint_vel")
@@ -100,7 +100,8 @@ def verify_student_contract(env, *, fresh=False):
     if tuple(robot.joint_names[i] for i in velocity._joint_ids) != JOINTS[12:]:
         raise RuntimeError("Student wheel action order does not match 19538")
     ids=_ids(env)
-    expected=torch.tensor([POSE[n] for n in JOINTS],device=env.device)
+    pose=env.cfg.scene.robot.init_state.joint_pos
+    expected=torch.tensor([pose[n] for n in JOINTS],device=env.device)
     torch.testing.assert_close(robot.data.default_joint_pos.torch[:,ids],expected[None].expand(env.num_envs,-1))
     probe=torch.arange(16,device=env.device,dtype=torch.float32)[None].repeat(env.num_envs,1)-4
     probe[:,-1]=100.
@@ -110,14 +111,14 @@ def verify_student_contract(env, *, fresh=False):
     targets=probe[:,:12]*scales+expected[:12]
     if fresh:
         import os
-        limits=validate_urdf(os.environ["NEWPOSE_URDF"])["joint_position_limits"]
+        limits=validate_urdf(os.environ["NEWPOSE_URDF"],pose=pose)["joint_position_limits"]
         bounds=torch.tensor([limits[name] for name in LEG_JOINTS],device=env.device)
         targets=targets.clamp(min=bounds[:,0],max=bounds[:,1])
     else:
         targets=targets.clamp(-100,100)
     torch.testing.assert_close(position.processed_actions,targets)
     torch.testing.assert_close(velocity.processed_actions,(probe[:,12:]*5.).clamp(-44,44))
-    return {"action_order":list(JOINTS),"pose":POSE,"observation_clip_before_scale":True,
+    return {"action_order":list(JOINTS),"pose":dict(pose),"observation_clip_before_scale":True,
             "action_clip_after_scale":True,
             "leg_target_bounds":"URDF hard limits" if fresh else "historical +/-100 rad",
             "history":"10 frames, oldest first, frame-major","noise":"disabled in interface probe"}

@@ -27,7 +27,8 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--run-name", default="")
     parser.add_argument("--usd-cache", type=Path, default=project / "generated" / "thunder_usd")
-    parser.add_argument("--num-envs", type=int, default=32)
+    parser.add_argument("--num-envs", type=int, default=None,
+                        help="Override the task default (fresh training: 16384)")
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--updates", type=int, help="Additional updates; adapter enforces completed + updates <= 20000")
     parser.add_argument("--video", action="store_true")
@@ -39,7 +40,7 @@ def main():
                         help="Candidate override: gradual_boxes, height_weight, height_options, hip_extra_weight")
     parser.add_argument("--execute", action="store_true", help="Run the printed plan; omitted means no simulation or learning")
     args = parser.parse_args()
-    if args.num_envs < 4 or args.num_envs % 4:
+    if args.num_envs is not None and (args.num_envs < 4 or args.num_envs % 4):
         parser.error("num-envs must be a positive multiple of four for the 75/25 teacher/student split")
     if args.mode == "train" and (args.updates is None or not 1 <= args.updates <= 20000):
         parser.error("Training requires an explicit --updates value in [1,20000]")
@@ -74,8 +75,9 @@ def main():
                    + "_" + uuid.uuid4().hex[:8])) if args.mode == "play" else None
     checkpoint = (play_output / args.checkpoint.name if play_output else args.checkpoint.resolve()) if args.checkpoint else None
     task = "Thunder-Newpose-Newton3-v0" if args.legacy else "Thunder-Newpose-Newton3-Fresh-v0"
-    upstream_args = [str(entry), "--task", task, "--num_envs", str(args.num_envs),
-                     "--device", args.device]
+    upstream_args = [str(entry), "--task", task, "--device", args.device]
+    if args.num_envs is not None:
+        upstream_args += ["--num_envs", str(args.num_envs)]
     if checkpoint is not None:
         upstream_args += ["--checkpoint", str(checkpoint)]
     if args.mode == "train":

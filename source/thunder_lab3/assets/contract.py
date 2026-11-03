@@ -1,4 +1,4 @@
-"""Backend-neutral checks for the Thunder asset and its unchanged reference pose."""
+"""Backend-neutral asset checks and explicit legacy, strict-A and level-B poses."""
 import hashlib
 import math
 import xml.etree.ElementTree as ET
@@ -12,8 +12,39 @@ POSE = {
     "fr_foot_joint": 0.0, "fl_foot_joint": 0.0, "rr_foot_joint": 0.0, "rl_foot_joint": 0.0,
 }
 
+# User-selected A: match Go2's front/rear sagittal angles, not equal leg reach.
+A_POSE = {
+    "fr_hip_joint": -0.12, "fr_thigh_joint": -0.6816288926771934, "fr_calf_joint": 1.6562190211938448,
+    "fl_hip_joint": 0.12, "fl_thigh_joint": 0.6832323255948513, "fl_calf_joint": -1.6561612109591115,
+    "rr_hip_joint": 0.12, "rr_thigh_joint": 2.531735620314508, "rr_calf_joint": 1.5382337221713531,
+    "rl_hip_joint": -0.12, "rl_thigh_joint": -2.5317356203147696, "rl_calf_joint": -1.5382337221715945,
+    "fr_foot_joint": 0.0, "fl_foot_joint": 0.0, "rr_foot_joint": 0.0, "rl_foot_joint": 0.0,
+}
+A_POSE_CONTACT_HEIGHT = 0.39244429218563087
+A_POSE_SPAWN_HEIGHT = A_POSE_CONTACT_HEIGHT + 0.02
 
-def validate_urdf(path, *, verify_meshes=True):
+# Match Go2 sagittal thigh inclinations while keeping Thunder hips and four
+# collision-cylinder bottoms coplanar. This is not a dynamics-accepted stance.
+# The small left/right differences compensate the shipped URDF geometry.
+B_POSE = {
+    "fr_hip_joint": -0.12, "fr_thigh_joint": -0.6816288926771933, "fr_calf_joint": 1.6077249836155703,
+    "fl_hip_joint": 0.12, "fl_thigh_joint": 0.6832323255948514, "fl_calf_joint": -1.6076675490789363,
+    "rr_hip_joint": 0.12, "rr_thigh_joint": 2.53173562031454, "rr_calf_joint": 1.5707300895549656,
+    "rl_hip_joint": -0.12, "rl_thigh_joint": -2.531735620314802, "rl_calf_joint": -1.5707295539410544,
+    "fr_foot_joint": 0.0, "fl_foot_joint": 0.0, "rr_foot_joint": 0.0, "rl_foot_joint": 0.0,
+}
+B_POSE_CONTACT_HEIGHT = 0.3845110587256438
+B_POSE_SPAWN_HEIGHT = B_POSE_CONTACT_HEIGHT + 0.02
+
+
+def validate_urdf(path, *, pose=None, verify_meshes=True):
+    """Validate one complete pose; omission preserves the legacy NEWPOSE check."""
+    pose = POSE if pose is None else pose
+    if set(pose) != set(POSE):
+        raise ValueError("Pose must specify precisely the 16 Thunder joints")
+    for name, value in pose.items():
+        if not isinstance(value, (int, float)) or isinstance(value, bool) or not math.isfinite(value):
+            raise ValueError(f"Expected finite joint position: {name}={value!r}")
     path = Path(path).resolve(strict=True)
     root = ET.parse(path).getroot()
     moving = [j for j in root.findall("joint") if j.attrib["type"] != "fixed"]
@@ -21,7 +52,7 @@ def validate_urdf(path, *, verify_meshes=True):
     if len(moving) != len(POSE) or set(joints) != set(POSE):
         raise ValueError(f"Expected precisely 16 NEWPOSE joints; got {sorted(joints)}")
     position_limits = {}
-    for name, q in POSE.items():
+    for name, q in pose.items():
         j = joints[name]
         expected_type = "continuous" if name.endswith("_foot_joint") else "revolute"
         if j.attrib["type"] != expected_type:

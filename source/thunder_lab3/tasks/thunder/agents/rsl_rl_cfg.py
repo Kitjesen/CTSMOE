@@ -62,3 +62,13 @@ class ThunderMoeCtsRunnerCfg(RslRlMoeCtsRunnerCfg):
         # Go2's default mirror mapping has 12 actions and must never reach this 16-action robot.
         symmetry_cfg=None,
     )
+
+
+@configclass
+class ThunderFreshMoeCtsRunnerCfg(ThunderMoeCtsRunnerCfg):
+    """Go2 optimizer defaults for new runs; the legacy log-std policy is unchanged."""
+    clip_rewards = 10.0
+    save_interval = 500
+
+    def __post_init__(self):
+        self.policy.noise_std_type = "scalar"

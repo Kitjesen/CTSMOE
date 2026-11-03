@@ -216,7 +216,52 @@ def reset_stair_aligned(env,env_ids,pose_range,velocity_range,asset_cfg=SceneEnt
     robot.write_root_pose_to_sim_index(root_pose=pose,env_ids=ids)
 
 
-class ThunderVelocityCommand(lab_mdp.UniformVelocityCommand):
+class TerrainProgress:
+    """Shared tracking for the unchanged Thunder terrain-promotion gate."""
+
+    def _init_travel_statistics(self):
+        zeros=torch.zeros(self.num_envs,device=self.device)
+        self.travel_expected=zeros.clone();self.travel_progress=zeros.clone()
+        self.travel_peak=zeros.clone();self.travel_radius=zeros.clone()
+        self.travel_failed=zeros.bool();self.tilt_duration=zeros.clone()
+        self.travel_previous=self.robot.data.root_pos_w.torch[:,:2].clone()
+        self.travel_yaw=euler_xyz_from_quat(self.robot.data.root_quat_w.torch)[2].clone()
+        self.travel_axis=torch.zeros((self.num_envs,2),device=self.device)
+        self.travel_step=torch.full((self.num_envs,),-1,device=self.device,dtype=torch.long)
+
+    def _reset_travel_statistics(self,ids):
+        state=getattr(self._env,'_leg_contact',None)
+        if state is not None:
+            for key in ('duration','touched','failed'):state[key][ids]=0
+            if 'samples' in state:state['samples'][ids]=0
+        for name in ('travel_expected','travel_progress','travel_peak','travel_radius','tilt_duration'):getattr(self,name)[ids]=0
+        self.travel_failed[ids]=False;self.travel_previous[ids]=self.robot.data.root_pos_w.torch[ids,:2];self.travel_step[ids]=-1
+        yaw=euler_xyz_from_quat(self.robot.data.root_quat_w.torch[ids])[2];self.travel_yaw[ids]=yaw
+        yaw=torch.round(yaw/(math.pi/2))*(math.pi/2);self.travel_axis[ids]=torch.stack((yaw.cos(),yaw.sin()),1)
+
+    def accumulate(self,ids):
+        ids=env_indices(ids,self.num_envs,self.device)
+        step=self._env.common_step_counter
+        ids=ids[(self._env.episode_length_buf[ids]>0)&(self.travel_step[ids]!=step)]
+        if not len(ids):return
+        position=self.robot.data.root_pos_w.torch[ids,:2];delta=position-self.travel_previous[ids]
+        command=self.command[ids,:2];speed=command.norm(dim=1);yaw=self.travel_yaw[ids]
+        direction=torch.stack((yaw.cos()*command[:,0]-yaw.sin()*command[:,1],yaw.sin()*command[:,0]+yaw.cos()*command[:,1]),1)/speed.clamp_min(1e-6)[:,None]
+        budget=speed*self._env.step_dt;self.travel_expected[ids]+=budget
+        self.travel_progress[ids]+=torch.minimum((delta*direction).sum(1).clamp_min(0),budget)
+        offset=position-self._env.scene.env_origins[ids,:2]
+        self.travel_peak[ids]=torch.maximum(self.travel_peak[ids],(offset*self.travel_axis[ids]).sum(1))
+        self.travel_radius[ids]=torch.maximum(self.travel_radius[ids],offset.abs().amax(1))
+        bad,inverted=tilt_flags(self.robot.data.projected_gravity_b.torch[ids])
+        self.tilt_duration[ids]=torch.where(bad,self.tilt_duration[ids]+self._env.step_dt,0.)
+        self.travel_failed[ids]|=inverted|(self.tilt_duration[ids]>=.2)
+        self.travel_previous[ids]=position;self.travel_yaw[ids]=euler_xyz_from_quat(self.robot.data.root_quat_w.torch[ids])[2]
+        self.travel_step[ids]=step
+
+
+class ThunderVelocityCommand(TerrainProgress,lab_mdp.UniformVelocityCommand):
+    """Legacy command sampler retained for existing policy diagnostics."""
+
     def __init__(self,cfg,env):
         super().__init__(cfg,env)
         if cfg.rel_standing_envs+cfg.rel_pure_yaw_envs+cfg.rel_pure_lateral_envs>1:
@@ -225,13 +270,7 @@ class ThunderVelocityCommand(lab_mdp.UniformVelocityCommand):
         self.is_pure_lateral_env=torch.zeros_like(self.is_pure_yaw_env)
         self.was_on_stairs=torch.zeros_like(self.is_pure_yaw_env)
         self.stair_heading=torch.zeros(self.num_envs,device=self.device)
-        self.travel_expected=torch.zeros_like(self.stair_heading);self.travel_progress=torch.zeros_like(self.stair_heading)
-        self.travel_peak=torch.zeros_like(self.stair_heading);self.travel_radius=torch.zeros_like(self.stair_heading)
-        self.travel_failed=torch.zeros_like(self.is_pure_yaw_env);self.tilt_duration=torch.zeros_like(self.stair_heading)
-        self.travel_previous=self.robot.data.root_pos_w.torch[:,:2].clone()
-        self.travel_yaw=euler_xyz_from_quat(self.robot.data.root_quat_w.torch)[2].clone()
-        self.travel_axis=torch.zeros((self.num_envs,2),device=self.device)
-        self.travel_step=torch.full((self.num_envs,),-1,device=self.device,dtype=torch.long)
+        self._init_travel_statistics()
 
     def _set_stair_targets(self,ids):
         if not len(ids):return
@@ -278,38 +317,11 @@ class ThunderVelocityCommand(lab_mdp.UniformVelocityCommand):
     def reset(self,env_ids=None):
         ids=env_indices(env_ids,self.num_envs,self.device)
         result=super().reset(ids)
-        state=getattr(self._env,'_leg_contact',None)
-        if state is not None:
-            for key in ('duration','touched','failed'):state[key][ids]=0
-            if 'samples' in state:state['samples'][ids]=0
-        for name in ('travel_expected','travel_progress','travel_peak','travel_radius','tilt_duration'):getattr(self,name)[ids]=0
-        self.travel_failed[ids]=False;self.travel_previous[ids]=self.robot.data.root_pos_w.torch[ids,:2];self.travel_step[ids]=-1
-        yaw=euler_xyz_from_quat(self.robot.data.root_quat_w.torch[ids])[2];self.travel_yaw[ids]=yaw
-        yaw=torch.round(yaw/(math.pi/2))*(math.pi/2);self.travel_axis[ids]=torch.stack((yaw.cos(),yaw.sin()),1)
+        self._reset_travel_statistics(ids)
         return result
 
     def _update_metrics(self):
         super()._update_metrics();self.accumulate(torch.arange(self.num_envs,device=self.device))
-
-    def accumulate(self,ids):
-        ids=env_indices(ids,self.num_envs,self.device)
-        step=self._env.common_step_counter
-        ids=ids[(self._env.episode_length_buf[ids]>0)&(self.travel_step[ids]!=step)]
-        if not len(ids):return
-        position=self.robot.data.root_pos_w.torch[ids,:2];delta=position-self.travel_previous[ids]
-        command=self.command[ids,:2];speed=command.norm(dim=1);yaw=self.travel_yaw[ids]
-        direction=torch.stack((yaw.cos()*command[:,0]-yaw.sin()*command[:,1],yaw.sin()*command[:,0]+yaw.cos()*command[:,1]),1)/speed.clamp_min(1e-6)[:,None]
-        budget=speed*self._env.step_dt;self.travel_expected[ids]+=budget
-        self.travel_progress[ids]+=torch.minimum((delta*direction).sum(1).clamp_min(0),budget)
-        offset=position-self._env.scene.env_origins[ids,:2]
-        self.travel_peak[ids]=torch.maximum(self.travel_peak[ids],(offset*self.travel_axis[ids]).sum(1))
-        self.travel_radius[ids]=torch.maximum(self.travel_radius[ids],offset.abs().amax(1))
-        bad,inverted=tilt_flags(self.robot.data.projected_gravity_b.torch[ids])
-        self.tilt_duration[ids]=torch.where(bad,self.tilt_duration[ids]+self._env.step_dt,0.)
-        self.travel_failed[ids]|=inverted|(self.tilt_duration[ids]>=.2)
-        self.travel_previous[ids]=position;self.travel_yaw[ids]=euler_xyz_from_quat(self.robot.data.root_quat_w.torch[ids])[2]
-        self.travel_step[ids]=step
-
 
 @configclass
 class ThunderVelocityCommandCfg(lab_mdp.UniformVelocityCommandCfg):

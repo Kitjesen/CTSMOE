@@ -63,7 +63,7 @@ def training_contract(env):
     selected["urdf_sha256"] = hashlib.sha256(asset.read_bytes()).hexdigest()
     project = Path(__file__).resolve().parents[1]
     selected["task_source_sha256"] = {name: hashlib.sha256((project / name).read_bytes()).hexdigest()
-        for name in ("tasks/thunder/env_cfg.py", "tasks/thunder/mdp/terms.py", "tasks/thunder/terrain.py",
+        for name in ("tasks/thunder/env_cfg.py", "tasks/thunder/commands.py", "tasks/thunder/mdp/terms.py", "tasks/thunder/terrain.py",
                      "tasks/thunder/scene_cfg.py", "tasks/thunder/mdp/observations.py", "tasks/thunder/mdp/privileged.py",
                      "assets/contract.py", "assets/robot.py", "tasks/thunder/mdp/height.py",
                      "tasks/thunder/mdp/isaac_height.py", "tasks/thunder/mdp/height_config.py", "tasks/thunder/boxes.py")}
@@ -130,5 +130,13 @@ def restore_course(env, state, completed_updates):
         env.reset()
     finally:
         env.curriculum_manager.compute = compute
+    # Reset above must skip terrain promotion/demotion, but a newly built reward
+    # manager still has the initial weights. Restore just the two timed schedules
+    # before collecting the first resumed transition.
+    curriculum_cfg = getattr(getattr(env, "cfg", None), "curriculum", None)
+    for name in ("base_linear_velocity_z", "base_height"):
+        term = getattr(curriculum_cfg, name, None)
+        if term is not None:
+            term.func(env, env_ids=None, **term.params)
     return {"mode": "native_resume_episode_reset", "course_restored": True,
             "rng_restored_before_reset": True, "physics_state_restored": False}

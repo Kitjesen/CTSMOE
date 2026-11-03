@@ -55,7 +55,9 @@ class ThunderMoeCtsRunner(MoeCtsRunner):
         if self._native_run:
             self._training_contract.update(network=copy.deepcopy(train_cfg["policy"]),
                                            algorithm=copy.deepcopy(train_cfg["algorithm"]),
-                                           rollout_steps=train_cfg["num_steps_per_env"])
+                                           rollout_steps=train_cfg["num_steps_per_env"],
+                                           clip_rewards=train_cfg.get("clip_rewards"),
+                                           clip_actions=train_cfg.get("clip_actions"))
             self._compat_signature = fresh_signature(self.critic_dim)
             self._compat_provenance = {"initialization": "random", "run_id": uuid.uuid4().hex,
                                        "upstream_commit": UPSTREAM_COMMIT}
