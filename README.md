@@ -1,27 +1,78 @@
-# CTSMOE — Thunder CTS + Mixture of Experts
+# Thunder NEWPOSE · Isaac Lab 3
 
-> **2026-11-03：Thunder NEWPOSE / Isaac Lab 3 从零重训任务**
->
-> 本分支 `newpose-lab3-from-scratch` 的代码和核对说明见 [projects/newpose_lab3](projects/newpose_lab3/README.md)。
-> 新实验目标为 0 → 20000 次参数更新；迁移代码与独立短测试位于该项目目录，长训练尚未启动。
-> 以下内容是保留的 V33 历史归档，不代表新任务已经通过验证。
+使用自有 Thunder 四轮腿机器人，复用固定版本 Go2 `lab3.0` 的 CTS+MoE，在 Isaac Lab 3 / Newton 中从零训练，累计目标为 **20000 次参数更新**。
 
-私有研发归档：保存当前 V33 实现和可找到的父版本/实验分支证据。归档日期 2026-09-25。
+**长训练尚未启动，站立和步态尚未验收。** 旧 19538 策略只作回放对照；新任务不继承它的权重、优化器或地形进度。迁移短测和正式训练分别计数，见[验证记录](docs/validation.md)。
 
-## 从哪里开始
-- [当前配置](docs/current_v33.md)、[环境与运行](docs/setup.md)
-- [模型继承与训练历史](docs/training_history.md)
-- [奖励调整](docs/reward_history.md)、[地形调整](docs/terrain_history.md)、[命令调整](docs/command_history.md)
-- [已知问题](docs/known_issues.md)、[来源与复现边界](docs/reproducibility.md)
+## 目录
 
-`src/thunder_v33/` 是服务器 V33 冻结代码的逐文件副本，未为目录美观重构导入。
-`vendor/upstream/` 是实际使用的上游代码；`vendor/thunder/` 是实际机器人适配与资产。
-`history/receipts/` 保存本地实验源码、计划、配置和评估摘要；`history/server_sources/` 保存服务器仍存在的旧源码快照。失败尝试也保留，不能直接执行旧监督器。
-`provenance/` 保存文件清单、哈希和模型引用；权重不在 Git 中，未删除或替换原检查点。
+```text
+source/thunder_lab3/
+├── assets/             # URDF、21 个 STL、关节约定和机器人配置
+├── tasks/thunder/      # 环境、地形、MDP、CTS+MoE 配置与任务注册
+├── training/           # 官方 Runner 的计数、超时、续训和导出适配
+└── legacy/             # 旧 19538 检查点转换及历史状态读取
+scripts/
+├── rsl_rl/launch.py    # 统一训练、续训、回放入口
+└── probe_native.py     # 无优化器的原生环境检查
+tests/                 # 测试与旧配置 fixture
+tools/                 # 独立审计和旧模型验证工具
+upstream/go2_rl_lab/    # 固定提交的官方 Git 子模块
+docs/                  # 配置差异、验收证据和来源清单
+archive/v33/           # 原 V33 工程，完整保留，仅作历史参考
+```
 
-当前训练为 8192 环境，原有8类+新增6类，高台环境为0。等级和通过率不同；本库不是实机发布包。
+当前任务集中在一个 `thunder_lab3` 包内。官方网络、PPO、蒸馏和训练循环仍由上游提供；`training/` 仅保留 Thunder 所需的边界适配。旧实验不作为当前运行入口。
 
-## 使用边界
-历史绝对路径仅用于溯源，不是其他机器上的有效路径。禁止照抄历史 PID/STOP/自动续训入口。
-当前入口提供显式检查点续训命令；首次使用先在自己的 Isaac 环境验证。CPU测试不等于GPU物理验收。
-本次发布保留实际代码布局，后续模块拆分应独立验证。上游署名与许可见 [UPSTREAM.md](UPSTREAM.md)。
+## 环境与安装
+
+```bash
+git clone --recurse-submodules --branch newpose-lab3-from-scratch https://github.com/Kitjesen/CTSMOE.git
+cd CTSMOE
+# 在已经配置好的 Linux Isaac Lab 3 / Newton 环境中安装本包。
+uv pip install --python /ABS/IsaacLab3/.venv/bin/python --no-deps -e .
+```
+
+固定依赖：Isaac Lab **3.0.0**、Newton/MJWarp、Go2 自带 **RSL-RL 3.3.0**，版本及提交见 [PROVENANCE.json](PROVENANCE.json)。适配验证使用 Python 3.12；不能用通用 RSL-RL 替换 Go2 的 CTS+MoE 实现。入口使用 standalone Newton，不代表完整 Kit/PhysX 环境也通过了验证。
+
+仓库包含源码与 Thunder 网格，不包含 GPU 运行环境、检查点、视频、轨迹、生成的 USD 或服务器凭据。若需要上游 Go2 的 LFS 资产，在 `upstream/go2_rl_lab` 执行 `git lfs pull`；Thunder URDF/STL 直接随仓库保存。上游许可证保留在该子模块及其 `source/rsl_rl/LICENSE`，Thunder 资产不因此获得上游许可证授权。
+
+## 运行
+
+以下命令均从仓库根目录执行。`launch.py` 默认只打印计划，添加 `--execute` 才启动模拟器或更新策略。
+
+```bash
+THUNDER_URDF=source/thunder_lab3/assets/thunder/urdf/thunder_v4.urdf
+
+# 从 0 开始的两次更新检查；不加载检查点。
+python scripts/rsl_rl/launch.py train --urdf "$THUNDER_URDF" \
+  --num-envs 32 --updates 2 --seed 42 --run-name smoke
+
+# 同版本、同任务的明确续训；updates 表示额外更新数。
+python scripts/rsl_rl/launch.py train --urdf "$THUNDER_URDF" \
+  --num-envs 32 --updates 1 --seed 42 --resume --checkpoint /ABS/model_2.pt
+
+# 官方 Newton GL 录像，600 个控制步为 12 秒。
+python scripts/rsl_rl/launch.py play --urdf "$THUNDER_URDF" \
+  --checkpoint /ABS/model_3.pt --num-envs 4 --terrain stairs_up --level 6 \
+  --video --video-length 600 --execute
+
+# 新任务原生探针，不创建优化器；输出目录必须尚不存在。
+python scripts/probe_native.py --fresh --urdf "$THUNDER_URDF" \
+  --output results/native_fresh --num-envs 32 --steps 1002 --visualizer none --device cuda:0
+```
+
+训练任务为 `Thunder-Newpose-Newton3-Fresh-v0`。回放可选 `flat`、`stairs_up`、`stairs_down` 和固定 L0–L9；这些选项不改训练课程。旧 19538 回放增加 `--legacy`，不允许用它续训新任务。播放先复制并校验检查点到独立 `results/play_*`，导出与录像写在副本旁；训练日志在 `logs/`，转换缓存在 `generated/`。
+
+续训会核对实际配置、源码、URDF、环境数、地形、两个 Adam 及已完成更新数，并恢复课程和随机数状态后重新开始回合；不恢复中途物理轨迹。`model_N.pt` 的 N 是已完成更新数，累计不得超过 20000。**此次目录和模块名调整改变了源码/配置签名：整理前的 3 轮诊断检查点保留作回放，不绕过校验接续它。**
+
+候选参数通过重复 `--env-override FIELD=JSON` 指定，只接受 `gradual_boxes`、`height_weight`、`height_options`、`hip_extra_weight`。默认值和验收边界见[环境迁移说明](docs/migration.md)、[高度与方块说明](docs/height.md)。
+
+## 机器人与训练边界
+
+- 12 个腿位置动作、4 个轮速动作。当前 URDF 四髋限位 ±0.41 rad；前小腿 FR `[0,3.14]`、FL `[-3.14,0]`，后小腿 RR/RL `[-3.14,3.14]`，都不是连续关节。文件限位尚未等同于实机机械验证。
+- 默认姿态保存在 `source/thunder_lab3/assets/contract.py`，仍为原 NEWPOSE；本次目录整理没有调整姿态、机械限位、奖励权重或控制参数。
+- 10 级、8 类地形，从 L0 开始；20 秒回合；普通地形 x/y ±1 m/s、yaw ±1.5 rad/s，楼梯单独限速。腿目标按 URDF 限位裁剪，轮目标缩放后限幅 ±44 rad/s。
+- 机身相对地面高度、额外髋惩罚仍默认关闭，观测噪声与域随机化也未开启。没有强制抬腿奖励。
+
+测试命令和原生证据统一见[验证记录](docs/validation.md)；观察历史、超时处理及旧模型转换细节见[训练与旧模型边界](docs/legacy.md)。承重稳定性、腿部碰撞、L6/L9 通行和实机部署均需单独验收，目录清理不构成运动效果改善。

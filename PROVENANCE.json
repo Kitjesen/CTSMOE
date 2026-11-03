@@ -1,0 +1,85 @@
+{
+  "project": "Thunder NEWPOSE from-scratch training baseline",
+  "decision_date": "2026-11-03",
+  "training": {
+    "start_update": 0,
+    "target_updates": 20000,
+    "formal_training_started": false,
+    "fresh_training_entry_ready": true,
+    "isolated_native_updates_total": 6,
+    "final_diagnostic_completed_updates": 3,
+    "historical_reference_updates": 19538,
+    "accepted_formal_checkpoint": null
+  },
+  "go2": {
+    "url": "https://github.com/wty-yy/go2_rl_lab",
+    "commit": "6c95d9feef4814c25eb6536e61bb38e1d1d718d4",
+    "path": "upstream/go2_rl_lab",
+    "vendored_rsl_rl": "3.3.0"
+  },
+  "isaac_lab": {
+    "tag": "v3.0.0",
+    "commit": "e3f7d9ff1f5d7f8280de3ece9000b7117f66bcf4",
+    "backend": "Newton / MJWarp"
+  },
+  "robot": {
+    "urdf": "source/thunder_lab3/assets/thunder/urdf/thunder_v4.urdf",
+    "sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+    "mesh_count": 21,
+    "mechanical_limits_verified": false,
+    "new_stance_accepted": false
+  },
+  "excluded": [
+    "checkpoints",
+    "results",
+    "generated USD",
+    "videos",
+    "trajectories",
+    "remote access helpers",
+    "credentials"
+  ],
+  "source_manifest": "docs/source_manifest.json",
+  "baseline_manifest": "docs/baseline_manifest.json",
+  "layout": {
+    "package": "source/thunder_lab3",
+    "historical_archive": "archive/v33",
+    "parameters_changed": false,
+    "prior_diagnostic_resume_compatible": false,
+    "prior_diagnostic_playback_allowed": true,
+    "note": "Module names and source paths change the training fingerprint; do not bypass resume checks."
+  },
+  "layout_validation": {
+    "cpu_unique_tests_passed": 49,
+    "native_probe_envs": 32,
+    "native_probe_control_steps": 16,
+    "native_probe_interface_passed": true,
+    "native_training_updates_added": 0,
+    "wheel_external_import_passed": true,
+    "gym_tasks_resolved": 2,
+    "source_files_matched": 48,
+    "wheel_source_files_matched": 29,
+    "archived_files_unchanged": 8949,
+    "robot_asset_files_unchanged": 22,
+    "stance_acceptance_passed": false,
+    "motion_acceptance_passed": false,
+    "evidence_archive_sha256": "b08f2c558a1b41afbdd7d8a4f2ed7fc0528c6111f11e3db6bf19e7514795c4ad"
+  },
+  "validation": {
+    "scope": "pre_directory_restructure",
+    "cpu_tests_passed": 49,
+    "native_probe_envs": 32,
+    "native_probe_control_steps": 1002,
+    "native_probe_interface_passed": true,
+    "native_smoke_update_sequence": [
+      0,
+      2,
+      3
+    ],
+    "final_terrain_schema": "thunder_fresh_10level_v2",
+    "stance_acceptance_passed": false,
+    "motion_acceptance_passed": false,
+    "evidence_archive_sha256": "b61c6682e0cdd47be0f29eb6265e12803e7fc0a9493bdce8b3c8700260f64c0b",
+    "source_files_matched": 40,
+    "final_checkpoint_sha256": "a79f0534a2011bf1170d9ee6cffae6075f9f6ca9b742485cd44b509bb0b43f99d"
+  }
+}
