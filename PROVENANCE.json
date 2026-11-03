@@ -4,12 +4,24 @@
   "training": {
     "start_update": 0,
     "target_updates": 100000,
-    "formal_training_started": false,
+    "formal_training_started": true,
     "fresh_training_entry_ready": true,
     "isolated_native_updates_total": 14,
     "final_diagnostic_completed_updates": 1,
     "historical_reference_updates": 19538,
-    "accepted_formal_checkpoint": null
+    "accepted_formal_checkpoint": null,
+    "formal_run_name": "2026-11-03_20-39-21_NEWPOSE_A2_GO2_FORMAL100K_20261103",
+    "formal_source_commit": "3755051e9c0a27e69e32902f57c8daabb6d301fc",
+    "formal_started_at_utc": "2026-11-03T12:39:17Z",
+    "formal_startup_snapshot": {
+      "verified_at_utc": "2026-11-03T12:42:01.344816+00:00",
+      "completed_updates": 33,
+      "latest_saved_update": 1,
+      "num_envs": 16384,
+      "seed": 42,
+      "state_at_verification": "running",
+      "motion_acceptance_passed": false
+    }
   },
   "go2": {
     "url": "https://github.com/wty-yy/go2_rl_lab",
@@ -115,7 +127,7 @@
     "save_interval": 500,
     "prior_diagnostic_resume_compatible": false,
     "prior_diagnostic_playback_requires_matching_source": true,
-    "formal_training_started": false,
+    "formal_training_started": true,
     "motion_acceptance_passed": false,
     "validation_status": "98 CPU checks and native nominal/DR stance passed; mixed interface and 16384-env PPO update passed; learned movement acceptance pending",
     "server_synced": true,
