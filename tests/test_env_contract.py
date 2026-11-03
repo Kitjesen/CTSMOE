@@ -57,6 +57,23 @@ class FullContractTest(unittest.TestCase):
         self.assertEqual(env._leg_contact['touched'].tolist(),[True,True,False])
         self.assertEqual(env._leg_contact['duration'].tolist(),[0.,0.,0.])
 
+    def test_five_ms_contact_still_requires_100ms_not_200ms(self):
+        env,cfg,_=self.contact_fixture(2)
+        history=torch.zeros(2,4,1,3)
+        sensor=env.scene.sensors['contact_forces']
+        sensor.cfg.update_period=env.physics_dt=.005
+        sensor.cfg.history_length=4
+        sensor.data.net_normal_forces_w_history.torch=history
+        history[:,:,:,2]=30.
+        for step in range(1,5):
+            env.common_step_counter=step
+            self.assertFalse(bool(mdp.fresh_leg_contact_failure(env,cfg).any()))
+        env.common_step_counter=5
+        history[1,0,0,2]=0.
+        self.assertEqual(mdp.fresh_leg_contact_failure(env,cfg).tolist(),[True,False])
+        self.assertEqual(env._leg_contact['samples'].tolist(),[20,0])
+        self.assertAlmostEqual(env._leg_contact['duration'][0].item(),.1,places=7)
+
     def test_fresh_contact_rejects_overlapping_or_lazy_history(self):
         for key,value in (('period',.005),('length',7),('physics',.005),('lazy',True),('decimation',True)):
             env,cfg,_=self.contact_fixture()
@@ -105,14 +122,14 @@ class FullContractTest(unittest.TestCase):
         with patch('thunder_lab3.tasks.thunder.env_cfg.robot_cfg',return_value=None), \
                 patch('thunder_lab3.tasks.thunder.env_cfg.fresh_actions_cfg',return_value=NS(fresh_actions=True)):
             fresh=ThunderFreshEnvCfg();legacy=ThunderNewposeEnvCfg()
-        self.assertEqual(fresh.newpose_terrain_schema,'thunder_fresh_10level_v3_go2_commands_a_2dp')
+        self.assertEqual(fresh.newpose_terrain_schema,'thunder_fresh_10level_v4_go2_aligned_a_2dp')
         self.assertEqual(fresh.newpose_physics_schema,'newton_mjwarp_triangle_v1')
         self.assertEqual(fresh.scene.terrain.max_init_terrain_level,0)
         self.assertEqual(legacy.scene.terrain.max_init_terrain_level,5)
         self.assertTrue(fresh.actions.fresh_actions)
-        self.assertEqual(fresh.episode_length_s,20.)
-        self.assertEqual(fresh.scene.contact_forces.update_period,.0025)
-        self.assertEqual(fresh.scene.contact_forces.history_length,8)
+        self.assertEqual(fresh.episode_length_s,25.)
+        self.assertEqual(fresh.scene.contact_forces.update_period,.005)
+        self.assertEqual(fresh.scene.contact_forces.history_length,4)
         self.assertAlmostEqual(fresh.scene.contact_forces.update_period*fresh.scene.contact_forces.history_length,
             fresh.sim.dt*fresh.decimation)
         self.assertEqual(legacy.scene.contact_forces.history_length,3)
@@ -154,7 +171,7 @@ class FullContractTest(unittest.TestCase):
         self.assertEqual(fresh.sim.physics.default_shape_cfg.margin,official.default_shape_cfg.margin)
         self.assertEqual((legacy.sim.physics.solver_cfg.integrator,legacy.sim.physics.solver_cfg.nconmax,
             legacy.sim.physics.default_shape_cfg.margin),('euler',None,0.))
-        self.assertEqual((fresh.sim.dt,fresh.decimation,fresh.episode_length_s),(.0025,8,20.))
+        self.assertEqual((fresh.sim.dt,fresh.decimation,fresh.episode_length_s),(.005,4,25.))
         self.assertEqual(fresh.height_options.target_height,A_POSE_CONTACT_HEIGHT)
         self.assertEqual(fresh.height_options.tolerance,.02)
         self.assertEqual(fresh.height_options.max_reference_speed,.5)
@@ -185,13 +202,37 @@ class FullContractTest(unittest.TestCase):
         self.assertEqual(cfg.curriculum.base_height.params['initial_weight'],-.5)
         self.assertEqual(cfg.curriculum.base_height.params['final_weight'],-5.)
 
+    def test_playback_disables_new_uncertainty_without_mutating_training(self):
+        with patch('thunder_lab3.tasks.thunder.env_cfg.robot_cfg',return_value=None), \
+                patch('thunder_lab3.tasks.thunder.env_cfg.fresh_actions_cfg',return_value=None):
+            play=ThunderFreshPlayEnvCfg();train=ThunderFreshEnvCfg()
+        self.assertFalse(play.observations.policy.enable_corruption)
+        self.assertFalse(play.observations.single_obs.enable_corruption)
+        self.assertTrue(train.observations.policy.enable_corruption)
+        self.assertIsNone(play.sim.physics.solver_cfg.body_com_buckets)
+        self.assertIsNotNone(train.sim.physics.solver_cfg.body_com_buckets)
+        for name in vars(train.events):
+            if name.startswith('randomize_'):
+                self.assertIsNotNone(getattr(train.events,name))
+                self.assertIsNone(getattr(play.events,name))
+
     def test_fresh_reward_changes_remove_contact_onset_bonus_and_unverified_mirror(self):
         old=RewardsCfg();fresh=FreshRewardsCfg()
         def weights(cfg):return {k:v.weight for k,v in vars(cfg).items() if hasattr(v,'weight') and v.weight}
-        expected=weights(old)
-        for name in ('feet_contact_without_cmd','joint_mirror','upward'):expected.pop(name)
-        self.assertEqual(weights(fresh),expected)
-        self.assertEqual(fresh.track_lin_vel_xy_exp.params,{'std':.5,'stair_std':.5})
+        from go2_rl_lab.tasks.mixed.env_cfg import RewardsCfg as Go2RewardsCfg
+        official=Go2RewardsCfg()
+        for name in ('track_lin_vel_xy_exp','track_ang_vel_z_exp','joint_acc_l2','joint_power',
+                'joint_torques_l2','joint_pos_limits','action_rate_l2','action_smoothness_l2',
+                'hip_pos_penalty_l1','joint_pos_penalty_l1'):
+            expected=getattr(official,name).weight
+            self.assertEqual(getattr(fresh,name).weight,getattr(expected,'newton_mjwarp',expected),name)
+        for name in ('feet_contact_without_cmd','joint_mirror','upward','stand_still','joint_pos_penalty'):
+            self.assertIsNone(getattr(fresh,name))
+        self.assertEqual(fresh.track_lin_vel_xy_exp.params,{'command_name':'base_velocity','std':.5})
+        self.assertEqual(fresh.action_rate_l2.params,{'max_penalty':20.})
+        self.assertEqual(fresh.action_smoothness_l2.params,{'max_penalty':50.})
+        for name in ('wheel_torques_l2','wheel_power','joint_acc_wheel_l2','touchdown_velocity_l2'):
+            self.assertEqual(getattr(old,name).weight,getattr(fresh,name).weight)
         self.assertIsNone(fresh.upward)
         self.assertFalse(any('air_time' in name or 'lift' in name for name in weights(fresh)))
 

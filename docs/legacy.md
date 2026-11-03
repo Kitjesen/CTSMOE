@@ -1,6 +1,6 @@
 # 训练接口与旧模型边界
 
-`thunder_lab3.training.runner.ThunderMoeCtsRunner` 继承固定 Go2 提交的 `rsl_rl.moe_cts.runner.MoeCtsRunner`，复用网络、PPO、蒸馏、存储、日志和训练循环。Thunder 只适配以下接口；Go2 镜像增强与 RoboGauge 保持关闭。
+`thunder_lab3.training.runner.ThunderMoeCtsRunner` 继承固定Go2的`rsl_rl.moe_cts.runner.MoeCtsRunner`，复用网络、PPO、蒸馏、存储、日志和训练循环。Fresh开启Thunder专用16动作镜像；旧回放仍关闭，Go2的12动作映射被拒绝。RoboGauge保持关闭。
 
 ## 当前训练依赖
 
@@ -10,7 +10,7 @@
 
 超时适配用 transition 的前一步历史加终止单帧重建终点历史，按教师/学生样本选择正确的 critic，加入 `gamma*V(s_T)`。同时真正终止的样本不补偿；处理后移除 `time_outs`，避免上游再次补偿。缺少终点观测时报错，不使用 reset 后观测替代。
 
-新任务从随机初始化的 0 次更新开始，格式为 `thunder_newton_fresh_v1`。保存初始 `model_0.pt`、两个优化器、课程/RNG、任务/资产/源码指纹。只对成功的 `alg.update()` 计数，保存 `iter=completed_updates`，修正上游 zero-based 文件名和恢复入口的 `iter+1`。续训恢复自适应学习率标量，预算累计不得超过 20000，不从文件名猜更新数。
+新任务从随机初始化的0次更新开始，格式为`thunder_newton_fresh_v1`。保存初始`model_0.pt`、两个优化器、课程/RNG、任务/资产/源码指纹。只对成功的`alg.update()`计数，保存`iter=completed_updates`，修正上游zero-based文件名和恢复入口的`iter+1`。续训恢复自适应学习率标量；新任务预算100000，历史legacy预算仍20000，不从文件名猜更新数。
 
 恢复要求同配置、同环境数和相同地形布局；课程和 RNG 在新回合 reset 前恢复，中途物理轨迹不恢复。目录调整改变函数模块名和源码指纹，整理前的诊断检查点可用于回放，不能绕过签名继续同一次训练。
 

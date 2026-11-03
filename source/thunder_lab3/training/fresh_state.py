@@ -57,6 +57,8 @@ def training_contract(env):
         "newpose_physics_schema")}
     scene = values["scene"]
     selected["terrain"] = scene["terrain"]
+    selected["height_scanner"] = scene["height_scanner"]
+    selected["contact_forces"] = scene["contact_forces"]
     selected["robot"] = {key: scene["robot"][key] for key in ("init_state", "actuators", "soft_joint_pos_limit_factor")}
     selected["sim"] = {key: values["sim"][key] for key in ("dt", "physics", "use_newton_actuators")}
     asset = Path(scene["robot"]["spawn"]["asset_path"])
@@ -66,7 +68,10 @@ def training_contract(env):
         for name in ("tasks/thunder/env_cfg.py", "tasks/thunder/commands.py", "tasks/thunder/mdp/terms.py", "tasks/thunder/terrain.py",
                      "tasks/thunder/scene_cfg.py", "tasks/thunder/mdp/observations.py", "tasks/thunder/mdp/privileged.py",
                      "assets/contract.py", "assets/robot.py", "tasks/thunder/mdp/height.py",
-                     "tasks/thunder/mdp/isaac_height.py", "tasks/thunder/mdp/height_config.py", "tasks/thunder/boxes.py")}
+                     "tasks/thunder/mdp/isaac_height.py", "tasks/thunder/mdp/height_config.py", "tasks/thunder/boxes.py",
+                     "tasks/thunder/mdp/randomization.py", "tasks/thunder/mdp/symmetry.py",
+                     "training/runner.py", "training/checkpoint.py", "training/fresh_state.py",
+                     "training/history.py", "training/timeout.py")}
 
     canonical = json.dumps(canonical_configuration(selected), sort_keys=True, allow_nan=False)
     return {"sha256": hashlib.sha256(canonical.encode()).hexdigest(),

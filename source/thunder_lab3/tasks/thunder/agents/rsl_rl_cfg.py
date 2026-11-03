@@ -1,6 +1,7 @@
 """Thunder CTS+MoE configuration using the pinned Go2 lab3.0 vendored runner interfaces."""
 from isaaclab.utils import configclass
 from rsl_rl.moe_cts.config import (
+    MoeCtsSymmetryCfg,
     RslRlMoeCtsActorCriticCfg,
     RslRlMoeCtsAlgorithmCfg,
     RslRlMoeCtsRunnerCfg,
@@ -69,6 +70,10 @@ class ThunderFreshMoeCtsRunnerCfg(ThunderMoeCtsRunnerCfg):
     """Go2 optimizer defaults for new runs; the legacy log-std policy is unchanged."""
     clip_rewards = 10.0
     save_interval = 500
+    max_iterations = 100000
 
     def __post_init__(self):
         self.policy.noise_std_type = "scalar"
+        self.newpose_compat['cumulative_target'] = 100000
+        self.algorithm.symmetry_cfg = MoeCtsSymmetryCfg(
+            symmetry_class='thunder_lab3.tasks.thunder.mdp.symmetry:ThunderSymmetry')

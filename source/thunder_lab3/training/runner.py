@@ -24,12 +24,12 @@ class ThunderMoeCtsRunner(MoeCtsRunner):
         contract = train_cfg.get("newpose_compat", {})
         self.critic_dim = int(contract.get("critic_dim", 309))
         self.cumulative_target = int(contract.get("cumulative_target", 20000))
-        if self.cumulative_target != 20000 or contract.get("history_layout") != HISTORY_LAYOUT:
-            raise ValueError("Explicit NEWPOSE history layout and cumulative target 20000 are required")
-        if contract.get("symmetry_enabled", False):
-            raise ValueError("Thunder dynamics are not proven mirror-equivalent")
-        if (train_cfg.get("algorithm", {}).get("symmetry_cfg") or {}).get("use_symmetric_augmentation", False):
-            raise ValueError("Go2 mirrored PPO samples are not a verified Thunder augmentation")
+        if self.cumulative_target not in (20000, 100000) or contract.get("history_layout") != HISTORY_LAYOUT:
+            raise ValueError("Explicit Thunder history layout and supported cumulative target are required")
+        symmetry = train_cfg.get("algorithm", {}).get("symmetry_cfg") or {}
+        if symmetry.get("use_symmetric_augmentation", False) and symmetry.get("symmetry_class") != (
+                "thunder_lab3.tasks.thunder.mdp.symmetry:ThunderSymmetry"):
+            raise ValueError("Thunder requires its own 16-action symmetry mapping")
         if train_cfg.get("robogauge", {}).get("enabled", False):
             raise ValueError("Go2 RoboGauge export/task must be disabled for Thunder")
         declared_layout = getattr(env.cfg, "newpose_history_layout", None)
@@ -58,6 +58,7 @@ class ThunderMoeCtsRunner(MoeCtsRunner):
                                            rollout_steps=train_cfg["num_steps_per_env"],
                                            clip_rewards=train_cfg.get("clip_rewards"),
                                            clip_actions=train_cfg.get("clip_actions"))
+            self._training_contract['cumulative_target'] = self.cumulative_target
             self._compat_signature = fresh_signature(self.critic_dim)
             self._compat_provenance = {"initialization": "random", "run_id": uuid.uuid4().hex,
                                        "upstream_commit": UPSTREAM_COMMIT}

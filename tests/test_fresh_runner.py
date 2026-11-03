@@ -69,6 +69,36 @@ class FreshRunnerTests(unittest.TestCase):
     def tearDown(self):
         self.mode.stop()
 
+    def test_thunder_mirrored_cts_update_and_100k_budget(self):
+        from tests.test_symmetry import make_env
+        class Scene(SimpleNamespace):
+            def __getitem__(self,name):return getattr(self,name)
+        env=NativeSyntheticEnv()
+        mirror_env,_=make_env()
+        env.scene=Scene(terrain=env.scene.terrain,**mirror_env.scene)
+        cfg=runner_config()
+        cfg['newpose_compat']['cumulative_target']=100000
+        cfg['algorithm']['symmetry_cfg']={
+            'use_symmetric_augmentation':True,
+            'symmetry_class':'thunder_lab3.tasks.thunder.mdp.symmetry:ThunderSymmetry'}
+        with tempfile.TemporaryDirectory(prefix='thunder_mirror_cpu_') as directory:
+            runner=ThunderMoeCtsRunner(env,cfg,directory,'cpu')
+            before={key:value.clone() for key,value in runner.alg.policy.state_dict().items()}
+            runner.learn(1)
+            self.assertEqual(runner.completed_updates,1)
+            after=runner.alg.policy.state_dict()
+            self.assertTrue(all(torch.isfinite(value).all() for value in after.values()))
+            for prefix in ('teacher_encoder.','student_moe_encoder.','actor.','critic.'):
+                self.assertTrue(any(not torch.equal(before[key],value) for key,value in after.items()
+                    if key.startswith(prefix)))
+            runner.completed_updates=100000
+            runner.save(Path(directory)/'model_100000.pt')
+            saved=load_checkpoint(Path(directory)/'model_100000.pt')
+            self.assertEqual(saved['completed_updates'],100000)
+            with self.assertRaises(ValueError):runner.learn(1)
+            cfg['algorithm']['symmetry_cfg']['symmetry_class']='go2_rl_lab.utils.symmetry:Go2Symmetry'
+            with self.assertRaises(ValueError):ThunderMoeCtsRunner(env,cfg,device='cpu')
+
     def test_actual_cts_updates_roundtrip_and_export(self):
         verify_timeout_boundary()
         with tempfile.TemporaryDirectory(prefix="thunder_fresh_cpu_") as directory:

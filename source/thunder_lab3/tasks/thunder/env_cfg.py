@@ -17,9 +17,11 @@ from isaaclab_newton.physics import NewtonCfg,MJWarpSolverCfg,NewtonCollisionPip
 from thunder_lab3.assets.robot import robot_cfg
 from thunder_lab3.assets.contract import A_POSE,A_POSE_CONTACT_HEIGHT,A_POSE_SPAWN_HEIGHT
 from go2_rl_lab.tasks.mixed.mdp.curriculums import gradual_reward_weight_modification
-from .commands import ThunderRLGymVelocityCommandCfg
+from go2_rl_lab.tasks.mixed.mdp import rewards as go2_rewards
+from .commands import ThunderRLGymVelocityCommandCfg,ThunderTerrainLevels
 from .scene_cfg import SceneCfg,ActionsCfg,fresh_actions_cfg
-from thunder_lab3.tasks.thunder.mdp.observations import policy_frame,critic_frame
+from thunder_lab3.tasks.thunder.mdp.observations import policy_frame,critic_frame,NoisyPolicyFrame
+from .mdp.randomization import configure_randomization
 from thunder_lab3.tasks.thunder.mdp.privileged import LEG_JOINTS,JOINTS,WHEEL_BODIES
 from .mdp.height_config import configure as configure_candidates
 from thunder_lab3.tasks.thunder.mdp.height import HeightOptions
@@ -111,8 +113,29 @@ class FreshRewardsCfg(RewardsCfg):
     joint_mirror=None
     # Velocity rewards already gate on uprightness; avoid a large stand-still survival bonus.
     upward=None
-    track_lin_vel_xy_exp=RewardTermCfg(func=mdp.track_xy,weight=3.75,
-        params={'std':.5,'stair_std':.5})
+    track_lin_vel_xy_exp=RewardTermCfg(func=go2_rewards.track_lin_vel_xy_exp,weight=2.,
+        params={'command_name':'base_velocity','std':.5})
+    track_ang_vel_z_exp=RewardTermCfg(func=go2_rewards.track_ang_vel_z_exp,weight=1.,
+        params={'command_name':'base_velocity','std':.5})
+    lin_vel_z_l2=RewardTermCfg(func=go2_rewards.lin_vel_z_l2,weight=-2.)
+    joint_torques_l2=RewardTermCfg(func=lab_mdp.joint_torques_l2,weight=-6.e-5,params={'asset_cfg':LEGS})
+    joint_acc_l2=RewardTermCfg(func=go2_rewards.clipped_joint_acc_l2,weight=-3.e-7,
+        params={'asset_cfg':LEGS,'max_penalty':1.e8})
+    joint_power=RewardTermCfg(func=go2_rewards.joint_power,weight=-1.5e-5,params={'asset_cfg':LEGS})
+    joint_pos_limits=RewardTermCfg(func=lab_mdp.joint_pos_limits,weight=-2.,params={'asset_cfg':LEGS})
+    action_rate_l2=RewardTermCfg(func=go2_rewards.clipped_action_rate_l2,weight=-.01,
+        params={'max_penalty':20.})
+    action_smoothness_l2=RewardTermCfg(func=go2_rewards.clipped_action_smoothness_l2,weight=-.01,
+        params={'max_penalty':50.})
+    # Replace the old whole-leg posture costs instead of stacking both objectives.
+    stand_still=None
+    joint_pos_penalty=None
+    hip_pos_penalty_l1=RewardTermCfg(func=go2_rewards.joint_pos_penalty_l1,weight=-.05,
+        params={'command_name':'base_velocity','asset_cfg':SceneEntityCfg('robot',joint_names=['.*_hip_joint']),
+                'stand_still_scale':10.,'stand_cmd_idxs':[1,2]})
+    joint_pos_penalty_l1=RewardTermCfg(func=go2_rewards.joint_pos_penalty_l1,weight=-.01,
+        params={'command_name':'base_velocity','asset_cfg':SceneEntityCfg('robot',joint_names=['.*_(thigh|calf)_joint']),
+                'stand_still_scale':10.})
 
 
 @configclass
@@ -137,6 +160,7 @@ class CurriculumCfg:
 
 @configclass
 class FreshCurriculumCfg(CurriculumCfg):
+    terrain_levels=CurriculumTermCfg(func=ThunderTerrainLevels)
     base_linear_velocity_z=CurriculumTermCfg(func=gradual_reward_weight_modification,
         params={'term_name':'lin_vel_z_l2','initial_weight':-2.,'final_weight':0.,
                 'start_it':0,'end_it':1500})
@@ -250,12 +274,20 @@ class ThunderFreshEnvCfg(ThunderNewposeEnvCfg):
     height_weight: float=-1.
     height_options: object=HeightOptions(target_height=A_POSE_CONTACT_HEIGHT,tolerance=.02,
         max_reference_speed=.5,max_reference_lag=.1,min_valid_fraction=.8)
-    newpose_terrain_schema: str='thunder_fresh_10level_v3_go2_commands_a_2dp'
+    newpose_terrain_schema: str='thunder_fresh_10level_v4_go2_aligned_a_2dp'
     newpose_physics_schema: str='newton_mjwarp_triangle_v1'
 
     def __post_init__(self):
         super().__post_init__()
         self.scene.robot=robot_cfg(pose=A_POSE,spawn_height=A_POSE_SPAWN_HEIGHT)
+        self.decimation=4
+        self.episode_length_s=25.
+        self.sim.dt=.005
+        self.sim.render_interval=self.decimation
+        self.observations.policy.frame.func=NoisyPolicyFrame
+        self.observations.single_obs.frame.func=NoisyPolicyFrame
+        self.observations.policy.enable_corruption=True
+        self.observations.single_obs.enable_corruption=True
         # Match Go2's allocation: the 1M default overflows contact hashing at 16384 environments.
         self.sim.physics.collision_cfg=NewtonCollisionPipelineCfg(max_triangle_pairs=2_500_000)
         self.sim.physics.solver_cfg.integrator='implicitfast'
@@ -266,6 +298,7 @@ class ThunderFreshEnvCfg(ThunderNewposeEnvCfg):
         self.scene.terrain.terrain_generator.sub_terrains['boxes'].grid_height_range=(.01,.20)
         self.scene.contact_forces.update_period=self.sim.dt
         self.scene.contact_forces.history_length=self.decimation
+        configure_randomization(self)
 
 
 @configclass
@@ -273,3 +306,9 @@ class ThunderFreshPlayEnvCfg(ThunderFreshEnvCfg):
     def __post_init__(self):
         super().__post_init__()
         configure_playback(self)
+        self.observations.policy.enable_corruption=False
+        self.observations.single_obs.enable_corruption=False
+        for name in vars(self.events):
+            if name.startswith('randomize_'):
+                setattr(self.events,name,None)
+        self.sim.physics.solver_cfg.body_com_buckets=None

@@ -46,6 +46,19 @@ class ConfigurationEncodingTests(unittest.TestCase):
             self.assertEqual(first["physics_schema"], "newton_mjwarp_triangle_v1")
             cfg.rewards.track_lin_vel_xy_exp.weight += .1
             self.assertNotEqual(first["sha256"], training_contract(env)["sha256"])
+            before=training_contract(env)
+            cfg.scene.height_scanner.offset.pos=(0.,0.,19.)
+            self.assertNotEqual(before['sha256'],training_contract(env)['sha256'])
+            before=training_contract(env)
+            cfg.scene.contact_forces.update_period=.01
+            self.assertNotEqual(before['sha256'],training_contract(env)['sha256'])
+            before=training_contract(env)
+            read_bytes=Path.read_bytes
+            def changed_runner(path):
+                data=read_bytes(path)
+                return data+b'\n# simulated runner change\n' if path.name=='runner.py' else data
+            with patch.object(Path,'read_bytes',changed_runner):
+                self.assertNotEqual(before['sha256'],training_contract(env)['sha256'])
 
     def test_fresh_runner_matches_official_core_and_keeps_legacy_separate(self):
         import gymnasium as gym
@@ -65,14 +78,18 @@ class ConfigurationEncodingTests(unittest.TestCase):
                 'schedule','gamma','lam','betas','weight_decay','desired_kl','max_grad_norm',
                 'teacher_env_ratio','normalize_advantage_per_mini_batch'):
             self.assertEqual(getattr(fresh.algorithm,field),getattr(official.algorithm,field),field)
-        self.assertIsNone(fresh.algorithm.symmetry_cfg)
+        self.assertTrue(fresh.algorithm.symmetry_cfg.use_symmetric_augmentation)
+        self.assertEqual(fresh.algorithm.symmetry_cfg.symmetry_class,
+            'thunder_lab3.tasks.thunder.mdp.symmetry:ThunderSymmetry')
         self.assertIsNotNone(official.algorithm.symmetry_cfg)
-        self.assertEqual(fresh.max_iterations,0)  # Launch requires an explicit update budget.
-        self.assertEqual(fresh.newpose_compat['cumulative_target'],20000)
+        self.assertEqual(fresh.max_iterations,100000)
+        self.assertEqual(fresh.newpose_compat['cumulative_target'],100000)
         self.assertEqual(official.max_iterations,100000)
         self.assertEqual(legacy.policy.noise_std_type,'log')
         self.assertIsNone(legacy.clip_rewards)
         self.assertEqual(legacy.save_interval,100)
+        self.assertIsNone(legacy.algorithm.symmetry_cfg)
+        self.assertEqual(legacy.newpose_compat['cumulative_target'],20000)
         self.assertEqual(gym.spec(FRESH_TASK_ID).kwargs['rsl_rl_cfg_entry_point'],
             'thunder_lab3.tasks.thunder.agents.rsl_rl_cfg:ThunderFreshMoeCtsRunnerCfg')
         self.assertEqual(gym.spec(TASK_ID).kwargs['rsl_rl_cfg_entry_point'],

@@ -30,7 +30,7 @@ def main():
     parser.add_argument("--num-envs", type=int, default=None,
                         help="Override the task default (fresh training: 16384)")
     parser.add_argument("--device", default="cuda:0")
-    parser.add_argument("--updates", type=int, help="Additional updates; adapter enforces completed + updates <= 20000")
+    parser.add_argument("--updates", type=int, help="Additional updates; adapter enforces completed + updates <= 100000")
     parser.add_argument("--video", action="store_true")
     parser.add_argument("--video-length", type=int, default=600)
     parser.add_argument("--terrain", choices=("mixed", "flat", "stairs_up", "stairs_down"),
@@ -42,8 +42,8 @@ def main():
     args = parser.parse_args()
     if args.num_envs is not None and (args.num_envs < 4 or args.num_envs % 4):
         parser.error("num-envs must be a positive multiple of four for the 75/25 teacher/student split")
-    if args.mode == "train" and (args.updates is None or not 1 <= args.updates <= 20000):
-        parser.error("Training requires an explicit --updates value in [1,20000]")
+    if args.mode == "train" and (args.updates is None or not 1 <= args.updates <= 100000):
+        parser.error("Training requires an explicit --updates value in [1,100000]")
     if args.mode == "play" and args.updates is not None:
         parser.error("--updates only applies to training")
     if args.mode == "play" and args.checkpoint is None:
@@ -93,7 +93,7 @@ def main():
         upstream_args += ["--visualizer", "none"]
     plan = {"execute": args.execute, "upstream_entry": str(entry), "argv": upstream_args[1:],
             "working_directory": str(project), "urdf": str(args.urdf.resolve()),
-            "usd_cache": str(args.usd_cache.resolve()), "cumulative_target": 20000,
+            "usd_cache": str(args.usd_cache.resolve()), "cumulative_target": 20000 if args.legacy else 100000,
             "play_terrain": args.terrain or "mixed" if args.mode == "play" else None,
             "play_fixed_level": args.level,
             "candidate_overrides": candidate_overrides,

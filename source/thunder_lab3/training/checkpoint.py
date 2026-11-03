@@ -107,7 +107,8 @@ def normalize_checkpoint(saved, source_sha256, critic_dim=309):
     validate_signature(result["signature"], critic_dim)
     completed = result.get("completed_updates")
     minimum = 0 if native else 19538
-    if isinstance(completed, bool) or not isinstance(completed, int) or not minimum <= completed <= 20000:
+    maximum = 100000 if native else 20000
+    if isinstance(completed, bool) or not isinstance(completed, int) or not minimum <= completed <= maximum:
         raise ValueError("Completed update count outside the experiment contract")
     rate = float(result["learning_rate"])
     if not math.isfinite(rate) or rate <= 0:

@@ -1,31 +1,28 @@
-"""Go2 command curricula with Thunder's wheel-leg stair restrictions.
+"""Go2 command sampling with Thunder terrain names and progress bookkeeping.
 
-Sampling, boundary modes and current-tile lookup come from the pinned upstream
-implementation.  These restrictions are intentional differences from Go2: the
-user's global speed cap, forward-only stairs, and a budget integrated from the
-commands actually issued after terrain clipping.
+The pinned upstream implementation owns all command modes and current-tile
+clipping, including stairs. Thunder only adapts the names and integrates the
+command budget over the control intervals actually elapsed.
 """
 
 from copy import deepcopy
-import math
-
-import torch
 
 from isaaclab.utils import configclass
-from isaaclab.utils.math import euler_xyz_from_quat, wrap_to_pi
 from go2_rl_lab.cmd_utils.rl_gym_cmd import RLGymVelCommand, RLGymVelCommandCfg
+from go2_rl_lab.tasks.mixed.env_cfg import CommandsCfg as Go2CommandsCfg
+from go2_rl_lab.tasks.mixed.mdp.curriculums import TerrainLevelsVelGym
 
-from .mdp.terms import TerrainProgress, env_indices, stairs
+from .mdp.terms import TerrainProgress, env_indices
 
 
 # Both pyramid families start in the centre: the inverted one climbs outward.
-# Random rough has no identical Go2 category; it uses the conservative user cap.
+# Random rough has no identical Go2 geometry; reuse the rough_slope speed policy.
 TERRAIN_COMMAND_SOURCE = {
     "flat": "flat",
     "pyramid_stairs": "stairs_down",
     "pyramid_stairs_inv": "stairs_up",
     "boxes": "small_squares",
-    "random_rough": None,
+    "random_rough": "rough_slope",
     "hf_pyramid_slope": "slope_down",
     "hf_pyramid_slope_inv": "slope_up",
     "wave": "wave",
@@ -33,19 +30,9 @@ TERRAIN_COMMAND_SOURCE = {
 
 
 def terrain_command_ranges():
-    """Translate the eight terrain names, intersecting Go2 and user maxima."""
+    """Translate Thunder names without changing the corresponding Go2 limits."""
     source = RLGymVelCommandCfg().terrain_max_command_ranges
-    cap = {"lin_vel_x": (-1., 1.), "lin_vel_y": (-1., 1.), "ang_vel_yaw": (-1.5, 1.5)}
-    result = {}
-    for name, upstream_name in TERRAIN_COMMAND_SOURCE.items():
-        limits = source[upstream_name] if upstream_name is not None else cap
-        result[name] = {
-            axis: (max(bounds[0], limits[axis][0]), min(bounds[1], limits[axis][1]))
-            for axis, bounds in cap.items()
-        }
-    for name in ("pyramid_stairs", "pyramid_stairs_inv"):
-        result[name] = {"lin_vel_x": (.25, .5), "lin_vel_y": (0., 0.), "ang_vel_yaw": (-.2, .2)}
-    return result
+    return {name: deepcopy(source[upstream_name]) for name, upstream_name in TERRAIN_COMMAND_SOURCE.items()}
 
 
 class ThunderRLGymVelocityCommand(TerrainProgress, RLGymVelCommand):
@@ -55,46 +42,15 @@ class ThunderRLGymVelocityCommand(TerrainProgress, RLGymVelCommand):
         # Upstream consumes curriculum lists with pop(). Keep declarative env.cfg
         # unchanged for hashes/resume and give each command instance its own list.
         super().__init__(deepcopy(cfg), env)
-        self.was_on_stairs = torch.zeros(self.num_envs, device=self.device, dtype=torch.bool)
-        self.is_standing_env = torch.zeros_like(self.was_on_stairs)
-        self.stair_heading = torch.zeros(self.num_envs, device=self.device)
         self._init_travel_statistics()
-
-    def _set_stair_heading(self, ids):
-        if not len(ids):
-            return
-        yaw = euler_xyz_from_quat(self.robot.data.root_quat_w.torch[ids])[2]
-        self.stair_heading[ids] = torch.round(yaw / (math.pi / 2)) * (math.pi / 2)
-        self.stair_heading[ids] += torch.empty(len(ids), device=self.device).uniform_(-math.pi / 18, math.pi / 18)
-
-    def _apply_terrain_command_limits(self, env_ids=None):
-        ids = env_indices(env_ids, self.num_envs, self.device)
-        super()._apply_terrain_command_limits(ids)
-        mask = stairs(self._env)
-        stair_ids = ids[mask[ids]]
-        self._set_stair_heading(ids[mask[ids] & ~self.was_on_stairs[ids]])
-        self.was_on_stairs[ids] = mask[ids]
-        self.is_standing_env[ids] = (self._requested_velocity_command_b[ids] == 0.).all(dim=1)
-        if len(stair_ids):
-            yaw = euler_xyz_from_quat(self.robot.data.root_quat_w.torch[stair_ids])[2]
-            self.velocity_command_b[stair_ids, 0] = self.velocity_command_b[stair_ids, 0].clamp(.25, .5)
-            self.velocity_command_b[stair_ids, 1] = 0.
-            self.velocity_command_b[stair_ids, 2] = (
-                .5 * wrap_to_pi(self.stair_heading[stair_ids] - yaw)).clamp(-.2, .2)
-            # The positive stair sampling interval must not turn standing into
-            # creeping forward. Retain the true zero mode selected by upstream.
-            self.velocity_command_b[stair_ids[self.is_standing_env[stair_ids]]] = 0.
 
     def _resample(self, env_ids):
         ids = env_indices(env_ids, self.num_envs, self.device)
         if not len(ids):
             return
-        mask = stairs(self._env)
-        self._set_stair_heading(ids[mask[ids]])
-        self.was_on_stairs[ids] = mask[ids]
         # Apply any due stage before the upstream call, which repeats this check.
         # Its standing-time calculation can then use per-environment *effective*
-        # speed rather than assume a staircase can use the global 1 m/s cap.
+        # speed rather than assume a staircase can use the full flat-ground cap.
         self._update_command_range_curriculum()
         self._update_env_command_ranges()
         global_max = self.max_lin_vel
@@ -116,6 +72,11 @@ class ThunderRLGymVelocityCommand(TerrainProgress, RLGymVelCommand):
         # to get commanded displacement. This is not measured robot progress.
         self.commands_xy_accumulation[ids] += self.command[ids, :2] * (
             self._env.step_dt / self.cfg.resampling_time)
+        # The reset curriculum runs before CommandTerm.compute. Include a final
+        # tile-crossing step when it explicitly accumulates the ending episode.
+        distance = (self.robot.data.root_pos_w.torch[ids, :2]
+                    - self._env.scene.env_origins[ids, :2]).norm(dim=1)
+        self.max_move_distance[ids] = self.max_move_distance[ids].maximum(distance)
         super().accumulate(ids)
 
     def _update_metrics(self):
@@ -136,14 +97,20 @@ class ThunderRLGymVelocityCommand(TerrainProgress, RLGymVelCommand):
         return result
 
 
+class ThunderTerrainLevels(TerrainLevelsVelGym):
+    """Record the terminal frame before applying the unchanged Go2 level rule."""
+
+    def __call__(self, env, env_ids):
+        ids = env_indices(env_ids, env.num_envs, env.device)
+        env.command_manager.get_term("base_velocity").accumulate(ids)
+        return super().__call__(env, ids)
+
+
 @configclass
 class ThunderRLGymVelocityCommandCfg(RLGymVelCommandCfg):
     class_type: type = ThunderRLGymVelocityCommand
-    command_range_curriculum: list[dict] = [{
-        "iter": 5000,
-        "lin_vel_x": (-1., 1.),
-        "lin_vel_y": (-1., 1.),
-        "ang_vel_yaw": (-1.5, 1.5),
-    }]
+    # The mixed task adds its 25k boundary-mode transition to the base sampler.
+    # Global speed stages and coupled-axis clipping are inherited unchanged.
+    limit_vel_curriculum: list[dict] = deepcopy(Go2CommandsCfg().base_velocity.limit_vel_curriculum)
     terrain_max_command_ranges: dict = terrain_command_ranges()
 

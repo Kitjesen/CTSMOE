@@ -32,6 +32,12 @@ class LaunchTests(unittest.TestCase):
         self.plan("train", "--updates", "2", "--resume", success=False)
         self.plan("train", "--updates", "2", "--legacy", success=False)
 
+    def test_full_official_budget_is_accepted_but_excess_is_rejected(self):
+        plan=self.plan("train", "--updates", "100000")
+        self.assertIn("100000",plan["argv"])
+        self.plan("train", "--updates", "100001",success=False)
+        self.plan("train", "--updates", "0",success=False)
+
     def test_environment_count_uses_task_default_until_explicitly_overridden(self):
         default = self.plan("train", "--updates", "2")
         self.assertNotIn("--num_envs", default["argv"])
@@ -41,7 +47,7 @@ class LaunchTests(unittest.TestCase):
         for invalid in ("0", "-4", "3", "6"):
             with self.subTest(invalid=invalid):
                 self.plan("train", "--updates", "2", "--num-envs", invalid, success=False)
-        self.assertEqual(default["cumulative_target"], 20000)
+        self.assertEqual(default["cumulative_target"], 100000)
 
     def test_play_requires_model_and_distinguishes_legacy(self):
         self.plan("play", success=False)
@@ -50,6 +56,7 @@ class LaunchTests(unittest.TestCase):
         self.assertNotIn("--seed", fresh["argv"])
         old = self.plan("play", "--checkpoint", "model_19538.pt", "--legacy")
         self.assertIn("Thunder-Newpose-Newton3-v0", old["argv"])
+        self.assertEqual(old['cumulative_target'],20000)
         self.assertNotIn("--num_envs", fresh["argv"])
         self.assertNotIn("--num_envs", old["argv"])
 

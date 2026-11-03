@@ -3,11 +3,11 @@
   "decision_date": "2026-11-03",
   "training": {
     "start_update": 0,
-    "target_updates": 20000,
+    "target_updates": 100000,
     "formal_training_started": false,
     "fresh_training_entry_ready": true,
-    "isolated_native_updates_total": 10,
-    "final_diagnostic_completed_updates": 2,
+    "isolated_native_updates_total": 14,
+    "final_diagnostic_completed_updates": 1,
     "historical_reference_updates": 19538,
     "accepted_formal_checkpoint": null
   },
@@ -86,7 +86,7 @@
   "alignment": {
     "date": "2026-11-03",
     "scope": "new from-scratch task; legacy 19538 playback preserved",
-    "terrain_schema": "thunder_fresh_10level_v3_go2_commands_a_2dp",
+    "terrain_schema": "thunder_fresh_10level_v4_go2_aligned_a_2dp",
     "default_num_envs": 16384,
     "pose": "A_POSE_truncated_two_decimals",
     "pose_spawn_height_m": 0.41141468661229086,
@@ -94,8 +94,9 @@
     "base_height_initial_weight": -1.0,
     "base_height_final_weight": -10.0,
     "base_height_final_update": 5000,
-    "command_sampler": "pinned Go2 RLGymVelCommand with Thunder terrain mapping and constrained-command budget",
-    "user_velocity_cap": {
+    "command_sampler": "full pinned Go2 curriculum and terrain speed caps; Thunder geometry; actual elapsed-command budget",
+    "velocity_policy": "Go2 full curriculum; previous user_velocity_cap is historical and no longer enforced",
+    "previous_user_velocity_cap": {
       "x": [
         -1,
         1
@@ -116,7 +117,19 @@
     "prior_diagnostic_playback_requires_matching_source": true,
     "formal_training_started": false,
     "motion_acceptance_passed": false,
-    "validation_status": "14 local checks passed; native validation and server sync blocked by SSH handshake closure",
+    "validation_status": "98 CPU checks and native nominal/DR stance passed; mixed interface and 16384-env PPO update passed; learned movement acceptance pending",
+    "server_synced": true,
+    "episode_length_s": 25,
+    "physics_dt_s": 0.005,
+    "decimation": 4,
+    "student_sensor_noise_enabled": true,
+    "thunder_16_action_symmetry_enabled": true,
+    "domain_randomization_enabled": true,
+    "prior_two_decimal_validation": {
+      "source_commit": "cb7b22d",
+      "local_tests": 14,
+      "native_verified": false
+    },
     "physics": {
       "integrator": "implicitfast",
       "nconmax": 128,
@@ -140,9 +153,16 @@
       "evidence_archive_sha256": "4d2d0e05310ff3cde19a392e100721ef44b3d5293c12177af4cf9ac987e78990",
       "official_19538_unchanged": true
     },
-    "local_tests_passed": 14,
-    "native_validation_current_pose": false,
-    "server_synced_current_pose": false,
-    "training_updates_added_current_pose": 0
+    "cpu_tests_passed_current_config": 98,
+    "source_files_matched_current_config": 59,
+    "source_digest_current_config": "ddb2ddfbb654509e32b75747c418322988520c733b7d58bb742c74d9d1ad3204",
+    "native_validation_current_pose": true,
+    "server_synced_current_pose": true,
+    "training_updates_added_current_pose": 4,
+    "capacity_training_envs": 16384,
+    "capacity_training_updates": 1,
+    "capacity_gpu_peak_MiB": 29836,
+    "current_contract_smoke_checkpoint_sha256": "d8524505623a9626495be5433bcd46e98afee2adb413bd396bc0b111a960a9333",
+    "evidence_archive_sha256": "5511eb0059a09615652e09f2e75544d4e02be3d31ffc891e58fd94f1c04433e7"
   }
 }
