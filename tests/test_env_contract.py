@@ -118,13 +118,13 @@ class FullContractTest(unittest.TestCase):
         with patch.dict('os.environ',{'NEWPOSE_SEED':'-1','NEWPOSE_CANDIDATE_OVERRIDES':'{}'}):
             with self.assertRaises(ValueError):make_env(cfg)
 
-    def test_fresh_defaults_are_independent_of_legacy_and_start_on_level_zero(self):
+    def test_fresh_defaults_are_independent_of_legacy_and_match_go2_initial_levels(self):
         with patch('thunder_lab3.tasks.thunder.env_cfg.robot_cfg',return_value=None), \
                 patch('thunder_lab3.tasks.thunder.env_cfg.fresh_actions_cfg',return_value=NS(fresh_actions=True)):
             fresh=ThunderFreshEnvCfg();legacy=ThunderNewposeEnvCfg()
         self.assertEqual(fresh.newpose_terrain_schema,'thunder_fresh_10level_v4_go2_aligned_a_2dp')
         self.assertEqual(fresh.newpose_physics_schema,'newton_mjwarp_triangle_v1')
-        self.assertEqual(fresh.scene.terrain.max_init_terrain_level,0)
+        self.assertEqual(fresh.scene.terrain.max_init_terrain_level,5)
         self.assertEqual(legacy.scene.terrain.max_init_terrain_level,5)
         self.assertTrue(fresh.actions.fresh_actions)
         self.assertEqual(fresh.episode_length_s,25.)

@@ -294,7 +294,7 @@ class ThunderFreshEnvCfg(ThunderNewposeEnvCfg):
         self.sim.physics.solver_cfg.nconmax=128
         self.sim.physics.default_shape_cfg=NewtonShapeCfg(margin=.01)
         self.actions=fresh_actions_cfg()
-        self.scene.terrain.max_init_terrain_level=0
+        self.scene.terrain.max_init_terrain_level=5
         self.scene.terrain.terrain_generator.sub_terrains['boxes'].grid_height_range=(.01,.20)
         self.scene.contact_forces.update_period=self.sim.dt
         self.scene.contact_forces.history_length=self.decimation
