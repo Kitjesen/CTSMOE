@@ -68,7 +68,6 @@ def training_contract(env):
         for name in ("tasks/thunder/env_cfg.py", "tasks/thunder/commands.py", "tasks/thunder/mdp/terms.py", "tasks/thunder/terrain.py",
                      "tasks/thunder/scene_cfg.py", "tasks/thunder/mdp/observations.py", "tasks/thunder/mdp/privileged.py",
                      "assets/contract.py", "assets/robot.py",
-                     "tasks/thunder/boxes.py",
                      "tasks/thunder/mdp/randomization.py", "tasks/thunder/mdp/symmetry.py",
                      "training/runner.py", "training/checkpoint.py", "training/fresh_state.py",
                      "training/history.py", "training/timeout.py")}

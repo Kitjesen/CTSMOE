@@ -22,8 +22,7 @@ from .scene_cfg import SceneCfg,ActionsCfg,fresh_actions_cfg
 from thunder_lab3.tasks.thunder.mdp.observations import policy_frame,critic_frame,NoisyPolicyFrame
 from .mdp.randomization import configure_randomization
 from thunder_lab3.tasks.thunder.mdp.privileged import LEG_JOINTS,JOINTS,WHEEL_BODIES
-from thunder_lab3.tasks.thunder.boxes import gradual_random_grid_terrain
-from .terrain import terrain_cfg,ThunderTerrainImporterCfg
+from .terrain import terrain_cfg,ThunderTerrainImporterCfg,gradual_random_grid_terrain
 from .mdp import terms as mdp
 
 

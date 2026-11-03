@@ -11,8 +11,7 @@ import yaml
 from thunder_lab3.tasks.thunder.env_cfg import (RewardsCfg,FreshRewardsCfg,CommandsCfg,ObservationsCfg,
     ThunderNewposeEnvCfg,ThunderNewposePlayEnvCfg,ThunderFreshEnvCfg,ThunderFreshPlayEnvCfg)
 from thunder_lab3.tasks.thunder.mdp.terms import HeightOptions
-from thunder_lab3.tasks.thunder.boxes import gradual_random_grid_terrain
-from thunder_lab3.tasks.thunder.terrain import terrain_cfg,pyramid_slope
+from thunder_lab3.tasks.thunder.terrain import terrain_cfg,pyramid_slope,gradual_random_grid_terrain
 from thunder_lab3.tasks.thunder.mdp import terms as mdp
 from thunder_lab3.tasks.thunder import make_env
 from thunder_lab3.assets.contract import A_POSE,A_POSE_CONTACT_HEIGHT,A_POSE_SPAWN_HEIGHT,POSE
