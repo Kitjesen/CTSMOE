@@ -250,7 +250,7 @@ class ThunderFreshEnvCfg(ThunderNewposeEnvCfg):
     height_weight: float=-1.
     height_options: object=HeightOptions(target_height=A_POSE_CONTACT_HEIGHT,tolerance=.02,
         max_reference_speed=.5,max_reference_lag=.1,min_valid_fraction=.8)
-    newpose_terrain_schema: str='thunder_fresh_10level_v3_go2_commands_a_pose'
+    newpose_terrain_schema: str='thunder_fresh_10level_v3_go2_commands_a_2dp'
     newpose_physics_schema: str='newton_mjwarp_triangle_v1'
 
     def __post_init__(self):

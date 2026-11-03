@@ -105,7 +105,7 @@ class FullContractTest(unittest.TestCase):
         with patch('thunder_lab3.tasks.thunder.env_cfg.robot_cfg',return_value=None), \
                 patch('thunder_lab3.tasks.thunder.env_cfg.fresh_actions_cfg',return_value=NS(fresh_actions=True)):
             fresh=ThunderFreshEnvCfg();legacy=ThunderNewposeEnvCfg()
-        self.assertEqual(fresh.newpose_terrain_schema,'thunder_fresh_10level_v3_go2_commands_a_pose')
+        self.assertEqual(fresh.newpose_terrain_schema,'thunder_fresh_10level_v3_go2_commands_a_2dp')
         self.assertEqual(fresh.newpose_physics_schema,'newton_mjwarp_triangle_v1')
         self.assertEqual(fresh.scene.terrain.max_init_terrain_level,0)
         self.assertEqual(legacy.scene.terrain.max_init_terrain_level,5)

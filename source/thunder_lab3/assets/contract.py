@@ -1,4 +1,4 @@
-"""Backend-neutral asset checks and explicit legacy, strict-A and level-B poses."""
+"""Asset checks, legacy pose, symmetric two-decimal A and historical level-B pose."""
 import hashlib
 import math
 import xml.etree.ElementTree as ET
@@ -12,15 +12,16 @@ POSE = {
     "fr_foot_joint": 0.0, "fl_foot_joint": 0.0, "rr_foot_joint": 0.0, "rl_foot_joint": 0.0,
 }
 
-# User-selected A: match Go2's front/rear sagittal angles, not equal leg reach.
+# User-selected A, truncated toward zero to two decimals with mirrored motor angles.
+# Raw-angle symmetry is not exact geometric symmetry in this URDF.
 A_POSE = {
-    "fr_hip_joint": -0.12, "fr_thigh_joint": -0.6816288926771934, "fr_calf_joint": 1.6562190211938448,
-    "fl_hip_joint": 0.12, "fl_thigh_joint": 0.6832323255948513, "fl_calf_joint": -1.6561612109591115,
-    "rr_hip_joint": 0.12, "rr_thigh_joint": 2.531735620314508, "rr_calf_joint": 1.5382337221713531,
-    "rl_hip_joint": -0.12, "rl_thigh_joint": -2.5317356203147696, "rl_calf_joint": -1.5382337221715945,
+    "fr_hip_joint": -0.12, "fr_thigh_joint": -0.68, "fr_calf_joint": 1.65,
+    "fl_hip_joint": 0.12, "fl_thigh_joint": 0.68, "fl_calf_joint": -1.65,
+    "rr_hip_joint": 0.12, "rr_thigh_joint": 2.53, "rr_calf_joint": 1.53,
+    "rl_hip_joint": -0.12, "rl_thigh_joint": -2.53, "rl_calf_joint": -1.53,
     "fr_foot_joint": 0.0, "fl_foot_joint": 0.0, "rr_foot_joint": 0.0, "rl_foot_joint": 0.0,
 }
-A_POSE_CONTACT_HEIGHT = 0.39244429218563087
+A_POSE_CONTACT_HEIGHT = 0.39141468661229084
 A_POSE_SPAWN_HEIGHT = A_POSE_CONTACT_HEIGHT + 0.02
 
 # Match Go2 sagittal thigh inclinations while keeping Thunder hips and four

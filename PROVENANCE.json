@@ -28,7 +28,7 @@
     "mesh_count": 21,
     "mechanical_limits_verified": false,
     "new_stance_accepted": false,
-    "default_pose": "A_POSE"
+    "default_pose": "A_POSE_truncated_two_decimals"
   },
   "excluded": [
     "checkpoints",
@@ -86,11 +86,11 @@
   "alignment": {
     "date": "2026-11-03",
     "scope": "new from-scratch task; legacy 19538 playback preserved",
-    "terrain_schema": "thunder_fresh_10level_v3_go2_commands_a_pose",
+    "terrain_schema": "thunder_fresh_10level_v3_go2_commands_a_2dp",
     "default_num_envs": 16384,
-    "pose": "A_POSE",
-    "pose_spawn_height_m": 0.4124442921856309,
-    "geometric_contact_base_height_m": 0.39244429218563087,
+    "pose": "A_POSE_truncated_two_decimals",
+    "pose_spawn_height_m": 0.41141468661229086,
+    "geometric_contact_base_height_m": 0.39141468661229084,
     "base_height_initial_weight": -1.0,
     "base_height_final_weight": -10.0,
     "base_height_final_update": 5000,
@@ -116,26 +116,33 @@
     "prior_diagnostic_playback_requires_matching_source": true,
     "formal_training_started": false,
     "motion_acceptance_passed": false,
-    "validation_status": "bounded native checks passed; motion not accepted",
+    "validation_status": "14 local checks passed; native validation and server sync blocked by SSH handshake closure",
     "physics": {
       "integrator": "implicitfast",
       "nconmax": 128,
       "max_triangle_pairs": 2500000,
       "margin_m": 0.01
     },
-    "cpu_tests_passed": 68,
-    "source_files_matched": 51,
-    "basic_stance_envs": 128,
-    "basic_stance_seconds": 20,
-    "basic_stance_seed": 42,
-    "basic_stance_screen_passed": true,
-    "base_height_steady_median_m": 0.34846705198287964,
-    "capacity_sim_only_envs": 16384,
-    "capacity_hash_overflow_observed": false,
-    "capacity_sim_only_env_steps_per_second": 93250.15291259103,
-    "final_isolated_smoke_updates": 2,
-    "final_checkpoint_sha256": "cae78c4a77e5020e233dc3e19a4de145995331da4591f825ea99f44fba3e6158",
-    "evidence_archive_sha256": "4d2d0e05310ff3cde19a392e100721ef44b3d5293c12177af4cf9ac987e78990",
-    "official_19538_unchanged": true
+    "previous_full_precision_a_validation": {
+      "source_commit": "0e54d37",
+      "cpu_tests_passed": 68,
+      "source_files_matched": 51,
+      "basic_stance_envs": 128,
+      "basic_stance_seconds": 20,
+      "basic_stance_seed": 42,
+      "basic_stance_screen_passed": true,
+      "base_height_steady_median_m": 0.34846705198287964,
+      "capacity_sim_only_envs": 16384,
+      "capacity_hash_overflow_observed": false,
+      "capacity_sim_only_env_steps_per_second": 93250.15291259103,
+      "final_isolated_smoke_updates": 2,
+      "final_checkpoint_sha256": "cae78c4a77e5020e233dc3e19a4de145995331da4591f825ea99f44fba3e6158",
+      "evidence_archive_sha256": "4d2d0e05310ff3cde19a392e100721ef44b3d5293c12177af4cf9ac987e78990",
+      "official_19538_unchanged": true
+    },
+    "local_tests_passed": 14,
+    "native_validation_current_pose": false,
+    "server_synced_current_pose": false,
+    "training_updates_added_current_pose": 0
   }
 }

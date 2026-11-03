@@ -1,5 +1,6 @@
 """Static A/B geometry checks; these do not establish loaded stance stability."""
 from pathlib import Path
+from decimal import Decimal
 import unittest
 import xml.etree.ElementTree as ET
 
@@ -55,14 +56,25 @@ class PoseCandidateTests(unittest.TestCase):
             knees.append(np.degrees(np.arccos(np.clip(np.dot(-upper,lower)/np.linalg.norm(upper)/np.linalg.norm(lower),-1,1))))
         return np.array(bottoms),np.array(inclinations),np.array(knees)
 
-    def test_strict_a_matches_go2_angles_without_claiming_level_wheels(self):
+    def test_two_decimal_a_is_mirrored_bounded_and_geometrically_checked(self):
         report=validate_urdf(URDF,pose=A_POSE)
         self.assertEqual(report['sha256'],URDF_SHA256)
+        for right,left in (('fr','fl'),('rr','rl')):
+            for part in ('hip','thigh','calf','foot'):
+                q=A_POSE[f'{right}_{part}_joint']
+                self.assertEqual(q,-A_POSE[f'{left}_{part}_joint'])
+                self.assertEqual(Decimal(str(q)),Decimal(str(q)).quantize(Decimal('.01')))
+        for name,(low,high) in report['joint_position_limits'].items():
+            center,half=(low+high)/2,.9*(high-low)/2
+            self.assertLessEqual(abs(A_POSE[name]-center),half,name)
         bottoms,inclinations,knees=self.geometry(A_POSE)
-        np.testing.assert_allclose(inclinations,[-45.98003016604069]*2+[-57.42610812106981]*2,atol=1e-9,rtol=0.)
-        np.testing.assert_allclose(knees,[93.77147338813516]*2+[93.80510571610398]*2,atol=1e-9,rtol=0.)
+        np.testing.assert_allclose(inclinations,[-45.98003016604069]*2+[-57.42610812106981]*2,atol=.2,rtol=0.)
+        np.testing.assert_allclose(knees,[93.77147338813516]*2+[93.80510571610398]*2,atol=.6,rtol=0.)
         self.assertAlmostEqual(-bottoms.min(),A_POSE_CONTACT_HEIGHT)
-        self.assertAlmostEqual(np.ptp(bottoms),.01168787076265726)
+        self.assertLess(abs(bottoms[0]-bottoms[1]),.00003)
+        self.assertLess(abs(bottoms[2]-bottoms[3]),.000001)
+        self.assertGreater(np.ptp(bottoms),.011)
+        self.assertLess(np.ptp(bottoms),.012)
         self.assertAlmostEqual(A_POSE_SPAWN_HEIGHT-A_POSE_CONTACT_HEIGHT,.02)
         self.assertGreater(bottoms[2],bottoms[0]+.011)
 
