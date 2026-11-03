@@ -10,18 +10,29 @@
     "final_diagnostic_completed_updates": 1,
     "historical_reference_updates": 19538,
     "accepted_formal_checkpoint": null,
-    "formal_run_name": "2026-11-03_20-39-21_NEWPOSE_A2_GO2_FORMAL100K_20261103",
-    "formal_source_commit": "3755051e9c0a27e69e32902f57c8daabb6d301fc",
-    "formal_started_at_utc": "2026-11-03T12:39:17Z",
+    "formal_run_name": "2026-11-03_21-15-30_NEWPOSE_A2_GO2_INIT05_FORMAL100K_20261103",
+    "formal_source_commit": "f4f1030eba0afb3d8afc48d53b73696813a6a0e3",
+    "formal_started_at_utc": "2026-11-03T13:15:26Z",
     "formal_startup_snapshot": {
-      "verified_at_utc": "2026-11-03T12:42:01.344816+00:00",
-      "completed_updates": 33,
+      "verified_at_utc": "2026-11-03T13:16:41.332134+00:00",
+      "completed_updates": 10,
       "latest_saved_update": 1,
       "num_envs": 16384,
       "seed": 42,
       "state_at_verification": "running",
       "motion_acceptance_passed": false
-    }
+    },
+    "superseded_formal_runs": [
+      {
+        "run_name": "2026-11-03_20-39-21_NEWPOSE_A2_GO2_FORMAL100K_20261103",
+        "source_commit": "3755051e9c0a27e69e32902f57c8daabb6d301fc",
+        "last_printed_update": 503,
+        "latest_saved_update": 501,
+        "checkpoint_sha256": "e0892c2e56e593c6626cd4a478833916f4a32a0146f39f0724a8ff2192e0d4eb",
+        "state": "stopped; checkpoint and logs preserved",
+        "reason": "Initial terrain distribution changed from all L0 to Go2 L0-L5; new independent run starts at zero"
+      }
+    ]
   },
   "go2": {
     "url": "https://github.com/wty-yy/go2_rl_lab",
@@ -130,7 +141,7 @@
     "prior_diagnostic_playback_requires_matching_source": true,
     "formal_training_started": true,
     "motion_acceptance_passed": false,
-    "validation_status": "98 CPU checks and native nominal/DR stance passed; mixed interface and 16384-env PPO update passed; learned movement acceptance pending",
+    "validation_status": "Prior baseline passed 98 CPU checks and nominal/DR stance. Initial-level change passed 38 focused CPU checks and 128-env native probe; new 16384-env formal run has verified updates. Learned movement acceptance pending.",
     "server_synced": true,
     "episode_length_s": 25,
     "physics_dt_s": 0.005,
@@ -166,9 +177,10 @@
       "evidence_archive_sha256": "4d2d0e05310ff3cde19a392e100721ef44b3d5293c12177af4cf9ac987e78990",
       "official_19538_unchanged": true
     },
-    "cpu_tests_passed_current_config": 98,
+    "cpu_tests_passed_current_config": 38,
+    "cpu_tests_passed_before_initial_level_change": 98,
     "source_files_matched_current_config": 59,
-    "source_digest_current_config": "ddb2ddfbb654509e32b75747c418322988520c733b7d58bb742c74d9d1ad3204",
+    "source_digest_current_config": "086c309dfc216ab153510b83de620de702a74c3216fe1c5ab68257b0d6984398",
     "native_validation_current_pose": true,
     "server_synced_current_pose": true,
     "training_updates_added_current_pose": 4,
@@ -176,6 +188,16 @@
     "capacity_training_updates": 1,
     "capacity_gpu_peak_MiB": 29836,
     "current_contract_smoke_checkpoint_sha256": "d8524505623a9626495be5433bcd46e98afee2adb413bd396bc0b111a960a9333",
-    "evidence_archive_sha256": "5511eb0059a09615652e09f2e75544d4e02be3d31ffc891e58fd94f1c04433e7"
+    "evidence_archive_sha256": "5511eb0059a09615652e09f2e75544d4e02be3d31ffc891e58fd94f1c04433e7",
+    "initial_level_validation": {
+      "source_commit": "f4f1030eba0afb3d8afc48d53b73696813a6a0e3",
+      "probe_envs": 128,
+      "probe_control_steps": 16,
+      "probe_passed": true,
+      "probe_optimizer_updates": 0,
+      "formal_initial_counts_L0_to_L9": [2761, 2685, 2710, 2732, 2705, 2791, 0, 0, 0, 0],
+      "formal_initial_mean_level": 2.507080078125,
+      "receipt_local": "D:/doso/visonRL/artifacts/go2_alignment_v4_20261103/init05_startup_receipt.json"
+    }
   }
 }
