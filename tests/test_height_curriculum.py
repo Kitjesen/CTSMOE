@@ -1,15 +1,11 @@
-import importlib
 import math
 import random
-import sys
 import types
 import unittest
-from unittest.mock import patch
 
 import torch
 
 from thunder_lab3.tasks.thunder.boxes import amplitude, with_amplitude
-from thunder_lab3.tasks.thunder.mdp.height_config import configure
 from thunder_lab3.tasks.thunder.mdp.height import HeightOptions, HeightReference
 from thunder_lab3.tasks.thunder.mdp.privileged import tensor
 
@@ -117,21 +113,8 @@ class BoxesTest(unittest.TestCase):
         self.assertEqual(seen[0][2], (amplitude(.25), amplitude(.25)))
         self.assertEqual(seen[0][:2], (.25, .45))
 
-    def test_disabled_config_noop_and_boxes_only(self):
-        sentinel = object()
-        box = types.SimpleNamespace(function=sentinel)
-        generator = types.SimpleNamespace(sub_terrains={"boxes": box}, use_cache=True)
-        cfg = types.SimpleNamespace(scene=types.SimpleNamespace(terrain=types.SimpleNamespace(terrain_generator=generator)))
-        self.assertIs(configure(cfg), cfg)
-        self.assertIs(box.function, sentinel)
-        self.assertTrue(generator.use_cache)
-        configure(cfg, gradual_boxes=True)
-        self.assertFalse(generator.use_cache)
-        self.assertIsNot(box.function, sentinel)
-
-
 class AdapterTest(unittest.TestCase):
-    def test_tensor_and_proxy_views_and_manager_reset(self):
+    def test_tensor_and_proxy_views(self):
         class Proxy:
             def __init__(self, value): self.torch = value
         x = torch.zeros((1, 3))
@@ -139,34 +122,6 @@ class AdapterTest(unittest.TestCase):
         self.assertIs(tensor(Proxy(x)), x)
         with self.assertRaises(TypeError):
             tensor(Proxy(None))
-        class ManagerTermBase:
-            def __init__(self, cfg, env): pass
-        managers = types.ModuleType("isaaclab.managers")
-        managers.ManagerTermBase = ManagerTermBase
-        with patch.dict(sys.modules, {"isaaclab.managers": managers}):
-            module_name = "thunder_lab3.tasks.thunder.mdp.isaac_height"
-            sys.modules.pop(module_name, None)
-            module = importlib.import_module(module_name)
-            for proxy in (False, True):
-                wrap = Proxy if proxy else lambda a: a
-                sensor = types.SimpleNamespace(
-                    ray_starts=wrap(torch.tensor([[[-.2, 0, 0], [.2, 0, 0], [1., 0, 0]]])),
-                    cfg=types.SimpleNamespace(pattern_cfg=types.SimpleNamespace(resolution=.1),
-                                              ray_alignment="yaw", update_period=.02),
-                    data=types.SimpleNamespace(ray_hits_w=wrap(torch.tensor([[[0., 0, 0], [0., 0, 0], [0., 0, 10.]]]))))
-                robot = types.SimpleNamespace(data=types.SimpleNamespace(root_pos_w=wrap(torch.tensor([[0., 0, .42]]))))
-                class Scene(dict): pass
-                scene = Scene(robot=robot)
-                scene.sensors = {"height_scanner": sensor}
-                env = types.SimpleNamespace(scene=scene, num_envs=1, step_dt=.02)
-                params = {"asset_cfg": types.SimpleNamespace(name="robot"),
-                          "sensor_cfg": types.SimpleNamespace(name="height_scanner"),
-                          "x_range": (-.2, .2), "y_range": (-.15, .15), "options": OPTIONS}
-                term = module.CroppedGroundHeight(types.SimpleNamespace(params=params), env)
-                self.assertEqual(term.crop.tolist(), [True, True, False])
-                self.assertEqual(term(env, **params).tolist(), [0.])
-                term.reset(torch.tensor([0]))
-                self.assertFalse(bool(term.reference.initialized.any()))
 
 
 if __name__ == "__main__":

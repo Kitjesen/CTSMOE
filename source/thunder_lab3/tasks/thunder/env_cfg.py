@@ -6,7 +6,6 @@ Nominal Newton dynamics are the comparison baseline, not a claim that the entire
 import math
 import os
 from collections.abc import Mapping
-from types import SimpleNamespace
 import isaaclab.sim as sim_utils
 from isaaclab.envs import ManagerBasedRLEnvCfg,mdp as lab_mdp
 from isaaclab.managers import (ObservationGroupCfg,ObservationTermCfg,EventTermCfg,
@@ -23,7 +22,6 @@ from .scene_cfg import SceneCfg,ActionsCfg,fresh_actions_cfg
 from thunder_lab3.tasks.thunder.mdp.observations import policy_frame,critic_frame,NoisyPolicyFrame
 from .mdp.randomization import configure_randomization
 from thunder_lab3.tasks.thunder.mdp.privileged import LEG_JOINTS,JOINTS,WHEEL_BODIES
-from .mdp.height_config import configure as configure_candidates
 from thunder_lab3.tasks.thunder.mdp.height import HeightOptions
 from thunder_lab3.tasks.thunder.boxes import gradual_random_grid_terrain
 from .terrain import terrain_cfg,ThunderTerrainImporterCfg
@@ -208,14 +206,20 @@ class ThunderNewposeEnvCfg(ManagerBasedRLEnvCfg):
             raise ValueError('hip_extra_weight must be finite/nonpositive')
         if not isinstance(self.gradual_boxes,bool):raise TypeError('gradual_boxes must be boolean')
         options=HeightOptions(**self.height_options) if isinstance(self.height_options,Mapping) else self.height_options
+        if not math.isfinite(self.height_weight) or self.height_weight>0:
+            raise ValueError('height_weight must be finite and nonpositive')
+        if self.height_weight and not isinstance(options,HeightOptions):
+            raise ValueError('an enabled height cost requires explicit HeightOptions')
         generator=self.scene.terrain.terrain_generator
         boxes=generator.sub_terrains.get('boxes')
         if self.gradual_boxes and boxes is None:raise ValueError('gradual_boxes requires a boxes terrain')
-        # Validate and build in isolation so an invalid override cannot erase prior terms.
-        candidate=SimpleNamespace(scene=self.scene,rewards=SimpleNamespace())
-        configure_candidates(candidate,height_weight=self.height_weight,height_options=options)
+        # Construct before assignment so an invalid override cannot erase the existing reward.
+        height_term=(RewardTermCfg(func=mdp.CroppedGroundHeight,weight=self.height_weight,
+            params={'options':options,'asset_cfg':SceneEntityCfg('robot'),
+                    'sensor_cfg':SceneEntityCfg('height_scanner'),
+                    'x_range':(-.2,.2),'y_range':(-.15,.15)}) if self.height_weight else None)
         self.height_options=options
-        if self.height_weight:self.rewards.cropped_ground_height=candidate.rewards.cropped_ground_height
+        if height_term is not None:self.rewards.cropped_ground_height=height_term
         elif hasattr(self.rewards,'cropped_ground_height'):delattr(self.rewards,'cropped_ground_height')
         if isinstance(self.curriculum,FreshCurriculumCfg):
             self.curriculum.base_height=(CurriculumTermCfg(func=gradual_reward_weight_modification,

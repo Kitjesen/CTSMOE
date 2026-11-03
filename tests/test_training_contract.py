@@ -64,7 +64,7 @@ class ConfigurationEncodingTests(unittest.TestCase):
         import gymnasium as gym
         from go2_rl_lab.tasks.mixed.rsl_rl_cfg import Go2MoECTSRunnerCfg
         from thunder_lab3.tasks.thunder import FRESH_TASK_ID,TASK_ID
-        from thunder_lab3.tasks.thunder.agents.rsl_rl_cfg import ThunderFreshMoeCtsRunnerCfg,ThunderMoeCtsRunnerCfg
+        from thunder_lab3.tasks.thunder.rsl_rl_cfg import ThunderFreshMoeCtsRunnerCfg,ThunderMoeCtsRunnerCfg
 
         fresh=ThunderFreshMoeCtsRunnerCfg();official=Go2MoECTSRunnerCfg();legacy=ThunderMoeCtsRunnerCfg()
         for field in ('num_steps_per_env','clip_rewards','save_interval','obs_groups'):
@@ -91,9 +91,9 @@ class ConfigurationEncodingTests(unittest.TestCase):
         self.assertIsNone(legacy.algorithm.symmetry_cfg)
         self.assertEqual(legacy.newpose_compat['cumulative_target'],20000)
         self.assertEqual(gym.spec(FRESH_TASK_ID).kwargs['rsl_rl_cfg_entry_point'],
-            'thunder_lab3.tasks.thunder.agents.rsl_rl_cfg:ThunderFreshMoeCtsRunnerCfg')
+            'thunder_lab3.tasks.thunder.rsl_rl_cfg:ThunderFreshMoeCtsRunnerCfg')
         self.assertEqual(gym.spec(TASK_ID).kwargs['rsl_rl_cfg_entry_point'],
-            'thunder_lab3.tasks.thunder.agents.rsl_rl_cfg:ThunderMoeCtsRunnerCfg')
+            'thunder_lab3.tasks.thunder.rsl_rl_cfg:ThunderMoeCtsRunnerCfg')
         fresh.policy.actor_hidden_dims[0]=1
         self.assertEqual(legacy.policy.actor_hidden_dims,[512,256,128])
         self.assertEqual(ThunderFreshMoeCtsRunnerCfg().policy.actor_hidden_dims,[512,256,128])

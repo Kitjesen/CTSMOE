@@ -440,6 +440,27 @@ class FullContractTest(unittest.TestCase):
                 self.assertTrue(bool((pose[[0,3]]==99.).all()))
                 self.assertTrue(bool((velocity[[0,3]]==99.).all()))
 
+    def test_cropped_height_tensor_proxy_and_manager_reset(self):
+        class Proxy:
+            def __init__(self,value):self.torch=value
+        for wrap in (lambda x:x,Proxy):
+            sensor=NS(ray_starts=wrap(torch.tensor([[[-.2,0,0],[.2,0,0],[1.,0,0]]])),
+                cfg=NS(pattern_cfg=NS(resolution=.1),ray_alignment='yaw',update_period=.02),
+                data=NS(ray_hits_w=wrap(torch.tensor([[[0.,0,0],[0.,0,0],[0.,0,10.]]]))))
+            class Scene(dict):pass
+            scene=Scene(robot=NS(data=NS(root_pos_w=wrap(torch.tensor([[0.,0,.42]])))))
+            scene.sensors={'height_scanner':sensor}
+            env=NS(scene=scene,num_envs=1,step_dt=.02)
+            params={'asset_cfg':NS(name='robot'),'sensor_cfg':NS(name='height_scanner'),
+                'x_range':(-.2,.2),'y_range':(-.15,.15),
+                'options':HeightOptions(.42,.02,.5,.04)}
+            with patch.object(mdp.ManagerTermBase,'__init__',return_value=None):
+                term=mdp.CroppedGroundHeight(NS(params=params),env)
+            self.assertEqual(term.crop.tolist(),[True,True,False])
+            self.assertEqual(term(env,**params).tolist(),[0.])
+            term.reset(torch.tensor([0]))
+            self.assertFalse(bool(term.reference.initialized.any()))
+
     def test_candidate_composition_is_explicit_idempotent_and_reversible(self):
         cfg=NS(scene=NS(terrain=NS(terrain_generator=terrain_cfg())),rewards=RewardsCfg(),
             gradual_boxes=False,height_weight=0.,height_options=None,hip_extra_weight=0.,curriculum=None)
@@ -456,7 +477,11 @@ class FullContractTest(unittest.TestCase):
         self.assertEqual(cfg.rewards.cropped_ground_height.weight,-.5)
         self.assertEqual(cfg.rewards.hip_extra.weight,-.1)
         previous=cfg.rewards.cropped_ground_height
-        cfg.height_weight=.5
+        for invalid in (.5,math.inf,math.nan):
+            cfg.height_weight=invalid
+            with self.assertRaises(ValueError):apply()
+            self.assertIs(cfg.rewards.cropped_ground_height,previous)
+        cfg.height_weight=-.5;cfg.height_options=None
         with self.assertRaises(ValueError):apply()
         self.assertIs(cfg.rewards.cropped_ground_height,previous)
         cfg.gradual_boxes=False;cfg.height_weight=0.;cfg.hip_extra_weight=0.

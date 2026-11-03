@@ -2,7 +2,7 @@
 
 新任务 `Thunder-Newpose-Newton3-Fresh-v0` 使用 `ThunderFreshEnvCfg`；旧任务 `Thunder-Newpose-Newton3-v0` 保留旧检查点回放基线。两者都复用 Go2 的地形导入工具和 Isaac Lab 管理器，不另写物理循环。
 
-环境代码位于 `source/thunder_lab3/tasks/thunder/`，网络配置在其中的 `agents/rsl_rl_cfg.py`，机器人资产在 `source/thunder_lab3/assets/`。本轮官方配置对齐、用户选择的 A 姿态和验证边界见[alignment.md](alignment.md)。
+环境代码位于 `source/thunder_lab3/tasks/thunder/`，网络配置`rsl_rl_cfg.py`与`env_cfg.py`同级，机器人资产在`source/thunder_lab3/assets/`。本轮官方配置对齐、用户选择的A姿态和验证边界见[alignment.md](alignment.md)。
 
 ## 新任务与旧回放的差异
 

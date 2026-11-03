@@ -33,7 +33,7 @@ gym.register(
     kwargs={
         "env_cfg_entry_point": "thunder_lab3.tasks.thunder.env_cfg:ThunderNewposeEnvCfg",
         "play_env_cfg_entry_point": "thunder_lab3.tasks.thunder.env_cfg:ThunderNewposePlayEnvCfg",
-        "rsl_rl_cfg_entry_point": "thunder_lab3.tasks.thunder.agents.rsl_rl_cfg:ThunderMoeCtsRunnerCfg",
+        "rsl_rl_cfg_entry_point": "thunder_lab3.tasks.thunder.rsl_rl_cfg:ThunderMoeCtsRunnerCfg",
     },
 )
 
@@ -44,6 +44,6 @@ gym.register(
     kwargs={
         "env_cfg_entry_point": "thunder_lab3.tasks.thunder.env_cfg:ThunderFreshEnvCfg",
         "play_env_cfg_entry_point": "thunder_lab3.tasks.thunder.env_cfg:ThunderFreshPlayEnvCfg",
-        "rsl_rl_cfg_entry_point": "thunder_lab3.tasks.thunder.agents.rsl_rl_cfg:ThunderFreshMoeCtsRunnerCfg",
+        "rsl_rl_cfg_entry_point": "thunder_lab3.tasks.thunder.rsl_rl_cfg:ThunderFreshMoeCtsRunnerCfg",
     },
 )

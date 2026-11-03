@@ -63,6 +63,22 @@
     "credentials"
   ],
   "source_manifest": "docs/source_manifest.json",
+  "repository_cleanup": {
+    "date": "2026-11-03",
+    "height_specific_files_before": 3,
+    "height_specific_files_after": 1,
+    "runner_config_at_task_root": true,
+    "offline_cpu_tests_passed": 26,
+    "height_adapter_ast_unchanged": true,
+    "height_math_and_runner_config_unchanged": true,
+    "isaaclab_runtime_regression_completed": false,
+    "deployed_to_running_training": false,
+    "running_source_commit": "f4f1030eba0afb3d8afc48d53b73696813a6a0e3",
+    "source_files_in_current_checkout": 56,
+    "source_dictionary_sha256": "15a1c26c84d815d78cce0495d1c0cf5e0f5e19e9ec2d7bf220d74b55aa1c13ab",
+    "resume_compatible_with_running_checkpoint": false,
+    "note": "Preserve the frozen running source for checkpoint continuation; previous alignment evidence below is version-specific."
+  },
   "baseline_manifest": "docs/baseline_manifest.json",
   "layout": {
     "package": "source/thunder_lab3",
