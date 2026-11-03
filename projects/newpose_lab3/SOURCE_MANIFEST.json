@@ -1,0 +1,315 @@
+{
+  "source_snapshot": "newpose_go2_lab3_integration_20261103",
+  "copied_files": [
+    {
+      "path": "compat/__init__.py",
+      "bytes": 186,
+      "sha256": "3c5dd16c8307454b3b55dd8c68e09b5bcffc660a21af421eb045372c7c76cbc1"
+    },
+    {
+      "path": "compat/checkpoint.py",
+      "bytes": 8484,
+      "sha256": "9ce91c33fadb8fcbbe0920ef92a56e560eefdb0e8965ae667a7abff3538e4132"
+    },
+    {
+      "path": "compat/environment_state.py",
+      "bytes": 5749,
+      "sha256": "c76e4cdbda72a57386d28f12fc329c81ebc00473ad6c979708874a348378c3f3"
+    },
+    {
+      "path": "compat/exporter.py",
+      "bytes": 1915,
+      "sha256": "4f26c43076ae62099c44d75a159483a8ce1eaedc0f9bf1b714983c6f3472b660"
+    },
+    {
+      "path": "compat/history.py",
+      "bytes": 1896,
+      "sha256": "4902f381f6b8883aa3643bd43a7334c93975576189a38389708dae6eb9be9227"
+    },
+    {
+      "path": "compat/README.md",
+      "bytes": 5985,
+      "sha256": "1b11009b3d0e8774c43767efdf3a3c85ccc5e588505dba84f91e1ecd67f2afb3"
+    },
+    {
+      "path": "compat/runner.py",
+      "bytes": 7791,
+      "sha256": "ea3814a179ddc1bb6e14b0c2e06faf3e2091a6ff60f0f26e27fea0508afa8d2f"
+    },
+    {
+      "path": "compat/timeout.py",
+      "bytes": 3237,
+      "sha256": "8352c226a9ac5e5e4786124992936f0457c3249043d92fc9ba5786ec32e3d8b4"
+    },
+    {
+      "path": "compat/verify_bridge.py",
+      "bytes": 14249,
+      "sha256": "85c033c5b29d76f985a7933e3e58b3edf18586d64533e74e39047d64ae8cdf14"
+    },
+    {
+      "path": "compat/verify_timeout_runner.py",
+      "bytes": 3481,
+      "sha256": "f97e467c64285a705edabf365e3b8b94d27b1c0980a4141a538decea1b18890f"
+    },
+    {
+      "path": "height_curriculum/__init__.py",
+      "bytes": 218,
+      "sha256": "3aeb9bea55e20963a75d94c9e006663af20a2e5629323cbb1917c2e87eb91414"
+    },
+    {
+      "path": "height_curriculum/audit_reference.py",
+      "bytes": 3664,
+      "sha256": "ccc43335e984191e3c57d2477a8ed5bb1efd94e4a6ace719875139b01856fe5a"
+    },
+    {
+      "path": "height_curriculum/boxes.py",
+      "bytes": 820,
+      "sha256": "8d73318e51b78ca0b587e904a0177b5d3409b6fe09a840754bf9bb2445489f8d"
+    },
+    {
+      "path": "height_curriculum/configure.py",
+      "bytes": 1631,
+      "sha256": "32410d3054ff44575465ebda52436956bfe7af43d004efd3272e258e87ae5695"
+    },
+    {
+      "path": "height_curriculum/height.py",
+      "bytes": 4026,
+      "sha256": "bf69c1106c35f5adc40d53939af2ae9dc0af1b709ba6207fcfba53ccdd46df72"
+    },
+    {
+      "path": "height_curriculum/isaac_height.py",
+      "bytes": 1843,
+      "sha256": "55b2983dcac3c8ae8b65d54a138b94096596d61e8a84bfc4f03f1d6acf6263d5"
+    },
+    {
+      "path": "height_curriculum/README.md",
+      "bytes": 3384,
+      "sha256": "fae16b06316193fd7ac4145ffe5fa6ef6a8810204a0e7528878004490693404a"
+    },
+    {
+      "path": "height_curriculum/test_height_curriculum.py",
+      "bytes": 7995,
+      "sha256": "59fa13afc0937036ad8819d73f4d5c521840850b704112fe741d20c13d1c35d6"
+    },
+    {
+      "path": "runtime/thunder_contract.py",
+      "bytes": 2376,
+      "sha256": "1eb131ca49ecedd7cd1463a1dc305d7bac703aa83c7b0590efe122d0736eb5a1"
+    },
+    {
+      "path": "scripts/launch.py",
+      "bytes": 9427,
+      "sha256": "c93f22e23165d83dd76b1f42aad02e9c3ffeb17695a006bf2a3cfc663409b9e4"
+    },
+    {
+      "path": "scripts/probe_native.py",
+      "bytes": 17095,
+      "sha256": "1ae1f9160978c21b239c8dfcfca8fcf4cdec098ac861e80389190697c055e87d"
+    },
+    {
+      "path": "scripts/README.md",
+      "bytes": 5411,
+      "sha256": "a04c4dbd87b593c26e6930f60591e1300042cf5e572caeef8b2dc7bbc80d3266"
+    },
+    {
+      "path": "task_port/__init__.py",
+      "bytes": 84,
+      "sha256": "14a35b3ab881bc90f3efb77dbaff6a15950a1cd7294ed22be004ba0e1d5b60c7"
+    },
+    {
+      "path": "task_port/env_cfg.py",
+      "bytes": 5079,
+      "sha256": "667a28823afee03772a7be86c394e184322ee0518e30270599d10432219dda4e"
+    },
+    {
+      "path": "task_port/observations.py",
+      "bytes": 6142,
+      "sha256": "eed0ccc4c262c8f68cda5e32508efbc1896ba898baaef3843fb29f12914f4fef"
+    },
+    {
+      "path": "task_port/probe_evidence.py",
+      "bytes": 1497,
+      "sha256": "e99363f4736cf8e56c11d6dc7ed1d389b08ea6863fda19f669b6a8d8d0119d65"
+    },
+    {
+      "path": "teacher/__init__.py",
+      "bytes": 86,
+      "sha256": "4d5d47d2cb49db465c3328821815ebea5a353a5caab91195ebe4bfbbf9386ac8"
+    },
+    {
+      "path": "teacher/checkpoint.py",
+      "bytes": 7449,
+      "sha256": "8b74951bb39220c5148b0f919a3b517a177b9b2b69416607f1b90cda9f06c8a5"
+    },
+    {
+      "path": "teacher/geometry_audit.py",
+      "bytes": 4445,
+      "sha256": "b064224054b7cfb78d8733e0266e835882aab9ae177c29fbb144aefd4b417c71"
+    },
+    {
+      "path": "teacher/mirror.py",
+      "bytes": 4448,
+      "sha256": "eff3a644b0ecaabbcd983488701e1f82313d183b6f0c799251230923ef393535"
+    },
+    {
+      "path": "teacher/privileged.py",
+      "bytes": 4443,
+      "sha256": "f75ce12453ab66bcc299e31310ea44db052155ee86ce078580cc2eeef5b9e343"
+    },
+    {
+      "path": "thunder_lab3/__init__.py",
+      "bytes": 1209,
+      "sha256": "9898bb7dac345620a87d6570f5889909d70c61d57d2134ad531a189ba5aaa1d7"
+    },
+    {
+      "path": "thunder_lab3/env_cfg.py",
+      "bytes": 10481,
+      "sha256": "711a6a3c9671bd5cb8dad34d4dc4265e8e27b5f2ad09324aa2958c8e06ffd96b"
+    },
+    {
+      "path": "thunder_lab3/mdp.py",
+      "bytes": 16666,
+      "sha256": "e300b5342c44655490258f5832a8384c335f32414fcf484778fa3c43210f3e4d"
+    },
+    {
+      "path": "thunder_lab3/rsl_rl_cfg.py",
+      "bytes": 2160,
+      "sha256": "c9d92d1ef23354b6994017c27b9baa65c9198e0e01041661f95fe89ee67703b1"
+    },
+    {
+      "path": "thunder_lab3/terrain.py",
+      "bytes": 4071,
+      "sha256": "d2de3228ee51e79c8a1bbf5ff2adfc6c51d5cfdaa5a5823463b818082174c2e3"
+    },
+    {
+      "path": "thunder_lab3/test_env_contract.py",
+      "bytes": 12638,
+      "sha256": "628d549fa0e79b6cd0da05c7c3933bf21ff9f741bfb50e0ad326bd5b92a06238"
+    },
+    {
+      "path": "legacy/diagnostics/newpose_mixed_17650_20000_train_20261101/env.yaml",
+      "bytes": 58476,
+      "sha256": "36977e14e7e8ce6d515510b0b15236532346177a91d22ff8f8cb349968e7199a"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/base_link.STL",
+      "bytes": 199884,
+      "sha256": "f04f6c32157a6314726e32014bb20de9fcf0f70eea439b00c8a99dc4434abdce"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/camera1_Link.STL",
+      "bytes": 100084,
+      "sha256": "1d4b7196c7bdededb7586d1a2af0e20a1e0a466911f9d3f55fb8ce60ee9489fb"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/camera2_Link.STL",
+      "bytes": 100084,
+      "sha256": "14c65554d79d76ae2744513246bf4061ad0aeae4182ffbb17d6dfd0d93fd237f"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/fl_calf_Link.STL",
+      "bytes": 100084,
+      "sha256": "432b05dee16a8e4c4f5cdc257f26ed6aa87cbe05201f5cd8fdc193042b19bb9b"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/fl_foot_Link.STL",
+      "bytes": 150084,
+      "sha256": "c0cfa38cfc6801bbb2cad8369ea5576657c4e0860258390cfdf7584c522872e5"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/fl_hip_Link.STL",
+      "bytes": 100084,
+      "sha256": "312969c78a7043169458ddcc00d1c057be3bc8c4e056ef39bf74eed2b4fe58e7"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/fl_thigh_Link.STL",
+      "bytes": 100034,
+      "sha256": "74826b874021caa4bdb45c6aed90f52b69522ac04ff33b791b15a933c718865b"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/fr_calf_Link.STL",
+      "bytes": 100034,
+      "sha256": "a88e62d0afa49dd59c70d1c15ca2a166b08f776926e6a15c0341c265d01cb200"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/fr_foot_Link.STL",
+      "bytes": 150084,
+      "sha256": "0f537cc579e7b6a561204d45d454692274eea51e4f9ee210449a685c15a89856"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/fr_hip_link.STL",
+      "bytes": 100084,
+      "sha256": "0b2705909a5ce26386b0f75499cb82fddde96bbc3dcafcab19dd8bf148bea49b"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/fr_thigh_Link.STL",
+      "bytes": 99934,
+      "sha256": "085a77ef88130b8c410f188639cef7262449a23b66f0c4202853eb0eb7abd7c9"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/lidar1_Link.STL",
+      "bytes": 100084,
+      "sha256": "6dce2c1be2acda38d283b023ef2c8ed3b9a067fba691d595b5bf81b001645388"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/lidar2_Link.STL",
+      "bytes": 100084,
+      "sha256": "e855c5fae2b3b2328ebfe45359396248461bcea309c3ff95e8c7481b01044959"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/rl_calf_Link.STL",
+      "bytes": 100034,
+      "sha256": "44ebdbea3aedae4029bd59b1bb5cd94d8c9862641f5e4d3eee0bbdec286dc075"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/rl_foot_Link.STL",
+      "bytes": 150034,
+      "sha256": "44791d00defc99bd43e4af0cbc8116489230c0a66a9e534b14f49813fd1db869"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/rl_hip_Link.STL",
+      "bytes": 100034,
+      "sha256": "2247603e72f9279fd1eb352b15a8d72b5e70bac370969236cf161e0918d36588"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/rl_thigh_Link.STL",
+      "bytes": 100034,
+      "sha256": "485a1e31c84b9e1791eaf77239562bd5ac3cf5753960dbbdedd131ce64df93f5"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/rr_calf_Link.STL",
+      "bytes": 100084,
+      "sha256": "b2cd8df99eb77bbedc14fc95e1bbf440451b9d08373b4528c01d744336b5ba96"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/rr_foot_Link.STL",
+      "bytes": 150034,
+      "sha256": "41b88380b8d8a0b0037b61299f28b890c7d69ac09a6918fe99b776e38cd12e40"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/rr_hip_Link.STL",
+      "bytes": 100034,
+      "sha256": "10e45a9cd09c415f601cc205dc43ef8f687c8aaaccd294120153777723e5bb57"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/meshes/rr_thigh_Link.STL",
+      "bytes": 100084,
+      "sha256": "93f877191fc6134749b90747bb90bfacc9470413bad7428d7ed9e40576aa9ca1"
+    },
+    {
+      "path": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/urdf/thunder_v4.urdf",
+      "bytes": 28725,
+      "sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 507,
+      "sha256": "7f2695704243e0d26e80b0b19f81e3b2a84eef51c935a533e7e5a9ba26df692d"
+    }
+  ],
+  "python_syntax_passed": 34,
+  "robot_urdf_sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+  "robot_mesh_count": 21,
+  "training_started": false,
+  "runtime_tests_this_import": false
+}

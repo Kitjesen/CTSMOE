@@ -1,5 +1,11 @@
 # CTSMOE — Thunder CTS + Mixture of Experts
 
+> **2026-11-03：Thunder NEWPOSE / Isaac Lab 3 从零重训任务**
+>
+> 本分支 `newpose-lab3-from-scratch` 的代码和核对说明见 [projects/newpose_lab3](projects/newpose_lab3/README.md)。
+> 新实验计划从 0 训练到 20000 次参数更新；当前仍在核对机器人和训练配置，尚未启动新训练。
+> 以下内容是保留的 V33 历史归档，不代表新任务已经通过验证。
+
 私有研发归档：保存当前 V33 实现和可找到的父版本/实验分支证据。归档日期 2026-09-25。
 
 ## 从哪里开始

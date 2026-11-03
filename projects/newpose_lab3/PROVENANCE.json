@@ -1,0 +1,39 @@
+{
+  "project": "Thunder NEWPOSE from-scratch training baseline",
+  "decision_date": "2026-11-03",
+  "training": {
+    "start_update": 0,
+    "target_updates": 20000,
+    "started": false,
+    "fresh_training_entry_ready": false,
+    "historical_reference_updates": 19538
+  },
+  "go2": {
+    "url": "https://github.com/wty-yy/go2_rl_lab",
+    "commit": "6c95d9feef4814c25eb6536e61bb38e1d1d718d4",
+    "path": "upstream/go2_rl_lab",
+    "vendored_rsl_rl": "3.3.0"
+  },
+  "isaac_lab": {
+    "tag": "v3.0.0",
+    "commit": "e3f7d9ff1f5d7f8280de3ece9000b7117f66bcf4",
+    "backend": "Newton / MJWarp"
+  },
+  "robot": {
+    "urdf": "legacy/thunder/source/doso_train/doso_train/data/Robots/DOSO/thunder/urdf/thunder_v4.urdf",
+    "sha256": "83ba02ca52863238ce4050fff7c122fb159e381fb106ba31e39e44bfc0b66af3",
+    "mesh_count": 21,
+    "mechanical_limits_verified": false,
+    "new_stance_accepted": false
+  },
+  "excluded": [
+    "checkpoints",
+    "results",
+    "generated USD",
+    "videos",
+    "trajectories",
+    "remote access helpers",
+    "credentials"
+  ],
+  "source_manifest": "SOURCE_MANIFEST.json"
+}

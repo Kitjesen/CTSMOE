@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thunder-newpose-lab3"
+version = "0.1.0"
+description = "Thunder NEWPOSE adapters for the pinned Go2 RL Lab 3 training pipeline"
+requires-python = ">=3.12"
+dependencies = ["go2_rl_lab==0.1.7", "rsl-rl-lib==3.3.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["thunder_lab3*", "compat*", "height_curriculum*", "teacher*", "task_port*", "runtime*"]
+exclude = ["upstream*", "legacy*", "tests*"]
