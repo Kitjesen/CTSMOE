@@ -6,7 +6,7 @@ import unittest
 import torch
 
 from thunder_lab3.tasks.thunder.boxes import amplitude, with_amplitude
-from thunder_lab3.tasks.thunder.mdp.height import HeightOptions, HeightReference
+from thunder_lab3.tasks.thunder.mdp.terms import HeightOptions, HeightReference
 from thunder_lab3.tasks.thunder.mdp.privileged import tensor
 
 

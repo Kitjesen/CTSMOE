@@ -1,6 +1,6 @@
 # 高度参考与渐进方块
 
-相关实现统一在 `source/thunder_lab3/tasks/thunder/`：`boxes.py` 负责渐进方块；高度专用文件只保留纯Torch的`mdp/height.py`。奖励接入类`CroppedGroundHeight`与其他奖励放在`mdp/terms.py`，权重及参数直接在`env_cfg.py`配置。`apply_candidate_features()`统一校验并应用配置；删除重复的高度配置包装与方块配置入口。
+相关实现统一在`source/thunder_lab3/tasks/thunder/`：`boxes.py`负责渐进方块；高度参数`HeightOptions`、地面参考`HeightReference`和奖励接入`CroppedGroundHeight`均放在已有的`mdp/terms.py`，不再单设高度代码文件。目标值和权重直接在`env_cfg.py`配置，`apply_candidate_features()`统一校验并应用配置。高度计算仍使用CPU/GPU张量，但导入该奖励模块及运行高度测试需要IsaacLab和固定Go2依赖。
 
 新任务默认启用渐进方块与高度候选：`height_weight=-1`，5000 轮线性到 -10；A 向零截断至两位小数后，最低轮触地几何高度目标同步为 0.39141468661229084 m，容差 0.02 m，参考速度 0.5 m/s、最大滞后 0.1 m、有效射线比例 0.8。该值不是承重实测高度；A 在水平机身下也不是四轮共面。`height_weight=0` 同时关闭该奖励和对应权重课程。旧 19538 回放配置仍关闭该项。
 

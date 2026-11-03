@@ -22,7 +22,6 @@ from .scene_cfg import SceneCfg,ActionsCfg,fresh_actions_cfg
 from thunder_lab3.tasks.thunder.mdp.observations import policy_frame,critic_frame,NoisyPolicyFrame
 from .mdp.randomization import configure_randomization
 from thunder_lab3.tasks.thunder.mdp.privileged import LEG_JOINTS,JOINTS,WHEEL_BODIES
-from thunder_lab3.tasks.thunder.mdp.height import HeightOptions
 from thunder_lab3.tasks.thunder.boxes import gradual_random_grid_terrain
 from .terrain import terrain_cfg,ThunderTerrainImporterCfg
 from .mdp import terms as mdp
@@ -205,10 +204,10 @@ class ThunderNewposeEnvCfg(ManagerBasedRLEnvCfg):
         if self.hip_extra_weight>0 or not math.isfinite(self.hip_extra_weight):
             raise ValueError('hip_extra_weight must be finite/nonpositive')
         if not isinstance(self.gradual_boxes,bool):raise TypeError('gradual_boxes must be boolean')
-        options=HeightOptions(**self.height_options) if isinstance(self.height_options,Mapping) else self.height_options
+        options=mdp.HeightOptions(**self.height_options) if isinstance(self.height_options,Mapping) else self.height_options
         if not math.isfinite(self.height_weight) or self.height_weight>0:
             raise ValueError('height_weight must be finite and nonpositive')
-        if self.height_weight and not isinstance(options,HeightOptions):
+        if self.height_weight and not isinstance(options,mdp.HeightOptions):
             raise ValueError('an enabled height cost requires explicit HeightOptions')
         generator=self.scene.terrain.terrain_generator
         boxes=generator.sub_terrains.get('boxes')
@@ -276,7 +275,7 @@ class ThunderFreshEnvCfg(ThunderNewposeEnvCfg):
     terminations=FreshTerminationsCfg()
     gradual_boxes: bool=True
     height_weight: float=-1.
-    height_options: object=HeightOptions(target_height=A_POSE_CONTACT_HEIGHT,tolerance=.02,
+    height_options: object=mdp.HeightOptions(target_height=A_POSE_CONTACT_HEIGHT,tolerance=.02,
         max_reference_speed=.5,max_reference_lag=.1,min_valid_fraction=.8)
     newpose_terrain_schema: str='thunder_fresh_10level_v4_go2_aligned_a_2dp'
     newpose_physics_schema: str='newton_mjwarp_triangle_v1'
