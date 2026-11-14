@@ -1,9 +1,12 @@
-"""Lope rough terrain. Step height ends at 10 cm and slope at 0.22 rad.
+"""Lope rough terrain. Stairs are 5–25 cm. Slopes are a 0–35° gradient.
+
+``slope_range`` is rise/run. Isaac Lab sets platform height to ``slope * run``,
+so the upper value is ``tan(35°)``, not 35 and not 35° in radians.
 
 Class-to-name assignment follows ``rough_cfg.py``. Isaac Lab 3 documents the
 non-inverted pyramid as a high center platform, so Lope's ``stairs_up`` key is
 the non-inverted mesh even though walking off that platform goes downward.
-The step-height numbers are Lope's either way. Playback selects those keys.
+Both stair classes use the 5–25 cm step range. Playback selects those keys.
 """
 import isaaclab.terrains as terrain_gen
 from go2_rl_lab.tasks.mixed.terrain_mesh import MixedTerrainImporter
@@ -32,7 +35,7 @@ class LopeTerrainImporterCfg(TerrainImporterCfg):
 
 
 def terrain_cfg():
-    slope = TERRAIN["slope_range_rad"]
+    slope = TERRAIN["slope_range"]
     steps = TERRAIN["stair_step_height_range"]
     return TerrainGeneratorCfg(
         seed=42,

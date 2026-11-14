@@ -1,4 +1,5 @@
 """Static Lope checks. They do not start Isaac Lab or Newton."""
+import math
 import struct
 import unittest
 import xml.etree.ElementTree as ET
@@ -162,9 +163,11 @@ class LopeCurriculumTests(unittest.TestCase):
             ceiling, _ = advance_forward_ceiling(ceiling, passed=128, count=128)
         self.assertEqual(ceiling, FORWARD_SPEED["max_speed"])
         self.assertEqual(ceiling, 1.0)
-        self.assertLess(TERRAIN["stair_step_height_range"][1], 0.15)
-        self.assertEqual(TERRAIN["stair_step_height_range"], (0.01, 0.10))
-        self.assertEqual(TERRAIN["slope_range_rad"], (0.0, 0.22))
+        self.assertEqual(TERRAIN["stair_step_height_range"], (0.05, 0.25))
+        self.assertEqual(TERRAIN["slope_range"][0], 0.0)
+        self.assertAlmostEqual(TERRAIN["slope_range"][1], math.tan(math.radians(35)))
+        self.assertNotAlmostEqual(TERRAIN["slope_range"][1], math.radians(35))
+        self.assertNotAlmostEqual(TERRAIN["slope_range"][1], math.tan(math.radians(40)))
         self.assertEqual(TERRAIN["num_rows"], 8)
         self.assertEqual(TERRAIN["max_init_terrain_level"], 0)
         self.assertEqual(PHYSICS_DT_S, 0.005)

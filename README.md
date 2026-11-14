@@ -84,7 +84,7 @@ python scripts/probe_native.py --fresh --urdf "$THUNDER_URDF" \
 
 ## Lope
 
-Lope 是并列的 12 自由度固定足任务，不替换上面的 Thunder 正式训练。任务 id 是 `Lope-Newton3-Fresh-v0`。执行器、站姿、高度、速度课程和地形都来自 Lope 自己的历史配置，不用 Thunder 的轮、A 姿、120 N·m 或 Go2 全速课程，也不加载 Thunder 检查点。数字、启动命令和尚未在本环境跑通的仿真范围见 [docs/lope.md](docs/lope.md)。
+Lope 是并列的 12 自由度固定足任务，不替换上面的 Thunder 正式训练。任务 id 是 `Lope-Newton3-Fresh-v0`。执行器、站姿、高度和速度课程来自 Lope 自己的历史配置，不用 Thunder 的轮、A 姿、120 N·m 或 Go2 全速课程，也不加载 Thunder 检查点。楼梯为 5–25 cm，坡面为 0–35°，坡度按 Isaac Lab 的高宽比写入 `tan(35°)`。数字、启动命令和尚未在本环境跑通的仿真范围见 [docs/lope.md](docs/lope.md)。
 
 ```bash
 python scripts/rsl_rl/launch_lope.py train \

@@ -234,7 +234,7 @@ class LopeFreshEnvCfg(ManagerBasedRLEnvCfg):
     lope_action_dim: int = ACTION_DIM
     lope_robot: str = "lope_rs02_12dof"
     compute_final_obs: bool = True
-    lope_terrain_schema: str = "lope_rough_v67_10cm_0p22rad"
+    lope_terrain_schema: str = "lope_rough_stairs_5_25cm_slope_0_35deg"
     lope_physics_schema: str = "newton_mjwarp_triangle_v1"
 
     def __post_init__(self):

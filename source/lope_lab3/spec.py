@@ -2,9 +2,11 @@
 
 This module is the configuration contract for a 12-DoF fixed-foot quadruped.
 It is not a Thunder wheel-leg run and it is not weight-compatible with Go2 or
-Thunder checkpoints. Every value below was taken from Kitjesen/lope
-``headless-v67`` unless the comment says it is this repository's control timing.
+Thunder checkpoints. Robot, command, and reward numbers come from Kitjesen/lope
+``headless-v67`` unless a comment names a different source. Stair height and
+slope gradient are the user ceilings below, not the old 1–10 cm / 0.22 rough cap.
 """
+import math
 
 # Assets: https://github.com/Kitjesen/lope branch cursor/headless-urdf-meshes-only-51bf
 ASSET_COMMIT = "74e51939d35e31cfa6dc03951af3911fbe0fe565"
@@ -109,8 +111,14 @@ FORWARD_SPEED = {
     "x_lower": -0.15,
 }
 
-# rough_cfg.py terrain. Stairs stay at 10 cm. slope_range is radians in Isaac Lab 3,
-# so 0.22 rad is about 12.6 degrees. R6's 1.5 m/s ceiling is not used.
+# Tile mix still follows rough_cfg.py. Stair height and slope do not.
+# Official Go2 mixed terrain uses stairs (0.05, 0.257) m and slope gradient
+# (0.1, 0.568). Thunder uses stairs (0.05, 0.25) m and tan(40°). Lope stairs
+# match Thunder's 5–25 cm. Lope slopes run from flat to tan(35°). Isaac Lab's
+# pyramid_sloped_terrain sets height = slope * run, so slope_range is a
+# rise/run gradient, not radians. R6's 1.5 m/s ceiling is not used.
+SLOPE_MAX_DEG = 35.0
+SLOPE_RANGE = (0.0, math.tan(math.radians(SLOPE_MAX_DEG)))
 TERRAIN = {
     "size": (6.0, 6.0),
     "border_width": 10.0,
@@ -126,11 +134,12 @@ TERRAIN = {
     "rough_noise_step": 0.005,
     "rough_downsampled_scale": 0.2,
     "slope_proportion": 0.10,
-    "slope_range_rad": (0.0, 0.22),
+    "slope_range": SLOPE_RANGE,
+    "slope_max_deg": SLOPE_MAX_DEG,
     "slope_platform_width": 1.5,
     "slope_border_width": 0.25,
     "stair_proportion": 0.10,
-    "stair_step_height_range": (0.01, 0.10),
+    "stair_step_height_range": (0.05, 0.25),
     "stair_step_width": 0.25,
     "stair_platform_width": 1.5,
     "stair_border_width": 0.5,

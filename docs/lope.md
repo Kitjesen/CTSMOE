@@ -104,12 +104,14 @@ Terrain is the rough_cfg mix on 6 m tiles, 8 rows, initial row 0:
 
 - flat 30%
 - rough noise 0.5–2.5 cm
-- slopes 0..0.22 rad (about 12.6°; Isaac Lab 3's `slope_range` is radians)
-- stairs step height 1–10 cm, step width 0.25 m
+- slopes 0–35°, stored as the rise/run gradient `(0, tan(35°))`. Isaac Lab's `pyramid_sloped_terrain` sets height to `slope * run`. It does not treat `slope_range` as radians. `tan(35°)` is about 0.7002. The old 0.22 value was the historical Lope rough cap and is not used.
+- stairs `step_height_range=(0.05, 0.25)` m (5–25 cm), step width 0.25 m
 - obstacles 1–10 cm
 - waves 1–8 cm
 
-`stairs_up` is `MeshPyramidStairsTerrainCfg` and `stairs_down` is the inverted mesh, copied from `rough_cfg.py`. Isaac Lab 3's docstring describes the non-inverted pyramid as a high center platform. The step heights are 1–10 cm in both classes. This is not Thunder's 25 cm stairs or 40° slopes, and it is not the Go2 flat speed range near -4.5..4.2 m/s.
+Official Go2 mixed terrain at the pinned commit uses stairs `(0.05, 0.257)` m and slope gradient `(0.1, 0.568)` (about 29.6°). Thunder uses stairs `(0.05, 0.25)` m and `tan(40°)`. Lope stairs match Thunder's 5–25 cm ceiling. Lope slopes stop at 35°, not 40°. The historical Lope rough cap of 1–10 cm and 0.22 is not used.
+
+`stairs_up` is `MeshPyramidStairsTerrainCfg` and `stairs_down` is the inverted mesh, the same class assignment as `rough_cfg.py`. Isaac Lab 3's stair docstring describes the non-inverted pyramid as a high center platform. Both stair classes use the 5–25 cm step range. Command limits stay at Lope's rough-task speeds; this is not the Go2 flat speed range near -4.5..4.2 m/s.
 
 Newton settings that have no Lope historical value (implicitfast integrator, 128 contacts, 0.01 m margin, 2.5e6 triangle pairs) follow this repository's fresh Newton task so the URDF can load on the same backend. They were not retuned in simulation.
 
