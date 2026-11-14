@@ -81,3 +81,15 @@ python scripts/probe_native.py --fresh --urdf "$THUNDER_URDF" \
 - 已接入 Go2 共同奖励、二阶动作平滑和独立髋惩罚、学生观测噪声、质量/摩擦/增益/零偏/推扰/COM 随机化，以及 Thunder 专用 16 动作左右镜像增强。地形升降级使用 Go2 距离公式；轮部奖励和接触终止保留。没有强制抬腿奖励。随机化与镜像的适配范围及验收边界见[官方配置对齐](docs/alignment.md)。
 
 测试命令和原生证据统一见[验证记录](docs/validation.md)；观察历史、超时处理及旧模型转换细节见[训练与旧模型边界](docs/legacy.md)。承重稳定性、腿部碰撞、L6/L9 通行和实机部署均需单独验收，配置对齐不构成运动效果改善。
+
+## Lope
+
+Lope 是并列的 12 自由度固定足任务，不替换上面的 Thunder 正式训练。任务 id 是 `Lope-Newton3-Fresh-v0`。执行器、站姿、高度、速度课程和地形都来自 Lope 自己的历史配置，不用 Thunder 的轮、A 姿、120 N·m 或 Go2 全速课程，也不加载 Thunder 检查点。数字、启动命令和尚未在本环境跑通的仿真范围见 [docs/lope.md](docs/lope.md)。
+
+```bash
+python scripts/rsl_rl/launch_lope.py train \
+  --urdf source/lope_lab3/assets/lope/urdf/lope.urdf \
+  --num-envs 32 --updates 2 --seed 42 --run-name lope-smoke
+```
+
+不加 `--execute` 时只打印计划。
