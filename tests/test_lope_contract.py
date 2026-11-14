@@ -12,12 +12,12 @@ from lope_lab3.spec import (
     BASE_HEIGHT_TARGET_M,
     CUMULATIVE_UPDATES,
     EPISODE_LENGTH_S,
-    GO2_BASE_HEIGHT_M,
-    HEIGHT_SPEED_SCALE,
     JOINT_NAMES,
     JOINT_SIGN,
     LOPE_COMMAND_RANGE_CURRICULUM,
+    LOPE_CLIP_RULES,
     LOPE_INITIAL_RANGES,
+    LOPE_PUSH_LINEAR,
     LOPE_TERRAIN_MAX_COMMANDS,
     NUM_ENVS,
     OFFICIAL_COMMAND_RANGE_CURRICULUM,
@@ -32,6 +32,14 @@ from lope_lab3.spec import (
     action_clips,
 )
 from lope_lab3.spec import CRITIC_DIM, DECIMATION, FRAME_DIM, PHYSICS_DT_S, POLICY_DIM
+from lope_lab3.recovery import FALLEN_MODES, fallen_orientation, recovering
+from lope_lab3.spec import (
+    FALLEN_RESET_FRACTION,
+    FALLEN_TIMEOUT_S,
+    RECOVERY_HEIGHT_WEIGHT,
+    RECOVERY_UPRIGHT_WEIGHT,
+    STAND_UP_BONUS_WEIGHT,
+)
 from lope_lab3.symmetry_math import (
     mirror_critic,
     mirror_joints,
@@ -153,27 +161,31 @@ class LopeSymmetryTests(unittest.TestCase):
 
 
 class LopeCurriculumTests(unittest.TestCase):
-    def test_scaled_official_commands_and_locked_hardware(self):
+    def test_official_commands_are_unscaled_and_hardware_stays_locked(self):
         self.assertEqual(NUM_ENVS, 16384)
         self.assertEqual(CUMULATIVE_UPDATES, 100000)
         self.assertEqual(EPISODE_LENGTH_S, 25.0)
-        self.assertAlmostEqual(HEIGHT_SPEED_SCALE, BASE_HEIGHT_TARGET_M / GO2_BASE_HEIGHT_M)
         self.assertNotEqual(BASE_HEIGHT_TARGET_M, 0.38)
-        self.assertEqual(
-            LOPE_INITIAL_RANGES["lin_vel_x"],
-            tuple(value * HEIGHT_SPEED_SCALE for value in OFFICIAL_INITIAL_RANGES["lin_vel_x"]),
-        )
+        self.assertEqual(LOPE_INITIAL_RANGES, OFFICIAL_INITIAL_RANGES)
+        self.assertEqual(LOPE_INITIAL_RANGES["lin_vel_x"], (-0.5, 0.5))
+        self.assertEqual(LOPE_INITIAL_RANGES["lin_vel_y"], (-0.5, 0.5))
+        self.assertEqual(LOPE_INITIAL_RANGES["ang_vel_yaw"], (-1.0, 1.0))
+        self.assertEqual(LOPE_COMMAND_RANGE_CURRICULUM, OFFICIAL_COMMAND_RANGE_CURRICULUM)
         final = LOPE_COMMAND_RANGE_CURRICULUM[-1]
-        official_final = OFFICIAL_COMMAND_RANGE_CURRICULUM[-1]
         self.assertEqual(final["iter"], 45000)
-        self.assertEqual(
-            final["lin_vel_x"],
-            tuple(value * HEIGHT_SPEED_SCALE for value in official_final["lin_vel_x"]),
-        )
-        self.assertLess(abs(final["lin_vel_x"][0]), 4.5)
-        self.assertLess(final["lin_vel_x"][1], 4.2)
+        self.assertEqual(final["lin_vel_x"], (-4.5, 4.2))
+        self.assertEqual(final["lin_vel_y"], (-1.0, 1.0))
+        self.assertEqual(final["ang_vel_yaw"], (-3.0, 3.0))
+        self.assertEqual(LOPE_COMMAND_RANGE_CURRICULUM[0]["lin_vel_x"], (-1.0, 1.0))
+        self.assertEqual(LOPE_COMMAND_RANGE_CURRICULUM[0]["ang_vel_yaw"], (-2.0, 2.0))
         self.assertNotIn("wheels", LOPE_TERRAIN_MAX_COMMANDS)
-        self.assertEqual(LOPE_TERRAIN_MAX_COMMANDS["flat"]["lin_vel_x"][1], 4.2 * HEIGHT_SPEED_SCALE)
+        self.assertEqual(LOPE_TERRAIN_MAX_COMMANDS["flat"]["lin_vel_x"], (-4.5, 4.2))
+        self.assertEqual(LOPE_TERRAIN_MAX_COMMANDS["stairs_up"]["lin_vel_x"], (-1.0, 1.0))
+        self.assertEqual(LOPE_PUSH_LINEAR["x"], (-0.4, 0.4))
+        self.assertEqual(LOPE_CLIP_RULES[0]["limit"], 2.0)
+        self.assertEqual(LOPE_CLIP_RULES[0]["clip"]["lin_vel_y"], (-0.5, 0.5))
+        self.assertEqual(LOPE_CLIP_RULES[1]["limit"], 2.0)
+        self.assertEqual(LOPE_CLIP_RULES[1]["clip"]["lin_vel_x"], (-2.0, 2.0))
         self.assertEqual(TRACK_LIN_STD, 0.5)
         self.assertEqual(TRACK_YAW_STD, 0.5)
         self.assertEqual(TERRAIN["stair_step_height_range"], (0.05, 0.25))
@@ -187,9 +199,42 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertNotAlmostEqual(TERRAIN["slope_range"][1], 0.568)
         self.assertEqual(PHYSICS_DT_S, 0.005)
         self.assertEqual(DECIMATION, 4)
-        self.assertEqual(SPAWN_HEIGHT_M, 0.2674918208774965)
-        self.assertEqual(BASE_HEIGHT_TARGET_M, 0.2561583499877814)
+        self.assertEqual(SPAWN_HEIGHT_M, 0.2740510271690917)
+        self.assertEqual(BASE_HEIGHT_TARGET_M, 0.2627175562793766)
+        self.assertEqual(STANDING_POSE["fr_hip_joint"], -0.08)
+        self.assertEqual(STANDING_POSE["fl_hip_joint"], 0.08)
+        self.assertEqual(STANDING_POSE["rr_hip_joint"], 0.08)
+        self.assertEqual(STANDING_POSE["rl_hip_joint"], -0.08)
+        self.assertEqual(STANDING_POSE["fr_calf_joint"], 1.1)
+        self.assertEqual(STANDING_POSE["fr_thigh_joint"], -0.6715534335840251)
         self.assertEqual(ACTION_SCALE_RAD, {"hip": 0.15, "thigh": 0.2, "calf": 0.2})
+        pose = standing_vector()
+        self.assertEqual(mirror_joints(pose), pose)
+        banned_scale = ("0.6741009210204774", "0.3370504605102387", "-3.033454144592148", "2.831223868286005")
+        for path in PACKAGE.rglob("*.py"):
+            text = path.read_text(encoding="utf-8")
+            for token in banned_scale:
+                self.assertNotIn(token, text, path.name)
+
+    def test_recovery_is_in_the_same_task_without_instant_base_contact(self):
+        self.assertEqual(FALLEN_RESET_FRACTION, 0.20)
+        self.assertEqual(FALLEN_TIMEOUT_S, 6.0)
+        self.assertEqual(RECOVERY_UPRIGHT_WEIGHT, 2.0)
+        self.assertEqual(RECOVERY_HEIGHT_WEIGHT, -2.0)
+        self.assertEqual(STAND_UP_BONUS_WEIGHT, 5.0)
+        for mode in FALLEN_MODES:
+            roll, pitch, _yaw = fallen_orientation(mode, 0.0, 0.0, 0.2)
+            self.assertGreater(max(abs(roll), abs(pitch)), 1.0, mode)
+            self.assertTrue(recovering(math.sin(roll), 0.9) or abs(roll) > 1.0 or abs(pitch) > 1.0)
+        env = (PACKAGE / "tasks" / "lope" / "env_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("reset_root_with_recovery", env)
+        self.assertIn("recovery_upright", env)
+        self.assertIn("recovery_base_height", env)
+        self.assertIn("stand_up_bonus", env)
+        self.assertIn("fallen_timeout", env)
+        self.assertIn("fallen_reset_fraction", env)
+        self.assertNotIn("illegal_contact", env)
+        self.assertNotIn("bad_orientation", env)
 
     def test_registration_names_the_lope_task(self):
         text = (PACKAGE / "tasks" / "lope" / "__init__.py").read_text(encoding="utf-8")

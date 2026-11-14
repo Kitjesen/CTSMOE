@@ -1,8 +1,8 @@
 """From-scratch Lope task using the official mixed Go2 CTS recipe.
 
-Hardware, pose, height target, action scales, stairs, and slopes stay Lope's.
-Commands, rewards, events, and the 16384 / 100000 / 25 s run follow go2_rl_lab,
-with linear speeds scaled by Lope height / 0.38 m. No wheel term is registered.
+Hardware, adducted stance, height target, action scales, stairs, and slopes stay
+Lope's. Commands use the official unscaled RLGym ranges. A fraction of resets
+fall over and must stand back up. No wheel term is registered.
 """
 import os
 
@@ -26,7 +26,6 @@ from lope_lab3.assets.robot import robot_cfg
 from go2_rl_lab.tasks.mixed.mdp.curriculums import TerrainLevelsVelGym, gradual_reward_weight_modification
 from lope_lab3.spec import (
     ACTION_DIM,
-    BAD_ORIENTATION_LIMIT_RAD,
     BASE_HEIGHT_FINAL_UPDATE,
     BASE_HEIGHT_FINAL_WEIGHT,
     BASE_HEIGHT_TARGET_M,
@@ -54,12 +53,22 @@ from lope_lab3.spec import (
     TRACK_LIN_STD,
     TRACK_YAW_STD,
     UNDESIRED_CONTACT_THRESHOLD_N,
+    FALLEN_FRACTION_END_UPDATE,
+    FALLEN_RESET_FRACTION,
+    FALLEN_RESET_FRACTION_FINAL,
+    FALLEN_TIMEOUT_S,
+    FALLEN_UPRIGHT_GRAVITY_Z,
+    RECOVERY_HEIGHT_WEIGHT,
+    RECOVERY_SCORE_SATURATION,
+    RECOVERY_UPRIGHT_WEIGHT,
+    STAND_UP_BONUS_WEIGHT,
 )
 from lope_lab3.tasks.lope.commands import CommandsCfg
 from lope_lab3.tasks.lope.mdp.observations import NoisyPolicyFrame, critic_frame, policy_frame
 from lope_lab3.tasks.lope.mdp.randomization import configure_randomization
 from lope_lab3.tasks.lope.scene_cfg import ActionsCfg, SceneCfg, actions_cfg
 from lope_lab3.tasks.lope.terrain import LopeTerrainImporterCfg, terrain_cfg
+from .mdp import terms as mdp
 
 LEGS = SceneEntityCfg("robot", joint_names=list(JOINT_NAMES), preserve_order=True)
 HIPS = SceneEntityCfg("robot", joint_names=[".*_hip_joint"])
@@ -67,7 +76,6 @@ THIGH_CALF = SceneEntityCfg("robot", joint_names=[".*_(thigh|calf)_joint"])
 FEET = SceneEntityCfg("robot", body_names=[".*_foot_Link"], preserve_order=True)
 FOOT_CONTACTS = SceneEntityCfg("contact_forces", body_names=[".*_foot_Link"], preserve_order=True)
 LEG_CONTACTS = SceneEntityCfg("contact_forces", body_names=[".*_(thigh|calf)_Link"])
-BASE_CONTACT = SceneEntityCfg("contact_forces", body_names="base_link")
 HEIGHT_SENSOR = SceneEntityCfg("height_scanner")
 
 
@@ -100,7 +108,7 @@ class ObservationsCfg:
 class EventsCfg:
     reset_scene = EventTermCfg(func=lab_mdp.reset_scene_to_default, mode="reset")
     reset_root = EventTermCfg(
-        func=lab_mdp.reset_root_state_uniform,
+        func=mdp.reset_root_with_recovery,
         mode="reset",
         params={
             "pose_range": {
@@ -197,16 +205,36 @@ class RewardsCfg:
             "stand_still_scale": HIP_STAND_STILL_SCALE,
         },
     )
+    recovery_upright = RewardTermCfg(
+        func=mdp.recovery_upright,
+        weight=RECOVERY_UPRIGHT_WEIGHT,
+        params={"saturation": RECOVERY_SCORE_SATURATION},
+    )
+    recovery_base_height = RewardTermCfg(
+        func=mdp.recovery_base_height,
+        weight=RECOVERY_HEIGHT_WEIGHT,
+        params={
+            "target_height": BASE_HEIGHT_TARGET_M,
+            "saturation": RECOVERY_SCORE_SATURATION,
+            "asset_cfg": SceneEntityCfg("robot"),
+            "sensor_cfg": HEIGHT_SENSOR,
+            "x_range": HEIGHT_SCAN_X,
+            "y_range": HEIGHT_SCAN_Y,
+        },
+    )
+    stand_up_bonus = RewardTermCfg(
+        func=mdp.stand_up_bonus,
+        weight=STAND_UP_BONUS_WEIGHT,
+        params={"saturation": RECOVERY_SCORE_SATURATION},
+    )
 
 
 @configclass
 class TerminationsCfg:
     time_out = TerminationTermCfg(func=lab_mdp.time_out, time_out=True)
-    base_contact = TerminationTermCfg(
-        func=lab_mdp.illegal_contact, params={"threshold": 1.0, "sensor_cfg": BASE_CONTACT}
-    )
-    bad_orientation = TerminationTermCfg(
-        func=lab_mdp.bad_orientation, params={"limit_angle": BAD_ORIENTATION_LIMIT_RAD}
+    fallen_timeout = TerminationTermCfg(
+        func=mdp.fallen_timeout,
+        params={"max_time": FALLEN_TIMEOUT_S, "upright_gravity_z": FALLEN_UPRIGHT_GRAVITY_Z},
     )
 
 
@@ -233,6 +261,14 @@ class CurriculumCfg:
             "final_weight": BASE_HEIGHT_FINAL_WEIGHT,
             "start_it": 0,
             "end_it": BASE_HEIGHT_FINAL_UPDATE,
+        },
+    )
+    fallen_reset_fraction = CurriculumTermCfg(
+        func=mdp.fallen_reset_fraction,
+        params={
+            "initial": FALLEN_RESET_FRACTION,
+            "final": FALLEN_RESET_FRACTION_FINAL,
+            "end_it": FALLEN_FRACTION_END_UPDATE,
         },
     )
 

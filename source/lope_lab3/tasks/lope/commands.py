@@ -1,9 +1,7 @@
-"""Official RLGym velocity command with Lope's height-scaled ranges.
+"""Official RLGym velocity command, unscaled.
 
-The class, stage iterations, and limit-velocity direction codes come from
-go2_rl_lab ``RLGymVelCommandCfg`` and mixed ``CommandsCfg``. Linear speeds and
-yaw magnitudes are scaled in ``lope_lab3.spec``. This module does not edit
-Thunder and does not use UniformVelocityCommand or the old 1.0 m/s gate.
+Ranges, curricula, clip rules, and the iteration-25000 limit stage are the
+go2_rl_lab mixed-task numbers. Terrain caps omit wheels because Lope has none.
 """
 from copy import deepcopy
 
@@ -16,6 +14,8 @@ from lope_lab3.spec import (
     LOPE_INITIAL_RANGES,
     LOPE_TERRAIN_MAX_COMMANDS,
     OFFICIAL_LIMIT_VEL_CURRICULUM,
+    RESAMPLING_TIME_S,
+    ZERO_COMMAND_CURRICULUM,
 )
 
 
@@ -33,6 +33,9 @@ def lope_velocity_command_cfg():
     cfg.command_clip_rules = [dict(rule) for rule in LOPE_CLIP_RULES]
     for rule in cfg.command_clip_rules:
         rule["clip"] = dict(rule["clip"])
+    cfg.zero_command_curriculum = dict(ZERO_COMMAND_CURRICULUM)
+    cfg.resampling_time = RESAMPLING_TIME_S
+    cfg.resampling_time_range = (RESAMPLING_TIME_S, RESAMPLING_TIME_S)
     return cfg
 
 

@@ -1,8 +1,7 @@
 """Official mixed-task randomization on Newton's CoM path.
 
-Linear push and reset velocities are height-scaled. Angular push stays at the
-official values. The CoM pattern matches Lope's ``base_link`` name. There is
-no wheel gain event.
+Push linear velocity is the official ±0.4 m/s. The CoM pattern matches Lope's
+``base_link`` name. There is no wheel gain event.
 """
 from dataclasses import replace
 

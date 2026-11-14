@@ -61,13 +61,13 @@ The recovery run `training/recovery_headless/run_configuration.json` flattens ev
 
 `friction` is 0. There is no `ImplicitActuatorCfg` and no wheel joint. `self_collision=True` and `merge_fixed_joints=False`, so the four fixed feet stay separate. Each foot collision is a sphere of radius 0.032 m. `soft_joint_pos_limit_factor` is 0.9. Action targets are clipped to that same soft window, centered on each URDF interval, as `SmallDogEnvCfg` did.
 
-Standing pose and spawn height, from `joint_motion_config.json`:
+Standing pose keeps the solved thigh and calf magnitudes and adducts the hips by 0.08 rad. Front hip axes are −X and rear hip axes are +X, so the signs below move every foot toward the midline. Stance width is 0.25688538375184233 m. The root is higher than the old 0.2674918208774965 m spawn so the original 11.333470889715092 mm sole gap stays.
 
-- hips 0
+- `fr_hip_joint` −0.08, `fl_hip_joint` +0.08, `rr_hip_joint` +0.08, `rl_hip_joint` −0.08
 - thighs ±0.6715534335840251 rad (right negative, left positive)
 - calves ±1.1 rad (right positive, left negative)
-- spawn `initial_root_height_m` = 0.2674918208774965
-- height target `base_height_target_m` = 0.2561583499877814
+- spawn height 0.2740510271690917 m
+- height target 0.2627175562793766 m
 
 Action scale: hip 0.15 rad, thigh 0.2 rad, calf 0.2 rad. The action vector is 12 position targets in order FR, FL, RR, RL and hip, thigh, calf. URDF position limits are unchanged, including the mirrored thigh and calf windows.
 
@@ -75,7 +75,7 @@ Action scale: hip 0.15 rad, thigh 0.2 rad, calf 0.2 rad. The action vector is 12
 
 Policy frame is 45 values: body angular velocity, projected gravity, velocity command, 12 relative joint positions, 12 relative joint velocities, 12 previous actions. History is 10 frames, oldest first, so the policy input is 450. Angular velocity is scaled by 0.25, joint velocity by 0.05, and the command's x component by 0.5, matching the official mixed observation scales `(0.5, 1, 1)`. The critic linear velocity and command use that same `(0.5, 1, 1)` scale. Joint order stays FR, FL, RR, RL.
 
-Critic is 263 values: linear velocity scaled by 2, the policy core, joint acceleration scaled by 1e-4, applied torque scaled by 0.01, four foot normal-force magnitudes scaled by 1e-3, and 187 height samples. The scan is the 1.6 m by 1.0 m yaw-aligned grid at 0.1 m, which is the Go2/Lope scanner, then `(sensor_z - hit_z - 0.5)` clipped to [-1, 1] and multiplied by 2.5. There is no wheel velocity, wheel torque, or wheel material block.
+Critic is 263 values: linear velocity scaled by `(0.5, 1, 1)`, the policy core, joint acceleration scaled by 1e-4, applied torque scaled by 0.01, four foot normal-force magnitudes scaled by 1e-3, and 187 height samples. The scan is the 1.6 m by 1.0 m yaw-aligned grid at 0.1 m, which is the Go2/Lope scanner, then `(sensor_z - hit_z - 0.5)` clipped to [-1, 1] and multiplied by 2.5. There is no wheel velocity, wheel torque, or wheel material block.
 
 Symmetry swaps FR with FL and RR with RL, then multiplies every revolute component by -1. That map fixes the standing pose. Go2's hip-only sign does not, because Lope's left thigh and calf axes are the negation of the right axes. Foot-force magnitudes are permuted with no extra sign. Hips also use the minus: the two front hip axes are both -X and the two rear hip axes are both +X, so a sagittal reflection reverses roll rate.
 
@@ -94,13 +94,17 @@ Rewards use the pinned `go2_rl_lab` terms with Lope's documented overrides:
 
 Termination is timeout, leaving the terrain or the assigned tile, base contact above 1 N, and `bad_orientation` at 0.85 rad. There is no wheel contact reward and no Thunder leg-contact duration term.
 
-Domain randomization follows the official mixed task: base mass add ±1 kg, other links scale 0.9–1.1, friction 0–2, restitution 0–0.5, actuator gains scale 0.9–1.1, joint reset scale 0.5–1.5, and motor zero offset ±0.035 rad. Push linear velocity is the official ±0.4 m/s times the height scale; push angular rate stays ±0.6 rad/s. The Newton center-of-mass buckets use the official offsets, on Lope's `base_link`.
+Domain randomization follows the official mixed task: base mass add ±1 kg, other links scale 0.9–1.1, friction 0–2, restitution 0–0.5, actuator gains scale 0.9–1.1, joint reset scale 0.5–1.5, and motor zero offset ±0.035 rad. Push linear velocity is the official ±0.4 m/s. Push angular rate stays ±0.6 rad/s. The Newton center-of-mass buckets use the official offsets, on Lope's `base_link`.
 
 ## Commands, terrain, timing
 
 Physics is 0.005 s and decimation is 4 (50 Hz). The episode is the official 25 s. Formal training uses 16384 environments and a 100000-update cap. Rollout length is 24. The network is the official 8-expert CTS policy with latent size 32 and scalar noise. Reward clip is ±10. Save interval is 500.
 
-Commands use `RLGymVelCommand` and `TerrainLevelsVelGym`. The scale factor is `0.2561583499877814 / 0.38` = `0.6741009210204774`. Linear ranges and yaw magnitudes both use that factor. Limit-velocity entries stay official direction codes, including the stage at iteration 25000 that drops lateral limit sampling. Official initial ranges are x/y ±0.5 m/s and yaw ±1 rad/s, so Lope starts at about ±0.337 m/s and ±0.674 rad/s. The iteration-45000 stage is officially x −4.5..4.2 m/s, y ±1, yaw ±3; Lope uses about x −3.033..2.831 m/s, y ±0.674, yaw ±2.022. Terrain caps, including flat's official (−4.5, 4.2), are scaled the same way. Push and reset linear velocities are scaled; push angular rates stay at the official ±0.6 rad/s. The raw 4.5 m/s figure is not used as a Lope command.
+Commands use `RLGymVelCommand` and `TerrainLevelsVelGym` with the official unscaled numbers. Initial ranges are x/y ±0.5 m/s and yaw ±1 rad/s. The range curriculum is ±1 / yaw ±2 at iteration 5000, x ±2 at 15000, x ±3 at 25000, x ±4 at 35000, and x −4.5..4.2, y ±1, yaw ±3 at 45000. Terrain caps use those same official speeds, with no wheels entry. Clip rules stay x limit 2.0 (y ±0.5, yaw ±1) and yaw limit 2.0 (x ±2, y ±1). Zero-command probability goes from 0 to 0.1 over iterations 0–1500. Resampling time is 5 s. Push linear velocity is ±0.4 m/s. The height ratio is not applied to any command or push speed.
+
+The height-reward crop stays a Lope-sized box, ±0.135 m by ±0.101 m. That crop is body geometry, not a speed scale.
+
+About 20% of resets, rising to 35% by update 20000, spawn the robot already fallen: left side, right side, back, or belly, with a random yaw and the root 6–12 cm lower. Locomotion remains the main task. Instant base-contact termination is not used, and neither is the official 2 rad bad-orientation check, because a robot on its back would be removed before it could stand. A fallen timeout ends the episode only after the base has stayed down (`projected gravity z > -0.7`) for 6 s. Timeouts still end a normal 25 s episode. While the robot is down, `recovery_upright` (weight 2) and `recovery_base_height` (weight −2, Lope height target) are active and go to zero once it is standing. `stand_up_bonus` (weight 5) pays once on the fallen-to-standing step.
 
 Terrain copies `MIXED_MESH_TERRAIN_CFG`: 9 m tiles, 10 rows, 20 columns, border 25 m, initial level up to row 5. The wheels sub-terrain is removed and flat's proportion is 0.20. `stairs_up` is the official inverted pyramid.
 

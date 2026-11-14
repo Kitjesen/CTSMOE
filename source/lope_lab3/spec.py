@@ -23,22 +23,29 @@ FOOT_BODIES = tuple(f"{leg}_foot_Link" for leg in LEGS)
 FOOT_JOINTS = tuple(f"{leg}_foot_joint" for leg in LEGS)
 
 # joint_motion_config.json standing_joint_angles_rad. Left/right signs follow the URDF.
+# Thigh pitch and calf stay at the solved magnitudes. Hips adduct 0.08 rad
+# (about 4.6°). Front hip axes are -X and rear hip axes are +X, so these signs
+# move all four feet toward the midline. The root is raised so the original
+# 11.333470889715092 mm sole gap remains. Stance width is 0.25688538375184233 m.
 STANDING_POSE = {
-    "fr_hip_joint": 0.0,
+    "fr_hip_joint": -0.08,
     "fr_thigh_joint": -0.6715534335840251,
     "fr_calf_joint": 1.1,
-    "fl_hip_joint": 0.0,
+    "fl_hip_joint": 0.08,
     "fl_thigh_joint": 0.6715534335840251,
     "fl_calf_joint": -1.1,
-    "rr_hip_joint": 0.0,
+    "rr_hip_joint": 0.08,
     "rr_thigh_joint": -0.6715534335840251,
     "rr_calf_joint": 1.1,
-    "rl_hip_joint": 0.0,
+    "rl_hip_joint": -0.08,
     "rl_thigh_joint": 0.6715534335840251,
     "rl_calf_joint": -1.1,
 }
-SPAWN_HEIGHT_M = 0.2674918208774965
-BASE_HEIGHT_TARGET_M = 0.2561583499877814
+SPAWN_HEIGHT_M = 0.2740510271690917
+BASE_HEIGHT_TARGET_M = 0.2627175562793766
+SOLE_GAP_M = 0.011333470889715092
+STANCE_WIDTH_M = 0.25688538375184233
+HIP_ADDUCTION_RAD = 0.08
 SOFT_JOINT_POS_LIMIT_FACTOR = 0.9
 ACTION_SCALE_RAD = {"hip": 0.15, "thigh": 0.2, "calf": 0.2}
 FOOT_SPHERE_RADIUS_M = 0.032
@@ -175,20 +182,17 @@ BAD_ORIENTATION_LIMIT_RAD = 2.0
 OBS_LIN_VEL_SCALE = (0.5, 1.0, 1.0)
 OBS_COMMAND_SCALE = (0.5, 1.0, 1.0)
 
-# go2_rl_lab RobotEnvCfg BASE_HEIGHT_TARGET. Reference for the speed scale only.
+# Go2's 0.38 m height is not a Lope reward target and is not a speed scale.
 GO2_BASE_HEIGHT_M = 0.38
-HEIGHT_SPEED_SCALE = BASE_HEIGHT_TARGET_M / GO2_BASE_HEIGHT_M
-# Yaw uses the same factor. Official yaw reaches ±3 rad/s, which is large for
-# a 0.26 m robot, so the stage structure stays official and the magnitudes shrink.
-YAW_SPEED_SCALE = HEIGHT_SPEED_SCALE
 
 # RLGymVelCommandCfg.ranges defaults, before any command_range_curriculum stage.
+# These official values are used unchanged. Do not multiply them by height.
 OFFICIAL_INITIAL_RANGES = {
     "lin_vel_x": (-0.5, 0.5),
     "lin_vel_y": (-0.5, 0.5),
     "ang_vel_yaw": (-1.0, 1.0),
 }
-# RLGymVelCommandCfg.command_range_curriculum. Linear components are scaled below.
+# RLGymVelCommandCfg.command_range_curriculum, used unchanged.
 OFFICIAL_COMMAND_RANGE_CURRICULUM = (
     {"iter": 5000, "lin_vel_x": (-1.0, 1.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-2.0, 2.0)},
     {"iter": 15000, "lin_vel_x": (-2.0, 2.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-3.0, 3.0)},
@@ -247,60 +251,40 @@ def action_clips(limits):
     return {name: soft_position_window(*limits[name]) for name in JOINT_NAMES}
 
 
-def _scale_span(span, factor):
-    return (span[0] * factor, span[1] * factor)
-
-
-def _scale_command_stage(stage):
-    return {
-        "iter": stage["iter"],
-        "lin_vel_x": _scale_span(stage["lin_vel_x"], HEIGHT_SPEED_SCALE),
-        "lin_vel_y": _scale_span(stage["lin_vel_y"], HEIGHT_SPEED_SCALE),
-        "ang_vel_yaw": _scale_span(stage["ang_vel_yaw"], YAW_SPEED_SCALE),
-    }
-
-
-def _scale_axis_map(axes):
-    scaled = {}
-    for name, span in axes.items():
-        factor = YAW_SPEED_SCALE if name == "ang_vel_yaw" else HEIGHT_SPEED_SCALE
-        scaled[name] = _scale_span(span, factor)
-    return scaled
-
-
-LOPE_INITIAL_RANGES = _scale_axis_map(OFFICIAL_INITIAL_RANGES)
-LOPE_COMMAND_RANGE_CURRICULUM = tuple(_scale_command_stage(stage) for stage in OFFICIAL_COMMAND_RANGE_CURRICULUM)
-LOPE_TERRAIN_MAX_COMMANDS = {
-    name: _scale_axis_map(axes) for name, axes in OFFICIAL_TERRAIN_MAX_COMMANDS.items()
+# Command speeds are the official numbers. The names below are aliases so the
+# task reads Lope fields without a second copy that could drift.
+LOPE_INITIAL_RANGES = OFFICIAL_INITIAL_RANGES
+LOPE_COMMAND_RANGE_CURRICULUM = OFFICIAL_COMMAND_RANGE_CURRICULUM
+LOPE_TERRAIN_MAX_COMMANDS = OFFICIAL_TERRAIN_MAX_COMMANDS
+LOPE_CLIP_RULES = OFFICIAL_CLIP_RULES
+LOPE_PUSH_LINEAR = OFFICIAL_PUSH_LINEAR
+LOPE_RESET_LINEAR_VELOCITY = OFFICIAL_RESET_LINEAR_VELOCITY
+ZERO_COMMAND_CURRICULUM = {
+    "start_iter": 0,
+    "end_iter": 1500,
+    "start_value": 0.0,
+    "end_value": 0.1,
 }
-LOPE_CLIP_RULES = (
-    {
-        "command": "lin_vel_x",
-        "limit": OFFICIAL_CLIP_RULES[0]["limit"] * HEIGHT_SPEED_SCALE,
-        "clip": {
-            "lin_vel_y": _scale_span(OFFICIAL_CLIP_RULES[0]["clip"]["lin_vel_y"], HEIGHT_SPEED_SCALE),
-            "ang_vel_yaw": _scale_span(OFFICIAL_CLIP_RULES[0]["clip"]["ang_vel_yaw"], YAW_SPEED_SCALE),
-        },
-    },
-    {
-        "command": "ang_vel_yaw",
-        "limit": OFFICIAL_CLIP_RULES[1]["limit"] * YAW_SPEED_SCALE,
-        "clip": {
-            "lin_vel_x": _scale_span(OFFICIAL_CLIP_RULES[1]["clip"]["lin_vel_x"], HEIGHT_SPEED_SCALE),
-            "lin_vel_y": _scale_span(OFFICIAL_CLIP_RULES[1]["clip"]["lin_vel_y"], HEIGHT_SPEED_SCALE),
-        },
-    },
-)
-LOPE_PUSH_LINEAR = {name: _scale_span(span, HEIGHT_SPEED_SCALE) for name, span in OFFICIAL_PUSH_LINEAR.items()}
-LOPE_RESET_LINEAR_VELOCITY = {
-    name: _scale_span(span, HEIGHT_SPEED_SCALE) for name, span in OFFICIAL_RESET_LINEAR_VELOCITY.items()
-}
-HEIGHT_SCAN_X = _scale_span(GO2_HEIGHT_SCAN_X, HEIGHT_SPEED_SCALE)
-HEIGHT_SCAN_Y = _scale_span(GO2_HEIGHT_SCAN_Y, HEIGHT_SPEED_SCALE)
-# Vertical obstacle and wave sizes follow the same height ratio. Width stays official.
+RESAMPLING_TIME_S = 5.0
+# Body-sized height crop. This is geometry, not a command-speed scale.
+HEIGHT_SCAN_X = (-0.135, 0.135)
+HEIGHT_SCAN_Y = (-0.101, 0.101)
 TERRAIN["obstacle_width_range"] = (1.0, 2.0)
-TERRAIN["obstacle_height_range"] = _scale_span(GO2_OBSTACLE_HEIGHT, HEIGHT_SPEED_SCALE)
-TERRAIN["wave_amplitude_range"] = _scale_span(GO2_WAVE_AMPLITUDE, HEIGHT_SPEED_SCALE)
+TERRAIN["obstacle_height_range"] = (0.05, 0.12)
+TERRAIN["wave_amplitude_range"] = (0.02, 0.08)
 TERRAIN["stairs_up_proportion"] = 0.25
 TERRAIN["stairs_down_proportion"] = 0.10
 TERRAIN["flat_proportion"] = 0.20
+
+# Same-task fall recovery. Locomotion stays the main objective.
+FALLEN_RESET_FRACTION = 0.20
+FALLEN_RESET_FRACTION_FINAL = 0.35
+FALLEN_FRACTION_END_UPDATE = 20000
+FALLEN_Z_DROP_M = (0.06, 0.12)
+FALLEN_TIMEOUT_S = 6.0
+# Upright projected gravity z is about -1. Above this value the robot is still down.
+FALLEN_UPRIGHT_GRAVITY_Z = -0.7
+RECOVERY_UPRIGHT_WEIGHT = 2.0
+RECOVERY_HEIGHT_WEIGHT = -2.0
+STAND_UP_BONUS_WEIGHT = 5.0
+RECOVERY_SCORE_SATURATION = 0.9
