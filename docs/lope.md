@@ -28,7 +28,7 @@ python scripts/rsl_rl/launch_lope.py play \
   --checkpoint /ABS/model_N.pt --terrain stairs_up --level 3
 ```
 
-`--terrain` accepts `mixed`, `flat`, `rough`, `slope_up`, `slope_down`, `stairs_up`, `stairs_down`, `obstacles`, and `wave`. `--level` is a row in `0..7`. Default environment count is 4096. The cumulative update cap is 3000, which is `SmallDogRoughRunnerCfg.max_iterations` on `headless-v67`. A fresh plan passes no `--checkpoint`.
+`--terrain` accepts `mixed`, `flat`, `wave`, `slope_up`, `slope_down`, `rough_slope`, `stairs_up`, `stairs_down`, `obstacles`, and `small_squares`. `--level` is a row in `0..9`. Default environment count is 16384. The cumulative update cap is 100000, matching `Go2MoECTSRunnerCfg.max_iterations`. A fresh plan passes no `--checkpoint`. Smoke checks still pass `--num-envs 32 --updates 2`.
 
 ## Asset
 
@@ -73,7 +73,7 @@ Action scale: hip 0.15 rad, thigh 0.2 rad, calf 0.2 rad. The action vector is 12
 
 ## Observations, symmetry, rewards
 
-Policy frame is 45 values: body angular velocity, projected gravity, velocity command, 12 relative joint positions, 12 relative joint velocities, 12 previous actions. History is 10 frames, oldest first, so the policy input is 450. Scales match the robot_lab Go2/Lope terms (0.25, 1, 1, 1, 0.05, 1).
+Policy frame is 45 values: body angular velocity, projected gravity, velocity command, 12 relative joint positions, 12 relative joint velocities, 12 previous actions. History is 10 frames, oldest first, so the policy input is 450. Angular velocity is scaled by 0.25, joint velocity by 0.05, and the command's x component by 0.5, matching the official mixed observation scales `(0.5, 1, 1)`. The critic linear velocity and command use that same `(0.5, 1, 1)` scale. Joint order stays FR, FL, RR, RL.
 
 Critic is 263 values: linear velocity scaled by 2, the policy core, joint acceleration scaled by 1e-4, applied torque scaled by 0.01, four foot normal-force magnitudes scaled by 1e-3, and 187 height samples. The scan is the 1.6 m by 1.0 m yaw-aligned grid at 0.1 m, which is the Go2/Lope scanner, then `(sensor_z - hit_z - 0.5)` clipped to [-1, 1] and multiplied by 2.5. There is no wheel velocity, wheel torque, or wheel material block.
 
@@ -81,37 +81,34 @@ Symmetry swaps FR with FL and RR with RL, then multiplies every revolute compone
 
 Rewards use the pinned `go2_rl_lab` terms with Lope's documented overrides:
 
-- linear tracking standard deviation 0.2, yaw 0.35
-- base height weight -1 at 0.2561583499877814 m, with no -1 to -10 schedule (`SmallDogEnvCfg` sets that curriculum to `None`)
-- vertical linear velocity weight -2, also without the 1500-update ramp
-- feet air time weight 0.25, threshold 0.12 s
-- flat orientation weight -2
+- linear tracking standard deviation 0.5 and weight 2, yaw standard deviation 0.5 and weight 1
+- base height weight from -1 to -10 over 5000 updates, target 0.2561583499877814 m (not Go2's 0.38 m)
+- vertical linear velocity weight from -2 to 0 over 1500 updates
+- Newton joint acceleration weight -3e-7, power -1.5e-5, torque -6e-5
+- undesired-contact threshold 110 N
+- hip and leg pose penalties with stand-still scale 10
+- no feet-air-time term and no separate flat-orientation term
 - undesired thigh/calf contacts, threshold 5 N
 - hip and thigh/calf pose penalties with stand-still scale 1
 - joint torque weight -1e-4, power -2e-5, acceleration -1e-7
 
 Termination is timeout, leaving the terrain or the assigned tile, base contact above 1 N, and `bad_orientation` at 0.85 rad. There is no wheel contact reward and no Thunder leg-contact duration term.
 
-Domain randomization follows the Lope flat/rough overrides: base mass add ±0.3 kg, other links scale 0.9–1.1, friction 0.7–1.2 / 0.6–1.0, restitution 0–0.05, actuator gains scale 0.9–1.1, joint reset scale 0.99–1.01. Push and motor zero-offset stay off. The center-of-mass box is Lope's ±1 cm in x/y and ±0.5 cm in z, applied through this repo's Newton bucket hook because MJWarp needs the offset before the model is finalized.
+Domain randomization follows the official mixed task: base mass add ±1 kg, other links scale 0.9–1.1, friction 0–2, restitution 0–0.5, actuator gains scale 0.9–1.1, joint reset scale 0.5–1.5, and motor zero offset ±0.035 rad. Push linear velocity is the official ±0.4 m/s times the height scale; push angular rate stays ±0.6 rad/s. The Newton center-of-mass buckets use the official offsets, on Lope's `base_link`.
 
 ## Commands, terrain, timing
 
-Physics is 0.005 s and decimation is 4 (50 Hz). Lope's Go2 parent uses that same pair. The episode is 15 s, from `SmallDogEnvCfg`, not Thunder's 25 s. Rollout length is 24. The network is the pinned 8-expert CTS policy with latent size 32 and scalar noise. Reward clip is ±10. Save interval is 500.
+Physics is 0.005 s and decimation is 4 (50 Hz). The episode is the official 25 s. Formal training uses 16384 environments and a 100000-update cap. Rollout length is 24. The network is the official 8-expert CTS policy with latent size 32 and scalar noise. Reward clip is ±10. Save interval is 500.
 
-Initial commands, from `rough_cfg.py`: x -0.15..0.35 m/s, y ±0.1 m/s, yaw ±0.3 rad/s, resampling 15 s, 10% standing. `ForwardSpeedCurriculum` raises only the positive-x ceiling by 0.1 m/s after a batch of 128 eligible forward episodes with pass ratio 0.7, and it stops at 1.0 m/s. The later R6 config (ceiling 1.5 m/s, initial terrain level 10, 10000 updates) is a warm-started gait extension and is not this from-scratch task.
+Commands use `RLGymVelCommand` and `TerrainLevelsVelGym`. The scale factor is `0.2561583499877814 / 0.38` = `0.6741009210204774`. Linear ranges and yaw magnitudes both use that factor. Limit-velocity entries stay official direction codes, including the stage at iteration 25000 that drops lateral limit sampling. Official initial ranges are x/y ±0.5 m/s and yaw ±1 rad/s, so Lope starts at about ±0.337 m/s and ±0.674 rad/s. The iteration-45000 stage is officially x −4.5..4.2 m/s, y ±1, yaw ±3; Lope uses about x −3.033..2.831 m/s, y ±0.674, yaw ±2.022. Terrain caps, including flat's official (−4.5, 4.2), are scaled the same way. Push and reset linear velocities are scaled; push angular rates stay at the official ±0.6 rad/s. The raw 4.5 m/s figure is not used as a Lope command.
 
-Terrain is the rough_cfg mix on 6 m tiles, 8 rows, initial row 0:
+Terrain copies `MIXED_MESH_TERRAIN_CFG`: 9 m tiles, 10 rows, 20 columns, border 25 m, initial level up to row 5. The wheels sub-terrain is removed and flat's proportion is 0.20. `stairs_up` is the official inverted pyramid.
 
-- flat 30%
-- rough noise 0.5–2.5 cm
-- slopes 0–35°, stored as the rise/run gradient `(0, tan(35°))`. Isaac Lab's `pyramid_sloped_terrain` sets height to `slope * run`. It does not treat `slope_range` as radians. `tan(35°)` is about 0.7002. The old 0.22 value was the historical Lope rough cap and is not used.
-- stairs `step_height_range=(0.05, 0.25)` m (5–25 cm), step width 0.25 m
-- obstacles 1–10 cm
-- waves 1–8 cm
+- slopes 0–35°, stored as the rise/run gradient `(0, tan(35°))` ≈ `(0, 0.7002075382097097)`. This replaces both the official `(0.1, 0.568)` and Thunder's `tan(40°)`.
+- stairs `step_height_range=(0.05, 0.25)` m. Official tread is 0.31 m; Lope keeps 0.25 m so the step is not scaled all the way down to about 0.21 m.
+- obstacle heights and wave amplitudes are the official values times the height scale. Obstacle width stays 1–2 m.
 
-Official Go2 mixed terrain at the pinned commit uses stairs `(0.05, 0.257)` m and slope gradient `(0.1, 0.568)` (about 29.6°). Thunder uses stairs `(0.05, 0.25)` m and `tan(40°)`. Lope stairs match Thunder's 5–25 cm ceiling. Lope slopes stop at 35°, not 40°. The historical Lope rough cap of 1–10 cm and 0.22 is not used.
-
-`stairs_up` is `MeshPyramidStairsTerrainCfg` and `stairs_down` is the inverted mesh, the same class assignment as `rough_cfg.py`. Isaac Lab 3's stair docstring describes the non-inverted pyramid as a high center platform. Both stair classes use the 5–25 cm step range. Command limits stay at Lope's rough-task speeds; this is not the Go2 flat speed range near -4.5..4.2 m/s.
+The height-reward crop is the official `(±0.2, ±0.15)` m box times the same scale, about `(±0.135, ±0.101)` m. The 1.6 m by 1.0 m lookahead scan is unchanged, so the critic stays 263 values. Bad orientation terminates at 2.0 rad.
 
 Newton settings that have no Lope historical value (implicitfast integrator, 128 contacts, 0.01 m margin, 2.5e6 triangle pairs) follow this repository's fresh Newton task so the URDF can load on the same backend. They were not retuned in simulation.
 

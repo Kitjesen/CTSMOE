@@ -32,8 +32,10 @@ def policy_frame(env):
     )
     if env.action_manager.action.shape[-1] != ACTION_DIM:
         raise RuntimeError("Lope policy expects 12 position actions and no wheel velocity")
+    command = raw[2] * raw[2].new_tensor((0.5, 1.0, 1.0))
+    scaled = (raw[0], raw[1], command, raw[3], raw[4], raw[5])
     scales = (0.25, 1.0, 1.0, 1.0, 0.05, 1.0)
-    return torch.cat(tuple(value.clamp(-100, 100) * scale for value, scale in zip(raw, scales)), dim=-1)
+    return torch.cat(tuple(value.clamp(-100, 100) * scale for value, scale in zip(scaled, scales)), dim=-1)
 
 
 def _raw_policy_frame(env):
@@ -114,10 +116,10 @@ def critic_frame(env):
     forces = sensor.data.net_normal_forces_w.torch[:, env._lope_foot_order]
     proprioception = torch.cat(
         (
-            robot.data.root_lin_vel_b.torch * 2.0,
+            robot.data.root_lin_vel_b.torch * robot.data.root_lin_vel_b.torch.new_tensor((0.5, 1.0, 1.0)),
             robot.data.root_ang_vel_b.torch * 0.25,
             robot.data.projected_gravity_b.torch,
-            _command(env),
+            _command(env) * _command(env).new_tensor((0.5, 1.0, 1.0)),
             (robot.data.joint_pos.torch - robot.data.default_joint_pos.torch)[:, ids],
             (robot.data.joint_vel.torch - robot.data.default_joint_vel.torch)[:, ids] * 0.05,
             env.action_manager.action,

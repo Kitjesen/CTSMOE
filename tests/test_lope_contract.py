@@ -10,23 +10,28 @@ from lope_lab3.spec import (
     ACTION_DIM,
     ACTION_SCALE_RAD,
     BASE_HEIGHT_TARGET_M,
-    COMMAND_RANGES,
-    CRITIC_DIM,
-    DECIMATION,
-    FORWARD_SPEED,
-    FRAME_DIM,
+    CUMULATIVE_UPDATES,
+    EPISODE_LENGTH_S,
+    GO2_BASE_HEIGHT_M,
+    HEIGHT_SPEED_SCALE,
     JOINT_NAMES,
     JOINT_SIGN,
-    PHYSICS_DT_S,
-    POLICY_DIM,
+    LOPE_COMMAND_RANGE_CURRICULUM,
+    LOPE_INITIAL_RANGES,
+    LOPE_TERRAIN_MAX_COMMANDS,
+    NUM_ENVS,
+    OFFICIAL_COMMAND_RANGE_CURRICULUM,
+    OFFICIAL_INITIAL_RANGES,
     RS02_CALF,
     RS02_HIP_THIGH,
     SPAWN_HEIGHT_M,
     STANDING_POSE,
     TERRAIN,
+    TRACK_LIN_STD,
+    TRACK_YAW_STD,
     action_clips,
-    advance_forward_ceiling,
 )
+from lope_lab3.spec import CRITIC_DIM, DECIMATION, FRAME_DIM, PHYSICS_DT_S, POLICY_DIM
 from lope_lab3.symmetry_math import (
     mirror_critic,
     mirror_joints,
@@ -148,28 +153,38 @@ class LopeSymmetryTests(unittest.TestCase):
 
 
 class LopeCurriculumTests(unittest.TestCase):
-    def test_forward_gate_stops_at_one_meter_per_second(self):
-        ceiling = COMMAND_RANGES["lin_vel_x"][1]
-        self.assertEqual(ceiling, 0.35)
-        self.assertEqual(COMMAND_RANGES["lin_vel_y"], (-0.1, 0.1))
-        self.assertEqual(COMMAND_RANGES["ang_vel_z"], (-0.3, 0.3))
-        unchanged, advanced = advance_forward_ceiling(ceiling, passed=89, count=128)
-        self.assertFalse(advanced)
-        self.assertEqual(unchanged, 0.35)
-        ceiling, advanced = advance_forward_ceiling(ceiling, passed=128, count=128)
-        self.assertTrue(advanced)
-        self.assertAlmostEqual(ceiling, 0.45)
-        for _ in range(20):
-            ceiling, _ = advance_forward_ceiling(ceiling, passed=128, count=128)
-        self.assertEqual(ceiling, FORWARD_SPEED["max_speed"])
-        self.assertEqual(ceiling, 1.0)
+    def test_scaled_official_commands_and_locked_hardware(self):
+        self.assertEqual(NUM_ENVS, 16384)
+        self.assertEqual(CUMULATIVE_UPDATES, 100000)
+        self.assertEqual(EPISODE_LENGTH_S, 25.0)
+        self.assertAlmostEqual(HEIGHT_SPEED_SCALE, BASE_HEIGHT_TARGET_M / GO2_BASE_HEIGHT_M)
+        self.assertNotEqual(BASE_HEIGHT_TARGET_M, 0.38)
+        self.assertEqual(
+            LOPE_INITIAL_RANGES["lin_vel_x"],
+            tuple(value * HEIGHT_SPEED_SCALE for value in OFFICIAL_INITIAL_RANGES["lin_vel_x"]),
+        )
+        final = LOPE_COMMAND_RANGE_CURRICULUM[-1]
+        official_final = OFFICIAL_COMMAND_RANGE_CURRICULUM[-1]
+        self.assertEqual(final["iter"], 45000)
+        self.assertEqual(
+            final["lin_vel_x"],
+            tuple(value * HEIGHT_SPEED_SCALE for value in official_final["lin_vel_x"]),
+        )
+        self.assertLess(abs(final["lin_vel_x"][0]), 4.5)
+        self.assertLess(final["lin_vel_x"][1], 4.2)
+        self.assertNotIn("wheels", LOPE_TERRAIN_MAX_COMMANDS)
+        self.assertEqual(LOPE_TERRAIN_MAX_COMMANDS["flat"]["lin_vel_x"][1], 4.2 * HEIGHT_SPEED_SCALE)
+        self.assertEqual(TRACK_LIN_STD, 0.5)
+        self.assertEqual(TRACK_YAW_STD, 0.5)
         self.assertEqual(TERRAIN["stair_step_height_range"], (0.05, 0.25))
+        self.assertEqual(TERRAIN["stair_step_width"], 0.25)
+        self.assertEqual(TERRAIN["num_rows"], 10)
+        self.assertEqual(TERRAIN["max_init_terrain_level"], 5)
         self.assertEqual(TERRAIN["slope_range"][0], 0.0)
         self.assertAlmostEqual(TERRAIN["slope_range"][1], math.tan(math.radians(35)))
         self.assertNotAlmostEqual(TERRAIN["slope_range"][1], math.radians(35))
         self.assertNotAlmostEqual(TERRAIN["slope_range"][1], math.tan(math.radians(40)))
-        self.assertEqual(TERRAIN["num_rows"], 8)
-        self.assertEqual(TERRAIN["max_init_terrain_level"], 0)
+        self.assertNotAlmostEqual(TERRAIN["slope_range"][1], 0.568)
         self.assertEqual(PHYSICS_DT_S, 0.005)
         self.assertEqual(DECIMATION, 4)
         self.assertEqual(SPAWN_HEIGHT_M, 0.2674918208774965)

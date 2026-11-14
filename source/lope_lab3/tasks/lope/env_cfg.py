@@ -1,8 +1,8 @@
-"""From-scratch Lope task. Height, commands, and terrain use Lope's numbers.
+"""From-scratch Lope task using the official mixed Go2 CTS recipe.
 
-Control timing matches this repository and Lope's Go2 parent: 5 ms physics,
-decimation 4, 50 Hz policy. The episode is Lope's 15 s. No wheel action,
-reward, observation, or symmetry term is registered.
+Hardware, pose, height target, action scales, stairs, and slopes stay Lope's.
+Commands, rewards, events, and the 16384 / 100000 / 25 s run follow go2_rl_lab,
+with linear speeds scaled by Lope height / 0.38 m. No wheel term is registered.
 """
 import os
 
@@ -23,34 +23,43 @@ from isaaclab.utils import configclass
 from isaaclab_newton.physics import MJWarpSolverCfg, NewtonCfg, NewtonCollisionPipelineCfg, NewtonShapeCfg
 
 from lope_lab3.assets.robot import robot_cfg
+from go2_rl_lab.tasks.mixed.mdp.curriculums import TerrainLevelsVelGym, gradual_reward_weight_modification
 from lope_lab3.spec import (
     ACTION_DIM,
     BAD_ORIENTATION_LIMIT_RAD,
+    BASE_HEIGHT_FINAL_UPDATE,
+    BASE_HEIGHT_FINAL_WEIGHT,
     BASE_HEIGHT_TARGET_M,
     BASE_HEIGHT_WEIGHT,
     DECIMATION,
-    SPAWN_HEIGHT_M,
     EPISODE_LENGTH_S,
-    FEET_AIR_TIME_THRESHOLD_S,
-    FEET_AIR_TIME_WEIGHT,
-    FLAT_ORIENTATION_WEIGHT,
-    FORWARD_SPEED,
+    HEIGHT_SCAN_X,
+    HEIGHT_SCAN_Y,
     HIP_STAND_STILL_SCALE,
+    JOINT_ACC_WEIGHT,
     JOINT_NAMES,
+    JOINT_POWER_WEIGHT,
+    JOINT_TORQUE_WEIGHT,
+    LIN_VEL_Z_FINAL_UPDATE,
+    LIN_VEL_Z_FINAL_WEIGHT,
     LIN_VEL_Z_WEIGHT,
+    LOPE_PUSH_LINEAR,
+    LOPE_RESET_LINEAR_VELOCITY,
     NUM_ENVS,
+    OFFICIAL_PUSH_ANGULAR,
+    OFFICIAL_RESET_ANGULAR_VELOCITY,
     PHYSICS_DT_S,
+    SPAWN_HEIGHT_M,
     TERRAIN,
     TRACK_LIN_STD,
     TRACK_YAW_STD,
     UNDESIRED_CONTACT_THRESHOLD_N,
 )
-from lope_lab3.tasks.lope.commands import ForwardSpeedCurriculum, LopeVelocityCommandCfg, terrain_levels_after_episode
+from lope_lab3.tasks.lope.commands import CommandsCfg
 from lope_lab3.tasks.lope.mdp.observations import NoisyPolicyFrame, critic_frame, policy_frame
 from lope_lab3.tasks.lope.mdp.randomization import configure_randomization
 from lope_lab3.tasks.lope.scene_cfg import ActionsCfg, SceneCfg, actions_cfg
 from lope_lab3.tasks.lope.terrain import LopeTerrainImporterCfg, terrain_cfg
-from .mdp import terms as mdp
 
 LEGS = SceneEntityCfg("robot", joint_names=list(JOINT_NAMES), preserve_order=True)
 HIPS = SceneEntityCfg("robot", joint_names=[".*_hip_joint"])
@@ -88,11 +97,6 @@ class ObservationsCfg:
 
 
 @configclass
-class CommandsCfg:
-    base_velocity = LopeVelocityCommandCfg()
-
-
-@configclass
 class EventsCfg:
     reset_scene = EventTermCfg(func=lab_mdp.reset_scene_to_default, mode="reset")
     reset_root = EventTermCfg(
@@ -100,14 +104,19 @@ class EventsCfg:
         mode="reset",
         params={
             "pose_range": {
-                "x": (-0.1, 0.1),
-                "y": (-0.1, 0.1),
-                "z": (0.0, 0.0),
-                "roll": (0.0, 0.0),
-                "pitch": (0.0, 0.0),
-                "yaw": (-0.3, 0.3),
+                "x": (-0.5, 0.5),
+                "y": (-0.5, 0.5),
+                "z": (0.0, 0.2),
+                "yaw": (-3.14, 3.14),
             },
-            "velocity_range": {key: (0.0, 0.0) for key in ("x", "y", "z", "roll", "pitch", "yaw")},
+            "velocity_range": {
+                "x": LOPE_RESET_LINEAR_VELOCITY["x"],
+                "y": LOPE_RESET_LINEAR_VELOCITY["y"],
+                "z": LOPE_RESET_LINEAR_VELOCITY["z"],
+                "roll": OFFICIAL_RESET_ANGULAR_VELOCITY["roll"],
+                "pitch": OFFICIAL_RESET_ANGULAR_VELOCITY["pitch"],
+                "yaw": OFFICIAL_RESET_ANGULAR_VELOCITY["yaw"],
+            },
         },
     )
 
@@ -126,13 +135,15 @@ class RewardsCfg:
     )
     lin_vel_z_l2 = RewardTermCfg(func=go2_rewards.lin_vel_z_l2, weight=LIN_VEL_Z_WEIGHT)
     ang_vel_xy_l2 = RewardTermCfg(func=go2_rewards.ang_vel_xy_l2, weight=-0.05)
-    joint_torques_l2 = RewardTermCfg(func=lab_mdp.joint_torques_l2, weight=-1.0e-4, params={"asset_cfg": LEGS})
+    joint_torques_l2 = RewardTermCfg(
+        func=lab_mdp.joint_torques_l2, weight=JOINT_TORQUE_WEIGHT, params={"asset_cfg": LEGS}
+    )
     joint_acc_l2 = RewardTermCfg(
         func=go2_rewards.clipped_joint_acc_l2,
-        weight=-1.0e-7,
+        weight=JOINT_ACC_WEIGHT,
         params={"asset_cfg": LEGS, "max_penalty": 1.0e8},
     )
-    joint_power = RewardTermCfg(func=go2_rewards.joint_power, weight=-2.0e-5, params={"asset_cfg": LEGS})
+    joint_power = RewardTermCfg(func=go2_rewards.joint_power, weight=JOINT_POWER_WEIGHT, params={"asset_cfg": LEGS})
     joint_pos_limits = RewardTermCfg(func=lab_mdp.joint_pos_limits, weight=-2.0, params={"asset_cfg": LEGS})
     action_rate_l2 = RewardTermCfg(
         func=go2_rewards.clipped_action_rate_l2, weight=-0.01, params={"max_penalty": 20.0}
@@ -143,12 +154,24 @@ class RewardsCfg:
     base_height_l2 = RewardTermCfg(
         func=go2_rewards.base_height_l2,
         weight=BASE_HEIGHT_WEIGHT,
-        params={"target_height": BASE_HEIGHT_TARGET_M, "asset_cfg": SceneEntityCfg("robot"), "sensor_cfg": HEIGHT_SENSOR},
+        params={
+            "target_height": BASE_HEIGHT_TARGET_M,
+            "asset_cfg": SceneEntityCfg("robot"),
+            "sensor_cfg": HEIGHT_SENSOR,
+            "x_range": HEIGHT_SCAN_X,
+            "y_range": HEIGHT_SCAN_Y,
+        },
     )
     feet_regulation = RewardTermCfg(
         func=go2_rewards.feet_regulation,
         weight=-0.05,
-        params={"base_height_target": BASE_HEIGHT_TARGET_M, "asset_cfg": FEET, "sensor_cfg": HEIGHT_SENSOR},
+        params={
+            "base_height_target": BASE_HEIGHT_TARGET_M,
+            "asset_cfg": FEET,
+            "sensor_cfg": HEIGHT_SENSOR,
+            "x_range": HEIGHT_SCAN_X,
+            "y_range": HEIGHT_SCAN_Y,
+        },
     )
     undesired_contacts = RewardTermCfg(
         func=go2_rewards.undesired_contacts,
@@ -162,7 +185,7 @@ class RewardsCfg:
             "command_name": "base_velocity",
             "asset_cfg": HIPS,
             "stand_still_scale": HIP_STAND_STILL_SCALE,
-            "stand_cmd_idxs": [0, 1, 2],
+            "stand_cmd_idxs": [1, 2],
         },
     )
     joint_pos_penalty_l1 = RewardTermCfg(
@@ -172,26 +195,13 @@ class RewardsCfg:
             "command_name": "base_velocity",
             "asset_cfg": THIGH_CALF,
             "stand_still_scale": HIP_STAND_STILL_SCALE,
-            "stand_cmd_idxs": [0, 1, 2],
         },
     )
-    feet_air_time = RewardTermCfg(
-        func=mdp.feet_air_time,
-        weight=FEET_AIR_TIME_WEIGHT,
-        params={
-            "command_name": "base_velocity",
-            "threshold": FEET_AIR_TIME_THRESHOLD_S,
-            "sensor_cfg": FOOT_CONTACTS,
-        },
-    )
-    flat_orientation_l2 = RewardTermCfg(func=lab_mdp.flat_orientation_l2, weight=FLAT_ORIENTATION_WEIGHT)
 
 
 @configclass
 class TerminationsCfg:
     time_out = TerminationTermCfg(func=lab_mdp.time_out, time_out=True)
-    terrain_out_of_bounds = TerminationTermCfg(func=mdp.terrain_out_of_bounds, time_out=True)
-    terrain_tile_exit = TerminationTermCfg(func=mdp.terrain_tile_exit, time_out=True)
     base_contact = TerminationTermCfg(
         func=lab_mdp.illegal_contact, params={"threshold": 1.0, "sensor_cfg": BASE_CONTACT}
     )
@@ -202,17 +212,27 @@ class TerminationsCfg:
 
 @configclass
 class CurriculumCfg:
-    """Terrain rows plus Lope's forward-speed gate. Height weight stays constant."""
+    """Official terrain-level rule and the two gradual reward-weight schedules."""
 
-    terrain_levels = CurriculumTermCfg(func=terrain_levels_after_episode)
-    forward_speed = CurriculumTermCfg(
-        func=ForwardSpeedCurriculum,
+    terrain_levels = CurriculumTermCfg(func=TerrainLevelsVelGym)
+    base_linear_velocity_z = CurriculumTermCfg(
+        func=gradual_reward_weight_modification,
         params={
-            "max_speed": FORWARD_SPEED["max_speed"],
-            "increment": FORWARD_SPEED["increment"],
-            "batch_size": FORWARD_SPEED["batch_size"],
-            "success_ratio": FORWARD_SPEED["success_ratio"],
-            "x_lower": FORWARD_SPEED["x_lower"],
+            "term_name": "lin_vel_z_l2",
+            "initial_weight": LIN_VEL_Z_WEIGHT,
+            "final_weight": LIN_VEL_Z_FINAL_WEIGHT,
+            "start_it": 0,
+            "end_it": LIN_VEL_Z_FINAL_UPDATE,
+        },
+    )
+    base_height = CurriculumTermCfg(
+        func=gradual_reward_weight_modification,
+        params={
+            "term_name": "base_height_l2",
+            "initial_weight": BASE_HEIGHT_WEIGHT,
+            "final_weight": BASE_HEIGHT_FINAL_WEIGHT,
+            "start_it": 0,
+            "end_it": BASE_HEIGHT_FINAL_UPDATE,
         },
     )
 
@@ -221,7 +241,7 @@ class CurriculumCfg:
 class LopeFreshEnvCfg(ManagerBasedRLEnvCfg):
     """12-action Lope locomotion. Do not resume a Thunder checkpoint into this task."""
 
-    scene = SceneCfg(num_envs=NUM_ENVS, env_spacing=2.5, lazy_sensor_update=False)
+    scene = SceneCfg(num_envs=NUM_ENVS, env_spacing=0.5, lazy_sensor_update=False)
     observations = ObservationsCfg()
     actions = ActionsCfg()
     commands = CommandsCfg()
@@ -234,7 +254,7 @@ class LopeFreshEnvCfg(ManagerBasedRLEnvCfg):
     lope_action_dim: int = ACTION_DIM
     lope_robot: str = "lope_rs02_12dof"
     compute_final_obs: bool = True
-    lope_terrain_schema: str = "lope_rough_stairs_5_25cm_slope_0_35deg"
+    lope_terrain_schema: str = "lope_mixed_go2_scaled_stairs_5_25cm_slope_35deg"
     lope_physics_schema: str = "newton_mjwarp_triangle_v1"
 
     def __post_init__(self):
@@ -278,7 +298,7 @@ class LopeFreshEnvCfg(ManagerBasedRLEnvCfg):
 
 
 def configure_playback(cfg):
-    cfg.scene.num_envs = 64
+    cfg.scene.num_envs = 32
     cfg.curriculum = None
     choice = os.environ.get("LOPE_EVAL_TERRAIN", "mixed")
     if choice != "mixed":

@@ -40,14 +40,17 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--run-name", default="")
     parser.add_argument("--usd-cache", type=Path, default=project / "generated" / "lope_usd")
-    parser.add_argument("--num-envs", type=int, default=None, help="Override the task default (4096)")
+    parser.add_argument("--num-envs", type=int, default=None, help="Override the task default (16384)")
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--updates", type=int, help=f"Additional updates; completed + updates <= {CUMULATIVE_UPDATES}")
     parser.add_argument("--video", action="store_true")
     parser.add_argument("--video-length", type=int, default=600)
     parser.add_argument(
         "--terrain",
-        choices=("mixed", "flat", "rough", "slope_up", "slope_down", "stairs_up", "stairs_down", "obstacles", "wave"),
+        choices=(
+            "mixed", "flat", "wave", "slope_up", "slope_down", "rough_slope",
+            "stairs_up", "stairs_down", "obstacles", "small_squares",
+        ),
         help="Playback scene selection; does not change the training curriculum",
     )
     parser.add_argument("--level", type=int, help="Fixed playback terrain row")

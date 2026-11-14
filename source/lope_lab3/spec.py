@@ -83,48 +83,31 @@ REJECTED_FLAT_EFFORT_NM = 17.0
 MERGE_FIXED_JOINTS = False
 SELF_COLLISION = True
 
-# SmallDogEnvCfg inherits Go2's 5 ms physics and decimation 4, and this repo's
-# Thunder fresh task uses the same 50 Hz policy. Episode length is Lope's 15 s,
-# not Thunder's 25 s.
+# Official Go2MoECTSRunnerCfg / RobotEnvCfg timing. 5 ms × 4 is unchanged.
 PHYSICS_DT_S = 0.005
 DECIMATION = 4
 POLICY_HZ = 50.0
-EPISODE_LENGTH_S = 15.0
-
-# rough_cfg.py, not the later R6 warm start (1.5 m/s, terrain level 10).
-NUM_ENVS = 4096
-CUMULATIVE_UPDATES = 3000
+EPISODE_LENGTH_S = 25.0
+NUM_ENVS = 16384
+CUMULATIVE_UPDATES = 100000
 ROLLOUT_STEPS = 24
+CLIP_REWARDS = 10.0
+SAVE_INTERVAL = 500
 
-COMMAND_RANGES = {
-    "lin_vel_x": (-0.15, 0.35),
-    "lin_vel_y": (-0.1, 0.1),
-    "ang_vel_z": (-0.3, 0.3),
-}
-RESAMPLE_TIME_S = (15.0, 15.0)
-REL_STANDING_ENVS = 0.1
-FORWARD_SPEED = {
-    "max_speed": 1.0,
-    "increment": 0.1,
-    "batch_size": 128,
-    "success_ratio": 0.7,
-    "x_lower": -0.15,
-}
-
-# Tile mix still follows rough_cfg.py. Stair height and slope do not.
-# Official Go2 mixed terrain uses stairs (0.05, 0.257) m and slope gradient
-# (0.1, 0.568). Thunder uses stairs (0.05, 0.25) m and tan(40°). Lope stairs
-# match Thunder's 5–25 cm. Lope slopes run from flat to tan(35°). Isaac Lab's
-# pyramid_sloped_terrain sets height = slope * run, so slope_range is a
-# rise/run gradient, not radians. R6's 1.5 m/s ceiling is not used.
+# Official mixed generator is 9 m tiles, 10 rows, 20 columns, border 25 m,
+# and max_init_terrain_level 5. Stair height and slope gradient stay the
+# approved ceilings: 5–25 cm and tan(35°), not official (0.05, 0.257) / (0.1, 0.568)
+# and not Thunder tan(40°). pyramid_sloped_terrain uses height = slope * run.
+# Official tread is 0.31 m. Lope keeps 0.25 m, a modest reduction: scaling the
+# tread by the height ratio would be about 0.21 m, near the foot length.
 SLOPE_MAX_DEG = 35.0
 SLOPE_RANGE = (0.0, math.tan(math.radians(SLOPE_MAX_DEG)))
 TERRAIN = {
-    "size": (6.0, 6.0),
-    "border_width": 10.0,
-    "num_rows": 8,
+    "size": (9.0, 9.0),
+    "border_width": 25.0,
+    "num_rows": 10,
     "num_cols": 20,
-    "max_init_terrain_level": 0,
+    "max_init_terrain_level": 5,
     "horizontal_scale": 0.1,
     "vertical_scale": 0.005,
     "slope_threshold": 0.75,
@@ -141,6 +124,7 @@ TERRAIN = {
     "stair_proportion": 0.10,
     "stair_step_height_range": (0.05, 0.25),
     "stair_step_width": 0.25,
+    "official_stair_step_width": 0.31,
     "stair_platform_width": 1.5,
     "stair_border_width": 0.5,
     "obstacle_proportion": 0.10,
@@ -171,18 +155,84 @@ JOINT_PERM = (3, 4, 5, 0, 1, 2, 9, 10, 11, 6, 7, 8)
 JOINT_SIGN = (-1,) * 12
 FOOT_PERM = (1, 0, 3, 2)
 
-# Lope env_cfg.py reward overrides on top of the robot_lab Go2 weights.
-# Height and vertical-velocity curricula are disabled there (set to None).
-TRACK_LIN_STD = 0.2
-TRACK_YAW_STD = 0.35
+# Official mixed Newton reward numbers. Height target stays Lope's, never 0.38.
+TRACK_LIN_STD = 0.5
+TRACK_YAW_STD = 0.5
 BASE_HEIGHT_WEIGHT = -1.0
+BASE_HEIGHT_FINAL_WEIGHT = -10.0
+BASE_HEIGHT_FINAL_UPDATE = 5000
 LIN_VEL_Z_WEIGHT = -2.0
-FEET_AIR_TIME_WEIGHT = 0.25
-FEET_AIR_TIME_THRESHOLD_S = 0.12
-FLAT_ORIENTATION_WEIGHT = -2.0
-BAD_ORIENTATION_LIMIT_RAD = 0.85
-UNDESIRED_CONTACT_THRESHOLD_N = 5.0
-HIP_STAND_STILL_SCALE = 1.0
+LIN_VEL_Z_FINAL_WEIGHT = 0.0
+LIN_VEL_Z_FINAL_UPDATE = 1500
+JOINT_ACC_WEIGHT = -3.0e-7
+JOINT_POWER_WEIGHT = -1.5e-5
+JOINT_TORQUE_WEIGHT = -6.0e-5
+UNDESIRED_CONTACT_THRESHOLD_N = 110.0
+HIP_STAND_STILL_SCALE = 10.0
+BAD_ORIENTATION_LIMIT_RAD = 2.0
+# Official command/linear-velocity observation scales. x is 0.5 because the
+# curriculum x range is wider than y; this is not a second speed scale.
+OBS_LIN_VEL_SCALE = (0.5, 1.0, 1.0)
+OBS_COMMAND_SCALE = (0.5, 1.0, 1.0)
+
+# go2_rl_lab RobotEnvCfg BASE_HEIGHT_TARGET. Reference for the speed scale only.
+GO2_BASE_HEIGHT_M = 0.38
+HEIGHT_SPEED_SCALE = BASE_HEIGHT_TARGET_M / GO2_BASE_HEIGHT_M
+# Yaw uses the same factor. Official yaw reaches ±3 rad/s, which is large for
+# a 0.26 m robot, so the stage structure stays official and the magnitudes shrink.
+YAW_SPEED_SCALE = HEIGHT_SPEED_SCALE
+
+# RLGymVelCommandCfg.ranges defaults, before any command_range_curriculum stage.
+OFFICIAL_INITIAL_RANGES = {
+    "lin_vel_x": (-0.5, 0.5),
+    "lin_vel_y": (-0.5, 0.5),
+    "ang_vel_yaw": (-1.0, 1.0),
+}
+# RLGymVelCommandCfg.command_range_curriculum. Linear components are scaled below.
+OFFICIAL_COMMAND_RANGE_CURRICULUM = (
+    {"iter": 5000, "lin_vel_x": (-1.0, 1.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-2.0, 2.0)},
+    {"iter": 15000, "lin_vel_x": (-2.0, 2.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-3.0, 3.0)},
+    {"iter": 25000, "lin_vel_x": (-3.0, 3.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-3.0, 3.0)},
+    {"iter": 35000, "lin_vel_x": (-4.0, 4.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-3.0, 3.0)},
+    {"iter": 45000, "lin_vel_x": (-4.5, 4.2), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-3.0, 3.0)},
+)
+# CommandsCfg override of limit_vel_curriculum. These are direction codes, not speeds.
+OFFICIAL_LIMIT_VEL_CURRICULUM = (
+    {"iter": 0, "lin_vel_x": [-1, 1], "lin_vel_y": [-1, 1], "ang_vel_yaw": [-1, 0, 1]},
+    {"iter": 25000, "lin_vel_x": [-1, 1], "lin_vel_y": [0], "ang_vel_yaw": [-1, 0, 1]},
+)
+# RLGymVelCommandCfg.terrain_max_command_ranges, without the wheels terrain.
+OFFICIAL_TERRAIN_MAX_COMMANDS = {
+    "flat": {"lin_vel_x": (-4.5, 4.2), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-3.0, 3.0)},
+    "wave": {"lin_vel_x": (-1.5, 1.5), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-1.5, 1.5)},
+    "slope_up": {"lin_vel_x": (-1.5, 1.5), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-1.5, 1.5)},
+    "slope_down": {"lin_vel_x": (-1.5, 1.5), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-1.5, 1.5)},
+    "rough_slope": {"lin_vel_x": (-1.5, 1.5), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-1.5, 1.5)},
+    "stairs_up": {"lin_vel_x": (-1.0, 1.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-1.5, 1.5)},
+    "stairs_down": {"lin_vel_x": (-1.0, 1.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-1.5, 1.5)},
+    "obstacles": {"lin_vel_x": (-1.0, 1.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-1.5, 1.5)},
+    "small_squares": {"lin_vel_x": (-1.0, 1.0), "lin_vel_y": (-1.0, 1.0), "ang_vel_yaw": (-1.5, 1.5)},
+}
+OFFICIAL_CLIP_RULES = (
+    {
+        "command": "lin_vel_x",
+        "limit": 2.0,
+        "clip": {"lin_vel_y": (-0.5, 0.5), "ang_vel_yaw": (-1.0, 1.0)},
+    },
+    {
+        "command": "ang_vel_yaw",
+        "limit": 2.0,
+        "clip": {"lin_vel_x": (-2.0, 2.0), "lin_vel_y": (-1.0, 1.0)},
+    },
+)
+OFFICIAL_PUSH_LINEAR = {"x": (-0.4, 0.4), "y": (-0.4, 0.4)}
+OFFICIAL_PUSH_ANGULAR = {"roll": (-0.6, 0.6), "pitch": (-0.6, 0.6), "yaw": (-0.6, 0.6)}
+OFFICIAL_RESET_LINEAR_VELOCITY = {"x": (-0.5, 0.5), "y": (-0.5, 0.5), "z": (-0.5, 0.5)}
+OFFICIAL_RESET_ANGULAR_VELOCITY = {"roll": (-0.5, 0.5), "pitch": (-0.5, 0.5), "yaw": (-0.5, 0.5)}
+GO2_HEIGHT_SCAN_X = (-0.2, 0.2)
+GO2_HEIGHT_SCAN_Y = (-0.15, 0.15)
+GO2_OBSTACLE_HEIGHT = (0.05, 0.275)
+GO2_WAVE_AMPLITUDE = (0.1, 0.28)
 
 
 def soft_position_window(lower, upper, factor=SOFT_JOINT_POS_LIMIT_FACTOR):
@@ -197,17 +247,60 @@ def action_clips(limits):
     return {name: soft_position_window(*limits[name]) for name in JOINT_NAMES}
 
 
-def advance_forward_ceiling(ceiling, passed, count, curriculum=None):
-    """One gate step from rough_cfg.ForwardSpeedCurriculum.
+def _scale_span(span, factor):
+    return (span[0] * factor, span[1] * factor)
 
-    Returns the new positive-x ceiling and whether this batch advanced it.
-    Lateral and yaw ranges are not modified. The ceiling never exceeds 1.0 m/s.
-    """
-    curriculum = FORWARD_SPEED if curriculum is None else curriculum
-    if count < curriculum["batch_size"]:
-        return ceiling, False
-    ratio = passed / count
-    advance = ratio >= curriculum["success_ratio"] and ceiling < curriculum["max_speed"]
-    if advance:
-        ceiling = min(curriculum["max_speed"], round(ceiling + curriculum["increment"], 6))
-    return ceiling, advance
+
+def _scale_command_stage(stage):
+    return {
+        "iter": stage["iter"],
+        "lin_vel_x": _scale_span(stage["lin_vel_x"], HEIGHT_SPEED_SCALE),
+        "lin_vel_y": _scale_span(stage["lin_vel_y"], HEIGHT_SPEED_SCALE),
+        "ang_vel_yaw": _scale_span(stage["ang_vel_yaw"], YAW_SPEED_SCALE),
+    }
+
+
+def _scale_axis_map(axes):
+    scaled = {}
+    for name, span in axes.items():
+        factor = YAW_SPEED_SCALE if name == "ang_vel_yaw" else HEIGHT_SPEED_SCALE
+        scaled[name] = _scale_span(span, factor)
+    return scaled
+
+
+LOPE_INITIAL_RANGES = _scale_axis_map(OFFICIAL_INITIAL_RANGES)
+LOPE_COMMAND_RANGE_CURRICULUM = tuple(_scale_command_stage(stage) for stage in OFFICIAL_COMMAND_RANGE_CURRICULUM)
+LOPE_TERRAIN_MAX_COMMANDS = {
+    name: _scale_axis_map(axes) for name, axes in OFFICIAL_TERRAIN_MAX_COMMANDS.items()
+}
+LOPE_CLIP_RULES = (
+    {
+        "command": "lin_vel_x",
+        "limit": OFFICIAL_CLIP_RULES[0]["limit"] * HEIGHT_SPEED_SCALE,
+        "clip": {
+            "lin_vel_y": _scale_span(OFFICIAL_CLIP_RULES[0]["clip"]["lin_vel_y"], HEIGHT_SPEED_SCALE),
+            "ang_vel_yaw": _scale_span(OFFICIAL_CLIP_RULES[0]["clip"]["ang_vel_yaw"], YAW_SPEED_SCALE),
+        },
+    },
+    {
+        "command": "ang_vel_yaw",
+        "limit": OFFICIAL_CLIP_RULES[1]["limit"] * YAW_SPEED_SCALE,
+        "clip": {
+            "lin_vel_x": _scale_span(OFFICIAL_CLIP_RULES[1]["clip"]["lin_vel_x"], HEIGHT_SPEED_SCALE),
+            "lin_vel_y": _scale_span(OFFICIAL_CLIP_RULES[1]["clip"]["lin_vel_y"], HEIGHT_SPEED_SCALE),
+        },
+    },
+)
+LOPE_PUSH_LINEAR = {name: _scale_span(span, HEIGHT_SPEED_SCALE) for name, span in OFFICIAL_PUSH_LINEAR.items()}
+LOPE_RESET_LINEAR_VELOCITY = {
+    name: _scale_span(span, HEIGHT_SPEED_SCALE) for name, span in OFFICIAL_RESET_LINEAR_VELOCITY.items()
+}
+HEIGHT_SCAN_X = _scale_span(GO2_HEIGHT_SCAN_X, HEIGHT_SPEED_SCALE)
+HEIGHT_SCAN_Y = _scale_span(GO2_HEIGHT_SCAN_Y, HEIGHT_SPEED_SCALE)
+# Vertical obstacle and wave sizes follow the same height ratio. Width stays official.
+TERRAIN["obstacle_width_range"] = (1.0, 2.0)
+TERRAIN["obstacle_height_range"] = _scale_span(GO2_OBSTACLE_HEIGHT, HEIGHT_SPEED_SCALE)
+TERRAIN["wave_amplitude_range"] = _scale_span(GO2_WAVE_AMPLITUDE, HEIGHT_SPEED_SCALE)
+TERRAIN["stairs_up_proportion"] = 0.25
+TERRAIN["stairs_down_proportion"] = 0.10
+TERRAIN["flat_proportion"] = 0.20

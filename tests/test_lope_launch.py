@@ -30,23 +30,24 @@ class LopeLaunchTests(unittest.TestCase):
         self.assertFalse(plan["thunder_task"])
         self.assertNotIn("Thunder", " ".join(plan["argv"]))
         self.assertEqual(plan["training_state"], "fresh_random_initialization_from_0")
-        self.assertEqual(plan["cumulative_target"], 3000)
+        self.assertEqual(plan["cumulative_target"], 100000)
 
-    def test_resume_must_be_explicit_and_budget_is_the_rough_task_cap(self):
+    def test_resume_must_be_explicit_and_budget_is_the_official_cap(self):
         plan = self.plan("train", "--updates", "2", "--resume", "--checkpoint", "model_2.pt")
         self.assertIn("--resume", plan["argv"])
         self.plan("train", "--updates", "2", "--checkpoint", "model_2.pt", success=False)
-        self.plan("train", "--updates", "3001", success=False)
+        self.plan("train", "--updates", "100001", success=False)
         self.plan("train", "--updates", "0", success=False)
-        accepted = self.plan("train", "--updates", "3000")
-        self.assertIn("3000", accepted["argv"])
+        accepted = self.plan("train", "--updates", "100000")
+        self.assertIn("100000", accepted["argv"])
 
     def test_playback_selects_lope_terrain_keys(self):
         plan = self.plan("play", "--checkpoint", "model_2.pt", "--terrain", "stairs_up", "--level", "7")
         self.assertEqual(plan["play_terrain"], "stairs_up")
         self.assertEqual(plan["play_fixed_level"], 7)
         self.assertIn("Lope-Newton3-Fresh-v0", plan["argv"])
-        self.plan("play", "--checkpoint", "model_2.pt", "--level", "8", success=False)
+        self.plan("play", "--checkpoint", "model_2.pt", "--level", "9")
+        self.plan("play", "--checkpoint", "model_2.pt", "--level", "10", success=False)
         self.plan("play", success=False)
 
 
