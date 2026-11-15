@@ -107,7 +107,7 @@ Terrain copies `MIXED_MESH_TERRAIN_CFG`: 9 m tiles, 10 rows, 20 columns, border 
 
 - slopes 0–35°, stored as the rise/run gradient `(0, tan(35°))` ≈ `(0, 0.7002075382097097)`. This replaces both the official `(0.1, 0.568)` and Thunder's `tan(40°)`.
 - stairs `step_height_range=(0.05, 0.25)` m. Official tread is 0.31 m; Lope keeps 0.25 m so the step is not scaled all the way down to about 0.21 m.
-- obstacle heights and wave amplitudes are the official values times the height scale. Obstacle width stays 1–2 m.
+- obstacle height is the official unscaled `(0.05, 0.275)` m and wave amplitude is the official unscaled `(0.1, 0.28)` m. Obstacle width stays `(1.0, 2.0)` m. These sizes are not multiplied by a height ratio.
 
 The height-reward crop is the official `(±0.2, ±0.15)` m box times the same scale, about `(±0.135, ±0.101)` m. The 1.6 m by 1.0 m lookahead scan is unchanged. The critic is 275 values: 88 proprioceptive values, including the 16-wide official foot-force history, plus 187 height samples. `bad_orientation` is not registered.
 

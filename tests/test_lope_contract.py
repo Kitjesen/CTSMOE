@@ -31,6 +31,8 @@ from lope_lab3.spec import (
     SPAWN_HEIGHT_M,
     STANDING_POSE,
     TERRAIN,
+    GO2_OBSTACLE_HEIGHT,
+    GO2_WAVE_AMPLITUDE,
     TRACK_LIN_STD,
     TRACK_YAW_STD,
     action_clips,
@@ -209,6 +211,15 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertEqual(TRACK_YAW_STD, 0.5)
         self.assertEqual(TERRAIN["stair_step_height_range"], (0.05, 0.25))
         self.assertEqual(TERRAIN["stair_step_width"], 0.25)
+        self.assertNotEqual(TERRAIN["stair_step_width"], TERRAIN["official_stair_step_width"])
+        self.assertIs(TERRAIN["obstacle_height_range"], GO2_OBSTACLE_HEIGHT)
+        self.assertIs(TERRAIN["wave_amplitude_range"], GO2_WAVE_AMPLITUDE)
+        self.assertEqual(GO2_OBSTACLE_HEIGHT, (0.05, 0.275))
+        self.assertEqual(GO2_WAVE_AMPLITUDE, (0.1, 0.28))
+        self.assertNotEqual(TERRAIN["obstacle_height_range"], (0.05, 0.12))
+        self.assertNotEqual(TERRAIN["wave_amplitude_range"], (0.02, 0.08))
+        self.assertNotEqual(TERRAIN["wave_amplitude_range"], (0.01, 0.08))
+        self.assertEqual(TERRAIN["obstacle_width_range"], (1.0, 2.0))
         self.assertEqual(TERRAIN["num_rows"], 10)
         self.assertEqual(TERRAIN["max_init_terrain_level"], 5)
         self.assertEqual(TERRAIN["slope_range"][0], 0.0)
