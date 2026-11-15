@@ -252,6 +252,9 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertNotIn("joint_vel", env)
         self.assertIn("RS02_HIP_THIGH", robot)
         self.assertIn("RS02_CALF", robot)
+        scene = (PACKAGE / "tasks" / "lope" / "scene_cfg.py").read_text(encoding="utf-8")
+        self.assertIn('prim_path="{ENV_REGEX_NS}/Robot/Geometry/base_link"', scene)
+        self.assertNotIn('prim_path="{ENV_REGEX_NS}/Robot/base_link"', scene)
 
     def test_task_sources_do_not_quote_thunder_targets(self):
         banned = ("0.391415", "0.411415", "A_POSE", "ImplicitActuator", "lin_vel_x=(-4.5", "radians(40)")

@@ -17,8 +17,10 @@ class SceneCfg(InteractiveSceneCfg):
     contact_forces = ContactSensorCfg(
         prim_path="{ENV_REGEX_NS}/Robot/.*", update_period=0.0, history_length=3, track_air_time=True
     )
+    # Isaac Lab 3 URDF converter v0.3.2 puts the rigid base at
+    # Robot/Geometry/base_link. A path without Geometry matches no site.
     height_scanner = RayCasterCfg(
-        prim_path="{ENV_REGEX_NS}/Robot/base_link",
+        prim_path="{ENV_REGEX_NS}/Robot/Geometry/base_link",
         offset=RayCasterCfg.OffsetCfg(pos=(0.0, 0.0, 20.0)),
         pattern_cfg=patterns.GridPatternCfg(resolution=0.1, size=(1.6, 1.0)),
         ray_alignment="yaw",
