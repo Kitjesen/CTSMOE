@@ -24,7 +24,7 @@ class LopeMoeCtsRunner(MoeCtsRunner):
         self.critic_dim = int(contract.get("critic_dim", 0))
         self.cumulative_target = int(contract.get("cumulative_target", 0))
         if self.critic_dim != CRITIC_DIM or self.cumulative_target != CUMULATIVE_UPDATES:
-            raise ValueError("Lope runner requires its 263-value critic and the rough-task update cap")
+            raise ValueError(f"Lope runner requires its {CRITIC_DIM}-value critic and the rough-task update cap")
         if contract.get("history_layout") != HISTORY_LAYOUT or contract.get("robot") != "lope_rs02_12dof":
             raise ValueError("Lope runner requires the 12-DoF history contract")
         symmetry = train_cfg.get("algorithm", {}).get("symmetry_cfg") or {}

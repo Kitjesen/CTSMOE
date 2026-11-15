@@ -8,7 +8,7 @@ from lope_lab3.spec import FOOT_BODIES, JOINT_NAMES
 FEATURE_NAMES = (
     "joint_acc_12",
     "joint_applied_torque_12",
-    "foot_normal_contact_force_magnitude_4",
+    "foot_contact_force_norm_16",
 )
 
 

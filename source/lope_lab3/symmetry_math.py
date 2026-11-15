@@ -5,7 +5,16 @@ left thigh/calf URDF axes point along -Y while the right axes point along +Y,
 and the standing angles are odd under that reflection. Every revolute joint
 therefore uses a minus after the leg permutation.
 """
-from lope_lab3.spec import FOOT_PERM, FRAME_DIM, JOINT_NAMES, JOINT_PERM, JOINT_SIGN, STANDING_POSE
+from lope_lab3.spec import (
+    CRITIC_PROPRIO_DIM,
+    FOOT_FORCE_DIM,
+    FOOT_PERM,
+    FRAME_DIM,
+    JOINT_NAMES,
+    JOINT_PERM,
+    JOINT_SIGN,
+    STANDING_POSE,
+)
 
 
 def permute(values, perm):
@@ -49,12 +58,21 @@ def mirror_policy_frame(frame):
     )
 
 
+def _mirror_foot_forces(frame):
+    """Permute each history group of four feet. Magnitudes take no extra sign."""
+    start = CRITIC_PROPRIO_DIM - FOOT_FORCE_DIM
+    mirrored = []
+    for group in range(FOOT_FORCE_DIM // 4):
+        offset = start + 4 * group
+        mirrored.extend(permute(frame[offset : offset + 4], FOOT_PERM))
+    return mirrored
+
+
 def mirror_critic(frame, height_perm):
-    """263 values. Foot-force magnitudes are permuted with no extra sign."""
-    if len(frame) != 76 + len(height_perm):
+    """275 values. Each 4-foot force group is permuted with no extra sign."""
+    if len(frame) != CRITIC_PROPRIO_DIM + len(height_perm):
         raise ValueError("Lope critic width does not match its height scan")
-    height = permute(frame[76:], height_perm)
-    feet = permute(frame[72:76], FOOT_PERM)
+    height = permute(frame[CRITIC_PROPRIO_DIM:], height_perm)
     return (
         _scale(frame[0:3], (1, -1, 1))
         + _scale(frame[3:6], (-1, 1, -1))
@@ -65,7 +83,7 @@ def mirror_critic(frame, height_perm):
         + mirror_joints(frame[36:48])
         + mirror_joints(frame[48:60])
         + mirror_joints(frame[60:72])
-        + feet
+        + _mirror_foot_forces(frame)
         + height
     )
 

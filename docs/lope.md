@@ -73,26 +73,23 @@ Action scale: hip 0.15 rad, thigh 0.2 rad, calf 0.2 rad. The action vector is 12
 
 ## Observations, symmetry, rewards
 
-Policy frame is 45 values: body angular velocity, projected gravity, velocity command, 12 relative joint positions, 12 relative joint velocities, 12 previous actions. History is 10 frames, oldest first, so the policy input is 450. Angular velocity is scaled by 0.25, joint velocity by 0.05, and the command's x component by 0.5, matching the official mixed observation scales `(0.5, 1, 1)`. The critic linear velocity and command use that same `(0.5, 1, 1)` scale. Joint order stays FR, FL, RR, RL.
+Policy frame is 45 values: body angular velocity, projected gravity, velocity command, 12 relative joint positions, 12 relative joint velocities, 12 previous actions. History is 10 frames, oldest first, so the policy input is 450. Angular velocity is scaled by 0.25, joint velocity by 0.05, and the command's x component by 0.5, matching the official mixed observation scales `(0.5, 1, 1)`. The noisy training frame uses that same command scale, not 1.0 on command x. The critic linear velocity and command use that same `(0.5, 1, 1)` scale. Joint order stays FR, FL, RR, RL.
 
-Critic is 263 values: linear velocity scaled by `(0.5, 1, 1)`, the policy core, joint acceleration scaled by 1e-4, applied torque scaled by 0.01, four foot normal-force magnitudes scaled by 1e-3, and 187 height samples. The scan is the 1.6 m by 1.0 m yaw-aligned grid at 0.1 m, which is the Go2/Lope scanner. Heights come from `go2_rl_lab.utils.height_scan.ray_caster_height_scan` with offset 0.5, which replaces a non-finite ray hit with the minimum finite hit in that environment, or sensor z minus 1 m if every ray misses, then clipped to [-1, 1] and multiplied by 2.5. There is no wheel velocity, wheel torque, or wheel material block.
+Critic is 275 values: linear velocity scaled by `(0.5, 1, 1)`, the policy core, joint acceleration scaled by 1e-4, applied torque scaled by 0.01, 16 foot-force values scaled by 1e-3, and 187 height samples. The 16 values are the official `foot_contact_force_norm` of `net_forces_w_history`: the max over the 3-step history, then those three steps, each a group of four feet in order FR, FL, RR, RL. The contact sensor is `NewtonContactSensorCfg` with `history_length=3`. The scan is the 1.6 m by 1.0 m yaw-aligned grid at 0.1 m, which is the Go2/Lope scanner. Heights come from `go2_rl_lab.utils.height_scan.ray_caster_height_scan` with offset 0.5, which replaces a non-finite ray hit with the minimum finite hit in that environment, or sensor z minus 1 m if every ray misses, then clipped to [-1, 1] and multiplied by 2.5. There is no wheel velocity, wheel torque, or wheel material block.
 
-Symmetry swaps FR with FL and RR with RL, then multiplies every revolute component by -1. That map fixes the standing pose. Go2's hip-only sign does not, because Lope's left thigh and calf axes are the negation of the right axes. Foot-force magnitudes are permuted with no extra sign. Hips also use the minus: the two front hip axes are both -X and the two rear hip axes are both +X, so a sagittal reflection reverses roll rate.
+Symmetry swaps FR with FL and RR with RL, then multiplies every revolute component by -1. That map fixes the standing pose. Go2's hip-only sign does not, because Lope's left thigh and calf axes are the negation of the right axes. Each of the four foot-force groups is permuted the same way, with no extra sign. Hips also use the minus: the two front hip axes are both -X and the two rear hip axes are both +X, so a sagittal reflection reverses roll rate.
 
 Rewards use the pinned `go2_rl_lab` terms with Lope's documented overrides:
 
 - linear tracking standard deviation 0.5 and weight 2, yaw standard deviation 0.5 and weight 1
-- base height weight from -1 to -10 over 5000 updates, target 0.2561583499877814 m (not Go2's 0.38 m)
+- base height weight from -1 to -10 over 5000 updates, target 0.2627175562793766 m (not Go2's 0.38 m)
 - vertical linear velocity weight from -2 to 0 over 1500 updates
 - Newton joint acceleration weight -3e-7, power -1.5e-5, torque -6e-5
 - undesired-contact threshold 110 N
 - hip and leg pose penalties with stand-still scale 10
 - no feet-air-time term and no separate flat-orientation term
-- undesired thigh/calf contacts, threshold 5 N
-- hip and thigh/calf pose penalties with stand-still scale 1
-- joint torque weight -1e-4, power -2e-5, acceleration -1e-7
 
-Termination is timeout, leaving the terrain or the assigned tile, base contact above 1 N, and `bad_orientation` at 0.85 rad. There is no wheel contact reward and no Thunder leg-contact duration term.
+Termination is the 25 s timeout and `fallen_timeout` after 6 s down. `illegal_contact` and `bad_orientation` are not registered. There is no wheel contact reward and no Thunder leg-contact duration term.
 
 Domain randomization follows the official mixed task: base mass add ±1 kg, other links scale 0.9–1.1, friction 0–2, restitution 0–0.5, actuator gains scale 0.9–1.1, joint reset scale 0.5–1.5, and motor zero offset ±0.035 rad. Push linear velocity is the official ±0.4 m/s. Push angular rate stays ±0.6 rad/s. The Newton center-of-mass buckets use the official offsets, on Lope's `base_link`.
 
@@ -112,9 +109,9 @@ Terrain copies `MIXED_MESH_TERRAIN_CFG`: 9 m tiles, 10 rows, 20 columns, border 
 - stairs `step_height_range=(0.05, 0.25)` m. Official tread is 0.31 m; Lope keeps 0.25 m so the step is not scaled all the way down to about 0.21 m.
 - obstacle heights and wave amplitudes are the official values times the height scale. Obstacle width stays 1–2 m.
 
-The height-reward crop is the official `(±0.2, ±0.15)` m box times the same scale, about `(±0.135, ±0.101)` m. The 1.6 m by 1.0 m lookahead scan is unchanged, so the critic stays 263 values. Bad orientation terminates at 2.0 rad.
+The height-reward crop is the official `(±0.2, ±0.15)` m box times the same scale, about `(±0.135, ±0.101)` m. The 1.6 m by 1.0 m lookahead scan is unchanged. The critic is 275 values: 88 proprioceptive values, including the 16-wide official foot-force history, plus 187 height samples. `bad_orientation` is not registered.
 
-Newton settings that have no Lope historical value (implicitfast integrator, 128 contacts, 0.01 m margin, 2.5e6 triangle pairs) follow this repository's fresh Newton task so the URDF can load on the same backend. They were not retuned in simulation.
+Newton settings that have no Lope historical value (implicitfast integrator, nconmax 128, 0.01 m margin, 2.5e6 triangle pairs) follow this repository's fresh Newton task so the URDF can load on the same backend. `njmax` is 384 rather than the official 300, because get-up and self-collision overflowed 300 and 312. The other solver fields were not retuned in simulation.
 
 ## What was not run
 

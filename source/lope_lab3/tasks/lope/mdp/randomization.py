@@ -84,7 +84,7 @@ def configure_randomization(cfg):
     # Official Newton CoM buckets. The body pattern is Lope's base_link.
     solver = RandomizedMJWarpSolverCfg(
         class_type="go2_rl_lab.physics.resettable_mjwarp_manager:NewtonMJWarpResettableManager",
-        njmax=300,
+        njmax=384,
         nconmax=128,
         cone="pyramidal",
         impratio=1,

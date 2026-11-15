@@ -144,13 +144,16 @@ TERRAIN = {
 }
 
 # Robot_lab Go2/Lope critic, 12 revolute joints, no wheel block.
-# lin3 + ang3 + grav3 + cmd3 + q12 + dq12 + act12 + acc12 + torque12 + foot4 + height187.
+# lin3 + ang3 + grav3 + cmd3 + q12 + dq12 + act12 + acc12 + torque12
+# + official foot-force history 16 (max, then 3 steps, 4 feet) + height 187.
 FRAME_DIM = 45
 HISTORY_LENGTH = 10
 POLICY_DIM = FRAME_DIM * HISTORY_LENGTH
 ACTION_DIM = 12
 HEIGHT_RAYS = 17 * 11
-CRITIC_DIM = 76 + HEIGHT_RAYS
+FOOT_FORCE_DIM = 16
+CRITIC_PROPRIO_DIM = 72 + FOOT_FORCE_DIM
+CRITIC_DIM = CRITIC_PROPRIO_DIM + HEIGHT_RAYS
 EXPERTS = 8
 LATENT_DIM = 32
 

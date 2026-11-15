@@ -1,9 +1,10 @@
 """Sensors and the 12-DoF position action. There is no wheel velocity term."""
 import isaaclab.envs.mdp as mdp
 from isaaclab.scene import InteractiveSceneCfg
-from isaaclab.sensors import ContactSensorCfg, RayCasterCfg, patterns
+from isaaclab.sensors import RayCasterCfg, patterns
 from isaaclab.terrains import TerrainImporterCfg
 from isaaclab.utils import configclass
+from isaaclab_newton.sensors import ContactSensorCfg as NewtonContactSensorCfg
 
 from lope_lab3.assets.contract import validate_urdf
 from lope_lab3.assets.robot import urdf_path
@@ -14,8 +15,11 @@ from lope_lab3.spec import ACTION_SCALE_RAD, JOINT_NAMES, action_clips
 class SceneCfg(InteractiveSceneCfg):
     terrain = TerrainImporterCfg(prim_path="/World/ground", terrain_type="plane")
     robot = None
-    contact_forces = ContactSensorCfg(
-        prim_path="{ENV_REGEX_NS}/Robot/.*", update_period=0.0, history_length=3, track_air_time=True
+    contact_forces = NewtonContactSensorCfg(
+        prim_path="{ENV_REGEX_NS}/Robot/.*",
+        update_period=0.0,
+        history_length=3,
+        track_air_time=True,
     )
     # Isaac Lab 3 URDF converter v0.3.2 puts the rigid base at
     # Robot/Geometry/base_link. A path without Geometry matches no site.

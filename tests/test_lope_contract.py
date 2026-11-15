@@ -35,7 +35,15 @@ from lope_lab3.spec import (
     TRACK_YAW_STD,
     action_clips,
 )
-from lope_lab3.spec import CRITIC_DIM, DECIMATION, FRAME_DIM, PHYSICS_DT_S, POLICY_DIM
+from lope_lab3.spec import (
+    CRITIC_DIM,
+    CRITIC_PROPRIO_DIM,
+    DECIMATION,
+    FOOT_FORCE_DIM,
+    FRAME_DIM,
+    PHYSICS_DT_S,
+    POLICY_DIM,
+)
 from lope_lab3.recovery import FALLEN_MODES, fallen_orientation, recovering
 from lope_lab3.spec import (
     FALLEN_RESET_FRACTION,
@@ -160,8 +168,15 @@ class LopeSymmetryTests(unittest.TestCase):
         perm = reflected_ray_indices(starts)
         critic = [float(index) for index in range(CRITIC_DIM)]
         self.assertEqual(mirror_critic(mirror_critic(critic, perm), perm), critic)
+        once = mirror_critic(critic, perm)
+        self.assertEqual(once[72:76], [73.0, 72.0, 75.0, 74.0])
+        self.assertEqual(once[76:80], [77.0, 76.0, 79.0, 78.0])
+        self.assertEqual(once[80:84], [81.0, 80.0, 83.0, 82.0])
+        self.assertEqual(once[84:88], [85.0, 84.0, 87.0, 86.0])
         self.assertEqual(POLICY_DIM, 450)
-        self.assertEqual(CRITIC_DIM, 263)
+        self.assertEqual(FOOT_FORCE_DIM, 16)
+        self.assertEqual(CRITIC_PROPRIO_DIM, 88)
+        self.assertEqual(CRITIC_DIM, 275)
 
 
 class LopeCurriculumTests(unittest.TestCase):
@@ -264,11 +279,44 @@ class LopeCurriculumTests(unittest.TestCase):
         scene = (PACKAGE / "tasks" / "lope" / "scene_cfg.py").read_text(encoding="utf-8")
         self.assertIn('prim_path="{ENV_REGEX_NS}/Robot/Geometry/base_link"', scene)
         self.assertNotIn('prim_path="{ENV_REGEX_NS}/Robot/base_link"', scene)
+        self.assertIn(
+            "from isaaclab_newton.sensors import ContactSensorCfg as NewtonContactSensorCfg",
+            scene,
+        )
+        self.assertIn("contact_forces = NewtonContactSensorCfg(", scene)
+        self.assertIn("history_length=3", scene)
+        self.assertIn("track_air_time=True", scene)
+        self.assertNotIn("from isaaclab.sensors import ContactSensorCfg", scene)
+
+    def test_noisy_command_x_scale_is_one_half(self):
+        source = (PACKAGE / "tasks" / "lope" / "mdp" / "observations.py").read_text(encoding="utf-8")
+        self.assertIn(
+            "[0.2] * 3 + [0.05] * 3 + [0.0] * 3 + [0.03] * 12 + [2.0] * 12 + [0.0] * 12",
+            source,
+        )
+        scale_expr = "[0.25] * 3 + [1.0] * 3 + [0.5, 1.0, 1.0] + [1.0] * 12 + [0.05] * 12 + [1.0] * 12"
+        self.assertIn(scale_expr, source)
+        self.assertNotIn("[1.0] * 18", source)
+        scale = eval(scale_expr, {"__builtins__": {}})
+        self.assertEqual(len(scale), FRAME_DIM)
+        command = [2.0, -3.0, 4.0]
+        scaled = [value * factor for value, factor in zip(command, scale[6:9])]
+        self.assertEqual(scaled[0], 1.0)
+        self.assertEqual(scaled[1:], [-3.0, 4.0])
+
+    def test_solver_njmax_is_384(self):
+        text = (PACKAGE / "tasks" / "lope" / "mdp" / "randomization.py").read_text(encoding="utf-8")
+        self.assertIn("njmax=384", text)
+        self.assertNotIn("njmax=300", text)
+        self.assertIn("nconmax=128", text)
 
     def test_critic_height_scan_keeps_nonfinite_values(self):
         path = PACKAGE / "tasks" / "lope" / "mdp" / "observations.py"
         source = path.read_text(encoding="utf-8")
         self.assertNotIn("ray_hits_w", source)
+        self.assertNotIn("net_normal_forces_w", source)
+        self.assertIn("from go2_rl_lab.tasks.mixed.mdp.observations import foot_contact_force_norm", source)
+        self.assertIn("foot_contact_force_norm(env, sensor_cfg)", source)
         self.assertNotIn("pos_w.torch[:, 2:3]", source)
         self.assertIn(
             'ray_caster_height_scan(env, SceneEntityCfg("height_scanner"), offset=0.5).clamp(-1, 1) * 2.5',
@@ -282,12 +330,13 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertIn("result.shape != (env.num_envs, CRITIC_DIM)", source)
 
         critic_frame = _load_critic_frame_with_stubs()
-        env, calls, height = _critic_env(width=CRITIC_DIM - 76, nonfinite=True)
+        env, calls, height = _critic_env(width=CRITIC_DIM - CRITIC_PROPRIO_DIM, nonfinite=True)
         result = critic_frame(env)
         self.assertEqual(calls, [("height_scanner", 0.5)])
+        self.assertEqual(_FORCE_CALLS, [(1, 0, 3, 2)])
         self.assertEqual(result.shape, (env.num_envs, CRITIC_DIM))
         self.assertTrue(any(math.isnan(value) for value in result.values[0]))
-        height.values = [[0.0] * (CRITIC_DIM - 77) for _ in range(env.num_envs)]
+        height.values = [[0.0] * (CRITIC_DIM - CRITIC_PROPRIO_DIM - 1) for _ in range(env.num_envs)]
         with self.assertRaises(RuntimeError) as caught:
             critic_frame(env)
         self.assertNotIn("finite", str(caught.exception).lower())
@@ -354,19 +403,36 @@ class _Tensor:
         raise AssertionError("critic stub cannot broadcast these tensors")
 
     def __getitem__(self, index):
-        if isinstance(index, tuple) and len(index) == 2 and index[0] == slice(None):
-            return _Tensor([[row[column] for column in index[1]] for row in self.values])
+        if isinstance(index, tuple) and index and index[0] == slice(None):
+            if len(index) == 2:
+                return _Tensor([[row[column] for column in index[1]] for row in self.values])
+            if len(index) == 3 and index[1] == slice(None):
+                selected = index[2]
+                return _Tensor([[[step[column] for column in selected] for step in env] for env in self.values])
         raise AssertionError("critic stub received an unexpected index")
 
 
 _HEIGHT_CALLS = []
 _HEIGHT_BOX = {}
+_FORCE_CALLS = []
 
 
 def _ray_caster_height_scan(env, sensor_cfg, offset=0.5):
     del env
     _HEIGHT_CALLS.append((sensor_cfg.name, offset))
     return _HEIGHT_BOX["height"]
+
+
+def _foot_contact_force_norm(env, sensor_cfg):
+    """Official layout: max over history, then each history step, feet in body_ids order."""
+    history = env.scene.sensors[sensor_cfg.name].data.net_forces_w_history.torch[:, :, list(sensor_cfg.body_ids)]
+    _FORCE_CALLS.append(tuple(sensor_cfg.body_ids))
+    rows = []
+    for steps in history.values:
+        step_norms = [[math.sqrt(sum(part * part for part in vector)) for vector in step] for step in steps]
+        maximum = [max(step[foot] for step in step_norms) for foot in range(len(step_norms[0]))]
+        rows.append(maximum + [value for step in step_norms for value in step])
+    return _Tensor(rows)
 
 
 def _load_critic_frame_with_stubs():
@@ -394,6 +460,11 @@ def _load_critic_frame_with_stubs():
     go2_utils.height_scan = height_scan
     go2 = types.ModuleType("go2_rl_lab")
     go2.utils = go2_utils
+    go2_tasks = types.ModuleType("go2_rl_lab.tasks")
+    go2_mixed = types.ModuleType("go2_rl_lab.tasks.mixed")
+    go2_mdp = types.ModuleType("go2_rl_lab.tasks.mixed.mdp")
+    go2_obs = types.ModuleType("go2_rl_lab.tasks.mixed.mdp.observations")
+    go2_obs.foot_contact_force_norm = _foot_contact_force_norm
     gymnasium = types.ModuleType("gymnasium")
     gymnasium.register = lambda **kwargs: None
     installed = {
@@ -403,6 +474,10 @@ def _load_critic_frame_with_stubs():
         "go2_rl_lab": go2,
         "go2_rl_lab.utils": go2_utils,
         "go2_rl_lab.utils.height_scan": height_scan,
+        "go2_rl_lab.tasks": go2_tasks,
+        "go2_rl_lab.tasks.mixed": go2_mixed,
+        "go2_rl_lab.tasks.mixed.mdp": go2_mdp,
+        "go2_rl_lab.tasks.mixed.mdp.observations": go2_obs,
         "gymnasium": gymnasium,
     }
     sys.modules.update(installed)
@@ -442,6 +517,7 @@ def _vector_norm(tensor, dim):
 def _critic_env(width, nonfinite):
     count = 2
     _HEIGHT_CALLS.clear()
+    _FORCE_CALLS.clear()
     scan = [[float("nan")] + [0.0] * (width - 1) for _ in range(count)] if nonfinite else [[0.0] * width for _ in range(count)]
     height = _Tensor(scan)
     _HEIGHT_BOX["height"] = height
@@ -462,15 +538,22 @@ def _critic_env(width, nonfinite):
         ),
         actuators=types.SimpleNamespace(applied_effort=types.SimpleNamespace(torch=joints)),
     )
+    # Go2 USD order is FL, FR, RL, RR. Lope must resolve FR, FL, RR, RL itself.
+    go2_order = (FOOT_BODIES[1], FOOT_BODIES[0], FOOT_BODIES[3], FOOT_BODIES[2])
+    history = [[[[0.0, 0.0, 0.0] for _ in go2_order] for _ in range(3)] for _ in range(count)]
     sensor = types.SimpleNamespace(
-        body_names=list(FOOT_BODIES),
-        data=types.SimpleNamespace(
-            net_normal_forces_w=types.SimpleNamespace(torch=_Tensor([[[0.0, 0.0, 0.0] for _ in FOOT_BODIES] for _ in range(count)]))
-        ),
+        body_names=list(go2_order),
+        data=types.SimpleNamespace(net_forces_w_history=types.SimpleNamespace(torch=_Tensor(history))),
     )
+
+    class _Scene(dict):
+        pass
+
+    scene = _Scene(robot=robot, contact_forces=sensor)
+    scene.sensors = {"contact_forces": sensor}
     env = types.SimpleNamespace(
         num_envs=count,
-        scene={"robot": robot, "contact_forces": sensor},
+        scene=scene,
         command_manager=types.SimpleNamespace(get_command=lambda name: zeros(3)),
         action_manager=types.SimpleNamespace(action=joints),
     )

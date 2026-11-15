@@ -1,5 +1,6 @@
-"""45/263 Lope observations. Joint velocity and action blocks are 12-wide."""
+"""45/275 Lope observations. Joint velocity and action blocks are 12-wide."""
 import torch
+from go2_rl_lab.tasks.mixed.mdp.observations import foot_contact_force_norm
 from go2_rl_lab.utils.height_scan import ray_caster_height_scan
 from isaaclab.managers import ManagerTermBase, SceneEntityCfg
 
@@ -78,7 +79,7 @@ class _SharedFrameNoise:
         amplitude = raw.new_tensor([0.2] * 3 + [0.05] * 3 + [0.0] * 3 + [0.03] * 12 + [2.0] * 12 + [0.0] * 12)
         self.sample[refresh] = (2 * torch.rand_like(raw[refresh]) - 1) * amplitude
         self.valid[refresh] = True
-        scale = raw.new_tensor([0.25] * 3 + [1.0] * 18 + [0.05] * 12 + [1.0] * 12)
+        scale = raw.new_tensor([0.25] * 3 + [1.0] * 3 + [0.5, 1.0, 1.0] + [1.0] * 12 + [0.05] * 12 + [1.0] * 12)
         return (raw + self.sample).clamp(-100, 100) * scale
 
 
@@ -113,7 +114,9 @@ def critic_frame(env):
         if [sensor.body_names[index] for index in env._lope_foot_order] != list(FOOT_BODIES):
             raise RuntimeError("Foot contact order must be FR, FL, RR, RL")
     height = ray_caster_height_scan(env, SceneEntityCfg("height_scanner"), offset=0.5).clamp(-1, 1) * 2.5
-    forces = sensor.data.net_normal_forces_w.torch[:, env._lope_foot_order]
+    sensor_cfg = SceneEntityCfg("contact_forces")
+    sensor_cfg.body_ids = list(env._lope_foot_order)
+    foot_force = foot_contact_force_norm(env, sensor_cfg) * 1e-3
     proprioception = torch.cat(
         (
             robot.data.root_lin_vel_b.torch * robot.data.root_lin_vel_b.torch.new_tensor((0.5, 1.0, 1.0)),
@@ -125,7 +128,7 @@ def critic_frame(env):
             env.action_manager.action,
             robot.data.joint_acc.torch[:, ids] * 1e-4,
             robot.actuators.applied_effort.torch[:, ids] * 0.01,
-            torch.linalg.vector_norm(forces, dim=-1) * 1e-3,
+            foot_force,
         ),
         dim=-1,
     ).clamp(-100, 100)

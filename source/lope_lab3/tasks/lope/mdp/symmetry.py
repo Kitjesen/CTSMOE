@@ -9,6 +9,8 @@ from go2_rl_lab.utils.symmetry import Go2Symmetry
 
 from lope_lab3.spec import (
     CRITIC_DIM,
+    CRITIC_PROPRIO_DIM,
+    FOOT_FORCE_DIM,
     FOOT_PERM,
     FRAME_DIM,
     HISTORY_LENGTH,
@@ -35,7 +37,7 @@ class LopeSymmetryMapper:
         starts = tensor(sensor.ray_starts)
         if starts.ndim == 3:
             starts = starts[0]
-        if len(starts) != CRITIC_DIM - 76:
+        if len(starts) != CRITIC_DIM - CRITIC_PROPRIO_DIM:
             raise ValueError("Lope critic height scan width changed")
         points = [tuple(float(part) for part in row) for row in starts.detach().cpu().tolist()]
         self.height_perm = reflected_ray_indices(points)
@@ -70,9 +72,14 @@ class LopeSymmetryMapper:
 
     def reverse_critic(self, value):
         if value.shape[-1] != CRITIC_DIM:
-            raise ValueError("Lope critic must contain 263 values")
+            raise ValueError(f"Lope critic must contain {CRITIC_DIM} values")
         rays = torch.tensor(self.height_perm, device=value.device)
         feet = torch.tensor(FOOT_PERM, device=value.device)
+        foot_start = CRITIC_PROPRIO_DIM - FOOT_FORCE_DIM
+        foot_groups = tuple(
+            value[..., foot_start + 4 * group : foot_start + 4 * (group + 1)].index_select(-1, feet)
+            for group in range(FOOT_FORCE_DIM // 4)
+        )
         return torch.cat(
             (
                 value[..., 0:3] * value.new_tensor([1.0, -1.0, 1.0]),
@@ -84,8 +91,8 @@ class LopeSymmetryMapper:
                 self.reverse_joints(value[..., 36:48]),
                 self.reverse_joints(value[..., 48:60]),
                 self.reverse_joints(value[..., 60:72]),
-                value[..., 72:76].index_select(-1, feet),
-                value[..., 76:].index_select(-1, rays),
+                *foot_groups,
+                value[..., CRITIC_PROPRIO_DIM:].index_select(-1, rays),
             ),
             dim=-1,
         )
