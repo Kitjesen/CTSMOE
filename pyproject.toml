@@ -11,7 +11,13 @@ dependencies = ["go2_rl_lab==0.1.7", "rsl-rl-lib==3.3.0"]
 
 [tool.setuptools.packages.find]
 where = ["source"]
-include = ["thunder_lab3*"]
+include = ["thunder_lab3*", "lope_lab3*"]
 
 [tool.setuptools.package-data]
 thunder_lab3 = ["assets/thunder/urdf/*.urdf", "assets/thunder/meshes/*.STL"]
+lope_lab3 = [
+    "assets/lope/urdf/*.urdf",
+    "assets/lope/meshes/*",
+    "assets/lope/meshes/*/*",
+    "assets/lope/THIRD_PARTY.md",
+]
