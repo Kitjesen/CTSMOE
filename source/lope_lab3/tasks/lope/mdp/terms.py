@@ -99,7 +99,7 @@ def fallen_reset_fraction(env, env_ids, initial, final, end_it):
 
 def reset_root_with_recovery(env, env_ids, pose_range, velocity_range, asset_cfg=None):
     """Normal standing reset, then a fallen orientation on a fraction of those resets."""
-    from isaaclab.envs.mdp import reset_root_state_uniform
+    from go2_rl_lab.tasks.mixed.mdp.events import reset_root_state_uniform
     from isaaclab.managers import SceneEntityCfg
     from isaaclab.utils.math import quat_from_euler_xyz
 
