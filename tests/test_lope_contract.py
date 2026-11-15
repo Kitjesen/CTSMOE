@@ -231,6 +231,8 @@ class LopeCurriculumTests(unittest.TestCase):
         terms = (PACKAGE / "tasks" / "lope" / "mdp" / "terms.py").read_text(encoding="utf-8")
         self.assertIn("from go2_rl_lab.tasks.mixed.mdp.events import reset_root_state_uniform", terms)
         self.assertNotIn("from isaaclab.envs.mdp import reset_root_state_uniform", terms)
+        self.assertIn("isinstance(env_ids, slice)", terms)
+        self.assertIn("torch.arange(env.num_envs, device=env.device)[env_ids or slice(None)]", terms)
         self.assertIn("recovery_upright", env)
         self.assertIn("recovery_base_height", env)
         self.assertIn("stand_up_bonus", env)

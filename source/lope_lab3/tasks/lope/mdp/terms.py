@@ -106,8 +106,8 @@ def reset_root_with_recovery(env, env_ids, pose_range, velocity_range, asset_cfg
     if asset_cfg is None:
         asset_cfg = SceneEntityCfg("robot")
     reset_root_state_uniform(env, env_ids, pose_range, velocity_range, asset_cfg)
-    if env_ids is None:
-        ids = torch.arange(env.num_envs, device=env.device)
+    if env_ids is None or isinstance(env_ids, slice):
+        ids = torch.arange(env.num_envs, device=env.device)[env_ids or slice(None)]
     else:
         ids = torch.as_tensor(env_ids, device=env.device)
         if ids.dtype == torch.bool:
