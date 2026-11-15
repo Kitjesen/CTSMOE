@@ -1,6 +1,9 @@
 """Static Lope checks. They do not start Isaac Lab or Newton."""
+import ast
 import math
 import struct
+import sys
+import types
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -12,6 +15,7 @@ from lope_lab3.spec import (
     BASE_HEIGHT_TARGET_M,
     CUMULATIVE_UPDATES,
     EPISODE_LENGTH_S,
+    FOOT_BODIES,
     JOINT_NAMES,
     JOINT_SIGN,
     LOPE_COMMAND_RANGE_CURRICULUM,
@@ -261,12 +265,216 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertIn('prim_path="{ENV_REGEX_NS}/Robot/Geometry/base_link"', scene)
         self.assertNotIn('prim_path="{ENV_REGEX_NS}/Robot/base_link"', scene)
 
+    def test_critic_height_scan_keeps_nonfinite_values(self):
+        path = PACKAGE / "tasks" / "lope" / "mdp" / "observations.py"
+        source = path.read_text(encoding="utf-8")
+        self.assertNotIn("ray_hits_w", source)
+        self.assertNotIn("pos_w.torch[:, 2:3]", source)
+        self.assertIn(
+            'ray_caster_height_scan(env, SceneEntityCfg("height_scanner"), offset=0.5).clamp(-1, 1) * 2.5',
+            source,
+        )
+        function = next(
+            node for node in ast.parse(source).body if isinstance(node, ast.FunctionDef) and node.name == "critic_frame"
+        )
+        self.assertFalse(any(isinstance(node, ast.Name) and node.id == "isfinite" for node in ast.walk(function)))
+        self.assertFalse(any(isinstance(node, ast.Attribute) and node.attr == "isfinite" for node in ast.walk(function)))
+        self.assertIn("result.shape != (env.num_envs, CRITIC_DIM)", source)
+
+        critic_frame = _load_critic_frame_with_stubs()
+        env, calls, height = _critic_env(width=CRITIC_DIM - 76, nonfinite=True)
+        result = critic_frame(env)
+        self.assertEqual(calls, [("height_scanner", 0.5)])
+        self.assertEqual(result.shape, (env.num_envs, CRITIC_DIM))
+        self.assertTrue(any(math.isnan(value) for value in result.values[0]))
+        height.values = [[0.0] * (CRITIC_DIM - 77) for _ in range(env.num_envs)]
+        with self.assertRaises(RuntimeError) as caught:
+            critic_frame(env)
+        self.assertNotIn("finite", str(caught.exception).lower())
+
     def test_task_sources_do_not_quote_thunder_targets(self):
         banned = ("0.391415", "0.411415", "A_POSE", "ImplicitActuator", "lin_vel_x=(-4.5", "radians(40)")
         for path in PACKAGE.rglob("*.py"):
             text = path.read_text(encoding="utf-8")
             for token in banned:
                 self.assertNotIn(token, text, f"{path.name} contains {token}")
+
+
+def _sequence(value):
+    return isinstance(value, (list, tuple))
+
+
+class _Tensor:
+    """Just enough of a tensor for critic_frame when PyTorch is not installed."""
+
+    def __init__(self, values):
+        self.values = values
+
+    @property
+    def shape(self):
+        return self._shape(self.values)
+
+    @staticmethod
+    def _shape(values):
+        if not _sequence(values):
+            return ()
+        return (len(values),) + _Tensor._shape(values[0])
+
+    def new_tensor(self, values):
+        return _Tensor(list(values))
+
+    def clamp(self, low, high):
+        def clip(value):
+            if isinstance(value, float) and math.isnan(value):
+                return value
+            return min(high, max(low, value))
+
+        return _Tensor(self._map(self.values, clip))
+
+    def _map(self, values, function):
+        if _sequence(values):
+            return [self._map(item, function) for item in values]
+        return function(values)
+
+    def __mul__(self, other):
+        if isinstance(other, _Tensor):
+            return _Tensor(self._binop(self.values, other.values, lambda left, right: left * right))
+        return _Tensor(self._map(self.values, lambda value: value * other))
+
+    def __sub__(self, other):
+        return _Tensor(self._binop(self.values, other.values, lambda left, right: left - right))
+
+    def _binop(self, left, right, function):
+        if not _sequence(left) and not _sequence(right):
+            return function(left, right)
+        if _sequence(left) and _sequence(right) and len(left) == len(right):
+            return [self._binop(item, other, function) for item, other in zip(left, right)]
+        if _sequence(left) and _sequence(right) and _sequence(left[0]) and len(right) == len(left[0]):
+            return [self._binop(row, right, function) for row in left]
+        raise AssertionError("critic stub cannot broadcast these tensors")
+
+    def __getitem__(self, index):
+        if isinstance(index, tuple) and len(index) == 2 and index[0] == slice(None):
+            return _Tensor([[row[column] for column in index[1]] for row in self.values])
+        raise AssertionError("critic stub received an unexpected index")
+
+
+_HEIGHT_CALLS = []
+_HEIGHT_BOX = {}
+
+
+def _ray_caster_height_scan(env, sensor_cfg, offset=0.5):
+    del env
+    _HEIGHT_CALLS.append((sensor_cfg.name, offset))
+    return _HEIGHT_BOX["height"]
+
+
+def _load_critic_frame_with_stubs():
+    saved = {name: sys.modules[name] for name in list(sys.modules) if name == "torch" or name.startswith(("isaaclab", "go2_rl_lab", "gymnasium"))}
+    torch_mod = types.ModuleType("torch")
+    torch_mod.Tensor = _Tensor
+    torch_mod.cat = lambda parts, dim=-1: _cat(parts, dim)
+    torch_mod.linalg = types.SimpleNamespace(vector_norm=_vector_norm)
+    managers = types.ModuleType("isaaclab.managers")
+
+    class ManagerTermBase:
+        pass
+
+    class SceneEntityCfg:
+        def __init__(self, name):
+            self.name = name
+
+    managers.ManagerTermBase = ManagerTermBase
+    managers.SceneEntityCfg = SceneEntityCfg
+    isaaclab = types.ModuleType("isaaclab")
+    isaaclab.managers = managers
+    height_scan = types.ModuleType("go2_rl_lab.utils.height_scan")
+    height_scan.ray_caster_height_scan = _ray_caster_height_scan
+    go2_utils = types.ModuleType("go2_rl_lab.utils")
+    go2_utils.height_scan = height_scan
+    go2 = types.ModuleType("go2_rl_lab")
+    go2.utils = go2_utils
+    gymnasium = types.ModuleType("gymnasium")
+    gymnasium.register = lambda **kwargs: None
+    installed = {
+        "torch": torch_mod,
+        "isaaclab": isaaclab,
+        "isaaclab.managers": managers,
+        "go2_rl_lab": go2,
+        "go2_rl_lab.utils": go2_utils,
+        "go2_rl_lab.utils.height_scan": height_scan,
+        "gymnasium": gymnasium,
+    }
+    sys.modules.update(installed)
+    for name in list(sys.modules):
+        if name == "lope_lab3.tasks.lope" or name.startswith("lope_lab3.tasks.lope."):
+            del sys.modules[name]
+    try:
+        from lope_lab3.tasks.lope.mdp.observations import critic_frame
+    finally:
+        for name in installed:
+            sys.modules.pop(name, None)
+        sys.modules.update(saved)
+    return critic_frame
+
+
+def _cat(parts, dim):
+    if dim != -1:
+        raise AssertionError("critic stub only concatenates the last dimension")
+    rows = []
+    for index in range(parts[0].shape[0]):
+        row = []
+        for part in parts:
+            item = part.values[index]
+            row.extend(item if _sequence(item) else [item])
+        rows.append(row)
+    return _Tensor(rows)
+
+
+def _vector_norm(tensor, dim):
+    if dim != -1:
+        raise AssertionError("critic stub only norms the last dimension")
+    return _Tensor(
+        [[math.sqrt(sum(component * component for component in vector)) for vector in env] for env in tensor.values]
+    )
+
+
+def _critic_env(width, nonfinite):
+    count = 2
+    _HEIGHT_CALLS.clear()
+    scan = [[float("nan")] + [0.0] * (width - 1) for _ in range(count)] if nonfinite else [[0.0] * width for _ in range(count)]
+    height = _Tensor(scan)
+    _HEIGHT_BOX["height"] = height
+    zeros = lambda columns: _Tensor([[0.0] * columns for _ in range(count)])
+    vectors = zeros(3)
+    joints = zeros(12)
+    robot = types.SimpleNamespace(
+        joint_names=list(JOINT_NAMES),
+        data=types.SimpleNamespace(
+            root_lin_vel_b=types.SimpleNamespace(torch=vectors),
+            root_ang_vel_b=types.SimpleNamespace(torch=vectors),
+            projected_gravity_b=types.SimpleNamespace(torch=vectors),
+            joint_pos=types.SimpleNamespace(torch=joints),
+            default_joint_pos=types.SimpleNamespace(torch=joints),
+            joint_vel=types.SimpleNamespace(torch=joints),
+            default_joint_vel=types.SimpleNamespace(torch=joints),
+            joint_acc=types.SimpleNamespace(torch=joints),
+        ),
+        actuators=types.SimpleNamespace(applied_effort=types.SimpleNamespace(torch=joints)),
+    )
+    sensor = types.SimpleNamespace(
+        body_names=list(FOOT_BODIES),
+        data=types.SimpleNamespace(
+            net_normal_forces_w=types.SimpleNamespace(torch=_Tensor([[[0.0, 0.0, 0.0] for _ in FOOT_BODIES] for _ in range(count)]))
+        ),
+    )
+    env = types.SimpleNamespace(
+        num_envs=count,
+        scene={"robot": robot, "contact_forces": sensor},
+        command_manager=types.SimpleNamespace(get_command=lambda name: zeros(3)),
+        action_manager=types.SimpleNamespace(action=joints),
+    )
+    return env, _HEIGHT_CALLS, height
 
 
 if __name__ == "__main__":

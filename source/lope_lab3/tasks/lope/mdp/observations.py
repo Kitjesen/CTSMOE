@@ -1,6 +1,7 @@
 """45/263 Lope observations. Joint velocity and action blocks are 12-wide."""
 import torch
-from isaaclab.managers import ManagerTermBase
+from go2_rl_lab.utils.height_scan import ray_caster_height_scan
+from isaaclab.managers import ManagerTermBase, SceneEntityCfg
 
 from lope_lab3.spec import ACTION_DIM, CRITIC_DIM, FOOT_BODIES, FRAME_DIM, JOINT_NAMES
 from lope_lab3.tasks.lope.mdp.privileged import foot_indices, joint_indices, tensor
@@ -111,8 +112,7 @@ def critic_frame(env):
         env._lope_foot_order = foot_indices(sensor.body_names)
         if [sensor.body_names[index] for index in env._lope_foot_order] != list(FOOT_BODIES):
             raise RuntimeError("Foot contact order must be FR, FL, RR, RL")
-    scanner = env.scene["height_scanner"]
-    height = (scanner.data.pos_w.torch[:, 2:3] - scanner.data.ray_hits_w.torch[..., 2] - 0.5).clamp(-1, 1) * 2.5
+    height = ray_caster_height_scan(env, SceneEntityCfg("height_scanner"), offset=0.5).clamp(-1, 1) * 2.5
     forces = sensor.data.net_normal_forces_w.torch[:, env._lope_foot_order]
     proprioception = torch.cat(
         (
@@ -130,8 +130,8 @@ def critic_frame(env):
         dim=-1,
     ).clamp(-100, 100)
     result = torch.cat((proprioception, height), dim=-1)
-    if result.shape != (env.num_envs, CRITIC_DIM) or not torch.isfinite(result).all():
-        raise RuntimeError(f"Expected finite Lope critic observations [N,{CRITIC_DIM}], got {tuple(result.shape)}")
+    if result.shape != (env.num_envs, CRITIC_DIM):
+        raise RuntimeError(f"Expected Lope critic observations [N,{CRITIC_DIM}], got {tuple(result.shape)}")
     if list(JOINT_NAMES) != [robot.joint_names[index] for index in ids]:
         raise RuntimeError("Critic joint order left the canonical 12-DoF list")
     return result
