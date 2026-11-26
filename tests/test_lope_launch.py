@@ -7,11 +7,18 @@ import unittest
 
 
 class LopeLaunchTests(unittest.TestCase):
-    def plan(self, *args, success=True):
-        entry = Path(__file__).resolve().parents[1] / "scripts/rsl_rl/launch_lope.py"
-        urdf = Path(__file__).resolve().parents[1] / "source/lope_lab3/assets/lope/urdf/lope.urdf"
-        result = subprocess.run([sys.executable, str(entry), *args, "--urdf", str(urdf)],
-                                capture_output=True, text=True)
+    def _launcher(self):
+        scripts = Path(__file__).resolve().parents[1] / "scripts" / "rsl_rl"
+        lope_specific = scripts / "launch_lope.py"
+        return lope_specific if lope_specific.is_file() else scripts / "launch.py"
+
+    def plan(self, *args, include_urdf=True, success=True):
+        entry = self._launcher()
+        urdf = Path(__file__).resolve().parents[1] / "source/lope_rl_lab/lope_rl_lab/assets/data/urdf/lope.urdf"
+        cmd = [sys.executable, str(entry), *args]
+        if include_urdf:
+            cmd += ["--urdf", str(urdf)]
+        result = subprocess.run(cmd, capture_output=True, text=True)
         if success:
             self.assertEqual(result.returncode, 0, result.stderr)
             return json.loads(result.stdout)
@@ -19,8 +26,8 @@ class LopeLaunchTests(unittest.TestCase):
 
     def test_fresh_plan_is_lope_and_loads_no_checkpoint(self):
         plan = self.plan("train", "--updates", "2", "--run-name", "lope-smoke")
-        self.assertEqual(plan["task"], "Lope-Newton3-Fresh-v0")
-        self.assertEqual(plan["argv"][plan["argv"].index("--task") + 1], "Lope-Newton3-Fresh-v0")
+        self.assertEqual(plan["task"], "lope-locomotion-mixed")
+        self.assertEqual(plan["argv"][plan["argv"].index("--task") + 1], "lope-locomotion-mixed")
         self.assertIsNone(plan["checkpoint_source"])
         self.assertNotIn("--resume", plan["argv"])
         self.assertNotIn("--checkpoint", plan["argv"])
@@ -31,6 +38,9 @@ class LopeLaunchTests(unittest.TestCase):
         self.assertNotIn("Thunder", " ".join(plan["argv"]))
         self.assertEqual(plan["training_state"], "fresh_random_initialization_from_0")
         self.assertEqual(plan["cumulative_target"], 100000)
+
+        default_urdf_plan = self.plan("train", "--updates", "2", include_urdf=False)
+        self.assertEqual(default_urdf_plan["urdf"], plan["urdf"])
 
     def test_resume_must_be_explicit_and_budget_is_the_official_cap(self):
         plan = self.plan("train", "--updates", "2", "--resume", "--checkpoint", "model_2.pt")
@@ -45,7 +55,7 @@ class LopeLaunchTests(unittest.TestCase):
         plan = self.plan("play", "--checkpoint", "model_2.pt", "--terrain", "stairs_up", "--level", "7")
         self.assertEqual(plan["play_terrain"], "stairs_up")
         self.assertEqual(plan["play_fixed_level"], 7)
-        self.assertIn("Lope-Newton3-Fresh-v0", plan["argv"])
+        self.assertIn("lope-locomotion-mixed", plan["argv"])
         self.plan("play", "--checkpoint", "model_2.pt", "--level", "9")
         self.plan("play", "--checkpoint", "model_2.pt", "--level", "10", success=False)
         self.plan("play", success=False)

@@ -84,11 +84,11 @@ python scripts/probe_native.py --fresh --urdf "$THUNDER_URDF" \
 
 ## Lope
 
-Lope 是并列的 12 自由度固定足任务，不替换上面的 Thunder 正式训练。任务 id 是 `Lope-Newton3-Fresh-v0`。执行器、12 自由度动作比例和 RS02 保持 Lope 硬件数值。髋关节内收 0.08 rad，出生高度 0.2740510271690917 m，高度目标 0.2627175562793766 m。命令使用官方 mixed Go2 的未缩放速度课程，平地后期 x 为 −4.5～4.2 m/s。同一任务里约 20% 的重置以倒地姿态开始，并用 6 秒未站起超时代替瞬间的机身触地终止。正式训练为 16384 环境、100000 次更新、25 秒回合。楼梯为 5–25 cm，坡面为 0–35°，坡度按高宽比写入 `tan(35°)`。细节见 [docs/lope.md](docs/lope.md)。
+Lope 是并列的 12 自由度固定足任务（Isaac Lab 扩展包 `lope_rl_lab`），不替换上面的 Thunder 正式训练。主行走任务 id 是 `lope-locomotion-mixed`，摔倒起身规划为独立的 `lope-recovery` 任务。执行器采用 14S RobStride RS02 四象限延时模型（`RS02Actuator`），URDF 自碰撞经清理后已开启 `self_collision=True`，髋关节内收 0.08 rad，出生高度 0.2740510271690917 m，高度目标 0.2627175562793766 m。命令使用官方 mixed Go2 的未缩放速度课程，平地后期 x 为 −4.5～4.2 m/s。正式训练为 16384 环境、100000 次更新、25 秒回合；楼梯为 5–25 cm，坡面为 0–35°。细节见 [docs/lope.md](docs/lope.md)。
 
 ```bash
 python scripts/rsl_rl/launch_lope.py train \
-  --urdf source/lope_lab3/assets/lope/urdf/lope.urdf \
+  --urdf source/lope_rl_lab/lope_rl_lab/assets/data/urdf/lope.urdf \
   --num-envs 32 --updates 2 --seed 42 --run-name lope-smoke
 ```
 

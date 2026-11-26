@@ -5,19 +5,38 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "thunder-newpose-lab3"
 version = "0.1.0"
-description = "Thunder NEWPOSE adapters for the pinned Go2 RL Lab 3 training pipeline"
+description = "Thunder NEWPOSE and Lope adapters for the pinned Go2 RL Lab 3 training pipeline"
 requires-python = ">=3.12"
 dependencies = ["go2_rl_lab==0.1.7", "rsl-rl-lib==3.3.0"]
 
-[tool.setuptools.packages.find]
-where = ["source"]
-include = ["thunder_lab3*", "lope_lab3*"]
+[tool.setuptools]
+packages = [
+    "thunder_lab3",
+    "thunder_lab3.assets",
+    "thunder_lab3.legacy",
+    "thunder_lab3.tasks",
+    "thunder_lab3.tasks.thunder",
+    "thunder_lab3.tasks.thunder.mdp",
+    "thunder_lab3.training",
+    "lope_rl_lab",
+    "lope_rl_lab.assets",
+    "lope_rl_lab.runners",
+    "lope_rl_lab.tasks",
+    "lope_rl_lab.tasks.locomotion",
+    "lope_rl_lab.tasks.locomotion.agents",
+    "lope_rl_lab.tasks.locomotion.mdp",
+    "lope_rl_lab.utils",
+]
+
+[tool.setuptools.package-dir]
+"" = "source"
+lope_rl_lab = "source/lope_rl_lab/lope_rl_lab"
 
 [tool.setuptools.package-data]
 thunder_lab3 = ["assets/thunder/urdf/*.urdf", "assets/thunder/meshes/*.STL"]
-lope_lab3 = [
-    "assets/lope/urdf/*.urdf",
-    "assets/lope/meshes/*",
-    "assets/lope/meshes/*/*",
-    "assets/lope/THIRD_PARTY.md",
+lope_rl_lab = [
+    "assets/data/urdf/*.urdf",
+    "assets/data/meshes/*",
+    "assets/data/meshes/*/*",
+    "assets/data/THIRD_PARTY.md",
 ]

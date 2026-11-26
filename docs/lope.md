@@ -1,30 +1,30 @@
 # Lope on the CTS+MoE / Isaac Lab 3 stack
 
-Lope is a 12-DoF fixed-foot quadruped added beside Thunder. Thunder's URDF, actuator contract, task id, and formal-run settings are unchanged. This task does not load a Thunder or Go2 checkpoint.
+Lope is a 12-DoF fixed-foot quadruped packaged as the Isaac Lab extension `lope_rl_lab`. It does not load Thunder or Go2 checkpoints.
 
 ## Launch
 
-From the repository root. The command prints a plan. Add `--execute` only when Isaac Lab 3 / Newton is installed and a run is intended. This adaptation does not start training.
+From the repository root. The command prints a plan. Add `--execute` only when Isaac Lab 3 / Newton is installed and a run is intended. Standalone uses `scripts/rsl_rl/launch.py` (`CTSMOE` exposes `scripts/rsl_rl/launch_lope.py`).
 
 ```bash
-python scripts/rsl_rl/launch_lope.py train \
-  --urdf source/lope_lab3/assets/lope/urdf/lope.urdf \
+python scripts/rsl_rl/launch.py train \
+  --urdf source/lope_rl_lab/lope_rl_lab/assets/data/urdf/lope.urdf \
   --num-envs 32 --updates 2 --seed 42 --run-name lope-smoke
 ```
 
-Task id: `Lope-Newton3-Fresh-v0`.
+Task id: `lope-locomotion-mixed`.
 
 The gym registration points at:
 
-- `lope_lab3.tasks.lope.env_cfg:LopeFreshEnvCfg`
-- `lope_lab3.tasks.lope.env_cfg:LopeFreshPlayEnvCfg`
-- `lope_lab3.tasks.lope.rsl_rl_cfg:LopeFreshMoeCtsRunnerCfg`
+- `lope_rl_lab.tasks.locomotion.env_cfg:LopeLocomotionEnvCfg`
+- `lope_rl_lab.tasks.locomotion.env_cfg:LopeLocomotionPlayEnvCfg`
+- `lope_rl_lab.tasks.locomotion.agents.rsl_rl_moe_cts_cfg:LopeLocomotionMoeCtsRunnerCfg`
 
 Playback example, still plan-only without `--execute`:
 
 ```bash
-python scripts/rsl_rl/launch_lope.py play \
-  --urdf source/lope_lab3/assets/lope/urdf/lope.urdf \
+python scripts/rsl_rl/launch.py play \
+  --urdf source/lope_rl_lab/lope_rl_lab/assets/data/urdf/lope.urdf \
   --checkpoint /ABS/model_N.pt --terrain stairs_up --level 3
 ```
 
@@ -34,11 +34,11 @@ python scripts/rsl_rl/launch_lope.py play \
 
 Copied from [Kitjesen/lope](https://github.com/Kitjesen/lope) branch `cursor/headless-urdf-meshes-only-51bf` at commit `74e51939d35e31cfa6dc03951af3911fbe0fe565`, with internal self-collision envelopes cleaned in `lope.urdf`.
 
-- URDF: `source/lope_lab3/assets/lope/urdf/lope.urdf` (robot name `lope`)
+- URDF: `source/lope_rl_lab/lope_rl_lab/assets/data/urdf/lope.urdf` (robot name `lope`)
 - SHA-256: `939b56e92233a3866efdc9bcf65e21298cda35547e02b100c9c3086aaa5b40d8`
 - Meshes: the 35 files that URDF references, including `meshes/lope_visual_preview/`
 - Mass summed from the URDF: 13.333464609253825 kg
-- Third-party note: `source/lope_lab3/assets/lope/THIRD_PARTY.md`
+- Third-party note: `source/lope_rl_lab/lope_rl_lab/assets/data/THIRD_PARTY.md`
 
 Training numbers were read from `headless-v67` commit `86008cc53e119038959f93fa48b9f1b9287dfb6f`:
 
@@ -52,7 +52,7 @@ The recovery run `training/recovery_headless/run_configuration.json` flattens ev
 
 ## Actuators
 
-`lope.urdf` still says `effort="17"` on every revolute joint. That field is the rejected flat cap. Instead, `RS02Actuator(DelayedPDActuator)` models RobStride RS02 on a 14S battery (`~51.8 V` nominal, `48 V` loaded floor) and `0–3` physics steps (`0–15 ms`) of randomized control delay:
+`lope.urdf` still says `effort="17"` on every revolute joint. That field is the rejected flat cap. Instead, `RS02Actuator(DelayedPDActuator)` (`lope_rl_lab.assets.rs02_actuator`) models RobStride RS02 on a 14S battery (`~51.8 V` nominal, `48 V` loaded floor) and `0–3` physics steps (`0–15 ms`) of randomized control delay:
 
 | Group | motoring `Y1` | braking `Y2` | corner `X1` | no-load `X2` | stiffness | damping | armature | friction |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -89,7 +89,7 @@ Rewards use the pinned `go2_rl_lab` terms with Lope's documented overrides:
 - hip and leg pose penalties with stand-still scale 10
 - no feet-air-time term and no separate flat-orientation term
 
-Termination is the 25 s timeout, `illegal_contact` (`base_link > 1.0 N`), and `bad_orientation` (`2 rad` tilt), matching `go2_rl_lab`'s pure locomotion task. `undesired_contacts` uses `go2_rl_lab.tasks.mixed.mdp.rewards.undesired_contacts` directly. Fall recovery is planned as a standalone policy/task rather than mixed into `Lope-Newton3-Fresh-v0`. There is no wheel contact reward and no Thunder leg-contact duration term.
+Termination is the 25 s timeout, `illegal_contact` (`base_link > 1.0 N`), and `bad_orientation` (`2 rad` tilt), matching `go2_rl_lab`'s pure locomotion task. `undesired_contacts` uses `go2_rl_lab.tasks.mixed.mdp.rewards.undesired_contacts` directly. Fall recovery is planned as a standalone policy/task (`lope-recovery`) rather than mixed into `lope-locomotion-mixed`. There is no wheel contact reward and no leg-contact duration term.
 
 Domain randomization follows the official mixed task: base mass add ±1 kg, other links scale 0.9–1.1, friction 0–2, restitution 0–0.5, actuator gains scale 0.9–1.1, joint reset scale 0.5–1.5, and motor zero offset ±0.035 rad. Push linear velocity is the official ±0.4 m/s. Push angular rate stays ±0.6 rad/s. The Newton center-of-mass buckets on Lope's `base_link` are scaled to its 0.26 m × 0.20 m chassis (`x` ±0.05 m, `y` ±0.03 m, `z` −0.02..0.03 m).
 
@@ -103,14 +103,10 @@ The height-reward crop stays a Lope-sized box, ±0.135 m by ±0.101 m. That crop
 
 Terrain copies `MIXED_MESH_TERRAIN_CFG`: 9 m tiles, 10 rows, 20 columns, border 25 m, initial level up to row 1. The wheels sub-terrain is removed and flat's proportion is 0.20. `stairs_up` is the official inverted pyramid.
 
-- slopes 0–35°, stored as the rise/run gradient `(0, tan(35°))` ≈ `(0, 0.7002075382097097)`. This replaces both the official `(0.1, 0.568)` and Thunder's `tan(40°)`.
+- slopes 0–35°, stored as the rise/run gradient `(0, tan(35°))` ≈ `(0, 0.7002075382097097)`. This replaces both the official `(0.1, 0.568)` and 40° ramps.
 - stairs `step_height_range=(0.05, 0.25)` m. Official tread is 0.31 m; Lope keeps 0.25 m so the step is not scaled all the way down to about 0.21 m.
 - obstacle height is the official unscaled `(0.05, 0.275)` m and wave amplitude is the official unscaled `(0.1, 0.28)` m. Obstacle width stays `(1.0, 2.0)` m. These sizes are not multiplied by a height ratio.
 
 The height-reward crop is the official `(±0.2, ±0.15)` m box times the same scale, about `(±0.135, ±0.101)` m. The 1.6 m by 1.0 m lookahead scan is unchanged. The critic is 275 values: 88 proprioceptive values, including the 16-wide official foot-force history, plus 187 height samples.
 
 Newton settings that have no Lope historical value (implicitfast integrator, nconmax 128, 0.01 m margin, 2.5e6 triangle pairs) follow this repository's fresh Newton task so the URDF can load on the same backend. `njmax` is 512 rather than 384 or the official 300 to provide headroom for multi-link terrain contacts. The other solver fields were not retuned in simulation.
-
-## What was not run
-
-This environment has no Isaac Lab, Newton, or a GPU training stack. Static tests cover the URDF, RS02 numbers, the 12-action mirror, the speed gate, and the plan printed by `launch_lope.py`. They do not step the simulator, and no checkpoint was created.

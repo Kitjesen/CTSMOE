@@ -1,12 +1,10 @@
-"""Plan or run the Lope 12-DoF task with the pinned Go2 CTS entry points.
+"""Plan or run the Lope 12-DoF tasks with the pinned Go2 CTS entry points.
 
 Prints a plan unless ``--execute`` is set. Fresh training loads no checkpoint.
-This launcher never selects a Thunder task and never reads NEWPOSE_URDF.
 
 Example (plan only):
 
     python scripts/rsl_rl/launch_lope.py train \\
-        --urdf source/lope_lab3/assets/lope/urdf/lope.urdf \\
         --num-envs 32 --updates 2 --seed 42 --run-name lope-smoke
 """
 import argparse
@@ -20,21 +18,24 @@ import shutil
 import sys
 import uuid
 
-_SOURCE = Path(__file__).resolve().parents[2] / "source"
-if str(_SOURCE) not in sys.path:
-    sys.path.insert(0, str(_SOURCE))
+_EXTENSION_SOURCE = Path(__file__).resolve().parents[2] / "source" / "lope_rl_lab"
+if str(_EXTENSION_SOURCE) not in sys.path:
+    sys.path.insert(0, str(_EXTENSION_SOURCE))
 
-from lope_lab3.spec import CUMULATIVE_UPDATES, TASK_ID, TERRAIN
+from lope_rl_lab.assets.contract import packaged_urdf
+from lope_rl_lab.tasks.locomotion.config import CUMULATIVE_UPDATES, TASK_ID, TERRAIN
 
 
 def main():
     project = Path(__file__).resolve().parents[2]
-    if str(project / "source") not in sys.path:
-        sys.path.insert(0, str(project / "source"))
+    extension_source = project / "source" / "lope_rl_lab"
+    if str(extension_source) not in sys.path:
+        sys.path.insert(0, str(extension_source))
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=("train", "play"))
+    parser.add_argument("--task", default=TASK_ID, choices=(TASK_ID,))
     parser.add_argument("--go2-root", type=Path, default=project / "upstream" / "go2_rl_lab")
-    parser.add_argument("--urdf", type=Path, required=True)
+    parser.add_argument("--urdf", type=Path, default=packaged_urdf())
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--seed", type=int, default=42)
@@ -85,7 +86,7 @@ def main():
     checkpoint = None
     if args.checkpoint is not None:
         checkpoint = play_output / args.checkpoint.name if play_output else args.checkpoint.resolve()
-    upstream_args = [str(entry), "--task", TASK_ID, "--device", args.device]
+    upstream_args = [str(entry), "--task", args.task, "--device", args.device]
     if args.num_envs is not None:
         upstream_args += ["--num_envs", str(args.num_envs)]
     if checkpoint is not None:
@@ -103,7 +104,7 @@ def main():
     plan = {
         "execute": args.execute,
         "robot": "lope_rs02_12dof",
-        "task": TASK_ID,
+        "task": args.task,
         "upstream_entry": str(entry),
         "argv": upstream_args[1:],
         "working_directory": str(project),
@@ -141,7 +142,12 @@ def main():
         shutil.copy2(args.checkpoint, checkpoint)
         if digest(checkpoint) != source_digest:
             raise RuntimeError("Isolated playback checkpoint copy failed SHA-256 verification")
-    paths = [project / "source", go2 / "scripts" / "rsl_rl", go2 / "source" / "rsl_rl", go2 / "source" / "go2_rl_lab"]
+    paths = [
+        extension_source,
+        go2 / "scripts" / "rsl_rl",
+        go2 / "source" / "rsl_rl",
+        go2 / "source" / "go2_rl_lab",
+    ]
     sys.path[:0] = [str(path) for path in paths]
     os.environ["LOPE_URDF"] = str(args.urdf.resolve())
     os.environ["LOPE_USD_CACHE"] = str(args.usd_cache.resolve())
@@ -156,7 +162,7 @@ def main():
             os.environ.pop("LOPE_EVAL_LEVEL", None)
     os.chdir(project)
     from isaacsim.asset.importer.urdf import URDFImporter  # noqa: F401
-    import lope_lab3.tasks.lope  # noqa: F401
+    import lope_rl_lab.tasks.locomotion  # noqa: F401
     if args.mode == "play":
         from rsl_rl import utils as rsl_utils
         import yaml
