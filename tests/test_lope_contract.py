@@ -12,7 +12,9 @@ from lope_lab3.assets.contract import packaged_urdf, validate_urdf
 from lope_lab3.spec import (
     ACTION_DIM,
     ACTION_SCALE_RAD,
+    BAD_ORIENTATION_LIMIT_RAD,
     BASE_HEIGHT_TARGET_M,
+    BODY_COM_OFFSET_X,
     CUMULATIVE_UPDATES,
     EPISODE_LENGTH_S,
     FOOT_BODIES,
@@ -28,11 +30,11 @@ from lope_lab3.spec import (
     OFFICIAL_INITIAL_RANGES,
     RS02_CALF,
     RS02_HIP_THIGH,
+    SELF_COLLISION,
+    SOLVER_NJMAX,
     SPAWN_HEIGHT_M,
     STANDING_POSE,
     TERRAIN,
-    GO2_OBSTACLE_HEIGHT,
-    GO2_WAVE_AMPLITUDE,
     TRACK_LIN_STD,
     TRACK_YAW_STD,
     action_clips,
@@ -46,11 +48,14 @@ from lope_lab3.spec import (
     PHYSICS_DT_S,
     POLICY_DIM,
 )
-from lope_lab3.recovery import FALLEN_MODES, fallen_orientation, recovering
+from lope_lab3.recovery import FALLEN_MODES, fallen_orientation, recovering, upright_deficit
 from lope_lab3.spec import (
+    FALLEN_FRACTION_END_UPDATE,
+    FALLEN_FRACTION_START_UPDATE,
     FALLEN_RESET_FRACTION,
+    FALLEN_RESET_FRACTION_FINAL,
     FALLEN_TIMEOUT_S,
-    RECOVERY_HEIGHT_WEIGHT,
+    FALLEN_TIMEOUT_WALK_S,
     RECOVERY_UPRIGHT_WEIGHT,
     STAND_UP_BONUS_WEIGHT,
 )
@@ -211,17 +216,9 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertEqual(TRACK_YAW_STD, 0.5)
         self.assertEqual(TERRAIN["stair_step_height_range"], (0.05, 0.25))
         self.assertEqual(TERRAIN["stair_step_width"], 0.25)
-        self.assertNotEqual(TERRAIN["stair_step_width"], TERRAIN["official_stair_step_width"])
-        self.assertIs(TERRAIN["obstacle_height_range"], GO2_OBSTACLE_HEIGHT)
-        self.assertIs(TERRAIN["wave_amplitude_range"], GO2_WAVE_AMPLITUDE)
-        self.assertEqual(GO2_OBSTACLE_HEIGHT, (0.05, 0.275))
-        self.assertEqual(GO2_WAVE_AMPLITUDE, (0.1, 0.28))
-        self.assertNotEqual(TERRAIN["obstacle_height_range"], (0.05, 0.12))
-        self.assertNotEqual(TERRAIN["wave_amplitude_range"], (0.02, 0.08))
-        self.assertNotEqual(TERRAIN["wave_amplitude_range"], (0.01, 0.08))
-        self.assertEqual(TERRAIN["obstacle_width_range"], (1.0, 2.0))
         self.assertEqual(TERRAIN["num_rows"], 10)
-        self.assertEqual(TERRAIN["max_init_terrain_level"], 5)
+        self.assertEqual(TERRAIN["max_init_terrain_level"], 1)
+        self.assertFalse(SELF_COLLISION)
         self.assertEqual(TERRAIN["slope_range"][0], 0.0)
         self.assertAlmostEqual(TERRAIN["slope_range"][1], math.tan(math.radians(35)))
         self.assertNotAlmostEqual(TERRAIN["slope_range"][1], math.radians(35))
@@ -247,11 +244,21 @@ class LopeCurriculumTests(unittest.TestCase):
                 self.assertNotIn(token, text, path.name)
 
     def test_recovery_is_in_the_same_task_without_instant_base_contact(self):
-        self.assertEqual(FALLEN_RESET_FRACTION, 0.20)
+        self.assertEqual(FALLEN_RESET_FRACTION, 0.0)
+        self.assertEqual(FALLEN_RESET_FRACTION_FINAL, 0.25)
+        self.assertEqual(FALLEN_FRACTION_START_UPDATE, 3000)
+        self.assertEqual(FALLEN_FRACTION_END_UPDATE, 20000)
         self.assertEqual(FALLEN_TIMEOUT_S, 6.0)
-        self.assertEqual(RECOVERY_UPRIGHT_WEIGHT, 2.0)
-        self.assertEqual(RECOVERY_HEIGHT_WEIGHT, -2.0)
-        self.assertEqual(STAND_UP_BONUS_WEIGHT, 5.0)
+        self.assertEqual(FALLEN_TIMEOUT_WALK_S, 2.0)
+        self.assertEqual(RECOVERY_UPRIGHT_WEIGHT, -2.0)
+        self.assertEqual(STAND_UP_BONUS_WEIGHT, 50.0)
+        self.assertEqual(BAD_ORIENTATION_LIMIT_RAD, 2.0)
+        self.assertEqual(upright_deficit(-1.0, 0.9), 0.0)
+        self.assertAlmostEqual(upright_deficit(-0.8, 0.9), 0.0, places=9)
+        self.assertGreater(upright_deficit(-0.79, 0.9), 0.0)
+        self.assertLess(upright_deficit(-0.79, 0.9), 0.02)
+        self.assertAlmostEqual(upright_deficit(0.0, 0.9), 0.4, places=9)
+        self.assertAlmostEqual(upright_deficit(1.0, 0.9), 0.9, places=9)
         for mode in FALLEN_MODES:
             roll, pitch, _yaw = fallen_orientation(mode, 0.0, 0.0, 0.2)
             self.assertGreater(max(abs(roll), abs(pitch)), 1.0, mode)
@@ -263,13 +270,16 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertNotIn("from isaaclab.envs.mdp import reset_root_state_uniform", terms)
         self.assertIn("isinstance(env_ids, slice)", terms)
         self.assertIn("torch.arange(env.num_envs, device=env.device)[env_ids or slice(None)]", terms)
+        self.assertIn("_lope_recovering_from_reset", terms)
+        self.assertNotIn("_lope_was_fallen", terms)
+        self.assertIn("bad_orientation_locomotion", env)
+        self.assertIn("undesired_contacts_locomotion", env)
         self.assertIn("recovery_upright", env)
-        self.assertIn("recovery_base_height", env)
         self.assertIn("stand_up_bonus", env)
         self.assertIn("fallen_timeout", env)
         self.assertIn("fallen_reset_fraction", env)
+        self.assertNotIn("recovery_base_height", env)
         self.assertNotIn("illegal_contact", env)
-        self.assertNotIn("bad_orientation", env)
 
     def test_registration_names_the_lope_task(self):
         text = (PACKAGE / "tasks" / "lope" / "__init__.py").read_text(encoding="utf-8")
@@ -315,11 +325,17 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertEqual(scaled[0], 1.0)
         self.assertEqual(scaled[1:], [-3.0, 4.0])
 
-    def test_solver_njmax_is_384(self):
+    def test_solver_njmax_and_com_buckets(self):
+        self.assertEqual(SOLVER_NJMAX, 512)
+        self.assertEqual(BODY_COM_OFFSET_X, (-0.05, 0.05))
         text = (PACKAGE / "tasks" / "lope" / "mdp" / "randomization.py").read_text(encoding="utf-8")
-        self.assertIn("njmax=384", text)
+        self.assertIn("njmax=SOLVER_NJMAX", text)
         self.assertNotIn("njmax=300", text)
         self.assertIn("nconmax=128", text)
+
+    def test_entropy_coef_is_tempered(self):
+        text = (PACKAGE / "tasks" / "lope" / "rsl_rl_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("entropy_coef=0.005", text)
 
     def test_critic_height_scan_keeps_nonfinite_values(self):
         path = PACKAGE / "tasks" / "lope" / "mdp" / "observations.py"

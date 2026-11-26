@@ -41,6 +41,11 @@ def upright_score(gravity_z):
     return max(0.0, min(1.0, (1.0 - gravity_z) * 0.5))
 
 
+def upright_deficit(gravity_z, saturation):
+    """Continuous non-negative upright deficit: 0 once upright_score >= saturation."""
+    return max(0.0, saturation - upright_score(gravity_z))
+
+
 def recovering(gravity_z, saturation):
     """True while the base is not yet counted as standing."""
     return upright_score(gravity_z) < saturation

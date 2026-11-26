@@ -44,54 +44,75 @@ def _upright_score(gravity_z):
 
 
 def recovery_upright(env, saturation):
-    """Reward rising toward upright, and stay silent once the robot is standing."""
+    """Continuous upright deficit cost; smoothly reaches 0 once standing."""
     score = _upright_score(_gravity_z(env))
-    return torch.where(score < saturation, score, torch.zeros_like(score))
-
-
-def recovery_base_height(env, target_height, saturation, asset_cfg, sensor_cfg, x_range, y_range):
-    """Height cost only while the robot is still down, so standing tracking is unchanged."""
-    from go2_rl_lab.tasks.mixed.mdp.rewards import base_height_l2
-
-    cost = base_height_l2(env, target_height, asset_cfg, sensor_cfg, x_range, y_range)
-    score = _upright_score(_gravity_z(env))
-    return torch.where(score < saturation, cost, torch.zeros_like(cost))
+    return (saturation - score).clamp(min=0.0)
 
 
 def stand_up_bonus(env, saturation):
-    """One-step bonus on the transition from fallen to standing."""
+    """One-time bonus when an environment spawned fallen first reaches standing."""
     score = _upright_score(_gravity_z(env))
     standing = score >= saturation
-    previous = getattr(env, "_lope_was_fallen", None)
-    if previous is None or tuple(previous.shape) != tuple(standing.shape):
-        env._lope_was_fallen = ~standing
+    recovering_mask = getattr(env, "_lope_recovering_from_reset", None)
+    if recovering_mask is None or tuple(recovering_mask.shape) != tuple(standing.shape):
         return torch.zeros(env.num_envs, device=standing.device)
-    bonus = (previous & standing).float()
-    env._lope_was_fallen = ~standing
+    bonus = (recovering_mask & standing).float()
+    recovering_mask[standing] = False
     return bonus
 
 
-def fallen_timeout(env, max_time, upright_gravity_z):
-    """End the episode only after the base has stayed down for several seconds.
+def undesired_contacts_locomotion(env, threshold, sensor_cfg):
+    """Apply official undesired leg-contact penalty only after fallen-spawn recovery."""
+    from go2_rl_lab.tasks.mixed.mdp.rewards import undesired_contacts
 
-    Instant base-contact termination is not used: a fallen spawn must be able
-    to get up. Official bad_orientation at 2 rad is also not used, because a
-    robot on its back exceeds that angle immediately.
-    """
+    cost = undesired_contacts(env, threshold, sensor_cfg)
+    recovering_mask = getattr(env, "_lope_recovering_from_reset", None)
+    if recovering_mask is None or recovering_mask.shape[0] != env.num_envs:
+        return cost
+    return torch.where(recovering_mask, torch.zeros_like(cost), cost)
+
+
+def bad_orientation_locomotion(env, limit_angle):
+    """Terminate severe inversion during locomotion without killing fallen-spawn recovery."""
+    angle = torch.acos((-_gravity_z(env)).clamp(-1.0, 1.0))
+    bad = angle > limit_angle
+    recovering_mask = getattr(env, "_lope_recovering_from_reset", None)
+    if recovering_mask is None or recovering_mask.shape[0] != env.num_envs:
+        return bad
+    return bad & ~recovering_mask
+
+
+def fallen_timeout(env, max_time, upright_gravity_z, walk_max_time=None):
+    """End the episode if the base stays down past the allowed recovery window."""
     down = _gravity_z(env) > upright_gravity_z
     timer = getattr(env, "_lope_fallen_timer", None)
     if timer is None or timer.shape[0] != env.num_envs:
         timer = torch.zeros(env.num_envs, device=env.device)
     timer = torch.where(down, timer + env.step_dt, torch.zeros_like(timer))
     env._lope_fallen_timer = timer
-    return timer >= max_time
+    if walk_max_time is None:
+        return timer >= max_time
+    recovering_mask = getattr(env, "_lope_recovering_from_reset", None)
+    if recovering_mask is None or recovering_mask.shape[0] != env.num_envs:
+        return timer >= walk_max_time
+    limit = torch.where(
+        recovering_mask,
+        torch.full_like(timer, float(max_time)),
+        torch.full_like(timer, float(walk_max_time)),
+    )
+    return timer >= limit
 
 
-def fallen_reset_fraction(env, env_ids, initial, final, end_it):
-    """Raise the fallen-reset share slowly. Locomotion stays the main task."""
+def fallen_reset_fraction(env, env_ids, initial, final, start_it, end_it):
+    """Hold fallen resets at initial until start_it, then ramp linearly to final."""
     del env_ids
+    if end_it <= start_it:
+        raise ValueError(f"end_it must be greater than start_it, got {start_it=} and {end_it=}.")
     iteration = int(env.common_step_counter) // ROLLOUT_STEPS
-    progress = max(0.0, min(1.0, iteration / float(end_it)))
+    if iteration < start_it:
+        progress = 0.0
+    else:
+        progress = min(1.0, (iteration - start_it) / float(end_it - start_it))
     fraction = initial + (final - initial) * progress
     env._lope_fallen_fraction = fraction
     return fraction
@@ -115,14 +136,18 @@ def reset_root_with_recovery(env, env_ids, pose_range, velocity_range, asset_cfg
         else:
             ids = ids.long()
     timer = getattr(env, "_lope_fallen_timer", None)
-    if timer is not None and timer.shape[0] == env.num_envs:
-        timer[ids] = 0.0
+    if timer is None or timer.shape[0] != env.num_envs:
+        timer = torch.zeros(env.num_envs, device=env.device)
+        env._lope_fallen_timer = timer
+    timer[ids] = 0.0
     fraction = float(getattr(env, "_lope_fallen_fraction", FALLEN_RESET_FRACTION))
     chosen = ids[torch.rand(len(ids), device=env.device) < fraction]
-    was_fallen = getattr(env, "_lope_was_fallen", None)
-    if was_fallen is not None and was_fallen.shape[0] == env.num_envs:
-        was_fallen[ids] = False
-        was_fallen[chosen] = True
+    recovering_mask = getattr(env, "_lope_recovering_from_reset", None)
+    if recovering_mask is None or recovering_mask.shape[0] != env.num_envs:
+        recovering_mask = torch.zeros(env.num_envs, dtype=torch.bool, device=env.device)
+        env._lope_recovering_from_reset = recovering_mask
+    recovering_mask[ids] = False
+    recovering_mask[chosen] = True
     if len(chosen) == 0:
         return
     robot = env.scene[asset_cfg.name]

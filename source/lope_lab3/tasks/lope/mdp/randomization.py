@@ -12,7 +12,15 @@ from isaaclab.managers import EventTermCfg, SceneEntityCfg
 from go2_rl_lab.physics import BodyComBucketRandomizationCfg, RandomizedMJWarpSolverCfg
 from go2_rl_lab.tasks.mixed.mdp.events import randomize_action_joint_pos_offset
 
-from lope_lab3.spec import JOINT_NAMES, LOPE_PUSH_LINEAR, OFFICIAL_PUSH_ANGULAR
+from lope_lab3.spec import (
+    BODY_COM_OFFSET_X,
+    BODY_COM_OFFSET_Y,
+    BODY_COM_OFFSET_Z,
+    JOINT_NAMES,
+    LOPE_PUSH_LINEAR,
+    OFFICIAL_PUSH_ANGULAR,
+    SOLVER_NJMAX,
+)
 
 
 def configure_randomization(cfg):
@@ -84,7 +92,7 @@ def configure_randomization(cfg):
     # Official Newton CoM buckets. The body pattern is Lope's base_link.
     solver = RandomizedMJWarpSolverCfg(
         class_type="go2_rl_lab.physics.resettable_mjwarp_manager:NewtonMJWarpResettableManager",
-        njmax=384,
+        njmax=SOLVER_NJMAX,
         nconmax=128,
         cone="pyramidal",
         impratio=1,
@@ -94,9 +102,9 @@ def configure_randomization(cfg):
         sensor_bvh_shape_flags=int(ShapeFlags.COLLIDE_SHAPES),
         body_com_buckets=BodyComBucketRandomizationCfg(
             body_name_pattern=r"(?:^|/)Robot/Geometry/base_link$",
-            x_offset_range=(0.0, 0.1),
-            y_offset_range=(-0.05, 0.05),
-            z_offset_range=(0.0, 0.05),
+            x_offset_range=BODY_COM_OFFSET_X,
+            y_offset_range=BODY_COM_OFFSET_Y,
+            z_offset_range=BODY_COM_OFFSET_Z,
             num_buckets=10,
             seed=42,
         ),

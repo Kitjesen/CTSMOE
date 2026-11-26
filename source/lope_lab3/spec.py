@@ -88,7 +88,12 @@ RS02_CALF = {
 REJECTED_FLAT_EFFORT_NM = 17.0
 
 MERGE_FIXED_JOINTS = False
-SELF_COLLISION = True
+# Newton margin=0.01 triggers permanent phantom contact on battery links & chassis-thigh.
+SELF_COLLISION = False
+SOLVER_NJMAX = 512
+BODY_COM_OFFSET_X = (-0.05, 0.05)
+BODY_COM_OFFSET_Y = (-0.03, 0.03)
+BODY_COM_OFFSET_Z = (-0.02, 0.03)
 
 # Official Go2MoECTSRunnerCfg / RobotEnvCfg timing. 5 ms × 4 is unchanged.
 PHYSICS_DT_S = 0.005
@@ -114,7 +119,7 @@ TERRAIN = {
     "border_width": 25.0,
     "num_rows": 10,
     "num_cols": 20,
-    "max_init_terrain_level": 5,
+    "max_init_terrain_level": 1,
     "horizontal_scale": 0.1,
     "vertical_scale": 0.005,
     "slope_threshold": 0.75,
@@ -279,15 +284,16 @@ TERRAIN["stairs_up_proportion"] = 0.25
 TERRAIN["stairs_down_proportion"] = 0.10
 TERRAIN["flat_proportion"] = 0.20
 
-# Same-task fall recovery. Locomotion stays the main objective.
-FALLEN_RESET_FRACTION = 0.20
-FALLEN_RESET_FRACTION_FINAL = 0.35
+# Same-task fall recovery. Warm up pure locomotion before introducing fallen spawns.
+FALLEN_RESET_FRACTION = 0.0
+FALLEN_RESET_FRACTION_FINAL = 0.25
+FALLEN_FRACTION_START_UPDATE = 3000
 FALLEN_FRACTION_END_UPDATE = 20000
 FALLEN_Z_DROP_M = (0.06, 0.12)
 FALLEN_TIMEOUT_S = 6.0
+FALLEN_TIMEOUT_WALK_S = 2.0
 # Upright projected gravity z is about -1. Above this value the robot is still down.
 FALLEN_UPRIGHT_GRAVITY_Z = -0.7
-RECOVERY_UPRIGHT_WEIGHT = 2.0
-RECOVERY_HEIGHT_WEIGHT = -2.0
-STAND_UP_BONUS_WEIGHT = 5.0
+RECOVERY_UPRIGHT_WEIGHT = -2.0
+STAND_UP_BONUS_WEIGHT = 50.0
 RECOVERY_SCORE_SATURATION = 0.9

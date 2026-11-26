@@ -26,6 +26,7 @@ from lope_lab3.assets.robot import robot_cfg
 from go2_rl_lab.tasks.mixed.mdp.curriculums import TerrainLevelsVelGym, gradual_reward_weight_modification
 from lope_lab3.spec import (
     ACTION_DIM,
+    BAD_ORIENTATION_LIMIT_RAD,
     BASE_HEIGHT_FINAL_UPDATE,
     BASE_HEIGHT_FINAL_WEIGHT,
     BASE_HEIGHT_TARGET_M,
@@ -54,11 +55,12 @@ from lope_lab3.spec import (
     TRACK_YAW_STD,
     UNDESIRED_CONTACT_THRESHOLD_N,
     FALLEN_FRACTION_END_UPDATE,
+    FALLEN_FRACTION_START_UPDATE,
     FALLEN_RESET_FRACTION,
     FALLEN_RESET_FRACTION_FINAL,
     FALLEN_TIMEOUT_S,
+    FALLEN_TIMEOUT_WALK_S,
     FALLEN_UPRIGHT_GRAVITY_Z,
-    RECOVERY_HEIGHT_WEIGHT,
     RECOVERY_SCORE_SATURATION,
     RECOVERY_UPRIGHT_WEIGHT,
     STAND_UP_BONUS_WEIGHT,
@@ -114,7 +116,7 @@ class EventsCfg:
             "pose_range": {
                 "x": (-0.5, 0.5),
                 "y": (-0.5, 0.5),
-                "z": (0.0, 0.2),
+                "z": (0.0, 0.1),
                 "yaw": (-3.14, 3.14),
             },
             "velocity_range": {
@@ -182,7 +184,7 @@ class RewardsCfg:
         },
     )
     undesired_contacts = RewardTermCfg(
-        func=go2_rewards.undesired_contacts,
+        func=mdp.undesired_contacts_locomotion,
         weight=-1.0,
         params={"threshold": UNDESIRED_CONTACT_THRESHOLD_N, "sensor_cfg": LEG_CONTACTS},
     )
@@ -210,18 +212,6 @@ class RewardsCfg:
         weight=RECOVERY_UPRIGHT_WEIGHT,
         params={"saturation": RECOVERY_SCORE_SATURATION},
     )
-    recovery_base_height = RewardTermCfg(
-        func=mdp.recovery_base_height,
-        weight=RECOVERY_HEIGHT_WEIGHT,
-        params={
-            "target_height": BASE_HEIGHT_TARGET_M,
-            "saturation": RECOVERY_SCORE_SATURATION,
-            "asset_cfg": SceneEntityCfg("robot"),
-            "sensor_cfg": HEIGHT_SENSOR,
-            "x_range": HEIGHT_SCAN_X,
-            "y_range": HEIGHT_SCAN_Y,
-        },
-    )
     stand_up_bonus = RewardTermCfg(
         func=mdp.stand_up_bonus,
         weight=STAND_UP_BONUS_WEIGHT,
@@ -232,9 +222,17 @@ class RewardsCfg:
 @configclass
 class TerminationsCfg:
     time_out = TerminationTermCfg(func=lab_mdp.time_out, time_out=True)
+    bad_orientation = TerminationTermCfg(
+        func=mdp.bad_orientation_locomotion,
+        params={"limit_angle": BAD_ORIENTATION_LIMIT_RAD},
+    )
     fallen_timeout = TerminationTermCfg(
         func=mdp.fallen_timeout,
-        params={"max_time": FALLEN_TIMEOUT_S, "upright_gravity_z": FALLEN_UPRIGHT_GRAVITY_Z},
+        params={
+            "max_time": FALLEN_TIMEOUT_S,
+            "walk_max_time": FALLEN_TIMEOUT_WALK_S,
+            "upright_gravity_z": FALLEN_UPRIGHT_GRAVITY_Z,
+        },
     )
 
 
@@ -268,6 +266,7 @@ class CurriculumCfg:
         params={
             "initial": FALLEN_RESET_FRACTION,
             "final": FALLEN_RESET_FRACTION_FINAL,
+            "start_it": FALLEN_FRACTION_START_UPDATE,
             "end_it": FALLEN_FRACTION_END_UPDATE,
         },
     )
@@ -291,7 +290,7 @@ class LopeFreshEnvCfg(ManagerBasedRLEnvCfg):
     lope_robot: str = "lope_rs02_12dof"
     compute_final_obs: bool = True
     lope_terrain_schema: str = "lope_mixed_go2_scaled_stairs_5_25cm_slope_35deg"
-    lope_physics_schema: str = "newton_mjwarp_triangle_v1"
+    lope_physics_schema: str = "newton_mjwarp_triangle_no_self_col_v2"
 
     def __post_init__(self):
         self.scene.robot = robot_cfg()
