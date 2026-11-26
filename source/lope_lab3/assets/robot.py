@@ -1,14 +1,14 @@
-"""Lope URDF import for Newton. RS02 limits override the URDF's flat 17 N·m effort."""
+"""Lope URDF import for Newton with 14S RS02 4-quadrant delayed PD actuators."""
 import math
 import os
 from pathlib import Path
 
 import isaaclab.sim as sim_utils
-from isaaclab.actuators import DCMotorCfg
 from isaaclab.assets import ArticulationCfg
 from isaaclab.sim.converters import UrdfConverterCfg
 from isaaclab_newton.sim.schemas import NewtonArticulationCfg
 
+from lope_lab3.assets.actuator import RS02ActuatorCfg
 from lope_lab3.assets.contract import packaged_urdf, validate_urdf
 from lope_lab3.spec import (
     MERGE_FIXED_JOINTS,
@@ -26,23 +26,21 @@ def urdf_path():
     return Path(override) if override else packaged_urdf()
 
 
-def _dc_motor(joint_names_expr, model):
-    """Map the historical RS02 fields onto Isaac Lab 3 actuator names.
-
-    ``effort_limit`` is both the explicit clip and the solver effort. Stall torque
-    stays on ``saturation_effort`` so the DC curve is not the rejected flat cap.
-    """
-    return DCMotorCfg(
+def _rs02_actuator(joint_names_expr, model):
+    """Build a 14S RobStride RS02 4-quadrant FOC actuator with control delay."""
+    return RS02ActuatorCfg(
         joint_names_expr=joint_names_expr,
-        actuator_effort_limit=model["effort_limit"],
-        joint_effort_limit=model["effort_limit"],
-        saturation_effort=model["saturation_effort"],
-        actuator_velocity_limit=model["velocity_limit"],
+        peak_torque_motoring=model["peak_torque_motoring"],
+        peak_torque_braking=model["peak_torque_braking"],
+        corner_velocity=model["corner_velocity"],
+        no_load_velocity=model["velocity_limit"],
         joint_velocity_limit=model["velocity_limit"],
         stiffness=model["stiffness"],
         damping=model["damping"],
         armature=model["armature"],
-        friction=0.0,
+        friction=model["friction"],
+        min_delay=model["min_delay"],
+        max_delay=model["max_delay"],
     )
 
 
@@ -79,7 +77,7 @@ def robot_cfg():
         ),
         soft_joint_pos_limit_factor=SOFT_JOINT_POS_LIMIT_FACTOR,
         actuators={
-            "hip_thigh_rs02": _dc_motor([".*_(hip|thigh)_joint"], RS02_HIP_THIGH),
-            "calf_rs02_2to1": _dc_motor([".*_calf_joint"], RS02_CALF),
+            "hip_thigh_rs02": _rs02_actuator([".*_(hip|thigh)_joint"], RS02_HIP_THIGH),
+            "calf_rs02_2to1": _rs02_actuator([".*_calf_joint"], RS02_CALF),
         },
     )

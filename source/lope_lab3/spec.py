@@ -67,24 +67,34 @@ JOINT_POSITION_LIMITS_RAD = {
     "rl_calf_joint": (-2.1, -0.4),
 }
 
-# smalldog.py DCMotorCfg. The 2026-11-12 recovery run and the URDF `effort="17"`
-# field flatten every joint to 17 N·m. That model is rejected. Stall torque stays
-# 17/34 N·m; the clipped joint effort is 7/14 N·m.
+# RobStride RS02 @ 14S nominal (~51.8 V, 48 V loaded floor), plus RK3588 USB-CAN delay.
+# The flat 17 N·m effort cap from URDF / 2026-11-12 recovery run remains rejected.
+RS02_BATTERY_CELLS = 14
 RS02_HIP_THIGH = {
-    "effort_limit": 7.0,
-    "saturation_effort": 17.0,
+    "peak_torque_motoring": 14.5,
+    "peak_torque_braking": 16.5,
+    "continuous_torque_nm": 7.0,
+    "corner_velocity": 24.0,
     "velocity_limit": 42.9350995991,
     "stiffness": 40.0,
     "damping": 0.8,
     "armature": 0.0042,
+    "friction": 0.01,
+    "min_delay": 0,
+    "max_delay": 3,
 }
 RS02_CALF = {
-    "effort_limit": 14.0,
-    "saturation_effort": 34.0,
+    "peak_torque_motoring": 28.0,
+    "peak_torque_braking": 32.0,
+    "continuous_torque_nm": 14.0,
+    "corner_velocity": 12.0,
     "velocity_limit": 21.4675497995,
     "stiffness": 60.0,
     "damping": 1.5,
     "armature": 0.0168,
+    "friction": 0.02,
+    "min_delay": 0,
+    "max_delay": 3,
 }
 REJECTED_FLAT_EFFORT_NM = 17.0
 
@@ -285,16 +295,5 @@ TERRAIN["stairs_up_proportion"] = 0.25
 TERRAIN["stairs_down_proportion"] = 0.10
 TERRAIN["flat_proportion"] = 0.20
 
-# Same-task fall recovery. Warm up pure locomotion before introducing fallen spawns.
-FALLEN_RESET_FRACTION = 0.0
-FALLEN_RESET_FRACTION_FINAL = 0.25
-FALLEN_FRACTION_START_UPDATE = 3000
-FALLEN_FRACTION_END_UPDATE = 20000
-FALLEN_Z_DROP_M = (0.06, 0.12)
-FALLEN_TIMEOUT_S = 6.0
-FALLEN_TIMEOUT_WALK_S = 2.0
-# Upright projected gravity z is about -1. Above this value the robot is still down.
-FALLEN_UPRIGHT_GRAVITY_Z = -0.7
-RECOVERY_UPRIGHT_WEIGHT = -2.0
-STAND_UP_BONUS_WEIGHT = 50.0
-RECOVERY_SCORE_SATURATION = 0.9
+# Pure locomotion termination threshold aligned with go2_rl_lab; fall recovery is separated into an independent task.
+ILLEGAL_CONTACT_THRESHOLD_N = 1.0

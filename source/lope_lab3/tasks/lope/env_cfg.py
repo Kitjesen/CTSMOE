@@ -1,13 +1,14 @@
-"""From-scratch Lope task using the official mixed Go2 CTS recipe.
+"""From-scratch pure locomotion Lope task using the official mixed Go2 CTS recipe.
 
-Hardware, adducted stance, height target, action scales, stairs, and slopes stay
-Lope's. Commands use the official unscaled RLGym ranges. A fraction of resets
-fall over and must stand back up. No wheel term is registered.
+Hardware, 14S RS02 delayed actuators, adducted stance, height target, action
+scales, stairs, and slopes stay Lope's. Commands use the official unscaled RLGym
+ranges. Fall recovery is deferred to an independent policy/task.
 """
 import os
 
 import isaaclab.sim as sim_utils
 from go2_rl_lab.tasks.mixed.mdp import rewards as go2_rewards
+from go2_rl_lab.tasks.mixed.mdp.events import reset_root_state_uniform
 from isaaclab.envs import ManagerBasedRLEnvCfg
 from isaaclab.envs import mdp as lab_mdp
 from isaaclab.managers import (
@@ -36,6 +37,7 @@ from lope_lab3.spec import (
     HEIGHT_SCAN_X,
     HEIGHT_SCAN_Y,
     HIP_STAND_STILL_SCALE,
+    ILLEGAL_CONTACT_THRESHOLD_N,
     JOINT_ACC_WEIGHT,
     JOINT_NAMES,
     JOINT_POWER_WEIGHT,
@@ -54,23 +56,12 @@ from lope_lab3.spec import (
     TRACK_LIN_STD,
     TRACK_YAW_STD,
     UNDESIRED_CONTACT_THRESHOLD_N,
-    FALLEN_FRACTION_END_UPDATE,
-    FALLEN_FRACTION_START_UPDATE,
-    FALLEN_RESET_FRACTION,
-    FALLEN_RESET_FRACTION_FINAL,
-    FALLEN_TIMEOUT_S,
-    FALLEN_TIMEOUT_WALK_S,
-    FALLEN_UPRIGHT_GRAVITY_Z,
-    RECOVERY_SCORE_SATURATION,
-    RECOVERY_UPRIGHT_WEIGHT,
-    STAND_UP_BONUS_WEIGHT,
 )
 from lope_lab3.tasks.lope.commands import CommandsCfg
 from lope_lab3.tasks.lope.mdp.observations import NoisyPolicyFrame, critic_frame, policy_frame
 from lope_lab3.tasks.lope.mdp.randomization import configure_randomization
 from lope_lab3.tasks.lope.scene_cfg import ActionsCfg, SceneCfg, actions_cfg
 from lope_lab3.tasks.lope.terrain import LopeTerrainImporterCfg, terrain_cfg
-from .mdp import terms as mdp
 
 LEGS = SceneEntityCfg("robot", joint_names=list(JOINT_NAMES), preserve_order=True)
 HIPS = SceneEntityCfg("robot", joint_names=[".*_hip_joint"])
@@ -110,7 +101,7 @@ class ObservationsCfg:
 class EventsCfg:
     reset_scene = EventTermCfg(func=lab_mdp.reset_scene_to_default, mode="reset")
     reset_root = EventTermCfg(
-        func=mdp.reset_root_with_recovery,
+        func=reset_root_state_uniform,
         mode="reset",
         params={
             "pose_range": {
@@ -184,7 +175,7 @@ class RewardsCfg:
         },
     )
     undesired_contacts = RewardTermCfg(
-        func=mdp.undesired_contacts_locomotion,
+        func=go2_rewards.undesired_contacts,
         weight=-1.0,
         params={"threshold": UNDESIRED_CONTACT_THRESHOLD_N, "sensor_cfg": LEG_CONTACTS},
     )
@@ -207,31 +198,23 @@ class RewardsCfg:
             "stand_still_scale": HIP_STAND_STILL_SCALE,
         },
     )
-    recovery_upright = RewardTermCfg(
-        func=mdp.recovery_upright,
-        weight=RECOVERY_UPRIGHT_WEIGHT,
-        params={"saturation": RECOVERY_SCORE_SATURATION},
-    )
-    stand_up_bonus = RewardTermCfg(
-        func=mdp.stand_up_bonus,
-        weight=STAND_UP_BONUS_WEIGHT,
-        params={"saturation": RECOVERY_SCORE_SATURATION},
-    )
 
 
 @configclass
 class TerminationsCfg:
     time_out = TerminationTermCfg(func=lab_mdp.time_out, time_out=True)
-    bad_orientation = TerminationTermCfg(
-        func=mdp.bad_orientation_locomotion,
-        params={"limit_angle": BAD_ORIENTATION_LIMIT_RAD},
-    )
-    fallen_timeout = TerminationTermCfg(
-        func=mdp.fallen_timeout,
+    illegal_contact = TerminationTermCfg(
+        func=lab_mdp.illegal_contact,
         params={
-            "max_time": FALLEN_TIMEOUT_S,
-            "walk_max_time": FALLEN_TIMEOUT_WALK_S,
-            "upright_gravity_z": FALLEN_UPRIGHT_GRAVITY_Z,
+            "sensor_cfg": SceneEntityCfg("contact_forces", body_names="base_link"),
+            "threshold": ILLEGAL_CONTACT_THRESHOLD_N,
+        },
+    )
+    bad_orientation = TerminationTermCfg(
+        func=lab_mdp.bad_orientation,
+        params={
+            "asset_cfg": SceneEntityCfg("robot"),
+            "limit_angle": BAD_ORIENTATION_LIMIT_RAD,
         },
     )
 
@@ -261,15 +244,6 @@ class CurriculumCfg:
             "end_it": BASE_HEIGHT_FINAL_UPDATE,
         },
     )
-    fallen_reset_fraction = CurriculumTermCfg(
-        func=mdp.fallen_reset_fraction,
-        params={
-            "initial": FALLEN_RESET_FRACTION,
-            "final": FALLEN_RESET_FRACTION_FINAL,
-            "start_it": FALLEN_FRACTION_START_UPDATE,
-            "end_it": FALLEN_FRACTION_END_UPDATE,
-        },
-    )
 
 
 @configclass
@@ -290,7 +264,7 @@ class LopeFreshEnvCfg(ManagerBasedRLEnvCfg):
     lope_robot: str = "lope_rs02_12dof"
     compute_final_obs: bool = True
     lope_terrain_schema: str = "lope_mixed_go2_scaled_stairs_5_25cm_slope_35deg"
-    lope_physics_schema: str = "newton_mjwarp_triangle_clean_self_col_v3"
+    lope_physics_schema: str = "newton_mjwarp_triangle_clean_self_col_rs02_14s_v4"
 
     def __post_init__(self):
         self.scene.robot = robot_cfg()
@@ -302,7 +276,11 @@ class LopeFreshEnvCfg(ManagerBasedRLEnvCfg):
             collision_group=-1,
             visual_material=None,
             physics_material=sim_utils.RigidBodyMaterialCfg(
-                static_friction=1.0, dynamic_friction=1.0, restitution=0.0
+                friction_combine_mode="average",
+                restitution_combine_mode="average",
+                static_friction=1.0,
+                dynamic_friction=1.0,
+                restitution=0.0,
             ),
         )
         self.scene.height_scanner.mesh_prim_paths = ["/World/ground/terrain/mesh"]
@@ -314,6 +292,7 @@ class LopeFreshEnvCfg(ManagerBasedRLEnvCfg):
             use_newton_actuators=False,
             physics=NewtonCfg(solver_cfg=MJWarpSolverCfg(use_mujoco_contacts=False), num_substeps=1),
         )
+        self.sim.physics_material = self.scene.terrain.physics_material
         self.sim.physics.collision_cfg = NewtonCollisionPipelineCfg(max_triangle_pairs=2_500_000)
         self.sim.physics.solver_cfg.integrator = "implicitfast"
         self.sim.physics.solver_cfg.nconmax = 128

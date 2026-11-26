@@ -18,6 +18,7 @@ from lope_lab3.spec import (
     CUMULATIVE_UPDATES,
     EPISODE_LENGTH_S,
     FOOT_BODIES,
+    ILLEGAL_CONTACT_THRESHOLD_N,
     JOINT_NAMES,
     JOINT_SIGN,
     LOPE_COMMAND_RANGE_CURRICULUM,
@@ -28,6 +29,7 @@ from lope_lab3.spec import (
     NUM_ENVS,
     OFFICIAL_COMMAND_RANGE_CURRICULUM,
     OFFICIAL_INITIAL_RANGES,
+    RS02_BATTERY_CELLS,
     RS02_CALF,
     RS02_HIP_THIGH,
     SELF_COLLISION,
@@ -50,16 +52,6 @@ from lope_lab3.spec import (
     POLICY_DIM,
 )
 from lope_lab3.recovery import FALLEN_MODES, fallen_orientation, recovering, upright_deficit
-from lope_lab3.spec import (
-    FALLEN_FRACTION_END_UPDATE,
-    FALLEN_FRACTION_START_UPDATE,
-    FALLEN_RESET_FRACTION,
-    FALLEN_RESET_FRACTION_FINAL,
-    FALLEN_TIMEOUT_S,
-    FALLEN_TIMEOUT_WALK_S,
-    RECOVERY_UPRIGHT_WEIGHT,
-    STAND_UP_BONUS_WEIGHT,
-)
 from lope_lab3.symmetry_math import (
     mirror_critic,
     mirror_joints,
@@ -151,21 +143,34 @@ class LopeAssetTests(unittest.TestCase):
             self.assertEqual(set(thigh_cols), {"thigh_distal", "thigh_proximal"}, leg)
 
     def test_rs02_limits_are_not_the_flat_17nm_cap_or_thunder(self):
-        self.assertEqual(RS02_HIP_THIGH["effort_limit"], 7.0)
-        self.assertEqual(RS02_HIP_THIGH["saturation_effort"], 17.0)
+        self.assertEqual(RS02_BATTERY_CELLS, 14)
+        self.assertEqual(RS02_HIP_THIGH["peak_torque_motoring"], 14.5)
+        self.assertEqual(RS02_HIP_THIGH["peak_torque_braking"], 16.5)
+        self.assertEqual(RS02_HIP_THIGH["continuous_torque_nm"], 7.0)
+        self.assertEqual(RS02_HIP_THIGH["corner_velocity"], 24.0)
         self.assertEqual(RS02_HIP_THIGH["velocity_limit"], 42.9350995991)
         self.assertEqual(RS02_HIP_THIGH["stiffness"], 40.0)
         self.assertEqual(RS02_HIP_THIGH["damping"], 0.8)
         self.assertEqual(RS02_HIP_THIGH["armature"], 0.0042)
-        self.assertEqual(RS02_CALF["effort_limit"], 14.0)
-        self.assertEqual(RS02_CALF["saturation_effort"], 34.0)
+        self.assertEqual(RS02_HIP_THIGH["friction"], 0.01)
+        self.assertEqual(RS02_HIP_THIGH["min_delay"], 0)
+        self.assertEqual(RS02_HIP_THIGH["max_delay"], 3)
+        self.assertEqual(RS02_CALF["peak_torque_motoring"], 28.0)
+        self.assertEqual(RS02_CALF["peak_torque_braking"], 32.0)
+        self.assertEqual(RS02_CALF["continuous_torque_nm"], 14.0)
+        self.assertEqual(RS02_CALF["corner_velocity"], 12.0)
         self.assertEqual(RS02_CALF["velocity_limit"], 21.4675497995)
         self.assertEqual(RS02_CALF["stiffness"], 60.0)
         self.assertEqual(RS02_CALF["damping"], 1.5)
         self.assertEqual(RS02_CALF["armature"], 0.0168)
-        self.assertNotEqual(RS02_HIP_THIGH["effort_limit"], 17.0)
-        self.assertNotEqual(RS02_CALF["effort_limit"], 17.0)
+        self.assertEqual(RS02_CALF["friction"], 0.02)
+        self.assertEqual(RS02_CALF["min_delay"], 0)
+        self.assertEqual(RS02_CALF["max_delay"], 3)
+        self.assertNotEqual(RS02_HIP_THIGH["peak_torque_motoring"], 17.0)
+        self.assertNotEqual(RS02_CALF["peak_torque_motoring"], 17.0)
         robot = (PACKAGE / "assets" / "robot.py").read_text(encoding="utf-8")
+        self.assertIn("RS02ActuatorCfg", robot)
+        self.assertNotIn("DCMotorCfg", robot)
         self.assertIn("hip_thigh_rs02", robot)
         self.assertIn("calf_rs02_2to1", robot)
         self.assertIn("merge_fixed_joints=MERGE_FIXED_JOINTS", robot)
@@ -263,15 +268,8 @@ class LopeCurriculumTests(unittest.TestCase):
             for token in banned_scale:
                 self.assertNotIn(token, text, path.name)
 
-    def test_recovery_is_in_the_same_task_without_instant_base_contact(self):
-        self.assertEqual(FALLEN_RESET_FRACTION, 0.0)
-        self.assertEqual(FALLEN_RESET_FRACTION_FINAL, 0.25)
-        self.assertEqual(FALLEN_FRACTION_START_UPDATE, 3000)
-        self.assertEqual(FALLEN_FRACTION_END_UPDATE, 20000)
-        self.assertEqual(FALLEN_TIMEOUT_S, 6.0)
-        self.assertEqual(FALLEN_TIMEOUT_WALK_S, 2.0)
-        self.assertEqual(RECOVERY_UPRIGHT_WEIGHT, -2.0)
-        self.assertEqual(STAND_UP_BONUS_WEIGHT, 50.0)
+    def test_locomotion_task_is_pure_and_aligned_with_go2(self):
+        self.assertEqual(ILLEGAL_CONTACT_THRESHOLD_N, 1.0)
         self.assertEqual(BAD_ORIENTATION_LIMIT_RAD, 2.0)
         self.assertEqual(upright_deficit(-1.0, 0.9), 0.0)
         self.assertAlmostEqual(upright_deficit(-0.8, 0.9), 0.0, places=9)
@@ -284,22 +282,23 @@ class LopeCurriculumTests(unittest.TestCase):
             self.assertGreater(max(abs(roll), abs(pitch)), 1.0, mode)
             self.assertTrue(recovering(math.sin(roll), 0.9) or abs(roll) > 1.0 or abs(pitch) > 1.0)
         env = (PACKAGE / "tasks" / "lope" / "env_cfg.py").read_text(encoding="utf-8")
-        self.assertIn("reset_root_with_recovery", env)
-        terms = (PACKAGE / "tasks" / "lope" / "mdp" / "terms.py").read_text(encoding="utf-8")
-        self.assertIn("from go2_rl_lab.tasks.mixed.mdp.events import reset_root_state_uniform", terms)
-        self.assertNotIn("from isaaclab.envs.mdp import reset_root_state_uniform", terms)
-        self.assertIn("isinstance(env_ids, slice)", terms)
-        self.assertIn("torch.arange(env.num_envs, device=env.device)[env_ids or slice(None)]", terms)
-        self.assertIn("_lope_recovering_from_reset", terms)
-        self.assertNotIn("_lope_was_fallen", terms)
-        self.assertIn("bad_orientation_locomotion", env)
-        self.assertIn("undesired_contacts_locomotion", env)
-        self.assertIn("recovery_upright", env)
-        self.assertIn("stand_up_bonus", env)
-        self.assertIn("fallen_timeout", env)
-        self.assertIn("fallen_reset_fraction", env)
-        self.assertNotIn("recovery_base_height", env)
-        self.assertNotIn("illegal_contact", env)
+        self.assertIn("reset_root_state_uniform", env)
+        self.assertIn("go2_rewards.undesired_contacts", env)
+        self.assertIn("lab_mdp.illegal_contact", env)
+        self.assertIn("lab_mdp.bad_orientation", env)
+        self.assertIn("self.sim.physics_material = self.scene.terrain.physics_material", env)
+        for forbidden in (
+            "reset_root_with_recovery",
+            "recovery_upright",
+            "stand_up_bonus",
+            "fallen_timeout",
+            "fallen_reset_fraction",
+            "undesired_contacts_locomotion",
+            "bad_orientation_locomotion",
+        ):
+            self.assertNotIn(forbidden, env)
+        fresh_state = (PACKAGE / "training" / "fresh_state.py").read_text(encoding="utf-8")
+        self.assertIn('"assets/actuator.py"', fresh_state)
 
     def test_registration_names_the_lope_task(self):
         text = (PACKAGE / "tasks" / "lope" / "__init__.py").read_text(encoding="utf-8")

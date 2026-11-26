@@ -13,6 +13,7 @@ from . import COURSE_FORMAT
 
 SOURCE_FILES = (
     "spec.py",
+    "assets/actuator.py",
     "assets/contract.py",
     "assets/robot.py",
     "tasks/lope/env_cfg.py",

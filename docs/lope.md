@@ -52,14 +52,14 @@ The recovery run `training/recovery_headless/run_configuration.json` flattens ev
 
 ## Actuators
 
-`lope.urdf` still says `effort="17"` on every revolute joint. That field is the rejected flat cap. Isaac Lab 3 `DCMotorCfg` enforces the RS02 model from `smalldog.py`:
+`lope.urdf` still says `effort="17"` on every revolute joint. That field is the rejected flat cap. Instead, `RS02Actuator(DelayedPDActuator)` models RobStride RS02 on a 14S battery (`~51.8 V` nominal, `48 V` loaded floor) and `0–3` physics steps (`0–15 ms`) of randomized control delay:
 
-| Group | effort / solver limit | stall `saturation_effort` | velocity | stiffness | damping | armature |
-| --- | --- | --- | --- | --- | --- | --- |
-| hip and thigh | 7.0 N·m | 17.0 N·m | 42.9350995991 rad/s | 40 | 0.8 | 0.0042 |
-| calf, 2:1 | 14.0 N·m | 34.0 N·m | 21.4675497995 rad/s | 60 | 1.5 | 0.0168 |
+| Group | motoring `Y1` | braking `Y2` | corner `X1` | no-load `X2` | stiffness | damping | armature | friction |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| hip and thigh | 14.5 N·m | 16.5 N·m | 24.0 rad/s | 42.9350995991 rad/s | 40 | 0.8 | 0.0042 | 0.01 |
+| calf, 2:1 | 28.0 N·m | 32.0 N·m | 12.0 rad/s | 21.4675497995 rad/s | 60 | 1.5 | 0.0168 | 0.02 |
 
-`friction` is 0. There is no `ImplicitActuatorCfg` and no wheel joint. `self_collision=True` (with cleaned `lope.urdf` collision geometry: internal battery collisions, `lope_belly`, `lope_side_±1`, and `thigh_housing` removed; `hip_housing` inboard side trimmed; `body` Y narrowed to `0.19 m`; `lope_upper` scaled to `0.95 0.84 1.0`; inner faces of `thigh_proximal`/`thigh_distal` retracted for Newton `margin=0.01`) and `merge_fixed_joints=False`, so the four fixed feet stay separate. Each foot collision is a sphere of radius 0.032 m. `soft_joint_pos_limit_factor` is 0.9. Action targets are clipped to that same soft window, centered on each URDF interval, as `SmallDogEnvCfg` did.
+There is no `ImplicitActuatorCfg` and no wheel joint. `self_collision=True` (with cleaned `lope.urdf` collision geometry: internal battery collisions, `lope_belly`, `lope_side_±1`, and `thigh_housing` removed; `hip_housing` inboard side trimmed; `body` Y narrowed to `0.19 m`; `lope_upper` scaled to `0.95 0.84 1.0`; inner faces of `thigh_proximal`/`thigh_distal` retracted for Newton `margin=0.01`) and `merge_fixed_joints=False`, so the four fixed feet stay separate. Each foot collision is a sphere of radius 0.032 m. `soft_joint_pos_limit_factor` is 0.9. Action targets are clipped to that same soft window, centered on each URDF interval, as `SmallDogEnvCfg` did.
 
 Standing pose keeps the solved thigh and calf magnitudes and adducts the hips by 0.08 rad. Front hip axes are −X and rear hip axes are +X, so the signs below move every foot toward the midline. Stance width is 0.25688538375184233 m. The root is higher than the old 0.2674918208774965 m spawn so the original 11.333470889715092 mm sole gap stays.
 
@@ -89,19 +89,17 @@ Rewards use the pinned `go2_rl_lab` terms with Lope's documented overrides:
 - hip and leg pose penalties with stand-still scale 10
 - no feet-air-time term and no separate flat-orientation term
 
-Termination is the 25 s timeout, `bad_orientation_locomotion` (2 rad tilt while walking, disabled while recovering from a fallen spawn), and `fallen_timeout` (2 s down while walking, 6 s down when spawned fallen). `illegal_contact` is not registered, and `undesired_contacts_locomotion` masks thigh/calf contact penalties while recovering from a fallen spawn. There is no wheel contact reward and no Thunder leg-contact duration term.
+Termination is the 25 s timeout, `illegal_contact` (`base_link > 1.0 N`), and `bad_orientation` (`2 rad` tilt), matching `go2_rl_lab`'s pure locomotion task. `undesired_contacts` uses `go2_rl_lab.tasks.mixed.mdp.rewards.undesired_contacts` directly. Fall recovery is planned as a standalone policy/task rather than mixed into `Lope-Newton3-Fresh-v0`. There is no wheel contact reward and no Thunder leg-contact duration term.
 
 Domain randomization follows the official mixed task: base mass add ±1 kg, other links scale 0.9–1.1, friction 0–2, restitution 0–0.5, actuator gains scale 0.9–1.1, joint reset scale 0.5–1.5, and motor zero offset ±0.035 rad. Push linear velocity is the official ±0.4 m/s. Push angular rate stays ±0.6 rad/s. The Newton center-of-mass buckets on Lope's `base_link` are scaled to its 0.26 m × 0.20 m chassis (`x` ±0.05 m, `y` ±0.03 m, `z` −0.02..0.03 m).
 
 ## Commands, terrain, timing
 
-Physics is 0.005 s and decimation is 4 (50 Hz). The episode is the official 25 s. Formal training uses 16384 environments and a 100000-update cap. Rollout length is 24. The network is the official 8-expert CTS policy with latent size 32, scalar noise, and `entropy_coef=0.005`. Reward clip is ±10. Save interval is 500.
+Physics is 0.005 s and decimation is 4 (50 Hz). `sim.physics_material` is explicitly synced to `scene.terrain.physics_material` (static/dynamic friction 1.0, average combine mode). The episode is the official 25 s. Formal training uses 16384 environments and a 100000-update cap. Rollout length is 24. The network is the official 8-expert CTS policy with latent size 32, scalar noise, and `entropy_coef=0.005`. Reward clip is ±10. Save interval is 500.
 
 Commands use `RLGymVelCommand` and `TerrainLevelsVelGym` with the official unscaled numbers. Initial ranges are x/y ±0.5 m/s and yaw ±1 rad/s. The range curriculum is ±1 / yaw ±2 at iteration 5000, x ±2 at 15000, x ±3 at 25000, x ±4 at 35000, and x −4.5..4.2, y ±1, yaw ±3 at 45000. Terrain caps use those same official speeds, with no wheels entry. Clip rules stay x limit 2.0 (y ±0.5, yaw ±1) and yaw limit 2.0 (x ±2, y ±1). Zero-command probability goes from 0 to 0.1 over iterations 0–1500. Resampling time is 5 s. Push linear velocity is ±0.4 m/s. The height ratio is not applied to any command or push speed.
 
 The height-reward crop stays a Lope-sized box, ±0.135 m by ±0.101 m. That crop is body geometry, not a speed scale.
-
-Fallen resets start at 0% for the first 3000 locomotion warmup updates, then rise to 25% by update 20000: left side, right side, back, or belly, with a random yaw and the root 6–12 cm lower. Locomotion remains the main task. Instant base-contact termination is not used, and `bad_orientation_locomotion` is masked while a fallen-spawn episode is still recovering. A `fallen_timeout` ends the episode after the base has stayed down (`projected gravity z > -0.7`) for 6 s (recovery) or 2 s (walking). Timeouts still end a normal 25 s episode. `recovery_upright` (weight −2) penalizes `max(0, 0.9 - upright_score)` continuously so standing smoothly reaches 0, and `stand_up_bonus` (weight 50) pays once per fallen-spawn episode when it first reaches `upright_score >= 0.9`.
 
 Terrain copies `MIXED_MESH_TERRAIN_CFG`: 9 m tiles, 10 rows, 20 columns, border 25 m, initial level up to row 1. The wheels sub-terrain is removed and flat's proportion is 0.20. `stairs_up` is the official inverted pyramid.
 
