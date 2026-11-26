@@ -37,6 +37,7 @@ from lope_lab3.spec import (
     TERRAIN,
     TRACK_LIN_STD,
     TRACK_YAW_STD,
+    URDF_SHA256,
     action_clips,
 )
 from lope_lab3.spec import (
@@ -130,6 +131,25 @@ class LopeAssetTests(unittest.TestCase):
             self.assertGreater(triangles, 0, mesh.name)
             self.assertEqual(len(payload), 84 + 50 * triangles, mesh.name)
 
+    def test_cleaned_urdf_collisions_prevent_phantom_self_contact(self):
+        report = validate_urdf()
+        self.assertEqual(report["sha256"], URDF_SHA256)
+        root = ET.parse(packaged_urdf()).getroot()
+        links = {link.attrib["name"]: link for link in root.findall("link")}
+        for internal_link in ("battery_guide_link", "battery_pack_trial_link"):
+            self.assertEqual(links[internal_link].findall("collision"), [], internal_link)
+        base_cols = {col.attrib["name"]: col for col in links["base_link"].findall("collision")}
+        self.assertEqual(set(base_cols), {"body", "lope_upper"})
+        self.assertEqual(base_cols["body"].find("geometry/box").attrib["size"], "0.26 0.19 0.12")
+        self.assertEqual(base_cols["lope_upper"].find("geometry/mesh").attrib.get("scale"), "0.95 0.84 1.0")
+        for leg in ("fr", "fl", "rr", "rl"):
+            hip_cols = {col.attrib["name"]: col for col in links[f"{leg}_hip_Link"].findall("collision")}
+            cyl = hip_cols["hip_housing"].find("geometry/cylinder")
+            self.assertEqual(cyl.attrib["radius"], "0.036", leg)
+            self.assertEqual(cyl.attrib["length"], "0.040", leg)
+            thigh_cols = {col.attrib["name"]: col for col in links[f"{leg}_thigh_Link"].findall("collision")}
+            self.assertEqual(set(thigh_cols), {"thigh_distal", "thigh_proximal"}, leg)
+
     def test_rs02_limits_are_not_the_flat_17nm_cap_or_thunder(self):
         self.assertEqual(RS02_HIP_THIGH["effort_limit"], 7.0)
         self.assertEqual(RS02_HIP_THIGH["saturation_effort"], 17.0)
@@ -218,7 +238,7 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertEqual(TERRAIN["stair_step_width"], 0.25)
         self.assertEqual(TERRAIN["num_rows"], 10)
         self.assertEqual(TERRAIN["max_init_terrain_level"], 1)
-        self.assertFalse(SELF_COLLISION)
+        self.assertTrue(SELF_COLLISION)
         self.assertEqual(TERRAIN["slope_range"][0], 0.0)
         self.assertAlmostEqual(TERRAIN["slope_range"][1], math.tan(math.radians(35)))
         self.assertNotAlmostEqual(TERRAIN["slope_range"][1], math.radians(35))

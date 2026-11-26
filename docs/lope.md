@@ -32,10 +32,10 @@ python scripts/rsl_rl/launch_lope.py play \
 
 ## Asset
 
-Copied from [Kitjesen/lope](https://github.com/Kitjesen/lope) branch `cursor/headless-urdf-meshes-only-51bf` at commit `74e51939d35e31cfa6dc03951af3911fbe0fe565`.
+Copied from [Kitjesen/lope](https://github.com/Kitjesen/lope) branch `cursor/headless-urdf-meshes-only-51bf` at commit `74e51939d35e31cfa6dc03951af3911fbe0fe565`, with internal self-collision envelopes cleaned in `lope.urdf`.
 
 - URDF: `source/lope_lab3/assets/lope/urdf/lope.urdf` (robot name `lope`)
-- SHA-256: `56cd5b1dc81545cc324e8b741e947ba0ccc90d8343b999286ef2ce550caa3a2b`
+- SHA-256: `939b56e92233a3866efdc9bcf65e21298cda35547e02b100c9c3086aaa5b40d8`
 - Meshes: the 35 files that URDF references, including `meshes/lope_visual_preview/`
 - Mass summed from the URDF: 13.333464609253825 kg
 - Third-party note: `source/lope_lab3/assets/lope/THIRD_PARTY.md`
@@ -59,7 +59,7 @@ The recovery run `training/recovery_headless/run_configuration.json` flattens ev
 | hip and thigh | 7.0 N·m | 17.0 N·m | 42.9350995991 rad/s | 40 | 0.8 | 0.0042 |
 | calf, 2:1 | 14.0 N·m | 34.0 N·m | 21.4675497995 rad/s | 60 | 1.5 | 0.0168 |
 
-`friction` is 0. There is no `ImplicitActuatorCfg` and no wheel joint. `self_collision=False` (avoiding permanent Newton `margin=0.01` phantom contact between the fixed battery links and chassis-thigh shapes) and `merge_fixed_joints=False`, so the four fixed feet stay separate. Each foot collision is a sphere of radius 0.032 m. `soft_joint_pos_limit_factor` is 0.9. Action targets are clipped to that same soft window, centered on each URDF interval, as `SmallDogEnvCfg` did.
+`friction` is 0. There is no `ImplicitActuatorCfg` and no wheel joint. `self_collision=True` (with cleaned `lope.urdf` collision geometry: internal battery collisions, `lope_belly`, `lope_side_±1`, and `thigh_housing` removed; `hip_housing` inboard side trimmed; `body` Y narrowed to `0.19 m`; `lope_upper` scaled to `0.95 0.84 1.0`; inner faces of `thigh_proximal`/`thigh_distal` retracted for Newton `margin=0.01`) and `merge_fixed_joints=False`, so the four fixed feet stay separate. Each foot collision is a sphere of radius 0.032 m. `soft_joint_pos_limit_factor` is 0.9. Action targets are clipped to that same soft window, centered on each URDF interval, as `SmallDogEnvCfg` did.
 
 Standing pose keeps the solved thigh and calf magnitudes and adducts the hips by 0.08 rad. Front hip axes are −X and rear hip axes are +X, so the signs below move every foot toward the midline. Stance width is 0.25688538375184233 m. The root is higher than the old 0.2674918208774965 m spawn so the original 11.333470889715092 mm sole gap stays.
 

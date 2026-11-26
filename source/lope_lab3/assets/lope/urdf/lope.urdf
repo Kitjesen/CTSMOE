@@ -28,7 +28,7 @@
     <collision name="body">
       <origin xyz="0 0 0.06" rpy="0 0 0" />
       <geometry>
-        <box size="0.26 0.2 0.12" />
+        <box size="0.26 0.19 0.12" />
       </geometry>
     </collision>
     <visual name="lope_body_upper">
@@ -175,27 +175,9 @@
         <color rgba="0.3176470588235294 0.3568627450980392 0.396078431372549 1" />
       </material>
     </visual>
-    <collision name="lope_belly">
-      <origin xyz="-0.004 0 0.009" rpy="0 0 0" />
-      <geometry>
-        <box size="0.26 0.212 0.031" />
-      </geometry>
-    </collision>
-    <collision name="lope_side_-1">
-      <origin xyz="-0.004 -0.109 0.07" rpy="0 0 0" />
-      <geometry>
-        <box size="0.246 0.012 0.105" />
-      </geometry>
-    </collision>
-    <collision name="lope_side_1">
-      <origin xyz="-0.004 0.109 0.07" rpy="0 0 0" />
-      <geometry>
-        <box size="0.246 0.012 0.105" />
-      </geometry>
-    </collision>
     <collision name="lope_upper">
       <geometry>
-        <mesh filename="../meshes/collision_upper.stl" />
+        <mesh filename="../meshes/collision_upper.stl" scale="0.95 0.84 1.0" />
       </geometry>
     </collision>
   </link>
@@ -214,12 +196,6 @@
         <color rgba="0.24 0.28 0.32 1" />
       </material>
     </visual>
-    <collision name="battery_tray">
-      <origin xyz="0 0 0.005" rpy="0 0 0" />
-      <geometry>
-        <box size="0.102 0.157 0.006" />
-      </geometry>
-    </collision>
   </link>
   <joint name="battery_guide_mount_trial" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
@@ -241,12 +217,6 @@
         <color rgba="0.90 0.42 0.12 1" />
       </material>
     </visual>
-    <collision name="battery">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <box size="0.09 0.145 0.07" />
-      </geometry>
-    </collision>
   </link>
   <joint name="battery_pack_mount_trial" type="fixed">
     <origin xyz="0 0 0.057" rpy="0 0 0" />
@@ -269,9 +239,9 @@
       </material>
     </visual>
     <collision name="hip_housing">
-      <origin xyz="0.0542211422 0.009 0" rpy="1.570796327 0 0" />
+      <origin xyz="0.0542211422 -0.015 0" rpy="1.570796327 0 0" />
       <geometry>
-        <cylinder radius="0.0402" length="0.073" />
+        <cylinder radius="0.036" length="0.040" />
       </geometry>
     </collision>
     <collision name="hip_neck">
@@ -303,22 +273,16 @@
         <color rgba="0.7137254901960784 0.7529411764705882 0.7803921568627451 1" />
       </material>
     </visual>
-    <collision name="thigh_housing">
-      <origin xyz="0 -0.05225 0" rpy="1.570796327 0 0" />
-      <geometry>
-        <cylinder radius="0.041" length="0.1045" />
-      </geometry>
-    </collision>
     <collision name="thigh_distal">
-      <origin xyz="-0.1738674546 -0.09334500134 0.0137600884" rpy="0 -0.1745329252 0" />
+      <origin xyz="-0.1738674546 -0.097 0.0137600884" rpy="0 -0.1745329252 0" />
       <geometry>
-        <box size="0.1068535123 0.03679001129 0.04876928548" />
+        <box size="0.1068535123 0.028 0.04876928548" />
       </geometry>
     </collision>
     <collision name="thigh_proximal">
-      <origin xyz="-0.07168729681 -0.09070000052 0.01963903611" rpy="0 -1.335176878 0" />
+      <origin xyz="-0.07168729681 -0.094 0.01963903611" rpy="0 -1.335176878 0" />
       <geometry>
-        <box size="0.06459318809 0.0281499902 0.1023809275" />
+        <box size="0.06459318809 0.022 0.1023809275" />
       </geometry>
     </collision>
   </link>
@@ -414,9 +378,9 @@
       </material>
     </visual>
     <collision name="hip_housing">
-      <origin xyz="0.0542211422 -0.009 0" rpy="1.570796327 0 0" />
+      <origin xyz="0.0542211422 0.015 0" rpy="1.570796327 0 0" />
       <geometry>
-        <cylinder radius="0.0402" length="0.073" />
+        <cylinder radius="0.036" length="0.040" />
       </geometry>
     </collision>
     <collision name="hip_neck">
@@ -448,22 +412,16 @@
         <color rgba="0.7137254901960784 0.7529411764705882 0.7803921568627451 1" />
       </material>
     </visual>
-    <collision name="thigh_housing">
-      <origin xyz="0 0.05225 0" rpy="1.570796327 0 0" />
-      <geometry>
-        <cylinder radius="0.041" length="0.1045" />
-      </geometry>
-    </collision>
     <collision name="thigh_distal">
-      <origin xyz="-0.1738674546 0.09334500134 0.0137600884" rpy="0 -0.1745329252 0" />
+      <origin xyz="-0.1738674546 0.097 0.0137600884" rpy="0 -0.1745329252 0" />
       <geometry>
-        <box size="0.1068535123 0.03679001129 0.04876928548" />
+        <box size="0.1068535123 0.028 0.04876928548" />
       </geometry>
     </collision>
     <collision name="thigh_proximal">
-      <origin xyz="-0.07168729681 0.09070000052 0.01963903611" rpy="0 -1.335176878 0" />
+      <origin xyz="-0.07168729681 0.094 0.01963903611" rpy="0 -1.335176878 0" />
       <geometry>
-        <box size="0.06459318809 0.0281499902 0.1023809275" />
+        <box size="0.06459318809 0.022 0.1023809275" />
       </geometry>
     </collision>
   </link>
@@ -559,9 +517,9 @@
       </material>
     </visual>
     <collision name="hip_housing">
-      <origin xyz="-0.0542211422 0.009 0" rpy="1.570796327 0 0" />
+      <origin xyz="-0.0542211422 -0.015 0" rpy="1.570796327 0 0" />
       <geometry>
-        <cylinder radius="0.0402" length="0.073" />
+        <cylinder radius="0.036" length="0.040" />
       </geometry>
     </collision>
     <collision name="hip_neck">
@@ -593,22 +551,16 @@
         <color rgba="0.7137254901960784 0.7529411764705882 0.7803921568627451 1" />
       </material>
     </visual>
-    <collision name="thigh_housing">
-      <origin xyz="0 -0.05225 0" rpy="1.570796327 0 0" />
-      <geometry>
-        <cylinder radius="0.041" length="0.1045" />
-      </geometry>
-    </collision>
     <collision name="thigh_distal">
-      <origin xyz="-0.1738674546 -0.09334500134 0.0137600884" rpy="0 -0.1745329252 0" />
+      <origin xyz="-0.1738674546 -0.097 0.0137600884" rpy="0 -0.1745329252 0" />
       <geometry>
-        <box size="0.1068535123 0.03679001129 0.04876928548" />
+        <box size="0.1068535123 0.028 0.04876928548" />
       </geometry>
     </collision>
     <collision name="thigh_proximal">
-      <origin xyz="-0.07168729681 -0.09070000052 0.01963903611" rpy="0 -1.335176878 0" />
+      <origin xyz="-0.07168729681 -0.094 0.01963903611" rpy="0 -1.335176878 0" />
       <geometry>
-        <box size="0.06459318809 0.0281499902 0.1023809275" />
+        <box size="0.06459318809 0.022 0.1023809275" />
       </geometry>
     </collision>
   </link>
@@ -704,9 +656,9 @@
       </material>
     </visual>
     <collision name="hip_housing">
-      <origin xyz="-0.0542211422 -0.009 0" rpy="1.570796327 0 0" />
+      <origin xyz="-0.0542211422 0.015 0" rpy="1.570796327 0 0" />
       <geometry>
-        <cylinder radius="0.0402" length="0.073" />
+        <cylinder radius="0.036" length="0.040" />
       </geometry>
     </collision>
     <collision name="hip_neck">
@@ -738,22 +690,16 @@
         <color rgba="0.7137254901960784 0.7529411764705882 0.7803921568627451 1" />
       </material>
     </visual>
-    <collision name="thigh_housing">
-      <origin xyz="0 0.05225 0" rpy="1.570796327 0 0" />
-      <geometry>
-        <cylinder radius="0.041" length="0.1045" />
-      </geometry>
-    </collision>
     <collision name="thigh_distal">
-      <origin xyz="-0.1738674546 0.09334500134 0.0137600884" rpy="0 -0.1745329252 0" />
+      <origin xyz="-0.1738674546 0.097 0.0137600884" rpy="0 -0.1745329252 0" />
       <geometry>
-        <box size="0.1068535123 0.03679001129 0.04876928548" />
+        <box size="0.1068535123 0.028 0.04876928548" />
       </geometry>
     </collision>
     <collision name="thigh_proximal">
-      <origin xyz="-0.07168729681 0.09070000052 0.01963903611" rpy="0 -1.335176878 0" />
+      <origin xyz="-0.07168729681 0.094 0.01963903611" rpy="0 -1.335176878 0" />
       <geometry>
-        <box size="0.06459318809 0.0281499902 0.1023809275" />
+        <box size="0.06459318809 0.022 0.1023809275" />
       </geometry>
     </collision>
   </link>

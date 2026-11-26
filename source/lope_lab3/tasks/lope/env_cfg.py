@@ -290,7 +290,7 @@ class LopeFreshEnvCfg(ManagerBasedRLEnvCfg):
     lope_robot: str = "lope_rs02_12dof"
     compute_final_obs: bool = True
     lope_terrain_schema: str = "lope_mixed_go2_scaled_stairs_5_25cm_slope_35deg"
-    lope_physics_schema: str = "newton_mjwarp_triangle_no_self_col_v2"
+    lope_physics_schema: str = "newton_mjwarp_triangle_clean_self_col_v3"
 
     def __post_init__(self):
         self.scene.robot = robot_cfg()

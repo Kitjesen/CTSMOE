@@ -10,7 +10,8 @@ import math
 
 # Assets: https://github.com/Kitjesen/lope branch cursor/headless-urdf-meshes-only-51bf
 ASSET_COMMIT = "74e51939d35e31cfa6dc03951af3911fbe0fe565"
-URDF_SHA256 = "56cd5b1dc81545cc324e8b741e947ba0ccc90d8343b999286ef2ce550caa3a2b"
+# Collision geometry cleaned over ASSET_COMMIT for Newton margin=0.01 self-collision.
+URDF_SHA256 = "939b56e92233a3866efdc9bcf65e21298cda35547e02b100c9c3086aaa5b40d8"
 # Training numbers: headless-v67 @ 86008cc53e119038959f93fa48b9f1b9287dfb6f
 # joint_motion_config.json, smalldog.py RS02 groups, rough_cfg.py, env_cfg.py.
 TRAINING_COMMIT = "86008cc53e119038959f93fa48b9f1b9287dfb6f"
@@ -88,8 +89,8 @@ RS02_CALF = {
 REJECTED_FLAT_EFFORT_NM = 17.0
 
 MERGE_FIXED_JOINTS = False
-# Newton margin=0.01 triggers permanent phantom contact on battery links & chassis-thigh.
-SELF_COLLISION = False
+# Internal battery and phantom thigh/hip collisions are cleaned in lope.urdf for Newton margin=0.01.
+SELF_COLLISION = True
 SOLVER_NJMAX = 512
 BODY_COM_OFFSET_X = (-0.05, 0.05)
 BODY_COM_OFFSET_Y = (-0.03, 0.03)

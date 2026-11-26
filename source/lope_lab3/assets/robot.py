@@ -47,7 +47,7 @@ def _dc_motor(joint_names_expr, model):
 
 
 def robot_cfg():
-    """12 revolute joints, fixed feet, self-collision controlled by spec, fixed joints kept."""
+    """12 revolute joints, fixed feet, self-collision enabled on cleaned URDF, fixed joints kept."""
     if not math.isfinite(SPAWN_HEIGHT_M) or SPAWN_HEIGHT_M <= 0:
         raise ValueError("Spawn height must be finite and positive")
     asset = validate_urdf(urdf_path())
