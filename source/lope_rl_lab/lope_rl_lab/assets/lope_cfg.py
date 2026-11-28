@@ -16,29 +16,32 @@ FOOT_BODIES = tuple(f"{leg}_foot_Link" for leg in LEGS)
 FOOT_JOINTS = tuple(f"{leg}_foot_joint" for leg in LEGS)
 ACTION_DIM = 12
 
-# joint_motion_config.json standing_joint_angles_rad. Left/right signs follow the URDF.
-# Thigh pitch and calf stay at the solved magnitudes. Hips adduct 0.08 rad
-# (about 4.6 deg). Front hip axes are -X and rear hip axes are +X, so these signs
-# move all four feet toward the midline. The root is raised so the original
-# 11.333470889715092 mm sole gap remains. Stance width is 0.25688538375184233 m.
+# Raised athletic standing pose solved via exact URDF FK for 0.295 m base height
+# (0.355 m hip height, 97.7 deg knee, foot X centered directly under hip X).
+# Hips keep 0.08 rad adduction (about 4.6 deg; front hip axes -X, rear +X).
+# All 0.5x..1.5x reset scales stay strictly inside the 0.9 soft joint limits.
+# Root spawn height keeps the original 11.333470889715092 mm sole gap.
 STANDING_POSE = {
     "fr_hip_joint": -0.08,
-    "fr_thigh_joint": -0.6715534335840251,
-    "fr_calf_joint": 1.1,
+    "fr_thigh_joint": -0.8175230341,
+    "fr_calf_joint": 1.3159416215,
     "fl_hip_joint": 0.08,
-    "fl_thigh_joint": 0.6715534335840251,
-    "fl_calf_joint": -1.1,
+    "fl_thigh_joint": 0.8175230341,
+    "fl_calf_joint": -1.3159416215,
     "rr_hip_joint": 0.08,
-    "rr_thigh_joint": -0.6715534335840251,
-    "rr_calf_joint": 1.1,
+    "rr_thigh_joint": -0.8175230341,
+    "rr_calf_joint": 1.3159416215,
     "rl_hip_joint": -0.08,
-    "rl_thigh_joint": 0.6715534335840251,
-    "rl_calf_joint": -1.1,
+    "rl_thigh_joint": 0.8175230341,
+    "rl_calf_joint": -1.3159416215,
 }
-SPAWN_HEIGHT_M = 0.2740510271690917
-BASE_HEIGHT_TARGET_M = 0.2627175562793766
+SPAWN_HEIGHT_M = 0.3063334708897151
+STANDING_HEIGHT_M = 0.295
+# Locomotion height target: 0.300 m base_link origin -> 0.360 m hip height
+# (~75.6% straight-leg limit, ~100 deg knee, +5 mm over standing pose for smooth stand-to-walk).
+BASE_HEIGHT_TARGET_M = 0.300
 SOLE_GAP_M = 0.011333470889715092
-STANCE_WIDTH_M = 0.25688538375184233
+STANCE_WIDTH_M = 0.2517091454009088
 HIP_ADDUCTION_RAD = 0.08
 SOFT_JOINT_POS_LIMIT_FACTOR = 0.9
 ACTION_SCALE_RAD = {"hip": 0.15, "thigh": 0.2, "calf": 0.2}

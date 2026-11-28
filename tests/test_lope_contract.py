@@ -262,14 +262,14 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertNotAlmostEqual(TERRAIN["slope_range"][1], 0.568)
         self.assertEqual(PHYSICS_DT_S, 0.005)
         self.assertEqual(DECIMATION, 4)
-        self.assertEqual(SPAWN_HEIGHT_M, 0.2740510271690917)
-        self.assertEqual(BASE_HEIGHT_TARGET_M, 0.2627175562793766)
+        self.assertEqual(SPAWN_HEIGHT_M, 0.3063334708897151)
+        self.assertEqual(BASE_HEIGHT_TARGET_M, 0.300)
         self.assertEqual(STANDING_POSE["fr_hip_joint"], -0.08)
         self.assertEqual(STANDING_POSE["fl_hip_joint"], 0.08)
         self.assertEqual(STANDING_POSE["rr_hip_joint"], 0.08)
         self.assertEqual(STANDING_POSE["rl_hip_joint"], -0.08)
-        self.assertEqual(STANDING_POSE["fr_calf_joint"], 1.1)
-        self.assertEqual(STANDING_POSE["fr_thigh_joint"], -0.6715534335840251)
+        self.assertEqual(STANDING_POSE["fr_calf_joint"], 1.3159416215)
+        self.assertEqual(STANDING_POSE["fr_thigh_joint"], -0.8175230341)
         self.assertEqual(ACTION_SCALE_RAD, {"hip": 0.15, "thigh": 0.2, "calf": 0.2})
         pose = standing_vector()
         self.assertEqual(mirror_joints(pose), pose)
@@ -455,9 +455,12 @@ class LopeCurriculumTests(unittest.TestCase):
         # 2: stalled against step wall (3/15 < 0.5) -> DOWN
         # 3: early fall -> DOWN
         # 4: zero command stand -> STAY
-        # 5: fell after crossing > 4.0m -> UP takes precedence over DOWN
-        self.assertEqual(move_up.tolist(), [False, True, False, False, False, True])
-        self.assertEqual(move_down.tolist(), [False, False, True, True, False, False])
+        # 5: fell after crossing > 4.0m -> DOWN (never promote on early crash)
+        self.assertEqual(move_up.tolist(), [False, True, False, False, False, False])
+        self.assertEqual(move_down.tolist(), [False, False, True, True, False, True])
+        curr_text = (PACKAGE / "tasks" / "locomotion" / "mdp" / "curriculums.py").read_text(encoding="utf-8")
+        for metric_key in ("/l9_ratio", "/l7_plus_ratio", "/up_rate", "/down_rate"):
+            self.assertIn(metric_key, curr_text)
 
 
 def _sequence(value):

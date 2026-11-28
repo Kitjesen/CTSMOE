@@ -76,13 +76,13 @@ The recovery run `training/recovery_headless/run_configuration.json` flattens ev
 
 There is no `ImplicitActuatorCfg` and no wheel joint. `self_collision=True` (with cleaned `lope.urdf` collision geometry: internal battery collisions, `lope_belly`, `lope_side_±1`, and `thigh_housing` removed; `hip_housing` inboard side trimmed; `body` Y narrowed to `0.19 m`; `lope_upper` scaled to `0.95 0.84 1.0`; inner faces of `thigh_proximal`/`thigh_distal` retracted for Newton `margin=0.01`) and `merge_fixed_joints=False`, so the four fixed feet stay separate. Each foot collision is a sphere of radius 0.032 m. `soft_joint_pos_limit_factor` is 0.9. Action targets are clipped to that same soft window, centered on each URDF interval, as `SmallDogEnvCfg` did.
 
-Standing pose keeps the solved thigh and calf magnitudes and adducts the hips by 0.08 rad. Front hip axes are −X and rear hip axes are +X, so the signs below move every foot toward the midline. Stance width is 0.25688538375184233 m. The root is higher than the old 0.2674918208774965 m spawn so the original 11.333470889715092 mm sole gap stays.
+Standing pose is solved via exact URDF FK for a 0.295 m base height (0.355 m hip height, 97.7° knee, feet centered directly beneath the hip axes) with 0.08 rad hip adduction. Front hip axes are −X and rear hip axes are +X, so the signs below move every foot toward the midline. Stance width is 0.2517 m, and all 0.5×–1.5× reset scales remain strictly inside the 0.9 soft joint limits. Spawn height preserves the original 11.333470889715092 mm sole gap.
 
 - `fr_hip_joint` −0.08, `fl_hip_joint` +0.08, `rr_hip_joint` +0.08, `rl_hip_joint` −0.08
-- thighs ±0.6715534335840251 rad (right negative, left positive)
-- calves ±1.1 rad (right positive, left negative)
-- spawn height 0.2740510271690917 m
-- height target 0.2627175562793766 m
+- thighs ±0.8175230341 rad (right negative, left positive)
+- calves ±1.3159416215 rad (right positive, left negative)
+- spawn height 0.3063334708897151 m (standing pose sole-touch height 0.295 m, hip height 0.355 m)
+- height target 0.300 m (hip axis 0.360 m, ~75.6% straight-leg limit, ~100° knee)
 
 Action scale: hip 0.15 rad, thigh 0.2 rad, calf 0.2 rad. The action vector is 12 position targets in order FR, FL, RR, RL and hip, thigh, calf. URDF position limits are unchanged, including the mirrored thigh and calf windows.
 
@@ -97,7 +97,7 @@ Symmetry swaps FR with FL and RR with RL, then multiplies every revolute compone
 Rewards use the pinned `go2_rl_lab` terms with Lope's documented overrides:
 
 - linear tracking standard deviation 0.5 and weight 2, yaw standard deviation 0.5 and weight 1
-- base height weight from -1 to -10 over 5000 updates, target 0.2627175562793766 m (not Go2's 0.38 m)
+- base height weight from -1 to -10 over 5000 updates, target 0.300 m (hip height 0.360 m, not Go2's 0.38 m)
 - vertical linear velocity weight from -2 to 0 over 1500 updates
 - Newton joint acceleration weight -3e-7, power -1.5e-5, torque -6e-5
 - undesired-contact threshold 30 N (penalizes real thigh/calf strikes on 90° stair risers)
@@ -112,7 +112,7 @@ Domain randomization follows the official mixed task: base mass add ±1 kg, othe
 
 Physics is 0.005 s and decimation is 4 (50 Hz). `sim.physics_material` is explicitly synced to `scene.terrain.physics_material` (static/dynamic friction 1.0, average combine mode). The episode is the official 25 s. Formal training uses 16384 environments and a 100000-update cap. Rollout length is 24. The network is the official 8-expert CTS policy with latent size 32, scalar noise, and `entropy_coef=0.005`. Reward clip is ±10. Save interval is 500.
 
-Commands use `LopeVelCommand` (subclassing `RLGymVelCommand`) and `LopeTerrainLevelsCurriculum` with the official unscaled numbers. Promotion still requires exceeding half the usable tile length (`> 4.0 m`), while demotion checks early falls or commanded-direction path stalling (`< 50%` projected progress) so curved yaw trajectories inside the central platform do not cause false demotions. Initial ranges are x/y ±0.5 m/s and yaw ±1 rad/s. The range curriculum is ±1 / yaw ±2 at iteration 5000, x ±2 at 15000, x ±3 at 25000, x ±4 at 35000, and x −4.5..4.2, y ±1, yaw ±3 at 45000. Terrain caps use those same official speeds, with no wheels entry. Clip rules stay x limit 2.0 (y ±0.5, yaw ±1) and yaw limit 2.0 (x ±2, y ±1). Zero-command probability goes from 0 to 0.1 over iterations 0–1500. Resampling time is 5 s. Push linear velocity is ±0.4 m/s. The height ratio is not applied to any command or push speed.
+Commands use `LopeVelCommand` (subclassing `RLGymVelCommand`) and `LopeTerrainLevelsCurriculum` with the official unscaled numbers. Promotion requires exceeding half the usable tile length (`> 4.0 m`) without early termination (`~terminated`), while demotion checks early falls or commanded-direction path stalling (`< 50%` projected progress) so curved yaw trajectories inside the central platform do not cause false demotions. Per-terrain `l9_ratio`, `l7_plus_ratio`, `up_rate`, and `down_rate` are logged alongside `mean_level`. Initial ranges are x/y ±0.5 m/s and yaw ±1 rad/s. The range curriculum is ±1 / yaw ±2 at iteration 5000, x ±2 at 15000, x ±3 at 25000, x ±4 at 35000, and x −4.5..4.2, y ±1, yaw ±3 at 45000. Terrain caps use those same official speeds, with no wheels entry. Clip rules stay x limit 2.0 (y ±0.5, yaw ±1) and yaw limit 2.0 (x ±2, y ±1). Zero-command probability goes from 0 to 0.1 over iterations 0–1500. Resampling time is 5 s. Push linear velocity is ±0.4 m/s. The height ratio is not applied to any command or push speed.
 
 The height-reward crop stays a Lope-sized box, ±0.135 m by ±0.101 m. That crop is body geometry, not a speed scale.
 
