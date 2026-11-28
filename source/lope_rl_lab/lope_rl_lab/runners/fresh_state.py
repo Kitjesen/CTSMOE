@@ -23,6 +23,7 @@ SOURCE_FILES = (
     "tasks/locomotion/agents/rsl_rl_moe_cts_cfg.py",
     "tasks/locomotion/mdp/observations.py",
     "tasks/locomotion/mdp/rewards.py",
+    "tasks/locomotion/mdp/curriculums.py",
     "tasks/locomotion/mdp/events.py",
     "tasks/locomotion/mdp/symmetry.py",
     "utils/symmetry.py",

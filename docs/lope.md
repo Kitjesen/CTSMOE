@@ -4,12 +4,27 @@ Lope is a 12-DoF fixed-foot quadruped packaged as the Isaac Lab extension `lope_
 
 ## Launch
 
-From the repository root. The command prints a plan. Add `--execute` only when Isaac Lab 3 / Newton is installed and a run is intended. Standalone uses `scripts/rsl_rl/launch.py` (`CTSMOE` exposes `scripts/rsl_rl/launch_lope.py`).
+From the repository root. Standalone `lope_rl_lab` bundles `source/rsl_rl` (MoE-CTS & PPO networks such as `source/rsl_rl/rsl_rl/moe_cts/modules/actor_critic.py` and `moe.py`) and `scripts/rsl_rl/{train.py, play.py, launch.py}`. `launch.py` prints a plan unless `--execute` is added (`CTSMOE` exposes `scripts/rsl_rl/launch_lope.py`).
+
+Editable install in a configured Isaac Lab 3 / Newton Python environment:
+
+```bash
+uv pip install --no-deps -e source/rsl_rl -e source/lope_rl_lab
+```
+
+Plan-only launcher command:
 
 ```bash
 python scripts/rsl_rl/launch.py train \
   --urdf source/lope_rl_lab/lope_rl_lab/assets/data/urdf/lope.urdf \
   --num-envs 32 --updates 2 --seed 42 --run-name lope-smoke
+```
+
+Direct training entry point (requires Isaac Lab 3 / Newton):
+
+```bash
+python scripts/rsl_rl/train.py \
+  --task lope-locomotion-mixed --num_envs 32 --max_iterations 2 --seed 42 --run_name lope-smoke
 ```
 
 Task id: `lope-locomotion-mixed`.
@@ -85,7 +100,7 @@ Rewards use the pinned `go2_rl_lab` terms with Lope's documented overrides:
 - base height weight from -1 to -10 over 5000 updates, target 0.2627175562793766 m (not Go2's 0.38 m)
 - vertical linear velocity weight from -2 to 0 over 1500 updates
 - Newton joint acceleration weight -3e-7, power -1.5e-5, torque -6e-5
-- undesired-contact threshold 110 N
+- undesired-contact threshold 30 N (penalizes real thigh/calf strikes on 90° stair risers)
 - hip and leg pose penalties with stand-still scale 10
 - no feet-air-time term and no separate flat-orientation term
 
@@ -97,11 +112,11 @@ Domain randomization follows the official mixed task: base mass add ±1 kg, othe
 
 Physics is 0.005 s and decimation is 4 (50 Hz). `sim.physics_material` is explicitly synced to `scene.terrain.physics_material` (static/dynamic friction 1.0, average combine mode). The episode is the official 25 s. Formal training uses 16384 environments and a 100000-update cap. Rollout length is 24. The network is the official 8-expert CTS policy with latent size 32, scalar noise, and `entropy_coef=0.005`. Reward clip is ±10. Save interval is 500.
 
-Commands use `RLGymVelCommand` and `TerrainLevelsVelGym` with the official unscaled numbers. Initial ranges are x/y ±0.5 m/s and yaw ±1 rad/s. The range curriculum is ±1 / yaw ±2 at iteration 5000, x ±2 at 15000, x ±3 at 25000, x ±4 at 35000, and x −4.5..4.2, y ±1, yaw ±3 at 45000. Terrain caps use those same official speeds, with no wheels entry. Clip rules stay x limit 2.0 (y ±0.5, yaw ±1) and yaw limit 2.0 (x ±2, y ±1). Zero-command probability goes from 0 to 0.1 over iterations 0–1500. Resampling time is 5 s. Push linear velocity is ±0.4 m/s. The height ratio is not applied to any command or push speed.
+Commands use `LopeVelCommand` (subclassing `RLGymVelCommand`) and `LopeTerrainLevelsCurriculum` with the official unscaled numbers. Promotion still requires exceeding half the usable tile length (`> 4.0 m`), while demotion checks early falls or commanded-direction path stalling (`< 50%` projected progress) so curved yaw trajectories inside the central platform do not cause false demotions. Initial ranges are x/y ±0.5 m/s and yaw ±1 rad/s. The range curriculum is ±1 / yaw ±2 at iteration 5000, x ±2 at 15000, x ±3 at 25000, x ±4 at 35000, and x −4.5..4.2, y ±1, yaw ±3 at 45000. Terrain caps use those same official speeds, with no wheels entry. Clip rules stay x limit 2.0 (y ±0.5, yaw ±1) and yaw limit 2.0 (x ±2, y ±1). Zero-command probability goes from 0 to 0.1 over iterations 0–1500. Resampling time is 5 s. Push linear velocity is ±0.4 m/s. The height ratio is not applied to any command or push speed.
 
 The height-reward crop stays a Lope-sized box, ±0.135 m by ±0.101 m. That crop is body geometry, not a speed scale.
 
-Terrain copies `MIXED_MESH_TERRAIN_CFG`: 9 m tiles, 10 rows, 20 columns, border 25 m, initial level up to row 1. The wheels sub-terrain is removed and flat's proportion is 0.20. `stairs_up` is the official inverted pyramid.
+Terrain copies `MIXED_MESH_TERRAIN_CFG` with `convert_to_heightfield=False` on every sub-terrain so Newton collides directly against the watertight 90° box-ring triangle mesh instead of re-rasterizing stairs onto a 10 cm heightfield: 9 m tiles, 10 rows, 20 columns, border 25 m, initial level up to row 1. The wheels sub-terrain is removed and flat's proportion is 0.20. `stairs_up` is the official inverted pyramid.
 
 - slopes 0–35°, stored as the rise/run gradient `(0, tan(35°))` ≈ `(0, 0.7002075382097097)`. This replaces both the official `(0.1, 0.568)` and 40° ramps.
 - stairs `step_height_range=(0.05, 0.25)` m. Official tread is 0.31 m; Lope keeps 0.25 m so the step is not scaled all the way down to about 0.21 m.

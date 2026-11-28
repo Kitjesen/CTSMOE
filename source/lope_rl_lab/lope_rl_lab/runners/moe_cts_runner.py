@@ -71,8 +71,14 @@ class LopeMoeCtsRunner(MoeCtsRunner):
         validate_for_algorithm(saved, self.alg)
         raw_env = getattr(self.env, "unwrapped", self.env)
         if load_optimizer:
+            allow_migration = os.environ.get("LOPE_ALLOW_CONTRACT_MIGRATION") == "1"
             if self._training_contract != saved["training_contract"]:
-                raise ValueError("Lope resume requires the saved task/asset/control/reward configuration")
+                if not allow_migration:
+                    raise ValueError("Lope resume requires the saved task/asset/control/reward configuration")
+                required_keys = ("robot", "urdf_sha256", "network", "algorithm", "rollout_steps")
+                for key in required_keys:
+                    if self._training_contract.get(key) != saved["training_contract"].get(key):
+                        raise ValueError(f"Lope contract migration mismatch on locked field: {key}")
             validate_course(raw_env, saved["environment_state"], saved["completed_updates"])
         infos = super()._load_checkpoint_state(saved, load_optimizer)
         self.alg.learning_rate = float(saved["learning_rate"])
@@ -81,9 +87,18 @@ class LopeMoeCtsRunner(MoeCtsRunner):
         self._checkpoint_loaded = True
         self._resume_course_pending = bool(load_optimizer)
         self._environment_state = saved.get("environment_state")
-        self._training_contract = saved["training_contract"]
+        migrated = bool(load_optimizer) and self._training_contract != saved["training_contract"]
+        if not migrated:
+            self._training_contract = saved["training_contract"]
         self._compat_signature = saved["signature"]
-        self._compat_provenance = saved["compat_provenance"]
+        self._compat_provenance = copy.deepcopy(saved["compat_provenance"])
+        if migrated:
+            self._compat_provenance["migrated_from_contract_sha256"] = saved["training_contract"].get("sha256")
+            print(
+                f"[INFO] Migrated Lope training contract on resume from "
+                f"{saved['training_contract'].get('sha256', 'unknown')[:12]} to "
+                f"{self._training_contract.get('sha256', 'unknown')[:12]}"
+            )
         return infos
 
     def learn(self, num_learning_iterations, init_at_random_ep_len=False):

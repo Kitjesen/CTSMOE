@@ -8,7 +8,7 @@ import os
 
 import isaaclab.sim as sim_utils
 from go2_rl_lab.tasks.mixed.mdp import rewards as go2_rewards
-from go2_rl_lab.tasks.mixed.mdp.curriculums import TerrainLevelsVelGym, gradual_reward_weight_modification
+from go2_rl_lab.tasks.mixed.mdp.curriculums import gradual_reward_weight_modification
 from go2_rl_lab.tasks.mixed.mdp.events import reset_root_state_uniform
 from isaaclab.envs import ManagerBasedRLEnvCfg
 from isaaclab.envs import mdp as lab_mdp
@@ -60,6 +60,7 @@ from lope_rl_lab.tasks.locomotion.config import (
     TRACK_YAW_STD,
     UNDESIRED_CONTACT_THRESHOLD_N,
 )
+from lope_rl_lab.tasks.locomotion.mdp.curriculums import LopeTerrainLevelsCurriculum
 from lope_rl_lab.tasks.locomotion.mdp.events import configure_randomization
 from lope_rl_lab.tasks.locomotion.mdp.observations import NoisyPolicyFrame, critic_frame, policy_frame
 from lope_rl_lab.tasks.locomotion.scene_cfg import ActionsCfg, SceneCfg, actions_cfg
@@ -222,9 +223,9 @@ class TerminationsCfg:
 
 @configclass
 class CurriculumCfg:
-    """Official terrain-level rule and the two gradual reward-weight schedules."""
+    """Yaw-aware terrain-level rule and the two gradual reward-weight schedules."""
 
-    terrain_levels = CurriculumTermCfg(func=TerrainLevelsVelGym)
+    terrain_levels = CurriculumTermCfg(func=LopeTerrainLevelsCurriculum)
     base_linear_velocity_z = CurriculumTermCfg(
         func=gradual_reward_weight_modification,
         params={

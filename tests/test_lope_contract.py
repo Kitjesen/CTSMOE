@@ -60,6 +60,7 @@ from lope_rl_lab.tasks.locomotion.config import (
     TERRAIN,
     TRACK_LIN_STD,
     TRACK_YAW_STD,
+    UNDESIRED_CONTACT_THRESHOLD_N,
 )
 from lope_rl_lab.utils.recovery_math import FALLEN_MODES, fallen_orientation, recovering, upright_deficit
 from lope_rl_lab.utils.symmetry import (
@@ -414,6 +415,50 @@ class LopeCurriculumTests(unittest.TestCase):
             for token in banned:
                 self.assertNotIn(token, text, f"{path.name} contains {token}")
 
+    def test_true_triangle_stairs_yaw_aware_curriculum_and_crisp_playback(self):
+        self.assertEqual(UNDESIRED_CONTACT_THRESHOLD_N, 30.0)
+        terrain_text = (PACKAGE / "tasks" / "locomotion" / "terrain_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("sub_cfg.convert_to_heightfield = False", terrain_text)
+        env_text = (PACKAGE / "tasks" / "locomotion" / "env_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("LopeTerrainLevelsCurriculum", env_text)
+        cmd_text = (PACKAGE / "tasks" / "locomotion" / "commands_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("class LopeVelCommand(RLGymVelCommand):", cmd_text)
+        self.assertIn("projected_move_distance", cmd_text)
+        self.assertIn("commanded_move_distance", cmd_text)
+        fresh_text = (PACKAGE / "runners" / "fresh_state.py").read_text(encoding="utf-8")
+        self.assertIn('"tasks/locomotion/mdp/curriculums.py"', fresh_text)
+        runner_text = (PACKAGE / "runners" / "moe_cts_runner.py").read_text(encoding="utf-8")
+        self.assertIn("LOPE_ALLOW_CONTRACT_MIGRATION", runner_text)
+        viz_text = (PACKAGE / "utils" / "visualization.py").read_text(encoding="utf-8")
+        self.assertIn("def prepare_crisp_terrain_visualizer(", viz_text)
+        scripts_dir = ROOT / "scripts" / "rsl_rl"
+        play_entry = scripts_dir / "play.py" if (scripts_dir / "play.py").is_file() else scripts_dir / "launch_lope.py"
+        self.assertIn("prepare_crisp_terrain_visualizer", play_entry.read_text(encoding="utf-8"))
+
+        # Verify pure yaw-aware curriculum logic on all 5 cases
+        compute_updates = _load_compute_terrain_level_updates()
+        import numpy as np
+
+        max_dist = np.array([1.3, 4.5, 2.0, 1.8, 0.2, 4.2])
+        terminated = np.array([False, False, False, True, False, True])
+        prog_dist = np.array([17.0, 12.0, 3.0, 4.0, 0.0, 5.0])
+        cmd_dist = np.array([18.0, 15.0, 15.0, 6.0, 0.0, 8.0])
+        move_up, move_down = compute_updates(
+            maximum_distance=max_dist,
+            terrain_length=8.0,
+            terminated=terminated,
+            projected_move_distance=prog_dist,
+            commanded_move_distance=cmd_dist,
+        )
+        # 0: clean yaw circle -> STAY
+        # 1: climbed > 4.0m -> UP
+        # 2: stalled against step wall (3/15 < 0.5) -> DOWN
+        # 3: early fall -> DOWN
+        # 4: zero command stand -> STAY
+        # 5: fell after crossing > 4.0m -> UP takes precedence over DOWN
+        self.assertEqual(move_up.tolist(), [False, True, False, False, False, True])
+        self.assertEqual(move_down.tolist(), [False, False, True, True, False, False])
+
 
 def _sequence(value):
     return isinstance(value, (list, tuple))
@@ -557,6 +602,38 @@ def _load_critic_frame_with_stubs():
             sys.modules.pop(name, None)
         sys.modules.update(saved)
     return critic_frame
+
+
+def _load_compute_terrain_level_updates():
+    saved = {name: sys.modules[name] for name in list(sys.modules) if name == "torch" or name.startswith("go2_rl_lab")}
+    torch_mod = types.ModuleType("torch")
+    go2 = types.ModuleType("go2_rl_lab")
+    go2_tasks = types.ModuleType("go2_rl_lab.tasks")
+    go2_mixed = types.ModuleType("go2_rl_lab.tasks.mixed")
+    go2_mdp = types.ModuleType("go2_rl_lab.tasks.mixed.mdp")
+    go2_cur = types.ModuleType("go2_rl_lab.tasks.mixed.mdp.curriculums")
+
+    class _StubTerrainLevelsVelGym:
+        pass
+
+    go2_cur.TerrainLevelsVelGym = _StubTerrainLevelsVelGym
+    installed = {
+        "torch": torch_mod,
+        "go2_rl_lab": go2,
+        "go2_rl_lab.tasks": go2_tasks,
+        "go2_rl_lab.tasks.mixed": go2_mixed,
+        "go2_rl_lab.tasks.mixed.mdp": go2_mdp,
+        "go2_rl_lab.tasks.mixed.mdp.curriculums": go2_cur,
+    }
+    sys.modules.update(installed)
+    sys.modules.pop("lope_rl_lab.tasks.locomotion.mdp.curriculums", None)
+    try:
+        from lope_rl_lab.tasks.locomotion.mdp.curriculums import compute_terrain_level_updates
+    finally:
+        for name in installed:
+            sys.modules.pop(name, None)
+        sys.modules.update(saved)
+    return compute_terrain_level_updates
 
 
 def _cat(parts, dim):

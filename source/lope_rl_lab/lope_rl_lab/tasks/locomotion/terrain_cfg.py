@@ -55,4 +55,9 @@ def terrain_cfg():
     terrains["obstacles"].obstacle_height_range = TERRAIN["obstacle_height_range"]
     terrains["obstacles"].obstacle_width_range = TERRAIN["obstacle_width_range"]
     terrains["wave"].amplitude_range = TERRAIN["wave_amplitude_range"]
+    # Keep watertight triangle-mesh colliders (sharp 90-deg stairs) instead of
+    # re-rasterizing onto a 10 cm Newton heightfield grid.
+    for sub_cfg in terrains.values():
+        if hasattr(sub_cfg, "convert_to_heightfield"):
+            sub_cfg.convert_to_heightfield = False
     return cfg

@@ -164,8 +164,35 @@ def main():
     from isaacsim.asset.importer.urdf import URDFImporter  # noqa: F401
     import lope_rl_lab.tasks.locomotion  # noqa: F401
     if args.mode == "play":
+        from lope_rl_lab.utils.visualization import prepare_crisp_terrain_visualizer
+        from rsl_rl.base.env import RslRlVecEnvWrapper
         from rsl_rl import utils as rsl_utils
         import yaml
+
+        upstream_get_obs = RslRlVecEnvWrapper.get_observations
+        upstream_step = RslRlVecEnvWrapper.step
+
+        def _ensure_crisp(vec_env):
+            if getattr(vec_env, "_lope_crisp_ready", False):
+                return
+            installer = getattr(vec_env, "_lope_crisp_installer", None)
+            if installer is None:
+                installer = prepare_crisp_terrain_visualizer(vec_env.unwrapped)
+                vec_env._lope_crisp_installer = installer
+            vec_env._lope_crisp_ready = bool(installer())
+
+        def _crisp_get_observations(self, *fargs, **fkwargs):
+            _ensure_crisp(self)
+            return upstream_get_obs(self, *fargs, **fkwargs)
+
+        def _crisp_step(self, *fargs, **fkwargs):
+            _ensure_crisp(self)
+            result = upstream_step(self, *fargs, **fkwargs)
+            _ensure_crisp(self)
+            return result
+
+        RslRlVecEnvWrapper.get_observations = _crisp_get_observations
+        RslRlVecEnvWrapper.step = _crisp_step
 
         upstream_export_config = rsl_utils.export_model_config
 

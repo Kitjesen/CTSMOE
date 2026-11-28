@@ -1,11 +1,13 @@
-"""Official RLGym velocity command, unscaled.
+"""Official RLGym velocity command, unscaled, with commanded-direction progress tracking.
 
 Ranges, curricula, clip rules, and the iteration-25000 limit stage are the
 go2_rl_lab mixed-task numbers. Terrain caps omit wheels because Lope has none.
 """
+from collections.abc import Sequence
 from copy import deepcopy
 
-from go2_rl_lab.cmd_utils.rl_gym_cmd import RLGymVelCommandCfg
+import torch
+from go2_rl_lab.cmd_utils.rl_gym_cmd import RLGymVelCommand, RLGymVelCommandCfg
 from isaaclab.utils import configclass
 
 from lope_rl_lab.tasks.locomotion.config import (
@@ -19,9 +21,49 @@ from lope_rl_lab.tasks.locomotion.config import (
 )
 
 
+class LopeVelCommand(RLGymVelCommand):
+    """RLGymVelCommand extended with yaw-invariant commanded-path progress tracking."""
+
+    def __init__(self, cfg, env):
+        super().__init__(cfg, env)
+        self.projected_move_distance = torch.zeros(self.num_envs, dtype=torch.float, device=self.device)
+        self.commanded_move_distance = torch.zeros(self.num_envs, dtype=torch.float, device=self.device)
+
+    def reset(self, env_ids: Sequence[int] | slice | None = None):
+        if env_ids is None or isinstance(env_ids, slice):
+            resolved = torch.arange(self.num_envs, device=self.device)[env_ids or slice(None)]
+        else:
+            resolved = env_ids
+        self.projected_move_distance[resolved] = 0.0
+        self.commanded_move_distance[resolved] = 0.0
+        return super().reset(env_ids)
+
+    def _update_command(self):
+        super()._update_command()
+        cmd_xy = self.velocity_command_b[:, :2]
+        cmd_speed = torch.linalg.vector_norm(cmd_xy, dim=1)
+        valid_cmd = cmd_speed > 0.1
+        cmd_dir = torch.where(
+            valid_cmd.unsqueeze(1),
+            cmd_xy / cmd_speed.clamp(min=1.0e-6).unsqueeze(1),
+            torch.zeros_like(cmd_xy),
+        )
+        vel_xy = self.robot.data.root_lin_vel_b.torch[:, :2]
+        progress_speed = torch.clamp(torch.sum(vel_xy * cmd_dir, dim=1), min=0.0)
+        dt = float(self._env.step_dt)
+        zeros = torch.zeros_like(progress_speed)
+        self.projected_move_distance.add_(torch.where(valid_cmd, progress_speed * dt, zeros))
+        self.commanded_move_distance.add_(torch.where(valid_cmd, cmd_speed * dt, zeros))
+
+
+@configclass
+class LopeVelCommandCfg(RLGymVelCommandCfg):
+    class_type: type = LopeVelCommand
+
+
 def lope_velocity_command_cfg():
     """Return one command config. Copies official lists before replacing them."""
-    cfg = RLGymVelCommandCfg()
+    cfg = LopeVelCommandCfg()
     cfg.ranges.lin_vel_x = LOPE_INITIAL_RANGES["lin_vel_x"]
     cfg.ranges.lin_vel_y = LOPE_INITIAL_RANGES["lin_vel_y"]
     cfg.ranges.ang_vel_yaw = LOPE_INITIAL_RANGES["ang_vel_yaw"]
