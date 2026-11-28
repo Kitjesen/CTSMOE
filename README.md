@@ -60,7 +60,7 @@ python scripts/rsl_rl/launch_lope.py play \
 
 | Item | Value |
 | --- | --- |
-| **Robot** | 12-DoF fixed-foot quadruped (`13.33 kg`, `self_collision = True`, target height `0.2627 m`) |
+| **Robot** | 12-DoF fixed-foot quadruped (`13.33 kg`, `self_collision = True`, target height `0.295 m` / hip `0.355 m`) |
 | **Actuators** | `RS02Actuator` @ 14S: hip/thigh `14.5/16.5 N·m` (`Kp=40, Kd=0.8`), calf 2:1 `28.0/32.0 N·m` (`Kp=60, Kd=1.5`), delay `0–3` steps |
 | **Obs / Action** | Policy `450` (`10×45` frame-major) · Critic `275` (`88` proprio/forces + `187` height scan) · Actions `12` (`FR, FL, RR, RL`) |
 | **Policy & PPO** | 8-expert MoE-CTS (`latent=32`), `[512, 256, 128]`, `75/25` teacher/student, `entropy_coef = 0.005`, `24` rollout steps |

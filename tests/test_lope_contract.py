@@ -263,7 +263,7 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertEqual(PHYSICS_DT_S, 0.005)
         self.assertEqual(DECIMATION, 4)
         self.assertEqual(SPAWN_HEIGHT_M, 0.2740510271690917)
-        self.assertEqual(BASE_HEIGHT_TARGET_M, 0.2627175562793766)
+        self.assertEqual(BASE_HEIGHT_TARGET_M, 0.295)
         self.assertEqual(STANDING_POSE["fr_hip_joint"], -0.08)
         self.assertEqual(STANDING_POSE["fl_hip_joint"], 0.08)
         self.assertEqual(STANDING_POSE["rr_hip_joint"], 0.08)
@@ -455,9 +455,12 @@ class LopeCurriculumTests(unittest.TestCase):
         # 2: stalled against step wall (3/15 < 0.5) -> DOWN
         # 3: early fall -> DOWN
         # 4: zero command stand -> STAY
-        # 5: fell after crossing > 4.0m -> UP takes precedence over DOWN
-        self.assertEqual(move_up.tolist(), [False, True, False, False, False, True])
-        self.assertEqual(move_down.tolist(), [False, False, True, True, False, False])
+        # 5: fell after crossing > 4.0m -> DOWN (never promote on early crash)
+        self.assertEqual(move_up.tolist(), [False, True, False, False, False, False])
+        self.assertEqual(move_down.tolist(), [False, False, True, True, False, True])
+        curr_text = (PACKAGE / "tasks" / "locomotion" / "mdp" / "curriculums.py").read_text(encoding="utf-8")
+        for metric_key in ("/l9_ratio", "/l7_plus_ratio", "/up_rate", "/down_rate"):
+            self.assertIn(metric_key, curr_text)
 
 
 def _sequence(value):

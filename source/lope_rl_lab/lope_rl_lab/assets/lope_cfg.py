@@ -36,7 +36,11 @@ STANDING_POSE = {
     "rl_calf_joint": -1.1,
 }
 SPAWN_HEIGHT_M = 0.2740510271690917
-BASE_HEIGHT_TARGET_M = 0.2627175562793766
+STANDING_HEIGHT_M = 0.2627175562793766
+# Raised locomotion height target (matching Go2's +5 cm target-over-default philosophy):
+# 0.295 m base_link origin -> 0.355 m hip height (~80% straight-leg limit, ~100 deg knee)
+# while preserving STANDING_POSE and SPAWN_HEIGHT_M for hardware zero-pose and hot-resume.
+BASE_HEIGHT_TARGET_M = 0.295
 SOLE_GAP_M = 0.011333470889715092
 STANCE_WIDTH_M = 0.25688538375184233
 HIP_ADDUCTION_RAD = 0.08
