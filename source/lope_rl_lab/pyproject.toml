@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lope_rl_lab"
+version = "0.1.0"
+description = "Lope 12-DoF quadruped locomotion and recovery environments for Isaac Lab 3 / Newton"
+requires-python = ">=3.12"
+dependencies = ["go2_rl_lab==0.1.7", "rsl-rl-lib==3.3.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lope_rl_lab*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+lope_rl_lab = [
+    "assets/data/urdf/*.urdf",
+    "assets/data/meshes/*",
+    "assets/data/meshes/*/*",
+    "assets/data/THIRD_PARTY.md",
+]

@@ -8,53 +8,62 @@ import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from lope_lab3.assets.contract import packaged_urdf, validate_urdf
-from lope_lab3.spec import (
+ROOT = Path(__file__).resolve().parents[1]
+EXTENSION_SOURCE = ROOT / "source" / "lope_rl_lab"
+if str(EXTENSION_SOURCE) not in sys.path:
+    sys.path.insert(0, str(EXTENSION_SOURCE))
+_existing = sys.modules.get("lope_rl_lab")
+if _existing is not None and getattr(_existing, "__file__", None) is None:
+    del sys.modules["lope_rl_lab"]
+
+from lope_rl_lab.assets.contract import packaged_urdf, validate_urdf
+from lope_rl_lab.assets.lope_cfg import (
     ACTION_DIM,
     ACTION_SCALE_RAD,
     BASE_HEIGHT_TARGET_M,
-    CUMULATIVE_UPDATES,
-    EPISODE_LENGTH_S,
+    BODY_COM_OFFSET_X,
     FOOT_BODIES,
     JOINT_NAMES,
     JOINT_SIGN,
-    LOPE_COMMAND_RANGE_CURRICULUM,
+    RS02_BATTERY_CELLS,
+    RS02_CALF,
+    RS02_HIP_THIGH,
+    SELF_COLLISION,
+    SOLVER_NJMAX,
+    SPAWN_HEIGHT_M,
+    STANDING_POSE,
+    URDF_SHA256,
+    action_clips,
+)
+from lope_rl_lab.tasks.locomotion.config import (
+    BAD_ORIENTATION_LIMIT_RAD,
+    CRITIC_DIM,
+    CRITIC_PROPRIO_DIM,
+    CUMULATIVE_UPDATES,
+    DECIMATION,
+    EPISODE_LENGTH_S,
+    EXPERIMENT_NAME,
+    FOOT_FORCE_DIM,
+    FRAME_DIM,
+    ILLEGAL_CONTACT_THRESHOLD_N,
     LOPE_CLIP_RULES,
+    LOPE_COMMAND_RANGE_CURRICULUM,
     LOPE_INITIAL_RANGES,
     LOPE_PUSH_LINEAR,
     LOPE_TERRAIN_MAX_COMMANDS,
     NUM_ENVS,
     OFFICIAL_COMMAND_RANGE_CURRICULUM,
     OFFICIAL_INITIAL_RANGES,
-    RS02_CALF,
-    RS02_HIP_THIGH,
-    SPAWN_HEIGHT_M,
-    STANDING_POSE,
-    TERRAIN,
-    GO2_OBSTACLE_HEIGHT,
-    GO2_WAVE_AMPLITUDE,
-    TRACK_LIN_STD,
-    TRACK_YAW_STD,
-    action_clips,
-)
-from lope_lab3.spec import (
-    CRITIC_DIM,
-    CRITIC_PROPRIO_DIM,
-    DECIMATION,
-    FOOT_FORCE_DIM,
-    FRAME_DIM,
     PHYSICS_DT_S,
     POLICY_DIM,
+    TASK_ID,
+    TERRAIN,
+    TRACK_LIN_STD,
+    TRACK_YAW_STD,
+    UNDESIRED_CONTACT_THRESHOLD_N,
 )
-from lope_lab3.recovery import FALLEN_MODES, fallen_orientation, recovering
-from lope_lab3.spec import (
-    FALLEN_RESET_FRACTION,
-    FALLEN_TIMEOUT_S,
-    RECOVERY_HEIGHT_WEIGHT,
-    RECOVERY_UPRIGHT_WEIGHT,
-    STAND_UP_BONUS_WEIGHT,
-)
-from lope_lab3.symmetry_math import (
+from lope_rl_lab.utils.recovery_math import FALLEN_MODES, fallen_orientation, recovering, upright_deficit
+from lope_rl_lab.utils.symmetry import (
     mirror_critic,
     mirror_joints,
     mirror_policy_frame,
@@ -62,9 +71,7 @@ from lope_lab3.symmetry_math import (
     standing_vector,
 )
 
-
-ROOT = Path(__file__).resolve().parents[1]
-PACKAGE = ROOT / "source" / "lope_lab3"
+PACKAGE = EXTENSION_SOURCE / "lope_rl_lab"
 
 
 class LopeAssetTests(unittest.TestCase):
@@ -125,30 +132,62 @@ class LopeAssetTests(unittest.TestCase):
             self.assertGreater(triangles, 0, mesh.name)
             self.assertEqual(len(payload), 84 + 50 * triangles, mesh.name)
 
+    def test_cleaned_urdf_collisions_prevent_phantom_self_contact(self):
+        report = validate_urdf()
+        self.assertEqual(report["sha256"], URDF_SHA256)
+        root = ET.parse(packaged_urdf()).getroot()
+        links = {link.attrib["name"]: link for link in root.findall("link")}
+        for internal_link in ("battery_guide_link", "battery_pack_trial_link"):
+            self.assertEqual(links[internal_link].findall("collision"), [], internal_link)
+        base_cols = {col.attrib["name"]: col for col in links["base_link"].findall("collision")}
+        self.assertEqual(set(base_cols), {"body", "lope_upper"})
+        self.assertEqual(base_cols["body"].find("geometry/box").attrib["size"], "0.26 0.19 0.12")
+        self.assertEqual(base_cols["lope_upper"].find("geometry/mesh").attrib.get("scale"), "0.95 0.84 1.0")
+        for leg in ("fr", "fl", "rr", "rl"):
+            hip_cols = {col.attrib["name"]: col for col in links[f"{leg}_hip_Link"].findall("collision")}
+            cyl = hip_cols["hip_housing"].find("geometry/cylinder")
+            self.assertEqual(cyl.attrib["radius"], "0.036", leg)
+            self.assertEqual(cyl.attrib["length"], "0.040", leg)
+            thigh_cols = {col.attrib["name"]: col for col in links[f"{leg}_thigh_Link"].findall("collision")}
+            self.assertEqual(set(thigh_cols), {"thigh_distal", "thigh_proximal"}, leg)
+
     def test_rs02_limits_are_not_the_flat_17nm_cap_or_thunder(self):
-        self.assertEqual(RS02_HIP_THIGH["effort_limit"], 7.0)
-        self.assertEqual(RS02_HIP_THIGH["saturation_effort"], 17.0)
+        self.assertEqual(RS02_BATTERY_CELLS, 14)
+        self.assertEqual(RS02_HIP_THIGH["peak_torque_motoring"], 14.5)
+        self.assertEqual(RS02_HIP_THIGH["peak_torque_braking"], 16.5)
+        self.assertEqual(RS02_HIP_THIGH["continuous_torque_nm"], 7.0)
+        self.assertEqual(RS02_HIP_THIGH["corner_velocity"], 24.0)
         self.assertEqual(RS02_HIP_THIGH["velocity_limit"], 42.9350995991)
         self.assertEqual(RS02_HIP_THIGH["stiffness"], 40.0)
         self.assertEqual(RS02_HIP_THIGH["damping"], 0.8)
         self.assertEqual(RS02_HIP_THIGH["armature"], 0.0042)
-        self.assertEqual(RS02_CALF["effort_limit"], 14.0)
-        self.assertEqual(RS02_CALF["saturation_effort"], 34.0)
+        self.assertEqual(RS02_HIP_THIGH["friction"], 0.01)
+        self.assertEqual(RS02_HIP_THIGH["min_delay"], 0)
+        self.assertEqual(RS02_HIP_THIGH["max_delay"], 3)
+        self.assertEqual(RS02_CALF["peak_torque_motoring"], 28.0)
+        self.assertEqual(RS02_CALF["peak_torque_braking"], 32.0)
+        self.assertEqual(RS02_CALF["continuous_torque_nm"], 14.0)
+        self.assertEqual(RS02_CALF["corner_velocity"], 12.0)
         self.assertEqual(RS02_CALF["velocity_limit"], 21.4675497995)
         self.assertEqual(RS02_CALF["stiffness"], 60.0)
         self.assertEqual(RS02_CALF["damping"], 1.5)
         self.assertEqual(RS02_CALF["armature"], 0.0168)
-        self.assertNotEqual(RS02_HIP_THIGH["effort_limit"], 17.0)
-        self.assertNotEqual(RS02_CALF["effort_limit"], 17.0)
-        robot = (PACKAGE / "assets" / "robot.py").read_text(encoding="utf-8")
-        self.assertIn("hip_thigh_rs02", robot)
-        self.assertIn("calf_rs02_2to1", robot)
-        self.assertIn("merge_fixed_joints=MERGE_FIXED_JOINTS", robot)
-        self.assertIn("self_collision=SELF_COLLISION", robot)
-        self.assertNotIn("ImplicitActuator", robot)
-        self.assertNotIn("120", robot)
-        self.assertNotIn("17.48", robot)
-        self.assertNotIn("NEWPOSE_URDF", robot)
+        self.assertEqual(RS02_CALF["friction"], 0.02)
+        self.assertEqual(RS02_CALF["min_delay"], 0)
+        self.assertEqual(RS02_CALF["max_delay"], 3)
+        self.assertNotEqual(RS02_HIP_THIGH["peak_torque_motoring"], 17.0)
+        self.assertNotEqual(RS02_CALF["peak_torque_motoring"], 17.0)
+        lope_cfg = (PACKAGE / "assets" / "lope_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("RS02ActuatorCfg", lope_cfg)
+        self.assertNotIn("DCMotorCfg", lope_cfg)
+        self.assertIn("hip_thigh_rs02", lope_cfg)
+        self.assertIn("calf_rs02_2to1", lope_cfg)
+        self.assertIn("merge_fixed_joints=MERGE_FIXED_JOINTS", lope_cfg)
+        self.assertIn("self_collision=SELF_COLLISION", lope_cfg)
+        self.assertNotIn("ImplicitActuator", lope_cfg)
+        self.assertNotIn("120", lope_cfg)
+        self.assertNotIn("17.48", lope_cfg)
+        self.assertNotIn("NEWPOSE_URDF", lope_cfg)
 
 
 class LopeSymmetryTests(unittest.TestCase):
@@ -183,6 +222,8 @@ class LopeSymmetryTests(unittest.TestCase):
 
 class LopeCurriculumTests(unittest.TestCase):
     def test_official_commands_are_unscaled_and_hardware_stays_locked(self):
+        self.assertEqual(TASK_ID, "lope-locomotion-mixed")
+        self.assertEqual(EXPERIMENT_NAME, "lope_locomotion_mixed")
         self.assertEqual(NUM_ENVS, 16384)
         self.assertEqual(CUMULATIVE_UPDATES, 100000)
         self.assertEqual(EPISODE_LENGTH_S, 25.0)
@@ -211,17 +252,9 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertEqual(TRACK_YAW_STD, 0.5)
         self.assertEqual(TERRAIN["stair_step_height_range"], (0.05, 0.25))
         self.assertEqual(TERRAIN["stair_step_width"], 0.25)
-        self.assertNotEqual(TERRAIN["stair_step_width"], TERRAIN["official_stair_step_width"])
-        self.assertIs(TERRAIN["obstacle_height_range"], GO2_OBSTACLE_HEIGHT)
-        self.assertIs(TERRAIN["wave_amplitude_range"], GO2_WAVE_AMPLITUDE)
-        self.assertEqual(GO2_OBSTACLE_HEIGHT, (0.05, 0.275))
-        self.assertEqual(GO2_WAVE_AMPLITUDE, (0.1, 0.28))
-        self.assertNotEqual(TERRAIN["obstacle_height_range"], (0.05, 0.12))
-        self.assertNotEqual(TERRAIN["wave_amplitude_range"], (0.02, 0.08))
-        self.assertNotEqual(TERRAIN["wave_amplitude_range"], (0.01, 0.08))
-        self.assertEqual(TERRAIN["obstacle_width_range"], (1.0, 2.0))
         self.assertEqual(TERRAIN["num_rows"], 10)
-        self.assertEqual(TERRAIN["max_init_terrain_level"], 5)
+        self.assertEqual(TERRAIN["max_init_terrain_level"], 1)
+        self.assertTrue(SELF_COLLISION)
         self.assertEqual(TERRAIN["slope_range"][0], 0.0)
         self.assertAlmostEqual(TERRAIN["slope_range"][1], math.tan(math.radians(35)))
         self.assertNotAlmostEqual(TERRAIN["slope_range"][1], math.radians(35))
@@ -246,48 +279,65 @@ class LopeCurriculumTests(unittest.TestCase):
             for token in banned_scale:
                 self.assertNotIn(token, text, path.name)
 
-    def test_recovery_is_in_the_same_task_without_instant_base_contact(self):
-        self.assertEqual(FALLEN_RESET_FRACTION, 0.20)
-        self.assertEqual(FALLEN_TIMEOUT_S, 6.0)
-        self.assertEqual(RECOVERY_UPRIGHT_WEIGHT, 2.0)
-        self.assertEqual(RECOVERY_HEIGHT_WEIGHT, -2.0)
-        self.assertEqual(STAND_UP_BONUS_WEIGHT, 5.0)
+    def test_locomotion_task_is_pure_and_aligned_with_go2(self):
+        self.assertEqual(ILLEGAL_CONTACT_THRESHOLD_N, 1.0)
+        self.assertEqual(BAD_ORIENTATION_LIMIT_RAD, 2.0)
+        self.assertEqual(upright_deficit(-1.0, 0.9), 0.0)
+        self.assertAlmostEqual(upright_deficit(-0.8, 0.9), 0.0, places=9)
+        self.assertGreater(upright_deficit(-0.79, 0.9), 0.0)
+        self.assertLess(upright_deficit(-0.79, 0.9), 0.02)
+        self.assertAlmostEqual(upright_deficit(0.0, 0.9), 0.4, places=9)
+        self.assertAlmostEqual(upright_deficit(1.0, 0.9), 0.9, places=9)
         for mode in FALLEN_MODES:
             roll, pitch, _yaw = fallen_orientation(mode, 0.0, 0.0, 0.2)
             self.assertGreater(max(abs(roll), abs(pitch)), 1.0, mode)
             self.assertTrue(recovering(math.sin(roll), 0.9) or abs(roll) > 1.0 or abs(pitch) > 1.0)
-        env = (PACKAGE / "tasks" / "lope" / "env_cfg.py").read_text(encoding="utf-8")
-        self.assertIn("reset_root_with_recovery", env)
-        terms = (PACKAGE / "tasks" / "lope" / "mdp" / "terms.py").read_text(encoding="utf-8")
-        self.assertIn("from go2_rl_lab.tasks.mixed.mdp.events import reset_root_state_uniform", terms)
-        self.assertNotIn("from isaaclab.envs.mdp import reset_root_state_uniform", terms)
-        self.assertIn("isinstance(env_ids, slice)", terms)
-        self.assertIn("torch.arange(env.num_envs, device=env.device)[env_ids or slice(None)]", terms)
-        self.assertIn("recovery_upright", env)
-        self.assertIn("recovery_base_height", env)
-        self.assertIn("stand_up_bonus", env)
-        self.assertIn("fallen_timeout", env)
-        self.assertIn("fallen_reset_fraction", env)
-        self.assertNotIn("illegal_contact", env)
-        self.assertNotIn("bad_orientation", env)
+        env = (PACKAGE / "tasks" / "locomotion" / "env_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("reset_root_state_uniform", env)
+        self.assertIn("go2_rewards.undesired_contacts", env)
+        self.assertIn("lab_mdp.illegal_contact", env)
+        self.assertIn("lab_mdp.bad_orientation", env)
+        self.assertIn("self.sim.physics_material = self.scene.terrain.physics_material", env)
+        for forbidden in (
+            "reset_root_with_recovery",
+            "recovery_upright",
+            "stand_up_bonus",
+            "fallen_timeout",
+            "fallen_reset_fraction",
+            "undesired_contacts_locomotion",
+            "bad_orientation_locomotion",
+        ):
+            self.assertNotIn(forbidden, env)
+        fresh_state_path = PACKAGE / "runners" / "fresh_state.py"
+        fresh_state_text = fresh_state_path.read_text(encoding="utf-8")
+        self.assertIn('"assets/rs02_actuator.py"', fresh_state_text)
+        tree = ast.parse(fresh_state_text)
+        source_files = next(
+            ast.literal_eval(node.value)
+            for node in tree.body
+            if isinstance(node, ast.Assign)
+            and any(isinstance(t, ast.Name) and t.id == "SOURCE_FILES" for t in node.targets)
+        )
+        for rel in source_files:
+            self.assertTrue((PACKAGE / rel).is_file(), f"Missing SOURCE_FILES entry: {rel}")
 
     def test_registration_names_the_lope_task(self):
-        text = (PACKAGE / "tasks" / "lope" / "__init__.py").read_text(encoding="utf-8")
+        text = (PACKAGE / "tasks" / "locomotion" / "__init__.py").read_text(encoding="utf-8")
         self.assertIn("gym.register", text)
-        self.assertIn("LopeFreshEnvCfg", text)
-        self.assertIn("LopeFreshPlayEnvCfg", text)
-        self.assertIn("LopeFreshMoeCtsRunnerCfg", text)
+        self.assertIn("LopeLocomotionEnvCfg", text)
+        self.assertIn("LopeLocomotionPlayEnvCfg", text)
+        self.assertIn("LopeLocomotionMoeCtsRunnerCfg", text)
         self.assertIn("TASK_ID", text)
         self.assertNotIn("thunder_lab3", text)
         self.assertNotIn("Thunder-Newpose", text)
-        robot = (PACKAGE / "assets" / "robot.py").read_text(encoding="utf-8")
-        env = (PACKAGE / "tasks" / "lope" / "env_cfg.py").read_text(encoding="utf-8")
+        lope_cfg = (PACKAGE / "assets" / "lope_cfg.py").read_text(encoding="utf-8")
+        env = (PACKAGE / "tasks" / "locomotion" / "env_cfg.py").read_text(encoding="utf-8")
         self.assertIn("BASE_HEIGHT_TARGET_M", env)
         self.assertIn("SPAWN_HEIGHT_M", env)
         self.assertNotIn("joint_vel", env)
-        self.assertIn("RS02_HIP_THIGH", robot)
-        self.assertIn("RS02_CALF", robot)
-        scene = (PACKAGE / "tasks" / "lope" / "scene_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("RS02_HIP_THIGH", lope_cfg)
+        self.assertIn("RS02_CALF", lope_cfg)
+        scene = (PACKAGE / "tasks" / "locomotion" / "scene_cfg.py").read_text(encoding="utf-8")
         self.assertIn('prim_path="{ENV_REGEX_NS}/Robot/Geometry/base_link"', scene)
         self.assertNotIn('prim_path="{ENV_REGEX_NS}/Robot/base_link"', scene)
         self.assertIn(
@@ -300,7 +350,7 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertNotIn("from isaaclab.sensors import ContactSensorCfg", scene)
 
     def test_noisy_command_x_scale_is_one_half(self):
-        source = (PACKAGE / "tasks" / "lope" / "mdp" / "observations.py").read_text(encoding="utf-8")
+        source = (PACKAGE / "tasks" / "locomotion" / "mdp" / "observations.py").read_text(encoding="utf-8")
         self.assertIn(
             "[0.2] * 3 + [0.05] * 3 + [0.0] * 3 + [0.03] * 12 + [2.0] * 12 + [0.0] * 12",
             source,
@@ -315,14 +365,20 @@ class LopeCurriculumTests(unittest.TestCase):
         self.assertEqual(scaled[0], 1.0)
         self.assertEqual(scaled[1:], [-3.0, 4.0])
 
-    def test_solver_njmax_is_384(self):
-        text = (PACKAGE / "tasks" / "lope" / "mdp" / "randomization.py").read_text(encoding="utf-8")
-        self.assertIn("njmax=384", text)
+    def test_solver_njmax_and_com_buckets(self):
+        self.assertEqual(SOLVER_NJMAX, 512)
+        self.assertEqual(BODY_COM_OFFSET_X, (-0.05, 0.05))
+        text = (PACKAGE / "tasks" / "locomotion" / "mdp" / "events.py").read_text(encoding="utf-8")
+        self.assertIn("njmax=SOLVER_NJMAX", text)
         self.assertNotIn("njmax=300", text)
         self.assertIn("nconmax=128", text)
 
+    def test_entropy_coef_is_tempered(self):
+        text = (PACKAGE / "tasks" / "locomotion" / "agents" / "rsl_rl_moe_cts_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("entropy_coef=0.005", text)
+
     def test_critic_height_scan_keeps_nonfinite_values(self):
-        path = PACKAGE / "tasks" / "lope" / "mdp" / "observations.py"
+        path = PACKAGE / "tasks" / "locomotion" / "mdp" / "observations.py"
         source = path.read_text(encoding="utf-8")
         self.assertNotIn("ray_hits_w", source)
         self.assertNotIn("net_normal_forces_w", source)
@@ -358,6 +414,50 @@ class LopeCurriculumTests(unittest.TestCase):
             text = path.read_text(encoding="utf-8")
             for token in banned:
                 self.assertNotIn(token, text, f"{path.name} contains {token}")
+
+    def test_true_triangle_stairs_yaw_aware_curriculum_and_crisp_playback(self):
+        self.assertEqual(UNDESIRED_CONTACT_THRESHOLD_N, 30.0)
+        terrain_text = (PACKAGE / "tasks" / "locomotion" / "terrain_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("sub_cfg.convert_to_heightfield = False", terrain_text)
+        env_text = (PACKAGE / "tasks" / "locomotion" / "env_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("LopeTerrainLevelsCurriculum", env_text)
+        cmd_text = (PACKAGE / "tasks" / "locomotion" / "commands_cfg.py").read_text(encoding="utf-8")
+        self.assertIn("class LopeVelCommand(RLGymVelCommand):", cmd_text)
+        self.assertIn("projected_move_distance", cmd_text)
+        self.assertIn("commanded_move_distance", cmd_text)
+        fresh_text = (PACKAGE / "runners" / "fresh_state.py").read_text(encoding="utf-8")
+        self.assertIn('"tasks/locomotion/mdp/curriculums.py"', fresh_text)
+        runner_text = (PACKAGE / "runners" / "moe_cts_runner.py").read_text(encoding="utf-8")
+        self.assertIn("LOPE_ALLOW_CONTRACT_MIGRATION", runner_text)
+        viz_text = (PACKAGE / "utils" / "visualization.py").read_text(encoding="utf-8")
+        self.assertIn("def prepare_crisp_terrain_visualizer(", viz_text)
+        scripts_dir = ROOT / "scripts" / "rsl_rl"
+        play_entry = scripts_dir / "play.py" if (scripts_dir / "play.py").is_file() else scripts_dir / "launch_lope.py"
+        self.assertIn("prepare_crisp_terrain_visualizer", play_entry.read_text(encoding="utf-8"))
+
+        # Verify pure yaw-aware curriculum logic on all 5 cases
+        compute_updates = _load_compute_terrain_level_updates()
+        import numpy as np
+
+        max_dist = np.array([1.3, 4.5, 2.0, 1.8, 0.2, 4.2])
+        terminated = np.array([False, False, False, True, False, True])
+        prog_dist = np.array([17.0, 12.0, 3.0, 4.0, 0.0, 5.0])
+        cmd_dist = np.array([18.0, 15.0, 15.0, 6.0, 0.0, 8.0])
+        move_up, move_down = compute_updates(
+            maximum_distance=max_dist,
+            terrain_length=8.0,
+            terminated=terminated,
+            projected_move_distance=prog_dist,
+            commanded_move_distance=cmd_dist,
+        )
+        # 0: clean yaw circle -> STAY
+        # 1: climbed > 4.0m -> UP
+        # 2: stalled against step wall (3/15 < 0.5) -> DOWN
+        # 3: early fall -> DOWN
+        # 4: zero command stand -> STAY
+        # 5: fell after crossing > 4.0m -> UP takes precedence over DOWN
+        self.assertEqual(move_up.tolist(), [False, True, False, False, False, True])
+        self.assertEqual(move_down.tolist(), [False, False, True, True, False, False])
 
 
 def _sequence(value):
@@ -493,15 +593,47 @@ def _load_critic_frame_with_stubs():
     }
     sys.modules.update(installed)
     for name in list(sys.modules):
-        if name == "lope_lab3.tasks.lope" or name.startswith("lope_lab3.tasks.lope."):
+        if name == "lope_rl_lab.tasks.locomotion" or name.startswith("lope_rl_lab.tasks.locomotion."):
             del sys.modules[name]
     try:
-        from lope_lab3.tasks.lope.mdp.observations import critic_frame
+        from lope_rl_lab.tasks.locomotion.mdp.observations import critic_frame
     finally:
         for name in installed:
             sys.modules.pop(name, None)
         sys.modules.update(saved)
     return critic_frame
+
+
+def _load_compute_terrain_level_updates():
+    saved = {name: sys.modules[name] for name in list(sys.modules) if name == "torch" or name.startswith("go2_rl_lab")}
+    torch_mod = types.ModuleType("torch")
+    go2 = types.ModuleType("go2_rl_lab")
+    go2_tasks = types.ModuleType("go2_rl_lab.tasks")
+    go2_mixed = types.ModuleType("go2_rl_lab.tasks.mixed")
+    go2_mdp = types.ModuleType("go2_rl_lab.tasks.mixed.mdp")
+    go2_cur = types.ModuleType("go2_rl_lab.tasks.mixed.mdp.curriculums")
+
+    class _StubTerrainLevelsVelGym:
+        pass
+
+    go2_cur.TerrainLevelsVelGym = _StubTerrainLevelsVelGym
+    installed = {
+        "torch": torch_mod,
+        "go2_rl_lab": go2,
+        "go2_rl_lab.tasks": go2_tasks,
+        "go2_rl_lab.tasks.mixed": go2_mixed,
+        "go2_rl_lab.tasks.mixed.mdp": go2_mdp,
+        "go2_rl_lab.tasks.mixed.mdp.curriculums": go2_cur,
+    }
+    sys.modules.update(installed)
+    sys.modules.pop("lope_rl_lab.tasks.locomotion.mdp.curriculums", None)
+    try:
+        from lope_rl_lab.tasks.locomotion.mdp.curriculums import compute_terrain_level_updates
+    finally:
+        for name in installed:
+            sys.modules.pop(name, None)
+        sys.modules.update(saved)
+    return compute_terrain_level_updates
 
 
 def _cat(parts, dim):
