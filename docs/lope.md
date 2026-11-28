@@ -76,13 +76,13 @@ The recovery run `training/recovery_headless/run_configuration.json` flattens ev
 
 There is no `ImplicitActuatorCfg` and no wheel joint. `self_collision=True` (with cleaned `lope.urdf` collision geometry: internal battery collisions, `lope_belly`, `lope_side_±1`, and `thigh_housing` removed; `hip_housing` inboard side trimmed; `body` Y narrowed to `0.19 m`; `lope_upper` scaled to `0.95 0.84 1.0`; inner faces of `thigh_proximal`/`thigh_distal` retracted for Newton `margin=0.01`) and `merge_fixed_joints=False`, so the four fixed feet stay separate. Each foot collision is a sphere of radius 0.032 m. `soft_joint_pos_limit_factor` is 0.9. Action targets are clipped to that same soft window, centered on each URDF interval, as `SmallDogEnvCfg` did.
 
-Standing pose keeps the solved thigh and calf magnitudes and adducts the hips by 0.08 rad. Front hip axes are −X and rear hip axes are +X, so the signs below move every foot toward the midline. Stance width is 0.25688538375184233 m. The root is higher than the old 0.2674918208774965 m spawn so the original 11.333470889715092 mm sole gap stays.
+Standing pose is solved via exact URDF FK for a 0.295 m base height (0.355 m hip height, 97.7° knee, feet centered directly beneath the hip axes) with 0.08 rad hip adduction. Front hip axes are −X and rear hip axes are +X, so the signs below move every foot toward the midline. Stance width is 0.2517 m, and all 0.5×–1.5× reset scales remain strictly inside the 0.9 soft joint limits. Spawn height preserves the original 11.333470889715092 mm sole gap.
 
 - `fr_hip_joint` −0.08, `fl_hip_joint` +0.08, `rr_hip_joint` +0.08, `rl_hip_joint` −0.08
-- thighs ±0.6715534335840251 rad (right negative, left positive)
-- calves ±1.1 rad (right positive, left negative)
-- spawn height 0.2740510271690917 m (standing pose sole-touch height 0.2627175562793766 m)
-- height target 0.295 m (hip axis 0.355 m, ~80% straight-leg limit; keeps `STANDING_POSE` zero-pose unchanged)
+- thighs ±0.8175230341 rad (right negative, left positive)
+- calves ±1.3159416215 rad (right positive, left negative)
+- spawn height 0.3063334708897151 m (standing pose sole-touch height 0.295 m, hip height 0.355 m)
+- height target 0.300 m (hip axis 0.360 m, ~75.6% straight-leg limit, ~100° knee)
 
 Action scale: hip 0.15 rad, thigh 0.2 rad, calf 0.2 rad. The action vector is 12 position targets in order FR, FL, RR, RL and hip, thigh, calf. URDF position limits are unchanged, including the mirrored thigh and calf windows.
 
@@ -97,7 +97,7 @@ Symmetry swaps FR with FL and RR with RL, then multiplies every revolute compone
 Rewards use the pinned `go2_rl_lab` terms with Lope's documented overrides:
 
 - linear tracking standard deviation 0.5 and weight 2, yaw standard deviation 0.5 and weight 1
-- base height weight from -1 to -10 over 5000 updates, target 0.295 m (hip height 0.355 m, not Go2's 0.38 m)
+- base height weight from -1 to -10 over 5000 updates, target 0.300 m (hip height 0.360 m, not Go2's 0.38 m)
 - vertical linear velocity weight from -2 to 0 over 1500 updates
 - Newton joint acceleration weight -3e-7, power -1.5e-5, torque -6e-5
 - undesired-contact threshold 30 N (penalizes real thigh/calf strikes on 90° stair risers)
